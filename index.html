@@ -137,12 +137,51 @@
     <div id="bankers-list" class="grid grid-cols-1 lg:grid-cols-2 gap-4"></div>
   </div>
 
+  <!-- PERFORMANCE TRACKER -->
+  <div class="max-w-screen-xl mx-auto px-5 sm:px-8 pb-6">
+    <details class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden">
+      <summary class="p-5 flex items-center gap-x-3 cursor-pointer">
+        <i class="fa-solid fa-chart-line text-yellow-400"></i>
+        <span class="section-header text-xl font-semibold">Performance Tracker</span>
+        <span id="track-headline" class="text-sm text-slate-400 ml-2"></span>
+        <i class="fa-solid fa-chevron-right chev text-slate-600 ml-auto"></i>
+      </summary>
+      <div class="px-5 pb-5 border-t border-slate-800 pt-4">
+        <p class="text-xs text-slate-500 mb-4">Settled bankers only (won/lost; voids excluded from win rate). Honest record-keeping — not a promise of future results.</p>
+        <div id="track-overall" class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          <div><div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-2">By market</div><div id="track-market" class="space-y-2"></div></div>
+          <div><div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-2">By league</div><div id="track-league" class="space-y-2"></div></div>
+        </div>
+      </div>
+    </details>
+  </div>
+
   <!-- ALL MATCHES -->
   <div class="max-w-screen-xl mx-auto px-5 sm:px-8 pb-20">
-    <h2 class="section-header text-2xl sm:text-3xl font-semibold tracking-tight mb-4 flex items-center gap-x-3">
-      <i class="fa-solid fa-futbol text-slate-400"></i> All Matches
-    </h2>
+    <div class="flex flex-wrap items-center gap-3 mb-4">
+      <h2 class="section-header text-2xl sm:text-3xl font-semibold tracking-tight flex items-center gap-x-3">
+        <i class="fa-solid fa-futbol text-slate-400"></i> All Matches
+      </h2>
+      <span id="last-updated" class="text-xs text-slate-500"></span>
+    </div>
+    <!-- filter bar -->
+    <div class="flex flex-wrap items-center gap-2 mb-5">
+      <input id="filter-search" type="text" placeholder="Search team or league…"
+        class="flex-1 min-w-[180px] bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-yellow-500/50" />
+      <select id="filter-league" class="bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-yellow-500/50"></select>
+      <select id="filter-market" class="bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-yellow-500/50">
+        <option value="">All markets</option>
+        <option value="Win">Win</option><option value="DNB">DNB</option>
+        <option value="Over 2.5">Over 2.5</option><option value="BTTS">BTTS</option>
+        <option value="Skip">Skip</option>
+      </select>
+      <label class="flex items-center gap-x-2 text-sm text-slate-300 bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 cursor-pointer">
+        <input id="filter-bankers" type="checkbox" class="accent-yellow-500" /> Bankers only
+      </label>
+    </div>
     <div id="matches-root"></div>
+    <div id="no-results" class="hidden text-center text-slate-500 py-10">No matches fit those filters.</div>
     <div id="empty-state" class="hidden border border-dashed border-slate-700 rounded-3xl py-16 px-8 text-center bg-slate-900/40">
       <i class="fa-solid fa-inbox text-4xl text-slate-600 mb-3"></i>
       <p class="text-slate-400 text-lg">No matches saved yet. Run the fetcher to load today's board.</p>
@@ -285,8 +324,13 @@
     Object.entries(byLeague).forEach(([league,lrows])=>{
       const top = perLeagueTop[`${d}|${league}`] || [];
 
-      html += `<div class="mb-6 glass rounded-3xl p-4 sm:p-5">`;
-      html += `<div class="flex items-center gap-x-2 mb-3 text-sm font-semibold text-slate-300 uppercase tracking-wide"><span class="w-2 h-2 rounded-full bg-yellow-400"></span>${league}<span class="text-slate-500 normal-case font-normal">· ${lrows.length} match${lrows.length>1?'es':''}</span></div>`;
+      // count settled results for this league header
+      let lw=0,ll=0;
+      lrows.forEach(r=>{ if(!r.banker)return; const rs=settle(r.primary,r.match.homeGoals,r.match.awayGoals); if(rs==='Won')lw++; else if(rs==='Lost')ll++; });
+      const lTag = (lw+ll)>0 ? `<span class="text-xs font-semibold ml-1"><span class="text-emerald-400">${lw}W</span> <span class="text-rose-400">${ll}L</span></span>` : '';
+
+      html += `<details open class="league-block mb-6 glass rounded-3xl p-4 sm:p-5" data-league="${league.toLowerCase()}">`;
+      html += `<summary class="flex items-center gap-x-2 mb-3 text-sm font-semibold text-slate-300 uppercase tracking-wide cursor-pointer"><span class="w-2 h-2 rounded-full bg-yellow-400"></span>${league}<span class="text-slate-500 normal-case font-normal">· ${lrows.length} match${lrows.length>1?'es':''}</span>${lTag}<i class="fa-solid fa-chevron-right chev text-slate-600 ml-auto"></i></summary>`;
 
       // per-league Top Bankers box
       if(top.length){
@@ -314,8 +358,11 @@
         const scoreA = played ? `<span class="metric-value font-bold text-lg ml-auto px-2.5 py-0.5 bg-white/10 rounded-lg">${ag}</span>` : '';
         const isBanker = leagueBankerKeys.has(keyOf(r));
         const bankerTag = isBanker ? `<span class="banker-tag px-2 py-0.5 rounded-md text-[10px] uppercase tracking-wide">Banker</span>` : '';
+        const marketTag = r.primary.includes('DNB')?'DNB':r.primary.includes('Win')?'Win':r.primary.includes('Over')?'Over 2.5':r.primary.includes('BTTS')?'BTTS':r.primary;
         html += `
-          <details class="match-card glass rounded-3xl overflow-hidden ${isBanker?'is-banker':''}">
+          <details class="match-card match-item glass rounded-3xl overflow-hidden ${isBanker?'is-banker':''}"
+                   data-search="${(r.match.home+' '+r.match.away+' '+r.match.league).toLowerCase().replace(/"/g,'')}"
+                   data-market="${marketTag}" data-banker="${isBanker?'1':'0'}" data-league="${league.toLowerCase()}">
             <summary class="p-4 sm:p-5 flex items-center gap-x-4">
               <div class="flex-1 min-w-0 space-y-1.5">
                 <div class="flex items-center gap-x-3"><span class="text-xs text-slate-400 w-7 text-center bg-white/10 rounded-md py-0.5">${r.match.homePos??'—'}</span><span class="font-medium truncate">${r.match.home}</span>${scoreH}</div>
@@ -344,16 +391,104 @@
                       ? `<div><div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Format</div><div class="font-semibold">${r.match.isKnockout?'Knockout — form-based':'Cross-group — form-based'}</div></div>`
                       : '') }
                 <div><div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Result</div><div class="font-semibold">${played?`${hg}–${ag} · ${res||'—'}`:'Not played yet'}</div></div>
+                ${ r.value
+                   ? `<div><div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Odds value</div><div class="font-semibold ${r.value.verdict.includes('value')?'text-emerald-400':r.value.verdict.includes('Fairly')?'text-amber-400':'text-slate-400'}">${r.value.verdict} <span class="text-slate-500 font-normal">· @${r.value.oddsUsed} (${r.value.sidePct}% implied)</span></div></div>`
+                   : '' }
                 <div class="basis-full text-sm text-slate-400 border-t border-white/10 pt-3">${r.summary}</div>
               </div>
             </div>
           </details>`;
       });
-      html += `</div></div>`;
+      html += `</div></details>`;
     });
     html += `</div>`;
     root.insertAdjacentHTML('beforeend', html);
   });
+
+  /* ---------------- PERFORMANCE TRACKER ---------------- */
+  (function(){
+    const settled = results.filter(r=>r.banker && settle(r.primary,r.match.homeGoals,r.match.awayGoals));
+    const w = settled.filter(r=>settle(r.primary,r.match.homeGoals,r.match.awayGoals)==='Won').length;
+    const l = settled.filter(r=>settle(r.primary,r.match.homeGoals,r.match.awayGoals)==='Lost').length;
+    const v = settled.filter(r=>settle(r.primary,r.match.homeGoals,r.match.awayGoals)==='Void').length;
+    const decided = w+l;
+    const rate = decided>0 ? Math.round(w/decided*100) : null;
+    const lowSample = decided>0 && decided<10;
+    const headline = decided>0
+      ? `${w}W–${l}L · ${rate}% win rate${lowSample?` · small sample (${decided}), not yet meaningful`:''}`
+      : 'No settled bankers yet';
+    document.getElementById('track-headline').textContent = headline;
+
+    const stat = (label,val,cls='') => `<div class="bg-slate-950/60 border border-slate-800 rounded-2xl p-4"><div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">${label}</div><div class="text-2xl font-semibold ${cls}">${val}</div></div>`;
+    document.getElementById('track-overall').innerHTML =
+      stat('Win rate', rate!=null?rate+'%':'—', 'text-yellow-400') +
+      stat('Won', w, 'text-emerald-400') + stat('Lost', l, 'text-rose-400') +
+      stat('Void', v, 'text-slate-300');
+
+    // group helper
+    const groupRate = (keyFn) => {
+      const g={};
+      settled.forEach(r=>{ const k=keyFn(r); const rs=settle(r.primary,r.match.homeGoals,r.match.awayGoals);
+        g[k]=g[k]||{w:0,l:0,v:0}; if(rs==='Won')g[k].w++; else if(rs==='Lost')g[k].l++; else g[k].v++; });
+      return Object.entries(g).map(([k,o])=>{ const d=o.w+o.l; return {k,...o,rate:d>0?Math.round(o.w/d*100):null,decided:d}; })
+        .sort((a,b)=>(b.decided-a.decided)||((b.rate??-1)-(a.rate??-1)));
+    };
+    const bar = row => {
+      const pct = row.rate!=null?row.rate:0;
+      return `<div class="flex items-center gap-x-3 text-sm">
+        <span class="w-28 truncate text-slate-300">${row.k}</span>
+        <div class="flex-1 bar-track h-2"><div class="bar-fill" style="width:${pct}%;background:${pct>=60?'#34d399':pct>=45?'#fbbf24':'#fb7185'}"></div></div>
+        <span class="w-24 text-right text-slate-400 tabular-nums">${row.rate!=null?row.rate+'%':'—'} <span class="text-slate-600">(${row.w}-${row.l})</span></span>
+      </div>`;
+    };
+    const mkt = groupRate(r=>r.primary.includes('DNB')?'DNB':r.primary.includes('Win')?'Win':r.primary.includes('Over')?'Over 2.5':r.primary.includes('BTTS')?'BTTS':r.primary);
+    const lg = groupRate(r=>r.match.league);
+    document.getElementById('track-market').innerHTML = mkt.length?mkt.map(bar).join(''):'<div class="text-sm text-slate-500">No settled bankers yet.</div>';
+    document.getElementById('track-league').innerHTML = lg.length?lg.map(bar).join(''):'<div class="text-sm text-slate-500">No settled bankers yet.</div>';
+  })();
+
+  /* ---------------- LAST UPDATED ---------------- */
+  (function(){
+    const ts = window.DATA_UPDATED || null;
+    if(ts){
+      const d=new Date(ts);
+      if(!isNaN(d)) document.getElementById('last-updated').textContent = 'Updated ' + d.toLocaleString(undefined,{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+    }
+  })();
+
+  /* ---------------- FILTERS ---------------- */
+  (function(){
+    // populate league dropdown
+    const leagues = [...new Set(results.map(r=>r.match.league))].sort();
+    const sel = document.getElementById('filter-league');
+    sel.innerHTML = '<option value="">All leagues</option>' + leagues.map(l=>`<option value="${l.toLowerCase()}">${l}</option>`).join('');
+
+    const search=document.getElementById('filter-search'), fLeague=document.getElementById('filter-league'),
+          fMarket=document.getElementById('filter-market'), fBanker=document.getElementById('filter-bankers'),
+          noRes=document.getElementById('no-results');
+
+    function apply(){
+      const q=search.value.trim().toLowerCase(), lg=fLeague.value, mk=fMarket.value, bk=fBanker.checked;
+      let anyVisible=false;
+      document.querySelectorAll('.match-item').forEach(el=>{
+        const okQ = !q || el.dataset.search.includes(q);
+        const okL = !lg || el.dataset.league===lg;
+        const okM = !mk || el.dataset.market===mk;
+        const okB = !bk || el.dataset.banker==='1';
+        const show = okQ&&okL&&okM&&okB;
+        el.style.display = show?'':'none';
+        if(show) anyVisible=true;
+      });
+      // hide league blocks / date blocks that have no visible matches
+      document.querySelectorAll('.league-block').forEach(b=>{
+        const vis=[...b.querySelectorAll('.match-item')].some(e=>e.style.display!=='none');
+        b.style.display = vis?'':'none';
+      });
+      noRes.classList.toggle('hidden', anyVisible || !results.length);
+    }
+    [search,fLeague,fMarket].forEach(e=>e.addEventListener('input',apply));
+    fBanker.addEventListener('change',apply);
+  })();
 </script>
 </body>
 </html>
