@@ -1,5 +1,5 @@
 /* ============================================================
-   GOLDEN BANKER — DATA FETCHER  (API-Football / api-sports.io)
+   PREDICTO — DATA FETCHER  (API-Football / api-sports.io)
    Runs on YOUR PC. Pulls today's fixtures + standings, keeps
    history, and writes data.js for your website.
 
@@ -24,7 +24,12 @@ function readConfig() {
     const val = line.slice(eq + 1).trim();
     if (key === "API_KEY") cfg.API_KEY = val.replace(/['"*]/g, "").replace(/[^A-Za-z0-9\-]/g, "");
     else if (key === "SEASON") cfg.SEASON = val.replace(/[^0-9]/g, "");
-    else if (key === "LEAGUES") cfg.LEAGUES = val.split(",").map(s => s.trim()).filter(Boolean).map(s => parseInt(s,10)).filter(n=>!isNaN(n));
+    else if (key === "MAX_LEAGUES") cfg.MAX_LEAGUES = parseInt(val.replace(/[^0-9]/g,""),10) || 0;
+    else if (key === "ODDS") cfg.ODDS = !/^(false|no|off|0)$/i.test(val.trim());
+    else if (key === "LEAGUES") {
+      if (/^all$/i.test(val.trim())) { cfg.LEAGUES_ALL = true; cfg.LEAGUES = []; }
+      else cfg.LEAGUES = val.split(",").map(s => s.trim()).filter(Boolean).map(s => parseInt(s,10)).filter(n=>!isNaN(n));
+    }
   }
   return cfg;
 }
@@ -62,46 +67,92 @@ function cleanForm(f){ if(!f) return "—"; const s=String(f).replace(/[^WDL]/gi
 const FINISHED = new Set(["FT","AET","PEN"]);
 
 (async () => {
-  console.log("\n=== Golden Banker data fetcher (API-Football) ===\n");
+  console.log("\n=== Predicto data fetcher (API-Football) ===\n");
   let cfg;
   try { cfg = readConfig(); }
   catch (e) { console.log("ERROR: could not read config.txt — is it next to this file?"); process.exit(1); }
 
   const placeholder = "PASTE_YOUR_KEY_HERE".replace(/[^A-Za-z0-9]/g,"");
   if (!cfg.API_KEY || cfg.API_KEY === placeholder) { console.log("ERROR: set your key first — double-click set-key.bat."); process.exit(1); }
-  if (!cfg.LEAGUES.length) { console.log("ERROR: add league IDs in config.txt (e.g. LEAGUES=1,39,140)."); process.exit(1); }
+  if (!cfg.LEAGUES.length && !cfg.LEAGUES_ALL) { console.log("ERROR: add league IDs in config.txt (e.g. LEAGUES=1,39,140) or set LEAGUES=ALL."); process.exit(1); }
 
   const season = cfg.SEASON || String(new Date().getFullYear());
   const date = todayStr();
   const k = cfg.API_KEY;
   console.log(`Token read: ${k.length<=8?k:k.slice(0,4)+"…"+k.slice(-4)}  (length ${k.length})`);
-  console.log(`Date: ${date}   Season: ${season}   Leagues: ${cfg.LEAGUES.join(", ")}\n`);
+  console.log(`Date: ${date}   Season: ${season}   Leagues: ${cfg.LEAGUES.length>50?cfg.LEAGUES.length+" ids":cfg.LEAGUES.join(", ")}\n`);
 
   const out = [];
   let requests = 0, firstError = null;
 
-  for (const leagueId of cfg.LEAGUES) {
-    // Try the configured season first; if no fixtures, try the adjacent
-    // season year. This covers BOTH the World Cup (2026) and domestic
-    // leagues (2025/26 -> season 2025) from one config, automatically.
-    const seasonsToTry = [season, String(parseInt(season,10)-1)];
-    let fixtures = [], usedSeason = season, fxOk = false;
-    for (const s of seasonsToTry) {
+  // ---- ALL mode: one call returns every league's fixtures for today ----
+  // Trigger by putting  LEAGUES=ALL  in config.txt (or the LEAGUES secret).
+  const ALL_MODE = cfg.LEAGUES_ALL === true;
+  // optional cap so a very busy day doesn't run for hours (each league with
+  // games costs 1 standings call ~6.5s apart). 0 = no cap.
+  const MAX_LEAGUES = cfg.MAX_LEAGUES || 0;
+
+  // Build the list of {leagueId, season, fixtures[]} groups to process.
+  const leagueGroups = []; // [{ id, season, fixtures }]
+
+  if (ALL_MODE) {
+    // try current season then previous, fetching ALL fixtures for the date
+    for (const s of [season, String(parseInt(season,10)-1)]) {
       try {
-        const fxRes = await apiGet(`/fixtures?league=${leagueId}&season=${s}&date=${date}`, cfg.API_KEY);
-        requests++; fxOk = true;
-        const arr = fxRes.response || [];
-        if (arr.length) { fixtures = arr; usedSeason = s; break; }
+        const r = await apiGet(`/fixtures?date=${date}&season=${s}`, cfg.API_KEY);
+        requests++;
+        const arr = r.response || [];
+        if (arr.length) {
+          // group by league id
+          const byId = {};
+          for (const fx of arr) {
+            const lid = fx.league && fx.league.id;
+            if (!lid) continue;
+            (byId[lid] = byId[lid] || []).push(fx);
+          }
+          for (const [lid, fxs] of Object.entries(byId)) {
+            leagueGroups.push({ id: parseInt(lid,10), season: s, fixtures: fxs });
+          }
+        }
       } catch (e) {
-        if (e.message === "RATE_LIMIT") { console.log("RATE LIMIT — wait a minute and run again."); fixtures=[]; break; }
-        if (!firstError) firstError = e.message;
-        // season-access errors are expected for the wrong year on free plans
+        if (e.message === "RATE_LIMIT") { console.log("RATE LIMIT — wait a minute and run again."); }
+        else if (!firstError) firstError = e.message;
       }
       await sleep(6500);
+      if (leagueGroups.length) break; // got fixtures for this season, stop
     }
-    if (!fxOk && !fixtures.length) { console.log(`League ${leagueId}: skipped`); await sleep(6500); continue; }
-    if (!fixtures.length) { console.log(`League ${leagueId}: no fixtures today`); await sleep(6500); continue; }
-    const season_for_standings = usedSeason;
+    console.log(`ALL mode: ${leagueGroups.length} leagues have fixtures today.`);
+    if (MAX_LEAGUES && leagueGroups.length > MAX_LEAGUES) {
+      console.log(`Capping to ${MAX_LEAGUES} leagues (set MAX_LEAGUES in config to change).`);
+      leagueGroups.length = MAX_LEAGUES;
+    }
+  } else {
+    // ---- LIST mode: the existing per-league behaviour ----
+    for (const leagueId of cfg.LEAGUES) {
+      const seasonsToTry = [season, String(parseInt(season,10)-1)];
+      let fixtures = [], usedSeason = season, fxOk = false;
+      for (const s of seasonsToTry) {
+        try {
+          const fxRes = await apiGet(`/fixtures?league=${leagueId}&season=${s}&date=${date}`, cfg.API_KEY);
+          requests++; fxOk = true;
+          const arr = fxRes.response || [];
+          if (arr.length) { fixtures = arr; usedSeason = s; break; }
+        } catch (e) {
+          if (e.message === "RATE_LIMIT") { console.log("RATE LIMIT — wait a minute and run again."); fixtures=[]; break; }
+          if (!firstError) firstError = e.message;
+        }
+        await sleep(6500);
+      }
+      if (fixtures.length) leagueGroups.push({ id: leagueId, season: usedSeason, fixtures });
+      else console.log(`League ${leagueId}: no fixtures today`);
+    }
+  }
+
+  // ---- process each league group: pull standings, build matches ----
+  for (const grp of leagueGroups) {
+    const leagueId = grp.id;
+    const season_for_standings = grp.season;
+    const fixtures = grp.fixtures;
 
     let table = {}, tableSize = 20, leagueName = `League ${leagueId}`;
     let multiGroup = false;
@@ -150,6 +201,32 @@ const FINISHED = new Set(["FT","AET","PEN"]);
     } catch (e) { console.log(`League ${leagueId}: no standings (${e.message}) — neutral stats`); }
     if (fixtures[0].league && fixtures[0].league.name) leagueName = fixtures[0].league.name;
 
+    // ---- ODDS (optional): one call per league for today's date ----
+    // builds oddsByFixture[fixtureId] = { home, draw, away } decimal odds
+    // (1X2 / Match Winner market). Coverage varies; missing = no odds shown.
+    const oddsByFixture = {};
+    if (cfg.ODDS !== false) {
+      try {
+        const odRes = await apiGet(`/odds?league=${leagueId}&season=${season_for_standings}&date=${date}`, cfg.API_KEY); requests++;
+        for (const entry of (odRes.response || [])) {
+          const fid = entry.fixture && entry.fixture.id;
+          if (!fid) continue;
+          // find a Match Winner / 1X2 market from the first bookmaker that has it
+          let vals = null;
+          for (const bk of (entry.bookmakers || [])) {
+            const bet = (bk.bets || []).find(b => /match winner|1x2|full time result/i.test(b.name || ""));
+            if (bet && bet.values) {
+              const get = lbl => { const v = bet.values.find(x => new RegExp(lbl,"i").test(x.value)); return v ? parseFloat(v.odd) : null; };
+              const h = get("^home|^1$"), d = get("^draw|^x$"), a = get("^away|^2$");
+              if (h && a) { vals = { home: h, draw: d, away: a }; break; }
+            }
+          }
+          if (vals) oddsByFixture[fid] = vals;
+        }
+        await sleep(6500);
+      } catch (e) { /* odds optional — ignore failures */ }
+    }
+
     for (const fx of fixtures) {
       const st = fx.fixture.status.short;
       const H = table[fx.teams.home.id] || {}, A = table[fx.teams.away.id] || {};
@@ -181,6 +258,8 @@ const FINISHED = new Set(["FT","AET","PEN"]);
         sameGroup, isKnockout,
         isTournament: multiGroup || isKnockout,
         round: roundName || null,
+        // bookmaker odds (1X2 decimal) if available
+        odds: oddsByFixture[fx.fixture.id] || null,
       });
       console.log(`  + ${fx.teams.home.name} vs ${fx.teams.away.name}${played?` (${fx.goals.home}-${fx.goals.away} FT)`:""}  [${leagueName}]${isKnockout?" (KO)":""}`);
     }
@@ -211,6 +290,7 @@ const FINISHED = new Set(["FT","AET","PEN"]);
 
   fs.writeFileSync(path.join(HERE, "data.js"),
     "/* AUTO-GENERATED by fetch-data.js on " + new Date().toLocaleString() + " — do not edit by hand. */\n\n" +
+    "window.DATA_UPDATED = \"" + new Date().toISOString() + "\";\n" +
     "window.MATCHES = " + JSON.stringify(merged, null, 2) + ";\n", "utf8");
 
   const finishedToday = out.filter(x=>x.homeGoals!=null).length;
