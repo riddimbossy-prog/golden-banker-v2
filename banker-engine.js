@@ -113,32 +113,85 @@ function scoreBTTS(m) {
   return { score, verdict: verdictFor(score, 7.5, 6), reasons };
 }
 
-/* ---------------- WIN / DNB SCORING (Rules 1,2,3,5,6,10,11,12) -------- */
+/* ---------------- WIN / DNB SCORING (Rules 1,2,3,5,6,10,11,12) --------
+   Now venue-aware for leagues, and group/knockout-aware for tournaments.
+   ---------------------------------------------------------------------- */
+// How much venue (home/away table) outweighs overall table for leagues.
+// 0.6 = 60% venue, 40% overall. Raise toward 1 to lean more on venue.
+const VENUE_WEIGHT = 0.6;
+
 function scoreWinDNB(m) {
   const reasons = [];
   const size = m.tableSize ?? 20;
 
-  // table gap, normalised
-  const posGap = ((m.awayPos ?? size/2) - (m.homePos ?? size/2)) / size; // +ve favours home
-  const ptsGap = ((m.homePts ?? 0) - (m.awayPts ?? 0));
-  const gdGap = ((m.homeGD ?? 0) - (m.awayGD ?? 0));
+  // ---- Is this a tournament match where the overall table can't be trusted? ----
+  // Cross-group or knockout: positions aren't comparable -> ignore table, use
+  // form + venue goals, and stay cautious (lean DNB / Skip).
+  const tournamentUncomparable = !!(m.isTournament && (m.isKnockout || (m.sameGroup === false)));
 
-  // form edge
+  // ---- overall table gap (normalised) ----
+  const posGapOverall = ((m.awayPos ?? size/2) - (m.homePos ?? size/2)) / size; // +ve favours home
+  const ptsGapOverall = ((m.homePts ?? 0) - (m.awayPts ?? 0)) / 30;
+  const gdGap = ((m.homeGD ?? 0) - (m.awayGD ?? 0)) / 30;
+
+  // ---- venue table gap: home team's HOME rank vs away team's AWAY rank ----
+  const vSize = m.venueTableSize ?? size;
+  let posGapVenue = posGapOverall, ptsGapVenue = ptsGapOverall, haveVenue = false;
+  if (m.homeVenueRank != null && m.awayVenueRank != null) {
+    posGapVenue = ((m.awayVenueRank) - (m.homeVenueRank)) / vSize; // +ve favours home
+    haveVenue = true;
+  }
+  if (m.homeVenuePts != null && m.awayVenuePts != null) {
+    ptsGapVenue = ((m.homeVenuePts) - (m.awayVenuePts)) / 20; // venue seasons are shorter
+    haveVenue = true;
+  }
+
+  // ---- blend overall + venue (venue weighted heavier), unless tournament ----
+  let posGap, ptsGap, usedVenue = false;
+  if (tournamentUncomparable) {
+    posGap = 0; ptsGap = 0; // table position carries no signal here
+  } else if (haveVenue) {
+    posGap = posGapOverall*(1-VENUE_WEIGHT) + posGapVenue*VENUE_WEIGHT;
+    ptsGap = ptsGapOverall*(1-VENUE_WEIGHT) + ptsGapVenue*VENUE_WEIGHT;
+    usedVenue = true;
+  } else {
+    posGap = posGapOverall; ptsGap = ptsGapOverall;
+  }
+
+  // form edge (always available, the main signal for tournaments)
   const formEdge = formPoints(m.homeForm) - formPoints(m.awayForm); // -1..1
 
-  // Decide favourite: positive aggregate => home favourite
-  const aggregate = posGap * 4 + (ptsGap / 30) * 2 + (gdGap / 30) * 1.5 + formEdge * 2;
+  // goal-strength edge from venue scoring (helps when table is absent)
+  const goalEdge = ((m.homeScoredAtHome ?? 1.3) - (m.awayConcededAway ?? 1.4))
+                 - ((m.awayScoredAway ?? 1.0) - (m.homeConcededAtHome ?? 1.1));
+
+  // Decide favourite + strength. For tournaments, weight form & goals more.
+  let aggregate;
+  if (tournamentUncomparable) {
+    aggregate = formEdge * 3 + goalEdge * 1.2;
+  } else {
+    aggregate = posGap * 4 + ptsGap * 2 + gdGap * 1.5 + formEdge * 2;
+  }
   const homeIsFav = aggregate >= 0;
   const favSide = homeIsFav ? "Home" : "Away";
   const favTeam = homeIsFav ? m.home : m.away;
 
   let score = clamp(5 + Math.abs(aggregate) * 1.3, 0, 10);
 
-  // Rule 11: table gap
-  const absPosGap = Math.abs((m.homePos ?? 0) - (m.awayPos ?? 0));
-  if (absPosGap >= size * 0.5) reasons.push(`Large table gap (${absPosGap} places)`);
+  // ---- gap reporting (use venue gap for leagues, note tournament separately) ----
+  const absPosGap = tournamentUncomparable
+    ? 0
+    : Math.abs((m.homePos ?? 0) - (m.awayPos ?? 0));
+  if (tournamentUncomparable) {
+    reasons.push(m.isKnockout ? "Knockout tie — table gap not used" : "Different groups — table gap not used");
+  } else if (absPosGap >= size * 0.5) reasons.push(`Large table gap (${absPosGap} places)`);
   else if (absPosGap >= size * 0.3) reasons.push(`Moderate table gap (${absPosGap} places)`);
   else reasons.push(`Small table gap (${absPosGap} places)`);
+
+  // venue insight note (leagues only, when we have venue data)
+  if (usedVenue && m.homeVenueRank != null && m.awayVenueRank != null) {
+    reasons.push(`Venue form: ${m.home} ${ordinal(m.homeVenueRank)} at home, ${m.away} ${ordinal(m.awayVenueRank)} away`);
+  }
 
   // Rule 12: defensive weakness of underdog
   const underdogConceded = homeIsFav ? (m.awayConcededAway ?? 0) : (m.homeConcededAtHome ?? 0);
@@ -153,8 +206,10 @@ function scoreWinDNB(m) {
   const favDrawRate = homeIsFav ? (m.homeDrawRate ?? 0.25) : (m.awayDrawRate ?? 0.25);
   if (favDrawRate >= 0.30) { drawRisk += 1; reasons.push("Favourite is draw-heavy"); }
   if (!homeIsFav) { drawRisk += 1; reasons.push("Favourite is away — draw risk higher"); }
-  if (absPosGap < size * 0.3) drawRisk += 1;
+  if (!tournamentUncomparable && absPosGap < size * 0.3) drawRisk += 1;
   if (score < 7) drawRisk += 1;
+  // tournaments are inherently less predictable -> extra caution
+  if (tournamentUncomparable) { drawRisk += 1; reasons.push("Cup/knockout — extra caution applied"); }
 
   // Motivation (Rule 10) — only nudges, never creates a banker alone
   const favMotivation = homeIsFav ? m.homeMotivation : m.awayMotivation;
@@ -163,7 +218,14 @@ function scoreWinDNB(m) {
   score = clamp(Math.round(score * 10) / 10, 0, 10);
 
   // choose market: straight win only for clear mismatch (Rule 3,5,6)
-  const clearMismatch = score >= 7.5 && absPosGap >= size * 0.4 && drawRisk <= 1;
+  // For tournaments we require an even stronger signal AND never call it a
+  // "clear mismatch" off table (there's no trustworthy table), so it leans DNB.
+  let clearMismatch;
+  if (tournamentUncomparable) {
+    clearMismatch = score >= 8.5 && Math.abs(formEdge) >= 0.4 && drawRisk <= 2;
+  } else {
+    clearMismatch = score >= 7.5 && absPosGap >= size * 0.4 && drawRisk <= 1;
+  }
   const strongHomeMismatch = homeIsFav && clearMismatch && (m.homeScoredAtHome ?? 0) >= 1.4;
 
   let market;
@@ -174,8 +236,14 @@ function scoreWinDNB(m) {
 
   return {
     score, verdict: verdictFor(score, 7.5, 6), reasons,
-    favSide, favTeam, homeIsFav, drawRisk, market, absPosGap, clearMismatch
+    favSide, favTeam, homeIsFav, drawRisk, market, absPosGap, clearMismatch,
+    usedVenue, tournamentUncomparable
   };
+}
+
+function ordinal(n){
+  const s=["th","st","nd","rd"], v=n%100;
+  return n + (s[(v-20)%10] || s[v] || s[0]);
 }
 
 function verdictFor(score, strongAt, modAt) {
