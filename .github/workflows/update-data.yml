@@ -1,0 +1,45 @@
+name: Update Golden Banker data
+
+on:
+  schedule:
+    - cron: "0 7 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Write config.txt from secrets
+        run: |
+          cat > config.txt <<EOF
+          API_KEY=${{ secrets.API_KEY }}
+          SEASON=${{ secrets.SEASON }}
+          LEAGUES=${{ secrets.LEAGUES }}
+          EOF
+
+      - name: Run the fetcher
+        run: node fetch-data.js
+
+      - name: Commit updated data.js (if it changed)
+        run: |
+          git config user.name "golden-banker-bot"
+          git config user.email "bot@users.noreply.github.com"
+          if ! git diff --quiet data.js; then
+            git add data.js
+            git commit -m "Auto-update match data"
+            git push
+            echo "data.js updated and pushed."
+          else
+            echo "No data changes today."
+          fi
