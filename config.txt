@@ -1,5 +1,5 @@
 # ============================================================
-# GOLDEN BANKER — CONFIG  (API-Football / api-sports.io)
+# PREDICTO — CONFIG  (API-Football / api-sports.io)
 # Easiest way to set your key: double-click set-key.bat
 # ============================================================
 
@@ -50,3 +50,11 @@ SEASON=2026
 # Tip: each league = 2 requests per run. Pro allows 7,500/day, so
 # you have plenty of room. Trim this list to what you actually follow.
 LEAGUES=1,2,3,39,140,135,78,61,88,94,144,203,71,128,253,307,233,288,200,202,186,12,20
+
+# ODDS: set to false to skip fetching bookmaker odds (saves API calls).
+# Default is on. Odds power the "value check" in each match panel.
+ODDS=true
+
+# H2H: set false to skip head-to-head history (saves 1 API call per
+# match). On busy ALL-leagues days, consider turning this off.
+H2H=true
