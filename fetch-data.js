@@ -54,6 +54,10 @@ function apiGet(endpoint, key) {
 function todayStr(){ const d=new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`; }
 const sleep = ms => new Promise(r=>setTimeout(r,ms));
 function round1(n){ return Math.round(n*10)/10; }
+// derive points from a home/away sub-record if the API didn't supply .points
+// (3 per win, 1 per draw)
+function homePtsFromRow(rec){ if(!rec) return 0; const w=rec.win||0, d=rec.draw||0; return w*3 + d; }
+function gdOf(rec){ if(!rec||!rec.goals) return 0; return (rec.goals.for||0)-(rec.goals.against||0); }
 function cleanForm(f){ if(!f) return "—"; const s=String(f).replace(/[^WDL]/gi,"").toUpperCase(); return s?s.slice(-5):"—"; }
 const FINISHED = new Set(["FT","AET","PEN"]);
 
@@ -100,15 +104,48 @@ const FINISHED = new Set(["FT","AET","PEN"]);
     const season_for_standings = usedSeason;
 
     let table = {}, tableSize = 20, leagueName = `League ${leagueId}`;
+    let multiGroup = false;
     try {
       const stRes = await apiGet(`/standings?league=${leagueId}&season=${season_for_standings}`, cfg.API_KEY); requests++;
       const block = stRes.response && stRes.response[0];
       if (block) {
         leagueName = block.league.name;
         const groups = block.league.standings || [];
+        multiGroup = groups.length > 1;
         let count = 0;
-        for (const g of groups) for (const row of g) { table[row.team.id] = row; count++; }
+        // collect every row, remembering which group it came from
+        const allRows = [];
+        for (const g of groups) {
+          for (const row of g) {
+            const grpName = row.group || (block.league.name + (multiGroup ? " (grp)" : ""));
+            table[row.team.id] = { ...row, _group: grpName };
+            allRows.push(table[row.team.id]);
+            count++;
+          }
+        }
         tableSize = groups.length === 1 ? groups[0].length : count;
+
+        // ---- compute HOME-table rank and AWAY-table rank within each group ----
+        // (a team's strength at home vs at away, ranked among group peers)
+        const byGroup = {};
+        for (const r of allRows) (byGroup[r._group] = byGroup[r._group] || []).push(r);
+        for (const grp of Object.values(byGroup)) {
+          // home points first, then home GD as tiebreak
+          const homeSorted = [...grp].sort((a,b)=>{
+            const ap=(a.home&&a.home.points!=null)?a.home.points:homePtsFromRow(a.home), bp=(b.home&&b.home.points!=null)?b.home.points:homePtsFromRow(b.home);
+            if (bp!==ap) return bp-ap;
+            return gdOf(b.home)-gdOf(a.home);
+          });
+          homeSorted.forEach((r,i)=>{ r._homeRank = i+1; r._homePts = (r.home&&r.home.points!=null)?r.home.points:homePtsFromRow(r.home); });
+          const awaySorted = [...grp].sort((a,b)=>{
+            const ap=(a.away&&a.away.points!=null)?a.away.points:homePtsFromRow(a.away), bp=(b.away&&b.away.points!=null)?b.away.points:homePtsFromRow(b.away);
+            if (bp!==ap) return bp-ap;
+            return gdOf(b.away)-gdOf(a.away);
+          });
+          awaySorted.forEach((r,i)=>{ r._awayRank = i+1; r._awayPts = (r.away&&r.away.points!=null)?r.away.points:homePtsFromRow(r.away); });
+          // size of this group's venue table (for normalising the gap)
+          grp.forEach(r=>{ r._groupSize = grp.length; });
+        }
       }
     } catch (e) { console.log(`League ${leagueId}: no standings (${e.message}) — neutral stats`); }
     if (fixtures[0].league && fixtures[0].league.name) leagueName = fixtures[0].league.name;
@@ -118,6 +155,11 @@ const FINISHED = new Set(["FT","AET","PEN"]);
       const H = table[fx.teams.home.id] || {}, A = table[fx.teams.away.id] || {};
       const hHome = H.home || {}, aAway = A.away || {};
       const played = FINISHED.has(st);
+      // tournament awareness: same group? is it a knockout round?
+      const homeGroup = H._group || null, awayGroup = A._group || null;
+      const sameGroup = !!(homeGroup && awayGroup && homeGroup === awayGroup);
+      const roundName = (fx.league && fx.league.round) ? String(fx.league.round) : "";
+      const isKnockout = /final|semi|quarter|round of|knockout|1\/|play-?off/i.test(roundName);
       out.push({
         home: fx.teams.home.name, away: fx.teams.away.name, league: leagueName,
         status: st, kickoff: fx.fixture.date || null, matchDate: date,
@@ -131,8 +173,16 @@ const FINISHED = new Set(["FT","AET","PEN"]);
         homeConcededAtHome: round1(hHome.played ? hHome.goals.against/hHome.played : 1.1),
         awayScoredAway: round1(aAway.played ? aAway.goals.for/aAway.played : 1.0),
         awayConcededAway: round1(aAway.played ? aAway.goals.against/aAway.played : 1.4),
+        // venue-specific table strength (home team at home, away team away)
+        homeVenueRank: H._homeRank ?? null, awayVenueRank: A._awayRank ?? null,
+        homeVenuePts: H._homePts ?? null, awayVenuePts: A._awayPts ?? null,
+        venueTableSize: H._groupSize ?? A._groupSize ?? tableSize,
+        // tournament context
+        sameGroup, isKnockout,
+        isTournament: multiGroup || isKnockout,
+        round: roundName || null,
       });
-      console.log(`  + ${fx.teams.home.name} vs ${fx.teams.away.name}${played?` (${fx.goals.home}-${fx.goals.away} FT)`:""}  [${leagueName}]`);
+      console.log(`  + ${fx.teams.home.name} vs ${fx.teams.away.name}${played?` (${fx.goals.home}-${fx.goals.away} FT)`:""}  [${leagueName}]${isKnockout?" (KO)":""}`);
     }
     await sleep(6500);
   }
