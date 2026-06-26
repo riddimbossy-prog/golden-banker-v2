@@ -4,559 +4,517 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Predicto • Football Betting Safety System</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237ed957'/%3E%3Cstop offset='1' stop-color='%234faa43'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='40' cy='40' r='36' fill='url(%23g)'/%3E%3Cpolygon points='40,22 54,32 49,49 31,49 26,32' fill='%230f172a'/%3E%3Cg stroke='%230f172a' stroke-width='4' fill='none' stroke-linecap='round'%3E%3Cline x1='40' y1='22' x2='40' y2='10'/%3E%3Cline x1='26' y1='32' x2='13' y2='28'/%3E%3Cline x1='54' y1='32' x2='67' y2='28'/%3E%3Cline x1='31' y1='49' x2='26' y2='63'/%3E%3Cline x1='49' y1='49' x2='54' y2='63'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 90'%3E%3Crect width='90' height='90' rx='20' fill='%23141b2d'/%3E%3Cg transform='translate(20,12)'%3E%3Cpath d='M10 8 L10 70' stroke='%23ffffff' stroke-width='10' stroke-linecap='round' fill='none'/%3E%3Cpath d='M10 13 L30 13 A21 21 0 0 1 30 55 L16 55' stroke='%23ffffff' stroke-width='10' fill='none' stroke-linecap='round'/%3E%3Cpath d='M6 64 L42 26' stroke='%233ec46d' stroke-width='10' stroke-linecap='round' fill='none'/%3E%3Cpolygon points='30,22 48,20 38,38' fill='%233ec46d'/%3E%3C/g%3E%3C/svg%3E" />
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
-  :root{ --gold:#D4AF37; }
-  body{ font-family:'Inter',system-ui,sans-serif; background:#020617; color:#f1f5f9; }
-  .font-display{ font-family:'Space Grotesk','Inter',sans-serif; font-weight:600; }
-  .section-header{ font-family:'Space Grotesk','Inter',sans-serif; letter-spacing:-.025em; }
-  .gold-gradient{ background:linear-gradient(135deg,#D4AF37 0%,#F0D77B 50%,#D4AF37 100%);
-    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+  :root{
+    --gold:#FFC53D; --gold-deep:#D4AF37;
+    --green:#7ed957; --green-deep:#4faa43;
+    --bg:#0a0e17; --panel:#111725; --panel-2:#0d1320;
+    --line:#1e2738; --ink:#e8edf5; --muted:#8b97ad;
+  }
+  *{ box-sizing:border-box; }
+  body{ font-family:'Inter',system-ui,sans-serif; background:var(--bg); color:var(--ink); margin:0; }
+  .display{ font-family:'Space Grotesk','Inter',sans-serif; }
+  .tnum{ font-variant-numeric:tabular-nums; }
 
-  /* ---- solid panels (gold theme) ---- */
-  .glass{ background:#0f172a; border:1px solid #1e293b; }
-  .glass-gold{ background:rgba(212,175,55,.07); border:1px solid rgba(212,175,55,.30); }
-  .glass-amber{ background:rgba(245,165,36,.08); border:1px solid rgba(245,190,80,.28); }
+  /* panels */
+  .panel{ background:var(--panel); border:1px solid var(--line); }
+  .panel-2{ background:var(--panel-2); border:1px solid var(--line); }
 
-  .match-card{ transition:all .2s cubic-bezier(.4,0,.2,1); }
-  .match-card:hover{ transform:translateY(-2px); box-shadow:0 20px 25px -5px rgb(0 0 0 / .35); }
-  .is-banker{ border-left:3px solid var(--gold) !important; box-shadow:0 0 18px rgba(212,175,55,.10); }
+  /* gold + green accents */
+  .text-gold{ color:var(--gold); }
+  .text-green{ color:var(--green); }
+  .bg-gold{ background:linear-gradient(135deg,var(--gold),#f0d77b); color:#0a0e17; }
+  .chip-gold{ background:rgba(255,197,61,.12); border:1px solid rgba(255,197,61,.35); color:var(--gold); }
+  .chip-green{ background:rgba(126,217,87,.12); border:1px solid rgba(126,217,87,.35); color:var(--green); }
+  .chip-dnb{ background:rgba(129,140,248,.14); border:1px solid rgba(129,140,248,.35); color:#a5b4fc; }
+  .chip-skip{ background:rgba(139,151,173,.12); border:1px solid rgba(139,151,173,.3); color:var(--muted); }
+  .chip-live{ background:rgba(244,63,94,.16); border:1px solid rgba(244,63,94,.4); color:#fb7185; }
 
-  .verdict-strong{ background-color:#166534; color:#86efac; }
-  .verdict-moderate{ background-color:#854d0e; color:#fde047; }
-  .verdict-weak{ background-color:#7f1d1d; color:#fda4af; }
-  .banker-badge{ background:linear-gradient(to right,#D4AF37,#F0D77B); color:#0F172A;
-    font-weight:700; box-shadow:0 0 15px rgba(212,175,55,.3); }
-  .banker-tag{ background:linear-gradient(to right,#D4AF37,#F0D77B); color:#0F172A; font-weight:800;
-    box-shadow:0 0 12px rgba(212,175,55,.35); }
-  .result-won{ background-color:#166534; color:#86efac; }
-  .result-lost{ background-color:#7f1d1d; color:#fda4af; }
-  .result-void{ background-color:#334155; color:#cbd5e1; }
-  .metric-value{ font-variant-numeric:tabular-nums; }
-  .bar-track{ background:#1e293b; border-radius:9999px; overflow:hidden; }
-  .bar-fill{ height:100%; border-radius:9999px; }
-  .pick-pill{ font-weight:700; letter-spacing:.2px; }
-  details>summary{ list-style:none; cursor:pointer; }
-  details>summary::-webkit-details-marker{ display:none; }
-  details[open] .chev{ transform:rotate(90deg); }
-  .chev{ transition:transform .2s; }
+  /* date strip */
+  .date-pill{ padding:.5rem .9rem; border-radius:.7rem; font-size:.82rem; font-weight:600; color:var(--muted);
+    white-space:nowrap; cursor:pointer; transition:all .15s; border:1px solid transparent; }
+  .date-pill:hover{ color:var(--ink); background:var(--panel); }
+  .date-pill.active{ background:linear-gradient(135deg,var(--gold),#f0d77b); color:#0a0e17; border-color:var(--gold); }
 
-  /* ============ LIGHT THEME ============ */
-  body.light{ background:#f4f5f8; color:#1e293b; }
-  body.light .glass{ background:#ffffff; border:1px solid #e2e8f0; box-shadow:0 1px 3px rgba(0,0,0,.06); }
-  body.light .glass-gold{ background:rgba(212,175,55,.12); border:1px solid rgba(212,175,55,.40); }
-  body.light .glass-amber{ background:rgba(245,165,36,.12); border:1px solid rgba(245,190,80,.45); }
-  /* remap dark utility classes */
-  body.light .bg-slate-900,
-  body.light .bg-slate-900\/90,
-  body.light .bg-slate-900\/40{ background:#ffffff !important; }
-  body.light .bg-slate-800{ background:#eef1f6 !important; }
-  body.light .bg-slate-950\/60{ background:#f8fafc !important; }
-  body.light .bg-white\/10{ background:#eef1f6 !important; }
-  body.light .border-slate-800,
-  body.light .border-slate-700{ border-color:#e2e8f0 !important; }
-  body.light .border-white\/10{ border-color:#e8ecf2 !important; }
-  body.light .text-slate-400,
-  body.light .text-slate-500{ color:#64748b !important; }
-  body.light .text-slate-300{ color:#475569 !important; }
-  body.light .text-slate-600{ color:#94a3b8 !important; }
-  body.light .bar-track{ background:#e2e8f0; }
-  body.light .nav-line{ border-color:#e2e8f0; }
-  /* the big white hero text -> dark ink in light mode */
-  body.light .hero-strong{ color:#1e293b; }
-  body.light .text-white{ color:#1e293b !important; }
-  /* result/verdict chips stay legible on white */
-  body.light .verdict-strong{ background-color:#dcfce7; color:#166534; }
-  body.light .verdict-moderate{ background-color:#fef9c3; color:#854d0e; }
-  body.light .verdict-weak{ background-color:#fee2e2; color:#991b1b; }
-  body.light .result-won{ background-color:#dcfce7; color:#166534; }
-  body.light .result-lost{ background-color:#fee2e2; color:#991b1b; }
-  body.light .result-void{ background-color:#e2e8f0; color:#475569; }
-  body.light .is-banker{ box-shadow:0 0 0 1px rgba(212,175,55,.25); }
-  /* football logo dark seams -> keep dark on the green ball (still fine) */
-  body.light footer{ color:#94a3b8; }
-  .theme-toggle{ cursor:pointer; }
+  /* result chips */
+  .res-won{ background:#14532d; color:#86efac; }
+  .res-lost{ background:#7f1d1d; color:#fda4af; }
+  .res-void{ background:#334155; color:#cbd5e1; }
+
+  /* league row */
+  .lg-row summary{ list-style:none; cursor:pointer; }
+  .lg-row summary::-webkit-details-marker{ display:none; }
+  .lg-row[open] .lg-chev{ transform:rotate(180deg); }
+  .lg-chev{ transition:transform .2s; }
+  .match-line:hover{ background:rgba(255,255,255,.02); }
+  .is-banker-row{ box-shadow:inset 3px 0 0 var(--gold); }
+
+  /* country sidebar */
+  .country-item{ display:flex; align-items:center; gap:.6rem; padding:.55rem .7rem; border-radius:.6rem;
+    font-size:.85rem; color:var(--muted); cursor:pointer; transition:all .12s; }
+  .country-item:hover{ background:var(--panel); color:var(--ink); }
+  .country-item.active{ background:rgba(255,197,61,.1); color:var(--gold); }
+  .flag{ width:20px; height:14px; border-radius:2px; object-fit:cover; flex-shrink:0; background:var(--line); }
+
+  /* prediction card */
+  .pred-card{ background:var(--panel); border:1px solid var(--line); border-radius:1rem; padding:1rem;
+    transition:transform .15s, border-color .15s; }
+  .pred-card:hover{ transform:translateY(-2px); border-color:rgba(255,197,61,.4); }
+
+  .odd-cell{ background:var(--panel-2); border:1px solid var(--line); border-radius:.5rem; padding:.35rem .2rem;
+    text-align:center; font-size:.8rem; font-weight:600; }
+  .odd-cell.best{ border-color:rgba(126,217,87,.5); color:var(--green); }
+
+  details>summary{ list-style:none; } details>summary::-webkit-details-marker{ display:none; }
+  .chev{ transition:transform .2s; } details[open]>summary .chev{ transform:rotate(180deg); }
+  .bar-track{ background:var(--line); border-radius:9999px; overflow:hidden; }
+
+  /* light theme */
+  body.light{ --bg:#eef1f6; --panel:#ffffff; --panel-2:#f1f4f9; --line:#dde3ec; --ink:#0f1729; --muted:#566076; }
+  body.light .bg-gold{ color:#0a0e17; }
+  /* darker gold so it reads on white (the bright #FFC53D vanishes on light bg) */
+  body.light .text-gold{ color:#b8860b; }
+  body.light .text-green{ color:#2f9e54; }
+  /* chips: stronger fills + darker text on light bg */
+  body.light .chip-gold{ background:rgba(184,134,11,.14); border-color:rgba(184,134,11,.4); color:#946c08; }
+  body.light .chip-green{ background:rgba(47,158,84,.14); border-color:rgba(47,158,84,.4); color:#1f7a3f; }
+  body.light .chip-dnb{ background:rgba(99,102,241,.14); border-color:rgba(99,102,241,.4); color:#4f46e5; }
+  body.light .chip-skip{ background:rgba(86,96,118,.12); border-color:rgba(86,96,118,.3); color:#475069; }
+  body.light .chip-live{ background:rgba(225,29,72,.12); border-color:rgba(225,29,72,.4); color:#be123c; }
+  /* result badges stay vivid */
+  body.light .res-won{ background:#bbf7d0; color:#15803d; }
+  body.light .res-lost{ background:#fecaca; color:#b91c1c; }
+  body.light .res-void{ background:#e2e8f0; color:#475569; }
+  /* gold banker number badge keeps dark text */
+  body.light .date-pill.active{ color:#0a0e17; }
+  /* the bright hero accent -> deeper gold so 'football bankers' is readable */
+  body.light .hero-gold{ color:#b8860b; }
+  /* odds cells */
+  body.light .odd-cell{ color:#0f1729; }
+  body.light .odd-cell.best{ color:#1f7a3f; }
+  /* banker left-edge stays visible */
+  body.light .is-banker-row{ box-shadow:inset 3px 0 0 #b8860b; }
+
+  ::-webkit-scrollbar{ width:10px; height:10px; }
+  ::-webkit-scrollbar-thumb{ background:var(--line); border-radius:6px; }
 </style>
 </head>
-<body class="min-h-screen">
+<body>
 
-  <!-- NAV -->
-  <nav class="bg-slate-900/90 backdrop-blur border-b border-slate-800 sticky top-0 z-50">
-    <div class="max-w-screen-xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-x-3">
-        <svg height="38" viewBox="0 0 430 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="predicto" style="display:block">
-          <defs>
-            <linearGradient id="pdGold" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#F0D77B"/><stop offset=".55" stop-color="#D4AF37"/><stop offset="1" stop-color="#B8902C"/>
-            </linearGradient>
-            <linearGradient id="pdGreen" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#7ed957"/><stop offset="1" stop-color="#4faa43"/>
-            </linearGradient>
-          </defs>
-          <text x="0" y="100" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="100" fill="url(#pdGold)" letter-spacing="-3">predict</text>
-          <g transform="translate(338,32)">
-            <path d="M-4 70 A52 52 0 0 1 100 70" fill="none" stroke="url(#pdGreen)" stroke-width="15" stroke-linecap="round"/>
-            <circle cx="48" cy="70" r="36" fill="url(#pdGreen)"/>
-            <g fill="#0f172a"><polygon points="48,50 65,62 59,82 37,82 31,62"/></g>
-            <g stroke="#0f172a" stroke-width="3.5" fill="none" stroke-linecap="round">
-              <line x1="48" y1="50" x2="48" y2="40"/>
-              <line x1="31" y1="62" x2="18" y2="58"/>
-              <line x1="65" y1="62" x2="78" y2="58"/>
-              <line x1="37" y1="82" x2="33" y2="95"/>
-              <line x1="59" y1="82" x2="63" y2="95"/>
-            </g>
-          </g>
-        </svg>
-        <div class="hidden sm:flex px-3 py-1 bg-slate-800 rounded-full text-xs font-medium items-center gap-x-1.5 border border-slate-700 ml-1">
-          <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-          <span class="text-emerald-400 font-semibold">Live • Rules Engine</span>
-        </div>
-      </div>
-      <div class="flex items-center gap-x-4">
-        <div id="nav-date" class="text-sm text-slate-400 font-medium"></div>
-        <button id="theme-toggle" class="theme-toggle w-9 h-9 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-yellow-400 transition-colors" aria-label="Toggle light/dark theme" title="Toggle theme">
-          <i id="theme-icon" class="fa-solid fa-sun"></i>
-        </button>
+<!-- ===== TOP NAV ===== -->
+<nav class="panel border-0 border-b sticky top-0 z-50" style="border-bottom:1px solid var(--line)">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-4">
+      <svg height="34" viewBox="0 0 440 120" xmlns="http://www.w3.org/2000/svg" aria-label="Predict2u" style="display:block">
+        <g>
+          <path d="M26 22 L26 98" stroke="currentColor" stroke-width="13" stroke-linecap="round" fill="none" style="color:var(--ink)"/>
+          <path d="M26 28 L50 28 A25 25 0 0 1 50 78 L30 78" stroke="currentColor" stroke-width="13" fill="none" stroke-linecap="round" style="color:var(--ink)"/>
+          <path d="M16 86 L58 44" stroke="currentColor" stroke-width="11" stroke-linecap="round" fill="none" style="color:var(--ink)"/>
+          <polygon points="46,40 64,38 56,56" fill="currentColor" style="color:var(--ink)"/>
+        </g>
+        <text x="92" y="80" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="62" letter-spacing="-1">
+          <tspan fill="currentColor" style="color:var(--ink)">Predict</tspan><tspan fill="#3ec46d">2u</tspan>
+        </text>
+      </svg>
+      <div class="hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold chip-green">
+        <span class="w-1.5 h-1.5 rounded-full bg-current animate-pulse"></span> Rules Engine
       </div>
     </div>
-  </nav>
-
-  <!-- HERO -->
-  <div class="max-w-screen-xl mx-auto px-5 sm:px-8 pt-10 sm:pt-14 pb-8">
-    <div class="inline-flex items-center gap-x-2 px-4 py-1.5 rounded-3xl bg-slate-900 border border-slate-800 mb-5">
-      <div class="w-6 h-6 bg-emerald-400 rounded-full flex items-center justify-center"><i class="fa-solid fa-check text-[10px] text-slate-950 font-bold"></i></div>
-      <span class="text-xs font-bold tracking-[1px] text-emerald-400">PROTECT THE STAKE FIRST</span>
+    <div class="flex items-center gap-3">
+      <span id="nav-updated" class="hidden sm:block text-xs" style="color:var(--muted)"></span>
+      <button id="theme-toggle" class="w-9 h-9 rounded-xl panel-2 flex items-center justify-center hover:text-gold transition-colors" title="Toggle theme">
+        <i id="theme-icon" class="fa-solid fa-sun"></i>
+      </button>
     </div>
-    <h1 class="hero-strong text-4xl sm:text-6xl font-display font-semibold tracking-tighter leading-none mb-4">
-      Today's safest<br><span class="text-yellow-400">football bankers</span>.
+  </div>
+</nav>
+
+<!-- ===== DATE STRIP ===== -->
+<div class="panel-2 border-0 border-b" style="border-bottom:1px solid var(--line)">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-6 py-2 flex items-center gap-1 overflow-x-auto" id="date-strip"></div>
+</div>
+
+<!-- ===== MAIN ===== -->
+<div class="max-w-[1200px] mx-auto px-4 sm:px-6 py-6">
+
+  <!-- hero strip -->
+  <div class="mb-6">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full chip-green text-xs font-bold tracking-wide mb-3">
+      <i class="fa-solid fa-shield-halved"></i> PROTECT THE STAKE FIRST
+    </div>
+    <h1 class="display text-3xl sm:text-4xl font-bold tracking-tight">
+      Today's safest <span class="text-gold">football bankers</span>
     </h1>
-    <p class="max-w-lg text-lg sm:text-xl text-slate-400">
-      Auto-analysed with the <span class="font-semibold text-yellow-400">Final Predicto Rules</span> —
-      DNB-first protection, strict mismatch criteria, max 4 bankers.
+    <p class="mt-2 text-sm max-w-2xl" style="color:var(--muted)">
+      Auto-analysed with the Final Predicto Rules — DNB-first protection, strict mismatch criteria, max 4 bankers per league. Not a guarantee; bet only what you can afford to lose. 18+
     </p>
   </div>
 
-  <!-- STAT BAR -->
-  <div class="max-w-screen-xl mx-auto px-5 sm:px-8 pb-8">
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-      <div class="glass rounded-3xl p-5">
-        <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">Matches</div>
-        <div id="stat-matches" class="text-3xl sm:text-4xl font-semibold tabular-nums">0</div>
-      </div>
-      <div class="glass rounded-3xl p-5">
-        <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">Bankers</div>
-        <div id="stat-bankers" class="text-3xl sm:text-4xl font-semibold tabular-nums text-yellow-400">0</div>
-      </div>
-      <div class="glass rounded-3xl p-5">
-        <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">Won</div>
-        <div id="stat-won" class="text-3xl sm:text-4xl font-semibold tabular-nums text-emerald-400">—</div>
-      </div>
-      <div class="glass rounded-3xl p-5">
-        <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">Lost</div>
-        <div id="stat-lost" class="text-3xl sm:text-4xl font-semibold tabular-nums text-rose-400">—</div>
-      </div>
-    </div>
-  </div>
+  <!-- stat row -->
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6" id="stat-row"></div>
 
-  <!-- DISCLAIMER -->
-  <div class="max-w-screen-xl mx-auto px-5 sm:px-8 pb-6">
-    <div class="glass-amber rounded-2xl px-5 py-3.5 text-sm text-amber-200/90 leading-relaxed">
-      These picks come from heuristic rules applied to fetched data — not a predictive model and not a guarantee.
-      Football results are uncertain; DNB reduces downside on a single pick but losses still happen. Bet only what you can afford to lose. 18+.
-    </div>
+  <!-- TODAY'S TOP PREDICTION CARDS -->
+  <div class="flex items-center justify-between mb-3">
+    <h2 class="display text-lg font-semibold flex items-center gap-2"><i class="fa-solid fa-star text-gold"></i> Today's Top Bankers</h2>
+    <span id="cards-day" class="text-xs" style="color:var(--muted)"></span>
   </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8" id="pred-cards"></div>
 
-  <!-- DAY BANKERS (all qualifying) -->
-  <div class="max-w-screen-xl mx-auto px-5 sm:px-8 pb-6">
-    <h2 class="section-header text-2xl sm:text-3xl font-semibold tracking-tight mb-4 flex items-center gap-x-3">
-      <i class="fa-solid fa-trophy text-yellow-400"></i> Today's Bankers
-      <span id="banker-count-badge" class="px-3 py-px text-xs font-bold banker-tag rounded-full">0</span>
-    </h2>
-    <div id="bankers-list" class="grid grid-cols-1 lg:grid-cols-2 gap-4"></div>
-  </div>
+  <!-- BODY: sidebar + matches -->
+  <div class="grid grid-cols-1 lg:grid-cols-[230px_1fr] gap-5">
 
-  <!-- PERFORMANCE TRACKER -->
-  <div class="max-w-screen-xl mx-auto px-5 sm:px-8 pb-6">
-    <details class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden">
-      <summary class="p-5 flex items-center gap-x-3 cursor-pointer">
-        <i class="fa-solid fa-chart-line text-yellow-400"></i>
-        <span class="section-header text-xl font-semibold">Performance Tracker</span>
-        <span id="track-headline" class="text-sm text-slate-400 ml-2"></span>
-        <i class="fa-solid fa-chevron-right chev text-slate-600 ml-auto"></i>
-      </summary>
-      <div class="px-5 pb-5 border-t border-slate-800 pt-4">
-        <p class="text-xs text-slate-500 mb-4">Settled bankers only (won/lost; voids excluded from win rate). Honest record-keeping — not a promise of future results.</p>
-        <div id="track-overall" class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5"></div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-          <div><div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-2">By market</div><div id="track-market" class="space-y-2"></div></div>
-          <div><div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-2">By league</div><div id="track-league" class="space-y-2"></div></div>
+    <!-- country sidebar -->
+    <aside class="hidden lg:block">
+      <div class="panel rounded-2xl p-2 sticky top-20">
+        <div class="px-2 py-2 text-xs uppercase tracking-wider font-semibold" style="color:var(--muted)">Leagues</div>
+        <div id="country-list" class="space-y-0.5 max-h-[70vh] overflow-y-auto pr-1"></div>
+      </div>
+    </aside>
+
+    <!-- matches column -->
+    <main>
+      <!-- filter bar -->
+      <div class="flex flex-wrap items-center gap-2 mb-4">
+        <div class="relative flex-1 min-w-[180px]">
+          <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-xs" style="color:var(--muted)"></i>
+          <input id="filter-search" type="text" placeholder="Search team or league…"
+            class="w-full panel-2 rounded-xl pl-9 pr-3 py-2 text-sm focus:outline-none" style="color:var(--ink)" />
         </div>
+        <select id="filter-market" class="panel-2 rounded-xl px-3 py-2 text-sm focus:outline-none" style="color:var(--ink)">
+          <option value="">All markets</option>
+          <option value="Win">Win</option><option value="DNB">DNB</option>
+          <option value="Over 2.5">Over 2.5</option><option value="BTTS">BTTS</option>
+        </select>
+        <label class="flex items-center gap-2 text-sm panel-2 rounded-xl px-3 py-2 cursor-pointer" style="color:var(--ink)">
+          <input id="filter-bankers" type="checkbox" class="accent-yellow-500" /> Bankers only
+        </label>
       </div>
-    </details>
-  </div>
 
-  <!-- ALL MATCHES -->
-  <div class="max-w-screen-xl mx-auto px-5 sm:px-8 pb-20">
-    <div class="flex flex-wrap items-center gap-3 mb-4">
-      <h2 class="section-header text-2xl sm:text-3xl font-semibold tracking-tight flex items-center gap-x-3">
-        <i class="fa-solid fa-futbol text-slate-400"></i> All Matches
-      </h2>
-      <span id="last-updated" class="text-xs text-slate-500"></span>
-    </div>
-    <!-- filter bar -->
-    <div class="flex flex-wrap items-center gap-2 mb-5">
-      <input id="filter-search" type="text" placeholder="Search team or league…"
-        class="flex-1 min-w-[180px] bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-yellow-500/50" />
-      <select id="filter-league" class="bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-yellow-500/50"></select>
-      <select id="filter-market" class="bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-yellow-500/50">
-        <option value="">All markets</option>
-        <option value="Win">Win</option><option value="DNB">DNB</option>
-        <option value="Over 2.5">Over 2.5</option><option value="BTTS">BTTS</option>
-        <option value="Skip">Skip</option>
-      </select>
-      <label class="flex items-center gap-x-2 text-sm text-slate-300 bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 cursor-pointer">
-        <input id="filter-bankers" type="checkbox" class="accent-yellow-500" /> Bankers only
-      </label>
-    </div>
-    <div id="matches-root"></div>
-    <div id="no-results" class="hidden text-center text-slate-500 py-10">No matches fit those filters.</div>
-    <div id="empty-state" class="hidden border border-dashed border-slate-700 rounded-3xl py-16 px-8 text-center bg-slate-900/40">
-      <i class="fa-solid fa-inbox text-4xl text-slate-600 mb-3"></i>
-      <p class="text-slate-400 text-lg">No matches saved yet. Run the fetcher to load today's board.</p>
-    </div>
-  </div>
+      <!-- performance tracker -->
+      <details class="panel rounded-2xl overflow-hidden mb-5">
+        <summary class="p-4 flex items-center gap-3 cursor-pointer">
+          <i class="fa-solid fa-chart-line text-gold"></i>
+          <span class="display font-semibold">Performance Tracker</span>
+          <span id="track-headline" class="text-sm ml-1" style="color:var(--muted)"></span>
+          <i class="fa-solid fa-chevron-down chev ml-auto" style="color:var(--muted)"></i>
+        </summary>
+        <div class="px-4 pb-4 pt-3" style="border-top:1px solid var(--line)">
+          <p class="text-xs mb-3" style="color:var(--muted)">Settled bankers only (voids excluded from win rate). Honest record-keeping — not a promise of future results.</p>
+          <div id="track-overall" class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4"></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div><div class="text-xs uppercase tracking-wider font-semibold mb-2" style="color:var(--muted)">By market</div><div id="track-market" class="space-y-2"></div></div>
+            <div><div class="text-xs uppercase tracking-wider font-semibold mb-2" style="color:var(--muted)">By league</div><div id="track-league" class="space-y-2"></div></div>
+          </div>
+        </div>
+      </details>
 
-  <footer class="border-t border-slate-800 py-8 text-center text-slate-500 text-sm">
-    Predicto · heuristic analysis tool · data from your source<br>
-    Not financial advice. Gamble responsibly. 18+
-  </footer>
+      <div id="matches-root"></div>
+      <div id="no-results" class="hidden text-center py-12" style="color:var(--muted)">No matches fit those filters.</div>
+      <div id="empty-state" class="hidden panel rounded-2xl py-16 px-8 text-center">
+        <i class="fa-solid fa-inbox text-4xl mb-3" style="color:var(--muted)"></i>
+        <p class="text-lg" style="color:var(--muted)">No matches loaded yet. The board updates through the day.</p>
+      </div>
+    </main>
+  </div>
+</div>
+
+<footer class="py-8 text-center text-sm" style="color:var(--muted);border-top:1px solid var(--line)">
+  Predicto · heuristic analysis tool · data from your source<br>
+  Not financial advice. Gamble responsibly. 18+
+</footer>
 
 <script src="banker-engine.js"></script>
 <script src="data.js"></script>
 <script>
-  document.getElementById('nav-date').textContent =
-    new Date().toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long'});
+/* ============ THEME ============ */
+(function(){
+  const body=document.body, icon=document.getElementById('theme-icon'), btn=document.getElementById('theme-toggle');
+  let saved=null; try{ saved=localStorage.getItem('predicto-theme'); }catch(e){}
+  function setT(m){ if(m==='light'){body.classList.add('light');icon.className='fa-solid fa-moon';}else{body.classList.remove('light');icon.className='fa-solid fa-sun';} try{localStorage.setItem('predicto-theme',m);}catch(e){} }
+  setT(saved==='light'?'light':'dark');
+  btn.addEventListener('click',()=>setT(body.classList.contains('light')?'dark':'light'));
+})();
 
-  /* ---------------- THEME TOGGLE (dark default, remembers choice) ---------------- */
-  (function(){
-    const body=document.body, icon=document.getElementById('theme-icon'), btn=document.getElementById('theme-toggle');
-    let saved=null; try{ saved=localStorage.getItem('predicto-theme'); }catch(e){}
-    function setTheme(mode){
-      if(mode==='light'){ body.classList.add('light'); icon.className='fa-solid fa-moon'; }
-      else{ body.classList.remove('light'); icon.className='fa-solid fa-sun'; }
-      try{ localStorage.setItem('predicto-theme',mode); }catch(e){}
-    }
-    setTheme(saved==='light'?'light':'dark');  // dark default
-    btn.addEventListener('click',()=> setTheme(body.classList.contains('light')?'dark':'light'));
-  })();
+/* ============ DATA ============ */
+const MATCHES = window.MATCHES || [];
+const { results: _allResults } = analyseAll(MATCHES);
+// Hide skipped matches everywhere — keep only actionable picks.
+const results = _allResults.filter(r => r.primary && r.primary !== 'Skip');
 
-  const MATCHES = window.MATCHES || [];
-  const { results } = analyseAll(MATCHES);
+/* helpers */
+const pill = bet =>
+  bet.includes('DNB') ? 'chip-dnb' :
+  bet.includes('Win') ? 'chip-green' :
+  (bet.includes('Over')||bet.includes('BTTS')||bet.includes('+')) ? 'chip-gold' : 'chip-skip';
+const resClass = r => r==='Won'?'res-won':r==='Lost'?'res-lost':r==='Void'?'res-void':'';
+const keyOf = r => `${r.match.matchDate}|${r.match.home}|${r.match.away}`;
+const ord = n => { const s=["th","st","nd","rd"],v=n%100; return n+(s[(v-20)%10]||s[v]||s[0]); };
+const marketTag = p => p.includes('DNB')?'DNB':p.includes('Win')?'Win':p.includes('Over')?'Over 2.5':p.includes('BTTS')?'BTTS':p;
+// flag emoji-ish: use country name -> emoji via simple map fallback (flag image service)
+const flagFor = league => {
+  // crude league->country guess for the flag; falls back to a globe
+  return null;
+};
 
-  const pillClasses = bet =>
-    bet.includes('DNB') ? 'bg-indigo-500/20 text-indigo-300 border border-indigo-500/30' :
-    bet.includes('Win') ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' :
-    (bet.includes('+')||bet.includes('Combo')) ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30' :
-    bet.includes('Over') ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30' :
-    'bg-slate-700/40 text-slate-400 border border-slate-600/40';
+/* dates */
+const fmtDate = dt => `${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,'0')}-${String(dt.getDate()).padStart(2,'0')}`;
+const NOW = new Date();
+const todayStr = fmtDate(NOW);
+const dayLabel = ds => {
+  const d=new Date(ds+'T12:00:00');
+  const diff = Math.round((d - new Date(todayStr+'T12:00:00'))/86400000);
+  if(diff===0) return 'Today';
+  if(diff===-1) return 'Yesterday';
+  if(diff===1) return 'Tomorrow';
+  return d.toLocaleDateString(undefined,{day:'numeric',month:'short'});
+};
 
-  const barColor = s => s>=8 ? '#34d399' : s>=6 ? '#fbbf24' : '#fb7185';
-  const verdictClass = v => v==='Strong'?'verdict-strong':v==='Moderate'?'verdict-moderate':'verdict-weak';
-  const resultClass = r => r==='Won'?'result-won':r==='Lost'?'result-lost':r==='Void'?'result-void':'';
+/* group results by date */
+const byDate = {};
+results.forEach(r=>{ const d=r.match.matchDate||'Undated'; (byDate[d]=byDate[d]||[]).push(r); });
+const datesWithGames = Object.keys(byDate).filter(d=>d!=='Undated').sort();
 
-  // a stable key per match so we can mark banker rows in the full list
-  const keyOf = r => `${r.match.matchDate}|${r.match.home}|${r.match.away}`;
-  const ord = n => { const s=["th","st","nd","rd"],v=n%100; return n+(s[(v-20)%10]||s[v]||s[0]); };
+/* the set of dates to show in the strip: union of game-dates + yest/today/tom */
+const stripDates = (()=>{
+  const set = new Set(datesWithGames);
+  for(let off=-1; off<=1; off++){ const d=new Date(NOW.getFullYear(),NOW.getMonth(),NOW.getDate()+off); set.add(fmtDate(d)); }
+  return [...set].sort();
+})();
+let activeDate = datesWithGames.includes(todayStr) ? todayStr : (datesWithGames[datesWithGames.length-1] || todayStr);
 
-  // ---- which day are we featuring ----
-  const allDates = [...new Set(results.map(r=>r.match.matchDate).filter(Boolean))].sort().reverse();
-  const latestDate = allDates[0];
-
-  // ALL qualifying bankers for the latest day (no cap), ranked
-  const dayBankers = results
-    .filter(r => r.banker && r.match.matchDate === latestDate)
-    .sort((a,b) => b.rankWeight - a.rankWeight);
-
-  // ---- stats bar ----
-  let wonAll=0, lostAll=0;
-  results.forEach(r=>{
-    if(!r.banker) return;
-    const res = settle(r.primary, r.match.homeGoals, r.match.awayGoals);
-    if(res==='Won') wonAll++; else if(res==='Lost') lostAll++;
+/* ============ per-league top bankers (top 4 per date+league) ============ */
+const leagueBankerKeys = new Set();
+const perLeagueTop = {};
+{
+  const groups = {};
+  results.forEach(r=>{ const g=`${r.match.matchDate}|${r.match.league}`; (groups[g]=groups[g]||[]).push(r); });
+  Object.entries(groups).forEach(([g,rows])=>{
+    const top = rows.filter(r=>r.banker).sort((a,b)=>b.rankWeight-a.rankWeight).slice(0,4);
+    perLeagueTop[g]=top; top.forEach(r=>leagueBankerKeys.add(keyOf(r)));
   });
-  const totalBankers = results.filter(r=>r.banker).length;
-  document.getElementById('stat-matches').textContent = results.length;
-  document.getElementById('stat-bankers').textContent = totalBankers;
-  document.getElementById('stat-won').textContent = (wonAll+lostAll)>0 ? wonAll : '—';
-  document.getElementById('stat-lost').textContent = (wonAll+lostAll)>0 ? lostAll : '—';
-  document.getElementById('banker-count-badge').textContent = String(dayBankers.length);
+}
 
-  // small reusable banker card
-  const bankerCard = (b,i,rank=true) => {
-    const reason = b.wdnb.reasons[0] || b.over.reasons[0] || '';
-    const res = settle(b.primary, b.match.homeGoals, b.match.awayGoals);
-    const resTag = res ? `<span class="px-2.5 py-1 rounded-lg text-xs font-bold ${resultClass(res)}">${res.toUpperCase()}</span>` : '';
-    const badge = rank
-      ? `<div class="w-10 h-10 banker-badge rounded-2xl flex items-center justify-center font-display text-lg flex-shrink-0">${i+1}</div>`
-      : '';
-    return `
-      <div class="match-card glass-gold rounded-3xl p-5 flex items-center gap-x-4">
-        ${badge}
-        <div class="flex-1 min-w-0">
-          <div class="font-display text-lg font-semibold truncate flex items-center gap-x-2">${b.match.home} vs ${b.match.away} ${resTag}</div>
-          <div class="text-sm text-slate-300/80 truncate">${b.match.league} · ${reason}</div>
-        </div>
-        <div class="text-right flex-shrink-0">
-          <div class="pick-pill px-3 py-1.5 rounded-xl text-sm ${pillClasses(b.primary)}">${b.primary}</div>
-          <div class="text-xs text-slate-400 mt-1">${b.confidence}</div>
-        </div>
-      </div>`;
-  };
+/* ============ STAT ROW (for active date) ============ */
+function renderStats(){
+  const rows = byDate[activeDate]||[];
+  let won=0,lost=0; const bankers = rows.filter(r=>r.banker);
+  bankers.forEach(r=>{ const s=settle(r.primary,r.match.homeGoals,r.match.awayGoals); if(s==='Won')won++; else if(s==='Lost')lost++; });
+  const stat=(l,v,c)=>`<div class="panel rounded-2xl p-4"><div class="text-xs uppercase tracking-wider font-semibold mb-1" style="color:var(--muted)">${l}</div><div class="display text-3xl font-bold tnum ${c||''}">${v}</div></div>`;
+  document.getElementById('stat-row').innerHTML =
+    stat('Matches', rows.length) + stat('Bankers', bankers.length, 'text-gold') +
+    stat('Won', (won+lost)>0?won:'—', 'text-green') + stat('Lost', (won+lost)>0?lost:'—', '');
+}
 
-  // ---- DAY bankers (all qualifying) ----
-  const bl = document.getElementById('bankers-list');
-  if(!dayBankers.length){
-    bl.innerHTML = '<div class="col-span-full glass rounded-3xl p-8 text-center text-slate-300">No bankers qualified for the latest day. Protecting the stake — that\'s a valid outcome.</div>';
-  } else {
-    dayBankers.forEach((b,i)=> bl.insertAdjacentHTML('beforeend', bankerCard(b,i,true)));
-  }
+/* ============ DATE STRIP ============ */
+function renderStrip(){
+  const el=document.getElementById('date-strip');
+  el.innerHTML = stripDates.map(d=>{
+    const has = (byDate[d]||[]).length;
+    return `<button class="date-pill ${d===activeDate?'active':''} ${!has?'opacity-40':''}" data-date="${d}">${dayLabel(d)}${has?` <span class="opacity-60">${has}</span>`:''}</button>`;
+  }).join('');
+  el.querySelectorAll('.date-pill').forEach(b=> b.addEventListener('click',()=>{ activeDate=b.dataset.date; renderAll(); }));
+}
 
-  // ---- build a set of banker keys PER LEAGUE PER DAY (top 4, unforced) ----
-  // group results by date+league, take that group's top 4 bankers
-  const leagueBankerKeys = new Set();
-  const perLeagueTop = {}; // `${date}|${league}` -> [bankers]
-  {
-    const groups = {};
-    results.forEach(r=>{
-      const g = `${r.match.matchDate}|${r.match.league}`;
-      (groups[g]=groups[g]||[]).push(r);
-    });
-    Object.entries(groups).forEach(([g,rows])=>{
-      const top = rows.filter(r=>r.banker).sort((a,b)=>b.rankWeight-a.rankWeight).slice(0,4);
-      perLeagueTop[g] = top;
-      top.forEach(r=> leagueBankerKeys.add(keyOf(r)));
-    });
-  }
-
-  // ---- all matches grouped by date then league ----
-  const root = document.getElementById('matches-root');
-  const empty = document.getElementById('empty-state');
-  if(!results.length){ empty.classList.remove('hidden'); } else { empty.classList.add('hidden'); }
-
-  const dateLabel = ds => {
-    if(!ds) return 'Undated';
-    const d = new Date(ds+'T12:00:00');
-    return d.toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long'});
-  };
-  const mkBar = (label,m) => `
-    <div class="glass rounded-2xl p-4">
-      <div class="flex items-center justify-between mb-1.5">
-        <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold">${label}</span>
-        <span class="px-2 py-0.5 rounded-md text-[11px] font-bold ${verdictClass(m.verdict)}">${m.verdict}</span>
+/* ============ TOP PREDICTION CARDS (active date bankers, top 6) ============ */
+function renderCards(){
+  const cards = (byDate[activeDate]||[]).filter(r=>r.banker).sort((a,b)=>b.rankWeight-a.rankWeight).slice(0,6);
+  document.getElementById('cards-day').textContent = dayLabel(activeDate);
+  const wrap = document.getElementById('pred-cards');
+  if(!cards.length){ wrap.innerHTML = `<div class="sm:col-span-2 lg:col-span-3 panel rounded-2xl p-6 text-center" style="color:var(--muted)">No bankers qualified for ${dayLabel(activeDate).toLowerCase()} — protecting the stake is a valid outcome.</div>`; return; }
+  wrap.innerHTML = cards.map(b=>{
+    const res = settle(b.primary,b.match.homeGoals,b.match.awayGoals);
+    const resTag = res?`<span class="px-2 py-0.5 rounded-md text-[10px] font-bold ${resClass(res)}">${res.toUpperCase()}</span>`:'';
+    const t = b.match.kickoff ? new Date(b.match.kickoff).toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit'}) : '';
+    return `<div class="pred-card">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs font-semibold" style="color:var(--muted)">${b.match.league}</span>
+        <span class="text-xs tnum" style="color:var(--muted)">${t}</span>
       </div>
-      <div class="metric-value text-2xl font-semibold mb-2">${m.score}<span class="text-sm text-slate-400">/10</span></div>
-      <div class="bar-track h-1.5 mb-2"><div class="bar-fill" style="width:${m.score*10}%;background:${barColor(m.score)}"></div></div>
-      <ul class="space-y-1">${m.reasons.slice(0,3).map(x=>`<li class="text-xs text-slate-400 flex gap-x-1.5"><span class="text-slate-500 mt-0.5">•</span>${x}</li>`).join('')}</ul>
+      <div class="display font-semibold mb-1 flex items-center gap-2 flex-wrap">${b.match.home} <span style="color:var(--muted)">v</span> ${b.match.away} ${resTag}</div>
+      <div class="text-xs mb-3" style="color:var(--muted)">${b.wdnb.reasons[0]||''}</div>
+      <div class="flex items-center justify-between">
+        <span class="px-3 py-1 rounded-lg text-sm font-semibold ${pill(b.primary)}">${b.primary}</span>
+        <span class="text-xs" style="color:var(--muted)">${b.confidence}</span>
+      </div>
     </div>`;
+  }).join('');
+}
 
-  const byDate = {};
-  results.forEach(r=>{ const d=r.match.matchDate||'Undated'; (byDate[d]=byDate[d]||[]).push(r); });
-  Object.keys(byDate).sort().reverse().forEach(d=>{
-    const rows = byDate[d];
-    let won=0,lost=0,voids=0,pend=0;
-    rows.forEach(r=>{ if(!r.banker) return; const res=settle(r.primary,r.match.homeGoals,r.match.awayGoals);
-      if(res==='Won')won++; else if(res==='Lost')lost++; else if(res==='Void')voids++; else pend++; });
-    const tally = (won+lost+voids+pend)>0
-      ? `<span class="text-sm font-semibold ml-3"><span class="text-emerald-400">${won}W</span> <span class="text-rose-400">${lost}L</span> <span class="text-slate-300">${voids}V</span>${pend?` <span class="text-amber-400">${pend} pending</span>`:''}</span>` : '';
+/* ============ COUNTRY / LEAGUE SIDEBAR ============ */
+let leagueFilter = null;
+function renderSidebar(){
+  const rows = byDate[activeDate]||[];
+  const leagues = {};
+  rows.forEach(r=>{ leagues[r.match.league]=(leagues[r.match.league]||0)+1; });
+  const list = Object.entries(leagues).sort((a,b)=>b[1]-a[1]);
+  const el = document.getElementById('country-list');
+  el.innerHTML = `<div class="country-item ${!leagueFilter?'active':''}" data-league=""><i class="fa-solid fa-globe w-5 text-center"></i><span class="flex-1">All leagues</span><span class="text-xs opacity-60">${rows.length}</span></div>` +
+    list.map(([lg,c])=>`<div class="country-item ${leagueFilter===lg?'active':''}" data-league="${lg}"><i class="fa-solid fa-futbol w-5 text-center text-xs opacity-60"></i><span class="flex-1 truncate">${lg}</span><span class="text-xs opacity-60">${c}</span></div>`).join('');
+  el.querySelectorAll('.country-item').forEach(it=> it.addEventListener('click',()=>{ leagueFilter=it.dataset.league||null; renderMatches(); renderSidebar(); }));
+}
 
-    let html = `<div class="mb-8"><h3 class="section-header text-xl font-semibold mb-3 pb-2 border-b border-white/10">${dateLabel(d)} ${tally}</h3>`;
-    const byLeague = {};
-    rows.forEach(r=>{(byLeague[r.match.league]=byLeague[r.match.league]||[]).push(r)});
-    Object.entries(byLeague).forEach(([league,lrows])=>{
-      const top = perLeagueTop[`${d}|${league}`] || [];
+/* ============ MATCHES (active date, grouped by league) ============ */
+const verdictChip = v => v==='Strong'?'chip-green':v==='Moderate'?'chip-gold':'chip-skip';
+function miniBar(label,m){
+  const col = m.score>=8?'var(--green)':m.score>=6?'var(--gold)':'#fb7185';
+  return `<div class="panel-2 rounded-xl p-3">
+    <div class="flex items-center justify-between mb-1"><span class="text-xs uppercase tracking-wider font-semibold" style="color:var(--muted)">${label}</span>
+    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold ${verdictChip(m.verdict)}">${m.verdict}</span></div>
+    <div class="display text-xl font-bold mb-1">${m.score}<span class="text-xs" style="color:var(--muted)">/10</span></div>
+    <div class="bar-track h-1.5"><div style="width:${m.score*10}%;height:100%;background:${col};border-radius:9999px"></div></div>
+  </div>`;
+}
 
-      // count settled results for this league header
-      let lw=0,ll=0;
-      lrows.forEach(r=>{ if(!r.banker)return; const rs=settle(r.primary,r.match.homeGoals,r.match.awayGoals); if(rs==='Won')lw++; else if(rs==='Lost')ll++; });
-      const lTag = (lw+ll)>0 ? `<span class="text-xs font-semibold ml-1"><span class="text-emerald-400">${lw}W</span> <span class="text-rose-400">${ll}L</span></span>` : '';
+function renderMatches(){
+  const root = document.getElementById('matches-root');
+  const rows = byDate[activeDate]||[];
+  const empty = document.getElementById('empty-state');
+  root.innerHTML='';
+  if(!rows.length){ empty.classList.remove('hidden'); return; } else empty.classList.add('hidden');
 
-      html += `<details open class="league-block mb-6 glass rounded-3xl p-4 sm:p-5" data-league="${league.toLowerCase()}">`;
-      html += `<summary class="flex items-center gap-x-2 mb-3 text-sm font-semibold text-slate-300 uppercase tracking-wide cursor-pointer"><span class="w-2 h-2 rounded-full bg-yellow-400"></span>${league}<span class="text-slate-500 normal-case font-normal">· ${lrows.length} match${lrows.length>1?'es':''}</span>${lTag}<i class="fa-solid fa-chevron-right chev text-slate-600 ml-auto"></i></summary>`;
+  // group by league
+  const byLeague = {};
+  rows.forEach(r=>{ if(leagueFilter && r.match.league!==leagueFilter) return; (byLeague[r.match.league]=byLeague[r.match.league]||[]).push(r); });
 
-      // per-league Top Bankers box
-      if(top.length){
-        html += `<div class="mb-4 rounded-2xl glass-gold p-3 sm:p-4">
-          <div class="flex items-center gap-x-2 mb-2 text-xs font-bold uppercase tracking-wider text-yellow-300"><i class="fa-solid fa-star"></i> Top Bankers · ${league} <span class="text-yellow-200/70 font-semibold">(${top.length})</span></div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-2">`;
-        top.forEach((r,idx)=>{
-          const res=settle(r.primary,r.match.homeGoals,r.match.awayGoals);
-          const resTag = res ? `<span class="px-2 py-0.5 rounded-md text-[10px] font-bold ${resultClass(res)}">${res.toUpperCase()}</span>` : '';
-          html += `<div class="flex items-center gap-x-2 text-sm">
-            <span class="w-6 h-6 banker-badge rounded-lg flex items-center justify-center text-xs font-display flex-shrink-0">${idx+1}</span>
-            <span class="flex-1 min-w-0 truncate">${r.match.home} vs ${r.match.away} ${resTag}</span>
-            <span class="pick-pill px-2 py-0.5 rounded-lg text-xs ${pillClasses(r.primary)} flex-shrink-0">${r.primary}</span>
-          </div>`;
-        });
-        html += `</div></div>`;
-      }
+  let html='';
+  Object.entries(byLeague).forEach(([league,lrows])=>{
+    const top = perLeagueTop[`${activeDate}|${league}`]||[];
+    let lw=0,ll=0; lrows.forEach(r=>{ if(!r.banker)return; const s=settle(r.primary,r.match.homeGoals,r.match.awayGoals); if(s==='Won')lw++;else if(s==='Lost')ll++; });
+    const tally=(lw+ll)>0?`<span class="text-xs ml-2"><span class="text-green">${lw}W</span> <span style="color:#fb7185">${ll}L</span></span>`:'';
 
-      html += `<div class="space-y-3">`;
-      lrows.forEach((r,idx)=>{
-        const hg=r.match.homeGoals, ag=r.match.awayGoals, played=hg!=null&&ag!=null;
-        const res = settle(r.primary,hg,ag);
-        const resTag = res ? `<span class="px-2 py-0.5 rounded-md text-[11px] font-bold ${resultClass(res)}">${res.toUpperCase()}</span>` : '';
-        const scoreH = played ? `<span class="metric-value font-bold text-lg ml-auto px-2.5 py-0.5 bg-white/10 rounded-lg">${hg}</span>` : '';
-        const scoreA = played ? `<span class="metric-value font-bold text-lg ml-auto px-2.5 py-0.5 bg-white/10 rounded-lg">${ag}</span>` : '';
-        const isBanker = leagueBankerKeys.has(keyOf(r));
-        const bankerTag = isBanker ? `<span class="banker-tag px-2 py-0.5 rounded-md text-[10px] uppercase tracking-wide">Banker</span>` : '';
-        const marketTag = r.primary.includes('DNB')?'DNB':r.primary.includes('Win')?'Win':r.primary.includes('Over')?'Over 2.5':r.primary.includes('BTTS')?'BTTS':r.primary;
-        html += `
-          <details class="match-card match-item glass rounded-3xl overflow-hidden ${isBanker?'is-banker':''}"
-                   data-search="${(r.match.home+' '+r.match.away+' '+r.match.league).toLowerCase().replace(/"/g,'')}"
-                   data-market="${marketTag}" data-banker="${isBanker?'1':'0'}" data-league="${league.toLowerCase()}">
-            <summary class="p-4 sm:p-5 flex items-center gap-x-4">
-              <div class="flex-1 min-w-0 space-y-1.5">
-                <div class="flex items-center gap-x-3"><span class="text-xs text-slate-400 w-7 text-center bg-white/10 rounded-md py-0.5">${r.match.homePos??'—'}</span><span class="font-medium truncate">${r.match.home}</span>${scoreH}</div>
-                <div class="flex items-center gap-x-3"><span class="text-xs text-slate-400 w-7 text-center bg-white/10 rounded-md py-0.5">${r.match.awayPos??'—'}</span><span class="font-medium truncate">${r.match.away}</span>${scoreA}</div>
-              </div>
-              <div class="flex flex-col items-end gap-y-1.5 flex-shrink-0">
-                ${bankerTag}
-                <span class="pick-pill px-3 py-1.5 rounded-xl text-sm ${pillClasses(r.primary)}">${r.primary}</span>
-                ${resTag}
-              </div>
-              <i class="fa-solid fa-chevron-right chev text-slate-500"></i>
-            </summary>
-            <div class="px-4 sm:px-5 pb-5 border-t border-white/10 pt-4">
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                ${mkBar('Over 2.5', r.over)}
-                ${mkBar('BTTS', r.btts)}
-                ${mkBar('Win / DNB', r.wdnb)}
-              </div>
-              <div class="mt-4 glass rounded-2xl p-4 flex flex-wrap gap-x-8 gap-y-3">
-                <div><div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Primary</div><div class="font-semibold">${r.primary}</div></div>
-                <div><div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Confidence</div><div class="font-semibold">${r.confidence}</div></div>
-                <div><div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Favourite</div><div class="font-semibold">${r.wdnb.favTeam} (${r.wdnb.favSide})</div></div>
-                ${ (r.match.homeVenueRank!=null && r.match.awayVenueRank!=null && !r.wdnb.tournamentUncomparable)
-                   ? `<div><div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Venue strength</div><div class="font-semibold">${r.match.home} ${ord(r.match.homeVenueRank)} home · ${r.match.away} ${ord(r.match.awayVenueRank)} away</div></div>`
-                   : (r.wdnb.tournamentUncomparable
-                      ? `<div><div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Format</div><div class="font-semibold">${r.match.isKnockout?'Knockout — form-based':'Cross-group — form-based'}</div></div>`
-                      : '') }
-                <div><div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Result</div><div class="font-semibold">${played?`${hg}–${ag} · ${res||'—'}`:'Not played yet'}</div></div>
-                ${ r.value
-                   ? `<div><div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Odds value</div><div class="font-semibold ${r.value.verdict.includes('value')?'text-emerald-400':r.value.verdict.includes('Fairly')?'text-amber-400':'text-slate-400'}">${r.value.verdict} <span class="text-slate-500 font-normal">· @${r.value.oddsUsed} (${r.value.sidePct}% implied)</span></div></div>`
-                   : '' }
-                <div class="basis-full text-sm text-slate-400 border-t border-white/10 pt-3">${r.summary}</div>
-              </div>
-              ${ r.match.h2h ? `
-              <div class="mt-3 glass rounded-2xl p-4">
-                <div class="flex items-center gap-x-2 mb-2 text-xs uppercase tracking-wider text-slate-400 font-semibold"><i class="fa-solid fa-clock-rotate-left text-slate-500"></i> Head-to-head · last ${r.match.h2h.played}</div>
-                <div class="flex flex-wrap gap-x-6 gap-y-1 text-sm mb-2">
-                  <span><b>${r.match.home}</b> ${r.match.h2h.homeWins}W</span>
-                  <span>Draws ${r.match.h2h.draws}</span>
-                  <span><b>${r.match.away}</b> ${r.match.h2h.awayWins}W</span>
-                  <span class="text-slate-400">Over 2.5 in ${r.match.h2h.over25}/${r.match.h2h.played}</span>
-                  <span class="text-slate-400">BTTS in ${r.match.h2h.bttsCount}/${r.match.h2h.played}</span>
-                </div>
-                <div class="space-y-1">
-                  ${ r.match.h2h.recent.map(g=>`<div class="text-xs text-slate-400 flex gap-x-2"><span class="text-slate-600 w-20">${g.date}</span><span class="flex-1 truncate">${g.ht} <b class="text-slate-300">${g.hg}–${g.ag}</b> ${g.at}</span></div>`).join('') }
-                </div>
-              </div>` : '' }
-            </div>
-          </details>`;
+    html += `<details open class="lg-row panel rounded-2xl mb-3 overflow-hidden" data-league="${league.toLowerCase()}">
+      <summary class="px-4 py-3 flex items-center gap-2">
+        <i class="fa-solid fa-futbol text-xs text-gold"></i>
+        <span class="font-semibold">${league}</span>
+        <span class="text-xs" style="color:var(--muted)">· ${lrows.length} match${lrows.length>1?'es':''}</span>${tally}
+        <i class="fa-solid fa-chevron-down lg-chev ml-auto text-sm" style="color:var(--muted)"></i>
+      </summary>
+      <div style="border-top:1px solid var(--line)">`;
+
+    // top bankers strip
+    if(top.length){
+      html += `<div class="px-4 py-3" style="background:rgba(255,197,61,.04);border-bottom:1px solid var(--line)">
+        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold mb-2"><i class="fa-solid fa-star"></i> Top Bankers (${top.length})</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-1.5">`;
+      top.forEach((r,i)=>{
+        const res=settle(r.primary,r.match.homeGoals,r.match.awayGoals);
+        const rt=res?`<span class="px-1.5 py-0.5 rounded text-[10px] font-bold ${resClass(res)}">${res.toUpperCase()}</span>`:'';
+        html+=`<div class="flex items-center gap-2 text-sm"><span class="w-5 h-5 bg-gold rounded flex items-center justify-center text-[11px] font-bold flex-shrink-0">${i+1}</span><span class="flex-1 truncate">${r.match.home} v ${r.match.away} ${rt}</span><span class="px-2 py-0.5 rounded text-xs ${pill(r.primary)}">${r.primary}</span></div>`;
       });
-      html += `</div></details>`;
+      html += `</div></div>`;
+    }
+
+    // match rows
+    lrows.forEach(r=>{
+      const hg=r.match.homeGoals, ag=r.match.awayGoals, played=hg!=null&&ag!=null;
+      const res=settle(r.primary,hg,ag);
+      const rt=res?`<span class="px-2 py-0.5 rounded text-[10px] font-bold ${resClass(res)}">${res.toUpperCase()}</span>`:'';
+      const live = r.match.status && ['1H','2H','HT','ET','LIVE'].includes(r.match.status);
+      const isB = leagueBankerKeys.has(keyOf(r));
+      const t = r.match.kickoff ? new Date(r.match.kickoff).toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit'}) : '';
+      const score = played ? `<span class="display font-bold tnum">${hg} - ${ag}</span>` : `<span class="text-xs tnum" style="color:var(--muted)">${t||'—'}</span>`;
+      const odds = r.match.odds ? `<div class="hidden sm:grid grid-cols-3 gap-1 w-36">
+          <div class="odd-cell">${r.match.odds.home||'-'}</div>
+          <div class="odd-cell">${r.match.odds.draw||'-'}</div>
+          <div class="odd-cell">${r.match.odds.away||'-'}</div></div>` : `<div class="hidden sm:block w-36"></div>`;
+
+      html += `<details class="match-item ${isB?'is-banker-row':''}" data-search="${(r.match.home+' '+r.match.away+' '+r.match.league).toLowerCase().replace(/"/g,'')}" data-market="${marketTag(r.primary)}" data-banker="${isB?'1':'0'}">
+        <summary class="match-line px-4 py-3 flex items-center gap-3">
+          <div class="w-12 text-center flex-shrink-0">${score}</div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 text-sm"><span class="truncate font-medium">${r.match.home}</span></div>
+            <div class="flex items-center gap-2 text-sm"><span class="truncate font-medium">${r.match.away}</span></div>
+          </div>
+          ${ live?'<span class="chip-live px-2 py-0.5 rounded text-[10px] font-bold">LIVE</span>':'' }
+          ${odds}
+          <div class="flex flex-col items-end gap-1 flex-shrink-0 w-24">
+            ${ isB?'<span class="text-[9px] font-bold uppercase text-gold">Banker</span>':'' }
+            <span class="px-2.5 py-1 rounded-lg text-xs font-semibold ${pill(r.primary)} whitespace-nowrap">${r.primary}</span>
+            ${rt}
+          </div>
+          <i class="fa-solid fa-chevron-down chev text-sm" style="color:var(--muted)"></i>
+        </summary>
+        <div class="px-4 pb-4 pt-3" style="border-top:1px solid var(--line);background:var(--panel-2)">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-3">
+            ${miniBar('Over 2.5',r.over)}${miniBar('BTTS',r.btts)}${miniBar('Win / DNB',r.wdnb)}
+          </div>
+          <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm panel rounded-xl p-3">
+            <div><div class="text-[11px] uppercase tracking-wider font-semibold" style="color:var(--muted)">Primary</div><div class="font-semibold">${r.primary}</div></div>
+            <div><div class="text-[11px] uppercase tracking-wider font-semibold" style="color:var(--muted)">Confidence</div><div class="font-semibold">${r.confidence}</div></div>
+            <div><div class="text-[11px] uppercase tracking-wider font-semibold" style="color:var(--muted)">Favourite</div><div class="font-semibold">${r.wdnb.favTeam} (${r.wdnb.favSide})</div></div>
+            ${ (r.match.homeVenueRank!=null&&r.match.awayVenueRank!=null&&!r.wdnb.tournamentUncomparable)
+               ? `<div><div class="text-[11px] uppercase tracking-wider font-semibold" style="color:var(--muted)">Venue</div><div class="font-semibold">${r.match.home} ${ord(r.match.homeVenueRank)} home · ${r.match.away} ${ord(r.match.awayVenueRank)} away</div></div>`
+               : (r.wdnb.tournamentUncomparable?`<div><div class="text-[11px] uppercase tracking-wider font-semibold" style="color:var(--muted)">Format</div><div class="font-semibold">${r.match.isKnockout?'Knockout — form-based':'Cross-group — form-based'}</div></div>`:'') }
+            ${ r.value?`<div><div class="text-[11px] uppercase tracking-wider font-semibold" style="color:var(--muted)">Odds value</div><div class="font-semibold ${r.value.verdict.includes('value')?'text-green':r.value.verdict.includes('Fairly')?'text-gold':''}">${r.value.verdict} <span style="color:var(--muted)" class="font-normal">· @${r.value.oddsUsed} (${r.value.sidePct}%)</span></div></div>`:'' }
+            <div class="basis-full text-sm" style="color:var(--muted);border-top:1px solid var(--line);padding-top:.6rem">${r.summary}</div>
+          </div>
+          ${ r.match.h2h?`<div class="mt-2 panel rounded-xl p-3">
+            <div class="flex items-center gap-2 text-[11px] uppercase tracking-wider font-semibold mb-2" style="color:var(--muted)"><i class="fa-solid fa-clock-rotate-left"></i> Head-to-head · last ${r.match.h2h.played}</div>
+            <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm mb-2">
+              <span><b>${r.match.home}</b> ${r.match.h2h.homeWins}W</span><span>Draws ${r.match.h2h.draws}</span><span><b>${r.match.away}</b> ${r.match.h2h.awayWins}W</span>
+              <span style="color:var(--muted)">Over 2.5 in ${r.match.h2h.over25}/${r.match.h2h.played}</span><span style="color:var(--muted)">BTTS in ${r.match.h2h.bttsCount}/${r.match.h2h.played}</span>
+            </div>
+            <div class="space-y-1">${r.match.h2h.recent.map(g=>`<div class="text-xs flex gap-2" style="color:var(--muted)"><span class="w-20" style="color:var(--muted);opacity:.7">${g.date}</span><span class="flex-1 truncate">${g.ht} <b style="color:var(--ink)">${g.hg}-${g.ag}</b> ${g.at}</span></div>`).join('')}</div>
+          </div>`:'' }
+        </div>
+      </details>`;
     });
-    html += `</div>`;
-    root.insertAdjacentHTML('beforeend', html);
+
+    html += `</div></details>`;
   });
 
-  /* ---------------- PERFORMANCE TRACKER ---------------- */
-  (function(){
-    const settled = results.filter(r=>r.banker && settle(r.primary,r.match.homeGoals,r.match.awayGoals));
-    const w = settled.filter(r=>settle(r.primary,r.match.homeGoals,r.match.awayGoals)==='Won').length;
-    const l = settled.filter(r=>settle(r.primary,r.match.homeGoals,r.match.awayGoals)==='Lost').length;
-    const v = settled.filter(r=>settle(r.primary,r.match.homeGoals,r.match.awayGoals)==='Void').length;
-    const decided = w+l;
-    const rate = decided>0 ? Math.round(w/decided*100) : null;
-    const lowSample = decided>0 && decided<10;
-    const headline = decided>0
-      ? `${w}W–${l}L · ${rate}% win rate${lowSample?` · small sample (${decided}), not yet meaningful`:''}`
-      : 'No settled bankers yet';
-    document.getElementById('track-headline').textContent = headline;
+  root.innerHTML = html || `<div class="text-center py-12" style="color:var(--muted)">No matches for this league.</div>`;
+  applyFilters();
+}
 
-    const stat = (label,val,cls='') => `<div class="bg-slate-950/60 border border-slate-800 rounded-2xl p-4"><div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">${label}</div><div class="text-2xl font-semibold ${cls}">${val}</div></div>`;
-    document.getElementById('track-overall').innerHTML =
-      stat('Win rate', rate!=null?rate+'%':'—', 'text-yellow-400') +
-      stat('Won', w, 'text-emerald-400') + stat('Lost', l, 'text-rose-400') +
-      stat('Void', v, 'text-slate-300');
+/* ============ FILTERS ============ */
+function applyFilters(){
+  const q=(document.getElementById('filter-search').value||'').trim().toLowerCase();
+  const mk=document.getElementById('filter-market').value;
+  const bk=document.getElementById('filter-bankers').checked;
+  let any=false;
+  document.querySelectorAll('.match-item').forEach(el=>{
+    const show = (!q||el.dataset.search.includes(q)) && (!mk||el.dataset.market===mk) && (!bk||el.dataset.banker==='1');
+    el.style.display = show?'':'none'; if(show) any=true;
+  });
+  document.querySelectorAll('.lg-row').forEach(b=>{
+    const vis=[...b.querySelectorAll('.match-item')].some(e=>e.style.display!=='none');
+    b.style.display = vis?'':'none';
+  });
+  document.getElementById('no-results').classList.toggle('hidden', any || !(byDate[activeDate]||[]).length);
+}
+['filter-search','filter-market'].forEach(id=>document.getElementById(id).addEventListener('input',applyFilters));
+document.getElementById('filter-bankers').addEventListener('change',applyFilters);
 
-    // group helper
-    const groupRate = (keyFn) => {
-      const g={};
-      settled.forEach(r=>{ const k=keyFn(r); const rs=settle(r.primary,r.match.homeGoals,r.match.awayGoals);
-        g[k]=g[k]||{w:0,l:0,v:0}; if(rs==='Won')g[k].w++; else if(rs==='Lost')g[k].l++; else g[k].v++; });
-      return Object.entries(g).map(([k,o])=>{ const d=o.w+o.l; return {k,...o,rate:d>0?Math.round(o.w/d*100):null,decided:d}; })
-        .sort((a,b)=>(b.decided-a.decided)||((b.rate??-1)-(a.rate??-1)));
-    };
-    const bar = row => {
-      const pct = row.rate!=null?row.rate:0;
-      return `<div class="flex items-center gap-x-3 text-sm">
-        <span class="w-28 truncate text-slate-300">${row.k}</span>
-        <div class="flex-1 bar-track h-2"><div class="bar-fill" style="width:${pct}%;background:${pct>=60?'#34d399':pct>=45?'#fbbf24':'#fb7185'}"></div></div>
-        <span class="w-24 text-right text-slate-400 tabular-nums">${row.rate!=null?row.rate+'%':'—'} <span class="text-slate-600">(${row.w}-${row.l})</span></span>
-      </div>`;
-    };
-    const mkt = groupRate(r=>r.primary.includes('DNB')?'DNB':r.primary.includes('Win')?'Win':r.primary.includes('Over')?'Over 2.5':r.primary.includes('BTTS')?'BTTS':r.primary);
-    const lg = groupRate(r=>r.match.league);
-    document.getElementById('track-market').innerHTML = mkt.length?mkt.map(bar).join(''):'<div class="text-sm text-slate-500">No settled bankers yet.</div>';
-    document.getElementById('track-league').innerHTML = lg.length?lg.map(bar).join(''):'<div class="text-sm text-slate-500">No settled bankers yet.</div>';
-  })();
+/* ============ PERFORMANCE TRACKER (all-time) ============ */
+(function(){
+  const settled = results.filter(r=>r.banker && settle(r.primary,r.match.homeGoals,r.match.awayGoals));
+  const w=settled.filter(r=>settle(r.primary,r.match.homeGoals,r.match.awayGoals)==='Won').length;
+  const l=settled.filter(r=>settle(r.primary,r.match.homeGoals,r.match.awayGoals)==='Lost').length;
+  const v=settled.filter(r=>settle(r.primary,r.match.homeGoals,r.match.awayGoals)==='Void').length;
+  const dec=w+l, rate=dec>0?Math.round(w/dec*100):null, low=dec>0&&dec<10;
+  document.getElementById('track-headline').textContent = dec>0?`${w}W–${l}L · ${rate}% win rate${low?` · small sample (${dec}), not yet meaningful`:''}`:'No settled bankers yet';
+  const stat=(la,va,c)=>`<div class="panel-2 rounded-xl p-3"><div class="text-xs uppercase tracking-wider font-semibold mb-1" style="color:var(--muted)">${la}</div><div class="display text-xl font-bold ${c||''}">${va}</div></div>`;
+  document.getElementById('track-overall').innerHTML = stat('Win rate',rate!=null?rate+'%':'—','text-gold')+stat('Won',w,'text-green')+stat('Lost',l,'')+stat('Void',v,'');
+  const gr=fn=>{const g={};settled.forEach(r=>{const k=fn(r),s=settle(r.primary,r.match.homeGoals,r.match.awayGoals);g[k]=g[k]||{w:0,l:0};if(s==='Won')g[k].w++;else if(s==='Lost')g[k].l++;});return Object.entries(g).map(([k,o])=>{const d=o.w+o.l;return{k,...o,rate:d>0?Math.round(o.w/d*100):null,d};}).sort((a,b)=>b.d-a.d);};
+  const bar=row=>{const p=row.rate!=null?row.rate:0,c=p>=60?'var(--green)':p>=45?'var(--gold)':'#fb7185';return `<div class="flex items-center gap-3 text-sm"><span class="w-24 truncate">${row.k}</span><div class="flex-1 bar-track h-2"><div style="width:${p}%;height:100%;background:${c};border-radius:9999px"></div></div><span class="w-20 text-right tnum" style="color:var(--muted)">${row.rate!=null?row.rate+'%':'—'} <span style="opacity:.6">(${row.w}-${row.l})</span></span></div>`;};
+  const mkt=gr(r=>marketTag(r.primary)), lg=gr(r=>r.match.league);
+  document.getElementById('track-market').innerHTML = mkt.length?mkt.map(bar).join(''):'<div class="text-sm" style="color:var(--muted)">No settled bankers yet.</div>';
+  document.getElementById('track-league').innerHTML = lg.length?lg.map(bar).join(''):'<div class="text-sm" style="color:var(--muted)">No settled bankers yet.</div>';
+})();
 
-  /* ---------------- LAST UPDATED ---------------- */
-  (function(){
-    const ts = window.DATA_UPDATED || null;
-    if(ts){
-      const d=new Date(ts);
-      if(!isNaN(d)) document.getElementById('last-updated').textContent = 'Updated ' + d.toLocaleString(undefined,{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
-    }
-  })();
+/* ============ LAST UPDATED ============ */
+(function(){
+  const ts=window.DATA_UPDATED; if(ts){ const d=new Date(ts); if(!isNaN(d)) document.getElementById('nav-updated').textContent='Updated '+d.toLocaleString(undefined,{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}); }
+})();
 
-  /* ---------------- FILTERS ---------------- */
-  (function(){
-    // populate league dropdown
-    const leagues = [...new Set(results.map(r=>r.match.league))].sort();
-    const sel = document.getElementById('filter-league');
-    sel.innerHTML = '<option value="">All leagues</option>' + leagues.map(l=>`<option value="${l.toLowerCase()}">${l}</option>`).join('');
-
-    const search=document.getElementById('filter-search'), fLeague=document.getElementById('filter-league'),
-          fMarket=document.getElementById('filter-market'), fBanker=document.getElementById('filter-bankers'),
-          noRes=document.getElementById('no-results');
-
-    function apply(){
-      const q=search.value.trim().toLowerCase(), lg=fLeague.value, mk=fMarket.value, bk=fBanker.checked;
-      let anyVisible=false;
-      document.querySelectorAll('.match-item').forEach(el=>{
-        const okQ = !q || el.dataset.search.includes(q);
-        const okL = !lg || el.dataset.league===lg;
-        const okM = !mk || el.dataset.market===mk;
-        const okB = !bk || el.dataset.banker==='1';
-        const show = okQ&&okL&&okM&&okB;
-        el.style.display = show?'':'none';
-        if(show) anyVisible=true;
-      });
-      // hide league blocks / date blocks that have no visible matches
-      document.querySelectorAll('.league-block').forEach(b=>{
-        const vis=[...b.querySelectorAll('.match-item')].some(e=>e.style.display!=='none');
-        b.style.display = vis?'':'none';
-      });
-      noRes.classList.toggle('hidden', anyVisible || !results.length);
-    }
-    [search,fLeague,fMarket].forEach(e=>e.addEventListener('input',apply));
-    fBanker.addEventListener('change',apply);
-  })();
+/* ============ MASTER RENDER ============ */
+function renderAll(){ renderStrip(); renderStats(); renderCards(); renderSidebar(); renderMatches(); }
+renderAll();
 </script>
 </body>
 </html>
