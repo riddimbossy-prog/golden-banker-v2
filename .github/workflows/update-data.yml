@@ -1,15 +1,26 @@
-name: Update Golden Banker data
+name: Update Predicto data
 
+# Runs daily on a schedule, and can be triggered by hand from the
+# "Actions" tab. Fetches fresh match data AND publishes the site to
+# GitHub Pages in the same run, so the live site always matches the data.
 on:
   schedule:
-    - cron: "0 7 * * *"
-  workflow_dispatch: {}
+    - cron: "0 7 * * *"      # every day at 07:00 UTC
+  workflow_dispatch: {}       # manual "Run workflow" button
 
+# Needed to commit data.js AND to deploy GitHub Pages
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+# Avoid overlapping Pages deployments
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  fetch:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repository
@@ -26,6 +37,9 @@ jobs:
           API_KEY=${{ secrets.API_KEY }}
           SEASON=${{ secrets.SEASON }}
           LEAGUES=${{ secrets.LEAGUES }}
+          MAX_LEAGUES=${{ secrets.MAX_LEAGUES }}
+          ODDS=${{ secrets.ODDS }}
+          H2H=${{ secrets.H2H }}
           EOF
 
       - name: Run the fetcher
@@ -33,7 +47,7 @@ jobs:
 
       - name: Commit updated data.js (if it changed)
         run: |
-          git config user.name "golden-banker-bot"
+          git config user.name "predicto-bot"
           git config user.email "bot@users.noreply.github.com"
           if ! git diff --quiet data.js; then
             git add data.js
@@ -43,3 +57,22 @@ jobs:
           else
             echo "No data changes today."
           fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site as Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
