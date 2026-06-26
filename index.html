@@ -278,10 +278,20 @@ const byDate = {};
 results.forEach(r=>{ const d=r.match.matchDate||'Undated'; (byDate[d]=byDate[d]||[]).push(r); });
 const datesWithGames = Object.keys(byDate).filter(d=>d!=='Undated').sort();
 
-/* the set of dates to show in the strip: union of game-dates + yest/today/tom */
+/* the set of dates to show in the strip: a fixed anchor window around today
+   (default -2..+2, NerdyTips-style) PLUS any other date that actually has games.
+   ANCHOR_BACK / ANCHOR_FWD are tunable dials — widen them to show more calendar
+   tabs. Empty anchor days still appear, but render dimmed and inert so the strip
+   reads as intentional rather than broken. NOTE: this only displays dates your
+   data contains — to fill more tabs, widen the fixture window in fetch-data.js. */
+const ANCHOR_BACK = 2;   // days before today to always show
+const ANCHOR_FWD  = 2;   // days after today to always show
 const stripDates = (()=>{
   const set = new Set(datesWithGames);
-  for(let off=-1; off<=1; off++){ const d=new Date(NOW.getFullYear(),NOW.getMonth(),NOW.getDate()+off); set.add(fmtDate(d)); }
+  for(let off=-ANCHOR_BACK; off<=ANCHOR_FWD; off++){
+    const d=new Date(NOW.getFullYear(),NOW.getMonth(),NOW.getDate()+off);
+    set.add(fmtDate(d));
+  }
   return [...set].sort();
 })();
 let activeDate = datesWithGames.includes(todayStr) ? todayStr : (datesWithGames[datesWithGames.length-1] || todayStr);
@@ -314,9 +324,14 @@ function renderStrip(){
   const el=document.getElementById('date-strip');
   el.innerHTML = stripDates.map(d=>{
     const has = (byDate[d]||[]).length;
-    return `<button class="date-pill ${d===activeDate?'active':''} ${!has?'opacity-40':''}" data-date="${d}">${dayLabel(d)}${has?` <span class="opacity-60">${has}</span>`:''}</button>`;
+    // Days with games are clickable + show a count; empty anchor days render
+    // dimmed and inert so the strip reads as intentional, not broken.
+    if(!has){
+      return `<span class="date-pill opacity-30 cursor-default" data-empty="1" title="No matches">${dayLabel(d)}</span>`;
+    }
+    return `<button class="date-pill ${d===activeDate?'active':''}" data-date="${d}">${dayLabel(d)} <span class="opacity-60">${has}</span></button>`;
   }).join('');
-  el.querySelectorAll('.date-pill').forEach(b=> b.addEventListener('click',()=>{ activeDate=b.dataset.date; renderAll(); }));
+  el.querySelectorAll('.date-pill[data-date]').forEach(b=> b.addEventListener('click',()=>{ activeDate=b.dataset.date; renderAll(); }));
 }
 
 /* ============ TOP PREDICTION CARDS (active date bankers, top 6) ============ */
