@@ -130,7 +130,7 @@ const FINISHED = new Set(["FT","AET","PEN"]);
   if (ALL_MODE) {
     for (const date of DATE_WINDOW) {
       let gotForThisDate = false;
-      for (const s of [season, String(parseInt(season,10)-1)]) {
+      for (const s of [...new Set([season, String(parseInt(season,10)-1), String(parseInt(season,10)+1)])]) {
         try {
           const r = await apiGet(`/fixtures?date=${date}&season=${s}`, cfg.API_KEY);
           requests++;
@@ -165,7 +165,7 @@ const FINISHED = new Set(["FT","AET","PEN"]);
     for (const leagueId of cfg.LEAGUES) {
       // pick the season that actually returns fixtures (try current, then prev)
       // resolved once per league using today's date probe, then reused.
-      const seasonsToTry = [season, String(parseInt(season,10)-1)];
+      const seasonsToTry = [...new Set([season, String(parseInt(season,10)-1), String(parseInt(season,10)+1)])];
       for (const date of DATE_WINDOW) {
         let added = false;
         for (const s of seasonsToTry) {
@@ -194,50 +194,71 @@ const FINISHED = new Set(["FT","AET","PEN"]);
   // so fetch each (league,season) ONCE and cache it. This is the key
   // saving that keeps a multi-day window affordable.
   // -----------------------------------------------------------------
-  const standingsCache = {}; // key `${leagueId}|${season}` -> { table, tableSize, leagueName, multiGroup }
-  async function getStandings(leagueId, seasonForStandings) {
-    const cacheKey = `${leagueId}|${seasonForStandings}`;
-    if (standingsCache[cacheKey]) return standingsCache[cacheKey];
-    let table = {}, tableSize = 20, leagueName = `League ${leagueId}`, multiGroup = false;
-    try {
-      const stRes = await apiGet(`/standings?league=${leagueId}&season=${seasonForStandings}`, cfg.API_KEY); requests++;
-      const block = stRes.response && stRes.response[0];
-      if (block) {
-        leagueName = block.league.name;
-        const groups = block.league.standings || [];
-        multiGroup = groups.length > 1;
-        let count = 0;
-        const allRows = [];
-        for (const g of groups) {
-          for (const row of g) {
-            const grpName = row.group || (block.league.name + (multiGroup ? " (grp)" : ""));
-            table[row.team.id] = { ...row, _group: grpName };
-            allRows.push(table[row.team.id]);
-            count++;
-          }
-        }
-        tableSize = groups.length === 1 ? groups[0].length : count;
-        const byGroup = {};
-        for (const r of allRows) (byGroup[r._group] = byGroup[r._group] || []).push(r);
-        for (const grp of Object.values(byGroup)) {
-          const homeSorted = [...grp].sort((a,b)=>{
-            const ap=(a.home&&a.home.points!=null)?a.home.points:homePtsFromRow(a.home), bp=(b.home&&b.home.points!=null)?b.home.points:homePtsFromRow(b.home);
-            if (bp!==ap) return bp-ap;
-            return gdOf(b.home)-gdOf(a.home);
-          });
-          homeSorted.forEach((r,i)=>{ r._homeRank = i+1; r._homePts = (r.home&&r.home.points!=null)?r.home.points:homePtsFromRow(r.home); });
-          const awaySorted = [...grp].sort((a,b)=>{
-            const ap=(a.away&&a.away.points!=null)?a.away.points:homePtsFromRow(a.away), bp=(b.away&&b.away.points!=null)?b.away.points:homePtsFromRow(b.away);
-            if (bp!==ap) return bp-ap;
-            return gdOf(b.away)-gdOf(a.away);
-          });
-          awaySorted.forEach((r,i)=>{ r._awayRank = i+1; r._awayPts = (r.away&&r.away.points!=null)?r.away.points:homePtsFromRow(r.away); });
-          grp.forEach(r=>{ r._groupSize = grp.length; });
-        }
+  // Parse one /standings API block into our table structure. Returns null
+  // if the block has no usable rows, so the caller can try another season.
+  function parseStandingsBlock(block) {
+    if (!block) return null;
+    const groups = block.league.standings || [];
+    let table = {}, multiGroup = groups.length > 1, count = 0;
+    const allRows = [];
+    for (const g of groups) {
+      for (const row of g) {
+        const grpName = row.group || (block.league.name + (multiGroup ? " (grp)" : ""));
+        table[row.team.id] = { ...row, _group: grpName };
+        allRows.push(table[row.team.id]);
+        count++;
       }
-      await sleep(6500);
-    } catch (e) { console.log(`League ${leagueId}: no standings (${e.message}) — neutral stats`); }
-    const result = { table, tableSize, leagueName, multiGroup };
+    }
+    if (!count) return null; // empty table — let caller fall back to another season
+    const tableSize = groups.length === 1 ? groups[0].length : count;
+    const byGroup = {};
+    for (const r of allRows) (byGroup[r._group] = byGroup[r._group] || []).push(r);
+    for (const grp of Object.values(byGroup)) {
+      const homeSorted = [...grp].sort((a,b)=>{
+        const ap=(a.home&&a.home.points!=null)?a.home.points:homePtsFromRow(a.home), bp=(b.home&&b.home.points!=null)?b.home.points:homePtsFromRow(b.home);
+        if (bp!==ap) return bp-ap;
+        return gdOf(b.home)-gdOf(a.home);
+      });
+      homeSorted.forEach((r,i)=>{ r._homeRank = i+1; r._homePts = (r.home&&r.home.points!=null)?r.home.points:homePtsFromRow(r.home); });
+      const awaySorted = [...grp].sort((a,b)=>{
+        const ap=(a.away&&a.away.points!=null)?a.away.points:homePtsFromRow(a.away), bp=(b.away&&b.away.points!=null)?b.away.points:homePtsFromRow(b.away);
+        if (bp!==ap) return bp-ap;
+        return gdOf(b.away)-gdOf(a.away);
+      });
+      awaySorted.forEach((r,i)=>{ r._awayRank = i+1; r._awayPts = (r.away&&r.away.points!=null)?r.away.points:homePtsFromRow(r.away); });
+      grp.forEach(r=>{ r._groupSize = grp.length; });
+    }
+    return { table, tableSize, leagueName: block.league.name, multiGroup };
+  }
+
+  // Standings don't change by date, so fetch each league ONCE and cache it.
+  // We try the resolved season first, then ±1, so domestic leagues (e.g.
+  // 2025/26 -> 2025) and one-off tournaments (e.g. World Cup -> 2026) both
+  // find a real table from a single SEASON= setting, year-round.
+  const standingsCache = {}; // key `${leagueId}` -> { table, tableSize, leagueName, multiGroup, season }
+  async function getStandings(leagueId, seasonForStandings) {
+    const cacheKey = `${leagueId}`;
+    if (standingsCache[cacheKey]) return standingsCache[cacheKey];
+    // de-duped season candidates: the one fixtures resolved to, then prev, then next
+    const base = parseInt(seasonForStandings, 10);
+    const seasonCandidates = [...new Set([ String(base), String(base-1), String(base+1) ])];
+    let parsed = null, usedSeason = seasonForStandings;
+    for (const s of seasonCandidates) {
+      try {
+        const stRes = await apiGet(`/standings?league=${leagueId}&season=${s}`, cfg.API_KEY); requests++;
+        const block = stRes.response && stRes.response[0];
+        const got = parseStandingsBlock(block);
+        await sleep(6500);
+        if (got) { parsed = got; usedSeason = s; break; }
+      } catch (e) {
+        console.log(`League ${leagueId}: standings season ${s} failed (${e.message})`);
+        await sleep(6500);
+      }
+    }
+    const result = parsed
+      ? { ...parsed, season: usedSeason }
+      : { table: {}, tableSize: 20, leagueName: `League ${leagueId}`, multiGroup: false, season: seasonForStandings };
+    if (!parsed) console.log(`League ${leagueId}: no standings in seasons ${seasonCandidates.join("/")} — neutral stats`);
     standingsCache[cacheKey] = result;
     return result;
   }
@@ -282,8 +303,9 @@ const FINISHED = new Set(["FT","AET","PEN"]);
     const date = grp.date;
     const fixtures = grp.fixtures;
 
-    const { table, tableSize, multiGroup } = await getStandings(leagueId, seasonForStandings);
-    let leagueName = standingsCache[`${leagueId}|${seasonForStandings}`].leagueName;
+    const standings = await getStandings(leagueId, seasonForStandings);
+    const { table, tableSize, multiGroup } = standings;
+    let leagueName = standings.leagueName;
     if (fixtures[0].league && fixtures[0].league.name) leagueName = fixtures[0].league.name;
 
     const oddsByFixture = await getOdds(leagueId, seasonForStandings, date);
