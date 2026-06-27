@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Strict Bankers • Predict2u</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 90'%3E%3Crect width='90' height='90' rx='20' fill='%23141b2d'/%3E%3Cg transform='translate(20,12)'%3E%3Cpath d='M10 8 L10 70' stroke='%23ffffff' stroke-width='10' stroke-linecap='round' fill='none'/%3E%3Cpath d='M10 13 L30 13 A21 21 0 0 1 30 55 L16 55' stroke='%23ffffff' stroke-width='10' fill='none' stroke-linecap='round'/%3E%3Cpath d='M6 64 L42 26' stroke='%233ec46d' stroke-width='10' stroke-linecap='round' fill='none'/%3E%3Cpolygon points='30,22 48,20 38,38' fill='%233ec46d'/%3E%3C/g%3E%3C/svg%3E" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+  :root{
+    --gold:#FFC53D; --green:#7ed957; --green-deep:#4faa43;
+    --red:#fb7185; --amber:#f5b73d;
+    --bg:#0a0e17; --panel:#111725; --panel-2:#0d1320;
+    --line:#1e2738; --ink:#e8edf5; --muted:#8b97ad;
+  }
+  *{ box-sizing:border-box; }
+  body{ font-family:'Inter',system-ui,sans-serif; background:var(--bg); color:var(--ink); margin:0; }
+  .display{ font-family:'Space Grotesk','Inter',sans-serif; }
+  .tnum{ font-variant-numeric:tabular-nums; }
+  .panel{ background:var(--panel); border:1px solid var(--line); }
+  .panel-2{ background:var(--panel-2); border:1px solid var(--line); }
+  .text-gold{ color:var(--gold); } .text-green{ color:var(--green); }
+  label.fld{ display:block; }
+  label.fld > span{ display:block; font-size:.7rem; text-transform:uppercase; letter-spacing:.04em; font-weight:600; color:var(--muted); margin-bottom:.25rem; }
+  input.in, select.in{ width:100%; background:var(--panel-2); border:1px solid var(--line); border-radius:.6rem; padding:.5rem .65rem; font-size:.9rem; color:var(--ink); outline:none; }
+  input.in:focus, select.in:focus{ border-color:rgba(255,197,61,.5); }
+  input[type=checkbox]{ accent-color:var(--gold); width:1rem; height:1rem; }
+  .seg{ font-size:.85rem; }
+  .verdict-bet{ background:linear-gradient(135deg, rgba(126,217,87,.16), rgba(126,217,87,.04)); border-color:rgba(126,217,87,.5); }
+  .verdict-nobet{ background:linear-gradient(135deg, rgba(251,113,133,.14), rgba(251,113,133,.03)); border-color:rgba(251,113,133,.45); }
+  .chip{ display:inline-flex; align-items:center; gap:.35rem; padding:.25rem .6rem; border-radius:.5rem; font-size:.72rem; font-weight:700; }
+  .chip-green{ background:rgba(126,217,87,.14); border:1px solid rgba(126,217,87,.4); color:var(--green); }
+  .chip-amber{ background:rgba(245,183,61,.14); border:1px solid rgba(245,183,61,.4); color:var(--amber); }
+  .chip-red{ background:rgba(251,113,133,.14); border:1px solid rgba(251,113,133,.4); color:var(--red); }
+  .meter-track{ height:.6rem; border-radius:9999px; background:var(--line); overflow:hidden; }
+  details>summary{ list-style:none; cursor:pointer; } details>summary::-webkit-details-marker{ display:none; }
+  .chev{ transition:transform .2s; } details[open] .chev{ transform:rotate(180deg); }
+  ::-webkit-scrollbar{ width:10px; height:10px; } ::-webkit-scrollbar-thumb{ background:var(--line); border-radius:6px; }
+</style>
+</head>
+<body>
+
+<nav class="panel border-0 border-b sticky top-0 z-50" style="border-bottom:1px solid var(--line)">
+  <div class="max-w-[1100px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <svg height="30" viewBox="0 0 440 120" xmlns="http://www.w3.org/2000/svg" aria-label="Predict2u">
+        <path d="M26 22 L26 98" stroke="#e8edf5" stroke-width="13" stroke-linecap="round" fill="none"/>
+        <path d="M26 28 L50 28 A25 25 0 0 1 50 78 L30 78" stroke="#e8edf5" stroke-width="13" fill="none" stroke-linecap="round"/>
+        <path d="M16 86 L58 44" stroke="#e8edf5" stroke-width="11" stroke-linecap="round" fill="none"/>
+        <polygon points="46,40 64,38 56,56" fill="#e8edf5"/>
+        <text x="92" y="80" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="62" letter-spacing="-1"><tspan fill="#e8edf5">Predict</tspan><tspan fill="#3ec46d">2u</tspan></text>
+      </svg>
+      <span class="chip chip-amber"><i class="fa-solid fa-lock"></i> Strict Bankers</span>
+    </div>
+    <a href="index.html" class="text-sm panel-2 px-3 py-2 rounded-xl hover:text-gold transition-colors"><i class="fa-solid fa-arrow-left mr-1"></i> Back to board</a>
+  </div>
+</nav>
+
+<div class="max-w-[1100px] mx-auto px-4 sm:px-6 py-6">
+
+  <header class="mb-6">
+    <h1 class="display text-2xl sm:text-3xl font-bold tracking-tight">Strict Bankers engine</h1>
+    <p class="mt-2 text-sm max-w-2xl" style="color:var(--muted)">
+      A conservative second opinion. This engine rejects most matches by design — same-tier games, sub-2.5 PPG straight wins, stronger-team-away traps, and any red flag all force <b style="color:var(--ink)">No Bet</b>. Enter the stats it asks for; it returns exactly one clean market, or none. Heuristic only — not a prediction, not a guarantee. 18+
+    </p>
+  </header>
+
+  <div class="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-5 items-start">
+
+    <!-- ============ INPUT FORM ============ -->
+    <form id="form" class="panel rounded-2xl p-4 sm:p-5 space-y-5">
+
+      <!-- match info -->
+      <section>
+        <div class="display font-semibold mb-3 flex items-center gap-2"><i class="fa-solid fa-circle-info text-gold text-sm"></i> Match</div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <label class="fld"><span>Home team</span><input class="in" id="homeName" placeholder="Home" value="Home" /></label>
+          <label class="fld"><span>Away team</span><input class="in" id="awayName" placeholder="Away" value="Away" /></label>
+          <label class="fld"><span>League</span><input class="in" id="league" placeholder="optional" /></label>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-3">
+          <label class="fld"><span>Home tier (1–5)</span>
+            <select class="in" id="homeTier"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+          <label class="fld"><span>Away tier (1–5)</span>
+            <select class="in" id="awayTier"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+          <div class="fld"><span class="block text-[.7rem] uppercase tracking-wide font-semibold mb-1" style="color:var(--muted)">Tier 1 = elite · 5 = very weak</span></div>
+        </div>
+      </section>
+
+      <!-- red flags -->
+      <section>
+        <div class="display font-semibold mb-3 flex items-center gap-2"><i class="fa-solid fa-flag text-gold text-sm"></i> Red flags <span class="text-xs font-normal" style="color:var(--muted)">(any one → No Bet)</span></div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 seg">
+          <label class="flex items-center gap-2"><input type="checkbox" id="rf_derby"> Derby / rivalry</label>
+          <label class="flex items-center gap-2"><input type="checkbox" id="rf_cup"> Cup knockout</label>
+          <label class="flex items-center gap-2"><input type="checkbox" id="rf_neutral"> Neutral venue</label>
+          <label class="flex items-center gap-2"><input type="checkbox" id="rf_rotation"> Heavy rotation</label>
+          <label class="flex items-center gap-2"><input type="checkbox" id="rf_striker"> Key striker out</label>
+          <label class="flex items-center gap-2"><input type="checkbox" id="rf_keeper"> Key keeper out</label>
+          <label class="flex items-center gap-2"><input type="checkbox" id="rf_selection"> Selection uncertain</label>
+          <label class="flex items-center gap-2"><input type="checkbox" id="rf_weather"> Extreme weather</label>
+          <label class="flex items-center gap-2"><input type="checkbox" id="rf_odds"> Suspicious odds move</label>
+          <label class="flex items-center gap-2"><input type="checkbox" id="rf_newmgr"> New-manager bounce</label>
+          <label class="flex items-center gap-2"><input type="checkbox" id="rf_motivation"> Motivation unclear</label>
+          <label class="flex items-center gap-2"><input type="checkbox" id="rf_deadrubber"> Dead rubber / goal met</label>
+        </div>
+      </section>
+
+      <!-- home stats -->
+      <section>
+        <div class="display font-semibold mb-3 flex items-center gap-2"><i class="fa-solid fa-house text-gold text-sm"></i> <span id="lblHome">Home</span> — home split</div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <label class="fld"><span>Home PPG</span><input class="in tnum" id="homePPG" type="number" step="0.01" placeholder="0.00" /></label>
+          <label class="fld"><span>Home scored /game</span><input class="in tnum" id="homeGF" type="number" step="0.01" placeholder="0.00" /></label>
+          <label class="fld"><span>Home conceded /game</span><input class="in tnum" id="homeGA" type="number" step="0.01" placeholder="0.00" /></label>
+          <label class="fld"><span>Home table rank</span><input class="in tnum" id="homeRank" type="number" placeholder="e.g. 4" /></label>
+          <label class="fld"><span>Teams in table</span><input class="in tnum" id="tableSize" type="number" placeholder="e.g. 20" /></label>
+          <label class="fld"><span>Clean sheet %</span><input class="in tnum" id="homeCS" type="number" step="1" placeholder="0–100" /></label>
+          <label class="fld"><span>Failed-to-score %</span><input class="in tnum" id="homeFTS" type="number" step="1" placeholder="0–100" /></label>
+          <label class="fld"><span>Last 5 (e.g. WWDLW)</span><input class="in" id="homeForm" placeholder="WWDLW" maxlength="5" /></label>
+        </div>
+        <label class="flex items-center gap-2 seg mt-3"><input type="checkbox" id="homeMotHigh"> <span id="lblHome2">Home</span> has equal-or-better motivation</label>
+      </section>
+
+      <!-- away stats -->
+      <section>
+        <div class="display font-semibold mb-3 flex items-center gap-2"><i class="fa-solid fa-plane text-gold text-sm"></i> <span id="lblAway">Away</span> — away split</div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <label class="fld"><span>Away PPG</span><input class="in tnum" id="awayPPG" type="number" step="0.01" placeholder="0.00" /></label>
+          <label class="fld"><span>Away scored /game</span><input class="in tnum" id="awayGF" type="number" step="0.01" placeholder="0.00" /></label>
+          <label class="fld"><span>Away conceded /game</span><input class="in tnum" id="awayGA" type="number" step="0.01" placeholder="0.00" /></label>
+          <label class="fld"><span>Away table rank</span><input class="in tnum" id="awayRank" type="number" placeholder="e.g. 2" /></label>
+          <label class="fld"><span>Clean sheet %</span><input class="in tnum" id="awayCS" type="number" step="1" placeholder="0–100" /></label>
+          <label class="fld"><span>Failed-to-score %</span><input class="in tnum" id="awayFTS" type="number" step="1" placeholder="0–100" /></label>
+          <label class="fld"><span>Last 5 (e.g. WDWWL)</span><input class="in" id="awayForm" placeholder="WDWWL" maxlength="5" /></label>
+          <label class="flex items-center gap-2 seg self-end pb-2"><input type="checkbox" id="awayMotHigh"> Strong motivation</label>
+        </div>
+      </section>
+
+      <div class="flex gap-3 pt-1">
+        <button type="button" id="btnEval" class="px-5 py-2.5 rounded-xl font-semibold" style="background:linear-gradient(135deg,var(--gold),#f0d77b);color:#0a0e17"><i class="fa-solid fa-gavel mr-1"></i> Evaluate</button>
+        <button type="button" id="btnReset" class="px-4 py-2.5 rounded-xl panel-2 font-semibold hover:text-gold transition-colors"><i class="fa-solid fa-rotate-left mr-1"></i> Reset</button>
+        <button type="button" id="btnExample" class="px-4 py-2.5 rounded-xl panel-2 font-semibold hover:text-gold transition-colors ml-auto text-sm">Load example</button>
+      </div>
+    </form>
+
+    <!-- ============ VERDICT PANEL ============ -->
+    <aside class="lg:sticky lg:top-20 space-y-4">
+      <div id="verdict" class="panel rounded-2xl p-5 text-center">
+        <div class="text-xs uppercase tracking-wider font-semibold mb-2" style="color:var(--muted)">Final market</div>
+        <div id="verdictMarket" class="display text-2xl font-bold mb-1">—</div>
+        <div id="verdictDecision" class="text-sm" style="color:var(--muted)">Fill the form and press Evaluate</div>
+        <div class="mt-4">
+          <div class="flex items-center justify-between text-xs mb-1" style="color:var(--muted)"><span>Confidence</span><span id="confLabel">—</span></div>
+          <div class="meter-track"><div id="confBar" style="width:0%;height:100%;background:var(--line);transition:width .4s"></div></div>
+          <div class="text-[.7rem] mt-1" style="color:var(--muted)">Bet only at 7+. Below 7 → No Bet.</div>
+        </div>
+      </div>
+
+      <div id="reasonsCard" class="panel rounded-2xl p-4 hidden">
+        <div class="text-xs uppercase tracking-wider font-semibold mb-2" style="color:var(--muted)">Reasons</div>
+        <ul id="reasons" class="space-y-1.5 text-sm"></ul>
+      </div>
+
+      <details id="blockedCard" class="panel rounded-2xl overflow-hidden hidden">
+        <summary class="p-4 flex items-center gap-2"><i class="fa-solid fa-ban text-sm" style="color:var(--red)"></i><span class="font-semibold text-sm">Blocked markets</span><i class="fa-solid fa-chevron-down chev ml-auto text-xs" style="color:var(--muted)"></i></summary>
+        <div class="px-4 pb-4"><ul id="blocked" class="space-y-1.5 text-sm" style="border-top:1px solid var(--line);padding-top:.75rem"></ul></div>
+      </details>
+
+      <details class="panel rounded-2xl overflow-hidden">
+        <summary class="p-4 flex items-center gap-2"><i class="fa-solid fa-list-check text-sm text-gold"></i><span class="font-semibold text-sm">Rules summary</span><i class="fa-solid fa-chevron-down chev ml-auto text-xs" style="color:var(--muted)"></i></summary>
+        <div class="px-4 pb-4 text-sm space-y-1.5" style="border-top:1px solid var(--line);padding-top:.75rem;color:var(--muted)">
+          <p>Same tier → No Bet.</p>
+          <p>Tier gap of 1 → No Bet unless an extreme home/away mismatch exists.</p>
+          <p>Straight win needs ≥ 2.5 PPG in the relevant split, else blocked.</p>
+          <p>Stronger team away + home not very weak → Away Win blocked (DNB/Under instead).</p>
+          <p>Two markets equally good → No Bet.</p>
+          <p>Confidence below 7 → No Bet.</p>
+          <p>One match, one market.</p>
+        </div>
+      </details>
+    </aside>
+  </div>
+
+  <p class="text-xs mt-6" style="color:var(--muted)">Strict Bankers is a heuristic decision aid, not a prediction service. It cannot beat the bookmaker's margin. A "No Bet" is the engine working as intended. Stake only what you can afford to lose. 18+</p>
+</div>
+
+<script>
+/* ================= STRICT BANKERS ENGINE =================
+   Faithful to the spec: red flags → tiers → same-tier → tier gap →
+   stronger side → PPG/weakness tests → one market or No Bet.
+   ======================================================== */
+const $ = id => document.getElementById(id);
+const num = id => { const v = parseFloat($(id).value); return isNaN(v) ? null : v; };
+const chk = id => $(id).checked;
+
+const RED_FLAGS = [
+  ['rf_derby','Derby / rivalry match'],['rf_cup','Cup knockout match'],
+  ['rf_neutral','Neutral venue'],['rf_rotation','Heavy rotation expected'],
+  ['rf_striker','Key striker missing'],['rf_keeper','Key goalkeeper missing'],
+  ['rf_selection','Team selection uncertain'],['rf_weather','Extreme weather'],
+  ['rf_odds','Suspicious odds movement'],['rf_newmgr','New-manager bounce'],
+  ['rf_motivation','Motivation unclear'],['rf_deadrubber','Dead rubber / goal already met'],
+];
+
+function formScore(s){ // W=3 D=1 L=0 over last5, returns 0..1
+  if(!s) return null;
+  const c = s.toUpperCase().replace(/[^WDL]/g,'');
+  if(!c) return null;
+  let pts=0; for(const ch of c) pts += ch==='W'?3:ch==='D'?1:0;
+  return pts/(c.length*3);
+}
+
+function evaluate(){
+  const homeName = $('homeName').value.trim() || 'Home';
+  const awayName = $('awayName').value.trim() || 'Away';
+  const homeTier = parseInt($('homeTier').value,10);
+  const awayTier = parseInt($('awayTier').value,10);
+  const homePPG = num('homePPG'), awayPPG = num('awayPPG');
+  const homeGF = num('homeGF'), homeGA = num('homeGA');
+  const awayGF = num('awayGF'), awayGA = num('awayGA');
+  const homeRank = num('homeRank'), awayRank = num('awayRank'), tableSize = num('tableSize');
+  const homeFTS = num('homeFTS'), awayFTS = num('awayFTS');
+  const homeFormS = formScore($('homeForm').value), awayFormS = formScore($('awayForm').value);
+  const homeMot = chk('homeMotHigh'), awayMot = chk('awayMotHigh');
+
+  const blocked = [];
+  const reasons = [];
+  const block = (mkt,why)=> blocked.push({mkt,why});
+
+  // ---- guard: need tiers ----
+  if(isNaN(homeTier) || isNaN(awayTier)){
+    return finish('No Bet','Avoid',0,['Both teams need a tier before the engine can decide.'],[{mkt:'All markets',why:'Missing tier classification.'}]);
+  }
+
+  // ---- STEP 2: red flags ----
+  const firedFlags = RED_FLAGS.filter(([id])=>chk(id)).map(([,label])=>label);
+  if(firedFlags.length){
+    firedFlags.forEach(f=>block('All markets', f));
+    return finish('No Bet','Avoid',0,
+      ['A major red flag forces No Bet regardless of the numbers.', ...firedFlags.map(f=>'Red flag: '+f)],
+      blocked);
+  }
+
+  // ---- STEP 4: same tier ----
+  if(homeTier === awayTier){
+    return finish('No Bet','Avoid',0,
+      ['Same-tier matchup.','Same-tier games are avoided regardless of statistics.','Carries 50/50 risk.'],
+      [{mkt:'All markets',why:'Blocked by same-tier rule.'}]);
+  }
+
+  // ---- STEP 5: tier gap ----
+  const gap = Math.abs(homeTier - awayTier);
+  const strongerIsHome = homeTier < awayTier; // lower tier number = stronger
+  const strongerName = strongerIsHome ? homeName : awayName;
+  const weakerName = strongerIsHome ? awayName : homeName;
+
+  // extreme home/away mismatch probe (used for gap=1 exception)
+  const strongerSplitPPG = strongerIsHome ? homePPG : awayPPG;
+  const weakRankBottom5 = (()=>{ // is the weaker side bottom-5 in the table?
+    const wr = strongerIsHome ? awayRank : homeRank;
+    if(wr==null || tableSize==null) return false;
+    return wr > (tableSize - 5);
+  })();
+  const extremeMismatch = (strongerSplitPPG!=null && strongerSplitPPG>=2.5) && weakRankBottom5;
+
+  if(gap === 1 && !extremeMismatch){
+    return finish('No Bet','Avoid',0,
+      ['Tier gap of only 1.','No extreme home/away mismatch to justify a bet.','Near-tier games are avoided.'],
+      [{mkt:'All markets',why:'Tier gap 1 with no extreme mismatch.'}]);
+  }
+
+  // ---- relevant split PPG for the stronger side ----
+  const strongerPPG = strongerIsHome ? homePPG : awayPPG;
+  const strongerGF  = strongerIsHome ? homeGF  : awayGF;
+  const oppGA       = strongerIsHome ? awayGA  : homeGA;  // opponent concession in their split
+  const oppFTS      = strongerIsHome ? awayFTS : homeFTS;
+
+  reasons.push(`${strongerName} is the stronger side by tier (gap ${gap}).`);
+
+  // ================= STRONGER TEAM HOME =================
+  if(strongerIsHome){
+    // Home Win test
+    const ppgOk = homePPG!=null && homePPG>=2.5;
+    const twoTierOrExtreme = gap>=2 || extremeMismatch;
+    const awayWeak = (awayPPG!=null && awayPPG<1.0) || (awayRank!=null && tableSize!=null && awayRank>(tableSize-5));
+    const homeScoresWell = homeGF!=null && homeGF>=1.6;
+    const awayLeaks = awayGA!=null && awayGA>=1.5;
+
+    if(!ppgOk) block('Home Win', `${homeName} home PPG ${homePPG==null?'unknown':homePPG.toFixed(2)} is below the required 2.5.`);
+
+    if(ppgOk && twoTierOrExtreme && awayWeak && homeScoresWell && awayLeaks && (homeMot || !awayMot)){
+      let conf = 7;
+      if(gap>=3) conf++;
+      if(homeGF!=null && homeGF>=2.0) conf++;
+      if(awayGA!=null && awayGA>=2.0) conf++;
+      if(homeFormS!=null && homeFormS>=0.6) conf++;
+      if(awayMot && !homeMot) conf--;
+      conf = Math.max(0,Math.min(10,conf));
+      reasons.push(`${homeName} has ≥2.5 home PPG and scores well at home.`);
+      reasons.push(`${awayName} is weak away and concedes heavily.`);
+      block('Home DNB','Not needed — full Home Win conditions are met.');
+      return finish(conf>=7?'Home Win':'Home DNB', conf>=7?'Bet':'Bet', conf, reasons, blocked);
+    }
+
+    // Home DNB test (stronger but not dominant enough, or win blocked)
+    const dnbOk = homeGF!=null && homeGA!=null && (homeGF >= homeGA) && (awayPPG==null || awayPPG<2.5);
+    if(dnbOk){
+      let conf = 7;
+      if(gap>=3) conf++;
+      if(homeFormS!=null && homeFormS>=0.6) conf++;
+      if(!ppgOk) reasons.push(`Home Win blocked by sub-2.5 PPG, so protection via DNB.`);
+      reasons.push(`${homeName} has a positive home profile; ${awayName} is inferior but not extreme.`);
+      conf = Math.max(0,Math.min(10,conf));
+      return finish(conf>=7?'Home DNB':'No Bet', conf>=7?'Bet':'Avoid', conf, reasons,
+        conf>=7?blocked:[...blocked,{mkt:'Home DNB',why:'Confidence below 7.'}]);
+    }
+
+    // goals fallback
+    return goalsFallback({homeGF,homeGA,awayGF,awayGA,gap,reasons,blocked,strongerName});
+  }
+
+  // ================= STRONGER TEAM AWAY =================
+  // Home opponent weakness test (need >=4 of 6)
+  const checks = [
+    homeRank!=null && tableSize!=null && homeRank>(tableSize-5),  // bottom 5 home
+    homeGF!=null && homeGF<1.0,                                    // low home scoring
+    homeGA!=null && homeGA>=1.6,                                   // high home conceding
+    homeFormS!=null && homeFormS<0.4,                             // poor form
+    !homeMot,                                                      // low motivation/squad problems (proxy)
+    gap>=2,                                                        // away has 2+ tier edge
+  ];
+  const weaknessCount = checks.filter(Boolean).length;
+  const homeVeryWeak = weaknessCount>=4;
+
+  const awayPpgOk = awayPPG!=null && awayPPG>=2.5;
+
+  if(!awayPpgOk) block('Away Win', `${awayName} away PPG ${awayPPG==null?'unknown':awayPPG.toFixed(2)} is below the required 2.5.`);
+  if(!homeVeryWeak) block('Away Win', `${homeName} is not weak enough at home (${weaknessCount}/6 weakness signals; needs 4).`);
+
+  // Away Win allowed only if gap>=2, away PPG ok, home very weak, no flags (already passed)
+  if(gap>=2 && awayPpgOk && homeVeryWeak){
+    let conf = 7;
+    if(gap>=3) conf++;
+    if(awayGF!=null && awayGF>=2.0) conf++;
+    if(homeGA!=null && homeGA>=2.0) conf++;
+    if(awayFormS!=null && awayFormS>=0.6) conf++;
+    conf = Math.max(0,Math.min(10,conf));
+    reasons.push(`${awayName} has a major tier edge and ≥2.5 away PPG.`);
+    reasons.push(`${homeName} passes the home-weakness test (${weaknessCount}/6).`);
+    block('Away DNB','Not selected — full Away Win conditions are satisfied.');
+    return finish(conf>=7?'Away Win':'Away DNB', 'Bet', conf, reasons, blocked);
+  }
+
+  // Away DNB — stronger away, home competitive but inferior, draw risk
+  const awayDnbOk = awayGF!=null && awayGA!=null && (awayGF>=awayGA);
+  if(awayDnbOk){
+    let conf = 7;
+    if(gap>=3) conf++;
+    if(awayFormS!=null && awayFormS>=0.6) conf++;
+    if(!awayMot) conf--;
+    conf = Math.max(0,Math.min(10,conf));
+    reasons.push(`${awayName} is stronger away but ${homeName} is not weak enough for Away Win.`);
+    reasons.push(`Draw risk present, so DNB protects the stake.`);
+    return finish(conf>=7?'Away DNB':'No Bet', conf>=7?'Bet':'Avoid', conf, reasons,
+      conf>=7?blocked:[...blocked,{mkt:'Away DNB',why:'Confidence below 7.'}]);
+  }
+
+  // Under 3.5 lean for stronger-away controlled games, else goals fallback
+  if(homeGF!=null && awayGF!=null && (homeGF+awayGF)<2.6){
+    let conf = 7;
+    reasons.push(`Stronger team away with a controlled scoring profile favours Under 3.5.`);
+    return finish('Under 3.5 Goals','Bet',conf,reasons,blocked);
+  }
+
+  return goalsFallback({homeGF,homeGA,awayGF,awayGA,gap,reasons,blocked,strongerName});
+}
+
+function goalsFallback({homeGF,homeGA,awayGF,awayGA,gap,reasons,blocked,strongerName}){
+  const combined = (homeGF!=null&&awayGF!=null) ? (homeGF+awayGF) : null;
+  // Over 2.5 needs a very strong goal profile
+  if(combined!=null && combined>=3.2 && homeGF>=1.6 && awayGF>=1.2 && (homeGA>=1.4||awayGA>=1.4)){
+    reasons.push('Strong combined goal profile with clear defensive leaks → Over 2.5.');
+    let conf = combined>=3.6 ? 8 : 7;
+    return finish('Over 2.5 Goals','Bet',conf,reasons,blocked);
+  }
+  // Over 1.5 safer line
+  if(combined!=null && combined>=2.6 && (homeGF>=1.4||awayGF>=1.2)){
+    reasons.push('Clear attack-vs-defence edge but not enough for Over 2.5 → safer Over 1.5.');
+    return finish('Over 1.5 Goals','Bet',7,reasons,blocked);
+  }
+  // Under 2.5 if both attacks weak
+  if(combined!=null && combined<=2.0 && (homeGF<1.2&&awayGF<1.1)){
+    reasons.push('Both attacks weak with low combined goals → Under 2.5.');
+    return finish('Under 2.5 Goals','Bet',7,reasons,blocked);
+  }
+  reasons.push('No single market is clean enough to back.');
+  return finish('No Bet','Avoid',Math.min(6, 4),reasons,[...blocked,{mkt:'Goals markets',why:'No clear, dominant goal profile.'}]);
+}
+
+function finish(market, decision, confidence, reasons, blocked){
+  const isBet = market!=='No Bet' && decision==='Bet' && confidence>=7;
+  const v = $('verdict');
+  v.className = 'panel rounded-2xl p-5 text-center ' + (isBet?'verdict-bet':'verdict-nobet');
+  $('verdictMarket').textContent = market;
+  $('verdictMarket').style.color = isBet ? 'var(--green)' : 'var(--red)';
+  $('verdictDecision').innerHTML = isBet
+    ? `<span class="chip chip-green"><i class="fa-solid fa-check"></i> Bet</span>`
+    : `<span class="chip chip-red"><i class="fa-solid fa-xmark"></i> ${decision==='Bet'?'No Bet':decision}</span>`;
+
+  const pct = Math.round((confidence/10)*100);
+  const bar = $('confBar');
+  bar.style.width = pct+'%';
+  bar.style.background = confidence>=9?'var(--green)':confidence>=7?'var(--gold)':confidence>=5?'var(--amber)':'var(--red)';
+  const meaning = confidence<=4?'No Bet':confidence<=6?'Weak / avoid':confidence===7?'Playable':confidence===8?'Strong':'Banker candidate';
+  $('confLabel').textContent = `${confidence}/10 · ${meaning}`;
+
+  const rc = $('reasonsCard'), rl = $('reasons');
+  if(reasons && reasons.length){ rc.classList.remove('hidden'); rl.innerHTML = reasons.map(r=>`<li class="flex gap-2"><span style="color:var(--gold)">•</span><span>${r}</span></li>`).join(''); }
+  else rc.classList.add('hidden');
+
+  const bc = $('blockedCard'), bl = $('blocked');
+  if(blocked && blocked.length){ bc.classList.remove('hidden'); bl.innerHTML = blocked.map(b=>`<li><span class="chip chip-amber mb-1">${b.mkt}</span><div style="color:var(--muted)">${b.why}</div></li>`).join(''); }
+  else bc.classList.add('hidden');
+
+  v.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+/* ---- live label sync ---- */
+function syncLabels(){
+  const h=$('homeName').value.trim()||'Home', a=$('awayName').value.trim()||'Away';
+  $('lblHome').textContent=h; $('lblHome2').textContent=h; $('lblAway').textContent=a;
+}
+$('homeName').addEventListener('input',syncLabels);
+$('awayName').addEventListener('input',syncLabels);
+
+/* ---- buttons ---- */
+$('btnEval').addEventListener('click',evaluate);
+$('btnReset').addEventListener('click',()=>{ $('form').reset(); syncLabels();
+  $('verdict').className='panel rounded-2xl p-5 text-center';
+  $('verdictMarket').textContent='—'; $('verdictMarket').style.color='';
+  $('verdictDecision').textContent='Fill the form and press Evaluate';
+  $('confBar').style.width='0%'; $('confBar').style.background='var(--line)'; $('confLabel').textContent='—';
+  $('reasonsCard').classList.add('hidden'); $('blockedCard').classList.add('hidden');
+});
+$('btnExample').addEventListener('click',()=>{
+  // Example 1 from the spec: straight win blocked by PPG → Home DNB
+  $('homeName').value='Team A'; $('awayName').value='Team B'; syncLabels();
+  $('homeTier').value='1'; $('awayTier').value='4';
+  $('homePPG').value='2.30'; $('homeGF').value='1.9'; $('homeGA').value='0.8'; $('homeRank').value='3'; $('tableSize').value='20';
+  $('homeCS').value='55'; $('homeFTS').value='10'; $('homeForm').value='WWWDW'; $('homeMotHigh').checked=true;
+  $('awayPPG').value='0.70'; $('awayGF').value='0.7'; $('awayGA').value='2.1'; $('awayRank').value='18';
+  $('awayCS').value='5'; $('awayFTS').value='45'; $('awayForm').value='LLDLL'; $('awayMotHigh').checked=false;
+  evaluate();
+});
+syncLabels();
+</script>
+</body>
+</html>
