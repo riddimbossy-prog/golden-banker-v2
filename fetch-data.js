@@ -280,6 +280,36 @@ const FINISHED = new Set(["FT","AET","PEN"]);
     }
     if (!count) return null; // empty table — let caller fall back to another season
     const tableSize = groups.length === 1 ? groups[0].length : count;
+
+    // ---- LEAGUE BASELINE AVERAGES (no extra API calls) ----
+    // Sum each team's season totals across the table to get the league's own
+    // "normal": goals per game, draw rate, home-win rate. The engine uses these
+    // to judge a match RELATIVE to its league instead of one global assumption.
+    // Marked unreliable (and ignored) if too few games have been played, so we
+    // never calibrate to a noisy small sample (early season / sparse division).
+    let sumPlayed = 0, sumGoals = 0, sumDraws = 0, sumHomeWins = 0, sumHomePlayed = 0;
+    for (const r of allRows) {
+      const a = r.all || {};
+      const p = a.played || 0;
+      sumPlayed += p;
+      sumGoals  += (a.goals && (a.goals.for || 0)) || 0;        // goals scored (for)
+      sumGoals  += (a.goals && (a.goals.against || 0)) || 0;    // + conceded = all goals, counted twice
+      sumDraws  += (a.draw || 0);
+      const h = r.home || {};
+      sumHomePlayed += (h.played || 0);
+      sumHomeWins   += (h.win || 0);
+    }
+    // each game appears twice across the two teams' rows, so divide team-sums by 2
+    const gamesApprox = sumPlayed / 2;
+    const avgGamesPerTeam = tableSize ? sumPlayed / tableSize : 0;
+    const leagueAvg = {
+      goalsPerGame: gamesApprox > 0 ? Math.round((sumGoals / 2 / gamesApprox) * 100) / 100 : null,
+      drawRate:     sumPlayed  > 0 ? Math.round((sumDraws / sumPlayed) * 100) / 100 : null, // draws counted per-team = per-game share
+      homeWinRate:  sumHomePlayed > 0 ? Math.round((sumHomeWins / sumHomePlayed) * 100) / 100 : null,
+      gamesPlayed:  Math.round(gamesApprox),
+      // reliable only if teams have played a reasonable number of games
+      reliable:     avgGamesPerTeam >= 5,
+    };
     const byGroup = {};
     for (const r of allRows) (byGroup[r._group] = byGroup[r._group] || []).push(r);
     for (const grp of Object.values(byGroup)) {
@@ -297,7 +327,7 @@ const FINISHED = new Set(["FT","AET","PEN"]);
       awaySorted.forEach((r,i)=>{ r._awayRank = i+1; r._awayPts = (r.away&&r.away.points!=null)?r.away.points:homePtsFromRow(r.away); r._awayGames = (r.away&&r.away.played!=null)?r.away.played:null; });
       grp.forEach(r=>{ r._groupSize = grp.length; });
     }
-    return { table, tableSize, leagueName: block.league.name, multiGroup };
+    return { table, tableSize, leagueName: block.league.name, multiGroup, leagueAvg };
   }
 
   // Standings don't change by date, so fetch each league ONCE and cache it.
@@ -374,6 +404,7 @@ const FINISHED = new Set(["FT","AET","PEN"]);
 
     const standings = await getStandings(leagueId, seasonForStandings);
     const { table, tableSize, multiGroup } = standings;
+    const leagueAvg = standings.leagueAvg || null;
     let leagueName = standings.leagueName;
     if (fixtures[0].league && fixtures[0].league.name) leagueName = fixtures[0].league.name;
 
@@ -436,6 +467,7 @@ const FINISHED = new Set(["FT","AET","PEN"]);
         homeVenuePts: H._homePts ?? null, awayVenuePts: A._awayPts ?? null,
         homeVenueGames: H._homeGames ?? null, awayVenueGames: A._awayGames ?? null,
         venueTableSize: H._groupSize ?? A._groupSize ?? tableSize,
+        leagueAvg,  // per-league baseline averages for engine calibration
         sameGroup, isKnockout,
         isTournament: multiGroup || isKnockout,
         round: roundName || null,
