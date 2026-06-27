@@ -33,11 +33,13 @@ jobs:
           SEASON=${{ secrets.SEASON }}
           LEAGUES=${{ secrets.LEAGUES }}
           MAX_LEAGUES=${{ secrets.MAX_LEAGUES }}
+          MAX_PROBES=${{ secrets.MAX_PROBES }}
           ODDS=${{ secrets.ODDS }}
           H2H=${{ secrets.H2H }}
           DAYS_BACK=${{ secrets.DAYS_BACK }}
           DAYS_FWD=${{ secrets.DAYS_FWD }}
           REQUEST_BUDGET=${{ secrets.REQUEST_BUDGET }}
+          SLEEP_MS=${{ secrets.SLEEP_MS }}
           EOF
       - name: Run the fetcher
         run: node fetch-data.js
