@@ -34,6 +34,7 @@ function readConfig() {
     if (key === "API_KEY") cfg.API_KEY = val.replace(/['"*]/g, "").replace(/[^A-Za-z0-9\-]/g, "");
     else if (key === "SEASON") cfg.SEASON = val.replace(/[^0-9]/g, "");
     else if (key === "MAX_LEAGUES") cfg.MAX_LEAGUES = parseInt(val.replace(/[^0-9]/g,""),10) || 0;
+    else if (key === "REQUEST_BUDGET") cfg.REQUEST_BUDGET = parseInt(val.replace(/[^0-9]/g,""),10) || 0;
     else if (key === "DAYS_BACK") cfg.DAYS_BACK = parseInt(val.replace(/[^0-9]/g,""),10);
     else if (key === "DAYS_FWD") cfg.DAYS_FWD = parseInt(val.replace(/[^0-9]/g,""),10);
     else if (key === "ODDS") cfg.ODDS = !/^(false|no|off|0)$/i.test(val.trim());
@@ -162,11 +163,30 @@ const FINISHED = new Set(["FT","AET","PEN"]);
     }
   } else {
     // LIST mode: for each league, sweep every date in the window.
+    // CAPS (important for very long league lists):
+    //   MAX_LEAGUES   — stop after this many DISTINCT leagues yield fixtures.
+    //   REQUEST_BUDGET — hard stop if total requests cross this ceiling, so a
+    //                    runaway run can never exhaust your daily API quota.
+    const REQUEST_BUDGET = cfg.REQUEST_BUDGET || 6000; // leave headroom under 7,500/day
+    const leaguesWithFixtures = new Set();
+    let capped = false;
     for (const leagueId of cfg.LEAGUES) {
+      if (capped) break;
+      // request-budget guard: stop opening new leagues if we're near the ceiling
+      if (requests >= REQUEST_BUDGET) {
+        console.log(`Request budget reached (${requests}/${REQUEST_BUDGET}) — stopping early to protect your daily quota.`);
+        break;
+      }
+      // league cap: once enough distinct leagues have games, stop sweeping more
+      if (MAX_LEAGUES && leaguesWithFixtures.size >= MAX_LEAGUES) {
+        console.log(`League cap reached (${MAX_LEAGUES}) — not processing further leagues this run.`);
+        break;
+      }
       // pick the season that actually returns fixtures (try current, then prev)
       // resolved once per league using today's date probe, then reused.
       const seasonsToTry = [...new Set([season, String(parseInt(season,10)-1), String(parseInt(season,10)+1)])];
       for (const date of DATE_WINDOW) {
+        if (requests >= REQUEST_BUDGET) { capped = true; break; }
         let added = false;
         for (const s of seasonsToTry) {
           try {
@@ -175,18 +195,21 @@ const FINISHED = new Set(["FT","AET","PEN"]);
             const arr = fxRes.response || [];
             if (arr.length) {
               leagueGroups.push({ id: leagueId, season: s, date, fixtures: arr });
+              leaguesWithFixtures.add(leagueId);
               added = true;
             }
           } catch (e) {
-            if (e.message === "RATE_LIMIT") { console.log("RATE LIMIT — wait a minute and run again."); break; }
+            if (e.message === "RATE_LIMIT") { console.log("RATE LIMIT — stopping early; raise the gap between runs."); capped = true; break; }
             if (!firstError) firstError = e.message;
           }
           await sleep(6500);
           if (added) break; // found fixtures for this date+season; next date
         }
+        if (capped) break;
         if (!added) console.log(`League ${leagueId} ${date}: no fixtures`);
       }
     }
+    if (MAX_LEAGUES) console.log(`LIST mode: ${leaguesWithFixtures.size} league(s) with fixtures processed (cap ${MAX_LEAGUES}).`);
   }
 
   // -----------------------------------------------------------------
