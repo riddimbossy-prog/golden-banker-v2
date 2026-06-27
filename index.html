@@ -8,53 +8,528 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 <style>
-  /* Paste all your original styles here */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+  :root{
+    --gold:#FFC53D; --gold-deep:#D4AF37;
+    --green:#7ed957; --green-deep:#4faa43;
+    --bg:#0a0e17; --panel:#111725; --panel-2:#0d1320;
+    --line:#1e2738; --ink:#e8edf5; --muted:#8b97ad;
+  }
+  *{ box-sizing:border-box; }
+  body{ font-family:'Inter',system-ui,sans-serif; background:var(--bg); color:var(--ink); margin:0; }
+  .display{ font-family:'Space Grotesk','Inter',sans-serif; }
+  .tnum{ font-variant-numeric:tabular-nums; }
+
+  /* panels */
+  .panel{ background:var(--panel); border:1px solid var(--line); }
+  .panel-2{ background:var(--panel-2); border:1px solid var(--line); }
+
+  /* gold + green accents */
+  .text-gold{ color:var(--gold); }
+  .text-green{ color:var(--green); }
+  .bg-gold{ background:linear-gradient(135deg,var(--gold),#f0d77b); color:#0a0e17; }
+  .chip-gold{ background:rgba(255,197,61,.12); border:1px solid rgba(255,197,61,.35); color:var(--gold); }
+  .chip-green{ background:rgba(126,217,87,.12); border:1px solid rgba(126,217,87,.35); color:var(--green); }
+  .chip-dnb{ background:rgba(129,140,248,.14); border:1px solid rgba(129,140,248,.35); color:#a5b4fc; }
+  .chip-skip{ background:rgba(139,151,173,.12); border:1px solid rgba(139,151,173,.3); color:var(--muted); }
+  .chip-live{ background:rgba(244,63,94,.16); border:1px solid rgba(244,63,94,.4); color:#fb7185; }
+
+  /* date strip */
+  .date-pill{ padding:.5rem .9rem; border-radius:.7rem; font-size:.82rem; font-weight:600; color:var(--muted);
+    white-space:nowrap; cursor:pointer; transition:all .15s; border:1px solid transparent; }
+  .date-pill:hover{ color:var(--ink); background:var(--panel); }
+  .date-pill.active{ background:linear-gradient(135deg,var(--gold),#f0d77b); color:#0a0e17; border-color:var(--gold); }
+
+  /* result chips */
+  .res-won{ background:#14532d; color:#86efac; }
+  .res-lost{ background:#7f1d1d; color:#fda4af; }
+  .res-void{ background:#334155; color:#cbd5e1; }
+
+  /* league row */
+  .lg-row summary{ list-style:none; cursor:pointer; }
+  .lg-row summary::-webkit-details-marker{ display:none; }
+  .lg-row[open] .lg-chev{ transform:rotate(180deg); }
+  .lg-chev{ transition:transform .2s; }
+  .match-line:hover{ background:rgba(255,255,255,.02); }
+  .is-banker-row{ box-shadow:inset 3px 0 0 var(--gold); }
+
+  /* country sidebar */
+  .country-item{ display:flex; align-items:center; gap:.6rem; padding:.55rem .7rem; border-radius:.6rem;
+    font-size:.85rem; color:var(--muted); cursor:pointer; transition:all .12s; }
+  .country-item:hover{ background:var(--panel); color:var(--ink); }
+  .country-item.active{ background:rgba(255,197,61,.1); color:var(--gold); }
+  .flag{ width:20px; height:14px; border-radius:2px; object-fit:cover; flex-shrink:0; background:var(--line); }
+
+  /* prediction card */
+  .pred-card{ background:var(--panel); border:1px solid var(--line); border-radius:1rem; padding:1rem;
+    transition:transform .15s, border-color .15s; }
+  .pred-card:hover{ transform:translateY(-2px); border-color:rgba(255,197,61,.4); }
+
+  .odd-cell{ background:var(--panel-2); border:1px solid var(--line); border-radius:.5rem; padding:.35rem .2rem;
+    text-align:center; font-size:.8rem; font-weight:600; }
+  .odd-cell.best{ border-color:rgba(126,217,87,.5); color:var(--green); }
+
+  details>summary{ list-style:none; } details>summary::-webkit-details-marker{ display:none; }
+  .chev{ transition:transform .2s; } details[open]>summary .chev{ transform:rotate(180deg); }
+  .bar-track{ background:var(--line); border-radius:9999px; overflow:hidden; }
+
+  /* light theme */
+  body.light{ --bg:#eef1f6; --panel:#ffffff; --panel-2:#f1f4f9; --line:#dde3ec; --ink:#0f1729; --muted:#566076; }
+  body.light .bg-gold{ color:#0a0e17; }
+  /* darker gold so it reads on white (the bright #FFC53D vanishes on light bg) */
+  body.light .text-gold{ color:#b8860b; }
+  body.light .text-green{ color:#2f9e54; }
+  /* chips: stronger fills + darker text on light bg */
+  body.light .chip-gold{ background:rgba(184,134,11,.14); border-color:rgba(184,134,11,.4); color:#946c08; }
+  body.light .chip-green{ background:rgba(47,158,84,.14); border-color:rgba(47,158,84,.4); color:#1f7a3f; }
+  body.light .chip-dnb{ background:rgba(99,102,241,.14); border-color:rgba(99,102,241,.4); color:#4f46e5; }
+  body.light .chip-skip{ background:rgba(86,96,118,.12); border-color:rgba(86,96,118,.3); color:#475069; }
+  body.light .chip-live{ background:rgba(225,29,72,.12); border-color:rgba(225,29,72,.4); color:#be123c; }
+  /* result badges stay vivid */
+  body.light .res-won{ background:#bbf7d0; color:#15803d; }
+  body.light .res-lost{ background:#fecaca; color:#b91c1c; }
+  body.light .res-void{ background:#e2e8f0; color:#475569; }
+  /* gold banker number badge keeps dark text */
+  body.light .date-pill.active{ color:#0a0e17; }
+  /* the bright hero accent -> deeper gold so 'football bankers' is readable */
+  body.light .hero-gold{ color:#b8860b; }
+  /* odds cells */
+  body.light .odd-cell{ color:#0f1729; }
+  body.light .odd-cell.best{ color:#1f7a3f; }
+  /* banker left-edge stays visible */
+  body.light .is-banker-row{ box-shadow:inset 3px 0 0 #b8860b; }
+
+  ::-webkit-scrollbar{ width:10px; height:10px; }
+  ::-webkit-scrollbar-thumb{ background:var(--line); border-radius:6px; }
 </style>
 </head>
 <body>
-<!-- Your original HTML content -->
 
-<!-- Nav with Strict Toggle -->
-<div class="flex items-center gap-3">
-  <label class="flex items-center gap-2 text-sm cursor-pointer panel-2 rounded-xl px-3 py-1.5 hover:bg-gold/10">
-    <input id="strict-mode" type="checkbox" class="accent-yellow-500" />
-    <span class="font-medium">Strict Banker Mode</span>
-  </label>
-  <button id="theme-toggle" class="w-9 h-9 rounded-xl panel-2 flex items-center justify-center hover:text-gold transition-colors" title="Toggle theme">
-    <i id="theme-icon" class="fa-solid fa-sun"></i>
-  </button>
+<!-- ===== TOP NAV ===== -->
+<nav class="panel border-0 border-b sticky top-0 z-50" style="border-bottom:1px solid var(--line)">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-4">
+      <svg height="34" viewBox="0 0 440 120" xmlns="http://www.w3.org/2000/svg" aria-label="Predict2u" style="display:block">
+        <g>
+          <path d="M26 22 L26 98" stroke="currentColor" stroke-width="13" stroke-linecap="round" fill="none" style="color:var(--ink)"/>
+          <path d="M26 28 L50 28 A25 25 0 0 1 50 78 L30 78" stroke="currentColor" stroke-width="13" fill="none" stroke-linecap="round" style="color:var(--ink)"/>
+          <path d="M16 86 L58 44" stroke="currentColor" stroke-width="11" stroke-linecap="round" fill="none" style="color:var(--ink)"/>
+          <polygon points="46,40 64,38 56,56" fill="currentColor" style="color:var(--ink)"/>
+        </g>
+        <text x="92" y="80" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="62" letter-spacing="-1">
+          <tspan fill="currentColor" style="color:var(--ink)">Predict</tspan><tspan fill="#3ec46d">2u</tspan>
+        </text>
+      </svg>
+      <div class="hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold chip-green">
+        <span class="w-1.5 h-1.5 rounded-full bg-current animate-pulse"></span> Rules Engine
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <span id="nav-updated" class="hidden sm:block text-xs" style="color:var(--muted)"></span>
+      <button id="theme-toggle" class="w-9 h-9 rounded-xl panel-2 flex items-center justify-center hover:text-gold transition-colors" title="Toggle theme">
+        <i id="theme-icon" class="fa-solid fa-sun"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== DATE STRIP ===== -->
+<div class="panel-2 border-0 border-b" style="border-bottom:1px solid var(--line)">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-6 py-2 flex items-center gap-1 overflow-x-auto" id="date-strip"></div>
 </div>
 
-<!-- Buy Me a Coffee Bar -->
-<div id="bmc-bar" class="hidden panel border-0 border-b py-3 text-center bg-amber-900/30">
-  <a href="https://buymeacoffee.com/predict2u" target="_blank" class="inline-flex items-center gap-3 px-6 py-3 bg-amber-500 hover:bg-amber-600 rounded-2xl text-black font-medium">
-    <i class="fa-solid fa-mug-hot text-xl"></i>
-    <span>Support Predict2u with a Coffee ☕</span>
-  </a>
+<!-- ===== MAIN ===== -->
+<div class="max-w-[1200px] mx-auto px-4 sm:px-6 py-6">
+
+  <!-- hero strip -->
+  <div class="mb-6">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full chip-green text-xs font-bold tracking-wide mb-3">
+      <i class="fa-solid fa-shield-halved"></i> PROTECT THE STAKE FIRST
+    </div>
+    <h1 class="display text-3xl sm:text-4xl font-bold tracking-tight">
+      Today's safest <span class="text-gold">football bankers</span>
+    </h1>
+    <p class="mt-2 text-sm max-w-2xl" style="color:var(--muted)">
+      Auto-analysed with the Final Predicto Rules — DNB-first protection, strict mismatch criteria, max 4 bankers per league. Not a guarantee; bet only what you can afford to lose. 18+
+    </p>
+  </div>
+
+  <!-- stat row -->
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6" id="stat-row"></div>
+
+  <!-- TODAY'S TOP PREDICTION CARDS -->
+  <div class="flex items-center justify-between mb-3">
+    <h2 class="display text-lg font-semibold flex items-center gap-2"><i class="fa-solid fa-star text-gold"></i> Today's Top Bankers</h2>
+    <span id="cards-day" class="text-xs" style="color:var(--muted)"></span>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8" id="pred-cards"></div>
+
+  <!-- BODY: sidebar + matches -->
+  <div class="grid grid-cols-1 lg:grid-cols-[230px_1fr] gap-5">
+
+    <!-- country sidebar -->
+    <aside class="hidden lg:block">
+      <div class="panel rounded-2xl p-2 sticky top-20">
+        <div class="px-2 py-2 text-xs uppercase tracking-wider font-semibold" style="color:var(--muted)">Leagues</div>
+        <div id="country-list" class="space-y-0.5 max-h-[70vh] overflow-y-auto pr-1"></div>
+      </div>
+    </aside>
+
+    <!-- matches column -->
+    <main>
+      <!-- filter bar -->
+      <div class="flex flex-wrap items-center gap-2 mb-4">
+        <div class="relative flex-1 min-w-[180px]">
+          <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-xs" style="color:var(--muted)"></i>
+          <input id="filter-search" type="text" placeholder="Search team or league…"
+            class="w-full panel-2 rounded-xl pl-9 pr-3 py-2 text-sm focus:outline-none" style="color:var(--ink)" />
+        </div>
+        <select id="filter-market" class="panel-2 rounded-xl px-3 py-2 text-sm focus:outline-none" style="color:var(--ink)">
+          <option value="">All markets</option>
+          <option value="Win">Win</option><option value="DNB">DNB</option>
+          <option value="Over 2.5">Over 2.5</option><option value="BTTS">BTTS</option>
+        </select>
+        <label class="flex items-center gap-2 text-sm panel-2 rounded-xl px-3 py-2 cursor-pointer" style="color:var(--ink)">
+          <input id="filter-bankers" type="checkbox" class="accent-yellow-500" /> Bankers only
+        </label>
+      </div>
+
+      <!-- performance tracker -->
+      <details class="panel rounded-2xl overflow-hidden mb-5">
+        <summary class="p-4 flex items-center gap-3 cursor-pointer">
+          <i class="fa-solid fa-chart-line text-gold"></i>
+          <span class="display font-semibold">Performance Tracker</span>
+          <span id="track-headline" class="text-sm ml-1" style="color:var(--muted)"></span>
+          <i class="fa-solid fa-chevron-down chev ml-auto" style="color:var(--muted)"></i>
+        </summary>
+        <div class="px-4 pb-4 pt-3" style="border-top:1px solid var(--line)">
+          <p class="text-xs mb-3" style="color:var(--muted)">Settled bankers only (voids excluded from win rate). Honest record-keeping — not a promise of future results.</p>
+          <div id="track-overall" class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4"></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div><div class="text-xs uppercase tracking-wider font-semibold mb-2" style="color:var(--muted)">By market</div><div id="track-market" class="space-y-2"></div></div>
+            <div><div class="text-xs uppercase tracking-wider font-semibold mb-2" style="color:var(--muted)">By league</div><div id="track-league" class="space-y-2"></div></div>
+          </div>
+        </div>
+      </details>
+
+      <div id="matches-root"></div>
+      <div id="no-results" class="hidden text-center py-12" style="color:var(--muted)">No matches fit those filters.</div>
+      <div id="empty-state" class="hidden panel rounded-2xl py-16 px-8 text-center">
+        <i class="fa-solid fa-inbox text-4xl mb-3" style="color:var(--muted)"></i>
+        <p class="text-lg" style="color:var(--muted)">No matches loaded yet. The board updates through the day.</p>
+      </div>
+    </main>
+  </div>
 </div>
+
+<footer class="py-8 text-center text-sm" style="color:var(--muted);border-top:1px solid var(--line)">
+  Predicto · heuristic analysis tool · data from your source<br>
+  Not financial advice. Gamble responsibly. 18+
+</footer>
 
 <script src="banker-engine.js"></script>
 <script src="data.js"></script>
 <script>
-  // Safe fallback if renderAll doesn't exist
-  if (typeof renderAll === 'undefined') {
-    window.renderAll = function() { console.log('renderAll called (fallback)'); };
+/* ============ THEME ============ */
+(function(){
+  const body=document.body, icon=document.getElementById('theme-icon'), btn=document.getElementById('theme-toggle');
+  let saved=null; try{ saved=localStorage.getItem('predicto-theme'); }catch(e){}
+  function setT(m){ if(m==='light'){body.classList.add('light');icon.className='fa-solid fa-moon';}else{body.classList.remove('light');icon.className='fa-solid fa-sun';} try{localStorage.setItem('predicto-theme',m);}catch(e){} }
+  setT(saved==='light'?'light':'dark');
+  btn.addEventListener('click',()=>setT(body.classList.contains('light')?'dark':'light'));
+})();
+
+/* ============ DATA ============ */
+const MATCHES = window.MATCHES || [];
+const { results: _allResults } = analyseAll(MATCHES);
+// Hide skipped matches everywhere — keep only actionable picks.
+const results = _allResults.filter(r => r.primary && r.primary !== 'Skip');
+
+/* helpers */
+const pill = bet =>
+  bet.includes('DNB') ? 'chip-dnb' :
+  bet.includes('Win') ? 'chip-green' :
+  (bet.includes('Over')||bet.includes('BTTS')||bet.includes('+')) ? 'chip-gold' : 'chip-skip';
+const resClass = r => r==='Won'?'res-won':r==='Lost'?'res-lost':r==='Void'?'res-void':'';
+const keyOf = r => `${r.match.matchDate}|${r.match.home}|${r.match.away}`;
+const ord = n => { const s=["th","st","nd","rd"],v=n%100; return n+(s[(v-20)%10]||s[v]||s[0]); };
+const marketTag = p => p.includes('DNB')?'DNB':p.includes('Win')?'Win':p.includes('Over')?'Over 2.5':p.includes('BTTS')?'BTTS':p;
+// flag emoji-ish: use country name -> emoji via simple map fallback (flag image service)
+const flagFor = league => {
+  // crude league->country guess for the flag; falls back to a globe
+  return null;
+};
+
+/* dates */
+const fmtDate = dt => `${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,'0')}-${String(dt.getDate()).padStart(2,'0')}`;
+const NOW = new Date();
+const todayStr = fmtDate(NOW);
+const dayLabel = ds => {
+  const d=new Date(ds+'T12:00:00');
+  const diff = Math.round((d - new Date(todayStr+'T12:00:00'))/86400000);
+  if(diff===0) return 'Today';
+  if(diff===-1) return 'Yesterday';
+  if(diff===1) return 'Tomorrow';
+  return d.toLocaleDateString(undefined,{day:'numeric',month:'short'});
+};
+
+/* group results by date */
+const byDate = {};
+results.forEach(r=>{ const d=r.match.matchDate||'Undated'; (byDate[d]=byDate[d]||[]).push(r); });
+const datesWithGames = Object.keys(byDate).filter(d=>d!=='Undated').sort();
+
+/* the set of dates to show in the strip: a fixed anchor window around today
+   (default -2..+2, NerdyTips-style) PLUS any other date that actually has games.
+   ANCHOR_BACK / ANCHOR_FWD are tunable dials — widen them to show more calendar
+   tabs. Empty anchor days still appear, but render dimmed and inert so the strip
+   reads as intentional rather than broken. NOTE: this only displays dates your
+   data contains — to fill more tabs, widen the fixture window in fetch-data.js. */
+const ANCHOR_BACK = 2;   // days before today to always show
+const ANCHOR_FWD  = 2;   // days after today to always show
+const stripDates = (()=>{
+  const set = new Set(datesWithGames);
+  for(let off=-ANCHOR_BACK; off<=ANCHOR_FWD; off++){
+    const d=new Date(NOW.getFullYear(),NOW.getMonth(),NOW.getDate()+off);
+    set.add(fmtDate(d));
   }
+  return [...set].sort();
+})();
+let activeDate = datesWithGames.includes(todayStr) ? todayStr : (datesWithGames[datesWithGames.length-1] || todayStr);
 
-  // Strict Mode + Buy Me a Coffee
-  let useStrictMode = false;
-  const strictToggle = document.getElementById('strict-mode');
-  const bmcBar = document.getElementById('bmc-bar');
+/* ============ per-league top bankers (top 4 per date+league) ============ */
+const leagueBankerKeys = new Set();
+const perLeagueTop = {};
+{
+  const groups = {};
+  results.forEach(r=>{ const g=`${r.match.matchDate}|${r.match.league}`; (groups[g]=groups[g]||[]).push(r); });
+  Object.entries(groups).forEach(([g,rows])=>{
+    const top = rows.filter(r=>r.banker).sort((a,b)=>b.rankWeight-a.rankWeight).slice(0,4);
+    perLeagueTop[g]=top; top.forEach(r=>leagueBankerKeys.add(keyOf(r)));
+  });
+}
 
-  strictToggle.addEventListener('change', function() {
-    useStrictMode = this.checked;
-    bmcBar.classList.toggle('hidden', !useStrictMode);
-    console.log('Strict Banker Mode:', useStrictMode ? 'ON' : 'OFF');
-    if (typeof renderAll === 'function') renderAll();
+/* ============ STAT ROW (for active date) ============ */
+function renderStats(){
+  const rows = byDate[activeDate]||[];
+  let won=0,lost=0; const bankers = rows.filter(r=>r.banker);
+  bankers.forEach(r=>{ const s=settle(r.primary,r.match.homeGoals,r.match.awayGoals); if(s==='Won')won++; else if(s==='Lost')lost++; });
+  const stat=(l,v,c)=>`<div class="panel rounded-2xl p-4"><div class="text-xs uppercase tracking-wider font-semibold mb-1" style="color:var(--muted)">${l}</div><div class="display text-3xl font-bold tnum ${c||''}">${v}</div></div>`;
+  document.getElementById('stat-row').innerHTML =
+    stat('Matches', rows.length) + stat('Bankers', bankers.length, 'text-gold') +
+    stat('Won', (won+lost)>0?won:'—', 'text-green') + stat('Lost', (won+lost)>0?lost:'—', '');
+}
+
+/* ============ DATE STRIP ============ */
+function renderStrip(){
+  const el=document.getElementById('date-strip');
+  el.innerHTML = stripDates.map(d=>{
+    const has = (byDate[d]||[]).length;
+    // Days with games are clickable + show a count; empty anchor days render
+    // dimmed and inert so the strip reads as intentional, not broken.
+    if(!has){
+      return `<span class="date-pill opacity-30 cursor-default" data-empty="1" title="No matches">${dayLabel(d)}</span>`;
+    }
+    return `<button class="date-pill ${d===activeDate?'active':''}" data-date="${d}">${dayLabel(d)} <span class="opacity-60">${has}</span></button>`;
+  }).join('');
+  el.querySelectorAll('.date-pill[data-date]').forEach(b=> b.addEventListener('click',()=>{ activeDate=b.dataset.date; renderAll(); }));
+}
+
+/* ============ TOP PREDICTION CARDS (active date bankers, top 6) ============ */
+function renderCards(){
+  const cards = (byDate[activeDate]||[]).filter(r=>r.banker).sort((a,b)=>b.rankWeight-a.rankWeight).slice(0,6);
+  document.getElementById('cards-day').textContent = dayLabel(activeDate);
+  const wrap = document.getElementById('pred-cards');
+  if(!cards.length){ wrap.innerHTML = `<div class="sm:col-span-2 lg:col-span-3 panel rounded-2xl p-6 text-center" style="color:var(--muted)">No bankers qualified for ${dayLabel(activeDate).toLowerCase()} — protecting the stake is a valid outcome.</div>`; return; }
+  wrap.innerHTML = cards.map(b=>{
+    const res = settle(b.primary,b.match.homeGoals,b.match.awayGoals);
+    const resTag = res?`<span class="px-2 py-0.5 rounded-md text-[10px] font-bold ${resClass(res)}">${res.toUpperCase()}</span>`:'';
+    const t = b.match.kickoff ? new Date(b.match.kickoff).toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit'}) : '';
+    return `<div class="pred-card">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs font-semibold" style="color:var(--muted)">${b.match.league}</span>
+        <span class="text-xs tnum" style="color:var(--muted)">${t}</span>
+      </div>
+      <div class="display font-semibold mb-1 flex items-center gap-2 flex-wrap">${b.match.home} <span style="color:var(--muted)">v</span> ${b.match.away} ${resTag}</div>
+      <div class="text-xs mb-3" style="color:var(--muted)">${b.wdnb.reasons[0]||''}</div>
+      <div class="flex items-center justify-between">
+        <span class="px-3 py-1 rounded-lg text-sm font-semibold ${pill(b.primary)}">${b.primary}</span>
+        <span class="text-xs" style="color:var(--muted)">${b.confidence}</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ============ COUNTRY / LEAGUE SIDEBAR ============ */
+let leagueFilter = null;
+function renderSidebar(){
+  const rows = byDate[activeDate]||[];
+  const leagues = {};
+  rows.forEach(r=>{ leagues[r.match.league]=(leagues[r.match.league]||0)+1; });
+  const list = Object.entries(leagues).sort((a,b)=>b[1]-a[1]);
+  const el = document.getElementById('country-list');
+  el.innerHTML = `<div class="country-item ${!leagueFilter?'active':''}" data-league=""><i class="fa-solid fa-globe w-5 text-center"></i><span class="flex-1">All leagues</span><span class="text-xs opacity-60">${rows.length}</span></div>` +
+    list.map(([lg,c])=>`<div class="country-item ${leagueFilter===lg?'active':''}" data-league="${lg}"><i class="fa-solid fa-futbol w-5 text-center text-xs opacity-60"></i><span class="flex-1 truncate">${lg}</span><span class="text-xs opacity-60">${c}</span></div>`).join('');
+  el.querySelectorAll('.country-item').forEach(it=> it.addEventListener('click',()=>{ leagueFilter=it.dataset.league||null; renderMatches(); renderSidebar(); }));
+}
+
+/* ============ MATCHES (active date, grouped by league) ============ */
+const verdictChip = v => v==='Strong'?'chip-green':v==='Moderate'?'chip-gold':'chip-skip';
+function miniBar(label,m){
+  const col = m.score>=8?'var(--green)':m.score>=6?'var(--gold)':'#fb7185';
+  return `<div class="panel-2 rounded-xl p-3">
+    <div class="flex items-center justify-between mb-1"><span class="text-xs uppercase tracking-wider font-semibold" style="color:var(--muted)">${label}</span>
+    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold ${verdictChip(m.verdict)}">${m.verdict}</span></div>
+    <div class="display text-xl font-bold mb-1">${m.score}<span class="text-xs" style="color:var(--muted)">/10</span></div>
+    <div class="bar-track h-1.5"><div style="width:${m.score*10}%;height:100%;background:${col};border-radius:9999px"></div></div>
+  </div>`;
+}
+
+function renderMatches(){
+  const root = document.getElementById('matches-root');
+  const rows = byDate[activeDate]||[];
+  const empty = document.getElementById('empty-state');
+  root.innerHTML='';
+  if(!rows.length){ empty.classList.remove('hidden'); return; } else empty.classList.add('hidden');
+
+  // group by league
+  const byLeague = {};
+  rows.forEach(r=>{ if(leagueFilter && r.match.league!==leagueFilter) return; (byLeague[r.match.league]=byLeague[r.match.league]||[]).push(r); });
+
+  let html='';
+  Object.entries(byLeague).forEach(([league,lrows])=>{
+    const top = perLeagueTop[`${activeDate}|${league}`]||[];
+    let lw=0,ll=0; lrows.forEach(r=>{ if(!r.banker)return; const s=settle(r.primary,r.match.homeGoals,r.match.awayGoals); if(s==='Won')lw++;else if(s==='Lost')ll++; });
+    const tally=(lw+ll)>0?`<span class="text-xs ml-2"><span class="text-green">${lw}W</span> <span style="color:#fb7185">${ll}L</span></span>`:'';
+
+    html += `<details open class="lg-row panel rounded-2xl mb-3 overflow-hidden" data-league="${league.toLowerCase()}">
+      <summary class="px-4 py-3 flex items-center gap-2">
+        <i class="fa-solid fa-futbol text-xs text-gold"></i>
+        <span class="font-semibold">${league}</span>
+        <span class="text-xs" style="color:var(--muted)">· ${lrows.length} match${lrows.length>1?'es':''}</span>${tally}
+        <i class="fa-solid fa-chevron-down lg-chev ml-auto text-sm" style="color:var(--muted)"></i>
+      </summary>
+      <div style="border-top:1px solid var(--line)">`;
+
+    // top bankers strip
+    if(top.length){
+      html += `<div class="px-4 py-3" style="background:rgba(255,197,61,.04);border-bottom:1px solid var(--line)">
+        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold mb-2"><i class="fa-solid fa-star"></i> Top Bankers (${top.length})</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-1.5">`;
+      top.forEach((r,i)=>{
+        const res=settle(r.primary,r.match.homeGoals,r.match.awayGoals);
+        const rt=res?`<span class="px-1.5 py-0.5 rounded text-[10px] font-bold ${resClass(res)}">${res.toUpperCase()}</span>`:'';
+        html+=`<div class="flex items-center gap-2 text-sm"><span class="w-5 h-5 bg-gold rounded flex items-center justify-center text-[11px] font-bold flex-shrink-0">${i+1}</span><span class="flex-1 truncate">${r.match.home} v ${r.match.away} ${rt}</span><span class="px-2 py-0.5 rounded text-xs ${pill(r.primary)}">${r.primary}</span></div>`;
+      });
+      html += `</div></div>`;
+    }
+
+    // match rows
+    lrows.forEach(r=>{
+      const hg=r.match.homeGoals, ag=r.match.awayGoals, played=hg!=null&&ag!=null;
+      const res=settle(r.primary,hg,ag);
+      const rt=res?`<span class="px-2 py-0.5 rounded text-[10px] font-bold ${resClass(res)}">${res.toUpperCase()}</span>`:'';
+      const live = r.match.status && ['1H','2H','HT','ET','LIVE'].includes(r.match.status);
+      const isB = leagueBankerKeys.has(keyOf(r));
+      const t = r.match.kickoff ? new Date(r.match.kickoff).toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit'}) : '';
+      const score = played ? `<span class="display font-bold tnum">${hg} - ${ag}</span>` : `<span class="text-xs tnum" style="color:var(--muted)">${t||'—'}</span>`;
+      const odds = r.match.odds ? `<div class="hidden sm:grid grid-cols-3 gap-1 w-36">
+          <div class="odd-cell">${r.match.odds.home||'-'}</div>
+          <div class="odd-cell">${r.match.odds.draw||'-'}</div>
+          <div class="odd-cell">${r.match.odds.away||'-'}</div></div>` : `<div class="hidden sm:block w-36"></div>`;
+
+      html += `<details class="match-item ${isB?'is-banker-row':''}" data-search="${(r.match.home+' '+r.match.away+' '+r.match.league).toLowerCase().replace(/"/g,'')}" data-market="${marketTag(r.primary)}" data-banker="${isB?'1':'0'}">
+        <summary class="match-line px-4 py-3 flex items-center gap-3">
+          <div class="w-12 text-center flex-shrink-0">${score}</div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 text-sm"><span class="truncate font-medium">${r.match.home}</span></div>
+            <div class="flex items-center gap-2 text-sm"><span class="truncate font-medium">${r.match.away}</span></div>
+          </div>
+          ${ live?'<span class="chip-live px-2 py-0.5 rounded text-[10px] font-bold">LIVE</span>':'' }
+          ${odds}
+          <div class="flex flex-col items-end gap-1 flex-shrink-0 w-24">
+            ${ isB?'<span class="text-[9px] font-bold uppercase text-gold">Banker</span>':'' }
+            <span class="px-2.5 py-1 rounded-lg text-xs font-semibold ${pill(r.primary)} whitespace-nowrap">${r.primary}</span>
+            ${rt}
+          </div>
+          <i class="fa-solid fa-chevron-down chev text-sm" style="color:var(--muted)"></i>
+        </summary>
+        <div class="px-4 pb-4 pt-3" style="border-top:1px solid var(--line);background:var(--panel-2)">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-3">
+            ${miniBar('Over 2.5',r.over)}${miniBar('BTTS',r.btts)}${miniBar('Win / DNB',r.wdnb)}
+          </div>
+          <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm panel rounded-xl p-3">
+            <div><div class="text-[11px] uppercase tracking-wider font-semibold" style="color:var(--muted)">Primary</div><div class="font-semibold">${r.primary}</div></div>
+            <div><div class="text-[11px] uppercase tracking-wider font-semibold" style="color:var(--muted)">Confidence</div><div class="font-semibold">${r.confidence}</div></div>
+            <div><div class="text-[11px] uppercase tracking-wider font-semibold" style="color:var(--muted)">Favourite</div><div class="font-semibold">${r.wdnb.favTeam} (${r.wdnb.favSide})</div></div>
+            ${ (r.match.homeVenueRank!=null&&r.match.awayVenueRank!=null&&!r.wdnb.tournamentUncomparable)
+               ? `<div><div class="text-[11px] uppercase tracking-wider font-semibold" style="color:var(--muted)">Venue</div><div class="font-semibold">${r.match.home} ${ord(r.match.homeVenueRank)} home · ${r.match.away} ${ord(r.match.awayVenueRank)} away</div></div>`
+               : (r.wdnb.tournamentUncomparable?`<div><div class="text-[11px] uppercase tracking-wider font-semibold" style="color:var(--muted)">Format</div><div class="font-semibold">${r.match.isKnockout?'Knockout — form-based':'Cross-group — form-based'}</div></div>`:'') }
+            ${ r.value?`<div><div class="text-[11px] uppercase tracking-wider font-semibold" style="color:var(--muted)">Odds value</div><div class="font-semibold ${r.value.verdict.includes('value')?'text-green':r.value.verdict.includes('Fairly')?'text-gold':''}">${r.value.verdict} <span style="color:var(--muted)" class="font-normal">· @${r.value.oddsUsed} (${r.value.sidePct}%)</span></div></div>`:'' }
+            <div class="basis-full text-sm" style="color:var(--muted);border-top:1px solid var(--line);padding-top:.6rem">${r.summary}</div>
+          </div>
+          ${ r.match.h2h?`<div class="mt-2 panel rounded-xl p-3">
+            <div class="flex items-center gap-2 text-[11px] uppercase tracking-wider font-semibold mb-2" style="color:var(--muted)"><i class="fa-solid fa-clock-rotate-left"></i> Head-to-head · last ${r.match.h2h.played}</div>
+            <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm mb-2">
+              <span><b>${r.match.home}</b> ${r.match.h2h.homeWins}W</span><span>Draws ${r.match.h2h.draws}</span><span><b>${r.match.away}</b> ${r.match.h2h.awayWins}W</span>
+              <span style="color:var(--muted)">Over 2.5 in ${r.match.h2h.over25}/${r.match.h2h.played}</span><span style="color:var(--muted)">BTTS in ${r.match.h2h.bttsCount}/${r.match.h2h.played}</span>
+            </div>
+            <div class="space-y-1">${r.match.h2h.recent.map(g=>`<div class="text-xs flex gap-2" style="color:var(--muted)"><span class="w-20" style="color:var(--muted);opacity:.7">${g.date}</span><span class="flex-1 truncate">${g.ht} <b style="color:var(--ink)">${g.hg}-${g.ag}</b> ${g.at}</span></div>`).join('')}</div>
+          </div>`:'' }
+        </div>
+      </details>`;
+    });
+
+    html += `</div></details>`;
   });
 
-  // Initial render
-  if (typeof renderAll === 'function') renderAll();
+  root.innerHTML = html || `<div class="text-center py-12" style="color:var(--muted)">No matches for this league.</div>`;
+  applyFilters();
+}
+
+/* ============ FILTERS ============ */
+function applyFilters(){
+  const q=(document.getElementById('filter-search').value||'').trim().toLowerCase();
+  const mk=document.getElementById('filter-market').value;
+  const bk=document.getElementById('filter-bankers').checked;
+  let any=false;
+  document.querySelectorAll('.match-item').forEach(el=>{
+    const show = (!q||el.dataset.search.includes(q)) && (!mk||el.dataset.market===mk) && (!bk||el.dataset.banker==='1');
+    el.style.display = show?'':'none'; if(show) any=true;
+  });
+  document.querySelectorAll('.lg-row').forEach(b=>{
+    const vis=[...b.querySelectorAll('.match-item')].some(e=>e.style.display!=='none');
+    b.style.display = vis?'':'none';
+  });
+  document.getElementById('no-results').classList.toggle('hidden', any || !(byDate[activeDate]||[]).length);
+}
+['filter-search','filter-market'].forEach(id=>document.getElementById(id).addEventListener('input',applyFilters));
+document.getElementById('filter-bankers').addEventListener('change',applyFilters);
+
+/* ============ PERFORMANCE TRACKER (all-time) ============ */
+(function(){
+  const settled = results.filter(r=>r.banker && settle(r.primary,r.match.homeGoals,r.match.awayGoals));
+  const w=settled.filter(r=>settle(r.primary,r.match.homeGoals,r.match.awayGoals)==='Won').length;
+  const l=settled.filter(r=>settle(r.primary,r.match.homeGoals,r.match.awayGoals)==='Lost').length;
+  const v=settled.filter(r=>settle(r.primary,r.match.homeGoals,r.match.awayGoals)==='Void').length;
+  const dec=w+l, rate=dec>0?Math.round(w/dec*100):null, low=dec>0&&dec<10;
+  document.getElementById('track-headline').textContent = dec>0?`${w}W–${l}L · ${rate}% win rate${low?` · small sample (${dec}), not yet meaningful`:''}`:'No settled bankers yet';
+  const stat=(la,va,c)=>`<div class="panel-2 rounded-xl p-3"><div class="text-xs uppercase tracking-wider font-semibold mb-1" style="color:var(--muted)">${la}</div><div class="display text-xl font-bold ${c||''}">${va}</div></div>`;
+  document.getElementById('track-overall').innerHTML = stat('Win rate',rate!=null?rate+'%':'—','text-gold')+stat('Won',w,'text-green')+stat('Lost',l,'')+stat('Void',v,'');
+  const gr=fn=>{const g={};settled.forEach(r=>{const k=fn(r),s=settle(r.primary,r.match.homeGoals,r.match.awayGoals);g[k]=g[k]||{w:0,l:0};if(s==='Won')g[k].w++;else if(s==='Lost')g[k].l++;});return Object.entries(g).map(([k,o])=>{const d=o.w+o.l;return{k,...o,rate:d>0?Math.round(o.w/d*100):null,d};}).sort((a,b)=>b.d-a.d);};
+  const bar=row=>{const p=row.rate!=null?row.rate:0,c=p>=60?'var(--green)':p>=45?'var(--gold)':'#fb7185';return `<div class="flex items-center gap-3 text-sm"><span class="w-24 truncate">${row.k}</span><div class="flex-1 bar-track h-2"><div style="width:${p}%;height:100%;background:${c};border-radius:9999px"></div></div><span class="w-20 text-right tnum" style="color:var(--muted)">${row.rate!=null?row.rate+'%':'—'} <span style="opacity:.6">(${row.w}-${row.l})</span></span></div>`;};
+  const mkt=gr(r=>marketTag(r.primary)), lg=gr(r=>r.match.league);
+  document.getElementById('track-market').innerHTML = mkt.length?mkt.map(bar).join(''):'<div class="text-sm" style="color:var(--muted)">No settled bankers yet.</div>';
+  document.getElementById('track-league').innerHTML = lg.length?lg.map(bar).join(''):'<div class="text-sm" style="color:var(--muted)">No settled bankers yet.</div>';
+})();
+
+/* ============ LAST UPDATED ============ */
+(function(){
+  const ts=window.DATA_UPDATED; if(ts){ const d=new Date(ts); if(!isNaN(d)) document.getElementById('nav-updated').textContent='Updated '+d.toLocaleString(undefined,{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}); }
+})();
+
+/* ============ MASTER RENDER ============ */
+function renderAll(){ renderStrip(); renderStats(); renderCards(); renderSidebar(); renderMatches(); }
+renderAll();
 </script>
 </body>
 </html>
