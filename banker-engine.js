@@ -445,8 +445,8 @@ function recommend(m) {
   // qualification logic below can be hard-blocked, leaving only a tracked
   // league LEAN. Needs both ranks to judge; if a rank is missing we don't gate.
   const _size = m.tableSize ?? 20;
-  const _homeTier = tierFromRank(m.homePos, _size);
-  const _awayTier = tierFromRank(m.awayPos, _size);
+  const _homeTier = tierFromProfile(m, 'home');
+  const _awayTier = tierFromProfile(m, 'away');
   const sameTier = (_homeTier != null && _awayTier != null && _homeTier === _awayTier);
 
   // ---- QUALIFYING THRESHOLDS (tuning dials) ----
@@ -627,10 +627,65 @@ function analyseAll(matches) {
    ============================================================ */
 
 // Even 5-band tier from league position (1 = strongest .. 5 = weakest).
+// Kept as the BASELINE; tierFromProfile refines it with team habits.
 function tierFromRank(pos, size) {
   if (pos == null || !size) return null;
   const band = Math.ceil((pos / size) * 5);
   return clamp(band, 1, 5);
+}
+
+/* ---------------- COMPOSITE PROFILE TIER ----------------
+   A tier is not just table position — it's a team's overall quality AND
+   character: where they sit, how they score & concede, and their W/D/L form.
+   DESIGN (per your spec): position LEADS (it already reflects a season of
+   results), and the goals/concede/form profile NUDGES a team up or down by at
+   most one tier when its habits clearly diverge from its rank. So a leaky
+   high-scoring mid-table side and a tight low-scoring one land in DIFFERENT
+   tiers even at the same position. Falls back to pure position when the extra
+   stats are missing, so nothing breaks on sparse data.
+
+   side = 'home' or 'away' (uses the venue-appropriate scoring rates).
+   ------------------------------------------------------------------- */
+function tierFromProfile(m, side) {
+  const size = m.tableSize ?? 20;
+  const pos = side === 'home' ? m.homePos : m.awayPos;
+  const base = tierFromRank(pos, size);
+  if (base == null) return null;
+
+  // gather the habit components for this side (venue-appropriate)
+  const gf   = side === 'home' ? m.homeScoredAtHome   : m.awayScoredAway;
+  const ga   = side === 'home' ? m.homeConcededAtHome : m.awayConcededAway;
+  const form = side === 'home' ? formPoints(m.homeForm) : formPoints(m.awayForm); // 0..1
+  const la   = m.leagueAvg;
+
+  // Need enough signal to refine; otherwise return the position tier as-is.
+  if (gf == null && ga == null && (form == null)) return base;
+
+  // Build a small -1..+1 "profile delta": positive = better than rank suggests.
+  let delta = 0, parts = 0;
+  // attack vs league norm
+  if (gf != null) {
+    const norm = (la && la.reliable && la.goalsPerGame) ? la.goalsPerGame / 2 : 1.3;
+    delta += clamp((gf - norm) / norm, -1, 1); parts++;
+  }
+  // defence vs league norm (fewer conceded = better -> positive)
+  if (ga != null) {
+    const norm = (la && la.reliable && la.goalsPerGame) ? la.goalsPerGame / 2 : 1.3;
+    delta += clamp((norm - ga) / norm, -1, 1); parts++;
+  }
+  // recent form (0.5 is neutral)
+  if (form != null) { delta += clamp((form - 0.5) * 2, -1, 1); parts++; }
+
+  if (!parts) return base;
+  const avgDelta = delta / parts; // -1..+1
+
+  // Shift a tier when the profile diverges from the rank. Threshold 0.33 (not
+  // 0.5) so a clearly strong or weak profile nudges the tier even when one trait
+  // (e.g. leaky defence on a high-scoring side) partly offsets another.
+  let shift = 0;
+  if (avgDelta >= 0.33) shift = -1;       // better profile -> stronger tier
+  else if (avgDelta <= -0.33) shift = +1; // worse profile -> weaker tier
+  return clamp(base + shift, 1, 5);
 }
 
 // Derive a venue PPG. Prefer real venue points if present; else approximate
@@ -660,8 +715,8 @@ function strictRecommend(m) {
   const STRICT_MIN_GAP    = 3;   // was 2 — require a 3-tier chasm, not just 2
 
   const size = m.tableSize ?? 20;
-  const homeTier = tierFromRank(m.homePos, size);
-  const awayTier = tierFromRank(m.awayPos, size);
+  const homeTier = tierFromProfile(m, 'home');
+  const awayTier = tierFromProfile(m, 'away');
 
   // venue PPG (real if available, else approximated from venue rank)
   const homePPG = venuePPG(m.homeVenuePts, m.homeVenueGames, m.homeVenueRank, m.venueTableSize ?? size);
