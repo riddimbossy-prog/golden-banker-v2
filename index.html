@@ -275,7 +275,8 @@
           <i class="fa-solid fa-chevron-down chev ml-auto" style="color:var(--muted)"></i>
         </summary>
         <div class="px-4 pb-4 pt-3" style="border-top:1px solid var(--line)">
-          <p class="text-xs mb-3" style="color:var(--muted)">Settled bankers only (voids excluded from win rate). Honest record-keeping — not a promise of future results.</p>
+          <p class="text-xs mb-2" style="color:var(--muted)">Verified forward record: only picks made <strong>before kickoff</strong> count. This is the honest measure — not games scored after they finished.</p>
+          <div id="track-note" class="text-xs mb-3 rounded-lg p-2.5" style="color:var(--muted);background:var(--panel-2)"></div>
           <div id="track-overall" class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4"></div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div><div class="text-xs uppercase tracking-wider font-semibold mb-2" style="color:var(--muted)">By market</div><div id="track-market" class="space-y-2"></div></div>
@@ -635,21 +636,59 @@ function generateSlip(){
 document.getElementById('slip-generate').addEventListener('click',generateSlip);
 
 
-/* ============ PERFORMANCE TRACKER (all-time) ============ */
+/* ============ PERFORMANCE TRACKER (forward-only) ============ */
 (function(){
-  const settled = results.filter(r=>r.banker && settle(r.primary,r.match.homeGoals,r.match.awayGoals));
-  const w=settled.filter(r=>settle(r.primary,r.match.homeGoals,r.match.awayGoals)==='Won').length;
-  const l=settled.filter(r=>settle(r.primary,r.match.homeGoals,r.match.awayGoals)==='Lost').length;
-  const v=settled.filter(r=>settle(r.primary,r.match.homeGoals,r.match.awayGoals)==='Void').length;
-  const dec=w+l, rate=dec>0?Math.round(w/dec*100):null, low=dec>0&&dec<10;
-  document.getElementById('track-headline').textContent = dec>0?`${w}W–${l}L · ${rate}% win rate${low?` · small sample (${dec}), not yet meaningful`:''}`:'No settled bankers yet';
+  // A pick only counts as a genuine PREDICTION if it existed BEFORE kickoff.
+  // We can't log pick-time on a static site, but we have an honest proxy:
+  // window.DATA_UPDATED is when this data snapshot was built. If a match's
+  // kickoff was AFTER that timestamp, the pick genuinely predates the result —
+  // a true forward pick. If kickoff was already past when the data was built,
+  // the engine "scored" an already-decided game; that is NOT a prediction and
+  // is excluded from the headline win rate (kept only as a separate backtest).
+  const snapMs = window.DATA_UPDATED ? new Date(window.DATA_UPDATED).getTime() : null;
+  const koMs = r => r.match.kickoff ? new Date(r.match.kickoff).getTime() : null;
+  const isForward = r => snapMs!=null && koMs(r)!=null && koMs(r) > snapMs;
+
+  const allBankers = results.filter(r=>r.banker && settle(r.primary,r.match.homeGoals,r.match.awayGoals));
+  const forward = allBankers.filter(isForward);
+  const backtest = allBankers.filter(r=>!isForward(r)); // already-decided when analysed
+
+  const tally = arr => {
+    let w=0,l=0,v=0;
+    arr.forEach(r=>{const s=settle(r.primary,r.match.homeGoals,r.match.awayGoals); if(s==='Won')w++;else if(s==='Lost')l++;else if(s==='Void')v++;});
+    const dec=w+l; return {w,l,v,dec,rate:dec>0?Math.round(w/dec*100):null};
+  };
+  const F=tally(forward), B=tally(backtest);
+
+  // Headline = FORWARD record only. Honest about sample size.
+  const low = F.dec>0 && F.dec<20;
+  document.getElementById('track-headline').textContent =
+    F.dec>0 ? `${F.w}W–${F.l}L · ${F.rate}% (verified forward picks${low?`, small sample of ${F.dec}`:''})`
+            : 'Building verified record — no settled forward picks yet';
+
   const stat=(la,va,c)=>`<div class="panel-2 rounded-xl p-3"><div class="text-xs uppercase tracking-wider font-semibold mb-1" style="color:var(--muted)">${la}</div><div class="display text-xl font-bold ${c||''}">${va}</div></div>`;
-  document.getElementById('track-overall').innerHTML = stat('Win rate',rate!=null?rate+'%':'—','text-gold')+stat('Won',w,'text-green')+stat('Lost',l,'')+stat('Void',v,'');
-  const gr=fn=>{const g={};settled.forEach(r=>{const k=fn(r),s=settle(r.primary,r.match.homeGoals,r.match.awayGoals);g[k]=g[k]||{w:0,l:0};if(s==='Won')g[k].w++;else if(s==='Lost')g[k].l++;});return Object.entries(g).map(([k,o])=>{const d=o.w+o.l;return{k,...o,rate:d>0?Math.round(o.w/d*100):null,d};}).sort((a,b)=>b.d-a.d);};
+  document.getElementById('track-overall').innerHTML =
+    stat('Forward win rate',F.rate!=null?F.rate+'%':'—','text-gold')+stat('Won',F.w,'text-green')+stat('Lost',F.l,'')+stat('Settled',F.dec,'');
+
+  // honest explainer + backtest disclosure
+  const note=document.getElementById('track-note');
+  if(note){
+    note.innerHTML = F.dec===0
+      ? `<strong>No verified forward picks have settled yet.</strong> A pick only counts here once it was made <em>before</em> kickoff and the match has finished. This is the only honest measure of whether the engine predicts — it will fill in as upcoming games play out.`
+      : `These ${F.dec} settled pick(s) were all made <strong>before kickoff</strong> — genuine predictions, not games scored after the fact.${low?' Sample is still small; treat with caution until it grows.':''}`
+      ;
+    if(B.dec>0){
+      note.innerHTML += `<br><span style="opacity:.75">Separately, ${B.dec} already-finished game(s) were back-tested (${B.rate}% ${B.w}-${B.l}) — shown for interest only; <strong>not</strong> a real track record, since those results were already known when analysed.</span>`;
+    }
+  }
+
+  // by-market / by-league use FORWARD picks only
+  const gr=fn=>{const g={};forward.forEach(r=>{const k=fn(r),s=settle(r.primary,r.match.homeGoals,r.match.awayGoals);g[k]=g[k]||{w:0,l:0};if(s==='Won')g[k].w++;else if(s==='Lost')g[k].l++;});return Object.entries(g).map(([k,o])=>{const d=o.w+o.l;return{k,...o,rate:d>0?Math.round(o.w/d*100):null,d};}).sort((a,b)=>b.d-a.d);};
   const bar=row=>{const p=row.rate!=null?row.rate:0,c=p>=60?'var(--green)':p>=45?'var(--gold)':'#fb7185';return `<div class="flex items-center gap-3 text-sm"><span class="w-24 truncate">${row.k}</span><div class="flex-1 bar-track h-2"><div style="width:${p}%;height:100%;background:${c};border-radius:9999px"></div></div><span class="w-20 text-right tnum" style="color:var(--muted)">${row.rate!=null?row.rate+'%':'—'} <span style="opacity:.6">(${row.w}-${row.l})</span></span></div>`;};
   const mkt=gr(r=>marketTag(r.primary)), lg=gr(r=>r.match.league);
-  document.getElementById('track-market').innerHTML = mkt.length?mkt.map(bar).join(''):'<div class="text-sm" style="color:var(--muted)">No settled bankers yet.</div>';
-  document.getElementById('track-league').innerHTML = lg.length?lg.map(bar).join(''):'<div class="text-sm" style="color:var(--muted)">No settled bankers yet.</div>';
+  const emptyMsg='<div class="text-sm" style="color:var(--muted)">No settled forward picks yet.</div>';
+  document.getElementById('track-market').innerHTML = mkt.length?mkt.map(bar).join(''):emptyMsg;
+  document.getElementById('track-league').innerHTML = lg.length?lg.map(bar).join(''):emptyMsg;
 })();
 
 /* ============ LAST UPDATED ============ */
