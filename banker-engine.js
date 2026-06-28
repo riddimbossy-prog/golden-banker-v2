@@ -307,11 +307,19 @@ function scoreWinDNB(m) {
   }
   const strongHomeMismatch = homeIsFav && clearMismatch && (m.homeScoredAtHome ?? 0) >= 1.4;
 
+  // TOP-4 WIN GATE (applies to all engines): a straight Win is only allowed if
+  // the FAVOURITE sits in the actual league top 4. Below that — even on an
+  // extreme mismatch — we cap at DNB. Reason: outside the top few, a "favourite"
+  // is rarely dominant enough to trust the win outright; DNB protects the draw.
+  const favPos = homeIsFav ? m.homePos : m.awayPos;
+  const winAllowed = (favPos != null && favPos <= 4);
+
   let market;
-  if (strongHomeMismatch) market = "Home Win";
-  else if (clearMismatch && homeIsFav) market = "Home Win";
-  else if (clearMismatch && !homeIsFav) market = "Away Win";
+  if (clearMismatch && homeIsFav)  market = winAllowed ? "Home Win" : "Home DNB";
+  else if (clearMismatch && !homeIsFav) market = winAllowed ? "Away Win" : "Away DNB";
   else market = homeIsFav ? "Home DNB" : "Away DNB"; // default protection
+  if (market === "Home Win" && !winAllowed) market = "Home DNB";
+  if (market === "Away Win" && !winAllowed) market = "Away DNB";
 
   return {
     score, verdict: verdictFor(score, 7.5, 6), reasons,
@@ -530,14 +538,20 @@ function recommend(m) {
     }
     // expose which market won, for the UI / summary
     chosenKind = top.kind;
+
+    // HIGH-CONFIDENCE-ONLY BANKERS: a Medium pick no longer counts as a banker.
+    // Only High-confidence edges get the banker tag; Medium picks fall through
+    // to a non-banker recommendation (still shown, just not flagged a banker).
+    if (confidence !== "High") banker = false;
   }
 
-  // Skip rule (Rule 13): nothing qualified
+  // Skip rule (Rule 13): nothing qualified at all (no pick was chosen).
+  // A demoted Medium pick (had a primary, just isn't High) is kept and shown
+  // as a non-banker recommendation — only a true no-pick becomes Skip.
   let lean = null;
-  if (!banker) {
+  const hadPick = primary && primary !== "Skip";
+  if (!hadPick) {
     primary = "Skip"; confidence = "Low";
-    // No result/banker edge — but the GOALS profile may follow the league.
-    // Attach a tracked LEAN (not a staked banker) so the tracker can test it.
     lean = leagueLean(m);
   }
 
@@ -823,7 +837,10 @@ function strictRecommend(m) {
       conf = clamp(conf, 0, 10);
       reasons.push(`${m.home} has ≥2.5 home PPG and scores well; ${m.away} is weak and leaks away.`);
       block("Home DNB", "Not needed — full Home Win conditions met.");
-      return result(conf >= 7 ? "Home Win" : "Home DNB", "Bet", conf);
+      // TOP-4 WIN GATE: straight Win only if home is in the league top 4.
+      const homeTop4 = m.homePos != null && m.homePos <= 4;
+      if (conf >= 7 && !homeTop4) { reasons.push("Home outside top 4 — capping at DNB, not a straight win."); }
+      return result((conf >= 7 && homeTop4) ? "Home Win" : "Home DNB", "Bet", conf);
     }
 
     // Home DNB
@@ -865,7 +882,10 @@ function strictRecommend(m) {
     conf = clamp(conf, 0, 10);
     reasons.push(`${m.away} has a major tier edge, ≥2.5 away PPG; ${m.home} passes the weakness test.`);
     block("Away DNB", "Not selected — full Away Win conditions met.");
-    return result(conf >= 7 ? "Away Win" : "Away DNB", "Bet", conf);
+    // TOP-4 WIN GATE: straight Win only if away is in the league top 4.
+    const awayTop4 = m.awayPos != null && m.awayPos <= 4;
+    if (conf >= 7 && !awayTop4) { reasons.push("Away outside top 4 — capping at DNB, not a straight win."); }
+    return result((conf >= 7 && awayTop4) ? "Away Win" : "Away DNB", "Bet", conf);
   }
 
   const awayDnbOk = awayGF != null && awayGA != null && awayGF >= awayGA;
@@ -913,6 +933,150 @@ function analyseStrict(matches) {
   const results = matches.map(strictRecommend);
   const bets = results.filter(r => r.bet).sort((a, b) => b.confidence - a.confidence);
   return { results, bets };
+}
+
+/* ============================================================
+   UNIVERSAL FOOTBALL BETTING MARKET ENGINE (v1.0) — "Ultra Bankers"
+   Evaluates every market it has data for, scores each independently
+   (0-10), applies the conflict rules, and outputs exactly ONE market
+   or No Bet. Faithful to the pasted spec:
+   • One match = one market (Rule 1)
+   • No edge / same tier / red flag / confidence<7 = No Bet (Rules 2-5)
+   • Top two markets within 1 point = No Bet (conflict engine)
+   • Modules needing data we don't fetch (First Half, Corners, Cards)
+     are BLOCKED and labelled, not faked.
+   ------------------------------------------------------------------- */
+function ultraRecommend(m) {
+  const size = m.tableSize ?? 20;
+  const blocked = [];
+  const humanChecks = [];
+
+  const homeTier = tierFromProfile(m, 'home');
+  const awayTier = tierFromProfile(m, 'away');
+  const gap = (homeTier != null && awayTier != null) ? Math.abs(homeTier - awayTier) : null;
+  const homePPG = venuePPG(m.homeVenuePts, m.homeVenueGames, m.homeVenueRank, m.venueTableSize ?? size);
+  const awayPPG = venuePPG(m.awayVenuePts, m.awayVenueGames, m.awayVenueRank, m.venueTableSize ?? size);
+  const hGF = m.homeScoredAtHome ?? null, hGA = m.homeConcededAtHome ?? null;
+  const aGF = m.awayScoredAway ?? null,   aGA = m.awayConcededAway ?? null;
+  const la = m.leagueAvg;
+  const leagueGpg = (la && la.reliable && la.goalsPerGame) ? la.goalsPerGame : 2.6;
+
+  const homeExp = (hGF != null && aGA != null) ? (hGF + aGA) / 2 : null;
+  const awayExp = (aGF != null && hGA != null) ? (aGF + hGA) / 2 : null;
+  const totalExp = (homeExp != null && awayExp != null) ? homeExp + awayExp : null;
+
+  let hardRedFlag = false;
+  if (m.isKnockout) { blocked.push({ market: "All", why: "Cup/knockout tie — Rule 4 red flag." }); hardRedFlag = true; }
+  humanChecks.push("Verify manually: derby, heavy rotation, suspicious odds movement, weather, neutral venue, dead rubber, motivation.");
+
+  const sameTier = (homeTier != null && awayTier != null && homeTier === awayTier);
+  // Rule 3: same tier = No Bet, FULL STOP — no module may score. We still list
+  // blocked modules below for transparency, but no candidate is added.
+  const canScore = !hardRedFlag && !sameTier;
+
+  const cand = [];
+  const add = (market, conf, passed, failed) => cand.push({ market, conf: clamp(Math.round(conf),0,10), passed: passed||[], failed: failed||[] });
+
+  if (!hardRedFlag && !sameTier && gap != null) {
+    const strongerHome = homeTier < awayTier;
+    { const passed=[], failed=[];
+      const c1=strongerHome; c1?passed.push("Home tier stronger"):failed.push("Home not stronger");
+      const c2=gap>=2; c2?passed.push("Tier gap >=2"):failed.push("Tier gap <2");
+      const c3=homePPG!=null&&homePPG>=2.5; c3?passed.push("Home PPG >=2.5"):failed.push("Home PPG <2.5");
+      const c4=hGF!=null&&hGF>=1.6; c4?passed.push("Strong home attack"):failed.push("Home attack not strong");
+      const c5=aGF!=null&&aGF<=1.0; c5?passed.push("Away weak away"):failed.push("Away not weak away");
+      const c6=aGA!=null&&aGA>=1.5; c6?passed.push("Away concedes often"):failed.push("Away solid defensively");
+      const c7=m.homePos!=null&&m.homePos<=4; c7?passed.push("Home in top 4"):failed.push("Home outside top 4 — Win capped to DNB");
+      if(c1&&c2&&c3&&c4&&c5&&c6&&c7){ let conf=7; if(gap>=3)conf++; if(hGF>=2.0)conf++; if(formPoints(m.homeForm)>=0.7)conf=Math.min(10,conf+1); add("Home Win",conf,passed,failed);
+      } else blocked.push({market:"Home Win", why:failed.join("; ")}); }
+    { const passed=[], failed=[];
+      const c1=!strongerHome; c1?passed.push("Away tier stronger"):failed.push("Away not stronger");
+      const c2=gap>=2; c2?passed.push("Tier gap >=2"):failed.push("Tier gap <2");
+      const c3=awayPPG!=null&&awayPPG>=2.5; c3?passed.push("Away PPG >=2.5"):failed.push("Away PPG <2.5");
+      const c4=aGF!=null&&aGF>=1.5; c4?passed.push("Strong away attack"):failed.push("Away attack not strong");
+      const c5=hGF!=null&&hGF<=1.1; c5?passed.push("Home weak at home"):failed.push("Home not weak at home");
+      const c6=hGA!=null&&hGA>=1.5; c6?passed.push("Home concedes often"):failed.push("Home solid at home");
+      const c7=m.awayPos!=null&&m.awayPos<=4; c7?passed.push("Away in top 4"):failed.push("Away outside top 4 — Win capped to DNB");
+      if(c1&&c2&&c3&&c4&&c5&&c6&&c7){ let conf=7; if(gap>=3)conf++; if(aGF>=1.9)conf++; if(formPoints(m.awayForm)>=0.7)conf=Math.min(10,conf+1); add("Away Win",conf,passed,failed);
+      } else blocked.push({market:"Away Win", why:failed.join("; ")}); }
+    { const winBlocked=!cand.find(c=>c.market==="Home Win");
+      if(strongerHome&&gap>=2&&winBlocked){ let conf=7; if(gap>=3)conf++; if(homePPG!=null&&homePPG>=2.0)conf++; add("Home DNB",conf,["Home superior","Win blocked -> DNB protects draw risk"],[]); } }
+    { const winBlocked=!cand.find(c=>c.market==="Away Win");
+      if(!strongerHome&&gap>=2&&winBlocked){ let conf=7; if(gap>=3)conf++; if(awayPPG!=null&&awayPPG>=2.0)conf++; add("Away DNB",conf,["Away superior","Win blocked -> DNB protects draw risk"],[]); } }
+    { if(strongerHome&&gap>=1) add("Double Chance 1X", clamp(6+gap,0,9), ["Home unlikely to lose","Draw cover"], []);
+      if(!strongerHome&&gap>=1) add("Double Chance X2", clamp(6+gap,0,9), ["Away unlikely to lose"], []); }
+  }
+
+  if (totalExp != null && canScore) {
+    const vsLeague = totalExp - leagueGpg;
+    // Tighter multipliers + ceilings so markets SPREAD instead of all maxing at
+    // 10 (which made everything tie and the conflict rule reject all). The
+    // near-certain "safe" totals (Under 4.5, Over 0.5-type) are capped lower —
+    // they're high-probability but low-edge, not strong recommendations.
+    add("Over 1.5", clamp(4 + (totalExp-2.1)*2.4, 0, 9), totalExp>=2.4?["Goals expected (~"+totalExp.toFixed(1)+")"]:[], totalExp<2.1?["Low goal expectation"]:[]);
+    add("Over 2.5", clamp(3 + (totalExp-2.7)*2.4 + vsLeague*1.0, 0, 10), totalExp>=3.1?["High combined goals"]:[], totalExp<2.8?["Not high-scoring enough"]:[]);
+    add("Over 3.5", clamp(1 + (totalExp-3.3)*2.4, 0, 9), totalExp>=3.9?["Very open, elite tempo"]:[], totalExp<3.6?["Tempo not explosive"]:[]);
+    add("Under 2.5", clamp(3 + (2.4-totalExp)*2.6 - Math.max(0,vsLeague)*1.0, 0, 10), totalExp<=2.1?["Low goals, tight game"]:[], totalExp>2.5?["Too many goals expected"]:[]);
+    add("Under 3.5", clamp(3 + (3.2-totalExp)*2.2, 0, 9), totalExp<=2.8?["Controlled match"]:[], totalExp>3.4?["Open game risks Under 3.5"]:[]);
+    add("Under 4.5", clamp(3 + (4.0-totalExp)*1.6, 0, 8), totalExp<=3.4?["No goal explosion expected"]:[], []);
+  }
+
+  if (hGF!=null&&aGF!=null&&hGA!=null&&aGA!=null&&canScore) {
+    if(hGF>=1.2&&aGF>=1.0&&hGA>=1.1&&aGA>=1.1) add("BTTS Yes", clamp(5+(hGF+aGF-2.2)*2+(hGA+aGA-2.2)*1.5,0,10), ["Both score & concede often"], []);
+    if((hGF<=0.9||aGF<=0.8)&&(hGA<=0.9||aGA<=0.9)) add("BTTS No", clamp(5+(1.0-Math.min(hGF,aGF))*3+(1.0-Math.min(hGA,aGA))*2,0,10), ["A weak attack vs a strong defence"], []);
+  }
+
+  if (hGF!=null&&aGA!=null&&canScore) {
+    add("Home Team Over 0.5 Goals", clamp(4 + (hGF-1.2)*2.0 + (aGA-1.3)*1.2, 0, 8), hGF>=1.3?["Home scores regularly"]:[], []);
+    if(hGF>=1.7&&aGA>=1.5) add("Home Team Over 1.5 Goals", clamp(4+(hGF-1.7)*2.6+(aGA-1.5)*1.8,0,9), ["High home goals vs leaky away D"], []);
+    if(hGF<=0.9&&aGA<=1.0) add("Home Team Under 1.5 Goals", clamp(4+(1.0-hGF)*2.6,0,9), ["Weak home attack, strong away D"], []);
+  }
+  if (aGF!=null&&hGA!=null&&canScore) {
+    add("Away Team Over 0.5 Goals", clamp(4 + (aGF-1.1)*2.0 + (hGA-1.3)*1.2, 0, 8), aGF>=1.2?["Away scores consistently"]:[], []);
+    if(aGF>=1.6&&hGA>=1.5) add("Away Team Over 1.5 Goals", clamp(4+(aGF-1.6)*2.6+(hGA-1.5)*1.8,0,9), ["Elite away attack vs weak home D"], []);
+    if(aGF<=0.8&&hGA<=1.0) add("Away Team Under 1.5 Goals", clamp(4+(0.9-aGF)*2.6,0,9), ["Weak away attack, strong home D"], []);
+  }
+
+  blocked.push({market:"First Half markets", why:"No first-half data fetched - blocked (Module G)."});
+  blocked.push({market:"Corners", why:"No corner data - blocked (Module I)."});
+  blocked.push({market:"Cards", why:"No card/referee data - blocked (Module J)."});
+
+  const playable = cand.filter(c=>c.conf>=7).sort((a,b)=>b.conf-a.conf);
+
+  // CONFLICT REFINEMENT: markets that AGREE directionally shouldn't cancel each
+  // other. If a DNB and a Double Chance for the SAME side both rank top, drop
+  // the Double Chance and keep the DNB (tighter, higher-value bet). Same for a
+  // Win and its own DNB/DC. Only genuinely CONTRADICTORY markets (e.g. Over vs
+  // Under, Home vs Away) within 1 point trigger the No-Bet rule.
+  function sideOf(mkt){
+    if (/Home Win|Home DNB|Double Chance 1X|Home Team Over/.test(mkt)) return "home";
+    if (/Away Win|Away DNB|Double Chance X2|Away Team Over/.test(mkt)) return "away";
+    if (/Over|BTTS Yes/.test(mkt)) return "goals";
+    if (/Under|BTTS No/.test(mkt)) return "nogoals";
+    return "other";
+  }
+  // remove a redundant Double Chance when its same-side DNB is also present & >=
+  const hasHomeDNB = playable.find(c=>c.market==="Home DNB");
+  const hasAwayDNB = playable.find(c=>c.market==="Away DNB");
+  const refined = playable.filter(c=>{
+    if (c.market==="Double Chance 1X" && hasHomeDNB && hasHomeDNB.conf>=c.conf) return false;
+    if (c.market==="Double Chance X2" && hasAwayDNB && hasAwayDNB.conf>=c.conf) return false;
+    return true;
+  });
+
+  let primary="No Bet", confidence=0, passed=[], failed=[], verdict="";
+  if (!refined.length) {
+    verdict = sameTier ? "Same tier - No Bet (Rule 3)." : hardRedFlag ? "Red flag - No Bet (Rule 4)." : "No market reached confidence 7 - No Bet (Rule 5).";
+  } else if (refined.length>=2 && (refined[0].conf - refined[1].conf) < 1 && sideOf(refined[0].market) !== sideOf(refined[1].market)) {
+    // top two within 1 point AND they point different directions -> genuine conflict
+    verdict = "Conflict: " + refined[0].market + " (" + refined[0].conf + ") vs " + refined[1].market + " (" + refined[1].conf + ") within 1 point, opposing markets - No Bet.";
+  } else {
+    const top = refined[0];
+    primary = top.market; confidence = top.conf; passed = top.passed; failed = top.failed;
+    const tierName = confidence>=10?"Elite Banker":confidence>=9?"Banker":confidence>=8?"Strong":"Playable";
+    verdict = primary + " - " + tierName + " (confidence " + confidence + "). Single strongest edge.";
+  }
+  return { match:m, engine:"ultra", primary, confidence, bet:primary!=="No Bet", banker: confidence>=8, passed, failed, blocked, humanChecks, allScores:cand.sort((a,b)=>b.conf-a.conf), verdict };
 }
 
 /* ============================================================
@@ -978,5 +1142,5 @@ function streakRecommend(m) {
 
 if (typeof module !== "undefined") module.exports = {
   analyseAll, recommend, scoreOver25, scoreBTTS, scoreWinDNB, settle,
-  analyseStrict, strictRecommend, tierFromRank, streakRecommend
+  analyseStrict, strictRecommend, tierFromRank, streakRecommend, ultraRecommend
 };
