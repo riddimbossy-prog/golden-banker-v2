@@ -41,6 +41,7 @@ function readConfig() {
     else if (key === "DAYS_FWD") cfg.DAYS_FWD = parseInt(val.replace(/[^0-9]/g,""),10);
     else if (key === "ODDS") cfg.ODDS = !/^(false|no|off|0)$/i.test(val.trim());
     else if (key === "H2H") cfg.H2H = !/^(false|no|off|0)$/i.test(val.trim());
+    else if (key === "STATS") cfg.STATS = !/^(false|no|off|0)$/i.test(val.trim());
     else if (key === "LEAGUES") {
       if (/^all$/i.test(val.trim())) { cfg.LEAGUES_ALL = true; cfg.LEAGUES = []; }
       else cfg.LEAGUES = val.split(",").map(s => s.trim()).filter(Boolean).map(s => parseInt(s,10)).filter(n=>!isNaN(n));
@@ -85,6 +86,7 @@ function buildDateWindow(back, fwd){
 }
 const sleep = ms => new Promise(r=>setTimeout(r,ms));
 function round1(n){ return Math.round(n*10)/10; }
+function round2(n){ return (n==null||isNaN(n))?null:Math.round(n*100)/100; }
 // derive points from a home/away sub-record if the API didn't supply .points
 // (3 per win, 1 per draw)
 function homePtsFromRow(rec){ if(!rec) return 0; const w=rec.win||0, d=rec.draw||0; return w*3 + d; }
@@ -364,6 +366,54 @@ const FINISHED = new Set(["FT","AET","PEN"]);
 
   // odds are per league+date; cache by `${leagueId}|${season}|${date}`
   const oddsCache = {};
+  const teamStatsCache = {}; // key `${teamId}|${leagueId}|${season}` -> stats object
+  const wantStats = cfg.STATS !== false; // set STATS=false secret to disable
+
+  // Fetch REAL season stats for one team in one league (cached per run).
+  // Returns { winRate, drawRate, lossRate, unbeatenRate, cleanSheetRate,
+  //           failedToScoreRate, ... } home/away split where available.
+  async function getTeamStats(teamId, leagueId, season){
+    if (!wantStats || !teamId || !leagueId) return null;
+    const ck = `${teamId}|${leagueId}|${season}`;
+    if (teamStatsCache[ck] !== undefined) return teamStatsCache[ck];
+    let stats = null;
+    try {
+      const res = await apiGet(`/teams/statistics?team=${teamId}&league=${leagueId}&season=${season}`, cfg.API_KEY); requests++;
+      const r = res.response;
+      if (r && r.fixtures) {
+        const f = r.fixtures, cs = r.clean_sheet || {}, fts = r.failed_to_score || {};
+        const played = (f.played && f.played.total) || 0;
+        const wins = (f.wins && f.wins.total) || 0;
+        const draws = (f.draws && f.draws.total) || 0;
+        const loses = (f.loses && f.loses.total) || 0;
+        const csTotal = cs.total || 0, ftsTotal = fts.total || 0;
+        // home/away splits (used by the home-advantage engine)
+        const hPlayed=(f.played&&f.played.home)||0, aPlayed=(f.played&&f.played.away)||0;
+        const hWins=(f.wins&&f.wins.home)||0, aWins=(f.wins&&f.wins.away)||0;
+        const hDraws=(f.draws&&f.draws.home)||0, aDraws=(f.draws&&f.draws.away)||0;
+        stats = {
+          played,
+          winRate: played? wins/played : null,
+          drawRate: played? draws/played : null,
+          lossRate: played? loses/played : null,
+          unbeatenRate: played? (wins+draws)/played : null,
+          cleanSheetRate: played? csTotal/played : null,
+          failedToScoreRate: played? ftsTotal/played : null,
+          homeWinRate: hPlayed? hWins/hPlayed : null,
+          awayWinRate: aPlayed? aWins/aPlayed : null,
+          homeUnbeatenRate: hPlayed? (hWins+hDraws)/hPlayed : null,
+          awayUnbeatenRate: aPlayed? (aWins+aDraws)/aPlayed : null,
+          cleanSheetHome: (cs.home!=null&&hPlayed)? cs.home/hPlayed : null,
+          cleanSheetAway: (cs.away!=null&&aPlayed)? cs.away/aPlayed : null,
+          ftsHome: (fts.home!=null&&hPlayed)? fts.home/hPlayed : null,
+          ftsAway: (fts.away!=null&&aPlayed)? fts.away/aPlayed : null,
+        };
+      }
+      await sleep(SLEEP);
+    } catch (e) { /* stats optional — fall back to estimates */ }
+    teamStatsCache[ck] = stats;
+    return stats;
+  }
   async function getOdds(leagueId, seasonForStandings, date) {
     if (!wantOdds) return {};
     const cacheKey = `${leagueId}|${seasonForStandings}|${date}`;
@@ -456,6 +506,15 @@ const FINISHED = new Set(["FT","AET","PEN"]);
         } catch (e) { /* h2h optional */ }
       }
 
+      // REAL team stats (cached per team per run) — only fetch for games not
+      // already finished, to contain cost (no point fetching for settled games).
+      let homeStats = null, awayStats = null;
+      if (wantStats && st !== "FT" && st !== "AET" && st !== "PEN") {
+        const hid = fx.teams.home.id, aid = fx.teams.away.id;
+        homeStats = await getTeamStats(hid, leagueId, seasonForStandings);
+        awayStats = await getTeamStats(aid, leagueId, seasonForStandings);
+      }
+
       out.push({
         home: fx.teams.home.name, away: fx.teams.away.name, league: leagueName,
         country: leagueCountry, flag: leagueFlag,
@@ -475,6 +534,16 @@ const FINISHED = new Set(["FT","AET","PEN"]);
         homeVenueGames: H._homeGames ?? null, awayVenueGames: A._awayGames ?? null,
         venueTableSize: H._groupSize ?? A._groupSize ?? tableSize,
         leagueAvg,  // per-league baseline averages for engine calibration
+        // REAL stats (null when unavailable -> engines fall back to estimates)
+        homeWinRate: homeStats ? round2(homeStats.homeWinRate ?? homeStats.winRate) : null,
+        awayWinRate: awayStats ? round2(awayStats.awayWinRate ?? awayStats.winRate) : null,
+        homeUnbeatenRate: homeStats ? round2(homeStats.homeUnbeatenRate ?? homeStats.unbeatenRate) : null,
+        awayUnbeatenRate: awayStats ? round2(awayStats.awayUnbeatenRate ?? awayStats.unbeatenRate) : null,
+        homeCleanSheetRate: homeStats ? round2(homeStats.cleanSheetHome ?? homeStats.cleanSheetRate) : null,
+        awayCleanSheetRate: awayStats ? round2(awayStats.cleanSheetAway ?? awayStats.cleanSheetRate) : null,
+        homeFailedToScoreRate: homeStats ? round2(homeStats.ftsHome ?? homeStats.failedToScoreRate) : null,
+        awayFailedToScoreRate: awayStats ? round2(awayStats.ftsAway ?? awayStats.failedToScoreRate) : null,
+        statsReal: !!(homeStats || awayStats),
         sameGroup, isKnockout,
         isTournament: multiGroup || isKnockout,
         round: roundName || null,
