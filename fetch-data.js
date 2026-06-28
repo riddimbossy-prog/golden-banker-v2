@@ -406,7 +406,13 @@ const FINISHED = new Set(["FT","AET","PEN"]);
     const { table, tableSize, multiGroup } = standings;
     const leagueAvg = standings.leagueAvg || null;
     let leagueName = standings.leagueName;
-    if (fixtures[0].league && fixtures[0].league.name) leagueName = fixtures[0].league.name;
+    let leagueCountry = null, leagueFlag = null;
+    if (fixtures[0].league) {
+      if (fixtures[0].league.name) leagueName = fixtures[0].league.name;
+      // country + flag image URL come free in the fixture's league block
+      leagueCountry = fixtures[0].league.country || null;
+      leagueFlag = fixtures[0].league.flag || null;
+    }
 
     const oddsByFixture = await getOdds(leagueId, seasonForStandings, date);
 
@@ -452,6 +458,7 @@ const FINISHED = new Set(["FT","AET","PEN"]);
 
       out.push({
         home: fx.teams.home.name, away: fx.teams.away.name, league: leagueName,
+        country: leagueCountry, flag: leagueFlag,
         status: st, kickoff: fx.fixture.date || null, matchDate: date,
         homeGoals: (fx.goals && fx.goals.home != null) ? fx.goals.home : null,
         awayGoals: (fx.goals && fx.goals.away != null) ? fx.goals.away : null,
