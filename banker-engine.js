@@ -497,25 +497,39 @@ function recommend(m) {
   // match could masquerade as a BTTS banker. It competes only via the combo.
   const candidates = [];
   if (wdnb.score >= WDNB_BANKER_MIN) candidates.push({ bet: wdnb.market, weight: wdnb.score, strength: wdnbStrength, kind: "wdnb" });
-  if (over.score >= OVER_BANKER_MIN) candidates.push({ bet: "Over 2.5", weight: over.score, strength: overStrength, kind: "over" });
-  if (under.score >= UNDER_MIN)      candidates.push({ bet: under.line, weight: under.score, strength: underStrength, kind: "under" });
-  if (comboOK)                       candidates.push({ bet: "Over 2.5 + BTTS", weight: (over.score + btts.score) / 2, strength: Math.min(overStrength, bttsStrength), kind: "combo" });
+  // When a straight Win was blocked (result fell to DNB), let goal markets in at
+  // the SAME bar as the DNB (6.5) so they compete fairly, instead of being held
+  // to the higher 7.5/Under bar that silently excluded them and handed it to DNB.
+  const goalBar    = isDNB ? WDNB_BANKER_MIN : OVER_BANKER_MIN;
+  const underBarEff = isDNB ? WDNB_BANKER_MIN : UNDER_MIN;
+  if (over.score >= goalBar)     candidates.push({ bet: "Over 2.5", weight: over.score, strength: over.score - goalBar, kind: "over" });
+  if (under.score >= underBarEff) candidates.push({ bet: under.line, weight: under.score, strength: under.score - underBarEff, kind: "under" });
+  if (comboOK)                   candidates.push({ bet: "Over 2.5 + BTTS", weight: (over.score + btts.score) / 2, strength: Math.min(overStrength, bttsStrength), kind: "combo" });
 
   if (candidates.length && !sameTier) {
     // Default ordering is by normalised strength (fairer than raw score).
     candidates.sort((a, b) => b.strength - a.strength);
 
-    // BEST-MARKET RULE: if the top pick is a weak/marginal DNB, and any GOAL
-    // market has a clearly stronger normalised case, switch to that goal market.
     let top = candidates[0];
-    if ((wdnbWeak || wdnbMarginal)) {
+
+    // WIN-BLOCKED → PREFER GOALS RULE: when the result market is only a DNB
+    // (i.e. a straight Win was blocked — the favourite isn't dominant enough),
+    // the old logic defaulted to that DNB and only switched to goals if a goal
+    // market was *clearly* stronger. That biased toward DNB, because DNB enters
+    // the pool at a lower bar (6.5) than goals (7.5). Inverted now: when the Win
+    // was blocked, we PREFER the strongest goal market and only keep the DNB if
+    // the DNB is CLEARLY stronger (by a real margin), not merely tied.
+    if (isDNB) {
       const goalCands = candidates.filter(c => c.kind !== "wdnb");
+      const dnbCand   = candidates.find(c => c.kind === "wdnb");
       if (goalCands.length) {
-        const bestGoal = goalCands[0]; // already strongest by strength sort
-        // require the goal market to be meaningfully stronger, not a coin-flip tie
-        const topIsDNB = top.kind === "wdnb";
-        if (topIsDNB && bestGoal.strength > top.strength + 0.3) {
-          top = bestGoal;
+        const bestGoal = goalCands[0]; // strongest goal market by normalised strength
+        if (!dnbCand) {
+          top = bestGoal; // no qualifying DNB anyway → goals
+        } else {
+          // keep DNB ONLY if it's clearly stronger than the best goal market;
+          // otherwise the goal market wins. "Clearly" = +0.5 normalised margin.
+          top = (dnbCand.strength >= bestGoal.strength + 0.5) ? dnbCand : bestGoal;
         }
       }
     }
@@ -850,7 +864,25 @@ function strictRecommend(m) {
       if (gap >= 3) conf++;
       if (homeFormS >= 0.6) conf++;
       conf = clamp(conf, 0, 10);
-      if (!ppgOk) reasons.push("Home Win blocked by sub-2.5 PPG — protect via DNB.");
+
+      // WIN-BLOCKED → PREFER GOALS: if the Win was blocked by sub-2.5 PPG, the
+      // favourite isn't dominant, so don't auto-default to DNB. Compare against
+      // the goals option — but fairly: the DNB's `conf` is inflated by gap/form
+      // bonuses that measure "how much better the team is", NOT how safe the
+      // draw-protection is. So we compare goals against the DNB's BASE merit (7),
+      // and prefer the goal market unless DNB's base genuinely beats it.
+      if (!ppgOk) {
+        const goalsTry = strictGoals(m, { homeGF, homeGA, awayGF, awayGA, reasons: [], blocked: [], humanChecks, result: (mk, act, c) => ({ market: mk, action: act, confidence: c }) });
+        const goalsConf = (goalsTry && goalsTry.action === "Bet") ? goalsTry.confidence : 0;
+        const dnbBase = 7; // base before gap/form bonuses
+        if (goalsConf > 0 && goalsConf >= dnbBase) {
+          // goals at least as strong as the DNB's real (draw-relevant) base → back goals
+          reasons.push("Home Win blocked by sub-2.5 PPG; the goal market is at least as strong as the (non-dominant) DNB — backing goals.");
+          return strictGoals(m, { homeGF, homeGA, awayGF, awayGA, reasons, blocked, humanChecks, result });
+        }
+        reasons.push("Home Win blocked by sub-2.5 PPG; no goal market is as clean as the DNB here, so protect via DNB.");
+      }
+
       reasons.push(`${m.home} has a positive home profile; ${m.away} inferior but not extreme.`);
       return result(conf >= STRICT_CONF_FLOOR ? "Home DNB" : "No Bet", conf >= STRICT_CONF_FLOOR ? "Bet" : "Avoid", conf);
     }
@@ -1080,6 +1112,160 @@ function ultraRecommend(m) {
 }
 
 /* ============================================================
+   PREDICT2U RULES ENGINE v2.0 — "Rules Pro"
+   Implements the Universal Thresholds spec with EXACT numeric gates
+   per market. Where the spec needs stats we don't fetch (Win%, Clean
+   Sheet%, Failed-to-Score%, Unbeaten%), we ESTIMATE them from PPG /
+   goals and FLAG the pick as using estimates (est:true) so it's honest.
+   One match = one strongest qualifying market, else No Bet.
+   ------------------------------------------------------------------- */
+
+// --- estimation helpers (proxies from data we DO have) ---
+// Win rate % estimated from PPG. PPG 3.0 -> ~100% wins, 1.5 -> ~38%, 1.0 -> ~22%.
+function estWinRate(ppg){ if(ppg==null) return null; return clamp((ppg-0.4)/2.7,0,1); }
+// Unbeaten % from PPG (draws+wins). Higher PPG -> rarely loses.
+function estUnbeaten(ppg){ if(ppg==null) return null; return clamp((ppg-0.2)/2.6,0,1); }
+// Clean sheet % from goals conceded/game. 0.6->~55%, 1.0->~38%, 1.8->~12%.
+function estCleanSheet(gc){ if(gc==null) return null; return clamp(0.62-(gc-0.6)*0.30,0,0.75); }
+// Failed-to-score % from goals scored/game. 2.2->~8%, 1.4->~22%, 0.8->~42%.
+function estFTS(gf){ if(gf==null) return null; return clamp(0.50-(gf-0.7)*0.22,0.05,0.7); }
+
+function rulesProRecommend(m){
+  const size = m.tableSize ?? 20;
+  const blocked = [];
+  const humanChecks = ["Verify manually: derby, rotation, suspicious odds movement, weather, neutral venue, dead rubber, motivation."];
+  let usedEstimates = false;
+
+  const homeTier = tierFromProfile(m,'home');
+  const awayTier = tierFromProfile(m,'away');
+  const gap = (homeTier!=null&&awayTier!=null) ? Math.abs(homeTier-awayTier) : null;
+  const sameTier = (homeTier!=null&&awayTier!=null&&homeTier===awayTier);
+
+  const hPPG = venuePPG(m.homeVenuePts,m.homeVenueGames,m.homeVenueRank,m.venueTableSize??size);
+  const aPPG = venuePPG(m.awayVenuePts,m.awayVenueGames,m.awayVenueRank,m.venueTableSize??size);
+  const hGF=m.homeScoredAtHome??null, hGA=m.homeConcededAtHome??null;
+  const aGF=m.awayScoredAway??null,   aGA=m.awayConcededAway??null;
+  const hForm=m.homeForm?formPoints(m.homeForm)*15:null; // 0-1 -> 0-15 pts scale
+  const aForm=m.awayForm?formPoints(m.awayForm)*15:null;
+  const hGD=m.homeGD!=null&&m.gamesPlayed?m.homeGD/m.gamesPlayed:(m.homeGDpg??null);
+  const aGD=m.awayGD!=null&&m.gamesPlayed?m.awayGD/m.gamesPlayed:(m.awayGDpg??null);
+  const la=m.leagueAvg; const lgGpg=(la&&la.reliable&&la.goalsPerGame)?la.goalsPerGame:2.6;
+  const combGoals=(hGF!=null&&aGF!=null)?hGF+aGF:null;
+
+  // estimated percentages (FLAGGED)
+  const hWin=estWinRate(hPPG), aWin=estWinRate(aPPG);
+  const hUnb=estUnbeaten(hPPG), aUnb=estUnbeaten(aPPG);
+  const hCS=estCleanSheet(hGA), aCS=estCleanSheet(aGA);
+  const hFTS=estFTS(hGF), aFTS=estFTS(aGF);
+  const combFTS=(hFTS!=null&&aFTS!=null)?(hFTS+aFTS)/2:null;
+  const combBTTS=(hGF!=null&&aGF!=null&&hGA!=null&&aGA!=null)
+    ? clamp(((hGF>=1.2?0.55:0.4)+(aGF>=1.0?0.5:0.35)+(hGA>=1.1?0.55:0.4)+(aGA>=1.1?0.55:0.4))/4,0,1) : null;
+  const markEst=()=>{usedEstimates=true;};
+
+  const cand=[];
+  const add=(market,conf,note,est)=>{ if(est)markEst(); cand.push({market,conf:clamp(Math.round(conf),0,10),note:note||""}); };
+
+  let hardRedFlag=false;
+  if(m.isKnockout){ blocked.push({market:"All",why:"Cup/knockout — red flag."}); hardRedFlag=true; }
+
+  const canScore = !hardRedFlag && !sameTier;
+  const strongerHome = (gap!=null) && homeTier<awayTier;
+
+  if(canScore && gap!=null){
+    // ---- HOME WIN (all required) ----
+    if(strongerHome){
+      const ok = gap>=2 && hPPG!=null&&hPPG>=2.50 && hGF!=null&&hGF>=1.80 && aGA!=null&&aGA>=1.40
+        && hWin!=null&&hWin>=0.70 && hForm!=null&&hForm>=10 && hGD!=null&&hGD>=0.70;
+      if(ok){ let c=8; if(gap>=3)c++; if(hGF>=2.2)c++; add("Home Win",c,"All Home Win thresholds met (win% & form estimated).",true); }
+      else blocked.push({market:"Home Win",why:"One or more Home Win thresholds not met."});
+    }
+    // ---- AWAY WIN (all required) ----
+    if(!strongerHome){
+      // home weakness test (≥4 of 6)
+      const wk=[ m.homeVenueRank!=null&&m.homeVenueRank>(size-5), hGF!=null&&hGF<1.0, hGA!=null&&hGA>=1.6,
+                 hForm!=null&&hForm<6, !(m.homeMotivation), gap>=2 ].filter(Boolean).length;
+      const ok = gap>=2 && aPPG!=null&&aPPG>=2.50 && aGF!=null&&aGF>=1.70 && hGA!=null&&hGA>=1.50
+        && aWin!=null&&aWin>=0.65 && aForm!=null&&aForm>=10 && wk>=4;
+      if(ok){ let c=8; if(gap>=3)c++; if(aGF>=2.0)c++; add("Away Win",c,`All Away Win thresholds met; home weakness ${wk}/6 (win% & form estimated).`,true); }
+      else blocked.push({market:"Away Win",why:"One or more Away Win thresholds not met."});
+    }
+    // ---- HOME DNB ----
+    if(strongerHome && !cand.find(c=>c.market==="Home Win")){
+      const ok = hPPG!=null&&hPPG>=1.80 && gap>=1 && hWin!=null&&hWin>=0.55 && hForm!=null&&hForm>=9 && hGF!=null&&hGF>=1.50;
+      if(ok){ let c=7; if(gap>=3)c++; if(hPPG>=2.2)c++; add("Home DNB",c,"Home DNB thresholds met (win% estimated).",true); }
+    }
+    // ---- AWAY DNB ----
+    if(!strongerHome && !cand.find(c=>c.market==="Away Win")){
+      const ok = aPPG!=null&&aPPG>=1.80 && gap>=1 && aWin!=null&&aWin>=0.50 && aForm!=null&&aForm>=9 && aGF!=null&&aGF>=1.40;
+      if(ok){ let c=7; if(gap>=3)c++; if(aPPG>=2.2)c++; add("Away DNB",c,"Away DNB thresholds met (win% estimated).",true); }
+    }
+    // ---- DOUBLE CHANCE 1X / X2 / 12 ----
+    if(strongerHome && hUnb!=null&&hUnb>=0.80 && aWin!=null&&aWin<=0.30 && hPPG!=null&&hPPG>=1.80)
+      add("Double Chance 1X",7,"1X thresholds met (unbeaten% & win% estimated).",true);
+    if(!strongerHome && aUnb!=null&&aUnb>=0.75 && hWin!=null&&hWin<=0.35 && aPPG!=null&&aPPG>=1.80)
+      add("Double Chance X2",7,"X2 thresholds met (unbeaten% & win% estimated).",true);
+    const combDraw=(m.homeDrawRate!=null&&m.awayDrawRate!=null)?(m.homeDrawRate+m.awayDrawRate)/2:(la&&la.drawRate?la.drawRate:null);
+    if(combDraw!=null&&combDraw<=0.20 && combGoals!=null&&combGoals>=2.80)
+      add("Double Chance 12",7,"12 thresholds met (low draw rate, high goals).",false);
+  }
+
+  // ---- GOALS MARKETS (tier-independent, but blocked on same-tier per spec safety) ----
+  if(canScore){
+    const favScores = strongerHome ? hGF : aGF;
+    const oppConcedes = strongerHome ? aGA : hGA;
+    // OVER 1.5
+    if(combGoals!=null && combGoals>=2.30 && (hGF>=1.5||aGF>=1.5) && (hGA>=1.30||aGA>=1.30) && combFTS!=null&&combFTS<=0.45)
+      add("Over 1.5",7+(combGoals>=2.8?1:0),"Over 1.5 thresholds met (FTS% estimated).",true);
+    // OVER 2.5
+    if(combGoals!=null && combGoals>=3.00 && combBTTS!=null&&combBTTS>=0.60 && favScores!=null&&favScores>=1.80 && oppConcedes!=null&&oppConcedes>=1.50)
+      add("Over 2.5",7+(combGoals>=3.4?1:0)+(combGoals>=3.8?1:0),"Over 2.5 thresholds met (BTTS% estimated).",true);
+    // UNDER 2.5
+    if(combGoals!=null && combGoals<=2.10 && combBTTS!=null&&combBTTS<=0.40 && hGF!=null&&hGF<=1.20 && aGF!=null&&aGF<=1.20 && (hGA<=1.00||aGA<=1.00))
+      add("Under 2.5",7+(combGoals<=1.8?1:0),"Under 2.5 thresholds met (BTTS% estimated).",true);
+    // UNDER 3.5
+    const underdogScores = strongerHome ? aGF : hGF;
+    if(combGoals!=null && combGoals<=2.80 && (strongerHome?hPPG:aPPG)>=1.8 && underdogScores!=null&&underdogScores<=1.00)
+      add("Under 3.5",7,"Under 3.5 thresholds met (favourite controls, weak underdog attack).",false);
+    // ---- BTTS YES / NO ----
+    if(hGF!=null&&aGF!=null&&hGA!=null&&aGA!=null){
+      if(hGF>=1.40 && aGF>=1.20 && hGA>=1.00 && aGA>=1.00 && (hCS+aCS)/2<=0.60 && combFTS<=0.35)
+        add("BTTS Yes",7+(hGF>=1.7&&aGF>=1.5?1:0),"BTTS Yes thresholds met (CS% & FTS% estimated).",true);
+      const oneWeakAtt=Math.min(hGF,aGF), oppConc=(hGF<aGF?aGA:hGA), oppCS=(hGF<aGF?aCS:hCS), weakFTS=(hGF<aGF?hFTS:aFTS);
+      if(oneWeakAtt<=0.90 && oppConc<=1.00 && weakFTS>=0.40 && oppCS>=0.40)
+        add("BTTS No",7,"BTTS No thresholds met (FTS% & CS% estimated).",true);
+    }
+    // ---- TEAM GOALS ----
+    if(hGF!=null&&aGA!=null){
+      if(hGF>=2.00 && aGA>=1.50 && hFTS!=null&&hFTS<=0.20) add("Home Team Over 1.5 Goals",7,"Home O1.5 thresholds met (FTS% estimated).",true);
+      if(hGF<=1.10 && aGA<=1.00 && hFTS!=null&&hFTS>=0.35) add("Home Team Under 1.5 Goals",7,"Home U1.5 thresholds met (FTS% estimated).",true);
+    }
+    if(aGF!=null&&hGA!=null){
+      if(aGF>=1.80 && hGA>=1.50 && aFTS!=null&&aFTS<=0.20) add("Away Team Over 1.5 Goals",7,"Away O1.5 thresholds met (FTS% estimated).",true);
+      if(aGF<=1.00 && hGA<=1.00 && aFTS!=null&&aFTS>=0.35) add("Away Team Under 1.5 Goals",7,"Away U1.5 thresholds met (FTS% estimated).",true);
+    }
+  }
+
+  blocked.push({market:"First Half / Corners / Cards",why:"No data — blocked."});
+
+  // ---- FINAL DECISION ----
+  const playable=cand.filter(c=>c.conf>=7).sort((a,b)=>b.conf-a.conf);
+  let primary="No Bet", confidence=0, note="", verdict="";
+  if(!playable.length){
+    verdict = sameTier?"Same tier — No Bet.":hardRedFlag?"Red flag — No Bet.":"No market met its full threshold set — No Bet.";
+  } else if(playable.length>=2 && (playable[0].conf-playable[1].conf)<1){
+    verdict = `Conflict: ${playable[0].market} (${playable[0].conf}) vs ${playable[1].market} (${playable[1].conf}) within 1 pt — No Bet.`;
+  } else {
+    const top=playable[0]; primary=top.market; confidence=top.conf; note=top.note;
+    const tier=confidence>=10?"Elite Banker":confidence>=9?"Banker":confidence>=8?"Strong":"Playable";
+    verdict=`${primary} — ${tier} (confidence ${confidence}). ${note}`;
+  }
+
+  return { match:m, engine:"rulespro", primary, confidence, bet:primary!=="No Bet",
+           banker:confidence>=8, note, usedEstimates, blocked, humanChecks,
+           allScores:cand.sort((a,b)=>b.conf-a.conf), verdict };
+}
+
+/* ============================================================
    ULTRA-STRICT: STREAK ENGINE (separate path)
    Fires on STREAK signals alone, independent of the tier engines.
    HONESTY NOTES baked into the labels:
@@ -1142,5 +1328,5 @@ function streakRecommend(m) {
 
 if (typeof module !== "undefined") module.exports = {
   analyseAll, recommend, scoreOver25, scoreBTTS, scoreWinDNB, settle,
-  analyseStrict, strictRecommend, tierFromRank, streakRecommend, ultraRecommend
+  analyseStrict, strictRecommend, tierFromRank, streakRecommend, ultraRecommend, rulesProRecommend
 };
