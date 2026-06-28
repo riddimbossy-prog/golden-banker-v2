@@ -1054,7 +1054,14 @@ function ultraRecommend(m) {
   }
 
   if (hGF!=null&&aGF!=null&&hGA!=null&&aGA!=null&&canScore) {
-    if(hGF>=1.2&&aGF>=1.0&&hGA>=1.1&&aGA>=1.1) add("BTTS Yes", clamp(5+(hGF+aGF-2.2)*2+(hGA+aGA-2.2)*1.5,0,10), ["Both score & concede often"], []);
+    if(hGF>=1.2&&aGF>=1.0&&hGA>=1.1&&aGA>=1.1){
+      // Tighter scoring: spread across the range, cap at 9 (a goals-market call
+      // is never a "perfect 10" certainty), and require a genuinely strong
+      // both-ends profile to score high — prevents BTTS saturating every
+      // high-scoring lower-league game at 10 and dominating the board.
+      const bttsScore = 4 + (hGF+aGF-2.4)*1.6 + (Math.min(hGA,aGA)-1.1)*1.4;
+      add("BTTS Yes", clamp(bttsScore,0,9), ["Both score & concede often"], []);
+    }
     if((hGF<=0.9||aGF<=0.8)&&(hGA<=0.9||aGA<=0.9)) add("BTTS No", clamp(5+(1.0-Math.min(hGF,aGF))*3+(1.0-Math.min(hGA,aGA))*2,0,10), ["A weak attack vs a strong defence"], []);
   }
 
