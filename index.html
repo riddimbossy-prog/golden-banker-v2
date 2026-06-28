@@ -59,6 +59,9 @@
   .lg-row summary{ list-style:none; cursor:pointer; }
   .lg-row summary::-webkit-details-marker{ display:none; }
   .lg-row[open] .lg-chev{ transform:rotate(180deg); }
+  .lg-more[open] .lg-chev{ transform:rotate(180deg); }
+  .lg-more summary{ list-style:none; } .lg-more summary::-webkit-details-marker{ display:none; }
+  .lg-more summary:hover{ background:rgba(76,175,39,.06); }
   .lg-chev{ transition:transform .2s; }
   .match-line:hover{ background:rgba(255,255,255,.02); }
   .is-banker-row{ box-shadow:inset 3px 0 0 var(--gold); }
@@ -166,7 +169,7 @@
     <div class="inline-flex rounded-xl panel p-0.5" role="tablist">
       <button id="eng-normal" class="px-3 py-1.5 rounded-lg text-sm font-semibold" style="background:linear-gradient(135deg,var(--gold),#6fd44a);color:#0a0e17">Normal</button>
       <button id="eng-strict" class="px-3 py-1.5 rounded-lg text-sm font-semibold" style="color:var(--muted)">Strict Bankers</button>
-      <button id="eng-ultra" class="px-3 py-1.5 rounded-lg text-sm font-semibold" style="color:var(--muted)">Ultra · Streaks</button>
+      <button id="eng-ultra" class="px-3 py-1.5 rounded-lg text-sm font-semibold" style="color:var(--muted)">Ultra Bankers</button>
     </div>
     <span id="eng-note" class="text-xs" style="color:var(--muted)"></span>
   </div>
@@ -230,6 +233,38 @@
           <input id="filter-upcoming" type="checkbox" class="accent-yellow-500" /> Upcoming only
         </label>
       </div>
+
+      <!-- slip builder -->
+      <details class="panel rounded-2xl overflow-hidden mb-5">
+        <summary class="p-4 flex items-center gap-3 cursor-pointer">
+          <i class="fa-solid fa-layer-group" style="color:var(--brand)"></i>
+          <span class="display font-semibold">Slip Builder</span>
+          <span class="text-sm ml-1" style="color:var(--muted)">Build an accumulator from today's bankers</span>
+          <i class="fa-solid fa-chevron-down chev ml-auto" style="color:var(--muted)"></i>
+        </summary>
+        <div class="px-4 pb-4 pt-3" style="border-top:1px solid var(--line)">
+          <div class="rounded-xl p-3 mb-3 text-xs" style="border:1px solid rgba(245,158,11,.35);background:rgba(245,158,11,.08);color:var(--ink)">
+            <i class="fa-solid fa-triangle-exclamation" style="color:#f59e0b"></i>
+            <strong>Accumulators are high-risk.</strong> Every leg must win. Each added leg multiplies the bookmaker's margin against you — more legs means a bigger potential return but a much lower chance of winning. This builds a combination from picks with real odds; it is not advice or a prediction. 18+.
+          </div>
+          <div class="flex flex-wrap items-end gap-4 mb-3">
+            <div>
+              <label class="text-xs uppercase tracking-wider font-semibold block mb-1" style="color:var(--muted)">Number of legs</label>
+              <input id="slip-legs" type="number" min="2" max="10" value="3" class="panel-2 rounded-xl px-3 py-2 text-sm w-24" style="color:var(--ink)" />
+            </div>
+            <div>
+              <label class="text-xs uppercase tracking-wider font-semibold block mb-1" style="color:var(--muted)">Min confidence</label>
+              <select id="slip-conf" class="panel-2 rounded-xl px-3 py-2 text-sm" style="color:var(--ink)">
+                <option value="0">Any</option><option value="7" selected>Medium+</option><option value="8">High only</option>
+              </select>
+            </div>
+            <button id="slip-generate" class="px-4 py-2 rounded-xl text-sm font-semibold bg-gold">
+              <i class="fa-solid fa-bolt"></i> Generate slip
+            </button>
+          </div>
+          <div id="slip-result"></div>
+        </div>
+      </details>
 
       <!-- performance tracker -->
       <details class="panel rounded-2xl overflow-hidden mb-5">
@@ -403,12 +438,15 @@ function renderCards(){
 let leagueFilter = null;
 function renderSidebar(){
   const rows = byDate[activeDate]||[];
-  const leagues = {};
-  rows.forEach(r=>{ leagues[r.match.league]=(leagues[r.match.league]||0)+1; });
+  const leagues = {}; const flags = {};
+  rows.forEach(r=>{ leagues[r.match.league]=(leagues[r.match.league]||0)+1; if(r.match.flag && !flags[r.match.league]) flags[r.match.league]=r.match.flag; });
   const list = Object.entries(leagues).sort((a,b)=>b[1]-a[1]);
   const el = document.getElementById('country-list');
+  const flagImg = lg => flags[lg]
+    ? `<img src="${flags[lg]}" alt="" width="18" height="13" style="width:18px;height:13px;object-fit:cover;border-radius:2px;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'"/><i class="fa-solid fa-futbol w-5 text-center text-xs opacity-60" style="display:none"></i>`
+    : `<i class="fa-solid fa-futbol w-5 text-center text-xs opacity-60"></i>`;
   el.innerHTML = `<div class="country-item ${!leagueFilter?'active':''}" data-league=""><i class="fa-solid fa-globe w-5 text-center"></i><span class="flex-1">All leagues</span><span class="text-xs opacity-60">${rows.length}</span></div>` +
-    list.map(([lg,c])=>`<div class="country-item ${leagueFilter===lg?'active':''}" data-league="${lg}"><i class="fa-solid fa-futbol w-5 text-center text-xs opacity-60"></i><span class="flex-1 truncate">${lg}</span><span class="text-xs opacity-60">${c}</span></div>`).join('');
+    list.map(([lg,c])=>`<div class="country-item ${leagueFilter===lg?'active':''}" data-league="${lg}">${flagImg(lg)}<span class="flex-1 truncate">${lg}</span><span class="text-xs opacity-60">${c}</span></div>`).join('');
   el.querySelectorAll('.country-item').forEach(it=> it.addEventListener('click',()=>{ leagueFilter=it.dataset.league||null; renderMatches(); renderSidebar(); }));
 }
 
@@ -445,8 +483,9 @@ function renderMatches(){
 
     html += `<details open class="lg-row panel rounded-2xl mb-3 overflow-hidden" data-league="${league.toLowerCase()}">
       <summary class="px-4 py-3 flex items-center gap-2">
-        <i class="fa-solid fa-futbol text-xs text-gold"></i>
+        ${ (lrows[0].match.flag) ? `<img src="${lrows[0].match.flag}" alt="" width="20" height="14" style="width:20px;height:14px;object-fit:cover;border-radius:2px;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'"/><i class="fa-solid fa-futbol text-xs" style="color:var(--brand);display:none"></i>` : '<i class="fa-solid fa-futbol text-xs" style="color:var(--brand)"></i>' }
         <span class="font-semibold">${league}</span>
+        ${ lrows[0].match.country ? `<span class="text-[11px]" style="color:var(--muted)">${lrows[0].match.country}</span>` : '' }
         <span class="text-xs" style="color:var(--muted)">· ${lrows.length} match${lrows.length>1?'es':''}</span>${tally}
         <i class="fa-solid fa-chevron-down lg-chev ml-auto text-sm" style="color:var(--muted)"></i>
       </summary>
@@ -465,8 +504,14 @@ function renderMatches(){
       html += `</div></div>`;
     }
 
-    // match rows
-    lrows.forEach(r=>{
+    // match rows — show max 2 BANKERS by default; the rest (more bankers +
+    // non-banker matches) go inside a collapsible "show more" section.
+    const bankerRows = lrows.filter(r=>leagueBankerKeys.has(keyOf(r)));
+    const otherRows  = lrows.filter(r=>!leagueBankerKeys.has(keyOf(r)));
+    const shownBankers = bankerRows.slice(0,2);
+    const hiddenRows = bankerRows.slice(2).concat(otherRows);
+
+    const renderRow = (r)=>{
       const hg=r.match.homeGoals, ag=r.match.awayGoals, played=hg!=null&&ag!=null;
       const res=settle(r.primary,hg,ag);
       const rt=res?`<span class="px-2 py-0.5 rounded text-[10px] font-bold ${resClass(res)}">${res.toUpperCase()}</span>`:'';
@@ -478,17 +523,12 @@ function renderMatches(){
           <div class="odd-cell">${r.match.odds.home||'-'}</div>
           <div class="odd-cell">${r.match.odds.draw||'-'}</div>
           <div class="odd-cell">${r.match.odds.away||'-'}</div></div>` : `<div class="hidden sm:block w-36"></div>`;
-
-      // Upcoming = not played, not live, AND kickoff is genuinely still in the
-      // future. The time check matters because between fetches a game can have
-      // kicked off (or finished) without its goals/status updated yet — without
-      // it, those stale past games wrongly show as "upcoming".
       const koTime = r.match.kickoff ? new Date(r.match.kickoff).getTime() : null;
       const koInFuture = koTime != null ? koTime > Date.now() : true;
       const upcoming = !played && !live && koInFuture;
-      const isLean = !isB && r.lean;  // skipped game carrying a league-profile lean
+      const isLean = !isB && r.lean;
       const dataMkt = isLean ? marketTag(r.lean.market) : marketTag(r.primary);
-      html += `<details class="match-item ${isB?'is-banker-row':''} ${isLean?'is-lean-row':''}" data-search="${(r.match.home+' '+r.match.away+' '+r.match.league).toLowerCase().replace(/"/g,'')}" data-market="${dataMkt}" data-banker="${isB?'1':'0'}" data-lean="${isLean?'1':'0'}" data-upcoming="${upcoming?'1':'0'}">
+      return `<details class="match-item ${isB?'is-banker-row':''} ${isLean?'is-lean-row':''}" data-search="${(r.match.home+' '+r.match.away+' '+r.match.league).toLowerCase().replace(/"/g,'')}" data-market="${dataMkt}" data-banker="${isB?'1':'0'}" data-lean="${isLean?'1':'0'}" data-upcoming="${upcoming?'1':'0'}">
         <summary class="match-line px-4 py-3 flex items-center gap-3">
           <div class="w-12 text-center flex-shrink-0">${score}</div>
           <div class="flex-1 min-w-0">
@@ -498,44 +538,36 @@ function renderMatches(){
           ${ live?'<span class="chip-live px-2 py-0.5 rounded text-[10px] font-bold">LIVE</span>':'' }
           ${odds}
           <div class="flex flex-col items-end gap-1 flex-shrink-0 w-24">
-            ${ isB?'<span class="text-[9px] font-bold uppercase text-gold">Banker</span>'
+            ${ isB?'<span class="text-[9px] font-bold uppercase" style="color:var(--brand)">Banker</span>'
                  : isLean?'<span class="text-[9px] font-bold uppercase" style="color:var(--muted)">League lean</span>':'' }
             <span class="px-2.5 py-1 rounded-lg text-xs font-semibold ${isLean?pill(r.lean.market):pill(r.primary)} whitespace-nowrap">${isLean?r.lean.market:r.primary}</span>
             ${rt}
           </div>
           <i class="fa-solid fa-chevron-down chev text-sm" style="color:var(--muted)"></i>
         </summary>
-        <div class="px-4 pb-4 pt-3" style="border-top:1px solid var(--line);background:var(--panel-2)">
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-3">
-            ${miniBar('Over 2.5',r.over)}${miniBar('BTTS',r.btts)}${miniBar('Win / DNB',r.wdnb)}
-          </div>
-          <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm panel rounded-xl p-3">
-            <div><div class="text-[11px] uppercase tracking-wider font-semibold" style="color:var(--muted)">Primary</div><div class="font-semibold">${r.primary}</div></div>
-            <div><div class="text-[11px] uppercase tracking-wider font-semibold" style="color:var(--muted)">Confidence</div><div class="font-semibold">${r.confidence}</div></div>
-            <div><div class="text-[11px] uppercase tracking-wider font-semibold" style="color:var(--muted)">Favourite</div><div class="font-semibold">${r.wdnb.favTeam} (${r.wdnb.favSide})</div></div>
-            ${ (r.match.homeVenueRank!=null&&r.match.awayVenueRank!=null&&!r.wdnb.tournamentUncomparable)
-               ? `<div><div class="text-[11px] uppercase tracking-wider font-semibold" style="color:var(--muted)">Venue</div><div class="font-semibold">${r.match.home} ${ord(r.match.homeVenueRank)} home · ${r.match.away} ${ord(r.match.awayVenueRank)} away</div></div>`
-               : (r.wdnb.tournamentUncomparable?`<div><div class="text-[11px] uppercase tracking-wider font-semibold" style="color:var(--muted)">Format</div><div class="font-semibold">${r.match.isKnockout?'Knockout — form-based':'Cross-group — form-based'}</div></div>`:'') }
-            ${ r.value?`<div><div class="text-[11px] uppercase tracking-wider font-semibold" style="color:var(--muted)">Odds value</div><div class="font-semibold ${r.value.verdict.includes('value')?'text-green':r.value.verdict.includes('Fairly')?'text-gold':''}">${r.value.verdict} <span style="color:var(--muted)" class="font-normal">· @${r.value.oddsUsed} (${r.value.sidePct}%)</span></div></div>`:'' }
-            <div class="basis-full text-sm" style="color:var(--muted);border-top:1px solid var(--line);padding-top:.6rem">${ isLean ? `<span style="color:var(--ink)"><i class="fa-solid fa-flag"></i> League lean:</span> ${r.lean.note} <em>(a tracked profile lean, not a staked banker)</em>` : r.summary }</div>
-          </div>
-          ${ r.match.h2h?`<div class="mt-2 panel rounded-xl p-3">
-            <div class="flex items-center gap-2 text-[11px] uppercase tracking-wider font-semibold mb-2" style="color:var(--muted)"><i class="fa-solid fa-clock-rotate-left"></i> Head-to-head · last ${r.match.h2h.played}</div>
-            <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm mb-2">
-              <span><b>${r.match.home}</b> ${r.match.h2h.homeWins}W</span><span>Draws ${r.match.h2h.draws}</span><span><b>${r.match.away}</b> ${r.match.h2h.awayWins}W</span>
-              <span style="color:var(--muted)">Over 2.5 in ${r.match.h2h.over25}/${r.match.h2h.played}</span><span style="color:var(--muted)">BTTS in ${r.match.h2h.bttsCount}/${r.match.h2h.played}</span>
-            </div>
-            <div class="space-y-1">${r.match.h2h.recent.map(g=>`<div class="text-xs flex gap-2" style="color:var(--muted)"><span class="w-20" style="color:var(--muted);opacity:.7">${g.date}</span><span class="flex-1 truncate">${g.ht} <b style="color:var(--ink)">${g.hg}-${g.ag}</b> ${g.at}</span></div>`).join('')}</div>
-          </div>`:'' }
+        <div class="px-4 pb-4 pt-1 flex flex-wrap gap-x-6 gap-y-2">
+          <div class="basis-full text-sm" style="color:var(--muted);border-top:1px solid var(--line);padding-top:.6rem">${ isLean ? `<span style="color:var(--ink)"><i class="fa-solid fa-flag"></i> League lean:</span> ${r.lean.note} <em>(a tracked profile lean, not a staked banker)</em>` : r.summary }</div>
         </div>
       </details>`;
-    });
+    };
 
+    shownBankers.forEach(r=>{ html += renderRow(r); });
+    if (hiddenRows.length){
+      const moreBankers = bankerRows.length>2 ? `${bankerRows.length-2} more banker${bankerRows.length-2>1?'s':''} + ` : '';
+      html += `<details class="lg-more">
+        <summary class="px-4 py-2.5 text-sm font-medium cursor-pointer flex items-center gap-2" style="color:var(--brand);border-top:1px solid var(--line)">
+          <i class="fa-solid fa-chevron-down lg-chev text-xs"></i> Show ${moreBankers}${otherRows.length} other match${(hiddenRows.length)>1?'es':''}
+        </summary>
+        <div>${hiddenRows.map(renderRow).join('')}</div>
+      </details>`;
+    }
     html += `</div></details>`;
   });
-
-  root.innerHTML = html || `<div class="text-center py-12" style="color:var(--muted)">No matches for this league.</div>`;
+  root.innerHTML = html;
+  document.getElementById('no-results')?.classList.add('hidden');
   applyFilters();
+  return;
+
 }
 
 /* ============ FILTERS ============ */
@@ -558,6 +590,50 @@ function applyFilters(){
 ['filter-search','filter-market'].forEach(id=>document.getElementById(id).addEventListener('input',applyFilters));
 document.getElementById('filter-bankers').addEventListener('change',applyFilters);
 document.getElementById('filter-upcoming').addEventListener('change',applyFilters);
+
+/* ============ SLIP BUILDER ============ */
+function legOdd(r){
+  const o = r.match.odds; if(!o) return null;
+  if (r.primary === 'Home Win' && o.home) return o.home;
+  if (r.primary === 'Away Win' && o.away) return o.away;
+  return null; // DNB / Over / Under / BTTS — no real single odd available
+}
+function confValue(c){ return c==='High'?8:c==='Medium'?7:c==='Low'?5:0; }
+function generateSlip(){
+  const host=document.getElementById('slip-result');
+  const nLegs=Math.max(2,Math.min(10,parseInt(document.getElementById('slip-legs').value,10)||3));
+  const minConf=parseInt(document.getElementById('slip-conf').value,10)||0;
+  const today=byDate[activeDate]||[];
+  let elig=today
+    .filter(r=>r.banker && legOdd(r)!=null && confValue(r.confidence)>=minConf)
+    .map(r=>({ r, odd:legOdd(r), conf:confValue(r.confidence) }))
+    .sort((a,b)=>b.conf-a.conf || a.odd-b.odd);
+  if(elig.length<nLegs){
+    host.innerHTML=`<div class="text-sm p-3 rounded-xl panel-2" style="color:var(--muted)">Only ${elig.length} eligible pick(s) today with real odds at this confidence — need ${nLegs}. Lower the confidence, reduce legs, or wait for more games. (Only Win picks have real single-bet odds; DNB and goal markets are excluded.)</div>`;
+    return;
+  }
+  const maxPerLeague=Math.max(1,Math.ceil(nLegs/2));
+  const perLeague={}; const chosen=[];
+  for(const e of elig){
+    if(chosen.length>=nLegs) break;
+    const lg=e.r.match.league||'?';
+    if((perLeague[lg]||0)>=maxPerLeague) continue;
+    perLeague[lg]=(perLeague[lg]||0)+1; chosen.push(e);
+  }
+  if(chosen.length<nLegs){ for(const e of elig){ if(chosen.length>=nLegs) break; if(!chosen.includes(e)) chosen.push(e); } }
+  const total=chosen.reduce((acc,e)=>acc*e.odd,1);
+  const rows=chosen.map(e=>`<div class="flex items-center gap-2 py-2" style="border-bottom:1px solid var(--line)">
+      <div class="flex-1 min-w-0"><div class="text-sm font-medium truncate">${e.r.match.home} v ${e.r.match.away}</div>
+      <div class="text-[11px]" style="color:var(--muted)">${e.r.match.league||''} · ${e.r.confidence}</div></div>
+      <span class="px-2 py-0.5 rounded text-xs font-semibold ${pill(e.r.primary)}">${e.r.primary}</span>
+      <span class="display font-bold tnum w-14 text-right">${e.odd.toFixed(2)}</span></div>`).join('');
+  host.innerHTML=`<div class="panel-2 rounded-xl p-3">${rows}
+      <div class="flex items-center justify-between pt-3"><span class="text-sm font-semibold">${chosen.length}-leg accumulator</span>
+      <span class="display text-xl font-bold" style="color:var(--brand)">${total.toFixed(2)}</span></div>
+      <div class="text-[11px] mt-2" style="color:var(--muted)">Total odds = each leg multiplied. A €10 stake would return ~€${(total*10).toFixed(2)} if <strong>all ${chosen.length} legs win</strong> — and nothing if any single leg loses. Odds are the latest fetched and may have moved. Not advice. 18+.</div></div>`;
+}
+document.getElementById('slip-generate').addEventListener('click',generateSlip);
+
 
 /* ============ PERFORMANCE TRACKER (all-time) ============ */
 (function(){
@@ -599,41 +675,45 @@ const strictChip = mkt =>
 
 function renderUltraMatches(){
   const host=document.getElementById('matches-root');
-  if (typeof streakRecommend !== 'function'){ host.innerHTML='<div class="p-6 text-center" style="color:var(--muted)">Streak engine unavailable.</div>'; return; }
+  if (typeof ultraRecommend !== 'function'){ host.innerHTML='<div class="p-6 text-center" style="color:var(--muted)">Ultra engine unavailable.</div>'; return; }
   const dayMatches=(byDate[activeDate]||[]);
-  const picks=dayMatches.map(streakRecommend).filter(r=>r.bet);
+  const picks=dayMatches.map(ultraRecommend).filter(r=>r.bet);
   let html='';
-  // prominent disclaimer banner
-  html += `<div class="panel rounded-xl p-3 mb-3 text-sm" style="border:1px solid rgba(245,158,11,.4);background:rgba(245,158,11,.08)">
-    <strong style="color:#f59e0b"><i class="fa-solid fa-triangle-exclamation"></i> Ultra · Streaks — experimental.</strong>
-    Bets only teams on a real 4–5 game win streak. Streaks are weak predictors the bookmaker already prices in. These are <strong>unproven</strong> — let the tracker measure them before trusting.
+  html += `<div class="panel rounded-xl p-3 mb-3 text-sm" style="border:1px solid rgba(76,175,39,.4);background:rgba(76,175,39,.07)">
+    <strong style="color:var(--brand)"><i class="fa-solid fa-shield-halved"></i> Ultra Bankers — Universal Market Engine.</strong>
+    Evaluates every market with data, picks the SINGLE strongest edge, or No Bet. One match = one market. Same-tier, cup ties, conflicts, and confidence under 7 are all rejected. First-half, corners, and cards are blocked (no data). Unproven — track before trusting. 18+.
   </div>`;
   if(!picks.length){
-    html += `<div class="p-6 text-center" style="color:var(--muted)">No qualifying win streaks among today's games.</div>`;
+    html += `<div class="p-6 text-center" style="color:var(--muted)">No qualifying single-market edges among today's games (the engine rejects uncertainty by design).</div>`;
     host.innerHTML=html; return;
   }
   picks.sort((a,b)=>b.confidence-a.confidence);
   picks.forEach(r=>{
-    const sig=r.signals.filter(s=>s.real).map(s=>s.note).join(' · ');
-    const trends=r.signals.filter(s=>!s.real).map(s=>s.note).join(' · ');
-    html += `<details class="match-item is-lean-row" data-search="${(r.match.home+' '+r.match.away+' '+r.match.league).toLowerCase().replace(/"/g,'')}" data-market="${marketTag(r.primary)}" data-banker="0" data-upcoming="0">
+    const tierName = r.confidence>=10?"Elite Banker":r.confidence>=9?"Banker":r.confidence>=8?"Strong":"Playable";
+    const passed=(r.passed||[]).map(p=>`<li style="color:#1f7a3f">✓ ${p}</li>`).join('');
+    const failed=(r.failed||[]).map(p=>`<li style="color:var(--muted)">✗ ${p}</li>`).join('');
+    const others=(r.allScores||[]).filter(s=>s.market!==r.primary).slice(0,4).map(s=>`${s.market} ${s.conf}`).join(' · ');
+    const blockedList=(r.blocked||[]).slice(0,6).map(b=>`${b.market}`).join(', ');
+    html += `<details class="match-item is-banker-row" data-search="${(r.match.home+' '+r.match.away+' '+r.match.league).toLowerCase().replace(/"/g,'')}" data-market="${marketTag(r.primary)}" data-banker="1" data-upcoming="0">
       <summary class="match-line px-4 py-3 flex items-center gap-3">
         <div class="flex-1 min-w-0">
           <div class="text-sm font-medium truncate">${r.match.home}</div>
           <div class="text-sm font-medium truncate">${r.match.away}</div>
           <div class="text-[11px]" style="color:var(--muted)">${r.match.league||''}</div>
         </div>
-        <div class="flex flex-col items-end gap-1 flex-shrink-0 w-24">
-          <span class="text-[9px] font-bold uppercase" style="color:#f59e0b">Streak ${r.confidence}/10</span>
+        <div class="flex flex-col items-end gap-1 flex-shrink-0 w-28">
+          <span class="text-[9px] font-bold uppercase" style="color:var(--brand)">${tierName} ${r.confidence}/10</span>
           <span class="px-2.5 py-1 rounded-lg text-xs font-semibold ${pill(r.primary)} whitespace-nowrap">${r.primary}</span>
         </div>
         <i class="fa-solid fa-chevron-down chev text-sm" style="color:var(--muted)"></i>
       </summary>
       <div class="px-4 pb-4 pt-3 text-sm" style="border-top:1px solid var(--line);background:var(--panel-2)">
-        <div><span style="color:var(--ink);font-weight:600">Real streak:</span> ${sig||'—'}</div>
-        ${trends?`<div style="color:var(--muted);margin-top:.3rem"><em>Trend (avg-based, not a streak): ${trends}</em></div>`:''}
-        ${r.reasons.length?`<div style="color:var(--muted);margin-top:.3rem">${r.reasons.join(' ')}</div>`:''}
-        <div style="margin-top:.5rem;color:#f59e0b"><i class="fa-solid fa-triangle-exclamation"></i> ${r.disclaimer}</div>
+        <div style="font-weight:600;margin-bottom:.4rem">${r.verdict}</div>
+        ${passed?`<ul style="margin:.3rem 0;padding-left:.2rem;list-style:none;font-size:.8rem">${passed}</ul>`:''}
+        ${failed?`<details style="margin-top:.3rem"><summary style="color:var(--muted);font-size:.78rem;cursor:pointer">Failed checks</summary><ul style="padding-left:.2rem;list-style:none;font-size:.78rem;margin-top:.3rem">${failed}</ul></details>`:''}
+        ${others?`<div style="color:var(--muted);font-size:.75rem;margin-top:.5rem">Other markets scored: ${others}</div>`:''}
+        ${blockedList?`<div style="color:var(--muted);font-size:.72rem;margin-top:.3rem">Blocked (no data): ${blockedList}</div>`:''}
+        ${(r.humanChecks||[]).length?`<div style="color:#b45309;font-size:.75rem;margin-top:.5rem"><i class="fa-solid fa-user-check"></i> ${r.humanChecks[0]}</div>`:''}
       </div>
     </details>`;
   });
@@ -735,7 +815,7 @@ function renderStrictMatches(){
     note.textContent = mode==='strict'
       ? 'Conservative: rejects most games, one clean market or No Bet. Auto-tiered from the table — confirm red flags yourself.'
       : mode==='ultra'
-      ? '⚠ Experimental & UNPROVEN: bets only teams on a real 4–5 game win streak. Streaks are weak predictors the bookmaker prices in — track results before trusting this.'
+      ? 'Universal Market Engine: evaluates every market with data, outputs the single strongest edge or No Bet. Rejects same-tier, cup ties, conflicts, and confidence under 7. Unproven — track before trusting.'
       : '';
     renderMatches();
   }
