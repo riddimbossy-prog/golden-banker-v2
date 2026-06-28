@@ -85,7 +85,9 @@
   .bar-track{ background:var(--line); border-radius:9999px; overflow:hidden; }
 
   /* light theme */
-  body.light{ --bg:#eef1f6; --panel:#ffffff; --panel-2:#f1f4f9; --line:#dde3ec; --ink:#0f1729; --muted:#566076; }
+  body.light{ --bg:#eef1f6; --panel:#ffffff; --panel-2:#f1f4f9; --line:#dde3ec; --ink:#0f1729; --muted:#4a5468;
+    /* light-mode glass: translucent WHITE surfaces (dark glass made text unreadable) */
+    --glass:rgba(255,255,255,.72); --glass-2:rgba(248,250,253,.7); --glass-border:rgba(15,23,41,.08); }
   body.light .bg-gold{ color:#0a0e17; }
   /* darker gold so it reads on white (the bright #FFC53D vanishes on light bg) */
   body.light .text-gold{ color:#3d9020; }
@@ -109,7 +111,7 @@
   body.light .odd-cell{ color:#0f1729; }
   body.light .odd-cell.best{ color:#1f7a3f; }
   /* banker left-edge stays visible */
-  body.light .is-banker-row{ box-shadow:inset 3px 0 0 #b8860b; }
+  body.light .is-banker-row{ box-shadow:inset 3px 0 0 #3d9020; }
 
   ::-webkit-scrollbar{ width:10px; height:10px; }
   ::-webkit-scrollbar-thumb{ background:var(--line); border-radius:6px; }
