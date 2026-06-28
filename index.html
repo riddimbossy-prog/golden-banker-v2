@@ -186,6 +186,7 @@
       <button id="eng-normal" class="px-3 py-1.5 rounded-lg text-sm font-semibold" style="background:linear-gradient(135deg,var(--gold),#6fd44a);color:#0a0e17">Normal</button>
       <button id="eng-strict" class="px-3 py-1.5 rounded-lg text-sm font-semibold" style="color:var(--muted)">Strict Bankers</button>
       <button id="eng-ultra" class="px-3 py-1.5 rounded-lg text-sm font-semibold" style="color:var(--muted)">Ultra Bankers</button>
+      <button id="eng-rulespro" class="px-3 py-1.5 rounded-lg text-sm font-semibold" style="color:var(--muted)">Elite Bankers</button>
     </div>
     <span id="eng-note" class="text-xs" style="color:var(--muted)"></span>
   </div>
@@ -269,7 +270,7 @@
           <div class="flex flex-wrap items-end gap-4 mb-3">
             <div>
               <label class="text-xs uppercase tracking-wider font-semibold block mb-1" style="color:var(--muted)">Number of legs</label>
-              <input id="slip-legs" type="number" min="2" max="10" value="3" class="panel-2 rounded-xl px-3 py-2 text-sm w-24" style="color:var(--ink)" />
+              <input id="slip-legs" type="number" min="2" max="20" value="3" class="panel-2 rounded-xl px-3 py-2 text-sm w-24" style="color:var(--ink)" />
             </div>
             <div>
               <label class="text-xs uppercase tracking-wider font-semibold block mb-1" style="color:var(--muted)">Min confidence</label>
@@ -280,6 +281,18 @@
             <button id="slip-generate" class="px-4 py-2 rounded-xl text-sm font-semibold bg-gold">
               <i class="fa-solid fa-bolt"></i> Generate slip
             </button>
+          </div>
+          <div class="mb-3">
+            <label class="text-xs uppercase tracking-wider font-semibold block mb-1.5" style="color:var(--muted)">Markets to include <span style="text-transform:none;font-weight:400">(none selected = all)</span></label>
+            <div class="flex flex-wrap gap-x-4 gap-y-1.5 text-sm">
+              <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox" class="slip-mkt accent-yellow-500" value="win" /> Win</label>
+              <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox" class="slip-mkt accent-yellow-500" value="dnb" /> DNB</label>
+              <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox" class="slip-mkt accent-yellow-500" value="dc" /> Double Chance</label>
+              <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox" class="slip-mkt accent-yellow-500" value="over" /> Over</label>
+              <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox" class="slip-mkt accent-yellow-500" value="under" /> Under</label>
+              <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox" class="slip-mkt accent-yellow-500" value="btts" /> BTTS</label>
+            </div>
+            <p class="text-[11px] mt-1.5" style="color:#b45309"><i class="fa-solid fa-circle-info"></i> Only straight Win picks use real odds. DNB, Double Chance, Over/Under and BTTS legs use <strong>estimated</strong> odds (marked * in the slip) — the real price will differ.</p>
           </div>
           <div id="slip-result"></div>
         </div>
@@ -494,6 +507,7 @@ function miniBar(label,m){
 function renderMatches(){
   if(engineMode==='strict'){ renderStrictMatches(); return; }
   if(engineMode==='ultra'){ renderUltraMatches(); return; }
+  if(engineMode==='rulespro'){ renderRulesProMatches(); return; }
   const root = document.getElementById('matches-root');
   const rows = byDate[activeDate]||[];
   const empty = document.getElementById('empty-state');
@@ -624,23 +638,60 @@ document.getElementById('filter-safeodds').addEventListener('change',applyFilter
 
 /* ============ SLIP BUILDER ============ */
 function legOdd(r){
-  const o = r.match.odds; if(!o) return null;
-  if (r.primary === 'Home Win' && o.home) return o.home;
-  if (r.primary === 'Away Win' && o.away) return o.away;
-  return null; // DNB / Over / Under / BTTS — no real single odd available
+  // Returns { odd, est } where est=true means the price is ESTIMATED (no real
+  // single odd in our data). Real odds exist only for straight Win picks.
+  const o = r.match.odds;
+  const p = r.primary;
+  // real 1X2 odds
+  if (o){
+    if (p === 'Home Win' && o.home) return { odd:o.home, est:false };
+    if (p === 'Away Win' && o.away) return { odd:o.away, est:false };
+    // DNB estimated from the win odd (shorter, since draw refunds the stake)
+    if (p === 'Home DNB' && o.home){ const w=o.home; return { odd:Math.max(1.05, +(1+(w-1)*0.78).toFixed(2)), est:true }; }
+    if (p === 'Away DNB' && o.away){ const w=o.away; return { odd:Math.max(1.05, +(1+(w-1)*0.78).toFixed(2)), est:true }; }
+    // Double chance estimated from combined implied probs
+    if (p === 'Double Chance 1X' && o.home && o.draw){ const ph=1/o.home, pd=1/o.draw; const pr=Math.min(0.95,(ph+pd)); return { odd:Math.max(1.05,+(1/pr*0.92).toFixed(2)), est:true }; }
+    if (p === 'Double Chance X2' && o.away && o.draw){ const pa=1/o.away, pd=1/o.draw; const pr=Math.min(0.95,(pa+pd)); return { odd:Math.max(1.05,+(1/pr*0.92).toFixed(2)), est:true }; }
+  }
+  // goal/BTTS markets: no 1X2 basis — estimate from typical pricing bands
+  const band = {
+    'Over 1.5':1.30, 'Over 2.5':1.85, 'Over 3.5':2.90,
+    'Under 1.5':3.20, 'Under 2.5':1.90, 'Under 3.5':1.35, 'Under 4.5':1.15,
+    'BTTS Yes':1.80, 'BTTS No':1.95,
+    'Home Team Over 1.5 Goals':2.20, 'Away Team Over 1.5 Goals':2.60,
+    'Home Team Under 1.5 Goals':1.60, 'Away Team Under 1.5 Goals':1.45,
+    'Home Team Over 0.5 Goals':1.25, 'Away Team Over 0.5 Goals':1.35,
+    'Over 2.5 + BTTS':2.40
+  };
+  if (band[p]) return { odd:band[p], est:true };
+  return null;
 }
 function confValue(c){ return c==='High'?8:c==='Medium'?7:c==='Low'?5:0; }
+// which broad market group a pick belongs to (for the slip market filter)
+function slipGroup(p){
+  if(/Win/.test(p) && !/DNB|Double/.test(p)) return 'win';
+  if(/DNB/.test(p)) return 'dnb';
+  if(/Double Chance/.test(p)) return 'dc';
+  if(/Over/.test(p)) return 'over';
+  if(/Under/.test(p)) return 'under';
+  if(/BTTS/.test(p)) return 'btts';
+  return 'other';
+}
 function generateSlip(){
   const host=document.getElementById('slip-result');
-  const nLegs=Math.max(2,Math.min(10,parseInt(document.getElementById('slip-legs').value,10)||3));
+  const nLegs=Math.max(2,Math.min(20,parseInt(document.getElementById('slip-legs').value,10)||3));
   const minConf=parseInt(document.getElementById('slip-conf').value,10)||0;
+  // selected market groups from the checkboxes (none checked = all allowed)
+  const checks=[...document.querySelectorAll('.slip-mkt:checked')].map(c=>c.value);
+  const allowAll = checks.length===0;
   const today=byDate[activeDate]||[];
   let elig=today
     .filter(r=>r.banker && legOdd(r)!=null && confValue(r.confidence)>=minConf)
-    .map(r=>({ r, odd:legOdd(r), conf:confValue(r.confidence) }))
+    .filter(r=> allowAll || checks.includes(slipGroup(r.primary)))
+    .map(r=>{ const lo=legOdd(r); return { r, odd:lo.odd, est:lo.est, conf:confValue(r.confidence) }; })
     .sort((a,b)=>b.conf-a.conf || a.odd-b.odd);
   if(elig.length<nLegs){
-    host.innerHTML=`<div class="text-sm p-3 rounded-xl panel-2" style="color:var(--muted)">Only ${elig.length} eligible pick(s) today with real odds at this confidence — need ${nLegs}. Lower the confidence, reduce legs, or wait for more games. (Only Win picks have real single-bet odds; DNB and goal markets are excluded.)</div>`;
+    host.innerHTML=`<div class="text-sm p-3 rounded-xl panel-2" style="color:var(--muted)">Only ${elig.length} eligible pick(s) match your filters at this confidence — need ${nLegs}. Loosen the market filter, lower confidence, reduce legs, or wait for more games.</div>`;
     return;
   }
   const maxPerLeague=Math.max(1,Math.ceil(nLegs/2));
@@ -653,15 +704,17 @@ function generateSlip(){
   }
   if(chosen.length<nLegs){ for(const e of elig){ if(chosen.length>=nLegs) break; if(!chosen.includes(e)) chosen.push(e); } }
   const total=chosen.reduce((acc,e)=>acc*e.odd,1);
+  const anyEst=chosen.some(e=>e.est);
   const rows=chosen.map(e=>`<div class="flex items-center gap-2 py-2" style="border-bottom:1px solid var(--line)">
       <div class="flex-1 min-w-0"><div class="text-sm font-medium truncate">${e.r.match.home} v ${e.r.match.away}</div>
       <div class="text-[11px]" style="color:var(--muted)">${e.r.match.league||''} · ${e.r.confidence}</div></div>
       <span class="px-2 py-0.5 rounded text-xs font-semibold ${pill(e.r.primary)}">${e.r.primary}</span>
-      <span class="display font-bold tnum w-14 text-right">${e.odd.toFixed(2)}</span></div>`).join('');
+      <span class="display font-bold tnum w-14 text-right">${e.odd.toFixed(2)}${e.est?'<span style="color:#b45309" title="estimated odd">*</span>':''}</span></div>`).join('');
   host.innerHTML=`<div class="panel-2 rounded-xl p-3">${rows}
       <div class="flex items-center justify-between pt-3"><span class="text-sm font-semibold">${chosen.length}-leg accumulator</span>
       <span class="display text-xl font-bold" style="color:var(--brand)">${total.toFixed(2)}</span></div>
-      <div class="text-[11px] mt-2" style="color:var(--muted)">Total odds = each leg multiplied. A €10 stake would return ~€${(total*10).toFixed(2)} if <strong>all ${chosen.length} legs win</strong> — and nothing if any single leg loses. Odds are the latest fetched and may have moved. Not advice. 18+.</div></div>`;
+      ${anyEst?`<div class="text-[11px] mt-2" style="color:#b45309"><i class="fa-solid fa-triangle-exclamation"></i> Legs marked * use ESTIMATED odds (no real single price in our data for DNB/goals/BTTS) — the real bookmaker price will differ, so treat the total as indicative only.</div>`:''}
+      <div class="text-[11px] mt-2" style="color:var(--muted)">Total odds = each leg multiplied. A €10 stake would return ~€${(total*10).toFixed(2)} if <strong>all ${chosen.length} legs win</strong> — and nothing if any single leg loses. The more legs, the lower the chance: a ${chosen.length}-leg slip is far riskier than it looks. Not advice. 18+.</div></div>`;
 }
 document.getElementById('slip-generate').addEventListener('click',generateSlip);
 
@@ -741,6 +794,51 @@ const strictChip = mkt =>
   mkt.includes('DNB') ? 'chip-dnb' :
   mkt.includes('Win') ? 'chip-green' :
   mkt.includes('Under') ? 'chip-under' : 'chip-gold';
+
+function renderRulesProMatches(){
+  const host=document.getElementById('matches-root');
+  if (typeof rulesProRecommend !== 'function'){ host.innerHTML='<div class="p-6 text-center" style="color:var(--muted)">Elite Bankers engine unavailable — deploy the latest banker-engine.js.</div>'; return; }
+  const dayMatches=(byDate[activeDate]||[]);
+  const picks=dayMatches.map(rulesProRecommend).filter(r=>r.bet);
+  let html='';
+  html += `<div class="panel rounded-xl p-3 mb-3 text-sm" style="border:1px solid rgba(76,175,39,.4);background:rgba(76,175,39,.07)">
+    <strong style="color:var(--brand)"><i class="fa-solid fa-ruler-combined"></i> Elite Bankers — exact-threshold engine.</strong>
+    Every market must clear its FULL set of numeric thresholds (PPG, goals, form, GD, BTTS, etc.) or it's rejected. One match = one strongest market, or No Bet. <strong>Some inputs are estimated</strong> — win rate, clean-sheet %, and failed-to-score % aren't in the data, so they're approximated from PPG/goals and flagged on each pick. Strict by design — expect many No Bets. Unproven — track first. 18+.
+  </div>`;
+  if(!picks.length){
+    html += `<div class="p-6 text-center" style="color:var(--muted)">No market cleared its full threshold set among today's games (this engine rejects anything that misses a single requirement).</div>`;
+    host.innerHTML=html; return;
+  }
+  picks.sort((a,b)=>b.confidence-a.confidence);
+  picks.forEach(r=>{
+    const tierName = r.confidence>=10?"Elite Banker":r.confidence>=9?"Banker":r.confidence>=8?"Strong":"Playable";
+    const others=(r.allScores||[]).filter(s=>s.market!==r.primary).slice(0,4).map(s=>`${s.market} ${s.conf}`).join(' · ');
+    const blockedList=(r.blocked||[]).slice(0,4).map(b=>`${b.market}`).join(', ');
+    html += `<details class="match-item is-banker-row" data-search="${(r.match.home+' '+r.match.away+' '+r.match.league).toLowerCase().replace(/"/g,'')}" data-market="${marketTag(r.primary)}" data-banker="1" data-upcoming="0" data-safeodds="${safeOddsPick(r.primary,r.match.odds)?'1':'0'}">
+      <summary class="match-line px-4 py-3 flex items-center gap-3">
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-medium truncate">${r.match.home}</div>
+          <div class="text-sm font-medium truncate">${r.match.away}</div>
+          <div class="text-[11px]" style="color:var(--muted)">${r.match.league||''}</div>
+        </div>
+        <div class="flex flex-col items-end gap-1 flex-shrink-0 w-28">
+          <span class="text-[9px] font-bold uppercase" style="color:var(--brand)">${tierName} ${r.confidence}/10</span>
+          <span class="px-2.5 py-1 rounded-lg text-xs font-semibold ${pill(r.primary)} whitespace-nowrap">${r.primary}</span>
+        </div>
+        <i class="fa-solid fa-chevron-down chev text-sm" style="color:var(--muted)"></i>
+      </summary>
+      <div class="px-4 pb-4 pt-3 text-sm" style="border-top:1px solid var(--line);background:var(--panel-2)">
+        <div style="font-weight:600;margin-bottom:.4rem">${r.verdict}</div>
+        ${r.usedEstimates?`<div style="color:#b45309;font-size:.75rem;margin-bottom:.4rem"><i class="fa-solid fa-triangle-exclamation"></i> This pick relied on ESTIMATED stats (win rate / clean-sheet / failed-to-score approximated from PPG & goals — not real counts).</div>`:''}
+        ${others?`<div style="color:var(--muted);font-size:.75rem;margin-top:.3rem">Other markets scored: ${others}</div>`:''}
+        ${blockedList?`<div style="color:var(--muted);font-size:.72rem;margin-top:.3rem">Blocked (no data): ${blockedList}</div>`:''}
+        ${(r.humanChecks||[]).length?`<div style="color:#b45309;font-size:.75rem;margin-top:.5rem"><i class="fa-solid fa-user-check"></i> ${r.humanChecks[0]}</div>`:''}
+      </div>
+    </details>`;
+  });
+  host.innerHTML=html;
+  applyFilters();
+}
 
 function renderUltraMatches(){
   const host=document.getElementById('matches-root');
@@ -876,7 +974,7 @@ function renderStrictMatches(){
 }
 
 (function(){
-  const bn=document.getElementById('eng-normal'), bs=document.getElementById('eng-strict'), bu=document.getElementById('eng-ultra'), note=document.getElementById('eng-note');
+  const bn=document.getElementById('eng-normal'), bs=document.getElementById('eng-strict'), bu=document.getElementById('eng-ultra'), bp=document.getElementById('eng-rulespro'), note=document.getElementById('eng-note');
   function setMode(mode){
     engineMode=mode;
     const on='background:linear-gradient(135deg,var(--gold),#6fd44a);color:#0a0e17';
@@ -884,16 +982,20 @@ function renderStrictMatches(){
     bn.style.cssText = mode==='normal'?on:off;
     bs.style.cssText = mode==='strict'?on:off;
     bu.style.cssText = mode==='ultra'?on:off;
+    bp.style.cssText = mode==='rulespro'?on:off;
     note.textContent = mode==='strict'
       ? 'Conservative: rejects most games, one clean market or No Bet. Auto-tiered from the table — confirm red flags yourself.'
       : mode==='ultra'
       ? 'Universal Market Engine: evaluates every market with data, outputs the single strongest edge or No Bet. Rejects same-tier, cup ties, conflicts, and confidence under 7. Unproven — track before trusting.'
+      : mode==='rulespro'
+      ? 'Elite Bankers: exact-threshold engine (full spec gates per market). Some % inputs (win rate, clean sheet, FTS) are ESTIMATED from PPG/goals — flagged on each pick. Strict by design; expect many No Bets. Unproven — track first.'
       : '';
     renderMatches();
   }
   bn.addEventListener('click',()=>setMode('normal'));
   bs.addEventListener('click',()=>setMode('strict'));
   bu.addEventListener('click',()=>setMode('ultra'));
+  bp.addEventListener('click',()=>setMode('rulespro'));
 })();
 
 /* ============ MASTER RENDER ============ */
