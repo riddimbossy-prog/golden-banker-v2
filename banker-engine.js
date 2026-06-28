@@ -1159,15 +1159,16 @@ function rulesProRecommend(m){
   const la=m.leagueAvg; const lgGpg=(la&&la.reliable&&la.goalsPerGame)?la.goalsPerGame:2.6;
   const combGoals=(hGF!=null&&aGF!=null)?hGF+aGF:null;
 
-  // estimated percentages (FLAGGED)
-  const hWin=estWinRate(hPPG), aWin=estWinRate(aPPG);
-  const hUnb=estUnbeaten(hPPG), aUnb=estUnbeaten(aPPG);
-  const hCS=estCleanSheet(hGA), aCS=estCleanSheet(aGA);
-  const hFTS=estFTS(hGF), aFTS=estFTS(aGF);
+  // estimated percentages — but PREFER REAL stats from the fetcher when present.
+  const hWin=m.homeWinRate??estWinRate(hPPG), aWin=m.awayWinRate??estWinRate(aPPG);
+  const hUnb=m.homeUnbeatenRate??estUnbeaten(hPPG), aUnb=m.awayUnbeatenRate??estUnbeaten(aPPG);
+  const hCS=m.homeCleanSheetRate??estCleanSheet(hGA), aCS=m.awayCleanSheetRate??estCleanSheet(aGA);
+  const hFTS=m.homeFailedToScoreRate??estFTS(hGF), aFTS=m.awayFailedToScoreRate??estFTS(aGF);
+  const statsAreReal = !!m.statsReal;
   const combFTS=(hFTS!=null&&aFTS!=null)?(hFTS+aFTS)/2:null;
   const combBTTS=(hGF!=null&&aGF!=null&&hGA!=null&&aGA!=null)
     ? clamp(((hGF>=1.2?0.55:0.4)+(aGF>=1.0?0.5:0.35)+(hGA>=1.1?0.55:0.4)+(aGA>=1.1?0.55:0.4))/4,0,1) : null;
-  const markEst=()=>{usedEstimates=true;};
+  const markEst=()=>{ if(!statsAreReal) usedEstimates=true; };
 
   const cand=[];
   const add=(market,conf,note,est)=>{ if(est)markEst(); cand.push({market,conf:clamp(Math.round(conf),0,10),note:note||""}); };
@@ -1273,6 +1274,96 @@ function rulesProRecommend(m){
 }
 
 /* ============================================================
+   APEX BANKERS — Elite thresholds + HOME ADVANTAGE UPSET PROTECTION
+   Runs the Elite (rulesPro) engine, then applies the Home Advantage
+   layer: away markets must prove MORE; home markets get natural
+   protection. Resistant home sides block/penalise away picks.
+   (Win%, unbeaten%, clean-sheet%, FTS% are ESTIMATED — flagged.)
+   ------------------------------------------------------------------- */
+function apexRecommend(m){
+  const base = rulesProRecommend(m); // Elite pick first
+  const size = m.tableSize ?? 20;
+
+  // home stats + estimates
+  const hPPG = venuePPG(m.homeVenuePts,m.homeVenueGames,m.homeVenueRank,m.venueTableSize??size);
+  const aPPG = venuePPG(m.awayVenuePts,m.awayVenueGames,m.awayVenueRank,m.venueTableSize??size);
+  const hGF=m.homeScoredAtHome??null, hGA=m.homeConcededAtHome??null;
+  const aGF=m.awayScoredAway??null;
+  const hForm=m.homeForm?formPoints(m.homeForm)*15:null;
+  const hUnb=m.homeUnbeatenRate??estUnbeaten(hPPG), aUnb=m.awayUnbeatenRate??estUnbeaten(aPPG);
+  const hWin=m.homeWinRate??estWinRate(hPPG), aWin=m.awayWinRate??estWinRate(aPPG);
+  const hCS=m.homeCleanSheetRate??estCleanSheet(hGA), hFTS=m.homeFailedToScoreRate??estFTS(hGF);
+  const apexStatsReal = !!m.statsReal;
+  const homeTier=tierFromProfile(m,'home'), awayTier=tierFromProfile(m,'away');
+  const awayTierAdv=(homeTier!=null&&awayTier!=null)?(homeTier-awayTier):0; // away stronger => positive
+
+  // ---- HOME RESISTANCE TEST (≥3 of 6) ----
+  const resist=[
+    hPPG!=null&&hPPG>=1.50,
+    hUnb!=null&&hUnb>=0.60,
+    hGF!=null&&hGF>=1.20,
+    hGA!=null&&hGA<=1.30,
+    hFTS!=null&&hFTS<=0.30,
+    hForm!=null&&hForm>=7
+  ].filter(Boolean).length;
+  const homeResistant = resist>=3;
+  const homeDefResistant = (hGA!=null&&hGA<=1.20) && (hCS!=null&&hCS>=0.35);
+
+  const notes=[];
+  let primary=base.primary, confidence=base.confidence, verdict=base.verdict, bet=base.bet;
+  const isAwayMkt = /Away Win|Away DNB|Double Chance X2|Away Team Over/.test(primary);
+  const isHomeMkt = /Home Win|Home DNB|Double Chance 1X|Home Team Over/.test(primary);
+
+  if(homeResistant && isAwayMkt){
+    notes.push(`Home resistant (${resist}/6) — away market scrutinised.`);
+    if(primary==='Away Win'){
+      // block away win -> downgrade to Away DNB or No Bet
+      primary='Away DNB'; verdict='Away Win blocked by home resistance → downgraded to Away DNB.';
+    }
+    if(primary==='Away DNB'){
+      const survive = awayTierAdv>=2 && aPPG!=null&&aPPG>=1.80 && aUnb!=null&&aUnb>=0.70 && aGF!=null&&aGF>=1.40;
+      if(!survive){ primary='No Bet'; bet=false; confidence=0; verdict=`Away DNB blocked — home resistant and away edge not strong enough (needs tier+2, PPG≥1.8, unbeaten≥70%, GF≥1.4).`; }
+    }
+    if(primary==='Double Chance X2'){
+      const survive = aUnb!=null&&aUnb>=0.75 && hWin!=null&&hWin<=0.35 && aPPG!=null&&aPPG>=1.70;
+      if(!survive){ primary='No Bet'; bet=false; confidence=0; verdict='X2 blocked — home resistant and away not dominant enough.'; }
+    }
+    if(/Away Team Over/.test(primary) && homeDefResistant){
+      primary='No Bet'; bet=false; confidence=0; verdict='Away Over 1.5 blocked — home defence resistant (concedes ≤1.20, clean-sheet ≥35%).';
+    }
+  }
+
+  // ---- HOME ADVANTAGE BOOST (home markets) ----
+  if(bet && isHomeMkt){
+    const boost = hPPG!=null&&hPPG>=1.80 && hUnb!=null&&hUnb>=0.70 && hGF!=null&&hGF>=1.50 && (m.awayConcededAway!=null&&m.awayConcededAway>=1.40) && aWin!=null&&aWin<=0.30;
+    if(boost){ confidence=Math.min(10,confidence+1); notes.push('Home advantage boost (+1): strong home, weak away.'); }
+  }
+
+  // ---- AWAY MARKET PENALTY ----
+  if(bet && isAwayMkt && primary!=='No Bet'){
+    const penalise = hPPG!=null&&hPPG>=1.50 && hUnb!=null&&hUnb>=0.60 && hGF!=null&&hGF>=1.20 && hGA!=null&&hGA<=1.30;
+    if(penalise){
+      confidence=Math.max(0,confidence-1.5);
+      notes.push('Away penalty (−1.5): home has natural advantage.');
+      if(confidence<8){ primary='No Bet'; bet=false; verdict='Away confidence fell below 8 after home-advantage penalty → No Bet.'; }
+    }
+  }
+
+  if(primary==='No Bet'){ bet=false; confidence=0; }
+  const banker = bet && confidence>=8;
+  const extra = notes.length?(' '+notes.join(' ')):'';
+
+  return {
+    match:m, engine:'apex', primary, confidence, bet,
+    banker, usedEstimates: !apexStatsReal,
+    blocked: base.blocked, humanChecks: base.humanChecks,
+    allScores: base.allScores,
+    homeResistant, resistScore:resist,
+    verdict: (verdict||base.verdict)+extra
+  };
+}
+
+/* ============================================================
    ULTRA-STRICT: STREAK ENGINE (separate path)
    Fires on STREAK signals alone, independent of the tier engines.
    HONESTY NOTES baked into the labels:
@@ -1335,5 +1426,5 @@ function streakRecommend(m) {
 
 if (typeof module !== "undefined") module.exports = {
   analyseAll, recommend, scoreOver25, scoreBTTS, scoreWinDNB, settle,
-  analyseStrict, strictRecommend, tierFromRank, streakRecommend, ultraRecommend, rulesProRecommend
+  analyseStrict, strictRecommend, tierFromRank, streakRecommend, ultraRecommend, rulesProRecommend, apexRecommend
 };
