@@ -1745,8 +1745,27 @@ function valueRecommend(m){
     {market:"Away Win",        p:pAwayWin, floor:0.60},
   ].filter(c=>c.p>=c.floor);
 
+  // RULE: a Win or DNB requires the BACKED team to be expected to actually
+  // score — at least 2 expected goals (lambda >= 2.0). A team that can't be
+  // expected to put 2 away can be held to a draw or nicked 1-0 even against a
+  // weak opponent, so backing it to WIN (which is what both Win and DNB need)
+  // is not safe regardless of how poor the opponent looks.
+  const LAMBDA_WIN_FLOOR = 2.0;
+  const winDnbBlocked = [];
+  const filtered = cand.filter(c=>{
+    const isHomeBack = (c.market==="Home Win"||c.market==="Home DNB");
+    const isAwayBack = (c.market==="Away Win"||c.market==="Away DNB");
+    if(isHomeBack && lambdaHome < LAMBDA_WIN_FLOOR){ winDnbBlocked.push(c.market); return false; }
+    if(isAwayBack && lambdaAway < LAMBDA_WIN_FLOOR){ winDnbBlocked.push(c.market); return false; }
+    return true;
+  });
+  cand.length = 0; Array.prototype.push.apply(cand, filtered);
+
   if(!cand.length){
-    return valueOut(m,"No Bet",0,{lambdaHome,lambdaAway},["No market cleared its probability floor — model sees no safe edge."]);
+    const why = winDnbBlocked.length
+      ? `Win/DNB blocked — backed team not expected to score 2+ (λ ${lambdaHome.toFixed(2)}/${lambdaAway.toFixed(2)}); no other market cleared the floor.`
+      : "No market cleared its probability floor — model sees no safe edge.";
+    return valueOut(m,"No Bet",0,{lambdaHome,lambdaAway},[why]);
   }
 
   // safety: prefer the market with the biggest cushion above its floor,
