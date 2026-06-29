@@ -1382,9 +1382,9 @@ function primeRecommend(m){
 
   // ---- league classification ----
   let leagueType, T;
-  if (LATG < 2.40) leagueType="Low-Scoring";
-  else if (LATG <= 3.00) leagueType="Medium-Scoring";
-  else if (LATG <= 3.40) leagueType="High-Scoring";
+  if (LATG < 2.30) leagueType="Low-Scoring";
+  else if (LATG <= 2.85) leagueType="Medium-Scoring";
+  else if (LATG <= 3.30) leagueType="High-Scoring";
   else leagueType="Inflated-Chaos";
 
   // ---- Prime thresholds per league (strongAtt, eliteAtt, leaky, vleaky, o15, o25, u35, rawLeaky, rawVleaky) ----
@@ -1487,7 +1487,8 @@ function primeRecommend(m){
 
   // ---- UNDER 3.5 (protection) ----
   {
-    const highScoring = (leagueType==="High-Scoring"||leagueType==="Inflated-Chaos");
+    const highScoring = (leagueType==="High-Scoring"||leagueType==="Inflated-Chaos"||
+                         (leagueType==="Medium-Scoring" && goalIndex>=1.00));
     let ok = goalIndex<=T.u35 || (sameTier && goalIndex<1.10);
     // In high-scoring leagues, goals are the natural state — Under 3.5 only
     // qualifies if the game is GENUINELY extreme (very controlled), not merely
@@ -1588,7 +1589,11 @@ function primeRecommend(m){
   if(!cands.length){
     return primeOut(m,"No Bet","No Bet",99,["No market qualified."],leagueType,goalIndex);
   }
-  const highScoringLeague = (leagueType==="High-Scoring"||leagueType==="Inflated-Chaos");
+  // Over 1.5 leads in any league that isn't genuinely low-scoring — goals are
+  // the natural state in medium/high/inflated leagues. Only truly low-scoring
+  // leagues keep Under 3.5 as the default protective pick.
+  const highScoringLeague = (leagueType==="High-Scoring"||leagueType==="Inflated-Chaos"||
+                             (leagueType==="Medium-Scoring" && goalIndex>=1.00));
   const priority = highScoringLeague
     ? ["Over 1.5","Under 3.5","Double Chance 1X","Double Chance X2","Home DNB","Away DNB","Home Team Over 0.5 Goals","Away Team Over 0.5 Goals","Home Win","Away Win","Home Team Over 1.5 Goals","Away Team Over 1.5 Goals","Over 2.5","BTTS Yes","BTTS No"]
     : ["Under 3.5","Over 1.5","Double Chance 1X","Double Chance X2","Home DNB","Away DNB","Home Team Over 0.5 Goals","Away Team Over 0.5 Goals","Home Win","Away Win","Home Team Over 1.5 Goals","Away Team Over 1.5 Goals","Over 2.5","BTTS Yes","BTTS No"];
