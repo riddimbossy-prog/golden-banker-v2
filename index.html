@@ -1287,8 +1287,7 @@ function renderBankerOfDay(){
   const host=document.getElementById('botd'); if(!host) return;
   const rows=(byDate[activeDate]||[]);
   if(!rows.length){ host.innerHTML=''; return; }
-  // collect each engine's single pick per match
-  const tally={}; // key match|market -> {count, engines[], match, market, confSum}
+  const tally={};
   const norm=(s)=>String(s||'').trim();
   function add(match, market, engine, conf){
     if(!market||market==='No Bet') return;
@@ -1306,35 +1305,50 @@ function renderBankerOfDay(){
     try{ if(typeof primeRecommend==='function'){const u=primeRecommend(m); if(u.bet) add(m,u.primary,'Prime',u.confidence);} }catch(e){}
     try{ if(typeof valueRecommend==='function'){const u=valueRecommend(m); if(u.bet) add(m,u.primary,'Value',u.confidence);} }catch(e){}
   });
-  const all=Object.values(tally);
-  if(!all.length){ host.innerHTML=''; return; }
-  // best = most engines agreeing, tie-break by total confidence
+  let all=Object.values(tally).filter(x=>x.count>=2); // genuine agreement only
+  if(!all.length){ host.innerHTML=''; window.__botdText=''; return; }
   all.sort((a,b)=> b.count-a.count || b.confSum-a.confSum);
-  const best=all[0];
-  if(best.count<2){ host.innerHTML=''; return; } // only show if there's genuine agreement
-  const b=best.match;
-  const res = settle(best.market, b.homeGoals, b.awayGoals);
-  const resTag = res?`<span class="px-2 py-0.5 rounded text-[11px] font-bold ${resClass(res)}">${res.toUpperCase()}</span>`:'';
-  const t = b.kickoff ? new Date(b.kickoff).toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit'}) : '';
+  // hero = top; board = up to 3 total, but extras must have STRONG agreement (>=4 engines)
+  const hero=all[0];
+  const extras=all.slice(1).filter(x=>x.count>=4).slice(0,2);
+  const board=[hero, ...extras];
+
+  function pickRow(p, isHero){
+    const b=p.match;
+    const res=settle(p.market,b.homeGoals,b.awayGoals);
+    const resTag=res?`<span class="px-2 py-0.5 rounded text-[11px] font-bold ${resClass(res)}">${res.toUpperCase()}</span>`:'';
+    const t=b.kickoff?new Date(b.kickoff).toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit'}):'';
+    const label = isHero ? '<i class="fa-solid fa-star"></i> Banker of the Day' : 'Also strongly agreed';
+    return `<div class="${isHero?'':'pt-3 mt-3'}" ${isHero?'':'style="border-top:1px solid var(--line)"'}>
+      <div class="flex items-center justify-between mb-1">
+        <span class="text-[10px] uppercase tracking-wider font-bold" style="color:var(--brand)">${label}</span>
+        <span class="text-[11px] font-semibold px-2 py-0.5 rounded-lg" style="background:rgba(76,175,39,.2);color:var(--brand)">${p.count}/7 agree</span>
+      </div>
+      <div class="display ${isHero?'text-xl':'text-base'} font-bold mb-1 flex items-center gap-2 flex-wrap">${rowFlag(b)}${b.home} <span style="color:var(--muted)">v</span> ${b.away} ${resTag}</div>
+      <div class="text-[11px] mb-2" style="color:var(--muted)">${b.league||''}${t?' · '+t:''}${isHero?' · '+p.engines.join(', '):''}</div>
+      <div class="flex items-center justify-between">
+        <span class="px-3 py-1 rounded-lg text-sm font-bold ${pill(p.market)}">${p.market}</span>
+        ${isHero?`<button onclick="shareBotd()" class="text-xs px-3 py-1.5 rounded-lg font-semibold text-white" style="background:var(--brand)"><i class="fa-solid fa-share-nodes"></i> Share</button>`:''}
+      </div>
+    </div>`;
+  }
+
   host.innerHTML=`<div class="rounded-2xl p-5" style="background:linear-gradient(135deg,rgba(76,175,39,.16),rgba(76,175,39,.04));border:1.5px solid rgba(76,175,39,.5)">
-    <div class="flex items-center justify-between mb-2">
-      <span class="text-xs uppercase tracking-wider font-bold" style="color:var(--brand)"><i class="fa-solid fa-star"></i> Banker of the Day</span>
-      <span class="text-xs font-semibold px-2 py-0.5 rounded-lg" style="background:rgba(76,175,39,.2);color:var(--brand)">${best.count} engines agree</span>
-    </div>
-    <div class="display text-xl font-bold mb-1 flex items-center gap-2 flex-wrap">${rowFlag(b)}${b.home} <span style="color:var(--muted)">v</span> ${b.away} ${resTag}</div>
-    <div class="text-xs mb-3" style="color:var(--muted)">${b.league||''}${t?' · '+t:''} · agreed by ${best.engines.join(', ')}</div>
-    <div class="flex items-center justify-between">
-      <span class="px-4 py-1.5 rounded-lg text-base font-bold ${pill(best.market)}">${best.market}</span>
-      <button onclick="copyBotd()" class="text-xs px-3 py-1.5 rounded-lg font-semibold" style="background:var(--panel-2);color:var(--ink);border:1px solid var(--line)"><i class="fa-regular fa-copy"></i> Copy for channel</button>
-    </div>
+    ${board.map((p,i)=>pickRow(p,i===0)).join('')}
   </div>`;
-  // stash a ready-to-post text
-  window.__botdText = `⚽ PREDICT2U — BANKER OF THE DAY\n\n${b.home} v ${b.away}\n${best.market}  (${best.count}/7 engines agree)\n${b.league||''}\n\nMore picks → predict2u.com\n⚠️ Not a guarantee. 18+. Gamble responsibly.`;
+
+  // ready-to-share text = HERO only
+  const hb=hero.match;
+  window.__botdText = `⚽ PREDICT2U — BANKER OF THE DAY\n\n${hb.home} v ${hb.away}\n${hero.market}  (${hero.count}/7 engines agree)\n${hb.league||''}\n\nMore picks → predict2u.com\n⚠️ Not a guarantee. 18+. Gamble responsibly.`;
 }
-function copyBotd(){
+function shareBotd(){
   const t=window.__botdText||''; if(!t) return;
-  navigator.clipboard&&navigator.clipboard.writeText(t);
-  event.target.closest('button').innerHTML='<i class="fa-solid fa-check"></i> Copied!';
+  if(navigator.share){
+    navigator.share({title:'Predict2u — Banker of the Day', text:t, url:'https://predict2u.com'}).catch(()=>{});
+  } else if(navigator.clipboard){
+    navigator.clipboard.writeText(t);
+    const btn=event.target.closest('button'); if(btn) btn.innerHTML='<i class="fa-solid fa-check"></i> Copied!';
+  }
 }
 renderAll();
 
