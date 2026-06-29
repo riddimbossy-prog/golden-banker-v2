@@ -1404,7 +1404,16 @@ function primeRecommend(m){
   // ratios vs league avg team goals
   const hAR=hGF/latgTeam, aAR=aGF/latgTeam;          // attack ratios
   const hDR=hGA/latgTeam, aDR=aGA/latgTeam;          // defensive ratios (higher=concedes more)
-  const goalIndex=(hGF+hGA+aGF+aGA)/(2*LATG);        // as a ratio (1.0 = 100%)
+
+  // ---- EXPECTED GOALS spine (opponent-adjusted, replaces the muddy index) ----
+  // home attack vs away defence, away attack vs home defence — geometric blend
+  // anchored to the league baseline (same proven form as the Value engine).
+  const xgHome = latgTeam * Math.sqrt((hGF/latgTeam) * (aGA/latgTeam));
+  const xgAway = latgTeam * Math.sqrt((aGF/latgTeam) * (hGA/latgTeam));
+  const xgTotal = xgHome + xgAway;
+  // goalIndex now reflects the EXPECTED total for THIS match vs the league total
+  // (1.0 = a league-average match), not a flat sum of all four rates.
+  const goalIndex = xgTotal / LATG;
 
   // ---- true defence checks (ratio AND raw must both confirm) ----
   const homeDefLeaky  = (hDR>=T.lk && hGA>=T.rlk);
@@ -1418,10 +1427,16 @@ function primeRecommend(m){
   let pHome = impl(o&&o.home), pDraw=impl(o&&o.draw), pAway=impl(o&&o.away);
   if(pHome&&pDraw&&pAway){ const s=pHome+pDraw+pAway; pHome/=s; pDraw/=s; pAway/=s; } // normalise
   const hasMarket = !!(pHome&&pAway);
-  // fallback derived from win-rate when no odds
+  // When no odds: derive an OPPONENT-AWARE probability from the expected-goals
+  // gap (a +1.0 xG edge ≈ strong favourite), blended with the team's win-rate.
+  // This no longer ignores the opponent the way raw win-rate did.
+  const xgEdge = xgHome - xgAway;                 // + = home favoured
+  const xgToProb = (edge)=> 1/(1+Math.exp(-edge*0.9)); // logistic on goal-diff
   const hWinR = m.homeWinRate ?? null, aWinR=m.awayWinRate ?? null;
-  const homeWinProb = hasMarket? pHome : (hWinR!=null? hWinR : 0.45);
-  const awayWinProb = hasMarket? pAway : (aWinR!=null? aWinR : 0.27);
+  const derivedHome = hWinR!=null ? (0.5*xgToProb(xgEdge)+0.5*hWinR) : xgToProb(xgEdge);
+  const derivedAway = aWinR!=null ? (0.5*xgToProb(-xgEdge)+0.5*aWinR) : xgToProb(-xgEdge);
+  const homeWinProb = hasMarket? pHome : derivedHome;
+  const awayWinProb = hasMarket? pAway : derivedAway;
 
   // ---- tiers / positions / compression ----
   const tier=(pos)=>{
@@ -1461,7 +1476,8 @@ function primeRecommend(m){
     const weakerAR=Math.min(hAR,aAR);
     const oneTeamDep = weakerAR<0.85;
     const conds = cnt(hAR>=T.sa||aAR>=T.sa, homeDefLeaky||awayDefLeaky, (hGF+aGF)>=LATG*0.9, favWinProb>=0.55, hasMarket&&((pHome+pAway)>0.6), !sameTier, weakerAR>=0.85);
-    let ok = goalIndex>=T.o15 && conds>=2;
+    // tighter: expected total must genuinely support 2+ goals, not just clear the index
+    let ok = goalIndex>=T.o15 && xgTotal>=2.05 && conds>=2;
     if(oneTeamDep){
       const trig = cnt((Math.max(hAR,aAR))>=T.ea, homeDefLeaky||awayDefLeaky, favWinProb>=0.60, goalIndex>=1.20);
       if(trig<1) ok=false;
@@ -1469,15 +1485,16 @@ function primeRecommend(m){
     if(ok){
       let r=baseRisk("Over 1.5",true);
       if(oneTeamDep) r+=2;
-      cands.push({market:"Over 1.5", risk:r, reasons:[`Goal Index ${(goalIndex*100|0)}% ≥ Over1.5 gate; ${conds} confirmations.`]});
+      if(xgTotal<2.4) r+=1; // thinner cushion → more risk
+      cands.push({market:"Over 1.5", risk:r, reasons:[`Expected goals ${xgTotal.toFixed(2)} (index ${(goalIndex*100|0)}%); ${conds} confirmations.`]});
     }
   }
 
   // ---- OVER 2.5 (hard) ----
   {
     const conds = cnt(hAR>=T.sa&&aAR>=T.sa, hAR>=T.ea||aAR>=T.ea, homeDefVleaky||awayDefVleaky, homeDefLeaky&&awayDefLeaky, hasMarket&&((pHome+pAway)>0.62), !sameTier, !topClash, (hGA>=T.rlk||aGA>=T.rlk), (hAR>=1.0&&aAR>=1.0));
-    let ok = goalIndex>=T.o25 && conds>=3;
-    if(sameTier){ ok = goalIndex>=1.50 && (homeDefVleaky||awayDefVleaky) && (hAR>=1.0&&aAR>=1.0); }
+    let ok = goalIndex>=T.o25 && xgTotal>=2.85 && conds>=3;
+    if(sameTier){ ok = goalIndex>=1.50 && xgTotal>=3.1 && (homeDefVleaky||awayDefVleaky) && (hAR>=1.0&&aAR>=1.0); }
     if(ok){
       let r=baseRisk("Over 2.5",true);
       if(sameTier) r+=3;
@@ -1489,15 +1506,14 @@ function primeRecommend(m){
   {
     const highScoring = (leagueType==="High-Scoring"||leagueType==="Inflated-Chaos"||
                          (leagueType==="Medium-Scoring" && goalIndex>=1.00));
-    let ok = goalIndex<=T.u35 || (sameTier && goalIndex<1.10);
+    let ok = (goalIndex<=T.u35 && xgTotal<=2.7) || (sameTier && goalIndex<1.10 && xgTotal<=2.9);
     // In high-scoring leagues, goals are the natural state — Under 3.5 only
-    // qualifies if the game is GENUINELY extreme (very controlled), not merely
-    // "below average". Over 1.5 is the default there.
+    // qualifies if the game is GENUINELY extreme (very controlled).
     if(highScoring){
-      ok = (goalIndex<=T.u35*0.92) && (sameTier || (hAR<0.85 && aAR<0.85));
+      ok = (goalIndex<=T.u35*0.92) && xgTotal<=2.6 && (sameTier || (hAR<0.85 && aAR<0.85));
     }
     // avoid conditions
-    if(goalIndex>1.20 || homeDefVleaky||awayDefVleaky || hAR>=T.ea) ok=false;
+    if(goalIndex>1.20 || xgTotal>3.0 || homeDefVleaky||awayDefVleaky || hAR>=T.ea) ok=false;
     if(ok){
       let r=baseRisk("Under 3.5",false);
       r-=1; // under in compressed match relief
@@ -1638,6 +1654,149 @@ function trailingStreak(form, ch) {
   return n;
 }
 
+/* ============================================================
+   VALUE BANKERS — Dixon-Coles / Poisson goal model.
+   Estimates each team's expected goals (lambda) for THIS match, applies the
+   Dixon-Coles low-score correction, builds the full scoreline probability
+   matrix, and reads real probabilities for every market. Safety-optimised:
+   picks the highest-probability market clearing a confidence floor. When real
+   odds exist, also flags VALUE (model probability beats the bookmaker's).
+   Every pick carries a genuine probability, not a threshold pass/fail.
+   ------------------------------------------------------------------- */
+function factorial(n){ let r=1; for(let i=2;i<=n;i++) r*=i; return r; }
+function poissonP(k, lambda){ return Math.pow(lambda,k)*Math.exp(-lambda)/factorial(k); }
+
+function valueRecommend(m){
+  const la = m.leagueAvg;
+  const leagueAvgTeam = (la && la.reliable && la.goalsPerGame) ? la.goalsPerGame/2 : 1.35;
+
+  // team rates (home perspective uses home splits; away uses away splits)
+  const hGF=m.homeScoredAtHome, hGA=m.homeConcededAtHome, aGF=m.awayScoredAway, aGA=m.awayConcededAway;
+  if(hGF==null||hGA==null||aGF==null||aGA==null){
+    return valueOut(m,"No Bet",0,null,["Insufficient goal data for the model."]);
+  }
+
+  // --- regression to the mean on low samples ---
+  // few games => trust league average more (shrink toward it).
+  const gp = m.gamesPlayed!=null ? m.gamesPlayed : 12;
+  const w = Math.min(1, gp/12);            // 0..1 weight on team's own numbers
+  const shrink = (rate)=> w*rate + (1-w)*leagueAvgTeam;
+  const hAtt = shrink(hGF), hDef = shrink(hGA), aAtt = shrink(aGF), aDef = shrink(aGA);
+
+  // --- expected goals (lambda) for this match ---
+  // Standard form: league baseline × home attack strength × away defence
+  // factor. Attack strength = team's rate / league rate. Defence factor =
+  // opponent's conceding rate / league rate. The baseline anchors the scale so
+  // two strong factors don't compound into unrealistic totals — we take the
+  // geometric blend of attack and opponent-defence rather than a raw product.
+  const hAttRatio = hAtt/leagueAvgTeam, aDefRatio = aDef/leagueAvgTeam;
+  const aAttRatio = aAtt/leagueAvgTeam, hDefRatio = hDef/leagueAvgTeam;
+  let lambdaHome = leagueAvgTeam * Math.sqrt(hAttRatio * aDefRatio);
+  let lambdaAway = leagueAvgTeam * Math.sqrt(aAttRatio * hDefRatio);
+  lambdaHome = Math.min(3.6, Math.max(0.15, lambdaHome));
+  lambdaAway = Math.min(3.6, Math.max(0.12, lambdaAway));
+
+  // --- build scoreline matrix 0..8 with Dixon-Coles low-score correction ---
+  const MAX=8;
+  const rho = -0.05; // Dixon-Coles dependence parameter (typical small negative)
+  function dcTau(i,j,lh,la_){
+    if(i===0&&j===0) return 1 - lh*la_*rho;
+    if(i===0&&j===1) return 1 + lh*rho;
+    if(i===1&&j===0) return 1 + la_*rho;
+    if(i===1&&j===1) return 1 - rho;
+    return 1;
+  }
+  let matrix=[], norm=0;
+  for(let i=0;i<=MAX;i++){ matrix[i]=[]; for(let j=0;j<=MAX;j++){
+    let p = poissonP(i,lambdaHome)*poissonP(j,lambdaAway)*dcTau(i,j,lambdaHome,lambdaAway);
+    if(p<0) p=0; matrix[i][j]=p; norm+=p;
+  }}
+  // normalise
+  for(let i=0;i<=MAX;i++) for(let j=0;j<=MAX;j++) matrix[i][j]/=norm;
+
+  // --- read market probabilities from the matrix ---
+  let pHomeWin=0,pDraw=0,pAwayWin=0,pBTTS=0,pOver15=0,pOver25=0,pOver35=0;
+  for(let i=0;i<=MAX;i++) for(let j=0;j<=MAX;j++){
+    const p=matrix[i][j], tot=i+j;
+    if(i>j)pHomeWin+=p; else if(i===j)pDraw+=p; else pAwayWin+=p;
+    if(i>=1&&j>=1)pBTTS+=p;
+    if(tot>=2)pOver15+=p;
+    if(tot>=3)pOver25+=p;
+    if(tot>=4)pOver35+=p;
+  }
+  const pUnder35=1-pOver35, pUnder25=1-pOver25, pBTTSNo=1-pBTTS;
+  const pHomeDNB = pHomeWin/(pHomeWin+pAwayWin);
+  const pAwayDNB = pAwayWin/(pHomeWin+pAwayWin);
+  const p1X = pHomeWin+pDraw, pX2 = pAwayWin+pDraw;
+
+  // --- candidate markets with their model probability + confidence floor ---
+  const cand = [
+    {market:"Over 1.5",        p:pOver15, floor:0.80},
+    {market:"Under 3.5",       p:pUnder35, floor:0.80},
+    {market:"Over 2.5",        p:pOver25, floor:0.62},
+    {market:"Under 2.5",       p:pUnder25, floor:0.62},
+    {market:"BTTS Yes",        p:pBTTS, floor:0.62},
+    {market:"BTTS No",         p:pBTTSNo, floor:0.62},
+    {market:"Double Chance 1X",p:p1X, floor:0.78},
+    {market:"Double Chance X2",p:pX2, floor:0.78},
+    {market:"Home DNB",        p:pHomeDNB, floor:0.64},
+    {market:"Away DNB",        p:pAwayDNB, floor:0.64},
+    {market:"Home Win",        p:pHomeWin, floor:0.60},
+    {market:"Away Win",        p:pAwayWin, floor:0.60},
+  ].filter(c=>c.p>=c.floor);
+
+  if(!cand.length){
+    return valueOut(m,"No Bet",0,{lambdaHome,lambdaAway},["No market cleared its probability floor — model sees no safe edge."]);
+  }
+
+  // safety: prefer the market with the biggest cushion above its floor,
+  // tie-break toward the protective/likely lines via floor height.
+  cand.forEach(c=>{ c.cushion = c.p - c.floor; });
+  cand.sort((a,b)=> b.cushion-a.cushion || b.p-a.p);
+  const best = cand[0];
+
+  // --- value check vs bookmaker (only where odds exist) ---
+  const o=m.odds; let valueNote="", isValue=false, edge=null;
+  if(o){
+    const impl = mk=> {
+      if(mk==="Home Win"&&o.home) return 1/o.home;
+      if(mk==="Away Win"&&o.away) return 1/o.away;
+      if(mk==="Double Chance 1X"&&o.home&&o.draw) return Math.min(0.97,1/o.home+1/o.draw);
+      if(mk==="Double Chance X2"&&o.away&&o.draw) return Math.min(0.97,1/o.away+1/o.draw);
+      return null;
+    };
+    const bm = impl(best.market);
+    if(bm!=null){
+      edge = best.p - bm;
+      if(edge>=0.05){ isValue=true; valueNote=` VALUE: model ${(best.p*100|0)}% vs market ${(bm*100|0)}% (+${(edge*100|0)}pts).`; }
+      else valueNote=` Market agrees (model ${(best.p*100|0)}% vs ${(bm*100|0)}%) — safe, limited edge.`;
+    }
+  }
+
+  // confidence from probability; widen caution on thin data
+  let conf = Math.round(best.p*10);
+  if(gp<6) conf=Math.max(0,conf-1);
+  conf=Math.min(10,conf);
+
+  const reasons = [
+    `Model: expected goals ${lambdaHome.toFixed(2)} - ${lambdaAway.toFixed(2)} (Dixon-Coles).`,
+    `P(${best.market}) = ${(best.p*100).toFixed(0)}%.${valueNote}`
+  ];
+  return valueOut(m, best.market, conf, {lambdaHome,lambdaAway,isValue,edge,prob:best.p}, reasons, gp<6);
+}
+
+function valueOut(m, market, conf, model, reasons, lowSample){
+  const banker = market!=="No Bet" && conf>=8;
+  return {
+    match:m, engine:"value", primary:market, bet:market!=="No Bet",
+    banker, confidence: market==="No Bet"?0:conf,
+    model: model||null, isValue: !!(model&&model.isValue),
+    lowSample: !!lowSample,
+    verdict: `${market}${market!=="No Bet"?` (model pick, ${conf}/10`+(model&&model.isValue?", VALUE":"")+")":""}. ${reasons.join(' ')}`,
+    reasons, humanChecks:["Model assumes goals ~ Poisson; verify injuries, motivation, weather."]
+  };
+}
+
 function streakRecommend(m) {
   const reasons = [];
   const signals = [];
@@ -1681,5 +1840,5 @@ function streakRecommend(m) {
 
 if (typeof module !== "undefined") module.exports = {
   analyseAll, recommend, scoreOver25, scoreBTTS, scoreWinDNB, settle,
-  analyseStrict, strictRecommend, tierFromRank, streakRecommend, ultraRecommend, rulesProRecommend, apexRecommend, primeRecommend
+  analyseStrict, strictRecommend, tierFromRank, streakRecommend, ultraRecommend, rulesProRecommend, apexRecommend, primeRecommend, valueRecommend
 };
