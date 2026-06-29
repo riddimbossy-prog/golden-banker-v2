@@ -6,6 +6,15 @@ const path = require("path");
 const eng = require("./banker-engine.js");
 
 const HERE = __dirname;
+
+// Load the real logo (icon-512.png) as base64 for embedding. Falls back to
+// text-only branding if the file can't be read, so the pipeline never breaks.
+let logoDataUri = null;
+try {
+  const logoBuf = fs.readFileSync(path.join(HERE, "icon-512.png"));
+  logoDataUri = "data:image/png;base64," + logoBuf.toString("base64");
+} catch(e) { logoDataUri = null; }
+
 const dataTxt = fs.readFileSync(path.join(HERE, "data.js"), "utf8");
 const m = dataTxt.match(/window\.MATCHES\s*=\s*(\[[\s\S]*?\]);/);
 const MATCHES = m ? JSON.parse(m[1]) : [];
@@ -44,7 +53,9 @@ const picks = [
   { engine:"Apex",   pick: strongestFn(eng.apexRecommend) },
 ];
 
-const W=1080, H=1350, pad=70, cw=W-pad*2, cardH=176;
+const W=1080, pad=70, cw=W-pad*2, cardH=176;
+// dynamic height: header(336) + cards + CTA band + disclaimer + margin
+const H = 336 + (picks.length * (cardH+20)) + 200;
 const dstr = new Date().toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"});
 
 let cards=""; let y=336;
@@ -52,9 +63,12 @@ for(const {engine,pick} of picks){
   cards += `<rect x="${pad}" y="${y}" width="${cw}" height="${cardH}" rx="22" fill="rgba(255,255,255,0.04)" stroke="rgba(76,175,39,0.28)" stroke-width="2"/>`;
   cards += `<text x="${pad+34}" y="${y+44}" font-family="Arial,sans-serif" font-weight="bold" font-size="24" fill="#4CAF27">${engine.toUpperCase()} BANKER</text>`;
   if(pick){
-    cards += `<text x="${pad+34}" y="${y+96}" font-family="Arial,sans-serif" font-weight="bold" font-size="40" fill="#ffffff">${esc(trunc(pick.home,20)+" v "+trunc(pick.away,20))}</text>`;
-    cards += `<text x="${pad+34}" y="${y+140}" font-family="Arial,sans-serif" font-size="24" fill="#8a93a6">${esc(trunc(pick.league,40))}</text>`;
+    // reserve space for the market pill on the right so long names never collide
     const label=esc(pick.market); const lw=label.length*18+48; const px=pad+cw-lw-34;
+    const nameMaxChars = Math.max(14, Math.floor((px - (pad+34)) / 21)); // chars that fit before pill
+    const matchLine = trunc(pick.home+" v "+pick.away, nameMaxChars);
+    cards += `<text x="${pad+34}" y="${y+96}" font-family="Arial,sans-serif" font-weight="bold" font-size="38" fill="#ffffff">${esc(matchLine)}</text>`;
+    cards += `<text x="${pad+34}" y="${y+140}" font-family="Arial,sans-serif" font-size="24" fill="#8a93a6">${esc(trunc(pick.league,40))}</text>`;
     cards += `<rect x="${px}" y="${y+58}" width="${lw}" height="54" rx="14" fill="rgba(76,175,39,0.18)"/>`;
     cards += `<text x="${px+24}" y="${y+93}" font-family="Arial,sans-serif" font-weight="bold" font-size="30" fill="#7ee05a">${label}</text>`;
     cards += `<text x="${px+24}" y="${y+138}" font-family="Arial,sans-serif" font-weight="600" font-size="22" fill="#8a93a6">conf ${pick.conf}/10</text>`;
@@ -71,13 +85,16 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" 
   </linearGradient></defs>
   <rect width="${W}" height="${H}" fill="#0a0e17"/>
   <rect width="${W}" height="${H}" fill="url(#bg)"/>
-  <text x="${pad}" y="124" font-family="Arial,sans-serif" font-weight="bold" font-size="64" fill="#ffffff">Predict<tspan fill="#4CAF27">2u</tspan></text>
-  <text x="${pad+2}" y="162" font-family="Arial,sans-serif" font-weight="600" font-size="22" fill="#8a93a6">KNOW THE GAME - PREDICT BETTER</text>
+  ${logoDataUri ? `<image x="${pad}" y="56" width="92" height="92" href="${logoDataUri}"/>` : ""}
+  <text x="${logoDataUri ? pad+108 : pad}" y="124" font-family="Arial,sans-serif" font-weight="bold" font-size="64" fill="#ffffff">Predict<tspan fill="#4CAF27">2u</tspan></text>
+  <text x="${logoDataUri ? pad+110 : pad+2}" y="162" font-family="Arial,sans-serif" font-weight="600" font-size="22" fill="#8a93a6">KNOW THE GAME - PREDICT BETTER</text>
   <text x="${pad}" y="244" font-family="Arial,sans-serif" font-weight="bold" font-size="36" fill="#4CAF27">TODAY'S TOP BANKERS</text>
   <text x="${pad}" y="288" font-family="Arial,sans-serif" font-weight="500" font-size="26" fill="#c7cedb">${esc(dstr)}</text>
   ${cards}
-  <text x="${pad}" y="${y+24}" font-family="Arial,sans-serif" font-size="19" fill="#8a93a6">Heuristic picks, not guarantees. A banker fits our rules - not a sure win.</text>
-  <text x="${pad}" y="${y+50}" font-family="Arial,sans-serif" font-size="19" fill="#8a93a6">Only stake what you can afford to lose. 18+ - Gamble responsibly - predict2u.com</text>
+  <rect x="${pad}" y="${y+8}" width="${cw}" height="64" rx="16" fill="rgba(76,175,39,0.16)" stroke="rgba(76,175,39,0.45)" stroke-width="2"/>
+  <text x="${W/2}" y="${y+48}" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold" font-size="30" fill="#7ee05a">Want more banker tips? Visit predict2u.com</text>
+  <text x="${pad}" y="${y+110}" font-family="Arial,sans-serif" font-size="19" fill="#8a93a6">Heuristic picks, not guarantees. A banker fits our rules - not a sure win.</text>
+  <text x="${pad}" y="${y+136}" font-family="Arial,sans-serif" font-size="19" fill="#8a93a6">Only stake what you can afford to lose. 18+ - Gamble responsibly - predict2u.com</text>
 </svg>`;
 
 fs.writeFileSync(path.join(HERE,"today.svg"), svg);
