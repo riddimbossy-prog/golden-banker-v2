@@ -188,6 +188,7 @@
       <button id="eng-ultra" class="px-3 py-1.5 rounded-lg text-sm font-semibold" style="color:var(--muted)">Ultra Bankers</button>
       <button id="eng-rulespro" class="px-3 py-1.5 rounded-lg text-sm font-semibold" style="color:var(--muted)">Elite Bankers</button>
       <button id="eng-apex" class="px-3 py-1.5 rounded-lg text-sm font-semibold" style="color:var(--muted)">Apex Bankers</button>
+      <button id="eng-prime" class="px-3 py-1.5 rounded-lg text-sm font-semibold" style="color:var(--muted)">Prime Bankers</button>
     </div>
     <span id="eng-note" class="text-xs" style="color:var(--muted)"></span>
   </div>
@@ -211,6 +212,31 @@
 
   <!-- stat row -->
   <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6" id="stat-row"></div>
+
+  <!-- ============================================================
+       JOIN CHANNELS — replace the two href="#" links below with your
+       real Telegram and WhatsApp channel links once created:
+         Telegram: https://t.me/YOUR_CHANNEL
+         WhatsApp: https://whatsapp.com/channel/YOUR_CHANNEL_ID
+       Until then they're disabled (show a "coming soon" note).
+       ============================================================ -->
+  <div class="panel rounded-2xl p-4 mb-6" style="border:1px solid rgba(76,175,39,.35);background:linear-gradient(135deg,rgba(76,175,39,.10),transparent)">
+    <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+      <div class="flex-1">
+        <div class="display font-semibold text-lg flex items-center gap-2"><i class="fa-solid fa-bolt" style="color:var(--brand)"></i> Get the daily top picks free</div>
+        <div class="text-sm" style="color:var(--muted)">Join our channel — today's bankers pushed straight to your phone. No spam. 18+.</div>
+      </div>
+      <div class="flex gap-2 flex-shrink-0">
+        <a href="#" data-channel="telegram" class="join-btn flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm text-white" style="background:#229ED9" onclick="return joinClick(this,event)">
+          <i class="fa-brands fa-telegram"></i> Telegram
+        </a>
+        <a href="#" data-channel="whatsapp" class="join-btn flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm text-white" style="background:#25D366" onclick="return joinClick(this,event)">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+    <div id="join-note" class="text-xs mt-2 hidden" style="color:#b45309"></div>
+  </div>
 
   <!-- TODAY'S TOP PREDICTION CARDS -->
   <div class="flex items-center justify-between mb-3">
@@ -362,6 +388,29 @@ const pill = bet =>
 const resClass = r => r==='Won'?'res-won':r==='Lost'?'res-lost':r==='Void'?'res-void':'';
 const keyOf = r => `${r.match.matchDate}|${r.match.home}|${r.match.away}`;
 const ord = n => { const s=["th","st","nd","rd"],v=n%100; return n+(s[(v-20)%10]||s[v]||s[0]); };
+/* ===== JOIN CHANNELS =====
+   Channel links. PASTE YOUR REAL LINKS HERE once you've created the channels:
+   leave as '' (empty) to show a friendly "coming soon" note instead of a dead link. */
+const CHANNEL_LINKS = {
+  telegram: 'https://t.me/Predict2ucomm',
+  whatsapp: 'https://whatsapp.com/channel/0029Vb8J7g4Bvvsnwo8d191r'
+};
+function joinClick(el, e){
+  const which = el.getAttribute('data-channel');
+  const url = CHANNEL_LINKS[which];
+  const note = document.getElementById('join-note');
+  if(!url){
+    e.preventDefault();
+    note.textContent = `Our ${which.charAt(0).toUpperCase()+which.slice(1)} channel launches shortly — check back soon!`;
+    note.classList.remove('hidden');
+    return false;
+  }
+  el.setAttribute('href', url);
+  el.setAttribute('target', '_blank');
+  el.setAttribute('rel', 'noopener');
+  return true; // let the link open
+}
+
 const marketTag = p => p.includes('DNB')?'DNB':p.includes('Win')?'Win':p.includes('Under')?'Under':p.includes('Over 1.5')?'Over 1.5':p.includes('Over')?'Over 2.5':p.includes('BTTS')?'BTTS':p;
 // Safe-odds rule: ONLY Win picks with a real bookmaker odd at/below 1.55 qualify.
 // Anything without a single odd (DNB, Over/Under, BTTS) does NOT qualify and is
@@ -455,6 +504,11 @@ function enginePicks(rows){
       return { match:r.match, primary:u.primary, confidence:u.confidence>=8?'High':'Medium',
                banker:u.banker, weight:u.confidence, reason:u.verdict||'' }; }).filter(Boolean);
   }
+  if(engineMode==='prime' && typeof primeRecommend==='function'){
+    return rows.map(r=>{ const u=primeRecommend(r.match); if(!u.bet) return null;
+      return { match:r.match, primary:u.primary, confidence:u.banker?'High':'Medium',
+               banker:u.banker, weight:u.confidence, reason:u.verdict||'' }; }).filter(Boolean);
+  }
   // normal
   return rows.filter(r=>r.banker).map(r=>({ match:r.match, primary:r.primary, confidence:r.confidence,
             banker:true, weight:r.rankWeight, reason:(r.wdnb&&r.wdnb.reasons&&r.wdnb.reasons[0])||'' }));
@@ -546,6 +600,7 @@ function renderMatches(){
   if(engineMode==='ultra'){ renderUltraMatches(); return; }
   if(engineMode==='rulespro'){ renderRulesProMatches(); return; }
   if(engineMode==='apex'){ renderApexMatches(); return; }
+  if(engineMode==='prime'){ renderPrimeMatches(); return; }
   const root = document.getElementById('matches-root');
   const rows = byDate[activeDate]||[];
   const empty = document.getElementById('empty-state');
@@ -880,6 +935,49 @@ function renderRulesProMatches(){
   applyFilters();
 }
 
+function renderPrimeMatches(){
+  const host=document.getElementById('matches-root');
+  if (typeof primeRecommend !== 'function'){ host.innerHTML='<div class="p-6 text-center" style="color:var(--muted)">Prime engine unavailable — deploy the latest banker-engine.js.</div>'; return; }
+  const dayMatches=(byDate[activeDate]||[]);
+  const picks=dayMatches.map(r=>primeRecommend(r.match)).filter(r=>r.bet);
+  let html='';
+  html += `<div class="panel rounded-xl p-3 mb-3 text-sm" style="border:1px solid rgba(76,175,39,.4);background:rgba(76,175,39,.07)">
+    <strong style="color:var(--brand)"><i class="fa-solid fa-gem"></i> Prime Bankers — true-team ratio filter.</strong>
+    Classifies each league by its goal environment, then demands attack/defence ratios CONFIRMED by raw numbers (no ratio-only upgrades), respects table compression, and tiers every pick by risk points. One market or No Bet. Market checks use odds where present, otherwise derived from win-rate (flagged). Unproven — track first. 18+.
+  </div>`;
+  if(!picks.length){
+    html += `<div class="p-6 text-center" style="color:var(--muted)">No match cleared the Prime true-team filters today. "Only true teams qualify."</div>`;
+    host.innerHTML=html; return;
+  }
+  picks.sort((a,b)=>a.riskPoints-b.riskPoints);
+  picks.forEach(r=>{
+    html += `<details class="match-item is-banker-row" data-search="${(r.match.home+' '+r.match.away+' '+r.match.league).toLowerCase().replace(/"/g,'')}" data-market="${marketTag(r.primary)}" data-banker="${r.banker?'1':'0'}" data-upcoming="0" data-safeodds="${safeOddsPick(r.primary,r.match.odds)?'1':'0'}">
+      <summary class="match-line px-4 py-3 flex items-center gap-3">
+        <div class="w-12 text-center flex-shrink-0">${rowScore(r.match)}</div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-medium truncate">${r.match.home}</div>
+          <div class="text-sm font-medium truncate">${r.match.away}</div>
+          <div class="text-[11px]" style="color:var(--muted)">${rowFlag(r.match)}${r.match.league||''}</div>
+        </div>
+        <div class="flex flex-col items-end gap-1 flex-shrink-0 w-28">
+          <span class="text-[9px] font-bold uppercase" style="color:var(--brand)">${r.tier} · risk ${r.riskPoints}</span>
+          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(r.primary)} text-right leading-tight">${r.primary}</span>
+          ${rowSettle(r.match,r.primary)}
+        </div>
+        <i class="fa-solid fa-chevron-down chev text-sm" style="color:var(--muted)"></i>
+      </summary>
+      <div class="px-4 pb-4 pt-3 text-sm" style="border-top:1px solid var(--line);background:var(--panel-2)">
+        <div style="font-weight:600;margin-bottom:.4rem">${r.verdict}</div>
+        <div style="color:var(--muted);font-size:.75rem">League: ${r.leagueType||'?'} · Goal Index: ${r.goalIndex!=null?r.goalIndex+'%':'?'} · Tier: ${r.tier}</div>
+        ${r.usedEstimates?`<div style="color:#b45309;font-size:.75rem;margin-top:.4rem"><i class="fa-solid fa-triangle-exclamation"></i> Market check DERIVED from win-rate (no odds for this game).</div>`:''}
+        ${(r.humanChecks||[]).length?`<div style="color:#b45309;font-size:.75rem;margin-top:.5rem"><i class="fa-solid fa-user-check"></i> ${r.humanChecks[0]}</div>`:''}
+      </div>
+    </details>`;
+  });
+  host.innerHTML=html;
+  applyFilters();
+}
+
 function renderApexMatches(){
   const host=document.getElementById('matches-root');
   if (typeof apexRecommend !== 'function'){ host.innerHTML='<div class="p-6 text-center" style="color:var(--muted)">Apex engine unavailable — deploy the latest banker-engine.js.</div>'; return; }
@@ -1075,7 +1173,7 @@ function renderStrictMatches(){
 }
 
 (function(){
-  const bn=document.getElementById('eng-normal'), bs=document.getElementById('eng-strict'), bu=document.getElementById('eng-ultra'), bp=document.getElementById('eng-rulespro'), ba=document.getElementById('eng-apex'), note=document.getElementById('eng-note');
+  const bn=document.getElementById('eng-normal'), bs=document.getElementById('eng-strict'), bu=document.getElementById('eng-ultra'), bp=document.getElementById('eng-rulespro'), ba=document.getElementById('eng-apex'), bpr=document.getElementById('eng-prime'), note=document.getElementById('eng-note');
   function setMode(mode){
     engineMode=mode;
     const on='background:linear-gradient(135deg,var(--gold),#6fd44a);color:#0a0e17';
@@ -1085,6 +1183,7 @@ function renderStrictMatches(){
     bu.style.cssText = mode==='ultra'?on:off;
     bp.style.cssText = mode==='rulespro'?on:off;
     ba.style.cssText = mode==='apex'?on:off;
+    bpr.style.cssText = mode==='prime'?on:off;
     note.textContent = mode==='strict'
       ? 'Conservative: rejects most games, one clean market or No Bet. Auto-tiered from the table — confirm red flags yourself.'
       : mode==='ultra'
@@ -1093,6 +1192,8 @@ function renderStrictMatches(){
       ? 'Elite Bankers: exact-threshold engine (full spec gates per market). Some % inputs (win rate, clean sheet, FTS) are ESTIMATED from PPG/goals — flagged on each pick. Strict by design; expect many No Bets. Unproven — track first.'
       : mode==='apex'
       ? 'Apex Bankers: Elite thresholds PLUS a Home Advantage layer — away markets must prove more; resistant home sides block or penalise away picks. Some % inputs estimated. The most conservative engine. Unproven — track first.'
+      : mode==='prime'
+      ? 'Prime Bankers: ratio-based true-team filter. Classifies the league by goal environment, then demands attack/defence ratios confirmed by RAW numbers (no ratio-only upgrades), respects table compression, and tiers by risk points. One market or No Bet. Market checks use odds where present, else derived. Unproven — track first.'
       : '';
     renderStats(); renderCards(); renderMatches();
   }
@@ -1101,6 +1202,7 @@ function renderStrictMatches(){
   bu.addEventListener('click',()=>setMode('ultra'));
   bp.addEventListener('click',()=>setMode('rulespro'));
   ba.addEventListener('click',()=>setMode('apex'));
+  bpr.addEventListener('click',()=>setMode('prime'));
 })();
 
 /* ============ MASTER RENDER ============ */
