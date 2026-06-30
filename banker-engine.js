@@ -676,8 +676,14 @@ function recommend(m) {
    Returns "Won" / "Lost" / "Void" / "" (empty = not finished yet).
    homeGoals/awayGoals are the final score numbers.
    ---------------------------------------------------------------- */
-function settle(primary, homeGoals, awayGoals) {
+function settle(primary, homeGoals, awayGoals, status) {
   if (homeGoals == null || awayGoals == null) return ""; // not played yet
+  // If a status is provided, only settle FINISHED matches. Live/in-play games
+  // (1H, 2H, HT, ET, LIVE, P, etc.) are NOT decided yet — never settle them.
+  if (status != null) {
+    const FINISHED = ["FT", "AET", "PEN", "AWD", "WO"];
+    if (!FINISHED.includes(String(status))) return ""; // live or scheduled → no result yet
+  }
   const total = homeGoals + awayGoals;
   const bothScored = homeGoals > 0 && awayGoals > 0;
   const homeWon = homeGoals > awayGoals;
