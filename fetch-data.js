@@ -426,11 +426,38 @@ const FINISHED = new Set(["FT","AET","PEN"]);
         if (!fid) continue;
         let vals = null;
         for (const bk of (entry.bookmakers || [])) {
-          const bet = (bk.bets || []).find(b => /match winner|1x2|full time result/i.test(b.name || ""));
-          if (bet && bet.values) {
-            const get = lbl => { const v = bet.values.find(x => new RegExp(lbl,"i").test(x.value)); return v ? parseFloat(v.odd) : null; };
+          const bets = bk.bets || [];
+          const findBet = re => bets.find(b => re.test(b.name || ""));
+          // 1X2 / Match Winner
+          const mw = findBet(/match winner|1x2|full time result/i);
+          if (mw && mw.values) {
+            const get = lbl => { const v = mw.values.find(x => new RegExp(lbl,"i").test(x.value)); return v ? parseFloat(v.odd) : null; };
             const h = get("^home|^1$"), d = get("^draw|^x$"), a = get("^away|^2$");
-            if (h && a) { vals = { home: h, draw: d, away: a }; break; }
+            if (h && a) {
+              vals = { home: h, draw: d, away: a };
+              // --- extra markets from the SAME bookmaker (free, same response) ---
+              // Over/Under (values look like "Over 2.5" / "Under 2.5")
+              const ou = findBet(/goals over\/under|over\/under|total goals/i);
+              if (ou && ou.values) {
+                const ouGet = lbl => { const v = ou.values.find(x => new RegExp(lbl,"i").test(x.value)); return v ? parseFloat(v.odd) : null; };
+                vals.over15 = ouGet("over 1\\.5");  vals.under15 = ouGet("under 1\\.5");
+                vals.over25 = ouGet("over 2\\.5");  vals.under25 = ouGet("under 2\\.5");
+                vals.over35 = ouGet("over 3\\.5");  vals.under35 = ouGet("under 3\\.5");
+              }
+              // Both Teams To Score
+              const btts = findBet(/both teams (to )?score|btts/i);
+              if (btts && btts.values) {
+                const bGet = lbl => { const v = btts.values.find(x => new RegExp(lbl,"i").test(x.value)); return v ? parseFloat(v.odd) : null; };
+                vals.bttsYes = bGet("^yes"); vals.bttsNo = bGet("^no");
+              }
+              // Double Chance
+              const dc = findBet(/double chance/i);
+              if (dc && dc.values) {
+                const dGet = lbl => { const v = dc.values.find(x => new RegExp(lbl,"i").test(x.value)); return v ? parseFloat(v.odd) : null; };
+                vals.dc1x = dGet("home/draw|1x|^1\\/x"); vals.dc12 = dGet("home/away|12|^1\\/2"); vals.dcx2 = dGet("draw/away|x2|^x\\/2");
+              }
+              break;
+            }
           }
         }
         if (vals) oddsByFixture[fid] = vals;
