@@ -1,5 +1,5 @@
-window.DATA_UPDATED = "2026-06-30T10:10:29.973Z";
-window.ENRICHED_AT = "2026-06-30T10:11:08.045Z";
+window.DATA_UPDATED = "2026-06-30T11:28:03.083Z";
+window.ENRICHED_AT = "2026-06-30T11:28:36.956Z";
 window.MATCHES = [
   {
     "home": "Washington Spirit W",
@@ -43533,7 +43533,7 @@ window.MATCHES = [
     "odds": {
       "home": 2.18,
       "draw": 2.88,
-      "away": 3.75
+      "away": 3.8
     },
     "h2h": null
   },
@@ -50141,7 +50141,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round of 32",
     "odds": {
-      "home": 2.18,
+      "home": 2.16,
       "draw": 3.2,
       "away": 3.35
     },
@@ -52779,13 +52779,7 @@ window.MATCHES = [
       "draw": 3.15,
       "away": 3.2
     },
-    "h2h": null,
-    "xgHomeReal": 0.23,
-    "xgAwayReal": 1.4,
-    "xgReal": true,
-    "npxgHomeReal": 4.17,
-    "npxgAwayReal": 5.34,
-    "lineupConfirmed": true
+    "h2h": null
   },
   {
     "home": "Unión Villa Krause",
@@ -52847,10 +52841,10 @@ window.MATCHES = [
     "league": "Premier League",
     "country": "Mongolia",
     "flag": "https://media.api-sports.io/flags/mn.svg",
-    "status": "HT",
+    "status": "FT",
     "kickoff": "2026-06-30T08:00:00+00:00",
     "matchDate": "2026-06-30",
-    "homeGoals": 0,
+    "homeGoals": 2,
     "awayGoals": 3,
     "homePos": 1,
     "awayPos": 2,
@@ -52879,15 +52873,15 @@ window.MATCHES = [
       "gamesPlayed": 167,
       "reliable": true
     },
-    "homeWinRate": 0.82,
-    "awayWinRate": 0.5,
-    "homeUnbeatenRate": 1,
-    "awayUnbeatenRate": 0.9,
-    "homeCleanSheetRate": 0.45,
-    "awayCleanSheetRate": 0.2,
-    "homeFailedToScoreRate": 0,
-    "awayFailedToScoreRate": 0.2,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "statsReal": false,
     "sameGroup": true,
     "isKnockout": false,
     "isTournament": true,
@@ -52959,11 +52953,11 @@ window.MATCHES = [
     "league": "Friendlies Clubs",
     "country": "World",
     "flag": null,
-    "status": "NS",
+    "status": "2H",
     "kickoff": "2026-06-30T09:00:00+00:00",
     "matchDate": "2026-06-30",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 4,
+    "awayGoals": 1,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -53007,11 +53001,11 @@ window.MATCHES = [
     "league": "New South Wales NPL",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-06-30T10:00:00+00:00",
     "matchDate": "2026-06-30",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 10,
     "awayPos": 6,
     "tableSize": 16,
@@ -53571,9 +53565,9 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 21",
     "odds": {
-      "home": 1.15,
-      "draw": 6,
-      "away": 14
+      "home": 1.18,
+      "draw": 5.75,
+      "away": 13
     },
     "h2h": null
   },
@@ -54033,9 +54027,9 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 21",
     "odds": {
-      "home": 1.28,
+      "home": 1.3,
       "draw": 5,
-      "away": 8.8
+      "away": 7.2
     },
     "h2h": null
   },
@@ -54856,54 +54850,6 @@ window.MATCHES = [
     "h2h": null
   },
   {
-    "home": "Kelty Hearts",
-    "away": "Partick",
-    "league": "Friendlies Clubs",
-    "country": "World",
-    "flag": null,
-    "status": "NS",
-    "kickoff": "2026-06-30T18:00:00+00:00",
-    "matchDate": "2026-06-30",
-    "homeGoals": null,
-    "awayGoals": null,
-    "homePos": null,
-    "awayPos": null,
-    "tableSize": 20,
-    "homePts": 0,
-    "awayPts": 0,
-    "homeGD": 0,
-    "awayGD": 0,
-    "homeForm": "—",
-    "awayForm": "—",
-    "homeScoredAtHome": 1.3,
-    "homeConcededAtHome": 1.1,
-    "awayScoredAway": 1,
-    "awayConcededAway": 1.4,
-    "homeVenueRank": null,
-    "awayVenueRank": null,
-    "homeVenuePts": null,
-    "awayVenuePts": null,
-    "homeVenueGames": null,
-    "awayVenueGames": null,
-    "venueTableSize": 20,
-    "leagueAvg": null,
-    "homeWinRate": 0,
-    "awayWinRate": 0,
-    "homeUnbeatenRate": 0,
-    "awayUnbeatenRate": 1,
-    "homeCleanSheetRate": 0,
-    "awayCleanSheetRate": 1,
-    "homeFailedToScoreRate": 0.5,
-    "awayFailedToScoreRate": 1,
-    "statsReal": true,
-    "sameGroup": false,
-    "isKnockout": false,
-    "isTournament": false,
-    "round": "Club Friendlies",
-    "odds": null,
-    "h2h": null
-  },
-  {
     "home": "Poland U19 W",
     "away": "Germany U19 W",
     "league": "UEFA U19 Championship - Women",
@@ -55594,6 +55540,54 @@ window.MATCHES = [
     "h2h": null
   },
   {
+    "home": "Kelty Hearts",
+    "away": "Partick",
+    "league": "Friendlies Clubs",
+    "country": "World",
+    "flag": null,
+    "status": "NS",
+    "kickoff": "2026-06-30T18:30:00+00:00",
+    "matchDate": "2026-06-30",
+    "homeGoals": null,
+    "awayGoals": null,
+    "homePos": null,
+    "awayPos": null,
+    "tableSize": 20,
+    "homePts": 0,
+    "awayPts": 0,
+    "homeGD": 0,
+    "awayGD": 0,
+    "homeForm": "—",
+    "awayForm": "—",
+    "homeScoredAtHome": 1.3,
+    "homeConcededAtHome": 1.1,
+    "awayScoredAway": 1,
+    "awayConcededAway": 1.4,
+    "homeVenueRank": null,
+    "awayVenueRank": null,
+    "homeVenuePts": null,
+    "awayVenuePts": null,
+    "homeVenueGames": null,
+    "awayVenueGames": null,
+    "venueTableSize": 20,
+    "leagueAvg": null,
+    "homeWinRate": 0,
+    "awayWinRate": 0,
+    "homeUnbeatenRate": 0,
+    "awayUnbeatenRate": 1,
+    "homeCleanSheetRate": 0,
+    "awayCleanSheetRate": 1,
+    "homeFailedToScoreRate": 0.5,
+    "awayFailedToScoreRate": 1,
+    "statsReal": true,
+    "sameGroup": false,
+    "isKnockout": false,
+    "isTournament": false,
+    "round": "Club Friendlies",
+    "odds": null,
+    "h2h": null
+  },
+  {
     "home": "Clachnacuddin",
     "away": "Ross County",
     "league": "Friendlies Clubs",
@@ -56195,18 +56189,7 @@ window.MATCHES = [
       "draw": 5.7,
       "away": 8.4
     },
-    "h2h": null,
-    "oddsOpen": {
-      "home": null,
-      "draw": null,
-      "away": null
-    },
-    "oddsLast": {
-      "home": 1.29,
-      "draw": 5,
-      "away": 11
-    },
-    "lineupConfirmed": true
+    "h2h": null
   },
   {
     "home": "Independiente F.b.c.",
@@ -56540,17 +56523,7 @@ window.MATCHES = [
       "draw": 3.2,
       "away": 3.3
     },
-    "h2h": null,
-    "oddsOpen": {
-      "home": null,
-      "draw": null,
-      "away": null
-    },
-    "oddsLast": {
-      "home": 2.25,
-      "draw": 3.1,
-      "away": 3.1
-    }
+    "h2h": null
   },
   {
     "home": "Boston Bolts",
@@ -58466,23 +58439,7 @@ window.MATCHES = [
       "draw": 3.45,
       "away": 5
     },
-    "h2h": null,
-    "oddsOpen": {
-      "home": null,
-      "draw": null,
-      "away": null
-    },
-    "oddsLast": {
-      "home": 1.75,
-      "draw": 3.5,
-      "away": 5
-    },
-    "xgHomeReal": 2.07,
-    "xgAwayReal": 0.33,
-    "xgReal": true,
-    "npxgHomeReal": 1.74,
-    "npxgAwayReal": 0.23,
-    "lineupConfirmed": true
+    "h2h": null
   },
   {
     "home": "Vikingur Gota",
@@ -59212,23 +59169,7 @@ window.MATCHES = [
       "draw": 5,
       "away": 7.4
     },
-    "h2h": null,
-    "oddsOpen": {
-      "home": null,
-      "draw": null,
-      "away": null
-    },
-    "oddsLast": {
-      "home": 1.33,
-      "draw": 5,
-      "away": 9.5
-    },
-    "xgHomeReal": 1.57,
-    "xgAwayReal": 0.35,
-    "xgReal": true,
-    "npxgHomeReal": 6.22,
-    "npxgAwayReal": 5.15,
-    "lineupConfirmed": true
+    "h2h": null
   },
   {
     "home": "Democrata GV",
