@@ -50,7 +50,51 @@
 
 function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
 
-// DATA QUALITY GATE — reject matches whose stats are too thin to trust.
+// NO-STANDINGS DETECTOR — a matchup with no real league table (friendlies,
+// exhibition games, brand-new competitions). Both league positions null = no
+// table to judge the teams' real environment. Engines may still offer a LEAN
+// here, but must NEVER mark it a confident banker — the league-based premise
+// that justifies a banker doesn't exist.
+function hasNoStandings(m){
+  const noPos = (m.homePos == null && m.awayPos == null);
+  const lname = String(m.league||'').toLowerCase();
+  const isFriendly = lname.includes('friendl');
+  return noPos || isFriendly;
+}
+
+// SHARED FRIENDLY APPROACH — used by every engine so friendlies are handled
+// the same way everywhere (no more blanket Under 3.5). Returns {market, conf,
+// reason} or null if no goal data. Logic:
+//   both teams score freely  -> Over 1.5 lean
+//   one side CLEARLY better  -> that side's DNB lean
+//   modest combined scoring  -> Under 3.5 lean (only when genuinely low)
+//   nothing clear            -> No Bet
+// Always low/medium confidence; NEVER a banker (callers enforce that).
+function friendlyLean(m){
+  const hGF=m.homeScoredAtHome, hGA=m.homeConcededAtHome, aGF=m.awayScoredAway, aGA=m.awayConcededAway;
+  if(hGF==null||aGF==null) return null;
+  const combined = hGF + aGF;
+  const bothScore = hGF>=1.2 && aGF>=1.2;
+  const hWR=m.homeWinRate ?? null, aWR=m.awayWinRate ?? null;
+  const hQual=(hGF-(hGA??1))+(hWR!=null?hWR*2:0);
+  const aQual=(aGF-(aGA??1))+(aWR!=null?aWR*2:0);
+  const gap=Math.abs(hQual-aQual);
+  if(gap>=1.6){
+    const homeBetter=hQual>aQual;
+    return { market: homeBetter?"Home DNB":"Away DNB", conf:5,
+      reason:`Friendly lean — ${homeBetter?m.home:m.away} clearly stronger (quality gap ${gap.toFixed(1)}). Squads may rotate; not a banker.` };
+  }
+  if(bothScore && combined>=3.0){
+    return { market:"Over 1.5", conf:6,
+      reason:`Friendly lean — both sides score freely (combined ${combined.toFixed(1)}/game). Friendlies tend open. Squads may rotate; not a banker.` };
+  }
+  if(combined<=2.4){
+    return { market:"Under 3.5", conf:5,
+      reason:`Friendly lean — low combined scoring (${combined.toFixed(1)}/game). Squads may rotate; not a banker.` };
+  }
+  // middling, unpredictable friendly → don't force a pick
+  return { market:"No Bet", conf:0, reason:`Friendly with unclear profile — no confident lean.` };
+}
 // A pick built on a handful of games is noise, not signal. Engines call this
 // first and return No Bet when the data isn't solid enough.
 function dataQualityOK(m){
@@ -460,6 +504,14 @@ function recommend(m) {
   if(!dataQualityOK(m)){
     return { match:m, over:null, btts:null, under:null, wdnb:null, primary:"Skip", confidence:"Low", banker:false, rankWeight:0, summary:"Low-quality data — skipped.", value:null, chosenKind:null, lean:null };
   }
+  // Friendlies: shared friendly approach, never blanket Under 3.5; never a banker.
+  if(String(m.league||'').toLowerCase().includes('friendl')){
+    const fl=friendlyLean(m);
+    if(!fl||fl.market==="No Bet"){
+      return { match:m, over:null, btts:null, under:null, wdnb:null, primary:"Skip", confidence:"Low", banker:false, rankWeight:0, summary:(fl?fl.reason:"Friendly — no goal data."), value:null, chosenKind:null, lean:null };
+    }
+    return { match:m, over:null, btts:null, under:null, wdnb:null, primary:fl.market, confidence:(fl.conf>=6?"Medium":"Low"), banker:false, rankWeight:fl.conf, summary:fl.reason, value:null, chosenKind:"friendly", lean:null };
+  }
   const over = scoreOver25(m);
   const btts = scoreBTTS(m);
   const wdnb = scoreWinDNB(m);
@@ -579,6 +631,8 @@ function recommend(m) {
     // Only High-confidence edges get the banker tag; Medium picks fall through
     // to a non-banker recommendation (still shown, just not flagged a banker).
     if (confidence !== "High") banker = false;
+    // No real league table → never a confident banker (still shown as a pick).
+    if (hasNoStandings(m)) banker = false;
   }
 
   // Skip rule (Rule 13): nothing qualified at all (no pick was chosen).
@@ -796,7 +850,7 @@ function strictRecommend(m) {
     awayPPG: awayPPG != null ? Math.round(awayPPG * 100) / 100 : null,
     market, decision, confidence, reasons, blocked, humanChecks,
     // ELITE-ONLY: a strict bet now needs confidence >= 8 (was 7).
-    bet: decision === "Bet" && market !== "No Bet" && confidence >= STRICT_CONF_FLOOR,
+    bet: decision === "Bet" && market !== "No Bet" && confidence >= STRICT_CONF_FLOOR && !hasNoStandings(m),
   });
 
   // ---- DATA QUALITY GATE ----
@@ -1156,7 +1210,7 @@ function ultraRecommend(m) {
     const tierName = confidence>=10?"Elite Banker":confidence>=9?"Banker":confidence>=8?"Strong":"Playable";
     verdict = primary + " - " + tierName + " (confidence " + confidence + "). Single strongest edge.";
   }
-  return { match:m, engine:"ultra", primary, confidence, bet:primary!=="No Bet", banker: confidence>=8, passed, failed, blocked, humanChecks, allScores:cand.sort((a,b)=>b.conf-a.conf), verdict };
+  return { match:m, engine:"ultra", primary, confidence, bet:primary!=="No Bet", banker: confidence>=8 && !hasNoStandings(m), passed, failed, blocked, humanChecks, allScores:cand.sort((a,b)=>b.conf-a.conf), verdict };
 }
 
 /* ============================================================
@@ -1311,7 +1365,7 @@ function rulesProRecommend(m){
   }
 
   return { match:m, engine:"rulespro", primary, confidence, bet:primary!=="No Bet",
-           banker:confidence>=8, note, usedEstimates, blocked, humanChecks,
+           banker:confidence>=8 && !hasNoStandings(m), note, usedEstimates, blocked, humanChecks,
            allScores:cand.sort((a,b)=>b.conf-a.conf), verdict };
 }
 
@@ -1393,7 +1447,7 @@ function apexRecommend(m){
   }
 
   if(primary==='No Bet'){ bet=false; confidence=0; }
-  const banker = bet && confidence>=8;
+  const banker = bet && confidence>=8 && !hasNoStandings(m);
   const extra = notes.length?(' '+notes.join(' ')):'';
 
   return {
@@ -1419,6 +1473,15 @@ function apexRecommend(m){
 function primeRecommend(m){
   const size = m.tableSize ?? 20;
   if(!dataQualityOK(m)) return primeOut(m,"No Bet","No Bet",99,["Low-quality data — skipped."],"Unknown",null);
+  // FRIENDLIES / table-less: use the shared friendly approach (never a banker).
+  const lname = String(m.league||'').toLowerCase();
+  const isFriendly = lname.includes('friendl');
+  if(isFriendly){
+    const fl = friendlyLean(m);
+    if(!fl) return primeOut(m,"No Bet","No Bet",99,["Friendly with no goal data — no lean."],"Friendly",null);
+    if(fl.market==="No Bet") return primeOut(m,"No Bet","No Bet",99,[fl.reason],"Friendly",null);
+    return primeOut(m, fl.market, "Friendly Lean", 10-fl.conf, [fl.reason], "Friendly", null);
+  }
   const la = m.leagueAvg;
   // league average team goals (per team per game)
   const latgTeam = (la && la.reliable && la.goalsPerGame) ? la.goalsPerGame/2 : 1.35;
@@ -1667,7 +1730,7 @@ function primeRecommend(m){
 }
 
 function primeOut(m,market,tierName,risk,reasons,leagueType,goalIndex,derived){
-  const banker = (tierName==="Elite Banker"||tierName==="Tier A Banker"||tierName==="Strong Tier B");
+  const banker = (tierName==="Elite Banker"||tierName==="Tier A Banker"||tierName==="Strong Tier B") && !hasNoStandings(m);
   return {
     match:m, engine:"prime", primary:market, bet:market!=="No Bet",
     banker, confidence: Math.max(0,10-risk), riskPoints:risk, tier:tierName,
@@ -1712,6 +1775,12 @@ function poissonP(k, lambda){ return Math.pow(lambda,k)*Math.exp(-lambda)/factor
 
 function valueRecommend(m){
   if(!dataQualityOK(m)) return valueOut(m,"No Bet",0,null,["Insufficient/low-quality data — skipped."]);
+  // Friendlies: use the shared friendly approach, never the blanket model pick.
+  if(String(m.league||'').toLowerCase().includes('friendl')){
+    const fl=friendlyLean(m);
+    if(!fl||fl.market==="No Bet") return valueOut(m,"No Bet",0,null,[fl?fl.reason:"Friendly — no goal data."]);
+    return valueOut(m, fl.market, fl.conf, {friendly:true}, [fl.reason]);
+  }
   const la = m.leagueAvg;
   const leagueAvgTeam = (la && la.reliable && la.goalsPerGame) ? la.goalsPerGame/2 : 1.35;
 
@@ -1850,7 +1919,7 @@ function valueRecommend(m){
 }
 
 function valueOut(m, market, conf, model, reasons, lowSample){
-  const banker = market!=="No Bet" && conf>=8;
+  const banker = market!=="No Bet" && conf>=8 && !hasNoStandings(m);
   return {
     match:m, engine:"value", primary:market, bet:market!=="No Bet",
     banker, confidence: market==="No Bet"?0:conf,
@@ -1902,7 +1971,124 @@ function streakRecommend(m) {
   };
 }
 
+
+/* ============================================================
+   PRO BANKERS — the disciplined, xG-aware engine.
+   Runs every game through a Poisson/Dixon-Coles probability model. When real
+   xG is present (xgReal flag from enrichment) it sharpens the expected-goals
+   estimate; otherwise it falls back to the goals-based estimate. Then applies
+   strict discipline: no banker without standings, widen uncertainty on thin
+   data, Win/DNB only if the backed team is expected to score 2+, and bet only
+   where probability clears a real floor — else No Bet.
+   ------------------------------------------------------------------- */
+function proRecommend(m){
+  const la = m.leagueAvg;
+  const leagueAvgTeam = (la && la.reliable && la.goalsPerGame) ? la.goalsPerGame/2 : 1.35;
+  const hGF=m.homeScoredAtHome, hGA=m.homeConcededAtHome, aGF=m.awayScoredAway, aGA=m.awayConcededAway;
+  if(typeof dataQualityOK==='function' && !dataQualityOK(m)) return proOut(m,"No Bet",0,null,["Low-quality data — skipped."]);
+  if(hGF==null||hGA==null||aGF==null||aGA==null) return proOut(m,"No Bet",0,null,["Insufficient goal data."]);
+  // Friendlies: shared friendly approach, never blanket model pick.
+  if(String(m.league||'').toLowerCase().includes('friendl')){
+    const fl=friendlyLean(m);
+    if(!fl||fl.market==="No Bet") return proOut(m,"No Bet",0,null,[fl?fl.reason:"Friendly — no goal data."]);
+    return proOut(m, fl.market, fl.conf, {friendly:true}, [fl.reason]);
+  }
+
+  // low-sample regression toward league mean
+  const gp = m.gamesPlayed!=null ? m.gamesPlayed : 12;
+  const w = Math.min(1, gp/12);
+  const shrink = r => w*r + (1-w)*leagueAvgTeam;
+  let hAtt=shrink(hGF), hDef=shrink(hGA), aAtt=shrink(aGF), aDef=shrink(aGA);
+
+  // base expected goals (opponent-adjusted, geometric blend)
+  let lambdaHome = leagueAvgTeam * Math.sqrt((hAtt/leagueAvgTeam)*(aDef/leagueAvgTeam));
+  let lambdaAway = leagueAvgTeam * Math.sqrt((aAtt/leagueAvgTeam)*(hDef/leagueAvgTeam));
+
+  // REAL xG sharpening: if enrichment provided real xG averages, blend them in.
+  // (xgHomeReal/xgAwayReal are per-match actuals; when present we nudge λ toward
+  // them, weighted modestly so one noisy match can't dominate.)
+  let usedXg=false;
+  if(m.xgReal && m.xgHomeReal!=null && m.xgAwayReal!=null){
+    lambdaHome = 0.6*lambdaHome + 0.4*Math.max(0.1, m.xgHomeReal);
+    lambdaAway = 0.6*lambdaAway + 0.4*Math.max(0.1, m.xgAwayReal);
+    usedXg=true;
+  }
+  lambdaHome=Math.min(3.6,Math.max(0.12,lambdaHome));
+  lambdaAway=Math.min(3.6,Math.max(0.12,lambdaAway));
+
+  // Dixon-Coles scoreline matrix
+  const MAX=8, rho=-0.05;
+  function tau(i,j,lh,la_){ if(i===0&&j===0)return 1-lh*la_*rho; if(i===0&&j===1)return 1+lh*rho; if(i===1&&j===0)return 1+la_*rho; if(i===1&&j===1)return 1-rho; return 1; }
+  let matrix=[], norm=0;
+  for(let i=0;i<=MAX;i++){matrix[i]=[];for(let j=0;j<=MAX;j++){let p=poissonP(i,lambdaHome)*poissonP(j,lambdaAway)*tau(i,j,lambdaHome,lambdaAway); if(p<0)p=0; matrix[i][j]=p; norm+=p;}}
+  for(let i=0;i<=MAX;i++)for(let j=0;j<=MAX;j++)matrix[i][j]/=norm;
+
+  let pH=0,pD=0,pA=0,pBTTS=0,pO15=0,pO25=0,pO35=0;
+  for(let i=0;i<=MAX;i++)for(let j=0;j<=MAX;j++){const p=matrix[i][j],t=i+j; if(i>j)pH+=p;else if(i===j)pD+=p;else pA+=p; if(i>=1&&j>=1)pBTTS+=p; if(t>=2)pO15+=p; if(t>=3)pO25+=p; if(t>=4)pO35+=p;}
+  const pU35=1-pO35,pU25=1-pO25,pBTTSNo=1-pBTTS;
+  const pHomeDNB=pH/(pH+pA), pAwayDNB=pA/(pH+pA), p1X=pH+pD, pX2=pA+pD;
+
+  // uncertainty: widen (raise floors) on thin data or volatile profiles
+  let floorBump=0;
+  if(gp<6) floorBump+=0.04;
+  if(!usedXg) floorBump+=0.01; // tiny: estimate-only is slightly less certain
+  if(la && !la.reliable) floorBump+=0.03;
+
+  const LAMBDA_WIN_FLOOR=2.0;
+  let cand=[
+    {market:"Over 1.5",p:pO15,floor:0.80+floorBump},
+    {market:"Under 3.5",p:pU35,floor:0.80+floorBump},
+    {market:"Over 2.5",p:pO25,floor:0.63+floorBump},
+    {market:"Under 2.5",p:pU25,floor:0.63+floorBump},
+    {market:"BTTS Yes",p:pBTTS,floor:0.63+floorBump},
+    {market:"BTTS No",p:pBTTSNo,floor:0.63+floorBump},
+    {market:"Double Chance 1X",p:p1X,floor:0.78+floorBump},
+    {market:"Double Chance X2",p:pX2,floor:0.78+floorBump},
+    {market:"Home DNB",p:pHomeDNB,floor:0.64+floorBump},
+    {market:"Away DNB",p:pAwayDNB,floor:0.64+floorBump},
+    {market:"Home Win",p:pH,floor:0.60+floorBump},
+    {market:"Away Win",p:pA,floor:0.60+floorBump},
+  ].filter(c=>c.p>=c.floor);
+
+  // Win/DNB require backed team expected to score 2+
+  cand=cand.filter(c=>{
+    const homeBack=(c.market==="Home Win"||c.market==="Home DNB");
+    const awayBack=(c.market==="Away Win"||c.market==="Away DNB");
+    if(homeBack && lambdaHome<LAMBDA_WIN_FLOOR) return false;
+    if(awayBack && lambdaAway<LAMBDA_WIN_FLOOR) return false;
+    return true;
+  });
+
+  if(!cand.length) return proOut(m,"No Bet",0,{lambdaHome,lambdaAway,usedXg},["No market cleared the confidence floor — no safe edge."]);
+
+  cand.forEach(c=>c.cushion=c.p-c.floor);
+  cand.sort((a,b)=>b.cushion-a.cushion||b.p-a.p);
+  const best=cand[0];
+
+  let conf=Math.round(best.p*10);
+  if(gp<6)conf=Math.max(0,conf-1);
+  conf=Math.min(10,conf);
+
+  const reasons=[
+    `Model: expected goals ${lambdaHome.toFixed(2)} - ${lambdaAway.toFixed(2)}${usedXg?' (sharpened with real xG)':' (estimated)'}.`,
+    `P(${best.market}) = ${(best.p*100).toFixed(0)}%.`
+  ];
+  return proOut(m,best.market,conf,{lambdaHome,lambdaAway,usedXg,prob:best.p},reasons,gp<6);
+}
+
+function proOut(m,market,conf,model,reasons,lowSample){
+  // never a banker without real standings (friendlies/table-less games)
+  const noStand = (typeof hasNoStandings==='function') && hasNoStandings(m);
+  const banker = market!=="No Bet" && conf>=8 && !noStand;
+  return {
+    match:m, engine:"pro", primary:market, bet:market!=="No Bet",
+    banker, confidence: market==="No Bet"?0:conf,
+    model:model||null, usedXg: !!(model&&model.usedXg), lowSample: !!lowSample,
+    verdict: `${market}${market!=="No Bet"?` (Pro model, ${conf}/10${model&&model.usedXg?', xG-backed':''})`:""}. ${reasons.join(' ')}`,
+    reasons, humanChecks:["Model-based; verify injuries, motivation, lineups."]
+  };
+}
 if (typeof module !== "undefined") module.exports = {
   analyseAll, recommend, scoreOver25, scoreBTTS, scoreWinDNB, settle,
-  analyseStrict, strictRecommend, tierFromRank, streakRecommend, ultraRecommend, rulesProRecommend, apexRecommend, primeRecommend, valueRecommend
+  analyseStrict, strictRecommend, tierFromRank, streakRecommend, ultraRecommend, rulesProRecommend, apexRecommend, primeRecommend, valueRecommend, proRecommend
 };
