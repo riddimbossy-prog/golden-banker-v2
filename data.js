@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-06-30T11:28:03.083Z";
-window.SCORES_UPDATED = "2026-06-30T13:45:04.166Z";
+window.SCORES_UPDATED = "2026-06-30T14:06:14.923Z";
 window.MATCHES = [
   {
     "home": "Washington Spirit W",
@@ -53223,7 +53223,7 @@ window.MATCHES = [
     "league": "Friendlies Clubs",
     "country": "World",
     "flag": null,
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-06-30T12:00:00+00:00",
     "matchDate": "2026-06-30",
     "homeGoals": 2,
@@ -53271,7 +53271,7 @@ window.MATCHES = [
     "league": "Friendlies Clubs",
     "country": "World",
     "flag": null,
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-06-30T12:00:00+00:00",
     "matchDate": "2026-06-30",
     "homeGoals": 4,
@@ -53419,11 +53419,11 @@ window.MATCHES = [
     "league": "Friendlies Clubs",
     "country": "World",
     "flag": null,
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-06-30T14:00:00+00:00",
     "matchDate": "2026-06-30",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
