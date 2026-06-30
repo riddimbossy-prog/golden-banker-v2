@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-06-30T16:20:35.146Z";
-window.SCORES_UPDATED = "2026-06-30T18:15:33.961Z";
+window.SCORES_UPDATED = "2026-06-30T18:20:42.442Z";
 window.MATCHES = [
   {
     "home": "Washington Spirit W",
@@ -55986,7 +55986,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-06-30T16:00:00+00:00",
     "matchDate": "2026-06-30",
-    "homeGoals": 1,
+    "homeGoals": 2,
     "awayGoals": 6,
     "homePos": null,
     "awayPos": null,
@@ -56024,7 +56024,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 83
+    "elapsed": 88
   },
   {
     "home": "Levski Sofia",
@@ -56192,11 +56192,11 @@ window.MATCHES = [
     "league": "Cup",
     "country": "Estonia",
     "flag": "https://media.api-sports.io/flags/ee.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-06-30T16:30:00+00:00",
     "matchDate": "2026-06-30",
     "homeGoals": 0,
-    "awayGoals": 3,
+    "awayGoals": 4,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -56233,7 +56233,7 @@ window.MATCHES = [
     "round": "Round of 128",
     "odds": null,
     "h2h": null,
-    "elapsed": 89
+    "elapsed": null
   },
   {
     "home": "Diegem Sport",
@@ -56245,7 +56245,7 @@ window.MATCHES = [
     "kickoff": "2026-06-30T16:30:00+00:00",
     "matchDate": "2026-06-30",
     "homeGoals": 0,
-    "awayGoals": 6,
+    "awayGoals": 7,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -56282,7 +56282,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 84
+    "elapsed": 89
   },
   {
     "home": "Brinje-Grosuplje",
@@ -56401,7 +56401,7 @@ window.MATCHES = [
       "dcx2": 1.33
     },
     "h2h": null,
-    "elapsed": 56
+    "elapsed": 61
   },
   {
     "home": "Chevremont",
@@ -56561,7 +56561,7 @@ window.MATCHES = [
       "dcx2": 4.5
     },
     "h2h": null,
-    "elapsed": 41
+    "elapsed": 45
   },
   {
     "home": "Campos AA",
@@ -56629,7 +56629,7 @@ window.MATCHES = [
       "dcx2": 2.8
     },
     "h2h": null,
-    "elapsed": 30
+    "elapsed": 35
   },
   {
     "home": "Central Ballester",
@@ -56699,7 +56699,7 @@ window.MATCHES = [
       "dcx2": 1.28
     },
     "h2h": null,
-    "elapsed": 9
+    "elapsed": 14
   },
   {
     "home": "Claypole",
@@ -56769,7 +56769,7 @@ window.MATCHES = [
       "dcx2": 1.2
     },
     "h2h": null,
-    "elapsed": 10
+    "elapsed": 15
   },
   {
     "home": "Cove Rangers",
@@ -56867,7 +56867,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 15
+    "elapsed": 20
   },
   {
     "home": "Botafogo U17",
