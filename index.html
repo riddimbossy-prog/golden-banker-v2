@@ -1024,7 +1024,15 @@ function accaLegs(rows){
     const lo=legOdd({primary:best.market, match:g.match});
     return { match:g.match, market:best.market, rating, nEng, engines:[...g.engines],
              odd: lo?lo.odd:null, est: lo?lo.est:true };
-  }).filter(l=>l.odd!=null);
+  })
+  // only real-standings matches (no friendlies/table-less) AND only strong legs (rated >= 8)
+  .filter(l=>l.odd!=null && l.rating>=8 && !(typeof hasNoStandings==='function' ? hasNoStandings(l.match) : noStandingsLocal(l.match)));
+}
+// local fallback if engine helper isn't exposed to the page
+function noStandingsLocal(m){
+  const noPos=(m.homePos==null && m.awayPos==null);
+  const lname=String(m.league||'').toLowerCase();
+  return noPos || lname.includes('friendl');
 }
 
 function renderAccaMatches(){
@@ -1039,14 +1047,10 @@ function renderAccaMatches(){
     return !played&&!live&&koF; };
   const upcomingLegs=legs.filter(l=>isUpcoming(l.match)).sort((a,b)=>b.rating-a.rating);
 
-  let html=`<div class="panel rounded-xl p-3 mb-3 text-sm" style="border:1px solid rgba(76,175,39,.4);background:rgba(76,175,39,.07)">
-    <strong style="color:var(--brand)"><i class="fa-solid fa-layer-group"></i> Today's Bankers Acca.</strong>
-    The strongest banker per match across all engines, rated by engine agreement + average confidence (out of 10). Same-match markets collapse to that match's single strongest pick.
-    <div style="color:#b45309;margin-top:.5rem"><i class="fa-solid fa-triangle-exclamation"></i> An accumulator needs <strong>every</strong> leg to win. More legs = much lower chance. The combined probability below is the honest likelihood of ALL legs landing. High risk — 18+.</div>
-  </div>`;
+  let html='';
 
   if(!upcomingLegs.length){
-    html+=`<div class="p-6 text-center" style="color:var(--muted)">No upcoming bankers across the engines right now — the acca builds from upcoming bankers only.</div>`;
+    html+=`<div class="p-6 text-center" style="color:var(--muted)">No qualifying acca legs right now — the acca uses only upcoming, real-league picks rated 8/10 or higher.</div>`;
     host.innerHTML=html; return;
   }
 
