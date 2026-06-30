@@ -50,6 +50,66 @@
 
 function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
 
+// ============================================================
+// LEAGUE-CONTEXT CLASSIFIER  (shared, goals-based — no xG required)
+// ------------------------------------------------------------
+// Implements Section 2 of the League-Context Threshold rule: classify the
+// league environment BEFORE any market is judged, so every engine can reason
+// "is this team strong RELATIVE TO ITS LEAGUE". Uses leagueAvg.goalsPerGame,
+// which the fetcher already provides for every match — works on the obscure
+// leagues that have no xG (i.e. ~90% of the board).
+//
+// Returns { type, gpg, reliable, multiplier, volatile } where:
+//   type        one of the six spec classes, or "Unknown"
+//   gpg         league goals per match (null if unknown)
+//   reliable    whether the league sample is trustworthy
+//   volatile    true when the sample is too thin / unstable to trust
+//   multiplier  a single Over-strictness dial engines MAY use (1.00 = neutral;
+//               <1 = goals come easier, ease Over; >1 = goals scarce, tighten Over)
+//
+// IMPORTANT: this only DESCRIBES the league. It never forces a pick or a No Bet
+// on its own — each engine decides how much to lean on it. That keeps every
+// engine's existing, tested market logic intact (Section 9: context can
+// downgrade a pick, but cannot rescue a weak one).
+function classifyLeague(m){
+  const la = m && m.leagueAvg;
+  const gpg = (la && la.goalsPerGame != null) ? la.goalsPerGame : null;
+  const reliable = !!(la && la.reliable && gpg != null);
+  // sample too thin to trust the environment at all
+  const games = la && la.gamesPlayed != null ? la.gamesPlayed : null;
+  const volatile = !reliable || (games != null && games < 6);
+
+  if (gpg == null) return { type:"Unknown", gpg:null, reliable:false, volatile:true, multiplier:1.00 };
+
+  let type;
+  if (gpg >= 3.10)      type = "Very High-Scoring";
+  else if (gpg >= 2.80) type = "High-Scoring";
+  else if (gpg >= 2.40) type = "Balanced";
+  else if (gpg >= 2.10) type = "Low-Scoring";
+  else                  type = "Very Low-Scoring";
+
+  // Over-strictness multiplier per spec Section 3 (applied to Over thresholds).
+  // <1 eases Over (goals plentiful), >1 tightens Over (goals scarce).
+  const MULT = {
+    "Very High-Scoring": 0.95,
+    "High-Scoring":      0.97,
+    "Balanced":          1.00,
+    "Low-Scoring":       1.08,
+    "Very Low-Scoring":  1.12,
+  };
+  let multiplier = MULT[type] ?? 1.00;
+
+  // Volatile overlay: the spec treats unreliable leagues as their own class —
+  // tighten everything and never let them carry an elite banker. We surface
+  // this as a flag + a stricter multiplier; engines apply the downgrade.
+  if (volatile) {
+    type = reliable ? type : "Volatile";
+    multiplier = Math.max(multiplier, 1.10);
+  }
+
+  return { type, gpg, reliable, volatile, multiplier };
+}
+
 // NO-STANDINGS DETECTOR — a matchup with no real league table (friendlies,
 // exhibition games, brand-new competitions). Both league positions null = no
 // table to judge the teams' real environment. Engines may still offer a LEAN
@@ -2114,7 +2174,44 @@ function proOut(m,market,conf,model,reasons,lowSample){
     reasons, humanChecks:["Model-based; verify injuries, motivation, lineups."]
   };
 }
+// ============================================================
+// LEAGUE-CONTEXT WRAPPER — make every engine league-aware in ONE place.
+// ------------------------------------------------------------
+// Wraps each engine so its output object carries a `leagueClass` field
+// (the classifyLeague result for that match). This does NOT change any
+// engine's market decision — it ADDS context the UI can display and that
+// future tuning can read, without editing 20 scattered return statements.
+// Done before exports so the exported references point at the WRAPPED fns,
+// and so it covers every call site at once as a single, safe paste.
+// Prime already computes its own leagueType internally; we don't disturb that,
+// we just also attach the shared classification for consistency across tabs.
+(function attachLeagueContext(){
+  if (typeof recommend !== "function") return;
+  const wrap = fn => function(m){
+    const out = fn(m);
+    try {
+      if (out && typeof out === "object" && m) {
+        const lc = classifyLeague(m);
+        out.leagueClass = lc;
+        if (Array.isArray(out.reasons) && lc.type !== "Unknown") {
+          out.reasons = out.reasons.concat([`League context: ${lc.type}${lc.volatile ? " (volatile — treat with caution)" : ""}.`]);
+        }
+      }
+    } catch(e){}
+    return out;
+  };
+  recommend          = wrap(recommend);
+  strictRecommend    = wrap(strictRecommend);
+  ultraRecommend     = wrap(ultraRecommend);
+  rulesProRecommend  = wrap(rulesProRecommend);
+  apexRecommend      = wrap(apexRecommend);
+  primeRecommend     = wrap(primeRecommend);
+  valueRecommend     = wrap(valueRecommend);
+  proRecommend       = wrap(proRecommend);
+})();
+
 if (typeof module !== "undefined") module.exports = {
   analyseAll, recommend, scoreOver25, scoreBTTS, scoreWinDNB, settle,
-  analyseStrict, strictRecommend, tierFromRank, streakRecommend, ultraRecommend, rulesProRecommend, apexRecommend, primeRecommend, valueRecommend, proRecommend
+  analyseStrict, strictRecommend, tierFromRank, streakRecommend, ultraRecommend, rulesProRecommend, apexRecommend, primeRecommend, valueRecommend, proRecommend,
+  classifyLeague
 };
