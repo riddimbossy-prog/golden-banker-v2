@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-06-30T16:20:35.146Z";
-window.SCORES_UPDATED = "2026-06-30T20:35:30.746Z";
+window.SCORES_UPDATED = "2026-06-30T20:40:40.508Z";
 window.MATCHES = [
   {
     "home": "Washington Spirit W",
@@ -57878,7 +57878,7 @@ window.MATCHES = [
     "league": "Friendlies Clubs",
     "country": "World",
     "flag": null,
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-06-30T18:45:00+00:00",
     "matchDate": "2026-06-30",
     "homeGoals": 1,
@@ -57932,7 +57932,7 @@ window.MATCHES = [
       "dcx2": 1.06
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Gretna 2008",
@@ -58141,7 +58141,7 @@ window.MATCHES = [
       "dcx2": 1.62
     },
     "h2h": null,
-    "elapsed": 80
+    "elapsed": 85
   },
   {
     "home": "Palmeiras U17",
