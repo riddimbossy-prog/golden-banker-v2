@@ -137,6 +137,16 @@
   ::-webkit-scrollbar-thumb{ background:var(--line); border-radius:6px; }
 .eng-scroll::-webkit-scrollbar{display:none;}
 .eng-scroll{max-width:100%;}
+/* Won-bets marquee: a single track that scrolls right-to-left on a loop.
+   Pauses on hover so users can read a chip. Honest, low-key styling. */
+.won-marquee{ overflow:hidden; border:1px solid var(--line); border-radius:14px; background:var(--panel); padding:8px 0; position:relative; }
+.won-marquee-track{ display:inline-flex; gap:10px; white-space:nowrap; will-change:transform; animation:wonscroll 40s linear infinite; padding-left:100%; }
+.won-marquee:hover .won-marquee-track{ animation-play-state:paused; }
+.won-chip{ display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border-radius:999px; background:rgba(34,197,94,.12); border:1px solid rgba(34,197,94,.35); font-size:13px; }
+.won-chip .won-tick{ font-weight:700; color:#22c55e; }
+body.light .won-chip{ background:rgba(22,163,74,.10); border-color:rgba(22,163,74,.35); }
+@keyframes wonscroll{ from{ transform:translateX(0); } to{ transform:translateX(-100%); } }
+@media (prefers-reduced-motion: reduce){ .won-marquee-track{ animation:none; } }
 /* Equal-width, non-reflowing tabs. FIXED basis (not min-width) so the active
    tab's gradient/bold state can never change a button's size or nudge the row.
    border is always present (transparent when inactive) so the box model is
@@ -200,16 +210,34 @@
 <div class="panel-2 border-0 border-b" style="border-bottom:1px solid var(--line)">
   <div class="max-w-[1200px] mx-auto px-4 sm:px-6 py-2 flex items-center gap-3">
     <span class="text-xs uppercase tracking-wider font-semibold flex-shrink-0" style="color:var(--muted)">Engine</span>
-    <div class="inline-flex rounded-xl panel p-0.5 overflow-x-auto eng-scroll" role="tablist" style="-webkit-overflow-scrolling:touch;scrollbar-width:none;">
-      <button id="eng-normal" class="px-3 py-1.5 rounded-lg text-sm font-semibold whitespace-nowrap flex-shrink-0" style="background:linear-gradient(135deg,var(--gold),#6fd44a);color:#0a0e17">Normal</button>
-      <button id="eng-strict" class="px-3 py-1.5 rounded-lg text-sm font-semibold whitespace-nowrap flex-shrink-0" style="color:var(--muted)">Strict</button>
-      <button id="eng-ultra" class="px-3 py-1.5 rounded-lg text-sm font-semibold whitespace-nowrap flex-shrink-0" style="color:var(--muted)">Ultra</button>
-      <button id="eng-rulespro" class="px-3 py-1.5 rounded-lg text-sm font-semibold whitespace-nowrap flex-shrink-0" style="color:var(--muted)">Elite</button>
-      <button id="eng-apex" class="px-3 py-1.5 rounded-lg text-sm font-semibold whitespace-nowrap flex-shrink-0" style="color:var(--muted)">Apex</button>
-      <button id="eng-prime" class="px-3 py-1.5 rounded-lg text-sm font-semibold whitespace-nowrap flex-shrink-0" style="color:var(--muted)">Prime</button>
-      <button id="eng-value" class="px-3 py-1.5 rounded-lg text-sm font-semibold whitespace-nowrap flex-shrink-0" style="color:var(--muted)">Value</button>
-      <button id="eng-pro" class="px-3 py-1.5 rounded-lg text-sm font-semibold whitespace-nowrap flex-shrink-0" style="color:var(--muted)">Pro</button>
-      <button id="eng-acca" class="px-3 py-1.5 rounded-lg text-sm font-semibold whitespace-nowrap flex-shrink-0" style="color:var(--muted)">Acca</button>
+    <div class="flex items-center gap-2 flex-wrap">
+      <button id="eng-normal" class="px-3 py-1.5 rounded-lg text-sm font-semibold whitespace-nowrap" style="background:linear-gradient(135deg,var(--gold),#6fd44a);color:#0a0e17">Normal</button>
+      <div class="relative">
+        <select id="eng-select" aria-label="Choose engine"
+          class="px-3 py-1.5 rounded-lg text-sm font-semibold appearance-none cursor-pointer pr-8"
+          style="background:var(--panel);color:var(--muted);border:1px solid var(--line);">
+          <option value="" disabled selected>Choose engine…</option>
+          <option value="strict">Strict</option>
+          <option value="ultra">Ultra</option>
+          <option value="rulespro">Elite</option>
+          <option value="apex">Apex</option>
+          <option value="prime">Prime</option>
+          <option value="value">Value</option>
+          <option value="pro">Pro</option>
+        </select>
+        <span style="position:absolute;right:10px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--muted);font-size:10px">▼</span>
+      </div>
+      <button id="eng-acca" class="px-3 py-1.5 rounded-lg text-sm font-semibold whitespace-nowrap" style="background:transparent;color:var(--muted)">Acca</button>
+    </div>
+    <!-- Hidden buttons preserve the original switching logic; the dropdown drives them. -->
+    <div style="display:none">
+      <button id="eng-strict"></button>
+      <button id="eng-ultra"></button>
+      <button id="eng-rulespro"></button>
+      <button id="eng-apex"></button>
+      <button id="eng-prime"></button>
+      <button id="eng-value"></button>
+      <button id="eng-pro"></button>
     </div>
     <span id="eng-note" class="text-xs hidden sm:inline" style="color:var(--muted)"></span>
   </div>
@@ -236,6 +264,9 @@
 
   <!-- stat row -->
   <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6" id="stat-row"></div>
+
+  <!-- WON-BETS TICKER — auto-scrolling marquee of today's settled WON bankers -->
+  <div id="won-ticker" class="mb-6" style="display:none"></div>
 
   <!-- BANKER OF THE DAY — the strongest consensus pick across all engines, ready to post -->
   <div id="botd" class="mb-6"></div>
@@ -623,6 +654,30 @@ function renderStats(){
   document.getElementById('stat-row').innerHTML =
     stat('Matches', rows.length) + stat('Bankers', picks.length, 'text-gold') +
     stat('Won', (won+lost)>0?won:'—', 'text-green', settledNote) + stat('Lost', (won+lost)>0?lost:'—', '', settledNote);
+}
+
+/* ============ WON-BETS TICKER ============
+   Auto-scrolling marquee of the day's settled WON bankers. Honesty-first:
+   shows real settled wins for the active date only. Hidden when there are none. */
+function renderWonTicker(){
+  const box=document.getElementById('won-ticker');
+  if(!box) return;
+  const rows = byDate[activeDate]||[];
+  const picks = enginePicks(rows);
+  const wins=[];
+  picks.forEach(p=>{
+    const s=settle(p.primary, p.match.homeGoals, p.match.awayGoals, p.match.status);
+    if(s==='Won') wins.push(p);
+  });
+  if(!wins.length){ box.style.display='none'; box.innerHTML=''; return; }
+  const esc=t=>String(t==null?'':t).replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+  const chip=p=>`<span class="won-chip"><span class="won-tick">✓ WON</span>${esc(p.match.home)} v ${esc(p.match.away)} · ${esc(p.primary)}</span>`;
+  // duplicate the set so the loop has no visible gap as it wraps
+  const items = wins.map(chip).join('');
+  box.style.display='';
+  box.innerHTML =
+    `<div class="flex items-center gap-2 mb-2"><span class="text-xs uppercase tracking-wider font-semibold" style="color:var(--muted)">Today's winners</span><span class="text-xs" style="color:var(--muted)">· ${wins.length} settled</span></div>`+
+    `<div class="won-marquee"><div class="won-marquee-track">${items}${items}</div></div>`;
 }
 
 /* ============ DATE STRIP ============ */
@@ -1536,6 +1591,22 @@ function renderStrictMatches(){
       ? 'Pro Bankers: the disciplined, xG-aware engine. Runs every game through a Poisson/Dixon-Coles probability model — sharpened with REAL expected goals where available (most leagues fall back to the estimate). Bets only where probability clears a real floor, widens caution on thin data, never bankers friendlies/table-less games, and needs the backed team to expect 2+ goals for any Win/DNB. Fewer, better-grounded picks. Unproven — track first.'
       : '';
     const noteM=document.getElementById('eng-note-mobile'); if(noteM) noteM.textContent = note.textContent;
+
+    // ---- selector sync: quick buttons (Normal/Acca) + dropdown ----
+    const sel=document.getElementById('eng-select');
+    const quick=(btn,active)=>{ if(!btn) return;
+      if(active){ btn.style.background='linear-gradient(135deg,var(--gold),#6fd44a)'; btn.style.color='#0a0e17'; }
+      else { btn.style.background='transparent'; btn.style.color='var(--muted)'; } };
+    quick(bn, mode==='normal');
+    quick(bac, mode==='acca');
+    if(sel){
+      const inDropdown=['strict','ultra','rulespro','apex','prime','value','pro'].includes(mode);
+      sel.value = inDropdown ? mode : '';
+      // highlight the dropdown when it owns the active engine
+      if(inDropdown){ sel.style.background='linear-gradient(135deg,var(--gold),#6fd44a)'; sel.style.color='#0a0e17'; }
+      else { sel.style.background='var(--panel)'; sel.style.color='var(--muted)'; }
+    }
+
     renderStats(); renderCards(); renderMatches();
   }
   bn.addEventListener('click',()=>setMode('normal'));
@@ -1547,10 +1618,12 @@ function renderStrictMatches(){
   bv.addEventListener('click',()=>setMode('value'));
   bpro.addEventListener('click',()=>setMode('pro'));
   bac.addEventListener('click',()=>setMode('acca'));
+  const _sel=document.getElementById('eng-select');
+  if(_sel) _sel.addEventListener('change',e=>{ if(e.target.value) setMode(e.target.value); });
 })();
 
 /* ============ MASTER RENDER ============ */
-function renderAll(){ renderStrip(); renderStats(); renderBankerOfDay(); renderCards(); renderSidebar(); renderMatches(); }
+function renderAll(){ renderStrip(); renderStats(); renderWonTicker(); renderBankerOfDay(); renderCards(); renderSidebar(); renderMatches(); }
 
 // BANKER OF THE DAY: runs all engines on today's games, finds the match+market
 // the MOST engines agree on (consensus = strongest signal), and shows it as a
