@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-06-29T23:02:47.031Z";
-window.SCORES_UPDATED = "2026-06-30T00:38:29.811Z";
+window.SCORES_UPDATED = "2026-06-30T01:05:39.396Z";
 window.MATCHES = [
   {
     "home": "Fortaleza EC",
@@ -22909,11 +22909,11 @@ window.MATCHES = [
     "league": "World Cup",
     "country": "World",
     "flag": null,
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-06-30T01:00:00+00:00",
     "matchDate": "2026-06-30",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 1,
     "awayPos": 2,
     "tableSize": 60,
@@ -29473,7 +29473,7 @@ window.MATCHES = [
     "kickoff": "2026-06-29T23:30:00+00:00",
     "matchDate": "2026-06-29",
     "homeGoals": 0,
-    "awayGoals": 1,
+    "awayGoals": 3,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
