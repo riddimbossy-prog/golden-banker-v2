@@ -51,13 +51,18 @@ jobs:
         run: |
           npm install sharp --no-save || echo "sharp install issue"
           node generate-image.js || echo "image generation skipped"
+          node generate-acca.js || echo "acca image skipped"
       - name: Commit updated data.js (if it changed)
         run: |
           git config user.name "predicto-bot"
           git config user.email "bot@users.noreply.github.com"
-          if ! git diff --quiet data.js today.png today.svg daily/ 2>/dev/null || [ -n "$(git status --porcelain today.png daily/ 2>/dev/null)" ]; then
-            git add data.js today.png today.svg daily/ 2>/dev/null || git add data.js
+          if ! git diff --quiet data.js today.png today.svg daily/ 2>/dev/null || [ -n "$(git status --porcelain today.png acca.png daily/ 2>/dev/null)" ]; then
+            git add data.js today.png today.svg acca.png acca.svg daily/ 2>/dev/null || git add data.js
             git commit -m "Auto-update match data + daily image"
+            # The run can take many minutes; main may have moved meanwhile.
+            # Rebase our data.js commit on top of any new remote changes, then
+            # push. Retry once in case of a race. data.js is the only file we
+            # touch, so a rebase can't conflict with code edits.
             for i in 1 2 3; do
               git pull --rebase --autostash origin main && git push && { echo "data.js updated and pushed."; break; }
               echo "Push attempt $i failed (remote moved) — retrying after sync..."
@@ -83,7 +88,7 @@ jobs:
             Today's top bankers (one strongest pick per engine) are attached.
             Also live at predict2u.com/today.png
             Heuristic picks, not guarantees. 18+.
-          attachments: today.png
+          attachments: today.png,acca.png
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload site as Pages artifact
