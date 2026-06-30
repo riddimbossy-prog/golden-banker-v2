@@ -30,18 +30,18 @@ function trunc(s,n){ s=String(s||""); return s.length>n? s.slice(0,n-1)+"\u2026"
 function strongestNormal(){
   const res = eng.analyseAll(pool).results.filter(r=>r.banker);
   res.sort((a,b)=>(b.rankWeight||0)-(a.rankWeight||0));
-  const r=res[0]; return r && { home:r.match.home, away:r.match.away, league:r.match.league, market:r.primary, conf:confNum(r.confidence) };
+  const r=res[0]; return r && { home:r.match.home, away:r.match.away, league:r.match.league, country:r.match.country, market:r.primary, conf:confNum(r.confidence) };
 }
 function strongestStrict(){
   const {results}=eng.analyseStrict(pool); let b=null,bc=-1;
-  for(const s of results){ if(s.bet&&s.confidence>bc){bc=s.confidence; b={home:s.match.home,away:s.match.away,league:s.match.league,market:s.market,conf:s.confidence};} }
+  for(const s of results){ if(s.bet&&s.confidence>bc){bc=s.confidence; b={home:s.match.home,away:s.match.away,league:s.match.league,country:s.match.country,market:s.market,conf:s.confidence};} }
   return b;
 }
 function strongestFn(fn){
   let best=null, bestc=-1;
   for(const mt of pool){ let r; try{ r=fn(mt); }catch(e){ continue; } if(!r||!r.bet) continue;
     const c = typeof r.confidence==="number"? r.confidence : confNum(r.confidence);
-    if(c>bestc){ bestc=c; best={ home:mt.home, away:mt.away, league:mt.league, market:(r.market||r.primary), conf:c }; } }
+    if(c>bestc){ bestc=c; best={ home:mt.home, away:mt.away, league:mt.league, country:mt.country, market:(r.market||r.primary), conf:c }; } }
   return best;
 }
 
@@ -60,7 +60,7 @@ const groups = [];
 const byMatch = {};
 for(const {engine,pick} of rawPicks){
   const key = (pick.home+"|"+pick.away).toLowerCase();
-  if(!byMatch[key]){ byMatch[key]={ home:pick.home, away:pick.away, league:pick.league, lines:[] }; groups.push(byMatch[key]); }
+  if(!byMatch[key]){ byMatch[key]={ home:pick.home, away:pick.away, league:pick.league, country:pick.country, lines:[] }; groups.push(byMatch[key]); }
   byMatch[key].lines.push({ engine, market:pick.market, conf:pick.conf });
 }
 
@@ -79,7 +79,7 @@ for(const g of groups){
   // match title
   const matchLine = trunc(g.home+" v "+g.away, 34);
   cards += `<text x="${pad+34}" y="${y+50}" font-family="Arial,sans-serif" font-weight="bold" font-size="38" fill="#ffffff">${esc(matchLine)}</text>`;
-  cards += `<text x="${pad+34}" y="${y+84}" font-family="Arial,sans-serif" font-size="22" fill="#8a93a6">${esc(trunc(g.league,38))}${combo?`  ·  ${g.lines.length} engines agree`:''}</text>`;
+  cards += `<text x="${pad+34}" y="${y+84}" font-family="Arial,sans-serif" font-size="22" fill="#8a93a6">${esc(trunc((g.country?g.country+' · ':'')+g.league,40))}${combo?`  ·  ${g.lines.length} engines agree`:''}</text>`;
   // engine lines
   let ly = y+96+30;
   for(const ln of g.lines){
