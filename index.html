@@ -459,16 +459,41 @@ function fmtTime(iso){
   try { return new Date(iso).toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',timeZone:'GMT'})+' GMT'; }
   catch(e){ return ''; }
 }
-// Live badge: shows the in-play minute as of the LAST fetch (data refreshes
-// every ~15 min, so this is "minute at last update", not a live ticking clock).
-// HT shows "HT"; a known minute shows e.g. "LIVE 71'"; otherwise plain "LIVE".
+// Live badge: shows the in-play minute, ticking forward client-side from the
+// minute captured at the last scores fetch (window.SCORES_UPDATED). Because
+// data only refreshes every ~15 min, a frozen minute lags the real clock; we
+// estimate the current minute = fetched minute + real minutes since the fetch.
+// HONESTY GUARDS (a client estimate can't see the real feed):
+//  • shown as "~24'" (tilde = approximate, never claims exact precision)
+//  • HT shows "HT"
+//  • first half caps at 45 (won't count into half-time); 45+ shows "~45+'"
+//  • second half caps at 90; 90+ shows "~90+'"
+//  • if no SCORES_UPDATED anchor, falls back to the plain fetched minute
 function liveBadge(m){
   if(!m) return '';
   const st = String(m.status||'').toUpperCase();
   if(!['1H','2H','HT','ET','LIVE','P'].includes(st)) return '';
+  if(st==='HT') return `<span class="chip-live px-2 py-0.5 rounded text-[10px] font-bold whitespace-nowrap">HT</span>`;
+
   let label = 'LIVE';
-  if(st==='HT') label = 'HT';
-  else if(m.elapsed!=null && m.elapsed!=='') label = `LIVE ${m.elapsed}'`;
+  const base = (m.elapsed!=null && m.elapsed!=='') ? Number(m.elapsed) : null;
+  if(base!=null && !isNaN(base)){
+    // minutes elapsed in REAL time since the fetch that captured `base`
+    let sinceMin = 0;
+    const anchor = window.SCORES_UPDATED ? new Date(window.SCORES_UPDATED).getTime() : null;
+    if(anchor && !isNaN(anchor)) sinceMin = Math.max(0, Math.floor((Date.now()-anchor)/60000));
+    let est = base + sinceMin;
+
+    // freeze near breaks so we never count THROUGH half-time / full-time
+    if(st==='1H'){
+      if(est>=45) label = `~45+'`;
+      else label = `~${est}'`;
+    } else { // 2H / ET / LIVE
+      if(est>=90) label = `~90+'`;
+      else if(base<45 && est>45) label = `~45+'`; // anchor was 1st half, drifted past 45 → don't fake 2nd-half minute
+      else label = `~${est}'`;
+    }
+  }
   return `<span class="chip-live px-2 py-0.5 rounded text-[10px] font-bold whitespace-nowrap">${label}</span>`;
 }
 // Safe-odds rule: ONLY Win picks with a real bookmaker odd at/below 1.55 qualify.
@@ -1599,6 +1624,21 @@ function shareBotd(){
   }
 }
 renderAll();
+
+/* ===== LIVE-MINUTE TICKER =====
+   The live badge shows an approximate minute that advances in real time
+   (see liveBadge). Re-render every 60s so that estimate ticks forward, but
+   ONLY while at least one match on the board is live — otherwise it's a no-op,
+   no wasted work. This is display-only; it never refetches data. */
+(function liveTicker(){
+  const LIVE = ['1H','2H','HT','ET','LIVE','P'];
+  setInterval(()=>{
+    try{
+      const any = Array.isArray(window.MATCHES) && window.MATCHES.some(m=>m && LIVE.includes(String(m.status||'').toUpperCase()));
+      if(any) renderMatches();
+    }catch(e){}
+  }, 60000);
+})();
 
 /* ===== PWA: register service worker (enables install + offline) ===== */
 if ('serviceWorker' in navigator) {
