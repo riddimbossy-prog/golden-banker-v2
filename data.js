@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-06-29T23:02:47.031Z";
-window.SCORES_UPDATED = "2026-06-29T23:53:06.703Z";
+window.SCORES_UPDATED = "2026-06-30T00:18:18.256Z";
 window.MATCHES = [
   {
     "home": "Fortaleza EC",
@@ -29357,7 +29357,7 @@ window.MATCHES = [
     "league": "Serie D",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-06-29T22:00:00+00:00",
     "matchDate": "2026-06-29",
     "homeGoals": 1,
@@ -29473,7 +29473,7 @@ window.MATCHES = [
     "kickoff": "2026-06-29T23:30:00+00:00",
     "matchDate": "2026-06-29",
     "homeGoals": 0,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
