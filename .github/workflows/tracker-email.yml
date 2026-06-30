@@ -1,0 +1,71 @@
+name: Daily tracker email
+# Runs each morning, refreshes the forward tracker (settles finished picks,
+# records new ones), then emails the per-engine / per-market / per-league
+# performance report so you can monitor which engines actually work — without
+# opening the repo. Reuses the same Gmail secrets as the results email.
+
+on:
+  schedule:
+    - cron: "30 9 * * *"     # 09:30 UTC daily (after results-email at 09:00)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  tracker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Refresh tracker and build report
+        run: node track-log.js || echo "tracker skipped"
+      - name: Commit tracker log (if changed)
+        run: |
+          git config user.name "predicto-bot"
+          git config user.email "bot@users.noreply.github.com"
+          if [ -n "$(git status --porcelain track-log.json 2>/dev/null)" ]; then
+            git add track-log.json
+            git commit -m "Forward tracker daily refresh"
+            for i in 1 2 3; do
+              git pull --rebase --autostash origin main && git push && { echo "pushed."; break; }
+              echo "Push attempt $i failed — retrying..."; sleep 5
+            done
+          else
+            echo "No tracker changes."
+          fi
+      - name: Read report into an output
+        id: rpt
+        run: |
+          if [ -f track-report.txt ]; then
+            echo "body<<REPORT_EOF" >> "$GITHUB_OUTPUT"
+            cat track-report.txt >> "$GITHUB_OUTPUT"
+            echo "REPORT_EOF" >> "$GITHUB_OUTPUT"
+          else
+            echo "body=No tracker report generated today (no settled data yet)." >> "$GITHUB_OUTPUT"
+          fi
+      - name: Email the tracker report
+        continue-on-error: true
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "Predict2u — Engine Tracker Report"
+          to: predict2u@gmail.com
+          from: Predict2u Bot
+          body: |
+            Your daily Predict2u forward-tracker report — which engines, markets,
+            and leagues are performing, from real before-kickoff picks.
+
+            ${{ steps.rpt.outputs.body }}
+
+            (Full log attached. Numbers only become meaningful past ~100 settled
+            picks per engine. 18+. Gamble responsibly.)
+          attachments: track-report.txt
