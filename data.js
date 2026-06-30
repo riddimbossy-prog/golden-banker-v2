@@ -1,5 +1,5 @@
-window.DATA_UPDATED = "2026-06-30T11:28:03.083Z";
-window.SCORES_UPDATED = "2026-06-30T15:02:35.173Z";
+window.DATA_UPDATED = "2026-06-30T16:20:35.146Z";
+window.ENRICHED_AT = "2026-06-30T16:21:09.606Z";
 window.MATCHES = [
   {
     "home": "Washington Spirit W",
@@ -55,7 +55,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.3,
       "draw": 4.6,
-      "away": 8
+      "away": 8,
+      "over15": 2.3,
+      "under15": 1.5,
+      "over25": 5.5,
+      "under25": 1.12,
+      "over35": 15,
+      "under35": 1.02,
+      "bttsYes": 1.85,
+      "bttsNo": 1.8,
+      "dc1x": 1.06,
+      "dc12": 1.17,
+      "dcx2": 3.1
     },
     "h2h": null
   },
@@ -377,7 +388,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.5,
       "draw": 3.7,
-      "away": 7.5
+      "away": 7.5,
+      "over15": 1.4,
+      "under15": 2.9,
+      "over25": 2.2,
+      "under25": 1.65,
+      "over35": 4.2,
+      "under35": 1.22,
+      "bttsYes": 2.25,
+      "bttsNo": 1.57,
+      "dc1x": 1.08,
+      "dc12": 1.22,
+      "dcx2": 2.5
     },
     "h2h": null,
     "oddsOpen": {
@@ -445,7 +467,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.45,
       "draw": 3.3,
-      "away": 2.4
+      "away": 2.4,
+      "over15": 2.3,
+      "under15": 1.5,
+      "over25": 5,
+      "under25": 1.12,
+      "over35": 15,
+      "under35": 1.02,
+      "bttsYes": 1.62,
+      "bttsNo": 2.15,
+      "dc1x": 1.5,
+      "dc12": 1.25,
+      "dcx2": 1.44
     },
     "h2h": null
   },
@@ -557,7 +590,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.5,
       "draw": 3,
-      "away": 2.5
+      "away": 2.5,
+      "over15": 2.5,
+      "under15": 1.44,
+      "over25": 6,
+      "under25": 1.1,
+      "over35": 17,
+      "under35": 1.02,
+      "bttsYes": 1.67,
+      "bttsNo": 2.05,
+      "dc1x": 1.44,
+      "dc12": 1.3,
+      "dcx2": 1.44
     },
     "h2h": null
   },
@@ -939,30 +983,30 @@ window.MATCHES = [
     "homeGoals": null,
     "awayGoals": null,
     "homePos": 12,
-    "awayPos": 5,
+    "awayPos": 4,
     "tableSize": 16,
     "homePts": 25,
-    "awayPts": 36,
+    "awayPts": 39,
     "homeGD": -13,
-    "awayGD": 14,
+    "awayGD": 15,
     "homeForm": "WLWLW",
-    "awayForm": "DDWLW",
+    "awayForm": "WDDWL",
     "homeScoredAtHome": 2.3,
     "homeConcededAtHome": 2.5,
-    "awayScoredAway": 1.5,
-    "awayConcededAway": 1,
+    "awayScoredAway": 1.4,
+    "awayConcededAway": 0.9,
     "homeVenueRank": 10,
-    "awayVenueRank": 8,
+    "awayVenueRank": 4,
     "homeVenuePts": 15,
-    "awayVenuePts": 15,
+    "awayVenuePts": 18,
     "homeVenueGames": 11,
-    "awayVenueGames": 8,
+    "awayVenueGames": 9,
     "venueTableSize": 16,
     "leagueAvg": {
-      "goalsPerGame": 3.88,
+      "goalsPerGame": 3.86,
       "drawRate": 0.17,
       "homeWinRate": 0.44,
-      "gamesPlayed": 167,
+      "gamesPlayed": 168,
       "reliable": true
     },
     "homeWinRate": 0.36,
@@ -1175,10 +1219,10 @@ window.MATCHES = [
     "awayVenueGames": 8,
     "venueTableSize": 12,
     "leagueAvg": {
-      "goalsPerGame": 3.4,
+      "goalsPerGame": 3.43,
       "drawRate": 0.15,
-      "homeWinRate": 0.43,
-      "gamesPlayed": 95,
+      "homeWinRate": 0.44,
+      "gamesPlayed": 96,
       "reliable": true
     },
     "homeWinRate": 0.67,
@@ -1499,10 +1543,10 @@ window.MATCHES = [
     "awayVenueGames": 11,
     "venueTableSize": 16,
     "leagueAvg": {
-      "goalsPerGame": 2.76,
+      "goalsPerGame": 2.75,
       "drawRate": 0.18,
       "homeWinRate": 0.45,
-      "gamesPlayed": 167,
+      "gamesPlayed": 168,
       "reliable": true
     },
     "homeWinRate": 0.09,
@@ -1533,40 +1577,40 @@ window.MATCHES = [
     "homeGoals": null,
     "awayGoals": null,
     "homePos": 13,
-    "awayPos": 6,
+    "awayPos": 5,
     "tableSize": 16,
     "homePts": 22,
-    "awayPts": 31,
+    "awayPts": 34,
     "homeGD": -6,
-    "awayGD": -1,
+    "awayGD": 0,
     "homeForm": "LLLLW",
-    "awayForm": "WWDWL",
+    "awayForm": "WWWDW",
     "homeScoredAtHome": 1.8,
     "homeConcededAtHome": 1.3,
-    "awayScoredAway": 1.6,
-    "awayConcededAway": 1.4,
+    "awayScoredAway": 1.5,
+    "awayConcededAway": 1.3,
     "homeVenueRank": 5,
-    "awayVenueRank": 8,
+    "awayVenueRank": 7,
     "homeVenuePts": 19,
-    "awayVenuePts": 11,
+    "awayVenuePts": 14,
     "homeVenueGames": 11,
-    "awayVenueGames": 9,
+    "awayVenueGames": 10,
     "venueTableSize": 16,
     "leagueAvg": {
-      "goalsPerGame": 2.76,
+      "goalsPerGame": 2.75,
       "drawRate": 0.18,
       "homeWinRate": 0.45,
-      "gamesPlayed": 167,
+      "gamesPlayed": 168,
       "reliable": true
     },
     "homeWinRate": 0.45,
-    "awayWinRate": 0.38,
+    "awayWinRate": 0.44,
     "homeUnbeatenRate": 0.82,
-    "awayUnbeatenRate": 0.63,
+    "awayUnbeatenRate": 0.67,
     "homeCleanSheetRate": 0.36,
-    "awayCleanSheetRate": 0.38,
+    "awayCleanSheetRate": 0.44,
     "homeFailedToScoreRate": 0,
-    "awayFailedToScoreRate": 0.5,
+    "awayFailedToScoreRate": 0.44,
     "statsReal": true,
     "sameGroup": true,
     "isKnockout": false,
@@ -2672,9 +2716,9 @@ window.MATCHES = [
     "homePts": 24,
     "awayPts": 26,
     "homeGD": -6,
-    "awayGD": -5,
+    "awayGD": -6,
     "homeForm": "DWDLD",
-    "awayForm": "WLWDW",
+    "awayForm": "LWLWD",
     "homeScoredAtHome": 1.3,
     "homeConcededAtHome": 0.7,
     "awayScoredAway": 1.4,
@@ -2687,10 +2731,10 @@ window.MATCHES = [
     "awayVenueGames": 9,
     "venueTableSize": 16,
     "leagueAvg": {
-      "goalsPerGame": 2.76,
+      "goalsPerGame": 2.75,
       "drawRate": 0.18,
       "homeWinRate": 0.45,
-      "gamesPlayed": 167,
+      "gamesPlayed": 168,
       "reliable": true
     },
     "homeWinRate": 0.4,
@@ -3096,11 +3140,11 @@ window.MATCHES = [
     "awayPos": 9,
     "tableSize": 12,
     "homePts": 39,
-    "awayPts": 17,
+    "awayPts": 20,
     "homeGD": 27,
-    "awayGD": -6,
+    "awayGD": -2,
     "homeForm": "WWWWW",
-    "awayForm": "LLLWW",
+    "awayForm": "WLLLW",
     "homeScoredAtHome": 2.9,
     "homeConcededAtHome": 0.4,
     "awayScoredAway": 1.5,
@@ -3113,10 +3157,10 @@ window.MATCHES = [
     "awayVenueGames": 8,
     "venueTableSize": 12,
     "leagueAvg": {
-      "goalsPerGame": 3.4,
+      "goalsPerGame": 3.43,
       "drawRate": 0.15,
-      "homeWinRate": 0.43,
-      "gamesPlayed": 95,
+      "homeWinRate": 0.44,
+      "gamesPlayed": 96,
       "reliable": true
     },
     "homeWinRate": 0.88,
@@ -3707,10 +3751,10 @@ window.MATCHES = [
     "awayVenueGames": 11,
     "venueTableSize": 16,
     "leagueAvg": {
-      "goalsPerGame": 3.88,
+      "goalsPerGame": 3.86,
       "drawRate": 0.17,
       "homeWinRate": 0.44,
-      "gamesPlayed": 167,
+      "gamesPlayed": 168,
       "reliable": true
     },
     "homeWinRate": 0.27,
@@ -3740,7 +3784,7 @@ window.MATCHES = [
     "matchDate": "2026-07-04",
     "homeGoals": null,
     "awayGoals": null,
-    "homePos": 5,
+    "homePos": 6,
     "awayPos": 2,
     "tableSize": 16,
     "homePts": 32,
@@ -3761,10 +3805,10 @@ window.MATCHES = [
     "awayVenueGames": 10,
     "venueTableSize": 16,
     "leagueAvg": {
-      "goalsPerGame": 2.76,
+      "goalsPerGame": 2.75,
       "drawRate": 0.18,
       "homeWinRate": 0.45,
-      "gamesPlayed": 167,
+      "gamesPlayed": 168,
       "reliable": true
     },
     "homeWinRate": 0.44,
@@ -3962,25 +4006,25 @@ window.MATCHES = [
     "homePts": 11,
     "awayPts": 21,
     "homeGD": -20,
-    "awayGD": 6,
+    "awayGD": 2,
     "homeForm": "LLLLL",
-    "awayForm": "WWLWL",
+    "awayForm": "LWWLW",
     "homeScoredAtHome": 1,
     "homeConcededAtHome": 2.1,
-    "awayScoredAway": 1.7,
-    "awayConcededAway": 1.4,
+    "awayScoredAway": 1.6,
+    "awayConcededAway": 1.9,
     "homeVenueRank": 10,
-    "awayVenueRank": 6,
+    "awayVenueRank": 7,
     "homeVenuePts": 3,
     "awayVenuePts": 10,
     "homeVenueGames": 7,
-    "awayVenueGames": 7,
+    "awayVenueGames": 8,
     "venueTableSize": 12,
     "leagueAvg": {
-      "goalsPerGame": 3.4,
+      "goalsPerGame": 3.43,
       "drawRate": 0.15,
-      "homeWinRate": 0.43,
-      "gamesPlayed": 95,
+      "homeWinRate": 0.44,
+      "gamesPlayed": 96,
       "reliable": true
     },
     "homeWinRate": 0.14,
@@ -4472,7 +4516,7 @@ window.MATCHES = [
       "goalsPerGame": 5.14,
       "drawRate": 0.13,
       "homeWinRate": 0.46,
-      "gamesPlayed": 167,
+      "gamesPlayed": 161,
       "reliable": true
     },
     "homeWinRate": 0.1,
@@ -4523,10 +4567,10 @@ window.MATCHES = [
     "awayVenueGames": 9,
     "venueTableSize": 12,
     "leagueAvg": {
-      "goalsPerGame": 3.4,
+      "goalsPerGame": 3.43,
       "drawRate": 0.15,
-      "homeWinRate": 0.43,
-      "gamesPlayed": 95,
+      "homeWinRate": 0.44,
+      "gamesPlayed": 96,
       "reliable": true
     },
     "homeWinRate": 0.13,
@@ -5732,15 +5776,15 @@ window.MATCHES = [
     "matchDate": "2026-07-04",
     "homeGoals": null,
     "awayGoals": null,
-    "homePos": 4,
+    "homePos": 5,
     "awayPos": 8,
     "tableSize": 16,
     "homePts": 38,
     "awayPts": 30,
     "homeGD": 17,
-    "awayGD": -6,
+    "awayGD": -7,
     "homeForm": "WWDLD",
-    "awayForm": "DDDWW",
+    "awayForm": "LDDDW",
     "homeScoredAtHome": 1.7,
     "homeConcededAtHome": 0.9,
     "awayScoredAway": 1.2,
@@ -5753,10 +5797,10 @@ window.MATCHES = [
     "awayVenueGames": 9,
     "venueTableSize": 16,
     "leagueAvg": {
-      "goalsPerGame": 3.88,
+      "goalsPerGame": 3.86,
       "drawRate": 0.17,
       "homeWinRate": 0.44,
-      "gamesPlayed": 167,
+      "gamesPlayed": 168,
       "reliable": true
     },
     "homeWinRate": 0.7,
@@ -6017,10 +6061,10 @@ window.MATCHES = [
     "awayVenueGames": 10,
     "venueTableSize": 16,
     "leagueAvg": {
-      "goalsPerGame": 3.88,
+      "goalsPerGame": 3.86,
       "drawRate": 0.17,
       "homeWinRate": 0.44,
-      "gamesPlayed": 167,
+      "gamesPlayed": 168,
       "reliable": true
     },
     "homeWinRate": 0.22,
@@ -6981,7 +7025,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.85,
       "draw": 3,
-      "away": 2.55
+      "away": 2.55,
+      "over15": 1.48,
+      "under15": 2.6,
+      "over25": 2.45,
+      "under25": 1.53,
+      "over35": 4.75,
+      "under35": 1.18,
+      "bttsYes": 2,
+      "bttsNo": 1.7,
+      "dc1x": 1.48,
+      "dc12": 1.3,
+      "dcx2": 1.4
     },
     "h2h": null,
     "oddsOpen": {
@@ -7049,7 +7104,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.75,
       "draw": 3.45,
-      "away": 4.8
+      "away": 4.8,
+      "over15": 1.38,
+      "under15": 3,
+      "over25": 2.1,
+      "under25": 1.7,
+      "over35": 3.8,
+      "under35": 1.25,
+      "bttsYes": 1.91,
+      "bttsNo": 1.77,
+      "dc1x": 1.18,
+      "dc12": 1.25,
+      "dcx2": 2
     },
     "h2h": null
   },
@@ -7107,7 +7173,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.25,
       "draw": 3.1,
-      "away": 3.35
+      "away": 3.35,
+      "over15": 1.45,
+      "under15": 2.7,
+      "over25": 2.35,
+      "under25": 1.57,
+      "over35": 4.5,
+      "under35": 1.2,
+      "bttsYes": 1.95,
+      "bttsNo": 1.73,
+      "dc1x": 1.3,
+      "dc12": 1.3,
+      "dcx2": 1.62
     },
     "h2h": null
   },
@@ -7165,7 +7242,10 @@ window.MATCHES = [
     "odds": {
       "home": 5.6,
       "draw": 4.1,
-      "away": 1.5
+      "away": 1.5,
+      "dc1x": 2.3,
+      "dc12": 1.17,
+      "dcx2": 1.1
     },
     "h2h": null
   },
@@ -7223,7 +7303,10 @@ window.MATCHES = [
     "odds": {
       "home": 1.95,
       "draw": 3.2,
-      "away": 3.85
+      "away": 3.85,
+      "dc1x": 1.2,
+      "dc12": 1.28,
+      "dcx2": 1.7
     },
     "h2h": null
   },
@@ -7281,7 +7364,10 @@ window.MATCHES = [
     "odds": {
       "home": 4.5,
       "draw": 3.55,
-      "away": 1.7
+      "away": 1.7,
+      "dc1x": 1.95,
+      "dc12": 1.22,
+      "dcx2": 1.15
     },
     "h2h": null
   },
@@ -7339,7 +7425,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.65,
       "draw": 3.2,
-      "away": 2.5
+      "away": 2.5,
+      "over15": 1.35,
+      "under15": 3,
+      "over25": 2.05,
+      "under25": 1.73,
+      "over35": 3.65,
+      "under35": 1.25,
+      "bttsYes": 1.77,
+      "bttsNo": 1.85,
+      "dc1x": 1.5,
+      "dc12": 1.28,
+      "dcx2": 1.44
     },
     "h2h": null
   },
@@ -7451,7 +7548,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.06,
       "draw": 3.15,
-      "away": 3.45
+      "away": 3.45,
+      "over15": 1.35,
+      "under15": 3,
+      "over25": 2,
+      "under25": 1.75,
+      "over35": 3.6,
+      "under35": 1.25,
+      "bttsYes": 1.77,
+      "bttsNo": 1.85,
+      "dc1x": 1.28,
+      "dc12": 1.25,
+      "dcx2": 1.7
     },
     "h2h": null
   },
@@ -7509,7 +7617,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.98,
       "draw": 3.35,
-      "away": 2.2
+      "away": 2.2,
+      "over15": 1.22,
+      "under15": 3.95,
+      "over25": 1.7,
+      "under25": 2.1,
+      "over35": 2.7,
+      "under35": 1.42,
+      "bttsYes": 1.53,
+      "bttsNo": 2.25,
+      "dc1x": 1.62,
+      "dc12": 1.25,
+      "dcx2": 1.36
     },
     "h2h": null
   },
@@ -8802,7 +8921,7 @@ window.MATCHES = [
       "goalsPerGame": 5.14,
       "drawRate": 0.13,
       "homeWinRate": 0.46,
-      "gamesPlayed": 167,
+      "gamesPlayed": 161,
       "reliable": true
     },
     "homeWinRate": 0,
@@ -8875,7 +8994,18 @@ window.MATCHES = [
     "odds": {
       "home": 2,
       "draw": 3,
-      "away": 3.5
+      "away": 3.5,
+      "over15": 2.9,
+      "under15": 1.33,
+      "over25": 8,
+      "under25": 1.06,
+      "over35": null,
+      "under35": null,
+      "bttsYes": 1.91,
+      "bttsNo": 1.75,
+      "dc1x": 1.25,
+      "dc12": 1.33,
+      "dcx2": 1.67
     },
     "h2h": null
   },
@@ -9239,7 +9369,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.7,
       "draw": 4,
-      "away": 3.95
+      "away": 3.95,
+      "over15": 1.11,
+      "under15": 5.75,
+      "over25": 1.38,
+      "under25": 2.88,
+      "over35": 1.95,
+      "under35": 1.8,
+      "bttsYes": 1.36,
+      "bttsNo": 2.7,
+      "dc1x": 1.17,
+      "dc12": 1.17,
+      "dcx2": 2.05
     },
     "h2h": null
   },
@@ -9297,7 +9438,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.67,
       "draw": 3.7,
-      "away": 4.6
+      "away": 4.6,
+      "over15": 1.25,
+      "under15": 3.8,
+      "over25": 1.73,
+      "under25": 2.05,
+      "over35": 2.8,
+      "under35": 1.4,
+      "bttsYes": 1.67,
+      "bttsNo": 2,
+      "dc1x": 1.13,
+      "dc12": 1.2,
+      "dcx2": 2.1
     },
     "h2h": null
   },
@@ -9355,7 +9507,18 @@ window.MATCHES = [
     "odds": {
       "home": 2,
       "draw": 3.6,
-      "away": 2.9
+      "away": 2.9,
+      "over15": 1.95,
+      "under15": 1.75,
+      "over25": 4,
+      "under25": 1.22,
+      "over35": 10,
+      "under35": 1.05,
+      "bttsYes": 1.36,
+      "bttsNo": 2.9,
+      "dc1x": 1.35,
+      "dc12": 1.25,
+      "dcx2": 1.75
     },
     "h2h": null
   },
@@ -9467,7 +9630,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.15,
       "draw": 3.45,
-      "away": 2.98
+      "away": 2.98,
+      "over15": 1.28,
+      "under15": 3.45,
+      "over25": 1.9,
+      "under25": 1.85,
+      "over35": 3.3,
+      "under35": 1.3,
+      "bttsYes": 1.7,
+      "bttsNo": 1.95,
+      "dc1x": 1.36,
+      "dc12": 1.22,
+      "dcx2": 1.65
     },
     "h2h": null
   },
@@ -9525,7 +9699,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.26,
       "draw": 3.35,
-      "away": 2.88
+      "away": 2.88,
+      "over15": 1.25,
+      "under15": 3.7,
+      "over25": 1.75,
+      "under25": 2,
+      "over35": 2.8,
+      "under35": 1.4,
+      "bttsYes": 1.57,
+      "bttsNo": 2.15,
+      "dc1x": 1.38,
+      "dc12": 1.25,
+      "dcx2": 1.57
     },
     "h2h": null
   },
@@ -14905,7 +15090,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.65,
       "draw": 3.4,
-      "away": 2.5
+      "away": 2.5,
+      "over15": 1.28,
+      "under15": 3.65,
+      "over25": 1.85,
+      "under25": 1.95,
+      "over35": 3.1,
+      "under35": 1.38,
+      "bttsYes": 1.62,
+      "bttsNo": 2.1,
+      "dc1x": 1.5,
+      "dc12": 1.25,
+      "dcx2": 1.45
     },
     "h2h": null
   },
@@ -14963,7 +15159,18 @@ window.MATCHES = [
     "odds": {
       "home": 3.1,
       "draw": 3.5,
-      "away": 2.2
+      "away": 2.2,
+      "over15": 1.28,
+      "under15": 3.75,
+      "over25": 1.85,
+      "under25": 1.95,
+      "over35": 3.1,
+      "under35": 1.38,
+      "bttsYes": 1.65,
+      "bttsNo": 2.05,
+      "dc1x": 1.65,
+      "dc12": 1.25,
+      "dcx2": 1.35
     },
     "h2h": null
   },
@@ -15021,7 +15228,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.28,
       "draw": 3.18,
-      "away": 3.14
+      "away": 3.14,
+      "over15": 1.35,
+      "under15": 2.76,
+      "over25": 2.19,
+      "under25": 1.65,
+      "over35": 3.8,
+      "under35": 1.19,
+      "bttsYes": 1.87,
+      "bttsNo": 1.81,
+      "dc1x": 1.33,
+      "dc12": 1.33,
+      "dcx2": 1.58
     },
     "h2h": null
   },
@@ -15349,7 +15567,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.35,
       "draw": 3,
-      "away": 2.63
+      "away": 2.63,
+      "over15": 1.28,
+      "under15": 3.15,
+      "over25": 1.9,
+      "under25": 1.75,
+      "over35": 3.2,
+      "under35": 1.27,
+      "bttsYes": 1.7,
+      "bttsNo": 2,
+      "dc1x": 1.34,
+      "dc12": 1.26,
+      "dcx2": 1.42
     },
     "h2h": null
   },
@@ -15461,7 +15690,16 @@ window.MATCHES = [
     "odds": {
       "home": 2.63,
       "draw": 3.45,
-      "away": 2.28
+      "away": 2.28,
+      "over15": 1.14,
+      "under15": 4.4,
+      "over25": 1.5,
+      "under25": 2.3,
+      "over35": 2.28,
+      "under35": 1.52,
+      "dc1x": 1.47,
+      "dc12": 1.21,
+      "dcx2": 1.35
     },
     "h2h": null
   },
@@ -15681,7 +15919,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.36,
       "draw": 3.84,
-      "away": 8.7
+      "away": 8.7,
+      "over15": 1.22,
+      "under15": 3.5,
+      "over25": 1.75,
+      "under25": 1.96,
+      "over35": 2.66,
+      "under35": 1.37,
+      "bttsYes": 2.03,
+      "bttsNo": 1.67,
+      "dc1x": 1.01,
+      "dc12": 1.18,
+      "dcx2": 2.68
     },
     "h2h": null
   },
@@ -15739,7 +15988,18 @@ window.MATCHES = [
     "odds": {
       "home": 3.1,
       "draw": 3.25,
-      "away": 2.08
+      "away": 2.08,
+      "over15": 1.27,
+      "under15": 3.14,
+      "over25": 1.95,
+      "under25": 1.76,
+      "over35": 3.42,
+      "under35": 1.23,
+      "bttsYes": 1.75,
+      "bttsNo": 1.92,
+      "dc1x": 1.59,
+      "dc12": 1.25,
+      "dcx2": 1.28
     },
     "h2h": null
   },
@@ -16931,7 +17191,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.8,
       "draw": 3,
-      "away": 2.25
+      "away": 2.25,
+      "over15": 2.75,
+      "under15": 1.36,
+      "over25": 7,
+      "under25": 1.08,
+      "over35": null,
+      "under35": null,
+      "bttsYes": 1.8,
+      "bttsNo": 1.85,
+      "dc1x": 1.53,
+      "dc12": 1.33,
+      "dcx2": 1.36
     },
     "h2h": null
   },
@@ -17097,7 +17368,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.6,
       "draw": 3.2,
-      "away": 2.43
+      "away": 2.43,
+      "over15": 1.26,
+      "under15": 3.3,
+      "over25": 1.83,
+      "under25": 1.81,
+      "over35": 3.05,
+      "under35": 1.29,
+      "bttsYes": 1.67,
+      "bttsNo": 2.05,
+      "dc1x": 1.41,
+      "dc12": 1.24,
+      "dcx2": 1.36
     },
     "h2h": null
   },
@@ -17353,7 +17635,18 @@ window.MATCHES = [
     "odds": {
       "home": 5.5,
       "draw": 4.5,
-      "away": 1.4
+      "away": 1.4,
+      "over15": 2,
+      "under15": 1.73,
+      "over25": 4.2,
+      "under25": 1.2,
+      "over35": 10,
+      "under35": 1.05,
+      "bttsYes": 1.53,
+      "bttsNo": 2.38,
+      "dc1x": 2.62,
+      "dc12": 1.18,
+      "dcx2": 1.12
     },
     "h2h": null
   },
@@ -17465,7 +17758,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.3,
       "draw": 3.8,
-      "away": 2.4
+      "away": 2.4,
+      "over15": 1.85,
+      "under15": 1.85,
+      "over25": 3.6,
+      "under25": 1.25,
+      "over35": 8.5,
+      "under35": 1.06,
+      "bttsYes": 1.3,
+      "bttsNo": 3.25,
+      "dc1x": 1.5,
+      "dc12": 1.22,
+      "dcx2": 1.55
     },
     "h2h": null
   },
@@ -17685,7 +17989,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.64,
       "draw": 3.75,
-      "away": 4.7
+      "away": 4.7,
+      "over15": 1.22,
+      "under15": 4,
+      "over25": 1.67,
+      "under25": 2.15,
+      "over35": 2.65,
+      "under35": 1.44,
+      "bttsYes": 1.65,
+      "bttsNo": 2.05,
+      "dc1x": 1.12,
+      "dc12": 1.18,
+      "dcx2": 2.15
     },
     "h2h": null
   },
@@ -17743,7 +18058,18 @@ window.MATCHES = [
     "odds": {
       "home": 3.25,
       "draw": 3.7,
-      "away": 1.94
+      "away": 1.94,
+      "over15": 1.18,
+      "under15": 4.5,
+      "over25": 1.6,
+      "under25": 2.25,
+      "over35": 2.5,
+      "under35": 1.5,
+      "bttsYes": 1.5,
+      "bttsNo": 2.3,
+      "dc1x": 1.8,
+      "dc12": 1.2,
+      "dcx2": 1.3
     },
     "h2h": null
   },
@@ -20459,7 +20785,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.58,
       "draw": 3.82,
-      "away": 5.65
+      "away": 5.65,
+      "over15": 1.27,
+      "under15": 3.18,
+      "over25": 1.99,
+      "under25": 1.79,
+      "over35": 3.38,
+      "under35": 1.24,
+      "bttsYes": 1.97,
+      "bttsNo": 1.73,
+      "dc1x": 1.12,
+      "dc12": 1.24,
+      "dcx2": 2.28
     },
     "h2h": null
   },
@@ -20571,7 +20908,15 @@ window.MATCHES = [
     "odds": {
       "home": 1.3,
       "draw": 4.7,
-      "away": 9.4
+      "away": 9.4,
+      "over15": 1.2,
+      "under15": 4.2,
+      "over25": 1.62,
+      "under25": 2.2,
+      "over35": 2.55,
+      "under35": 1.48,
+      "bttsYes": 1.91,
+      "bttsNo": 1.73
     },
     "h2h": null
   },
@@ -20683,7 +21028,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.44,
       "draw": 4.2,
-      "away": 5.6
+      "away": 5.6,
+      "over15": 1.14,
+      "under15": 4.5,
+      "over25": 1.52,
+      "under25": 2.28,
+      "over35": 2.3,
+      "under35": 1.5,
+      "bttsYes": 1.62,
+      "bttsNo": 2.04,
+      "dc1x": 1.08,
+      "dc12": 1.14,
+      "dcx2": 2.3
     },
     "h2h": null
   },
@@ -21773,7 +22129,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.95,
       "draw": 3.3,
-      "away": 3.25
+      "away": 3.25,
+      "over15": 2.3,
+      "under15": 1.55,
+      "over25": 5,
+      "under25": 1.12,
+      "over35": 15,
+      "under35": 1.03,
+      "bttsYes": 1.53,
+      "bttsNo": 2.38,
+      "dc1x": 1.3,
+      "dc12": 1.29,
+      "dcx2": 1.75
     },
     "h2h": null
   },
@@ -21939,7 +22306,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.05,
       "draw": 3.6,
-      "away": 2.8
+      "away": 2.8,
+      "over15": 2,
+      "under15": 1.73,
+      "over25": 4,
+      "under25": 1.2,
+      "over35": 10,
+      "under35": 1.05,
+      "bttsYes": 1.4,
+      "bttsNo": 2.8,
+      "dc1x": 1.36,
+      "dc12": 1.25,
+      "dcx2": 1.7
     },
     "h2h": null
   },
@@ -21997,7 +22375,16 @@ window.MATCHES = [
     "odds": {
       "home": 1.58,
       "draw": 4.1,
-      "away": 4.3
+      "away": 4.3,
+      "over15": 1.09,
+      "under15": 5.6,
+      "over25": 1.34,
+      "under25": 2.85,
+      "over35": 1.87,
+      "under35": 1.77,
+      "dc1x": 1.13,
+      "dc12": 1.15,
+      "dcx2": 2.06
     },
     "h2h": null
   },
@@ -22109,7 +22496,18 @@ window.MATCHES = [
     "odds": {
       "home": 13.25,
       "draw": 5.9,
-      "away": 1.16
+      "away": 1.16,
+      "over15": 1.07,
+      "under15": 5.95,
+      "over25": 1.34,
+      "under25": 2.78,
+      "over35": 1.92,
+      "under35": 1.79,
+      "bttsYes": 1.85,
+      "bttsNo": 1.81,
+      "dc1x": 4.1,
+      "dc12": 1.06,
+      "dcx2": null
     },
     "h2h": null
   },
@@ -22167,7 +22565,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.43,
       "draw": 4.3,
-      "away": 5.6
+      "away": 5.6,
+      "over15": 1.14,
+      "under15": 4.35,
+      "over25": 1.56,
+      "under25": 2.27,
+      "over35": 2.33,
+      "under35": 1.48,
+      "bttsYes": 1.68,
+      "bttsNo": 2.01,
+      "dc1x": 1.07,
+      "dc12": 1.14,
+      "dcx2": 2.44
     },
     "h2h": null
   },
@@ -22471,7 +22880,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.08,
       "draw": 3.35,
-      "away": 3
+      "away": 3,
+      "over15": 1.2,
+      "under15": 3.8,
+      "over25": 1.67,
+      "under25": 2,
+      "over35": 2.63,
+      "under35": 1.38,
+      "bttsYes": 1.57,
+      "bttsNo": 2.2,
+      "dc1x": 1.27,
+      "dc12": 1.22,
+      "dcx2": 1.56
     },
     "h2h": null
   },
@@ -22629,9 +23049,20 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round of 16",
     "odds": {
-      "home": 4.6,
-      "draw": 3.35,
-      "away": 1.8
+      "home": 5.1,
+      "draw": 3.4,
+      "away": 1.73,
+      "over15": 1.42,
+      "under15": 2.8,
+      "over25": 2.25,
+      "under25": 1.62,
+      "over35": 4.2,
+      "under35": 1.22,
+      "bttsYes": 2.1,
+      "bttsNo": 1.67,
+      "dc1x": 2.05,
+      "dc12": 1.25,
+      "dcx2": 1.15
     },
     "h2h": null
   },
@@ -23325,7 +23756,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.05,
       "draw": 2.7,
-      "away": 4.33
+      "away": 4.33,
+      "over15": 4,
+      "under15": 1.2,
+      "over25": 13,
+      "under25": 1.03,
+      "over35": null,
+      "under35": null,
+      "bttsYes": 2.45,
+      "bttsNo": 1.5,
+      "dc1x": 1.2,
+      "dc12": 1.4,
+      "dcx2": 1.7
     },
     "h2h": null
   },
@@ -23383,7 +23825,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.62,
       "draw": 2.75,
-      "away": 2.62
+      "away": 2.62,
+      "over15": 1.57,
+      "under15": 2.25,
+      "over25": 2.75,
+      "under25": 1.4,
+      "over35": 5.5,
+      "under35": 1.12,
+      "bttsYes": 2.25,
+      "bttsNo": 1.57,
+      "dc1x": 1.4,
+      "dc12": 1.36,
+      "dcx2": 1.4
     },
     "h2h": null
   },
@@ -23441,7 +23894,18 @@ window.MATCHES = [
     "odds": {
       "home": 3.75,
       "draw": 2.9,
-      "away": 1.95
+      "away": 1.95,
+      "over15": 1.5,
+      "under15": 2.5,
+      "over25": 2.5,
+      "under25": 1.5,
+      "over35": 4.5,
+      "under35": 1.17,
+      "bttsYes": 2.2,
+      "bttsNo": 1.62,
+      "dc1x": 1.7,
+      "dc12": 1.3,
+      "dcx2": 1.2
     },
     "h2h": null
   },
@@ -23499,7 +23963,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.75,
       "draw": 2.9,
-      "away": 5
+      "away": 5,
+      "over15": 1.57,
+      "under15": 2.25,
+      "over25": 2.75,
+      "under25": 1.4,
+      "over35": 5.5,
+      "under35": 1.12,
+      "bttsYes": 2.62,
+      "bttsNo": 1.44,
+      "dc1x": 1.11,
+      "dc12": 1.3,
+      "dcx2": 1.91
     },
     "h2h": null
   },
@@ -23557,7 +24032,18 @@ window.MATCHES = [
     "odds": {
       "home": 3.7,
       "draw": 2.88,
-      "away": 2
+      "away": 2,
+      "over15": 1.44,
+      "under15": 2.62,
+      "over25": 2.35,
+      "under25": 1.57,
+      "over35": 4.33,
+      "under35": 1.2,
+      "bttsYes": 2.1,
+      "bttsNo": 1.67,
+      "dc1x": 1.67,
+      "dc12": 1.33,
+      "dcx2": 1.22
     },
     "h2h": null
   },
@@ -23669,7 +24155,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.25,
       "draw": 2.7,
-      "away": 3.3
+      "away": 3.3,
+      "over15": 1.62,
+      "under15": 2.2,
+      "over25": 3,
+      "under25": 1.36,
+      "over35": 6,
+      "under35": 1.11,
+      "bttsYes": 2.5,
+      "bttsNo": 1.5,
+      "dc1x": 1.25,
+      "dc12": 1.36,
+      "dcx2": 1.53
     },
     "h2h": null
   },
@@ -23727,7 +24224,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.7,
       "draw": 3.1,
-      "away": 5
+      "away": 5,
+      "over15": 1.44,
+      "under15": 2.62,
+      "over25": 2.35,
+      "under25": 1.57,
+      "over35": 4.33,
+      "under35": 1.2,
+      "bttsYes": 2.2,
+      "bttsNo": 1.62,
+      "dc1x": 1.11,
+      "dc12": 1.28,
+      "dcx2": 1.95
     },
     "h2h": null
   },
@@ -24901,7 +25409,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.45,
       "draw": 2.6,
-      "away": 3.4
+      "away": 3.4,
+      "over15": 4,
+      "under15": 1.2,
+      "over25": 13,
+      "under25": 1.03,
+      "over35": null,
+      "under35": null,
+      "bttsYes": 2.4,
+      "bttsNo": 1.53,
+      "dc1x": 1.3,
+      "dc12": 1.44,
+      "dcx2": 1.5
     },
     "h2h": null
   },
@@ -24959,7 +25478,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.38,
       "draw": 2.62,
-      "away": 3.4
+      "away": 3.4,
+      "over15": 4,
+      "under15": 1.2,
+      "over25": 13,
+      "under25": 1.03,
+      "over35": null,
+      "under35": null,
+      "bttsYes": 2.4,
+      "bttsNo": 1.5,
+      "dc1x": 1.29,
+      "dc12": 1.44,
+      "dcx2": 1.53
     },
     "h2h": null
   },
@@ -25017,7 +25547,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.05,
       "draw": 2.9,
-      "away": 3.8
+      "away": 3.8,
+      "over15": 3.3,
+      "under15": 1.3,
+      "over25": 10,
+      "under25": 1.05,
+      "over35": null,
+      "under35": null,
+      "bttsYes": 2.15,
+      "bttsNo": 1.62,
+      "dc1x": 1.22,
+      "dc12": 1.36,
+      "dcx2": 1.7
     },
     "h2h": null
   },
@@ -25075,7 +25616,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.7,
       "draw": 2.5,
-      "away": 3
+      "away": 3,
+      "over15": 4.2,
+      "under15": 1.2,
+      "over25": 15,
+      "under25": 1.02,
+      "over35": null,
+      "under35": null,
+      "bttsYes": 2.4,
+      "bttsNo": 1.5,
+      "dc1x": 1.36,
+      "dc12": 1.44,
+      "dcx2": 1.4
     },
     "h2h": null
   },
@@ -25133,7 +25685,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.62,
       "draw": 2.5,
-      "away": 3.1
+      "away": 3.1,
+      "over15": 4,
+      "under15": 1.2,
+      "over25": 15,
+      "under25": 1.03,
+      "over35": null,
+      "under35": null,
+      "bttsYes": 2.5,
+      "bttsNo": 1.44,
+      "dc1x": 1.3,
+      "dc12": 1.44,
+      "dcx2": 1.44
     },
     "h2h": null
   },
@@ -25191,7 +25754,18 @@ window.MATCHES = [
     "odds": {
       "home": 3,
       "draw": 2.5,
-      "away": 2.8
+      "away": 2.8,
+      "over15": 4.2,
+      "under15": 1.2,
+      "over25": 15,
+      "under25": 1.03,
+      "over35": null,
+      "under35": null,
+      "bttsYes": 2.3,
+      "bttsNo": 1.57,
+      "dc1x": 1.4,
+      "dc12": 1.44,
+      "dcx2": 1.36
     },
     "h2h": null
   },
@@ -25303,7 +25877,18 @@ window.MATCHES = [
     "odds": {
       "home": 3.4,
       "draw": 3.4,
-      "away": 2.06
+      "away": 2.06,
+      "over15": 1.25,
+      "under15": 3.7,
+      "over25": 1.8,
+      "under25": 2,
+      "over35": 3,
+      "under35": 1.38,
+      "bttsYes": 1.62,
+      "bttsNo": 2.1,
+      "dc1x": 1.7,
+      "dc12": 1.25,
+      "dcx2": 1.3
     },
     "h2h": null
   },
@@ -25630,8 +26215,19 @@ window.MATCHES = [
     "round": "Regular Season - 16",
     "odds": {
       "home": 1.9,
-      "draw": 3.4,
-      "away": 4
+      "draw": 3.25,
+      "away": 4.2,
+      "over15": 1.38,
+      "under15": 3,
+      "over25": 2.1,
+      "under25": 1.7,
+      "over35": 3.85,
+      "under35": 1.25,
+      "bttsYes": 1.85,
+      "bttsNo": 1.8,
+      "dc1x": 1.22,
+      "dc12": 1.28,
+      "dcx2": 1.85
     },
     "h2h": null
   },
@@ -25689,7 +26285,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.8,
       "draw": 3.3,
-      "away": 2.43
+      "away": 2.43,
+      "over15": 1.3,
+      "under15": 3.3,
+      "over25": 1.98,
+      "under25": 1.75,
+      "over35": 3.55,
+      "under35": 1.26,
+      "bttsYes": 1.72,
+      "bttsNo": 1.98,
+      "dc1x": 1.54,
+      "dc12": 1.32,
+      "dcx2": 1.41
     },
     "h2h": null
   },
@@ -25745,9 +26352,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 16",
     "odds": {
-      "home": 1.84,
-      "draw": 3.45,
-      "away": 4.2
+      "home": 1.89,
+      "draw": 3.35,
+      "away": 4.1,
+      "over15": 1.36,
+      "under15": 3.1,
+      "over25": 2.1,
+      "under25": 1.73,
+      "over35": 3.75,
+      "under35": 1.25,
+      "bttsYes": 1.85,
+      "bttsNo": 1.83,
+      "dc1x": 1.22,
+      "dc12": 1.25,
+      "dcx2": 1.85
     },
     "h2h": null
   },
@@ -27299,7 +27917,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.62,
       "draw": 3.3,
-      "away": 2.3
+      "away": 2.3,
+      "over15": 2.3,
+      "under15": 1.55,
+      "over25": 5,
+      "under25": 1.12,
+      "over35": 15,
+      "under35": 1.03,
+      "bttsYes": 1.53,
+      "bttsNo": 2.38,
+      "dc1x": 1.57,
+      "dc12": 1.29,
+      "dcx2": 1.4
     },
     "h2h": null
   },
@@ -27765,7 +28394,16 @@ window.MATCHES = [
     "odds": {
       "home": 2.25,
       "draw": 3.25,
-      "away": 3
+      "away": 3,
+      "over15": null,
+      "under15": null,
+      "over25": 2.38,
+      "under25": 1.53,
+      "over35": null,
+      "under35": null,
+      "dc1x": 1.36,
+      "dc12": 1.33,
+      "dcx2": 1.57
     },
     "h2h": null
   },
@@ -27823,7 +28461,16 @@ window.MATCHES = [
     "odds": {
       "home": 2.15,
       "draw": 3.25,
-      "away": 3.2
+      "away": 3.2,
+      "over15": null,
+      "under15": null,
+      "over25": 2.1,
+      "under25": 1.7,
+      "over35": null,
+      "under35": null,
+      "dc1x": 1.36,
+      "dc12": 1.33,
+      "dcx2": 1.67
     },
     "h2h": null
   },
@@ -28259,7 +28906,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.5,
       "draw": 2.7,
-      "away": 3
+      "away": 3,
+      "over15": 4,
+      "under15": 1.2,
+      "over25": 13,
+      "under25": 1.03,
+      "over35": null,
+      "under35": null,
+      "bttsYes": 2.4,
+      "bttsNo": 1.5,
+      "dc1x": 1.35,
+      "dc12": 1.4,
+      "dcx2": 1.44
     },
     "h2h": null
   },
@@ -28533,7 +29191,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.57,
       "draw": 3.7,
-      "away": 4.8
+      "away": 4.8,
+      "over15": 2.45,
+      "under15": 1.44,
+      "over25": 6,
+      "under25": 1.11,
+      "over35": 17,
+      "under35": 1.02,
+      "bttsYes": 1.75,
+      "bttsNo": 1.95,
+      "dc1x": 1.15,
+      "dc12": 1.25,
+      "dcx2": 2.25
     },
     "h2h": null
   },
@@ -28693,7 +29362,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.75,
       "draw": 3.3,
-      "away": 4
+      "away": 4,
+      "over15": 2.62,
+      "under15": 1.4,
+      "over25": 6.5,
+      "under25": 1.08,
+      "over35": 19,
+      "under35": 1.02,
+      "bttsYes": 1.8,
+      "bttsNo": 1.85,
+      "dc1x": 1.2,
+      "dc12": 1.29,
+      "dcx2": 1.95
     },
     "h2h": null
   },
@@ -28749,9 +29429,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 16",
     "odds": {
-      "home": 2.12,
-      "draw": 3.15,
-      "away": 3.55
+      "home": 2.16,
+      "draw": 3.05,
+      "away": 3.55,
+      "over15": 1.48,
+      "under15": 2.62,
+      "over25": 2.4,
+      "under25": 1.55,
+      "over35": 4.75,
+      "under35": 1.18,
+      "bttsYes": 2,
+      "bttsNo": 1.7,
+      "dc1x": 1.28,
+      "dc12": 1.3,
+      "dcx2": 1.67
     },
     "h2h": null
   },
@@ -28809,7 +29500,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.55,
       "draw": 3.75,
-      "away": 5
+      "away": 5,
+      "over15": 2.5,
+      "under15": 1.44,
+      "over25": 6,
+      "under25": 1.1,
+      "over35": 19,
+      "under35": 1.02,
+      "bttsYes": 1.8,
+      "bttsNo": 1.91,
+      "dc1x": 1.15,
+      "dc12": 1.25,
+      "dcx2": 2.25
     },
     "h2h": null
   },
@@ -29137,7 +29839,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.5,
       "draw": 3.9,
-      "away": 5
+      "away": 5,
+      "over15": 2.5,
+      "under15": 1.44,
+      "over25": 6,
+      "under25": 1.11,
+      "over35": 17,
+      "under35": 1.02,
+      "bttsYes": 1.75,
+      "bttsNo": 1.95,
+      "dc1x": 1.14,
+      "dc12": 1.22,
+      "dcx2": 2.38
     },
     "h2h": null
   },
@@ -29465,7 +30178,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.62,
       "draw": 3.3,
-      "away": 2.3
+      "away": 2.3,
+      "over15": 2.62,
+      "under15": 1.44,
+      "over25": 6.5,
+      "under25": 1.1,
+      "over35": 21,
+      "under35": 1.02,
+      "bttsYes": 1.62,
+      "bttsNo": 2.15,
+      "dc1x": 1.55,
+      "dc12": 1.29,
+      "dcx2": 1.44
     },
     "h2h": null
   },
@@ -29947,9 +30671,20 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round of 32",
     "odds": {
-      "home": 1.93,
-      "draw": 3.4,
-      "away": 3.85
+      "home": 2.05,
+      "draw": 3.3,
+      "away": 3.6,
+      "over15": 1.38,
+      "under15": 3,
+      "over25": 2.1,
+      "under25": 1.7,
+      "over35": 3.8,
+      "under35": 1.25,
+      "bttsYes": 1.83,
+      "bttsNo": 1.85,
+      "dc1x": 1.28,
+      "dc12": 1.28,
+      "dcx2": 1.7
     },
     "h2h": null
   },
@@ -30015,12 +30750,12 @@ window.MATCHES = [
     "homePos": 2,
     "awayPos": 3,
     "tableSize": 19,
-    "homePts": 41,
-    "awayPts": 36,
-    "homeGD": 35,
-    "awayGD": 40,
-    "homeForm": "DLLWW",
-    "awayForm": "LWWWL",
+    "homePts": 44,
+    "awayPts": 39,
+    "homeGD": 36,
+    "awayGD": 41,
+    "homeForm": "WDLLW",
+    "awayForm": "WLWWW",
     "homeScoredAtHome": 2.7,
     "homeConcededAtHome": 1.2,
     "awayScoredAway": 2.6,
@@ -30036,7 +30771,7 @@ window.MATCHES = [
       "goalsPerGame": 5.14,
       "drawRate": 0.13,
       "homeWinRate": 0.46,
-      "gamesPlayed": 167,
+      "gamesPlayed": 161,
       "reliable": true
     },
     "homeWinRate": 0.67,
@@ -31029,10 +31764,10 @@ window.MATCHES = [
     "awayVenueGames": 8,
     "venueTableSize": 12,
     "leagueAvg": {
-      "goalsPerGame": 3.4,
+      "goalsPerGame": 3.43,
       "drawRate": 0.15,
-      "homeWinRate": 0.43,
-      "gamesPlayed": 95,
+      "homeWinRate": 0.44,
+      "gamesPlayed": 96,
       "reliable": true
     },
     "homeWinRate": 0.33,
@@ -31076,17 +31811,17 @@ window.MATCHES = [
     "awayScoredAway": 1.4,
     "awayConcededAway": 1.5,
     "homeVenueRank": 5,
-    "awayVenueRank": 7,
+    "awayVenueRank": 6,
     "homeVenuePts": 12,
     "awayVenuePts": 10,
     "homeVenueGames": 8,
     "awayVenueGames": 8,
     "venueTableSize": 12,
     "leagueAvg": {
-      "goalsPerGame": 3.4,
+      "goalsPerGame": 3.43,
       "drawRate": 0.15,
-      "homeWinRate": 0.43,
-      "gamesPlayed": 95,
+      "homeWinRate": 0.44,
+      "gamesPlayed": 96,
       "reliable": true
     },
     "homeWinRate": 0.38,
@@ -31871,10 +32606,10 @@ window.MATCHES = [
     "tableSize": 19,
     "homePts": 34,
     "awayPts": 51,
-    "homeGD": 37,
-    "awayGD": 63,
-    "homeForm": "DLLWW",
-    "awayForm": "WWWLW",
+    "homeGD": 36,
+    "awayGD": 62,
+    "homeForm": "LDLLW",
+    "awayForm": "LWWWL",
     "homeScoredAtHome": 3.3,
     "homeConcededAtHome": 1.7,
     "awayScoredAway": 3.4,
@@ -31890,7 +32625,7 @@ window.MATCHES = [
       "goalsPerGame": 5.14,
       "drawRate": 0.13,
       "homeWinRate": 0.46,
-      "gamesPlayed": 167,
+      "gamesPlayed": 161,
       "reliable": true
     },
     "homeWinRate": 0.56,
@@ -32017,7 +32752,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.36,
       "draw": 3.45,
-      "away": 2.64
+      "away": 2.64,
+      "over15": 1.15,
+      "under15": 5,
+      "over25": 1.5,
+      "under25": 2.5,
+      "over35": 2.2,
+      "under35": 1.62,
+      "bttsYes": 1.4,
+      "bttsNo": 2.62,
+      "dc1x": 1.45,
+      "dc12": 1.22,
+      "dcx2": 1.53
     },
     "h2h": null
   },
@@ -32833,13 +33579,13 @@ window.MATCHES = [
     "awayVenueGames": null,
     "venueTableSize": 20,
     "leagueAvg": null,
-    "homeWinRate": 0.44,
+    "homeWinRate": 0.5,
     "awayWinRate": 0.67,
-    "homeUnbeatenRate": 0.89,
+    "homeUnbeatenRate": 0.9,
     "awayUnbeatenRate": 0.67,
-    "homeCleanSheetRate": 0.11,
+    "homeCleanSheetRate": 0.1,
     "awayCleanSheetRate": 0.33,
-    "homeFailedToScoreRate": 0.11,
+    "homeFailedToScoreRate": 0.1,
     "awayFailedToScoreRate": 0,
     "statsReal": true,
     "sameGroup": false,
@@ -33245,7 +33991,18 @@ window.MATCHES = [
     "odds": {
       "home": 8.6,
       "draw": 3.98,
-      "away": 1.42
+      "away": 1.42,
+      "over15": 1.24,
+      "under15": 3.38,
+      "over25": 1.83,
+      "under25": 1.94,
+      "over35": 2.8,
+      "under35": 1.34,
+      "bttsYes": 2.05,
+      "bttsNo": 1.67,
+      "dc1x": 2.73,
+      "dc12": 1.22,
+      "dcx2": 1.05
     },
     "h2h": null
   },
@@ -33447,7 +34204,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.67,
       "draw": 3.4,
-      "away": 4.65
+      "away": 4.65,
+      "over15": 1.31,
+      "under15": 2.92,
+      "over25": 2.03,
+      "under25": 1.7,
+      "over35": 3.48,
+      "under35": 1.22,
+      "bttsYes": 1.93,
+      "bttsNo": 1.74,
+      "dc1x": 1.12,
+      "dc12": 1.23,
+      "dcx2": 1.97
     },
     "h2h": null
   },
@@ -34093,7 +34861,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.95,
       "draw": 3,
-      "away": 3.5
+      "away": 3.5,
+      "over15": 2.9,
+      "under15": 1.35,
+      "over25": 8,
+      "under25": 1.07,
+      "over35": null,
+      "under35": null,
+      "bttsYes": 1.83,
+      "bttsNo": 1.85,
+      "dc1x": 1.25,
+      "dc12": 1.33,
+      "dcx2": 1.73
     },
     "h2h": null
   },
@@ -34151,7 +34930,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.8,
       "draw": 3.3,
-      "away": 3.7
+      "away": 3.7,
+      "over15": 2.3,
+      "under15": 1.5,
+      "over25": 5.5,
+      "under25": 1.12,
+      "over35": null,
+      "under35": null,
+      "bttsYes": 1.57,
+      "bttsNo": 2.2,
+      "dc1x": 1.22,
+      "dc12": 1.25,
+      "dcx2": 1.85
     },
     "h2h": null
   },
@@ -34209,7 +34999,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.62,
       "draw": 4.2,
-      "away": 4
+      "away": 4,
+      "over15": 1.95,
+      "under15": 1.75,
+      "over25": 3.9,
+      "under25": 1.22,
+      "over35": 9.5,
+      "under35": 1.05,
+      "bttsYes": 1.4,
+      "bttsNo": 2.7,
+      "dc1x": 1.2,
+      "dc12": 1.2,
+      "dcx2": 2.2
     },
     "h2h": null
   },
@@ -34267,7 +35068,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.4,
       "draw": 3.5,
-      "away": 2.45
+      "away": 2.45,
+      "over15": 2.15,
+      "under15": 1.62,
+      "over25": 4.5,
+      "under25": 1.18,
+      "over35": 12,
+      "under35": 1.04,
+      "bttsYes": 1.44,
+      "bttsNo": 2.62,
+      "dc1x": 1.5,
+      "dc12": 1.25,
+      "dcx2": 1.5
     },
     "h2h": null
   },
@@ -34325,7 +35137,18 @@ window.MATCHES = [
     "odds": {
       "home": 5,
       "draw": 4.35,
-      "away": 1.47
+      "away": 1.47,
+      "over15": 1.08,
+      "under15": 5.7,
+      "over25": 1.36,
+      "under25": 2.69,
+      "over35": 2,
+      "under35": 1.72,
+      "bttsYes": 1.48,
+      "bttsNo": 2.4,
+      "dc1x": 2.33,
+      "dc12": 1.14,
+      "dcx2": 1.1
     },
     "h2h": null
   },
@@ -34383,7 +35206,18 @@ window.MATCHES = [
     "odds": {
       "home": 4.6,
       "draw": 3.5,
-      "away": 1.58
+      "away": 1.58,
+      "over15": 1.24,
+      "under15": 3.4,
+      "over25": 1.79,
+      "under25": 1.85,
+      "over35": 2.95,
+      "under35": 1.3,
+      "bttsYes": 1.8,
+      "bttsNo": 1.89,
+      "dc1x": 1.98,
+      "dc12": 1.19,
+      "dcx2": 1.12
     },
     "h2h": null
   },
@@ -34441,7 +35275,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.22,
       "draw": 5.45,
-      "away": 9.1
+      "away": 9.1,
+      "over15": 1.06,
+      "under15": 6,
+      "over25": 1.35,
+      "under25": 2.74,
+      "over35": 1.96,
+      "under35": 1.74,
+      "bttsYes": 1.69,
+      "bttsNo": 1.97,
+      "dc1x": null,
+      "dc12": 1.08,
+      "dcx2": 3.42
     },
     "h2h": null
   },
@@ -35219,7 +36064,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.62,
       "draw": 3.6,
-      "away": 2.2
+      "away": 2.2,
+      "over15": 1.91,
+      "under15": 1.8,
+      "over25": 3.75,
+      "under25": 1.22,
+      "over35": 9,
+      "under35": 1.06,
+      "bttsYes": 1.33,
+      "bttsNo": 3.1,
+      "dc1x": 1.62,
+      "dc12": 1.25,
+      "dcx2": 1.4
     },
     "h2h": null
   },
@@ -35277,7 +36133,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.7,
       "draw": 3.85,
-      "away": 4.6
+      "away": 4.6,
+      "over15": 1.22,
+      "under15": 4.33,
+      "over25": 1.67,
+      "under25": 2.2,
+      "over35": 2.65,
+      "under35": 1.48,
+      "bttsYes": 1.62,
+      "bttsNo": 2.1,
+      "dc1x": 1.18,
+      "dc12": 1.2,
+      "dcx2": 2.1
     },
     "h2h": null
   },
@@ -35953,7 +36820,18 @@ window.MATCHES = [
     "odds": {
       "home": 3.25,
       "draw": 2.92,
-      "away": 2.38
+      "away": 2.38,
+      "over15": 1.57,
+      "under15": 2.35,
+      "over25": 2.7,
+      "under25": 1.45,
+      "over35": 5.5,
+      "under35": 1.14,
+      "bttsYes": 2.15,
+      "bttsNo": 1.62,
+      "dc1x": 1.55,
+      "dc12": 1.33,
+      "dcx2": 1.33
     },
     "h2h": null
   },
@@ -36119,7 +36997,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.75,
       "draw": 3.35,
-      "away": 2.2
+      "away": 2.2,
+      "over15": 1.18,
+      "under15": 3.95,
+      "over25": 1.62,
+      "under25": 2.08,
+      "over35": 2.55,
+      "under35": 1.42,
+      "bttsYes": 1.53,
+      "bttsNo": 2.3,
+      "dc1x": 1.5,
+      "dc12": 1.22,
+      "dcx2": 1.32
     },
     "h2h": null
   },
@@ -37125,7 +38014,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.43,
       "draw": 4.35,
-      "away": 7
+      "away": 7,
+      "over15": 1.22,
+      "under15": 4.2,
+      "over25": 1.65,
+      "under25": 2.2,
+      "over35": 2.62,
+      "under35": 1.48,
+      "bttsYes": 1.77,
+      "bttsNo": 1.91,
+      "dc1x": 1.1,
+      "dc12": 1.15,
+      "dcx2": 2.7
     },
     "h2h": null
   },
@@ -37183,7 +38083,18 @@ window.MATCHES = [
     "odds": {
       "home": 5.9,
       "draw": 3.95,
-      "away": 1.55
+      "away": 1.55,
+      "over15": 1.28,
+      "under15": 3.65,
+      "over25": 1.83,
+      "under25": 1.95,
+      "over35": 3.1,
+      "under35": 1.36,
+      "bttsYes": 1.83,
+      "bttsNo": 1.85,
+      "dc1x": 2.38,
+      "dc12": 1.2,
+      "dcx2": 1.12
     },
     "h2h": null
   },
@@ -37241,7 +38152,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.41,
       "draw": 4.4,
-      "away": 7.6
+      "away": 7.6,
+      "over15": 1.22,
+      "under15": 4.2,
+      "over25": 1.65,
+      "under25": 2.2,
+      "over35": 2.6,
+      "under35": 1.48,
+      "bttsYes": 1.77,
+      "bttsNo": 1.9,
+      "dc1x": 1.08,
+      "dc12": 1.15,
+      "dcx2": 2.8
     },
     "h2h": null
   },
@@ -37299,7 +38221,18 @@ window.MATCHES = [
     "odds": {
       "home": 4.55,
       "draw": 3.7,
-      "away": 1.73
+      "away": 1.73,
+      "over15": 1.25,
+      "under15": 3.75,
+      "over25": 1.8,
+      "under25": 2,
+      "over35": 3,
+      "under35": 1.38,
+      "bttsYes": 1.7,
+      "bttsNo": 2,
+      "dc1x": 2.05,
+      "dc12": 1.22,
+      "dcx2": 1.18
     },
     "h2h": null
   },
@@ -37357,7 +38290,10 @@ window.MATCHES = [
     "odds": {
       "home": 4.3,
       "draw": 3.85,
-      "away": 1.74
+      "away": 1.74,
+      "dc1x": 1.93,
+      "dc12": 1.2,
+      "dcx2": 1.18
     },
     "h2h": null
   },
@@ -37415,7 +38351,10 @@ window.MATCHES = [
     "odds": {
       "home": 1.74,
       "draw": 3.85,
-      "away": 4.3
+      "away": 4.3,
+      "dc1x": 1.17,
+      "dc12": 1.2,
+      "dcx2": 1.95
     },
     "h2h": null
   },
@@ -37473,7 +38412,10 @@ window.MATCHES = [
     "odds": {
       "home": 4.55,
       "draw": 3.7,
-      "away": 1.72
+      "away": 1.72,
+      "dc1x": 1.95,
+      "dc12": 1.22,
+      "dcx2": 1.15
     },
     "h2h": null
   },
@@ -37531,7 +38473,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.52,
       "draw": 3.25,
-      "away": 2.74
+      "away": 2.74,
+      "over15": 1.36,
+      "under15": 3.1,
+      "over25": 2.1,
+      "under25": 1.73,
+      "over35": 3.75,
+      "under35": 1.25,
+      "bttsYes": 1.77,
+      "bttsNo": 1.9,
+      "dc1x": 1.42,
+      "dc12": 1.28,
+      "dcx2": 1.5
     },
     "h2h": null
   },
@@ -38009,7 +38962,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.16,
       "draw": 3.75,
-      "away": 2.95
+      "away": 2.95,
+      "over15": 1.2,
+      "under15": 4.5,
+      "over25": 1.62,
+      "under25": 2.25,
+      "over35": 2.55,
+      "under35": 1.5,
+      "bttsYes": 1.5,
+      "bttsNo": 2.35,
+      "dc1x": 1.38,
+      "dc12": 1.22,
+      "dcx2": 1.67
     },
     "h2h": null
   },
@@ -38067,7 +39031,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.25,
       "draw": 3.8,
-      "away": 2.45
+      "away": 2.45,
+      "over15": 1.85,
+      "under15": 1.85,
+      "over25": 3.6,
+      "under25": 1.25,
+      "over35": 8.5,
+      "under35": 1.06,
+      "bttsYes": 1.3,
+      "bttsNo": 3.2,
+      "dc1x": 1.44,
+      "dc12": 1.22,
+      "dcx2": 1.57
     },
     "h2h": null
   },
@@ -38125,7 +39100,16 @@ window.MATCHES = [
     "odds": {
       "home": 3.65,
       "draw": 4,
-      "away": 1.7
+      "away": 1.7,
+      "over15": 1.07,
+      "under15": 6.5,
+      "over25": 1.27,
+      "under25": 3.2,
+      "over35": 1.71,
+      "under35": 1.95,
+      "dc1x": 1.89,
+      "dc12": 1.15,
+      "dcx2": 1.18
     },
     "h2h": null
   },
@@ -38183,7 +39167,16 @@ window.MATCHES = [
     "odds": {
       "home": 3.05,
       "draw": 3.75,
-      "away": 1.93
+      "away": 1.93,
+      "over15": 1.08,
+      "under15": 5.75,
+      "over25": 1.33,
+      "under25": 2.88,
+      "over35": 1.86,
+      "under35": 1.79,
+      "dc1x": 1.67,
+      "dc12": 1.18,
+      "dcx2": 1.26
     },
     "h2h": null
   },
@@ -38241,7 +39234,16 @@ window.MATCHES = [
     "odds": {
       "home": 2.55,
       "draw": 3.5,
-      "away": 2.3
+      "away": 2.3,
+      "over15": 1.13,
+      "under15": 4.6,
+      "over25": 1.47,
+      "under25": 2.38,
+      "over35": 2.18,
+      "under35": 1.56,
+      "dc1x": 1.46,
+      "dc12": 1.2,
+      "dcx2": 1.37
     },
     "h2h": null
   },
@@ -38299,7 +39301,18 @@ window.MATCHES = [
     "odds": {
       "home": 6,
       "draw": 4.4,
-      "away": 1.4
+      "away": 1.4,
+      "over15": 1.12,
+      "under15": 4.9,
+      "over25": 1.43,
+      "under25": 2.5,
+      "over35": 2.08,
+      "under35": 1.62,
+      "bttsYes": 1.58,
+      "bttsNo": 2.18,
+      "dc1x": 2.45,
+      "dc12": 1.13,
+      "dcx2": 1.07
     },
     "h2h": null
   },
@@ -38561,7 +39574,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.16,
       "draw": 6.4,
-      "away": 18
+      "away": 18,
+      "over15": 1.2,
+      "under15": 4.33,
+      "over25": 1.65,
+      "under25": 2.2,
+      "over35": 2.6,
+      "under35": 1.48,
+      "bttsYes": 2.65,
+      "bttsNo": 1.42,
+      "dc1x": 1.02,
+      "dc12": 1.09,
+      "dcx2": 5
     },
     "h2h": null
   },
@@ -38673,7 +39697,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.62,
       "draw": 3.8,
-      "away": 4.4
+      "away": 4.4,
+      "over15": 2.2,
+      "under15": 1.6,
+      "over25": 5,
+      "under25": 1.15,
+      "over35": 13,
+      "under35": 1.03,
+      "bttsYes": 1.57,
+      "bttsNo": 2.25,
+      "dc1x": 1.18,
+      "dc12": 1.22,
+      "dcx2": 2.2
     },
     "h2h": null
   },
@@ -38839,7 +39874,16 @@ window.MATCHES = [
     "odds": {
       "home": 7.5,
       "draw": 4.2,
-      "away": 1.33
+      "away": 1.33,
+      "over15": null,
+      "under15": null,
+      "over25": null,
+      "under25": null,
+      "over35": 1.85,
+      "under35": 1.75,
+      "dc1x": 2.65,
+      "dc12": 1.12,
+      "dcx2": 1.02
     },
     "h2h": null
   },
@@ -39221,7 +40265,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.36,
       "draw": 4.85,
-      "away": 7.9
+      "away": 7.9,
+      "over15": 1.25,
+      "under15": 3.75,
+      "over25": 1.8,
+      "under25": 2,
+      "over35": 3,
+      "under35": 1.38,
+      "bttsYes": 2.1,
+      "bttsNo": 1.67,
+      "dc1x": 1.05,
+      "dc12": 1.17,
+      "dcx2": 3.1
     },
     "h2h": null
   },
@@ -39276,7 +40331,22 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Regular Season - 17",
-    "odds": null,
+    "odds": {
+      "home": 2.68,
+      "draw": 3.1,
+      "away": 2.68,
+      "over15": 1.45,
+      "under15": 2.7,
+      "over25": 2.38,
+      "under25": 1.57,
+      "over35": 4.5,
+      "under35": 1.2,
+      "bttsYes": 1.93,
+      "bttsNo": 1.75,
+      "dc1x": 1.45,
+      "dc12": 1.3,
+      "dcx2": 1.45
+    },
     "h2h": null
   },
   {
@@ -39600,7 +40670,20 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": true,
     "round": "Group Stage",
-    "odds": null,
+    "odds": {
+      "home": 1.67,
+      "draw": 3.9,
+      "away": 3.75,
+      "over15": null,
+      "under15": null,
+      "over25": 1.53,
+      "under25": 2.38,
+      "over35": null,
+      "under35": null,
+      "dc1x": 1.22,
+      "dc12": 1.5,
+      "dcx2": 1.62
+    },
     "h2h": null
   },
   {
@@ -39864,7 +40947,22 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Group Stage",
-    "odds": null,
+    "odds": {
+      "home": 1.95,
+      "draw": 3.3,
+      "away": 3.45,
+      "over15": 1.3,
+      "under15": 3.2,
+      "over25": 1.95,
+      "under25": 1.77,
+      "over35": 3.45,
+      "under35": 1.28,
+      "bttsYes": 1.75,
+      "bttsNo": 1.9,
+      "dc1x": 1.22,
+      "dc12": 1.22,
+      "dcx2": 1.77
+    },
     "h2h": null
   },
   {
@@ -40074,7 +41172,22 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Group Stage",
-    "odds": null,
+    "odds": {
+      "home": 1.53,
+      "draw": 4.1,
+      "away": 5.1,
+      "over15": 1.18,
+      "under15": 4.33,
+      "over25": 1.62,
+      "under25": 2.2,
+      "over35": 2.5,
+      "under35": 1.48,
+      "bttsYes": 1.65,
+      "bttsNo": 2.05,
+      "dc1x": 1.1,
+      "dc12": 1.15,
+      "dcx2": 2.4
+    },
     "h2h": null
   },
   {
@@ -41307,7 +42420,18 @@ window.MATCHES = [
     "odds": {
       "home": 5.05,
       "draw": 3.24,
-      "away": 1.77
+      "away": 1.77,
+      "over15": 1.32,
+      "under15": 2.89,
+      "over25": 2.07,
+      "under25": 1.73,
+      "over35": 3.38,
+      "under35": 1.24,
+      "bttsYes": 1.92,
+      "bttsNo": 1.77,
+      "dc1x": 1.98,
+      "dc12": 1.32,
+      "dcx2": 1.14
     },
     "h2h": null
   },
@@ -41365,7 +42489,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.54,
       "draw": 4,
-      "away": 4.75
+      "away": 4.75,
+      "over15": 1.12,
+      "under15": 4.9,
+      "over25": 1.43,
+      "under25": 2.48,
+      "over35": 2.12,
+      "under35": 1.6,
+      "bttsYes": 1.52,
+      "bttsNo": 2.33,
+      "dc1x": 1.11,
+      "dc12": 1.15,
+      "dcx2": 2.12
     },
     "h2h": null
   },
@@ -41763,9 +42898,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 14",
     "odds": {
-      "home": 1.8,
-      "draw": 3.75,
-      "away": 3.4
+      "home": 1.75,
+      "draw": 3.8,
+      "away": 3.6,
+      "over15": 2.15,
+      "under15": 1.62,
+      "over25": 4.75,
+      "under25": 1.17,
+      "over35": 12,
+      "under35": 1.04,
+      "bttsYes": 1.5,
+      "bttsNo": 2.4,
+      "dc1x": 1.25,
+      "dc12": 1.22,
+      "dcx2": 1.95
     },
     "h2h": null
   },
@@ -41875,9 +43021,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Group A",
     "odds": {
-      "home": 2.25,
-      "draw": 3.45,
-      "away": 2.55
+      "home": 2.2,
+      "draw": 3.8,
+      "away": 2.5,
+      "over15": 1.11,
+      "under15": 6,
+      "over25": 1.4,
+      "under25": 2.75,
+      "over35": 2,
+      "under35": 1.73,
+      "bttsYes": 1.4,
+      "bttsNo": 2.75,
+      "dc1x": 1.36,
+      "dc12": 1.5,
+      "dcx2": 1.44
     },
     "h2h": null
   },
@@ -41935,7 +43092,16 @@ window.MATCHES = [
     "odds": {
       "home": 2.08,
       "draw": 3.5,
-      "away": 2.7
+      "away": 2.7,
+      "over15": 1.07,
+      "under15": 5,
+      "over25": 1.36,
+      "under25": 2.5,
+      "over35": 1.97,
+      "under35": 1.6,
+      "dc1x": 1.3,
+      "dc12": 1.18,
+      "dcx2": 1.53
     },
     "h2h": null
   },
@@ -41993,7 +43159,18 @@ window.MATCHES = [
     "odds": {
       "home": 6.65,
       "draw": 4.55,
-      "away": 1.35
+      "away": 1.35,
+      "over15": 1.11,
+      "under15": 4.95,
+      "over25": 1.45,
+      "under25": 2.41,
+      "over35": 2.19,
+      "under35": 1.6,
+      "bttsYes": 1.66,
+      "bttsNo": 2.04,
+      "dc1x": 2.72,
+      "dc12": 1.12,
+      "dcx2": 1.04
     },
     "h2h": null
   },
@@ -42051,7 +43228,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.82,
       "draw": 3.4,
-      "away": 3.75
+      "away": 3.75,
+      "over15": 1.24,
+      "under15": 3.4,
+      "over25": 1.78,
+      "under25": 1.86,
+      "over35": 2.95,
+      "under35": 1.32,
+      "bttsYes": 1.7,
+      "bttsNo": 2,
+      "dc1x": 1.17,
+      "dc12": 1.21,
+      "dcx2": 1.77
     },
     "h2h": null
   },
@@ -42301,7 +43489,18 @@ window.MATCHES = [
     "odds": {
       "home": 8.3,
       "draw": 3.74,
-      "away": 1.46
+      "away": 1.46,
+      "over15": 1.25,
+      "under15": 3.3,
+      "over25": 1.89,
+      "under25": 1.89,
+      "over35": 2.89,
+      "under35": 1.32,
+      "bttsYes": 2.06,
+      "bttsNo": 1.66,
+      "dc1x": 2.59,
+      "dc12": 1.25,
+      "dcx2": 1.05
     },
     "h2h": null
   },
@@ -42359,7 +43558,18 @@ window.MATCHES = [
     "odds": {
       "home": 6.5,
       "draw": 5.8,
-      "away": 1.29
+      "away": 1.29,
+      "over15": 1.57,
+      "under15": 2.25,
+      "over25": 2.75,
+      "under25": 1.4,
+      "over35": 5.8,
+      "under35": 1.12,
+      "bttsYes": 1.3,
+      "bttsNo": 3.1,
+      "dc1x": 3.3,
+      "dc12": 1.12,
+      "dcx2": 1.1
     },
     "h2h": null
   },
@@ -42663,7 +43873,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.32,
       "draw": 4.65,
-      "away": 10
+      "away": 10,
+      "over15": 1.25,
+      "under15": 3.75,
+      "over25": 1.8,
+      "under25": 2,
+      "over35": 2.95,
+      "under35": 1.38,
+      "bttsYes": 2.15,
+      "bttsNo": 1.62,
+      "dc1x": 1.04,
+      "dc12": 1.17,
+      "dcx2": 3.25
     },
     "h2h": null
   },
@@ -42769,7 +43990,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.15,
       "draw": 7,
-      "away": 13
+      "away": 13,
+      "over15": 1.75,
+      "under15": 1.95,
+      "over25": 3.5,
+      "under25": 1.25,
+      "over35": 8,
+      "under35": 1.07,
+      "bttsYes": 1.7,
+      "bttsNo": 2.05,
+      "dc1x": 1.03,
+      "dc12": 1.08,
+      "dcx2": 5
     },
     "h2h": null
   },
@@ -42983,7 +44215,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.8,
       "draw": 3.7,
-      "away": 3.8
+      "away": 3.8,
+      "over15": 2.3,
+      "under15": 1.55,
+      "over25": 5,
+      "under25": 1.12,
+      "over35": 15,
+      "under35": 1.03,
+      "bttsYes": 1.62,
+      "bttsNo": 2.2,
+      "dc1x": 1.22,
+      "dc12": 1.25,
+      "dcx2": 1.95
     },
     "h2h": null
   },
@@ -43041,7 +44284,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.76,
       "draw": 3.4,
-      "away": 4.8
+      "away": 4.8,
+      "over15": 1.36,
+      "under15": 3.1,
+      "over25": 2.1,
+      "under25": 1.73,
+      "over35": 3.75,
+      "under35": 1.25,
+      "bttsYes": 1.91,
+      "bttsNo": 1.8,
+      "dc1x": 1.18,
+      "dc12": 1.25,
+      "dcx2": 2
     },
     "h2h": null
   },
@@ -43098,8 +44352,19 @@ window.MATCHES = [
     "round": "Regular Season - 16",
     "odds": {
       "home": 1.84,
-      "draw": 3.25,
-      "away": 4.6
+      "draw": 3.2,
+      "away": 4.7,
+      "over15": 1.48,
+      "under15": 2.6,
+      "over25": 2.45,
+      "under25": 1.53,
+      "over35": 4.75,
+      "under35": 1.18,
+      "bttsYes": 2.1,
+      "bttsNo": 1.62,
+      "dc1x": 1.18,
+      "dc12": 1.28,
+      "dcx2": 1.91
     },
     "h2h": null
   },
@@ -43475,7 +44740,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.5,
       "draw": 4.1,
-      "away": 5.4
+      "away": 5.25,
+      "over15": 1.17,
+      "under15": 4.5,
+      "over25": 1.53,
+      "under25": 2.38,
+      "over35": 2.3,
+      "under35": 1.57,
+      "bttsYes": 1.57,
+      "bttsNo": 2.15,
+      "dc1x": 1.09,
+      "dc12": 1.15,
+      "dcx2": 2.4
     },
     "h2h": null
   },
@@ -43533,9 +44809,21 @@ window.MATCHES = [
     "odds": {
       "home": 2.18,
       "draw": 2.88,
-      "away": 3.8
+      "away": 3.8,
+      "over15": 1.62,
+      "under15": 2.25,
+      "over25": 2.85,
+      "under25": 1.42,
+      "over35": 5.75,
+      "under35": 1.12,
+      "bttsYes": 2.25,
+      "bttsNo": 1.57,
+      "dc1x": 1.25,
+      "dc12": 1.35,
+      "dcx2": 1.65
     },
-    "h2h": null
+    "h2h": null,
+    "lineupConfirmed": true
   },
   {
     "home": "Snohomish United",
@@ -43589,9 +44877,20 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": {
-      "home": 1.28,
-      "draw": 5.75,
-      "away": 6
+      "home": 1.29,
+      "draw": 6,
+      "away": 6,
+      "over15": 1.62,
+      "under15": 2.15,
+      "over25": 2.88,
+      "under25": 1.36,
+      "over35": 6,
+      "under35": 1.11,
+      "bttsYes": 1.4,
+      "bttsNo": 2.62,
+      "dc1x": 1.07,
+      "dc12": 1.11,
+      "dcx2": 3.5
     },
     "h2h": null
   },
@@ -43802,7 +45101,20 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
-    "odds": null,
+    "odds": {
+      "home": 2.4,
+      "draw": 3.6,
+      "away": 2.4,
+      "over15": null,
+      "under15": null,
+      "over25": 1.53,
+      "under25": 2.38,
+      "over35": null,
+      "under35": null,
+      "dc1x": null,
+      "dc12": null,
+      "dcx2": null
+    },
     "h2h": null
   },
   {
@@ -43888,7 +45200,7 @@ window.MATCHES = [
       "goalsPerGame": 5.14,
       "drawRate": 0.13,
       "homeWinRate": 0.46,
-      "gamesPlayed": 167,
+      "gamesPlayed": 161,
       "reliable": true
     },
     "homeWinRate": 0.44,
@@ -44156,7 +45468,22 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Regular Season - 13",
-    "odds": null,
+    "odds": {
+      "home": 2.5,
+      "draw": 3.4,
+      "away": 2.4,
+      "over15": 2.05,
+      "under15": 1.67,
+      "over25": 4.5,
+      "under25": 1.18,
+      "over35": 12,
+      "under35": 1.04,
+      "bttsYes": 1.36,
+      "bttsNo": 2.8,
+      "dc1x": 1.53,
+      "dc12": 1.25,
+      "dcx2": 1.5
+    },
     "h2h": null
   },
   {
@@ -44264,7 +45591,17 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Regular Season - 8",
-    "odds": null,
+    "odds": {
+      "home": 3.8,
+      "draw": 3.9,
+      "away": 1.67,
+      "over15": null,
+      "under15": null,
+      "over25": 1.53,
+      "under25": 2.38,
+      "over35": null,
+      "under35": null
+    },
     "h2h": null
   },
   {
@@ -44494,7 +45831,7 @@ window.MATCHES = [
       "goalsPerGame": 5.14,
       "drawRate": 0.13,
       "homeWinRate": 0.46,
-      "gamesPlayed": 167,
+      "gamesPlayed": 161,
       "reliable": true
     },
     "homeWinRate": 0.3,
@@ -44510,7 +45847,20 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": true,
     "round": "Regular Season - 22",
-    "odds": null,
+    "odds": {
+      "home": 2.9,
+      "draw": 4.5,
+      "away": 1.83,
+      "over15": null,
+      "under15": null,
+      "over25": 1.17,
+      "under25": 4.5,
+      "over35": null,
+      "under35": null,
+      "dc1x": 1.8,
+      "dc12": 1.12,
+      "dcx2": 1.3
+    },
     "h2h": null
   },
   {
@@ -44567,7 +45917,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.4,
       "draw": 3.3,
-      "away": 2.55
+      "away": 2.55,
+      "over15": 1.25,
+      "under15": 3.28,
+      "over25": 1.89,
+      "under25": 1.8,
+      "over35": 3.28,
+      "under35": 1.25,
+      "bttsYes": 1.69,
+      "bttsNo": 1.97,
+      "dc1x": 1.39,
+      "dc12": 1.24,
+      "dcx2": 1.44
     },
     "h2h": null
   },
@@ -45837,7 +47198,16 @@ window.MATCHES = [
     "odds": {
       "home": 2.33,
       "draw": 2.9,
-      "away": 2.9
+      "away": 2.9,
+      "over15": 1.48,
+      "under15": 2.3,
+      "over25": 2.3,
+      "under25": 1.48,
+      "over35": null,
+      "under35": null,
+      "dc1x": 1.28,
+      "dc12": 1.28,
+      "dcx2": 1.53
     },
     "h2h": null
   },
@@ -45895,7 +47265,18 @@ window.MATCHES = [
     "odds": {
       "home": 4.55,
       "draw": 3.24,
-      "away": 1.71
+      "away": 1.71,
+      "over15": 1.22,
+      "under15": 3.5,
+      "over25": 1.79,
+      "under25": 1.9,
+      "over35": 2.83,
+      "under35": 1.33,
+      "bttsYes": 1.71,
+      "bttsNo": 1.95,
+      "dc1x": 1.9,
+      "dc12": 1.25,
+      "dcx2": 1.12
     },
     "h2h": null
   },
@@ -45953,7 +47334,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.52,
       "draw": 3.75,
-      "away": 5.3
+      "away": 5.3,
+      "over15": 1.2,
+      "under15": 3.7,
+      "over25": 1.75,
+      "under25": 1.94,
+      "over35": 2.83,
+      "under35": 1.33,
+      "bttsYes": 1.78,
+      "bttsNo": 1.86,
+      "dc1x": 1.08,
+      "dc12": 1.18,
+      "dcx2": 2.21
     },
     "h2h": null
   },
@@ -46410,7 +47802,20 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": true,
     "round": "Group Stage",
-    "odds": null,
+    "odds": {
+      "home": 1.9,
+      "draw": 3.75,
+      "away": 3.1,
+      "over15": null,
+      "under15": null,
+      "over25": 1.5,
+      "under25": 2.5,
+      "over35": null,
+      "under35": null,
+      "dc1x": 1.3,
+      "dc12": 1.5,
+      "dcx2": 1.53
+    },
     "h2h": null
   },
   {
@@ -46467,7 +47872,16 @@ window.MATCHES = [
     "odds": {
       "home": 6,
       "draw": 4.75,
-      "away": 1.37
+      "away": 1.37,
+      "over15": 1.07,
+      "under15": 6.5,
+      "over25": 1.27,
+      "under25": 3.2,
+      "over35": 1.72,
+      "under35": 1.93,
+      "dc1x": 2.55,
+      "dc12": 1.11,
+      "dcx2": 1.07
     },
     "h2h": null
   },
@@ -46525,7 +47939,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.15,
       "draw": 3.25,
-      "away": 3.1
+      "away": 3.1,
+      "over15": 1.3,
+      "under15": 3.25,
+      "over25": 1.93,
+      "under25": 1.8,
+      "over35": 3.3,
+      "under35": 1.3,
+      "bttsYes": 1.7,
+      "bttsNo": 1.95,
+      "dc1x": 1.28,
+      "dc12": 1.25,
+      "dcx2": 1.65
     },
     "h2h": null
   },
@@ -46583,7 +48008,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.32,
       "draw": 4.25,
-      "away": 8.3
+      "away": 8.3,
+      "over15": 1.14,
+      "under15": 4.33,
+      "over25": 1.54,
+      "under25": 2.29,
+      "over35": 2.21,
+      "under35": 1.53,
+      "bttsYes": 1.81,
+      "bttsNo": 1.83,
+      "dc1x": 1.01,
+      "dc12": 1.14,
+      "dcx2": 2.83
     },
     "h2h": null
   },
@@ -46776,7 +48212,22 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
-    "odds": null,
+    "odds": {
+      "home": 1.53,
+      "draw": 4.2,
+      "away": 4.8,
+      "over15": null,
+      "under15": null,
+      "over25": 1.5,
+      "under25": 2.45,
+      "over35": 2.3,
+      "under35": 1.57,
+      "bttsYes": 1.57,
+      "bttsNo": 2.15,
+      "dc1x": 1.11,
+      "dc12": 1.14,
+      "dcx2": 2.38
+    },
     "h2h": null
   },
   {
@@ -46920,7 +48371,17 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
-    "odds": null,
+    "odds": {
+      "home": 2.45,
+      "draw": 3.6,
+      "away": 2.35,
+      "over15": null,
+      "under15": null,
+      "over25": 1.73,
+      "under25": 2.08,
+      "over35": null,
+      "under35": null
+    },
     "h2h": null
   },
   {
@@ -47169,9 +48630,31 @@ window.MATCHES = [
     "odds": {
       "home": 1.26,
       "draw": 5.25,
-      "away": 11.5
+      "away": 11.5,
+      "over15": 1.28,
+      "under15": 3.55,
+      "over25": 1.9,
+      "under25": 1.85,
+      "over35": 3.25,
+      "under35": 1.33,
+      "bttsYes": 2.55,
+      "bttsNo": 1.45,
+      "dc1x": 1.03,
+      "dc12": 1.13,
+      "dcx2": 3.7
     },
-    "h2h": null
+    "h2h": null,
+    "oddsOpen": {
+      "home": null,
+      "draw": null,
+      "away": null
+    },
+    "oddsLast": {
+      "home": 1.33,
+      "draw": 5,
+      "away": 10
+    },
+    "lineupConfirmed": true
   },
   {
     "home": "HJK Helsinki",
@@ -47221,7 +48704,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.67,
       "draw": 3.7,
-      "away": 4
+      "away": 4,
+      "over15": 1.95,
+      "under15": 1.73,
+      "over25": 4,
+      "under25": 1.2,
+      "over35": 10,
+      "under35": 1.05,
+      "bttsYes": 1.44,
+      "bttsNo": 2.5,
+      "dc1x": 1.2,
+      "dc12": 1.22,
+      "dcx2": 2.05
     },
     "h2h": null
   },
@@ -47279,7 +48773,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.6,
       "draw": 3.35,
-      "away": 2.35
+      "away": 2.35,
+      "over15": 1.16,
+      "under15": 4.2,
+      "over25": 1.58,
+      "under25": 2.15,
+      "over35": 2.43,
+      "under35": 1.45,
+      "bttsYes": 1.49,
+      "bttsNo": 2.4,
+      "dc1x": 1.44,
+      "dc12": 1.22,
+      "dcx2": 1.37
     },
     "h2h": null
   },
@@ -47520,7 +49025,22 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
-    "odds": null,
+    "odds": {
+      "home": 6,
+      "draw": 4.75,
+      "away": 1.4,
+      "over15": null,
+      "under15": null,
+      "over25": 1.42,
+      "under25": 2.7,
+      "over35": 2.05,
+      "under35": 1.7,
+      "bttsYes": 1.57,
+      "bttsNo": 2.15,
+      "dc1x": 2.8,
+      "dc12": 1.11,
+      "dcx2": 1.06
+    },
     "h2h": null
   },
   {
@@ -47616,7 +49136,17 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
-    "odds": null,
+    "odds": {
+      "home": 3.8,
+      "draw": 3.4,
+      "away": 1.8,
+      "over15": null,
+      "under15": null,
+      "over25": 1.9,
+      "under25": 1.9,
+      "over35": null,
+      "under35": null
+    },
     "h2h": null
   },
   {
@@ -48153,9 +49683,30 @@ window.MATCHES = [
     "odds": {
       "home": 1.55,
       "draw": 3.65,
-      "away": 5.8
+      "away": 5.8,
+      "over15": 1.25,
+      "under15": 3.65,
+      "over25": 1.8,
+      "under25": 1.95,
+      "over35": 2.95,
+      "under35": 1.36,
+      "bttsYes": 1.93,
+      "bttsNo": 1.73,
+      "dc1x": 1.07,
+      "dc12": 1.2,
+      "dcx2": 2.15
     },
-    "h2h": null
+    "h2h": null,
+    "oddsOpen": {
+      "home": null,
+      "draw": null,
+      "away": null
+    },
+    "oddsLast": {
+      "home": 1.38,
+      "draw": 4,
+      "away": 7
+    }
   },
   {
     "home": "Denmark U19",
@@ -48259,7 +49810,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.91,
       "draw": 3.65,
-      "away": 3.25
+      "away": 3.25,
+      "over15": 1.18,
+      "under15": 4.33,
+      "over25": 1.62,
+      "under25": 2.2,
+      "over35": 2.5,
+      "under35": 1.48,
+      "bttsYes": 1.53,
+      "bttsNo": 2.25,
+      "dc1x": 1.25,
+      "dc12": 1.2,
+      "dcx2": 1.8
     },
     "h2h": null
   },
@@ -48356,7 +49918,22 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
-    "odds": null,
+    "odds": {
+      "home": 1.64,
+      "draw": 4.1,
+      "away": 4.1,
+      "over15": null,
+      "under15": null,
+      "over25": 1.4,
+      "under25": 2.75,
+      "over35": 2,
+      "under35": 1.75,
+      "bttsYes": 1.42,
+      "bttsNo": 2.55,
+      "dc1x": 1.15,
+      "dc12": 1.15,
+      "dcx2": 2.15
+    },
     "h2h": null
   },
   {
@@ -48749,7 +50326,18 @@ window.MATCHES = [
     "odds": {
       "home": 5.15,
       "draw": 3.54,
-      "away": 1.68
+      "away": 1.68,
+      "over15": 1.3,
+      "under15": 2.99,
+      "over25": 2.03,
+      "under25": 1.76,
+      "over35": 3.38,
+      "under35": 1.24,
+      "bttsYes": 1.94,
+      "bttsNo": 1.75,
+      "dc1x": 2.1,
+      "dc12": 1.27,
+      "dcx2": 1.14
     },
     "h2h": null
   },
@@ -48807,7 +50395,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.28,
       "draw": 5,
-      "away": 8.75
+      "away": 8.75,
+      "over15": null,
+      "under15": null,
+      "over25": 1.35,
+      "under25": 3,
+      "over35": 1.85,
+      "under35": 1.85,
+      "bttsYes": 1.55,
+      "bttsNo": 2.2,
+      "dc1x": 1.02,
+      "dc12": 1.09,
+      "dcx2": 3
     },
     "h2h": null
   },
@@ -48856,7 +50455,20 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
-    "odds": null,
+    "odds": {
+      "home": 9.5,
+      "draw": 5.75,
+      "away": 1.2,
+      "over15": null,
+      "under15": null,
+      "over25": 1.36,
+      "under25": 3,
+      "over35": null,
+      "under35": null,
+      "dc1x": 3.2,
+      "dc12": 1.1,
+      "dcx2": 1.07
+    },
     "h2h": null
   },
   {
@@ -50141,11 +51753,33 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round of 32",
     "odds": {
-      "home": 2.16,
+      "home": 2.18,
       "draw": 3.2,
-      "away": 3.35
+      "away": 3.4,
+      "over15": 1.38,
+      "under15": 3,
+      "over25": 2.1,
+      "under25": 1.7,
+      "over35": 3.85,
+      "under35": 1.25,
+      "bttsYes": 1.83,
+      "bttsNo": 1.85,
+      "dc1x": 1.3,
+      "dc12": 1.28,
+      "dcx2": 1.65
     },
-    "h2h": null
+    "h2h": null,
+    "oddsOpen": {
+      "home": null,
+      "draw": null,
+      "away": null
+    },
+    "oddsLast": {
+      "home": 2.05,
+      "draw": 3.2,
+      "away": 4
+    },
+    "lineupConfirmed": true
   },
   {
     "home": "SF Glens",
@@ -50252,7 +51886,20 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": true,
     "round": "Group Stage",
-    "odds": null,
+    "odds": {
+      "home": 2.05,
+      "draw": 3.7,
+      "away": 2.75,
+      "over15": null,
+      "under15": null,
+      "over25": 1.57,
+      "under25": 2.35,
+      "over35": null,
+      "under35": null,
+      "dc1x": 1.36,
+      "dc12": 1.22,
+      "dcx2": 1.62
+    },
     "h2h": null
   },
   {
@@ -50309,7 +51956,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.75,
       "draw": 3.2,
-      "away": 2.48
+      "away": 2.48,
+      "over15": 1.3,
+      "under15": 3.2,
+      "over25": 1.98,
+      "under25": 1.74,
+      "over35": 3.4,
+      "under35": 1.27,
+      "bttsYes": 1.7,
+      "bttsNo": 1.92,
+      "dc1x": 1.42,
+      "dc12": 1.26,
+      "dcx2": 1.34
     },
     "h2h": null
   },
@@ -51213,7 +52871,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.48,
       "draw": 3.9,
-      "away": 7.1
+      "away": 7.1,
+      "over15": 1.3,
+      "under15": 3.35,
+      "over25": 1.95,
+      "under25": 1.83,
+      "over35": 3.4,
+      "under35": 1.3,
+      "bttsYes": 2,
+      "bttsNo": 1.7,
+      "dc1x": 1.09,
+      "dc12": 1.2,
+      "dcx2": 2.55
     },
     "h2h": null
   },
@@ -51484,7 +53153,20 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": true,
     "round": "Group Stage",
-    "odds": null,
+    "odds": {
+      "home": 2.1,
+      "draw": 3.7,
+      "away": 2.75,
+      "over15": null,
+      "under15": null,
+      "over25": 1.5,
+      "under25": 2.5,
+      "over35": null,
+      "under35": null,
+      "dc1x": 1.36,
+      "dc12": 1.22,
+      "dcx2": 1.6
+    },
     "h2h": null
   },
   {
@@ -51646,7 +53328,20 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": true,
     "round": "Group Stage",
-    "odds": null,
+    "odds": {
+      "home": 1.48,
+      "draw": 4.33,
+      "away": 4.75,
+      "over15": null,
+      "under15": null,
+      "over25": 1.44,
+      "under25": 2.62,
+      "over35": null,
+      "under35": null,
+      "dc1x": 1.12,
+      "dc12": 1.14,
+      "dcx2": 2.4
+    },
     "h2h": null
   },
   {
@@ -51697,7 +53392,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.45,
       "draw": 3.5,
-      "away": 2.45
+      "away": 2.45,
+      "over15": 1.22,
+      "under15": 4,
+      "over25": 1.7,
+      "under25": 2.05,
+      "over35": 2.75,
+      "under35": 1.4,
+      "bttsYes": 1.55,
+      "bttsNo": 2.2,
+      "dc1x": 1.5,
+      "dc12": 1.22,
+      "dcx2": 1.5
     },
     "h2h": null
   },
@@ -51749,7 +53455,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.91,
       "draw": 3.3,
-      "away": 3.6
+      "away": 3.6,
+      "over15": 1.28,
+      "under15": 3.35,
+      "over25": 1.85,
+      "under25": 1.85,
+      "over35": 3.1,
+      "under35": 1.33,
+      "bttsYes": 1.67,
+      "bttsNo": 2,
+      "dc1x": 1.2,
+      "dc12": 1.25,
+      "dcx2": 1.8
     },
     "h2h": null
   },
@@ -51800,8 +53517,19 @@ window.MATCHES = [
     "round": "Group Stage - 2",
     "odds": {
       "home": 2.88,
-      "draw": 3.2,
-      "away": 2.25
+      "draw": 3.35,
+      "away": 2.2,
+      "over15": 1.22,
+      "under15": 3.85,
+      "over25": 1.7,
+      "under25": 2.05,
+      "over35": 2.7,
+      "under35": 1.42,
+      "bttsYes": 1.55,
+      "bttsNo": 2.2,
+      "dc1x": 1.53,
+      "dc12": 1.22,
+      "dcx2": 1.38
     },
     "h2h": null
   },
@@ -52777,9 +54505,35 @@ window.MATCHES = [
     "odds": {
       "home": 2.3,
       "draw": 3.15,
+      "away": 3.2,
+      "over15": 1.4,
+      "under15": 2.88,
+      "over25": 2.2,
+      "under25": 1.65,
+      "over35": 4,
+      "under35": 1.22,
+      "bttsYes": 1.85,
+      "bttsNo": 1.85,
+      "dc1x": 1.35,
+      "dc12": 1.3,
+      "dcx2": 1.57
+    },
+    "h2h": null,
+    "oddsOpen": {
+      "home": null,
+      "draw": null,
+      "away": null
+    },
+    "oddsLast": {
+      "home": 2.4,
+      "draw": 3.1,
       "away": 3.2
     },
-    "h2h": null
+    "xgHomeReal": 0.24,
+    "xgAwayReal": 1.38,
+    "xgReal": true,
+    "npxgHomeReal": 4.17,
+    "npxgAwayReal": 5.34
   },
   {
     "home": "Unión Villa Krause",
@@ -52850,27 +54604,27 @@ window.MATCHES = [
     "awayPos": 2,
     "tableSize": 19,
     "homePts": 51,
-    "awayPts": 41,
-    "homeGD": 63,
-    "awayGD": 35,
-    "homeForm": "WWWLW",
-    "awayForm": "DLLWW",
-    "homeScoredAtHome": 3.9,
-    "homeConcededAtHome": 0.5,
+    "awayPts": 44,
+    "homeGD": 62,
+    "awayGD": 36,
+    "homeForm": "LWWWL",
+    "awayForm": "WDLLW",
+    "homeScoredAtHome": 3.8,
+    "homeConcededAtHome": 0.8,
     "awayScoredAway": 2.9,
-    "awayConcededAway": 0.9,
+    "awayConcededAway": 1,
     "homeVenueRank": 1,
     "awayVenueRank": 2,
     "homeVenuePts": 29,
-    "awayVenuePts": 19,
-    "homeVenueGames": 11,
-    "awayVenueGames": 10,
+    "awayVenuePts": 22,
+    "homeVenueGames": 12,
+    "awayVenueGames": 11,
     "venueTableSize": 4,
     "leagueAvg": {
       "goalsPerGame": 5.14,
       "drawRate": 0.13,
       "homeWinRate": 0.46,
-      "gamesPlayed": 167,
+      "gamesPlayed": 161,
       "reliable": true
     },
     "homeWinRate": null,
@@ -52889,7 +54643,16 @@ window.MATCHES = [
     "odds": {
       "home": 1.33,
       "draw": 5,
-      "away": 6
+      "away": 6,
+      "over15": null,
+      "under15": null,
+      "over25": 1.33,
+      "under25": 3.25,
+      "over35": null,
+      "under35": null,
+      "dc1x": 1.08,
+      "dc12": 1.11,
+      "dcx2": 2.88
     },
     "h2h": null
   },
@@ -52905,41 +54668,41 @@ window.MATCHES = [
     "homeGoals": 4,
     "awayGoals": 3,
     "homePos": 8,
-    "awayPos": 5,
+    "awayPos": 4,
     "tableSize": 16,
     "homePts": 30,
-    "awayPts": 36,
-    "homeGD": -6,
-    "awayGD": 14,
-    "homeForm": "DDDWW",
-    "awayForm": "DDWLW",
-    "homeScoredAtHome": 2,
+    "awayPts": 39,
+    "homeGD": -7,
+    "awayGD": 15,
+    "homeForm": "LDDDW",
+    "awayForm": "WDDWL",
+    "homeScoredAtHome": 1.8,
     "homeConcededAtHome": 1.8,
-    "awayScoredAway": 1.5,
-    "awayConcededAway": 1,
+    "awayScoredAway": 1.4,
+    "awayConcededAway": 0.9,
     "homeVenueRank": 6,
-    "awayVenueRank": 8,
+    "awayVenueRank": 4,
     "homeVenuePts": 19,
-    "awayVenuePts": 15,
-    "homeVenueGames": 11,
-    "awayVenueGames": 8,
+    "awayVenuePts": 18,
+    "homeVenueGames": 12,
+    "awayVenueGames": 9,
     "venueTableSize": 16,
     "leagueAvg": {
-      "goalsPerGame": 3.88,
+      "goalsPerGame": 3.86,
       "drawRate": 0.17,
       "homeWinRate": 0.44,
-      "gamesPlayed": 167,
+      "gamesPlayed": 168,
       "reliable": true
     },
-    "homeWinRate": 0.55,
-    "awayWinRate": 0.5,
-    "homeUnbeatenRate": 0.64,
-    "awayUnbeatenRate": 0.88,
-    "homeCleanSheetRate": 0.27,
-    "awayCleanSheetRate": 0.25,
-    "homeFailedToScoreRate": 0.09,
-    "awayFailedToScoreRate": 0.13,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "statsReal": false,
     "sameGroup": true,
     "isKnockout": false,
     "isTournament": false,
@@ -52979,15 +54742,15 @@ window.MATCHES = [
     "awayVenueGames": null,
     "venueTableSize": 20,
     "leagueAvg": null,
-    "homeWinRate": 0.44,
-    "awayWinRate": 0.6,
-    "homeUnbeatenRate": 0.89,
-    "awayUnbeatenRate": 0.6,
-    "homeCleanSheetRate": 0.11,
-    "awayCleanSheetRate": 0.2,
-    "homeFailedToScoreRate": 0.11,
-    "awayFailedToScoreRate": 0,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "statsReal": false,
     "sameGroup": false,
     "isKnockout": false,
     "isTournament": false,
@@ -53007,41 +54770,41 @@ window.MATCHES = [
     "homeGoals": 0,
     "awayGoals": 1,
     "homePos": 10,
-    "awayPos": 6,
+    "awayPos": 5,
     "tableSize": 16,
     "homePts": 26,
-    "awayPts": 31,
-    "homeGD": -5,
-    "awayGD": -1,
-    "homeForm": "WLWDW",
-    "awayForm": "WWDWL",
-    "homeScoredAtHome": 1.5,
-    "homeConcededAtHome": 1.5,
-    "awayScoredAway": 1.6,
-    "awayConcededAway": 1.4,
+    "awayPts": 34,
+    "homeGD": -6,
+    "awayGD": 0,
+    "homeForm": "LWLWD",
+    "awayForm": "WWWDW",
+    "homeScoredAtHome": 1.3,
+    "homeConcededAtHome": 1.4,
+    "awayScoredAway": 1.5,
+    "awayConcededAway": 1.3,
     "homeVenueRank": 11,
-    "awayVenueRank": 8,
+    "awayVenueRank": 7,
     "homeVenuePts": 15,
-    "awayVenuePts": 11,
-    "homeVenueGames": 11,
-    "awayVenueGames": 9,
+    "awayVenuePts": 14,
+    "homeVenueGames": 12,
+    "awayVenueGames": 10,
     "venueTableSize": 16,
     "leagueAvg": {
-      "goalsPerGame": 2.76,
+      "goalsPerGame": 2.75,
       "drawRate": 0.18,
       "homeWinRate": 0.45,
-      "gamesPlayed": 167,
+      "gamesPlayed": 168,
       "reliable": true
     },
-    "homeWinRate": 0.36,
-    "awayWinRate": 0.38,
-    "homeUnbeatenRate": 0.64,
-    "awayUnbeatenRate": 0.63,
-    "homeCleanSheetRate": 0.27,
-    "awayCleanSheetRate": 0.38,
-    "homeFailedToScoreRate": 0.18,
-    "awayFailedToScoreRate": 0.5,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "statsReal": false,
     "sameGroup": true,
     "isKnockout": false,
     "isTournament": false,
@@ -53049,7 +54812,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.45,
       "draw": 3.45,
-      "away": 2.45
+      "away": 2.45,
+      "over15": 1.22,
+      "under15": 3.9,
+      "over25": 1.7,
+      "under25": 2.05,
+      "over35": 2.75,
+      "under35": 1.4,
+      "bttsYes": 1.55,
+      "bttsNo": 2.2,
+      "dc1x": 1.5,
+      "dc12": 1.22,
+      "dcx2": 1.5
     },
     "h2h": null
   },
@@ -53085,15 +54859,15 @@ window.MATCHES = [
     "awayVenueGames": null,
     "venueTableSize": 20,
     "leagueAvg": null,
-    "homeWinRate": 1,
-    "awayWinRate": 0.14,
-    "homeUnbeatenRate": 1,
-    "awayUnbeatenRate": 0.29,
-    "homeCleanSheetRate": 0.5,
-    "awayCleanSheetRate": 0,
-    "homeFailedToScoreRate": 0,
-    "awayFailedToScoreRate": 0.29,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "statsReal": false,
     "sameGroup": false,
     "isKnockout": false,
     "isTournament": false,
@@ -53115,39 +54889,39 @@ window.MATCHES = [
     "homePos": 9,
     "awayPos": 8,
     "tableSize": 12,
-    "homePts": 17,
+    "homePts": 20,
     "awayPts": 21,
-    "homeGD": -6,
-    "awayGD": 6,
-    "homeForm": "LLLWW",
-    "awayForm": "WWLWL",
-    "homeScoredAtHome": 1.6,
-    "homeConcededAtHome": 2.1,
-    "awayScoredAway": 1.7,
-    "awayConcededAway": 1.4,
+    "homeGD": -2,
+    "awayGD": 2,
+    "homeForm": "WLLLW",
+    "awayForm": "LWWLW",
+    "homeScoredAtHome": 2,
+    "homeConcededAtHome": 2,
+    "awayScoredAway": 1.6,
+    "awayConcededAway": 1.9,
     "homeVenueRank": 9,
-    "awayVenueRank": 6,
-    "homeVenuePts": 7,
+    "awayVenueRank": 7,
+    "homeVenuePts": 10,
     "awayVenuePts": 10,
-    "homeVenueGames": 7,
-    "awayVenueGames": 7,
+    "homeVenueGames": 8,
+    "awayVenueGames": 8,
     "venueTableSize": 12,
     "leagueAvg": {
-      "goalsPerGame": 3.4,
+      "goalsPerGame": 3.43,
       "drawRate": 0.15,
-      "homeWinRate": 0.43,
-      "gamesPlayed": 95,
+      "homeWinRate": 0.44,
+      "gamesPlayed": 96,
       "reliable": true
     },
-    "homeWinRate": 0.29,
-    "awayWinRate": 0.43,
-    "homeUnbeatenRate": 0.43,
-    "awayUnbeatenRate": 0.57,
-    "homeCleanSheetRate": 0.29,
-    "awayCleanSheetRate": 0.29,
-    "homeFailedToScoreRate": 0.14,
-    "awayFailedToScoreRate": 0.14,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "statsReal": false,
     "sameGroup": true,
     "isKnockout": false,
     "isTournament": false,
@@ -53155,7 +54929,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.45,
       "draw": 3.8,
-      "away": 2.33
+      "away": 2.33,
+      "over15": null,
+      "under15": null,
+      "over25": 1.3,
+      "under25": 3.2,
+      "over35": 1.77,
+      "under35": 1.95,
+      "bttsYes": 1.25,
+      "bttsNo": 3.25,
+      "dc1x": 1.48,
+      "dc12": 1.18,
+      "dcx2": 1.5
     },
     "h2h": null
   },
@@ -53173,39 +54958,39 @@ window.MATCHES = [
     "homePos": 3,
     "awayPos": 4,
     "tableSize": 19,
-    "homePts": 36,
+    "homePts": 39,
     "awayPts": 34,
-    "homeGD": 40,
-    "awayGD": 37,
-    "homeForm": "LWWWL",
-    "awayForm": "DLLWW",
-    "homeScoredAtHome": 3.6,
+    "homeGD": 41,
+    "awayGD": 36,
+    "homeForm": "WLWWW",
+    "awayForm": "LDLLW",
+    "homeScoredAtHome": 3.5,
     "homeConcededAtHome": 1,
-    "awayScoredAway": 3.4,
-    "awayConcededAway": 1.2,
+    "awayScoredAway": 3.2,
+    "awayConcededAway": 1.3,
     "homeVenueRank": 3,
     "awayVenueRank": 4,
-    "homeVenuePts": 18,
+    "homeVenuePts": 21,
     "awayVenuePts": 17,
-    "homeVenueGames": 10,
-    "awayVenueGames": 10,
+    "homeVenueGames": 11,
+    "awayVenueGames": 11,
     "venueTableSize": 4,
     "leagueAvg": {
       "goalsPerGame": 5.14,
       "drawRate": 0.13,
       "homeWinRate": 0.46,
-      "gamesPlayed": 167,
+      "gamesPlayed": 161,
       "reliable": true
     },
-    "homeWinRate": 0.5,
-    "awayWinRate": 0.5,
-    "homeUnbeatenRate": 0.8,
-    "awayUnbeatenRate": 0.7,
-    "homeCleanSheetRate": 0.3,
-    "awayCleanSheetRate": 0.4,
-    "homeFailedToScoreRate": 0.1,
-    "awayFailedToScoreRate": 0,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "statsReal": false,
     "sameGroup": true,
     "isKnockout": false,
     "isTournament": true,
@@ -53213,7 +54998,16 @@ window.MATCHES = [
     "odds": {
       "home": 2.05,
       "draw": 3.85,
-      "away": 2.65
+      "away": 2.65,
+      "over15": null,
+      "under15": null,
+      "over25": null,
+      "under25": null,
+      "over35": 1.8,
+      "under35": 1.8,
+      "dc1x": 1.33,
+      "dc12": 1.15,
+      "dcx2": 1.67
     },
     "h2h": null
   },
@@ -53250,14 +55044,14 @@ window.MATCHES = [
     "venueTableSize": 20,
     "leagueAvg": null,
     "homeWinRate": null,
-    "awayWinRate": 0,
+    "awayWinRate": null,
     "homeUnbeatenRate": null,
-    "awayUnbeatenRate": 0,
+    "awayUnbeatenRate": null,
     "homeCleanSheetRate": null,
-    "awayCleanSheetRate": 0,
+    "awayCleanSheetRate": null,
     "homeFailedToScoreRate": null,
-    "awayFailedToScoreRate": 0,
-    "statsReal": true,
+    "awayFailedToScoreRate": null,
+    "statsReal": false,
     "sameGroup": false,
     "isKnockout": false,
     "isTournament": false,
@@ -53297,15 +55091,15 @@ window.MATCHES = [
     "awayVenueGames": null,
     "venueTableSize": 20,
     "leagueAvg": null,
-    "homeWinRate": 0.33,
-    "awayWinRate": 0.5,
-    "homeUnbeatenRate": 0.67,
-    "awayUnbeatenRate": 0.75,
-    "homeCleanSheetRate": 0.33,
-    "awayCleanSheetRate": 0.25,
-    "homeFailedToScoreRate": 0.33,
-    "awayFailedToScoreRate": 0.25,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "statsReal": false,
     "sameGroup": false,
     "isKnockout": false,
     "isTournament": false,
@@ -53409,7 +55203,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.19,
       "draw": 6.65,
-      "away": 12.5
+      "away": 12.5,
+      "over15": 1.09,
+      "under15": 5.3,
+      "over25": 1.4,
+      "under25": 2.57,
+      "over35": 2.14,
+      "under35": 1.68,
+      "bttsYes": 1.97,
+      "bttsNo": 1.73,
+      "dc1x": 1.01,
+      "dc12": 1.09,
+      "dcx2": 4.4
     },
     "h2h": null
   },
@@ -53419,7 +55224,7 @@ window.MATCHES = [
     "league": "Friendlies Clubs",
     "country": "World",
     "flag": null,
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-06-30T14:00:00+00:00",
     "matchDate": "2026-06-30",
     "homeGoals": 1,
@@ -53507,9 +55312,18 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Semi-finals",
     "odds": {
-      "home": 3.25,
+      "home": 3.1,
       "draw": 3.1,
-      "away": 2.05
+      "away": 2.15,
+      "over15": null,
+      "under15": null,
+      "over25": 1.91,
+      "under25": 1.7,
+      "over35": null,
+      "under35": null,
+      "dc1x": 1.65,
+      "dc12": 1.25,
+      "dcx2": 1.33
     },
     "h2h": null
   },
@@ -53565,9 +55379,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 21",
     "odds": {
-      "home": 1.18,
-      "draw": 5.75,
-      "away": 13
+      "home": 1.14,
+      "draw": 6.4,
+      "away": 15,
+      "over15": null,
+      "under15": null,
+      "over25": 1.38,
+      "under25": 2.85,
+      "over35": 1.95,
+      "under35": 1.77,
+      "bttsYes": 2,
+      "bttsNo": 1.67,
+      "dc1x": 1.01,
+      "dc12": 1.03,
+      "dcx2": 4.75
     },
     "h2h": null
   },
@@ -53577,11 +55402,11 @@ window.MATCHES = [
     "league": "Friendlies Clubs",
     "country": "World",
     "flag": null,
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-06-30T15:00:00+00:00",
     "matchDate": "2026-06-30",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -53618,8 +55443,19 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": {
       "home": 2.9,
-      "draw": 3.5,
-      "away": 2.05
+      "draw": 3.4,
+      "away": 2.1,
+      "over15": 2.25,
+      "under15": 1.57,
+      "over25": 5,
+      "under25": 1.15,
+      "over35": 13,
+      "under35": 1.03,
+      "bttsYes": 1.5,
+      "bttsNo": 2.45,
+      "dc1x": null,
+      "dc12": null,
+      "dcx2": null
     },
     "h2h": null
   },
@@ -53869,7 +55705,16 @@ window.MATCHES = [
     "odds": {
       "home": 1.95,
       "draw": 4,
-      "away": 2.8
+      "away": 2.8,
+      "over15": null,
+      "under15": null,
+      "over25": null,
+      "under25": null,
+      "over35": 1.55,
+      "under35": 2.15,
+      "dc1x": 1.3,
+      "dc12": 1.14,
+      "dcx2": 1.77
     },
     "h2h": null
   },
@@ -53972,7 +55817,20 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Regular Season - 8",
-    "odds": null,
+    "odds": {
+      "home": 4.1,
+      "draw": 4.6,
+      "away": 1.53,
+      "over15": null,
+      "under15": null,
+      "over25": null,
+      "under25": null,
+      "over35": 1.55,
+      "under35": 2.15,
+      "dc1x": 2.38,
+      "dc12": 1.1,
+      "dcx2": 1.14
+    },
     "h2h": null
   },
   {
@@ -54028,8 +55886,19 @@ window.MATCHES = [
     "round": "Regular Season - 21",
     "odds": {
       "home": 1.3,
-      "draw": 5,
-      "away": 7.2
+      "draw": 4.75,
+      "away": 8.25,
+      "over15": null,
+      "under15": null,
+      "over25": 1.45,
+      "under25": 2.55,
+      "over35": 2.15,
+      "under35": 1.65,
+      "bttsYes": 1.7,
+      "bttsNo": 1.95,
+      "dc1x": 1.02,
+      "dc12": 1.1,
+      "dcx2": 3.25
     },
     "h2h": null
   },
@@ -54126,11 +55995,7 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
-    "odds": {
-      "home": 1.53,
-      "draw": 4,
-      "away": 4.75
-    },
+    "odds": null,
     "h2h": null
   },
   {
@@ -54179,9 +56044,18 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": {
-      "home": 1.28,
-      "draw": 4.6,
-      "away": 7.8
+      "home": 1.08,
+      "draw": 6.4,
+      "away": 23,
+      "over15": null,
+      "under15": null,
+      "over25": 1.5,
+      "under25": 2.25,
+      "over35": 2.05,
+      "under35": 1.6,
+      "dc1x": 1.01,
+      "dc12": 1.13,
+      "dcx2": 3.4
     },
     "h2h": null
   },
@@ -54477,9 +56351,20 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round of 32",
     "odds": {
-      "home": 3.4,
-      "draw": 3.45,
-      "away": 2.08
+      "home": 3.3,
+      "draw": 3.3,
+      "away": 2.14,
+      "over15": 1.28,
+      "under15": 3.65,
+      "over25": 1.83,
+      "under25": 1.95,
+      "over35": 3.1,
+      "under35": 1.36,
+      "bttsYes": 1.65,
+      "bttsNo": 2.1,
+      "dc1x": 1.7,
+      "dc12": 1.25,
+      "dcx2": 1.33
     },
     "h2h": null
   },
@@ -54625,9 +56510,18 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": {
-      "home": 1.14,
+      "home": 1.17,
       "draw": 6.2,
-      "away": 12
+      "away": 9.6,
+      "over15": null,
+      "under15": null,
+      "over25": null,
+      "under25": null,
+      "over35": 1.73,
+      "under35": 1.9,
+      "dc1x": 1.01,
+      "dc12": 1.08,
+      "dcx2": 4.5
     },
     "h2h": null
   },
@@ -54682,7 +56576,20 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": true,
     "round": "Regular Season - 7",
-    "odds": null,
+    "odds": {
+      "home": 1.22,
+      "draw": 5,
+      "away": 10.25,
+      "over15": null,
+      "under15": null,
+      "over25": null,
+      "under25": null,
+      "over35": 2.25,
+      "under35": 1.5,
+      "dc1x": 1.01,
+      "dc12": 1.11,
+      "dcx2": 2.8
+    },
     "h2h": null
   },
   {
@@ -54737,9 +56644,20 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Regular Season - 17",
     "odds": {
-      "home": 3.2,
-      "draw": 2.88,
-      "away": 2.3
+      "home": 3.45,
+      "draw": 2.8,
+      "away": 2.2,
+      "over15": 1.65,
+      "under15": 2.15,
+      "over25": 2.95,
+      "under25": 1.36,
+      "over35": null,
+      "under35": null,
+      "bttsYes": 2.3,
+      "bttsNo": 1.5,
+      "dc1x": 1.53,
+      "dc12": 1.3,
+      "dcx2": 1.28
     },
     "h2h": null
   },
@@ -54795,9 +56713,20 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Regular Season - 17",
     "odds": {
-      "home": 4.2,
-      "draw": 3.1,
-      "away": 1.85
+      "home": 4.1,
+      "draw": 3,
+      "away": 1.9,
+      "over15": 1.55,
+      "under15": 2.35,
+      "over25": 2.7,
+      "under25": 1.42,
+      "over35": 4.5,
+      "under35": 1.17,
+      "bttsYes": 2.25,
+      "bttsNo": 1.53,
+      "dc1x": 1.83,
+      "dc12": 1.28,
+      "dcx2": 1.2
     },
     "h2h": null
   },
@@ -55381,9 +57310,18 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 12",
     "odds": {
-      "home": 1.9,
-      "draw": 3.3,
-      "away": 3.4
+      "home": 2.05,
+      "draw": 3.2,
+      "away": 3.1,
+      "over15": null,
+      "under15": null,
+      "over25": 1.9,
+      "under25": 1.73,
+      "over35": null,
+      "under35": null,
+      "dc1x": 1.25,
+      "dc12": 1.22,
+      "dcx2": 1.67
     },
     "h2h": null
   },
@@ -55481,9 +57419,18 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": {
-      "home": 1.2,
-      "draw": 5,
-      "away": 11
+      "home": 1.22,
+      "draw": 4.8,
+      "away": 10.5,
+      "over15": null,
+      "under15": null,
+      "over25": null,
+      "under25": null,
+      "over35": 2.1,
+      "under35": 1.57,
+      "dc1x": 1.01,
+      "dc12": 1.11,
+      "dcx2": 2.75
     },
     "h2h": null
   },
@@ -55535,7 +57482,16 @@ window.MATCHES = [
     "odds": {
       "home": 4.6,
       "draw": 4,
-      "away": 1.53
+      "away": 1.53,
+      "over15": null,
+      "under15": null,
+      "over25": 1.5,
+      "under25": 2.25,
+      "over35": 2.25,
+      "under35": 1.5,
+      "dc1x": 2.35,
+      "dc12": 1.14,
+      "dcx2": 1.11
     },
     "h2h": null
   },
@@ -55632,7 +57588,22 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
-    "odds": null,
+    "odds": {
+      "home": 17,
+      "draw": 7.5,
+      "away": 1.12,
+      "over15": 1.65,
+      "under15": 2.15,
+      "over25": 3,
+      "under25": 1.33,
+      "over35": 6.5,
+      "under35": 1.1,
+      "bttsYes": 2.05,
+      "bttsNo": 1.7,
+      "dc1x": 5.5,
+      "dc12": 1.08,
+      "dcx2": 1.02
+    },
     "h2h": null
   },
   {
@@ -55731,7 +57702,16 @@ window.MATCHES = [
     "odds": {
       "home": 7.6,
       "draw": 4.8,
-      "away": 1.28
+      "away": 1.28,
+      "over15": null,
+      "under15": null,
+      "over25": null,
+      "under25": null,
+      "over35": 2.1,
+      "under35": 1.57,
+      "dc1x": 3.35,
+      "dc12": 1.08,
+      "dcx2": 1.02
     },
     "h2h": null
   },
@@ -55877,9 +57857,18 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": {
-      "home": 6.8,
+      "home": 5.75,
       "draw": 4.2,
-      "away": 1.36
+      "away": 1.4,
+      "over15": null,
+      "under15": null,
+      "over25": 1.55,
+      "under25": 2.15,
+      "over35": null,
+      "under35": null,
+      "dc1x": 2.7,
+      "dc12": 1.12,
+      "dcx2": 1.06
     },
     "h2h": null
   },
@@ -56073,9 +58062,18 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": {
-      "home": 2.45,
+      "home": 2.15,
       "draw": 3.4,
-      "away": 2.4
+      "away": 2.8,
+      "over15": null,
+      "under15": null,
+      "over25": 1.6,
+      "under25": 2.05,
+      "over35": null,
+      "under35": null,
+      "dc1x": 1.3,
+      "dc12": 1.2,
+      "dcx2": 1.62
     },
     "h2h": null
   },
@@ -56185,9 +58183,20 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round of 32",
     "odds": {
-      "home": 1.29,
+      "home": 1.27,
       "draw": 5.7,
-      "away": 8.4
+      "away": 9.1,
+      "over15": 1.12,
+      "under15": 5.75,
+      "over25": 1.42,
+      "under25": 2.8,
+      "over35": 2.1,
+      "under35": 1.7,
+      "bttsYes": 1.73,
+      "bttsNo": 2,
+      "dc1x": 1.06,
+      "dc12": 1.1,
+      "dcx2": 3.4
     },
     "h2h": null
   },
@@ -56243,9 +58252,18 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 12",
     "odds": {
-      "home": 2.5,
-      "draw": 3.2,
-      "away": 2.5
+      "home": 2.6,
+      "draw": 3.1,
+      "away": 2.4,
+      "over15": null,
+      "under15": null,
+      "over25": 1.91,
+      "under25": 1.7,
+      "over35": null,
+      "under35": null,
+      "dc1x": 1.4,
+      "dc12": 1.25,
+      "dcx2": 1.42
     },
     "h2h": null
   },
@@ -56351,7 +58369,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.25,
       "draw": 3.3,
-      "away": 2.85
+      "away": 2.85,
+      "over15": 1.25,
+      "under15": 3.55,
+      "over25": 1.8,
+      "under25": 1.93,
+      "over35": 3,
+      "under35": 1.35,
+      "bttsYes": 1.6,
+      "bttsNo": 2.1,
+      "dc1x": 1.3,
+      "dc12": 1.25,
+      "dcx2": 1.57
     },
     "h2h": null
   },
@@ -56407,9 +58436,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 12",
     "odds": {
-      "home": 1.53,
-      "draw": 3.65,
-      "away": 6
+      "home": 1.67,
+      "draw": 3.4,
+      "away": 5,
+      "over15": 1.3,
+      "under15": 3.2,
+      "over25": 1.95,
+      "under25": 1.77,
+      "over35": 3.35,
+      "under35": 1.28,
+      "bttsYes": 1.85,
+      "bttsNo": 1.8,
+      "dc1x": 1.11,
+      "dc12": 1.22,
+      "dcx2": 2.1
     },
     "h2h": null
   },
@@ -56519,9 +58559,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 15",
     "odds": {
-      "home": 2.2,
-      "draw": 3.2,
-      "away": 3.3
+      "home": 2.22,
+      "draw": 3.05,
+      "away": 3.4,
+      "over15": 1.35,
+      "under15": 3.1,
+      "over25": 2.05,
+      "under25": 1.75,
+      "over35": 3.65,
+      "under35": 1.28,
+      "bttsYes": 1.75,
+      "bttsNo": 1.93,
+      "dc1x": 1.3,
+      "dc12": 1.3,
+      "dcx2": 1.62
     },
     "h2h": null
   },
@@ -56577,9 +58628,18 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": {
-      "home": 4.33,
-      "draw": 4.2,
-      "away": 1.53
+      "home": 4.75,
+      "draw": 4,
+      "away": 1.5,
+      "over15": null,
+      "under15": null,
+      "over25": null,
+      "under25": null,
+      "over35": 2.05,
+      "under35": 1.6,
+      "dc1x": 2.38,
+      "dc12": 1.14,
+      "dcx2": 1.1
     },
     "h2h": null
   },
@@ -56743,9 +58803,18 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": {
-      "home": 3.2,
-      "draw": 4,
-      "away": 1.83
+      "home": 3.7,
+      "draw": 3.95,
+      "away": 1.68,
+      "over15": null,
+      "under15": null,
+      "over25": null,
+      "under25": null,
+      "over35": 1.8,
+      "under35": 1.8,
+      "dc1x": 2.05,
+      "dc12": 1.15,
+      "dcx2": 1.17
     },
     "h2h": null
   },
@@ -56964,8 +59033,19 @@ window.MATCHES = [
     "round": "Regular Season - 12",
     "odds": {
       "home": 1.95,
-      "draw": 3,
-      "away": 3.85
+      "draw": 3.1,
+      "away": 3.65,
+      "over15": 1.4,
+      "under15": 2.75,
+      "over25": 2.2,
+      "under25": 1.62,
+      "over35": 4,
+      "under35": 1.22,
+      "bttsYes": 1.91,
+      "bttsNo": 1.73,
+      "dc1x": 1.2,
+      "dc12": 1.25,
+      "dcx2": 1.75
     },
     "h2h": null
   },
@@ -57021,9 +59101,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 12",
     "odds": {
-      "home": 1.95,
-      "draw": 2.9,
-      "away": 4
+      "home": 1.91,
+      "draw": 3,
+      "away": 4,
+      "over15": 1.45,
+      "under15": 2.6,
+      "over25": 2.35,
+      "under25": 1.53,
+      "over35": 4.33,
+      "under35": 1.18,
+      "bttsYes": 2,
+      "bttsNo": 1.67,
+      "dc1x": 1.17,
+      "dc12": 1.28,
+      "dcx2": 1.8
     },
     "h2h": null
   },
@@ -57079,9 +59170,18 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": {
-      "home": 9,
-      "draw": 6.5,
-      "away": 1.18
+      "home": 14,
+      "draw": 6,
+      "away": 1.13,
+      "over15": null,
+      "under15": null,
+      "over25": null,
+      "under25": null,
+      "over35": 1.6,
+      "under35": 2.05,
+      "dc1x": 3,
+      "dc12": 1.08,
+      "dcx2": 1.01
     },
     "h2h": null
   },
@@ -57187,7 +59287,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.5,
       "draw": 3.2,
-      "away": 2.62
+      "away": 2.62,
+      "over15": 1.35,
+      "under15": 3,
+      "over25": 2.05,
+      "under25": 1.7,
+      "over35": 3.7,
+      "under35": 1.25,
+      "bttsYes": 1.8,
+      "bttsNo": 1.85,
+      "dc1x": 1.38,
+      "dc12": 1.25,
+      "dcx2": 1.5
     },
     "h2h": null
   },
@@ -57245,7 +59356,16 @@ window.MATCHES = [
     "odds": {
       "home": 1.85,
       "draw": 3.7,
-      "away": 3.25
+      "away": 3.25,
+      "over15": null,
+      "under15": null,
+      "over25": null,
+      "under25": null,
+      "over35": 2.05,
+      "under35": 1.57,
+      "dc1x": 1.25,
+      "dc12": 1.2,
+      "dcx2": 1.85
     },
     "h2h": null
   },
@@ -57519,7 +59639,16 @@ window.MATCHES = [
     "odds": {
       "home": 2.45,
       "draw": 3.75,
-      "away": 2.25
+      "away": 2.25,
+      "over15": null,
+      "under15": null,
+      "over25": null,
+      "under25": null,
+      "over35": 1.9,
+      "under35": 1.7,
+      "dc1x": 1.5,
+      "dc12": 1.2,
+      "dcx2": 1.48
     },
     "h2h": null
   },
@@ -57727,7 +59856,16 @@ window.MATCHES = [
     "odds": {
       "home": 1.64,
       "draw": 4.1,
-      "away": 3.75
+      "away": 3.75,
+      "over15": null,
+      "under15": null,
+      "over25": null,
+      "under25": null,
+      "over35": 1.9,
+      "under35": 1.73,
+      "dc1x": 1.17,
+      "dc12": 1.13,
+      "dcx2": 2.1
     },
     "h2h": null
   },
@@ -57839,7 +59977,18 @@ window.MATCHES = [
     "odds": {
       "home": 6.5,
       "draw": 4.4,
-      "away": 1.4
+      "away": 1.4,
+      "over15": 1.17,
+      "under15": 4.5,
+      "over25": 1.53,
+      "under25": 2.38,
+      "over35": 2.35,
+      "under35": 1.55,
+      "bttsYes": 1.67,
+      "bttsNo": 2,
+      "dc1x": 2.8,
+      "dc12": 1.13,
+      "dcx2": 1.05
     },
     "h2h": null
   },
@@ -57897,7 +60046,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.95,
       "draw": 3.25,
-      "away": 3.5
+      "away": 3.5,
+      "over15": 1.3,
+      "under15": 3.2,
+      "over25": 1.95,
+      "under25": 1.77,
+      "over35": 3.45,
+      "under35": 1.28,
+      "bttsYes": 1.75,
+      "bttsNo": 1.9,
+      "dc1x": 1.22,
+      "dc12": 1.25,
+      "dcx2": 1.77
     },
     "h2h": null
   },
@@ -57949,7 +60109,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.5,
       "draw": 4.4,
-      "away": 5
+      "away": 5,
+      "over15": null,
+      "under15": null,
+      "over25": 1.36,
+      "under25": 2.95,
+      "over35": 1.93,
+      "under35": 1.8,
+      "bttsYes": 1.42,
+      "bttsNo": 2.5,
+      "dc1x": 1.11,
+      "dc12": 1.13,
+      "dcx2": 2.45
     },
     "h2h": null
   },
@@ -58001,7 +60172,16 @@ window.MATCHES = [
     "odds": {
       "home": 2.25,
       "draw": 3.25,
-      "away": 2.75
+      "away": 2.75,
+      "over15": null,
+      "under15": null,
+      "over25": 1.77,
+      "under25": 1.83,
+      "over35": null,
+      "under35": null,
+      "dc1x": 1.33,
+      "dc12": 1.22,
+      "dcx2": 1.57
     },
     "h2h": null
   },
@@ -58059,7 +60239,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.33,
       "draw": 5,
-      "away": 6.8
+      "away": 6.8,
+      "over15": null,
+      "under15": null,
+      "over25": 1.36,
+      "under25": 2.9,
+      "over35": 1.95,
+      "under35": 1.77,
+      "bttsYes": 1.57,
+      "bttsNo": 2.15,
+      "dc1x": 1.05,
+      "dc12": 1.09,
+      "dcx2": 3.1
     },
     "h2h": null
   },
@@ -58171,7 +60362,18 @@ window.MATCHES = [
     "odds": {
       "home": 4,
       "draw": 3.35,
-      "away": 1.8
+      "away": 1.8,
+      "over15": 1.3,
+      "under15": 3.2,
+      "over25": 1.95,
+      "under25": 1.77,
+      "over35": 3.45,
+      "under35": 1.28,
+      "bttsYes": 1.8,
+      "bttsNo": 1.85,
+      "dc1x": 1.91,
+      "dc12": 1.22,
+      "dcx2": 1.17
     },
     "h2h": null
   },
@@ -58223,7 +60425,16 @@ window.MATCHES = [
     "odds": {
       "home": 1.62,
       "draw": 3.7,
-      "away": 4.33
+      "away": 4.33,
+      "over15": null,
+      "under15": null,
+      "over25": 1.55,
+      "under25": 2.15,
+      "over35": null,
+      "under35": null,
+      "dc1x": 1.13,
+      "dc12": 1.17,
+      "dcx2": 2.15
     },
     "h2h": null
   },
@@ -58275,7 +60486,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.55,
       "draw": 4.1,
-      "away": 6.25
+      "away": 6.25,
+      "over15": 1.18,
+      "under15": 4.5,
+      "over25": 1.63,
+      "under25": 2.28,
+      "over35": 2.45,
+      "under35": 1.51,
+      "bttsYes": 1.72,
+      "bttsNo": 2.03,
+      "dc1x": 1.11,
+      "dc12": 1.24,
+      "dcx2": 2.5
     },
     "h2h": null
   },
@@ -58327,7 +60549,16 @@ window.MATCHES = [
     "odds": {
       "home": 2.1,
       "draw": 3.3,
-      "away": 2.95
+      "away": 2.95,
+      "over15": null,
+      "under15": null,
+      "over25": 1.73,
+      "under25": 1.9,
+      "over35": null,
+      "under35": null,
+      "dc1x": 1.28,
+      "dc12": 1.22,
+      "dcx2": 1.65
     },
     "h2h": null
   },
@@ -58379,7 +60610,13 @@ window.MATCHES = [
     "odds": {
       "home": 1.1,
       "draw": 6.75,
-      "away": 15
+      "away": 15,
+      "over15": null,
+      "under15": null,
+      "over25": null,
+      "under25": null,
+      "over35": 1.67,
+      "under35": 1.95
     },
     "h2h": null
   },
@@ -58437,7 +60674,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.73,
       "draw": 3.45,
-      "away": 5
+      "away": 5,
+      "over15": 1.4,
+      "under15": 2.88,
+      "over25": 2.2,
+      "under25": 1.65,
+      "over35": 4.2,
+      "under35": 1.22,
+      "bttsYes": 2,
+      "bttsNo": 1.73,
+      "dc1x": 1.17,
+      "dc12": 1.25,
+      "dcx2": 2
     },
     "h2h": null
   },
@@ -58495,7 +60743,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.75,
       "draw": 3.55,
-      "away": 2.2
+      "away": 2.2,
+      "over15": 1.17,
+      "under15": 4.5,
+      "over25": 1.55,
+      "under25": 2.35,
+      "over35": 2.38,
+      "under35": 1.53,
+      "bttsYes": 1.45,
+      "bttsNo": 2.45,
+      "dc1x": 1.53,
+      "dc12": 1.2,
+      "dcx2": 1.42
     },
     "h2h": null
   },
@@ -58553,7 +60812,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.6,
       "draw": 3.75,
-      "away": 4.75
+      "away": 4.75,
+      "over15": 1.2,
+      "under15": 4.2,
+      "over25": 1.65,
+      "under25": 2.15,
+      "over35": 2.6,
+      "under35": 1.45,
+      "bttsYes": 1.62,
+      "bttsNo": 2.1,
+      "dc1x": 1.11,
+      "dc12": 1.18,
+      "dcx2": 2.2
     },
     "h2h": null
   },
@@ -58611,7 +60881,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.55,
       "draw": 3.6,
-      "away": 2.3
+      "away": 2.3,
+      "over15": 1.18,
+      "under15": 4.33,
+      "over25": 1.62,
+      "under25": 2.2,
+      "over35": 2.6,
+      "under35": 1.45,
+      "bttsYes": 1.5,
+      "bttsNo": 2.3,
+      "dc1x": 1.48,
+      "dc12": 1.2,
+      "dcx2": 1.45
     },
     "h2h": null
   },
@@ -58669,7 +60950,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.7,
       "draw": 2.75,
-      "away": 2.7
+      "away": 2.7,
+      "over15": 1.7,
+      "under15": 2.05,
+      "over25": 3.1,
+      "under25": 1.33,
+      "over35": null,
+      "under35": null,
+      "bttsYes": 2.35,
+      "bttsNo": 1.48,
+      "dc1x": 1.42,
+      "dc12": 1.33,
+      "dcx2": 1.42
     },
     "h2h": null
   },
@@ -58727,7 +61019,18 @@ window.MATCHES = [
     "odds": {
       "home": 8.5,
       "draw": 3.65,
-      "away": 1.4
+      "away": 1.4,
+      "over15": 1.55,
+      "under15": 2.35,
+      "over25": 2.7,
+      "under25": 1.42,
+      "over35": null,
+      "under35": null,
+      "bttsYes": 3,
+      "bttsNo": 1.3,
+      "dc1x": 2.7,
+      "dc12": 1.18,
+      "dcx2": 1.02
     },
     "h2h": null
   },
@@ -58785,7 +61088,18 @@ window.MATCHES = [
     "odds": {
       "home": 8.5,
       "draw": 4,
-      "away": 1.33
+      "away": 1.33,
+      "over15": 2.7,
+      "under15": 1.4,
+      "over25": 7,
+      "under25": 1.08,
+      "over35": null,
+      "under35": null,
+      "bttsYes": 2.3,
+      "bttsNo": 1.53,
+      "dc1x": 2.9,
+      "dc12": 1.2,
+      "dcx2": 1.06
     },
     "h2h": null
   },
@@ -58837,7 +61151,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.83,
       "draw": 3.6,
-      "away": 3.65
+      "away": 3.65,
+      "over15": 1.22,
+      "under15": 3.9,
+      "over25": 1.7,
+      "under25": 2.05,
+      "over35": 2.75,
+      "under35": 1.4,
+      "bttsYes": 1.62,
+      "bttsNo": 2.1,
+      "dc1x": 1.2,
+      "dc12": 1.2,
+      "dcx2": 1.9
     },
     "h2h": null
   },
@@ -58889,7 +61214,16 @@ window.MATCHES = [
     "odds": {
       "home": 14,
       "draw": 6,
-      "away": 1.13
+      "away": 1.13,
+      "over15": null,
+      "under15": null,
+      "over25": null,
+      "under25": null,
+      "over35": 1.8,
+      "under35": 1.8,
+      "dc1x": 3.45,
+      "dc12": 1.07,
+      "dcx2": 1.02
     },
     "h2h": null
   },
@@ -58941,7 +61275,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.64,
       "draw": 3.8,
-      "away": 4.5
+      "away": 4.5,
+      "over15": 1.2,
+      "under15": 4.2,
+      "over25": 1.65,
+      "under25": 2.15,
+      "over35": 2.6,
+      "under35": 1.45,
+      "bttsYes": 1.62,
+      "bttsNo": 2.1,
+      "dc1x": 1.13,
+      "dc12": 1.18,
+      "dcx2": 2.15
     },
     "h2h": null
   },
@@ -58999,7 +61344,18 @@ window.MATCHES = [
     "odds": {
       "home": 2.4,
       "draw": 4.1,
-      "away": 2.25
+      "away": 2.25,
+      "over15": null,
+      "under15": null,
+      "over25": 1.28,
+      "under25": 3.55,
+      "over35": 1.7,
+      "under35": 2.1,
+      "bttsYes": 1.25,
+      "bttsNo": 3.3,
+      "dc1x": 1.5,
+      "dc12": 1.18,
+      "dcx2": 1.5
     },
     "h2h": null
   },
@@ -59057,7 +61413,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.22,
       "draw": 5.8,
-      "away": 9
+      "away": 9,
+      "over15": null,
+      "under15": null,
+      "over25": 1.22,
+      "under25": 3.85,
+      "over35": 1.53,
+      "under35": 2.4,
+      "bttsYes": 1.42,
+      "bttsNo": 2.55,
+      "dc1x": 1.02,
+      "dc12": 1.07,
+      "dcx2": 3.45
     },
     "h2h": null
   },
@@ -59109,7 +61476,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.28,
       "draw": 5.6,
-      "away": 7.25
+      "away": 7.25,
+      "over15": null,
+      "under15": null,
+      "over25": 1.25,
+      "under25": 3.75,
+      "over35": 1.65,
+      "under35": 2.15,
+      "bttsYes": 1.45,
+      "bttsNo": 2.45,
+      "dc1x": 1.03,
+      "dc12": 1.07,
+      "dcx2": 3.45
     },
     "h2h": null
   },
@@ -59167,7 +61545,18 @@ window.MATCHES = [
     "odds": {
       "home": 1.36,
       "draw": 5,
-      "away": 7.4
+      "away": 7.4,
+      "over15": 1.2,
+      "under15": 4.33,
+      "over25": 1.65,
+      "under25": 2.2,
+      "over35": 2.7,
+      "under35": 1.45,
+      "bttsYes": 1.95,
+      "bttsNo": 1.77,
+      "dc1x": 1.07,
+      "dc12": 1.12,
+      "dcx2": 3
     },
     "h2h": null
   },
@@ -59225,7 +61614,16 @@ window.MATCHES = [
     "odds": {
       "home": 1.45,
       "draw": 3.9,
-      "away": 5.6
+      "away": 5.6,
+      "over15": null,
+      "under15": null,
+      "over25": 1.9,
+      "under25": 1.73,
+      "over35": null,
+      "under35": null,
+      "dc1x": 1.06,
+      "dc12": 1.14,
+      "dcx2": 2.55
     },
     "h2h": null
   },
@@ -59331,7 +61729,18 @@ window.MATCHES = [
     "odds": {
       "home": 4.75,
       "draw": 4.1,
-      "away": 1.55
+      "away": 1.55,
+      "over15": 1.17,
+      "under15": 4.5,
+      "over25": 1.55,
+      "under25": 2.35,
+      "over35": 2.38,
+      "under35": 1.53,
+      "bttsYes": 1.57,
+      "bttsNo": 2.15,
+      "dc1x": 2.3,
+      "dc12": 1.15,
+      "dcx2": 1.17
     },
     "h2h": null
   },
