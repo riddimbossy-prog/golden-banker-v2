@@ -135,18 +135,24 @@
 
   ::-webkit-scrollbar{ width:10px; height:10px; }
   ::-webkit-scrollbar-thumb{ background:var(--line); border-radius:6px; }
-.eng-scroll::-webkit-scrollbar{display:none;}
-.eng-scroll{max-width:100%;}
-/* Won-bets marquee: a single track that scrolls right-to-left on a loop.
-   Pauses on hover so users can read a chip. Honest, low-key styling. */
-.won-marquee{ overflow:hidden; border:1px solid var(--line); border-radius:14px; background:var(--panel); padding:8px 0; position:relative; }
-.won-marquee-track{ display:inline-flex; gap:10px; white-space:nowrap; will-change:transform; animation:wonscroll 40s linear infinite; padding-left:100%; }
+/* Won-bets marquee — NerdyTips-style: a row of dark rounded CARDS that scroll
+   right-to-left on a loop. Each card: [flag] Team A  VS  Team B  [✓ WON].
+   Pauses on hover so users can read a card. */
+.won-marquee{ overflow:hidden; position:relative; }
+.won-marquee-track{ display:inline-flex; gap:14px; white-space:nowrap; will-change:transform; animation:wonscroll 45s linear infinite; padding-left:100%; }
 .won-marquee:hover .won-marquee-track{ animation-play-state:paused; }
-.won-chip{ display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border-radius:999px; background:rgba(34,197,94,.12); border:1px solid rgba(34,197,94,.35); font-size:13px; }
-.won-chip .won-tick{ font-weight:700; color:#22c55e; }
-body.light .won-chip{ background:rgba(22,163,74,.10); border-color:rgba(22,163,74,.35); }
+.won-card{ display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border-radius:14px;
+  background:var(--panel); border:1px solid var(--line); }
+.won-card .wc-flag{ width:20px; height:14px; object-fit:cover; border-radius:2px; flex-shrink:0; background:var(--line); }
+.won-card .wc-crest{ width:20px; height:20px; object-fit:contain; flex-shrink:0; }
+.won-card .wc-team{ font-weight:600; font-size:14px; }
+.won-card .wc-vs{ font-size:12px; font-weight:700; letter-spacing:.04em; color:var(--brand,#a855f7); }
+.won-card .wc-badge{ display:inline-flex; align-items:center; gap:5px; padding:4px 9px; border-radius:999px;
+  background:rgba(34,197,94,.16); border:1px solid rgba(34,197,94,.4); font-size:12px; font-weight:700; color:#22c55e; }
+body.light .won-card .wc-badge{ background:rgba(22,163,74,.10); border-color:rgba(22,163,74,.35); color:#16a34a; }
 @keyframes wonscroll{ from{ transform:translateX(0); } to{ transform:translateX(-100%); } }
 @media (prefers-reduced-motion: reduce){ .won-marquee-track{ animation:none; } }
+.eng-scroll::-webkit-scrollbar{display:none;}
 /* Equal-width, non-reflowing tabs. FIXED basis (not min-width) so the active
    tab's gradient/bold state can never change a button's size or nudge the row.
    border is always present (transparent when inactive) so the box model is
@@ -227,7 +233,7 @@ body.light .won-chip{ background:rgba(22,163,74,.10); border-color:rgba(22,163,7
         </select>
         <span style="position:absolute;right:10px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--muted);font-size:10px">▼</span>
       </div>
-      <button id="eng-acca" class="px-3 py-1.5 rounded-lg text-sm font-semibold whitespace-nowrap" style="background:transparent;color:var(--muted)">Acca</button>
+      <button id="eng-acca" class="px-3 py-1.5 rounded-lg text-sm font-semibold whitespace-nowrap" style="background:transparent;color:#6fd44a;border:1.5px solid #6fd44a">All Bankers Slip</button>
     </div>
     <!-- Hidden buttons preserve the original switching logic; the dropdown drives them. -->
     <div style="display:none">
@@ -657,26 +663,46 @@ function renderStats(){
 }
 
 /* ============ WON-BETS TICKER ============
-   Auto-scrolling marquee of the day's settled WON bankers. Honesty-first:
-   shows real settled wins for the active date only. Hidden when there are none. */
+   Auto-scrolling marquee of the day's settled WON bankers, styled like
+   NerdyTips: a row of dark cards [flag] Team A VS Team B [✓ WON]. Honesty-first:
+   real settled wins for the active date only. Hidden when there are none. */
 function renderWonTicker(){
   const box=document.getElementById('won-ticker');
   if(!box) return;
   const rows = byDate[activeDate]||[];
   const picks = enginePicks(rows);
-  const wins=[];
+  // collapse to unique matches that have at least one WON banker; count the wins
+  const byMatch={};
   picks.forEach(p=>{
     const s=settle(p.primary, p.match.homeGoals, p.match.awayGoals, p.match.status);
-    if(s==='Won') wins.push(p);
+    if(s!=='Won') return;
+    const k=p.match.home+'|'+p.match.away+'|'+(p.match.matchDate||'');
+    if(!byMatch[k]) byMatch[k]={match:p.match, count:0};
+    byMatch[k].count++;
   });
+  const wins=Object.values(byMatch);
   if(!wins.length){ box.style.display='none'; box.innerHTML=''; return; }
   const esc=t=>String(t==null?'':t).replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
-  const chip=p=>`<span class="won-chip"><span class="won-tick">✓ WON</span>${esc(p.match.home)} v ${esc(p.match.away)} · ${esc(p.primary)}</span>`;
-  // duplicate the set so the loop has no visible gap as it wraps
-  const items = wins.map(chip).join('');
+  const card=w=>{
+    const m=w.match;
+    const crest=(url,name)=> url
+      ? `<img class="wc-crest" src="${esc(url)}" alt="" onerror="this.style.display='none'"/>`
+      : '';
+    const flag = (!m.homeLogo && !m.awayLogo && m.flag)
+      ? `<img class="wc-flag" src="${esc(m.flag)}" alt="" onerror="this.style.display='none'"/>`
+      : '';
+    return `<span class="won-card">${flag}`+
+      `${crest(m.homeLogo,m.home)}<span class="wc-team">${esc(m.home)}</span>`+
+      `<span class="wc-vs">VS</span>`+
+      `<span class="wc-team">${esc(m.away)}</span>${crest(m.awayLogo,m.away)}`+
+      `<span class="wc-badge">✓ ${w.count}</span>`+
+      `</span>`;
+  };
+  // duplicate the set so the loop wraps seamlessly with no visible gap
+  const items = wins.map(card).join('');
   box.style.display='';
   box.innerHTML =
-    `<div class="flex items-center gap-2 mb-2"><span class="text-xs uppercase tracking-wider font-semibold" style="color:var(--muted)">Today's winners</span><span class="text-xs" style="color:var(--muted)">· ${wins.length} settled</span></div>`+
+    `<div class="flex items-center gap-2 mb-2"><span class="text-xs uppercase tracking-wider font-semibold" style="color:var(--muted)">Today's winners</span><span class="text-xs" style="color:var(--muted)">· ${wins.length} match${wins.length>1?'es':''}</span></div>`+
     `<div class="won-marquee"><div class="won-marquee-track">${items}${items}</div></div>`;
 }
 
@@ -1173,11 +1199,11 @@ function renderAccaMatches(){
   let html='';
 
   if(!upcomingLegs.length){
-    html+=`<div class="p-6 text-center" style="color:var(--muted)">No qualifying acca legs right now — the acca uses only upcoming, real-league picks rated 8/10 or higher.</div>`;
+    html+=`<div class="p-6 text-center" style="color:var(--muted)">No qualifying slip legs right now — the slip uses only upcoming, real-league picks rated 8/10 or higher.</div>`;
     host.innerHTML=html; return;
   }
 
-  // build the acca: combined odds + honest combined win probability
+  // build the slip: combined odds + honest combined win probability
   // per-leg probability estimated from its odds (implied), lightly de-margined
   let combinedOdds=1, combinedProb=1;
   upcomingLegs.forEach(l=>{ combinedOdds*=l.odd; const impP=Math.min(0.97, (1/l.odd)*1.05); combinedProb*=impP; });
@@ -1185,12 +1211,12 @@ function renderAccaMatches(){
 
   html+=`<div class="rounded-2xl p-4 mb-4" style="background:linear-gradient(135deg,rgba(76,175,39,.16),rgba(76,175,39,.04));border:1.5px solid rgba(76,175,39,.5)">
     <div class="flex items-center justify-between flex-wrap gap-2">
-      <div><div class="text-xs uppercase tracking-wider font-bold" style="color:var(--brand)">${upcomingLegs.length}-leg Acca</div>
+      <div><div class="text-xs uppercase tracking-wider font-bold" style="color:var(--brand)">${upcomingLegs.length}-leg All Bankers Slip</div>
       <div class="display text-2xl font-bold">~${combinedOdds.toFixed(2)} <span class="text-sm font-normal" style="color:var(--muted)">combined odds</span></div></div>
       <div class="text-right"><div class="text-xs" style="color:var(--muted)">Chance all legs land</div>
       <div class="display text-2xl font-bold" style="color:${accaPct>=40?'var(--brand)':accaPct>=20?'#b45309':'#c0392b'}">~${accaPct}%</div></div>
     </div>
-    <button onclick="shareAcca()" class="mt-3 text-xs px-3 py-1.5 rounded-lg font-semibold text-white" style="background:var(--brand)"><i class="fa-solid fa-share-nodes"></i> Share acca</button>
+    <button onclick="shareAcca()" class="mt-3 text-xs px-3 py-1.5 rounded-lg font-semibold text-white" style="background:var(--brand)"><i class="fa-solid fa-share-nodes"></i> Share slip</button>
   </div>`;
 
   // each leg
@@ -1221,14 +1247,14 @@ function renderAccaMatches(){
 
   // stash shareable text
   const legTxt=upcomingLegs.map((l,i)=>`${i+1}. ${l.match.home} v ${l.match.away} — ${l.market} (${l.rating}/10)`).join('\n');
-  window.__accaText=`⚽ PREDICT2U — TODAY'S BANKERS ACCA\n\n${legTxt}\n\n~${combinedOdds.toFixed(2)} combined odds · ~${accaPct}% chance all land\n\n⚠️ Accumulator — every leg must win. High risk. Not a guarantee. 18+. predict2u.com`;
+  window.__accaText=`⚽ PREDICT2U — TODAY'S ALL BANKERS SLIP\n\n${legTxt}\n\n~${combinedOdds.toFixed(2)} combined odds · ~${accaPct}% chance all land\n\n⚠️ Accumulator — every leg must win. High risk. Not a guarantee. 18+. predict2u.com`;
 
   host.innerHTML=html;
   applyFilters();
 }
 function shareAcca(){
   const t=window.__accaText||''; if(!t) return;
-  if(navigator.share){ navigator.share({title:"Predict2u — Today's Bankers Acca", text:t, url:'https://predict2u.com'}).catch(()=>{}); }
+  if(navigator.share){ navigator.share({title:"Predict2u — Today's All Bankers Slip", text:t, url:'https://predict2u.com'}).catch(()=>{}); }
   else if(navigator.clipboard){ navigator.clipboard.writeText(t); const btn=event.target.closest('button'); if(btn) btn.innerHTML='<i class="fa-solid fa-check"></i> Copied!'; }
 }
 
@@ -1586,19 +1612,19 @@ function renderStrictMatches(){
       : mode==='value'
       ? 'Value Bankers: Dixon-Coles/Poisson goal model. Estimates each team\'s expected goals for the match, builds the full scoreline probability matrix, and picks the highest-probability safe market — or No Bet when nothing clears the floor. Flags VALUE when the model beats the bookmaker odds. The most mathematically grounded engine. Unproven — track first.'
       : mode==='acca'
-      ? 'Today\'s Bankers Acca: combines the strongest banker per match across all engines, rated by engine agreement + average confidence. Same-match markets collapse to that match\'s single strongest pick. An accumulator needs EVERY leg to win — more legs = far lower chance. The shown combined probability is the honest odds of all legs landing. High risk. 18+.'
+      ? 'All Bankers Slip: combines the strongest banker per match across all engines, rated by engine agreement + average confidence. Same-match markets collapse to that match\'s single strongest pick. An accumulator needs EVERY leg to win — more legs = far lower chance. The shown combined probability is the honest odds of all legs landing. High risk. 18+.'
       : mode==='pro'
       ? 'Pro Bankers: the disciplined, xG-aware engine. Runs every game through a Poisson/Dixon-Coles probability model — sharpened with REAL expected goals where available (most leagues fall back to the estimate). Bets only where probability clears a real floor, widens caution on thin data, never bankers friendlies/table-less games, and needs the backed team to expect 2+ goals for any Win/DNB. Fewer, better-grounded picks. Unproven — track first.'
       : '';
     const noteM=document.getElementById('eng-note-mobile'); if(noteM) noteM.textContent = note.textContent;
 
-    // ---- selector sync: quick buttons (Normal/Acca) + dropdown ----
+    // ---- selector sync: quick buttons (Normal/Slip) + dropdown ----
     const sel=document.getElementById('eng-select');
-    const quick=(btn,active)=>{ if(!btn) return;
+    const quick=(btn,active,idleColor)=>{ if(!btn) return;
       if(active){ btn.style.background='linear-gradient(135deg,var(--gold),#6fd44a)'; btn.style.color='#0a0e17'; }
-      else { btn.style.background='transparent'; btn.style.color='var(--muted)'; } };
+      else { btn.style.background='transparent'; btn.style.color=idleColor||'var(--muted)'; } };
     quick(bn, mode==='normal');
-    quick(bac, mode==='acca');
+    quick(bac, mode==='acca', '#6fd44a'); // green-outlined slip keeps green text when idle
     if(sel){
       const inDropdown=['strict','ultra','rulespro','apex','prime','value','pro'].includes(mode);
       sel.value = inDropdown ? mode : '';
