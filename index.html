@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
+<meta name="google-site-verification" content="U_u6Gmr3M3UhkEhdZOWQy0EqFpiKLZmEFlQM3XwaFrc" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Predict2u • Know the Game, Predict Better</title>
 
@@ -136,9 +137,16 @@
   ::-webkit-scrollbar-thumb{ background:var(--line); border-radius:6px; }
 .eng-scroll::-webkit-scrollbar{display:none;}
 .eng-scroll{max-width:100%;}
-/* Equal-width tabs so selecting one never reflows/shifts the others. */
-.eng-scroll button{ min-width:82px; text-align:center; box-sizing:border-box; }
-.eng-scroll button:last-child{ min-width:64px; }
+/* Equal-width, non-reflowing tabs. FIXED basis (not min-width) so the active
+   tab's gradient/bold state can never change a button's size or nudge the row.
+   border is always present (transparent when inactive) so the box model is
+   identical in both states — this is what stops the jump-on-tap. */
+.eng-scroll button{
+  flex:0 0 82px; width:82px; box-sizing:border-box;
+  text-align:center; border:1px solid transparent;
+  transition:color .12s ease, background-color .12s ease; /* color only — never size */
+}
+.eng-scroll button:last-child{ flex-basis:64px; width:64px; }
 /* Desktop: let the engine tabs wrap so all are visible (no hidden scroll).
    Mobile: keep them on one scrollable row to save vertical space. */
 @media (min-width: 640px){
