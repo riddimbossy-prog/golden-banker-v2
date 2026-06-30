@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-06-30T16:20:35.146Z";
-window.SCORES_UPDATED = "2026-06-30T20:50:39.592Z";
+window.SCORES_UPDATED = "2026-06-30T20:55:27.888Z";
 window.MATCHES = [
   {
     "home": "Washington Spirit W",
