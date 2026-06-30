@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-06-30T16:20:35.146Z";
-window.SCORES_UPDATED = "2026-06-30T19:30:47.079Z";
+window.SCORES_UPDATED = "2026-06-30T19:45:32.042Z";
 window.MATCHES = [
   {
     "home": "Washington Spirit W",
@@ -56569,10 +56569,10 @@ window.MATCHES = [
     "league": "Carioca C",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-06-30T17:45:00+00:00",
     "matchDate": "2026-06-30",
-    "homeGoals": 2,
+    "homeGoals": 3,
     "awayGoals": 1,
     "homePos": 2,
     "awayPos": 5,
@@ -56629,7 +56629,7 @@ window.MATCHES = [
       "dcx2": 2.8
     },
     "h2h": null,
-    "elapsed": 84
+    "elapsed": null
   },
   {
     "home": "Central Ballester",
@@ -56641,7 +56641,7 @@ window.MATCHES = [
     "kickoff": "2026-06-30T18:00:00+00:00",
     "matchDate": "2026-06-30",
     "homeGoals": 0,
-    "awayGoals": 1,
+    "awayGoals": 2,
     "homePos": 11,
     "awayPos": 12,
     "tableSize": 28,
@@ -56699,7 +56699,7 @@ window.MATCHES = [
       "dcx2": 1.28
     },
     "h2h": null,
-    "elapsed": 65
+    "elapsed": 80
   },
   {
     "home": "Claypole",
@@ -56769,7 +56769,7 @@ window.MATCHES = [
       "dcx2": 1.2
     },
     "h2h": null,
-    "elapsed": 61
+    "elapsed": 76
   },
   {
     "home": "Cove Rangers",
@@ -56867,7 +56867,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 75
+    "elapsed": 89
   },
   {
     "home": "Botafogo U17",
@@ -57315,7 +57315,7 @@ window.MATCHES = [
     "league": "Division Intermedia",
     "country": "Paraguay",
     "flag": "https://media.api-sports.io/flags/py.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-06-30T18:30:00+00:00",
     "matchDate": "2026-06-30",
     "homeGoals": 0,
@@ -57375,7 +57375,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 58
   },
   {
     "home": "Raith Rovers",
@@ -57383,7 +57383,7 @@ window.MATCHES = [
     "league": "Friendlies Clubs",
     "country": "World",
     "flag": null,
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-06-30T18:30:00+00:00",
     "matchDate": "2026-06-30",
     "homeGoals": 1,
@@ -57424,7 +57424,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 57
   },
   {
     "home": "Ayr Utd",
@@ -57432,10 +57432,10 @@ window.MATCHES = [
     "league": "Friendlies Clubs",
     "country": "World",
     "flag": null,
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-06-30T18:30:00+00:00",
     "matchDate": "2026-06-30",
-    "homeGoals": 2,
+    "homeGoals": 3,
     "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
@@ -57486,7 +57486,7 @@ window.MATCHES = [
       "dcx2": 2.75
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 54
   },
   {
     "home": "Alloa Athletic",
@@ -57494,7 +57494,7 @@ window.MATCHES = [
     "league": "Friendlies Clubs",
     "country": "World",
     "flag": null,
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-06-30T18:30:00+00:00",
     "matchDate": "2026-06-30",
     "homeGoals": 0,
@@ -57548,7 +57548,7 @@ window.MATCHES = [
       "dcx2": 1.11
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 59
   },
   {
     "home": "Kelty Hearts",
@@ -57605,7 +57605,7 @@ window.MATCHES = [
     "league": "Friendlies Clubs",
     "country": "World",
     "flag": null,
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-06-30T18:30:00+00:00",
     "matchDate": "2026-06-30",
     "homeGoals": 0,
@@ -57661,7 +57661,7 @@ window.MATCHES = [
       "dcx2": 1.02
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 57
   },
   {
     "home": "Musselburgh Athletic",
@@ -57718,7 +57718,7 @@ window.MATCHES = [
     "league": "Friendlies Clubs",
     "country": "World",
     "flag": null,
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-06-30T18:45:00+00:00",
     "matchDate": "2026-06-30",
     "homeGoals": 0,
@@ -57780,7 +57780,7 @@ window.MATCHES = [
     "league": "Friendlies Clubs",
     "country": "World",
     "flag": null,
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-06-30T18:45:00+00:00",
     "matchDate": "2026-06-30",
     "homeGoals": 0,
@@ -57821,7 +57821,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 43
+    "elapsed": 45
   },
   {
     "home": "Linlithgow Rose",
@@ -57878,7 +57878,7 @@ window.MATCHES = [
     "league": "Friendlies Clubs",
     "country": "World",
     "flag": null,
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-06-30T18:45:00+00:00",
     "matchDate": "2026-06-30",
     "homeGoals": 0,
@@ -57932,7 +57932,7 @@ window.MATCHES = [
       "dcx2": 1.06
     },
     "h2h": null,
-    "elapsed": 44
+    "elapsed": 45
   },
   {
     "home": "Gretna 2008",
@@ -57940,7 +57940,7 @@ window.MATCHES = [
     "league": "Friendlies Clubs",
     "country": "World",
     "flag": null,
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-06-30T18:45:00+00:00",
     "matchDate": "2026-06-30",
     "homeGoals": 1,
@@ -58087,7 +58087,7 @@ window.MATCHES = [
     "league": "Friendlies Clubs",
     "country": "World",
     "flag": null,
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-06-30T19:00:00+00:00",
     "matchDate": "2026-06-30",
     "homeGoals": 1,
@@ -58141,7 +58141,7 @@ window.MATCHES = [
       "dcx2": 1.62
     },
     "h2h": null,
-    "elapsed": 31
+    "elapsed": 45
   },
   {
     "home": "Palmeiras U17",
