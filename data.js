@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-01T19:51:47.056Z";
-window.SCORES_UPDATED = "2026-07-01T20:35:28.469Z";
+window.SCORES_UPDATED = "2026-07-01T20:40:40.817Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -86519,7 +86519,7 @@ window.MATCHES = [
     "status": "FT",
     "kickoff": "2026-07-01T17:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": 2,
+    "homeGoals": 3,
     "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
@@ -88736,7 +88736,7 @@ window.MATCHES = [
       "dcx2": 1.36
     },
     "h2h": null,
-    "elapsed": 76
+    "elapsed": 80
   },
   {
     "home": "Wales U19",
@@ -88814,7 +88814,7 @@ window.MATCHES = [
       "bttsNo": 1.62
     },
     "h2h": null,
-    "elapsed": 77
+    "elapsed": 82
   },
   {
     "home": "Haukar",
@@ -88827,7 +88827,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-01T19:15:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": 2,
+    "homeGoals": 3,
     "awayGoals": 1,
     "homePos": 1,
     "awayPos": 3,
@@ -88899,7 +88899,7 @@ window.MATCHES = [
       "dcx2": 2.3
     },
     "h2h": null,
-    "elapsed": 63
+    "elapsed": 68
   },
   {
     "home": "Belgium",
@@ -88986,7 +88986,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 35
+    "elapsed": 40
   },
   {
     "home": "SF Glens",
@@ -89143,7 +89143,7 @@ window.MATCHES = [
       "dcx2": 1.42
     },
     "h2h": null,
-    "elapsed": 36
+    "elapsed": 41
   },
   {
     "home": "HFX Wanderers FC",
@@ -89157,7 +89157,7 @@ window.MATCHES = [
     "kickoff": "2026-07-01T20:00:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 0,
-    "awayGoals": 1,
+    "awayGoals": 2,
     "homePos": 4,
     "awayPos": 3,
     "tableSize": 8,
@@ -89230,7 +89230,7 @@ window.MATCHES = [
       "dcx2": 1.48
     },
     "h2h": null,
-    "elapsed": 24
+    "elapsed": 29
   },
   {
     "home": "Atlas",
