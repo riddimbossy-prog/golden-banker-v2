@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-01T19:51:47.056Z";
-window.SCORES_UPDATED = "2026-07-01T19:55:32.429Z";
+window.SCORES_UPDATED = "2026-07-01T20:01:01.229Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -86318,11 +86318,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/12807.png",
     "country": "World",
     "flag": null,
-    "status": "NS",
+    "status": "FT",
     "kickoff": "2026-07-01T17:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 1,
+    "awayGoals": 1,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -86648,11 +86648,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/12742.png",
     "country": "World",
     "flag": null,
-    "status": "NS",
+    "status": "FT",
     "kickoff": "2026-07-01T17:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 6,
+    "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -86714,11 +86714,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/9328.png",
     "country": "World",
     "flag": null,
-    "status": "NS",
+    "status": "FT",
     "kickoff": "2026-07-01T17:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 3,
+    "awayGoals": 5,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -87179,11 +87179,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/16751.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "NS",
+    "status": "FT",
     "kickoff": "2026-07-01T18:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 1,
+    "awayGoals": 4,
     "homePos": 12,
     "awayPos": 5,
     "tableSize": 12,
@@ -87251,7 +87251,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/7869.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-01T18:00:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 2,
@@ -87326,7 +87326,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Flamengo U20",
@@ -87336,11 +87336,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/12953.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-01T18:00:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 2,
-    "awayGoals": 1,
+    "awayGoals": 2,
     "homePos": 9,
     "awayPos": 17,
     "tableSize": 20,
@@ -87411,7 +87411,7 @@ window.MATCHES = [
       "dcx2": 3
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Bahia U20",
@@ -87421,7 +87421,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/13000.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-01T18:00:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 3,
@@ -87496,7 +87496,7 @@ window.MATCHES = [
       "dcx2": 1.77
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Palmeiras U20",
@@ -87902,7 +87902,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/12998.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-01T18:00:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 1,
@@ -87977,7 +87977,7 @@ window.MATCHES = [
       "dcx2": 1.3
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Santos U20",
@@ -88439,7 +88439,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 72
+    "elapsed": 78
   },
   {
     "home": "Legiao U20",
@@ -88583,7 +88583,7 @@ window.MATCHES = [
     "round": "Regular Season - 5",
     "odds": null,
     "h2h": null,
-    "elapsed": 63
+    "elapsed": 68
   },
   {
     "home": "Tupan",
@@ -88899,7 +88899,7 @@ window.MATCHES = [
       "dcx2": 2.3
     },
     "h2h": null,
-    "elapsed": 40
+    "elapsed": 45
   },
   {
     "home": "Belgium",
@@ -88909,11 +88909,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/13.png",
     "country": "World",
     "flag": null,
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-01T20:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 1,
     "awayPos": 8,
     "tableSize": 60,
@@ -88986,7 +88986,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 1
   },
   {
     "home": "SF Glens",
@@ -89068,11 +89068,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4079.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-01T20:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 5,
     "awayPos": 4,
     "tableSize": 144,
@@ -89143,7 +89143,7 @@ window.MATCHES = [
       "dcx2": 1.42
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 2
   },
   {
     "home": "HFX Wanderers FC",

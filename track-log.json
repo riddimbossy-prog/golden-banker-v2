@@ -23968,9 +23968,10 @@
       "confidence": "High",
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-06-30T22:00:54.383Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Lost",
+      "score": "1-4",
+      "settledAt": "2026-07-01T20:01:01.336Z"
     },
     {
       "matchDate": "2026-07-01",
@@ -23982,9 +23983,10 @@
       "confidence": 10,
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-06-30T22:00:54.383Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "1-4",
+      "settledAt": "2026-07-01T20:01:01.337Z"
     },
     {
       "matchDate": "2026-07-01",
@@ -23996,9 +23998,10 @@
       "confidence": 9,
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-06-30T22:00:54.383Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Lost",
+      "score": "1-4",
+      "settledAt": "2026-07-01T20:01:01.337Z"
     },
     {
       "matchDate": "2026-07-01",
@@ -24010,9 +24013,10 @@
       "confidence": 9,
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-06-30T22:00:54.383Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Lost",
+      "score": "1-4",
+      "settledAt": "2026-07-01T20:01:01.337Z"
     },
     {
       "matchDate": "2026-07-01",
@@ -25172,8 +25176,8 @@
       "confidence": 9,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.386Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -25186,8 +25190,8 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.386Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -25200,8 +25204,8 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.386Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -39117,6 +39121,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-01T19:55:32.588Z"
+    "updated": "2026-07-01T20:01:01.528Z"
   }
 }
