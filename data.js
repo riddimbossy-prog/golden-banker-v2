@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-01T11:11:45.806Z";
-window.SCORES_UPDATED = "2026-07-01T11:45:45.221Z";
+window.SCORES_UPDATED = "2026-07-01T11:50:42.922Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -78251,7 +78251,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 83
+    "elapsed": 88
   },
   {
     "home": "Radomiak Radom",
@@ -78315,7 +78315,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 59
+    "elapsed": 64
   },
   {
     "home": "Qarabag",
@@ -78389,10 +78389,10 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/17273.png",
     "country": "Mongolia",
     "flag": "https://media.api-sports.io/flags/mn.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-01T11:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": 1,
+    "homeGoals": 2,
     "awayGoals": 0,
     "homePos": 7,
     "awayPos": 9,
@@ -78475,7 +78475,7 @@ window.MATCHES = [
     "status": "1H",
     "kickoff": "2026-07-01T11:30:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": 1,
+    "homeGoals": 2,
     "awayGoals": 0,
     "homePos": 11,
     "awayPos": 5,
@@ -78547,7 +78547,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 16
+    "elapsed": 21
   },
   {
     "home": "KDV",
