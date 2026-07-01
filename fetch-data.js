@@ -733,6 +733,8 @@ const FINISHED = new Set(["FT","AET","PEN"]);
         awayOver25Rate: awayStats ? awayStats.over25Rate : null,
         homeOver15Rate: homeStats ? homeStats.over15Rate : null,
         awayOver15Rate: awayStats ? awayStats.over15Rate : null,
+        homeOver35Rate: homeStats ? homeStats.over35Rate : null,
+        awayOver35Rate: awayStats ? awayStats.over35Rate : null,
         statsReal: !!(homeStats || awayStats),
         sameGroup, isKnockout,
         isTournament: multiGroup || isKnockout,
