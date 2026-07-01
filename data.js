@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-01T11:11:45.806Z";
-window.SCORES_UPDATED = "2026-07-01T11:50:42.922Z";
+window.SCORES_UPDATED = "2026-07-01T11:55:29.870Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -77980,7 +77980,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/14372.png",
     "country": "South-Korea",
     "flag": "https://media.api-sports.io/flags/kr.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-01T10:00:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 1,
@@ -78040,7 +78040,7 @@ window.MATCHES = [
     "round": "Regular Season - 9",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Seoul W",
@@ -78050,7 +78050,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/14379.png",
     "country": "South-Korea",
     "flag": "https://media.api-sports.io/flags/kr.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-01T10:00:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 0,
@@ -78123,7 +78123,7 @@ window.MATCHES = [
       "dcx2": 1.1
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Stal Mielec",
@@ -78197,7 +78197,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/6489.png",
     "country": "World",
     "flag": null,
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-01T10:00:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 2,
@@ -78251,7 +78251,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 88
+    "elapsed": null
   },
   {
     "home": "Radomiak Radom",
@@ -78265,7 +78265,7 @@ window.MATCHES = [
     "kickoff": "2026-07-01T10:30:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 2,
-    "awayGoals": 1,
+    "awayGoals": 2,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -78315,7 +78315,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 64
+    "elapsed": 68
   },
   {
     "home": "Qarabag",
@@ -78547,7 +78547,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 21
+    "elapsed": 26
   },
   {
     "home": "KDV",
