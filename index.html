@@ -221,6 +221,7 @@ body.light .won-card .wc-badge{ background:rgba(22,163,74,.10); border-color:rgb
           <option value="value">Value</option>
           <option value="pro">Pro</option>
           <option value="trend">League Trend</option>
+          <option value="streaks">Streaks</option>
         </select>
         <span style="position:absolute;right:10px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--muted);font-size:10px">▼</span>
       </div>
@@ -623,6 +624,11 @@ function enginePicks(rows){
       return { match:r.match, primary:u.primary, confidence:u.confidence>=8?'High':'Medium',
                banker:u.banker, weight:u.confidence, reason:u.verdict||'' }; }).filter(Boolean);
   }
+  if(engineMode==='streaks' && typeof streakRecommend==='function'){
+    return rows.map(r=>{ const u=streakRecommend(r.match); if(!u.bet) return null;
+      return { match:r.match, primary:u.primary, confidence:u.confidence>=8?'High':'Medium',
+               banker:u.banker, weight:u.confidence, reason:u.verdict||'' }; }).filter(Boolean);
+  }
   if(engineMode==='acca'){
     return accaLegs(rows).map(l=>({ match:l.match, primary:l.market,
       confidence:l.rating>=8?'High':l.rating>=7?'Medium':'Low', banker:true,
@@ -775,6 +781,7 @@ function renderMatches(){
   if(engineMode==='value'){ renderValueMatches(); return; }
   if(engineMode==='pro'){ renderProMatches(); return; }
   if(engineMode==='trend'){ renderTrendMatches(); return; }
+  if(engineMode==='streaks'){ renderStreakMatches(); return; }
   if(engineMode==='acca'){ renderAccaMatches(); return; }
   const root = document.getElementById('matches-root');
   const _allRows = byDate[activeDate]||[];
@@ -1356,6 +1363,42 @@ function renderTrendMatches(){
   applyFilters();
 }
 
+function renderStreakMatches(){
+  const host=document.getElementById('matches-root');
+  if(typeof streakRecommend!=='function'){ host.innerHTML='<div class="p-6 text-center" style="color:var(--muted)">Streaks engine unavailable — deploy the latest banker-engine.js.</div>'; return; }
+  const dayMatches=dayRows();
+  const picks=dayMatches.map(r=>streakRecommend(r.match)).filter(r=>r.bet);
+  let html='';
+  if(!picks.length){ host.innerHTML='<div class="p-6 text-center" style="color:var(--muted)">No qualifying picks right now.</div>'; return; }
+  picks.sort((a,b)=>(b.confidence-a.confidence));
+  picks.forEach(u=>{
+    const grade=u.grade||'Strong Pick';
+    html+=`<details class="match-item is-banker-row" data-search="${(u.match.home+' '+u.match.away+' '+(u.match.league||'')).toLowerCase().replace(/"/g,'')}" data-market="${marketTag(u.primary)}" data-banker="${u.banker?'1':'0'}" data-upcoming="0" data-winodd="" data-ko="${u.match.kickoff?new Date(u.match.kickoff).getTime():''}" data-conf="${u.confidence}">
+      <summary class="match-line px-4 py-3 flex items-center gap-3">
+        <div class="w-12 text-center flex-shrink-0">${rowScore(u.match)}</div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-medium truncate">${u.match.home}</div>
+          <div class="text-sm font-medium truncate">${u.match.away}</div>
+          <div class="text-[11px]" style="color:var(--muted)">${rowFlag(u.match)}${u.match.league||''}</div>
+        </div>
+        <div class="flex flex-col items-end gap-1 flex-shrink-0 w-28">
+          <span class="text-[9px] font-bold uppercase" style="color:var(--brand)">${grade}${u.score?` · ${u.score}`:''}</span>
+          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(u.primary)} text-right leading-tight">${u.primary}</span>
+          ${rowSettle(u.match,u.primary)}
+        </div>
+        <i class="fa-solid fa-chevron-down chev text-sm" style="color:var(--muted)"></i>
+      </summary>
+      <div class="px-4 pb-4 pt-3 text-sm" style="border-top:1px solid var(--line);background:var(--panel-2)">
+        <div style="font-weight:600;margin-bottom:.4rem">${u.verdict}</div>
+        ${u.streakLen?`<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:.4rem"><span style="padding:1px 8px;border-radius:6px;font-size:.7rem;font-weight:700;background:rgba(76,175,39,.14);color:#7ed957">${u.streakLen}-game streak</span>${u.oppWeak!=null?`<span style="padding:1px 8px;border-radius:6px;font-size:.7rem;font-weight:700;background:rgba(245,183,61,.15);color:#f5b73d">opp weakness ${u.oppWeak}</span>`:''}</div>`:''}
+        ${(u.humanChecks||[]).length?`<div style="color:#b45309;font-size:.75rem;margin-top:.5rem"><i class="fa-solid fa-user-check"></i> ${u.humanChecks[0]}</div>`:''}
+      </div>
+    </details>`;
+  });
+  host.innerHTML=html;
+  applyFilters();
+}
+
 function renderValueMatches(){
   const host=document.getElementById('matches-root');
   if (typeof valueRecommend !== 'function'){ host.innerHTML='<div class="p-6 text-center" style="color:var(--muted)">Value engine unavailable — deploy the latest banker-engine.js.</div>'; return; }
@@ -1660,7 +1703,7 @@ function renderStrictMatches(){
     quick(bn, mode==='normal');
     quick(bac, mode==='acca', '#6fd44a'); // green-outlined slip keeps green text when idle
     if(sel){
-      const inDropdown=['strict','ultra','rulespro','apex','prime','value','pro','trend'].includes(mode);
+      const inDropdown=['strict','ultra','rulespro','apex','prime','value','pro','trend','streaks'].includes(mode);
       sel.value = inDropdown ? mode : '';
       if(inDropdown){ sel.style.background='linear-gradient(135deg,var(--gold),#6fd44a)'; sel.style.color='#0a0e17'; }
       else { sel.style.background='var(--panel)'; sel.style.color='var(--muted)'; }
