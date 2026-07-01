@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-01T19:51:47.056Z";
-window.SCORES_UPDATED = "2026-07-01T20:50:39.979Z";
+window.SCORES_UPDATED = "2026-07-01T20:55:32.256Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -88750,7 +88750,7 @@ window.MATCHES = [
     "kickoff": "2026-07-01T19:00:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 0,
-    "awayGoals": 3,
+    "awayGoals": 4,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -88899,7 +88899,7 @@ window.MATCHES = [
       "dcx2": 2.3
     },
     "h2h": null,
-    "elapsed": 78
+    "elapsed": 83
   },
   {
     "home": "Belgium",
@@ -88909,7 +88909,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/13.png",
     "country": "World",
     "flag": null,
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-01T20:00:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 0,
@@ -89230,7 +89230,7 @@ window.MATCHES = [
       "dcx2": 1.48
     },
     "h2h": null,
-    "elapsed": 39
+    "elapsed": 44
   },
   {
     "home": "Atlas",
