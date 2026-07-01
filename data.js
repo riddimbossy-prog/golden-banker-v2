@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-01T11:11:45.806Z";
-window.SCORES_UPDATED = "2026-07-01T12:30:52.555Z";
+window.SCORES_UPDATED = "2026-07-01T12:35:31.554Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -78392,7 +78392,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-01T11:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": 6,
+    "homeGoals": 7,
     "awayGoals": 1,
     "homePos": 7,
     "awayPos": 9,
@@ -78462,7 +78462,7 @@ window.MATCHES = [
       "dcx2": 1.25
     },
     "h2h": null,
-    "elapsed": 73
+    "elapsed": 77
   },
   {
     "home": "Dinamo Barnaul",
@@ -78560,7 +78560,7 @@ window.MATCHES = [
     "status": "1H",
     "kickoff": "2026-07-01T12:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": 0,
+    "homeGoals": 1,
     "awayGoals": 0,
     "homePos": 2,
     "awayPos": 6,
@@ -78617,7 +78617,7 @@ window.MATCHES = [
     "round": "Division B - Group 4 - 15",
     "odds": null,
     "h2h": null,
-    "elapsed": 30
+    "elapsed": 35
   },
   {
     "home": "Slavia Sofia",
@@ -78888,7 +78888,7 @@ window.MATCHES = [
       "dcx2": 1.2
     },
     "h2h": null,
-    "elapsed": 29
+    "elapsed": 34
   },
   {
     "home": "Lokomotiv Sofia",
@@ -79208,7 +79208,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 30
+    "elapsed": 35
   },
   {
     "home": "Chelyabinsk",
@@ -79534,7 +79534,7 @@ window.MATCHES = [
     "round": null,
     "odds": null,
     "h2h": null,
-    "elapsed": 30
+    "elapsed": 35
   },
   {
     "home": "Guairena FC",
