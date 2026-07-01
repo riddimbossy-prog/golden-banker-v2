@@ -220,6 +220,7 @@ body.light .won-card .wc-badge{ background:rgba(22,163,74,.10); border-color:rgb
           <option value="prime">Prime</option>
           <option value="value">Value</option>
           <option value="pro">Pro</option>
+          <option value="trend">League Trend</option>
         </select>
         <span style="position:absolute;right:10px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--muted);font-size:10px">▼</span>
       </div>
@@ -617,6 +618,11 @@ function enginePicks(rows){
       return { match:r.match, primary:u.primary, confidence:u.confidence>=8?'High':'Medium',
                banker:u.banker, weight:u.confidence, reason:u.verdict||'' }; }).filter(Boolean);
   }
+  if(engineMode==='trend' && typeof trendRecommend==='function'){
+    return rows.map(r=>{ const u=trendRecommend(r.match); if(!u.bet) return null;
+      return { match:r.match, primary:u.primary, confidence:u.confidence>=8?'High':'Medium',
+               banker:u.banker, weight:u.confidence, reason:u.verdict||'' }; }).filter(Boolean);
+  }
   if(engineMode==='acca'){
     return accaLegs(rows).map(l=>({ match:l.match, primary:l.market,
       confidence:l.rating>=8?'High':l.rating>=7?'Medium':'Low', banker:true,
@@ -768,6 +774,7 @@ function renderMatches(){
   if(engineMode==='prime'){ renderPrimeMatches(); return; }
   if(engineMode==='value'){ renderValueMatches(); return; }
   if(engineMode==='pro'){ renderProMatches(); return; }
+  if(engineMode==='trend'){ renderTrendMatches(); return; }
   if(engineMode==='acca'){ renderAccaMatches(); return; }
   const root = document.getElementById('matches-root');
   const rows = byDate[activeDate]||[];
@@ -1315,6 +1322,48 @@ function renderProMatches(){
   applyFilters();
 }
 
+function renderTrendMatches(){
+  const host=document.getElementById('matches-root');
+  if(typeof trendRecommend!=='function'){ host.innerHTML='<div class="p-6 text-center" style="color:var(--muted)">League Trend engine unavailable — deploy the latest banker-engine.js.</div>'; return; }
+  const dayMatches=dayRows();
+  const picks=dayMatches.map(r=>trendRecommend(r.match)).filter(r=>r.bet);
+  let html=`<div class="panel rounded-xl p-3 mb-3 text-sm" style="border:1px solid rgba(76,175,39,.4);background:rgba(76,175,39,.07)">
+    <strong style="color:var(--brand)"><i class="fa-solid fa-chart-line"></i> League Trend — studies the league first.</strong>
+    Finds the markets a league produces most often (real league-wide hit-rates), keeps only the top-3 trends hitting 70%+, then filters the fixture's teams against that trend. A pick needs the <strong>70-70-70 rule</strong>: league, team, and match must each clear 70%. If the league data is thin (&lt;50 matches) or any layer fails, it returns No Bet. Populates after a full data run. Unproven — track first. 18+.
+  </div>`;
+  if(!picks.length){ html+=`<div class="p-6 text-center" style="color:var(--muted)">No market cleared the 70-70-70 rule today. Either the leagues lack a strong trend, the teams don't fit it, or league history isn't loaded yet (run "Update Predicto data").</div>`; host.innerHTML=html; return; }
+  picks.sort((a,b)=>(b.confidence-a.confidence));
+  picks.forEach(u=>{
+    const L=u.layers||{}; const tierName=u.tier||'Value Pick';
+    const idTxt=u.identity?`${u.identity}`:'';
+    const layerBadge=(label,v)=>`<span style="display:inline-block;padding:1px 6px;border-radius:6px;font-size:.7rem;font-weight:700;background:${v>=80?'rgba(34,197,94,.16)':v>=75?'rgba(76,175,39,.14)':'rgba(245,183,61,.15)'};color:${v>=75?'#22c55e':'#f5b73d'}">${label} ${v}%</span>`;
+    html+=`<details class="match-item is-banker-row" data-search="${(u.match.home+' '+u.match.away+' '+(u.match.league||'')).toLowerCase().replace(/"/g,'')}" data-market="${marketTag(u.primary)}" data-banker="${u.banker?'1':'0'}" data-upcoming="0" data-winodd="" data-ko="${u.match.kickoff?new Date(u.match.kickoff).getTime():''}" data-conf="${u.confidence}">
+      <summary class="match-line px-4 py-3 flex items-center gap-3">
+        <div class="w-12 text-center flex-shrink-0">${rowScore(u.match)}</div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-medium truncate">${u.match.home}</div>
+          <div class="text-sm font-medium truncate">${u.match.away}</div>
+          <div class="text-[11px]" style="color:var(--muted)">${rowFlag(u.match)}${u.match.league||''}${idTxt?` · ${idTxt}`:''}</div>
+        </div>
+        <div class="flex flex-col items-end gap-1 flex-shrink-0 w-28">
+          <span class="text-[9px] font-bold uppercase" style="color:var(--brand)">${tierName} · ${u.decision}</span>
+          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(u.primary)} text-right leading-tight">${u.primary}</span>
+          ${rowSettle(u.match,u.primary)}
+        </div>
+        <i class="fa-solid fa-chevron-down chev text-sm" style="color:var(--muted)"></i>
+      </summary>
+      <div class="px-4 pb-4 pt-3 text-sm" style="border-top:1px solid var(--line);background:var(--panel-2)">
+        <div style="font-weight:600;margin-bottom:.4rem">${u.verdict}</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:.4rem">${layerBadge('League',L.league||0)}${layerBadge('Team',L.team||0)}${layerBadge('Match',L.match||0)}</div>
+        ${u.topTrends&&u.topTrends.length?`<div style="color:var(--muted);font-size:.75rem">Top league trends: ${u.topTrends.map(t=>`${t.market} ${Math.round(t.rate*100)}%`).join(' · ')}</div>`:''}
+        ${(u.humanChecks||[]).length?`<div style="color:#b45309;font-size:.75rem;margin-top:.5rem"><i class="fa-solid fa-user-check"></i> ${u.humanChecks[0]}</div>`:''}
+      </div>
+    </details>`;
+  });
+  host.innerHTML=html;
+  applyFilters();
+}
+
 function renderValueMatches(){
   const host=document.getElementById('matches-root');
   if (typeof valueRecommend !== 'function'){ host.innerHTML='<div class="p-6 text-center" style="color:var(--muted)">Value engine unavailable — deploy the latest banker-engine.js.</div>'; return; }
@@ -1636,6 +1685,8 @@ function renderStrictMatches(){
       ? 'All Bankers Slip: combines the strongest banker per match across all engines, rated by engine agreement + average confidence. Same-match markets collapse to that match\'s single strongest pick. An accumulator needs EVERY leg to win — more legs = far lower chance. The shown combined probability is the honest odds of all legs landing. High risk. 18+.'
       : mode==='pro'
       ? 'Pro Bankers: the disciplined, xG-aware engine. Runs every game through a Poisson/Dixon-Coles probability model — sharpened with REAL expected goals where available (most leagues fall back to the estimate). Bets only where probability clears a real floor, widens caution on thin data, never bankers friendlies/table-less games, and needs the backed team to expect 2+ goals for any Win/DNB. Fewer, better-grounded picks. Unproven — track first.'
+      : mode==='trend'
+      ? 'League Trend: studies the league FIRST. Computes real league-wide market hit-rates from the full season, keeps only the top-3 trends hitting 70%+, then filters the fixture\'s teams against that trend. A pick needs the 70-70-70 rule — league, team, and match must each clear 70% — or it returns No Bet. Needs the full data run to load league history. Unproven — track first.'
       : '';
     const noteM=document.getElementById('eng-note-mobile'); if(noteM) noteM.textContent = note.textContent;
 
@@ -1647,7 +1698,7 @@ function renderStrictMatches(){
     quick(bn, mode==='normal');
     quick(bac, mode==='acca', '#6fd44a'); // green-outlined slip keeps green text when idle
     if(sel){
-      const inDropdown=['strict','ultra','rulespro','apex','prime','value','pro'].includes(mode);
+      const inDropdown=['strict','ultra','rulespro','apex','prime','value','pro','trend'].includes(mode);
       sel.value = inDropdown ? mode : '';
       if(inDropdown){ sel.style.background='linear-gradient(135deg,var(--gold),#6fd44a)'; sel.style.color='#0a0e17'; }
       else { sel.style.background='var(--panel)'; sel.style.color='var(--muted)'; }
