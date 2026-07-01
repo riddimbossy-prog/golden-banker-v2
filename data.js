@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-01T08:20:14.429Z";
-window.SCORES_UPDATED = "2026-07-01T08:50:41.368Z";
+window.SCORES_UPDATED = "2026-07-01T08:55:32.241Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -75934,7 +75934,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3490.png",
     "country": "World",
     "flag": null,
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-01T08:00:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 3,
@@ -76060,7 +76060,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/26667.png",
     "country": "Mongolia",
     "flag": "https://media.api-sports.io/flags/mn.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-01T08:00:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 1,
@@ -76197,7 +76197,7 @@ window.MATCHES = [
       "dcx2": null
     },
     "h2h": null,
-    "elapsed": 35
+    "elapsed": 40
   },
   {
     "home": "Ajka",
@@ -76260,7 +76260,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 18
+    "elapsed": 23
   },
   {
     "home": "Krylia Sovetov",
