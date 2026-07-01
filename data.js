@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-06-30T23:11:53.478Z";
-window.SCORES_UPDATED = "2026-07-01T01:05:28.716Z";
+window.SCORES_UPDATED = "2026-07-01T01:10:37.224Z";
 window.MATCHES = [
   {
     "home": "Washington Spirit W",
@@ -56441,7 +56441,7 @@ window.MATCHES = [
     "kickoff": "2026-07-01T00:30:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 1,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -56505,7 +56505,7 @@ window.MATCHES = [
       "dcx2": 2.4
     },
     "h2h": null,
-    "elapsed": 36
+    "elapsed": 41
   },
   {
     "home": "Mexico",
@@ -56599,11 +56599,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/23124.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-01T01:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 2,
     "awayPos": 9,
     "tableSize": 144,
@@ -56671,7 +56671,7 @@ window.MATCHES = [
       "dcx2": 4.33
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 5
   },
   {
     "home": "Colorado Storm",
@@ -74965,7 +74965,7 @@ window.MATCHES = [
       "dcx2": 1.75
     },
     "h2h": null,
-    "elapsed": 74
+    "elapsed": 79
   },
   {
     "home": "Volta Redonda",
@@ -75049,7 +75049,7 @@ window.MATCHES = [
       "dcx2": 1.8
     },
     "h2h": null,
-    "elapsed": 74
+    "elapsed": 79
   },
   {
     "home": "Virginia Marauders",
@@ -75131,7 +75131,7 @@ window.MATCHES = [
       "dcx2": 1.01
     },
     "h2h": null,
-    "elapsed": 72
+    "elapsed": 77
   },
   {
     "home": "Miami AC",
