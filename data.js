@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-01T11:11:45.806Z";
-window.SCORES_UPDATED = "2026-07-01T11:30:51.845Z";
+window.SCORES_UPDATED = "2026-07-01T11:35:28.078Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -78040,7 +78040,7 @@ window.MATCHES = [
     "round": "Regular Season - 9",
     "odds": null,
     "h2h": null,
-    "elapsed": 75
+    "elapsed": 80
   },
   {
     "home": "Seoul W",
@@ -78054,7 +78054,7 @@ window.MATCHES = [
     "kickoff": "2026-07-01T10:00:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 0,
-    "awayGoals": 2,
+    "awayGoals": 3,
     "homePos": 2,
     "awayPos": 7,
     "tableSize": 8,
@@ -78123,7 +78123,7 @@ window.MATCHES = [
       "dcx2": 1.1
     },
     "h2h": null,
-    "elapsed": 75
+    "elapsed": 80
   },
   {
     "home": "Stal Mielec",
@@ -78136,7 +78136,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-01T10:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": 0,
+    "homeGoals": 1,
     "awayGoals": 4,
     "homePos": null,
     "awayPos": null,
@@ -78187,7 +78187,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 79
+    "elapsed": 84
   },
   {
     "home": "Chornomorets",
@@ -78251,7 +78251,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 68
+    "elapsed": 73
   },
   {
     "home": "Radomiak Radom",
@@ -78261,7 +78261,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/563.png",
     "country": "World",
     "flag": null,
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-01T10:30:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 2,
@@ -78315,7 +78315,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 48
   },
   {
     "home": "Qarabag",
@@ -78462,7 +78462,7 @@ window.MATCHES = [
       "dcx2": 1.25
     },
     "h2h": null,
-    "elapsed": 31
+    "elapsed": 35
   },
   {
     "home": "Dinamo Barnaul",
@@ -78547,7 +78547,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 1
+    "elapsed": 6
   },
   {
     "home": "KDV",
