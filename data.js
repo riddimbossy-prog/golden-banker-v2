@@ -1,5 +1,5 @@
-window.DATA_UPDATED = "2026-07-01T11:11:45.806Z";
-window.SCORES_UPDATED = "2026-07-01T12:55:29.316Z";
+window.DATA_UPDATED = "2026-07-01T14:22:56.907Z";
+window.ENRICHED_AT = "2026-07-01T14:23:47.059Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -3168,7 +3168,17 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.55
     },
-    "h2h": null
+    "h2h": null,
+    "oddsOpen": {
+      "home": null,
+      "draw": null,
+      "away": null
+    },
+    "oddsLast": {
+      "home": 2.35,
+      "draw": 3.1,
+      "away": 2.88
+    }
   },
   {
     "home": "Gwangju FC",
@@ -3252,7 +3262,17 @@ window.MATCHES = [
       "dc12": 1.18,
       "dcx2": 1.1
     },
-    "h2h": null
+    "h2h": null,
+    "oddsOpen": {
+      "home": null,
+      "draw": null,
+      "away": null
+    },
+    "oddsLast": {
+      "home": 6.25,
+      "draw": 3.9,
+      "away": 1.48
+    }
   },
   {
     "home": "FC Seoul",
@@ -7169,25 +7189,25 @@ window.MATCHES = [
     "leagueAvg": null,
     "leagueTrends": null,
     "homeWinRate": 0.8,
-    "awayWinRate": 0.5,
+    "awayWinRate": 0.33,
     "homeUnbeatenRate": 0.8,
     "awayUnbeatenRate": 1,
     "homeCleanSheetRate": 0.4,
-    "awayCleanSheetRate": 1,
+    "awayCleanSheetRate": 0.67,
     "homeFailedToScoreRate": 0.2,
-    "awayFailedToScoreRate": 0.5,
+    "awayFailedToScoreRate": 0.33,
     "home1HFor": 0.8,
     "home2HFor": 0.6,
     "home1HAgainst": 0.2,
     "home2HAgainst": 0.2,
-    "away1HFor": 0.75,
-    "away2HFor": 0.25,
-    "away1HAgainst": 0.25,
-    "away2HAgainst": 0.25,
+    "away1HFor": 0.6,
+    "away2HFor": 0.2,
+    "away1HAgainst": 0.2,
+    "away2HAgainst": 0.2,
     "homeOver25Rate": 0.4,
     "awayOver25Rate": 0,
     "homeOver15Rate": 0.4,
-    "awayOver15Rate": 0.25,
+    "awayOver15Rate": 0.2,
     "statsReal": true,
     "sameGroup": false,
     "isKnockout": false,
@@ -14133,16 +14153,16 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round of 16",
     "odds": {
-      "home": 1.9,
+      "home": 1.88,
       "draw": 3.45,
-      "away": 3.95,
+      "away": 4,
       "over15": 1.3,
       "under15": 3.4,
       "over25": 1.93,
       "under25": 1.85,
       "over35": 3.3,
       "under35": 1.33,
-      "bttsYes": 1.75,
+      "bttsYes": 1.77,
       "bttsNo": 1.95,
       "dc1x": 1.22,
       "dc12": 1.25,
@@ -17652,17 +17672,7 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.62
     },
-    "h2h": null,
-    "oddsOpen": {
-      "home": null,
-      "draw": null,
-      "away": null
-    },
-    "oddsLast": {
-      "home": 2.15,
-      "draw": 3.1,
-      "away": 3.4
-    }
+    "h2h": null
   },
   {
     "home": "San Francisco City",
@@ -19397,7 +19407,7 @@ window.MATCHES = [
     "awayUnbeatenRate": 0,
     "homeCleanSheetRate": 0,
     "awayCleanSheetRate": 0,
-    "homeFailedToScoreRate": 0.75,
+    "homeFailedToScoreRate": 0.6,
     "awayFailedToScoreRate": 0.67,
     "home1HFor": 0,
     "home2HFor": 0,
@@ -19564,17 +19574,7 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 2.5
     },
-    "h2h": null,
-    "oddsOpen": {
-      "home": null,
-      "draw": null,
-      "away": null
-    },
-    "oddsLast": {
-      "home": 1.8,
-      "draw": 3.3,
-      "away": 5
-    }
+    "h2h": null
   },
   {
     "home": "Denver Summit W",
@@ -19939,9 +19939,9 @@ window.MATCHES = [
     "away2HFor": 0.13,
     "away1HAgainst": 0.13,
     "away2HAgainst": 0.13,
-    "homeOver25Rate": 0.13,
+    "homeOver25Rate": 0.11,
     "awayOver25Rate": 0.25,
-    "homeOver15Rate": 0.38,
+    "homeOver15Rate": 0.33,
     "awayOver15Rate": 0.38,
     "statsReal": true,
     "sameGroup": true,
@@ -24556,25 +24556,25 @@ window.MATCHES = [
     "venueTableSize": 20,
     "leagueAvg": null,
     "leagueTrends": null,
-    "homeWinRate": 0.75,
+    "homeWinRate": 0.8,
     "awayWinRate": 0.5,
     "homeUnbeatenRate": 1,
     "awayUnbeatenRate": 0.5,
-    "homeCleanSheetRate": 0.25,
+    "homeCleanSheetRate": 0.2,
     "awayCleanSheetRate": 0,
     "homeFailedToScoreRate": 0,
     "awayFailedToScoreRate": 0.5,
-    "home1HFor": 1.5,
-    "home2HFor": 1.25,
-    "home1HAgainst": 0.75,
-    "home2HAgainst": 0.75,
+    "home1HFor": 1.2,
+    "home2HFor": 1,
+    "home1HAgainst": 0.6,
+    "home2HAgainst": 0.6,
     "away1HFor": 0,
     "away2HFor": 0.67,
     "away1HAgainst": 0.33,
     "away2HAgainst": 1,
-    "homeOver25Rate": 0.5,
+    "homeOver25Rate": 0.6,
     "awayOver25Rate": 0.67,
-    "homeOver15Rate": 0.75,
+    "homeOver15Rate": 0.8,
     "awayOver15Rate": 0.67,
     "statsReal": true,
     "sameGroup": false,
@@ -24619,25 +24619,25 @@ window.MATCHES = [
     "venueTableSize": 20,
     "leagueAvg": null,
     "leagueTrends": null,
-    "homeWinRate": 0.33,
+    "homeWinRate": 0.25,
     "awayWinRate": null,
-    "homeUnbeatenRate": 0.67,
+    "homeUnbeatenRate": 0.75,
     "awayUnbeatenRate": null,
-    "homeCleanSheetRate": 0.67,
+    "homeCleanSheetRate": 0.5,
     "awayCleanSheetRate": null,
-    "homeFailedToScoreRate": 0.67,
+    "homeFailedToScoreRate": 0.5,
     "awayFailedToScoreRate": null,
-    "home1HFor": 0.29,
+    "home1HFor": 0.25,
     "home2HFor": 0,
-    "home1HAgainst": 0.57,
-    "home2HAgainst": 0.14,
+    "home1HAgainst": 0.5,
+    "home2HAgainst": 0.13,
     "away1HFor": null,
     "away2HFor": null,
     "away1HAgainst": null,
     "away2HAgainst": null,
-    "homeOver25Rate": 0.14,
+    "homeOver25Rate": 0.13,
     "awayOver25Rate": null,
-    "homeOver15Rate": 0.43,
+    "homeOver15Rate": 0.38,
     "awayOver15Rate": null,
     "statsReal": true,
     "sameGroup": false,
@@ -24855,15 +24855,15 @@ window.MATCHES = [
     "homePts": 6,
     "awayPts": 21,
     "homeGD": -77,
-    "awayGD": -6,
+    "awayGD": -7,
     "homeForm": "LLLLL",
-    "awayForm": "LWLDW",
+    "awayForm": "LLWLD",
     "homeScoredAtHome": 1.3,
     "homeConcededAtHome": 5.1,
     "awayScoredAway": 1.2,
     "awayConcededAway": 2.2,
     "homeVenueRank": 4,
-    "awayVenueRank": 2,
+    "awayVenueRank": 3,
     "homeVenuePts": 3,
     "awayVenuePts": 8,
     "homeVenueGames": 10,
@@ -24873,7 +24873,7 @@ window.MATCHES = [
       "goalsPerGame": 5.14,
       "drawRate": 0.13,
       "homeWinRate": 0.46,
-      "gamesPlayed": 161,
+      "gamesPlayed": 162,
       "reliable": true
     },
     "leagueTrends": null,
@@ -24885,18 +24885,18 @@ window.MATCHES = [
     "awayCleanSheetRate": 0.22,
     "homeFailedToScoreRate": 0.4,
     "awayFailedToScoreRate": 0.56,
-    "home1HFor": 0.61,
-    "home2HFor": 1.06,
-    "home1HAgainst": 2.61,
-    "home2HAgainst": 2.89,
-    "away1HFor": 0.56,
-    "away2HFor": 1.22,
-    "away1HAgainst": 1.11,
+    "home1HFor": 0.58,
+    "home2HFor": 1.05,
+    "home1HAgainst": 2.53,
+    "home2HAgainst": 3.05,
+    "away1HFor": 0.58,
+    "away2HFor": 1.21,
+    "away1HAgainst": 1.16,
     "away2HAgainst": 1,
-    "homeOver25Rate": 0.17,
-    "awayOver25Rate": 0.33,
-    "homeOver15Rate": 0.44,
-    "awayOver15Rate": 0.39,
+    "homeOver25Rate": 0.16,
+    "awayOver25Rate": 0.32,
+    "homeOver15Rate": 0.42,
+    "awayOver15Rate": 0.42,
     "statsReal": true,
     "sameGroup": true,
     "isKnockout": false,
@@ -27796,25 +27796,25 @@ window.MATCHES = [
     "venueTableSize": 20,
     "leagueAvg": null,
     "leagueTrends": null,
-    "homeWinRate": 0.14,
+    "homeWinRate": 0.25,
     "awayWinRate": 0.33,
-    "homeUnbeatenRate": 0.57,
+    "homeUnbeatenRate": 0.63,
     "awayUnbeatenRate": 0.67,
-    "homeCleanSheetRate": 0.29,
+    "homeCleanSheetRate": 0.38,
     "awayCleanSheetRate": 0,
-    "homeFailedToScoreRate": 0.29,
+    "homeFailedToScoreRate": 0.25,
     "awayFailedToScoreRate": 0,
-    "home1HFor": 0.29,
-    "home2HFor": 0.43,
-    "home1HAgainst": 0.57,
-    "home2HAgainst": 0.71,
+    "home1HFor": 0.63,
+    "home2HFor": 0.5,
+    "home1HAgainst": 0.5,
+    "home2HAgainst": 0.63,
     "away1HFor": 1.5,
     "away2HFor": 1.25,
     "away1HAgainst": 0.25,
     "away2HAgainst": 1.25,
-    "homeOver25Rate": 0.29,
+    "homeOver25Rate": 0.38,
     "awayOver25Rate": 0.5,
-    "homeOver15Rate": 0.29,
+    "homeOver15Rate": 0.38,
     "awayOver15Rate": 0.75,
     "statsReal": true,
     "sameGroup": false,
@@ -30642,11 +30642,11 @@ window.MATCHES = [
     "homePos": 8,
     "awayPos": 5,
     "tableSize": 19,
-    "homePts": 8,
+    "homePts": 11,
     "awayPts": 33,
-    "homeGD": -81,
+    "homeGD": -80,
     "awayGD": 33,
-    "homeForm": "DWWDL",
+    "homeForm": "WDWWD",
     "awayForm": "WWWWW",
     "homeScoredAtHome": 1.3,
     "homeConcededAtHome": 5.5,
@@ -30663,7 +30663,7 @@ window.MATCHES = [
       "goalsPerGame": 5.14,
       "drawRate": 0.13,
       "homeWinRate": 0.46,
-      "gamesPlayed": 161,
+      "gamesPlayed": 162,
       "reliable": true
     },
     "leagueTrends": null,
@@ -30675,17 +30675,17 @@ window.MATCHES = [
     "awayCleanSheetRate": 0.22,
     "homeFailedToScoreRate": 0.25,
     "awayFailedToScoreRate": 0.22,
-    "home1HFor": 0.5,
-    "home2HFor": 0.61,
-    "home1HAgainst": 2.5,
-    "home2HAgainst": 3.44,
+    "home1HFor": 0.58,
+    "home2HFor": 0.63,
+    "home1HAgainst": 2.42,
+    "home2HAgainst": 3.32,
     "away1HFor": 1.32,
     "away2HFor": 1.89,
     "away1HAgainst": 0.58,
     "away2HAgainst": 0.89,
-    "homeOver25Rate": 0.17,
+    "homeOver25Rate": 0.21,
     "awayOver25Rate": 0.47,
-    "homeOver15Rate": 0.28,
+    "homeOver15Rate": 0.32,
     "awayOver15Rate": 0.58,
     "statsReal": true,
     "sameGroup": true,
@@ -33283,14 +33283,14 @@ window.MATCHES = [
     "home2HFor": 0.8,
     "home1HAgainst": 0.2,
     "home2HAgainst": 0.2,
-    "away1HFor": 0.14,
-    "away2HFor": 0.71,
-    "away1HAgainst": 0.29,
-    "away2HAgainst": 0.29,
+    "away1HFor": 0.13,
+    "away2HFor": 0.63,
+    "away1HAgainst": 0.25,
+    "away2HAgainst": 0.25,
     "homeOver25Rate": 0.2,
-    "awayOver25Rate": 0.43,
+    "awayOver25Rate": 0.38,
     "homeOver15Rate": 0.6,
-    "awayOver15Rate": 0.57,
+    "awayOver15Rate": 0.63,
     "statsReal": true,
     "sameGroup": false,
     "isKnockout": false,
@@ -33649,25 +33649,25 @@ window.MATCHES = [
     "venueTableSize": 20,
     "leagueAvg": null,
     "leagueTrends": null,
-    "homeWinRate": null,
+    "homeWinRate": 0,
     "awayWinRate": 0.6,
-    "homeUnbeatenRate": null,
+    "homeUnbeatenRate": 0,
     "awayUnbeatenRate": 0.8,
-    "homeCleanSheetRate": null,
+    "homeCleanSheetRate": 0,
     "awayCleanSheetRate": 0.4,
-    "homeFailedToScoreRate": null,
+    "homeFailedToScoreRate": 0,
     "awayFailedToScoreRate": 0,
-    "home1HFor": null,
-    "home2HFor": null,
-    "home1HAgainst": null,
-    "home2HAgainst": null,
+    "home1HFor": 0,
+    "home2HFor": 0,
+    "home1HAgainst": 0,
+    "home2HAgainst": 0,
     "away1HFor": 1,
     "away2HFor": 1.4,
     "away1HAgainst": 0.6,
     "away2HAgainst": 0.8,
-    "homeOver25Rate": null,
+    "homeOver25Rate": 0,
     "awayOver25Rate": 0.4,
-    "homeOver15Rate": null,
+    "homeOver15Rate": 0,
     "awayOver15Rate": 0.4,
     "statsReal": true,
     "sameGroup": false,
@@ -33775,25 +33775,25 @@ window.MATCHES = [
     "venueTableSize": 20,
     "leagueAvg": null,
     "leagueTrends": null,
-    "homeWinRate": 0.2,
+    "homeWinRate": 0.33,
     "awayWinRate": 0.2,
-    "homeUnbeatenRate": 0.2,
+    "homeUnbeatenRate": 0.33,
     "awayUnbeatenRate": 0.8,
-    "homeCleanSheetRate": 0.2,
+    "homeCleanSheetRate": 0.33,
     "awayCleanSheetRate": 0.2,
-    "homeFailedToScoreRate": 0.4,
+    "homeFailedToScoreRate": 0.33,
     "awayFailedToScoreRate": 0.2,
-    "home1HFor": 0.33,
-    "home2HFor": 0.33,
-    "home1HAgainst": 0.33,
-    "home2HAgainst": 0.5,
+    "home1HFor": 0.29,
+    "home2HFor": 0.29,
+    "home1HAgainst": 0.29,
+    "home2HAgainst": 0.43,
     "away1HFor": 1,
     "away2HFor": 0.2,
     "away1HAgainst": 0.2,
     "away2HAgainst": 0.2,
-    "homeOver25Rate": 0.17,
+    "homeOver25Rate": 0.14,
     "awayOver25Rate": 0.2,
-    "homeOver15Rate": 0.17,
+    "homeOver15Rate": 0.29,
     "awayOver15Rate": 0.4,
     "statsReal": true,
     "sameGroup": false,
@@ -35287,25 +35287,25 @@ window.MATCHES = [
     "venueTableSize": 20,
     "leagueAvg": null,
     "leagueTrends": null,
-    "homeWinRate": 0.33,
+    "homeWinRate": 0.25,
     "awayWinRate": 0.67,
-    "homeUnbeatenRate": 0.67,
+    "homeUnbeatenRate": 0.75,
     "awayUnbeatenRate": 0.67,
-    "homeCleanSheetRate": 0.67,
+    "homeCleanSheetRate": 0.5,
     "awayCleanSheetRate": 0,
-    "homeFailedToScoreRate": 0.67,
+    "homeFailedToScoreRate": 0.5,
     "awayFailedToScoreRate": 0.33,
-    "home1HFor": 0.29,
+    "home1HFor": 0.25,
     "home2HFor": 0,
-    "home1HAgainst": 0.57,
-    "home2HAgainst": 0.14,
+    "home1HAgainst": 0.5,
+    "home2HAgainst": 0.13,
     "away1HFor": 0.71,
     "away2HFor": 0.86,
     "away1HAgainst": 0.43,
     "away2HAgainst": 0.57,
-    "homeOver25Rate": 0.14,
+    "homeOver25Rate": 0.13,
     "awayOver25Rate": 0.43,
-    "homeOver15Rate": 0.43,
+    "homeOver15Rate": 0.38,
     "awayOver15Rate": 0.71,
     "statsReal": true,
     "sameGroup": false,
@@ -35351,25 +35351,25 @@ window.MATCHES = [
     "leagueAvg": null,
     "leagueTrends": null,
     "homeWinRate": 0.57,
-    "awayWinRate": 0.33,
+    "awayWinRate": 0.25,
     "homeUnbeatenRate": 1,
-    "awayUnbeatenRate": 0.33,
+    "awayUnbeatenRate": 0.25,
     "homeCleanSheetRate": 0.14,
     "awayCleanSheetRate": 0,
     "homeFailedToScoreRate": 0,
-    "awayFailedToScoreRate": 0.33,
+    "awayFailedToScoreRate": 0.5,
     "home1HFor": 1.14,
     "home2HFor": 1,
     "home1HAgainst": 0.57,
     "home2HAgainst": 0.57,
-    "away1HFor": 0.86,
-    "away2HFor": 0.57,
-    "away1HAgainst": 0.57,
-    "away2HAgainst": 0.29,
+    "away1HFor": 0.75,
+    "away2HFor": 0.5,
+    "away1HAgainst": 0.88,
+    "away2HAgainst": 0.38,
     "homeOver25Rate": 0.29,
-    "awayOver25Rate": 0.43,
+    "awayOver25Rate": 0.38,
     "homeOver15Rate": 0.71,
-    "awayOver15Rate": 0.57,
+    "awayOver15Rate": 0.5,
     "statsReal": true,
     "sameGroup": false,
     "isKnockout": false,
@@ -46330,18 +46330,18 @@ window.MATCHES = [
     "venueTableSize": 20,
     "leagueAvg": null,
     "leagueTrends": null,
-    "homeWinRate": 0.2,
+    "homeWinRate": 0.33,
     "awayWinRate": 0.5,
-    "homeUnbeatenRate": 0.4,
+    "homeUnbeatenRate": 0.5,
     "awayUnbeatenRate": 0.5,
-    "homeCleanSheetRate": 0.2,
+    "homeCleanSheetRate": 0.33,
     "awayCleanSheetRate": 0.5,
-    "homeFailedToScoreRate": 0.6,
+    "homeFailedToScoreRate": 0.5,
     "awayFailedToScoreRate": 0,
-    "home1HFor": 0.4,
+    "home1HFor": 0.5,
     "home2HFor": 0,
-    "home1HAgainst": 0.6,
-    "home2HAgainst": 1,
+    "home1HAgainst": 0.5,
+    "home2HAgainst": 0.83,
     "away1HFor": 0.8,
     "away2HFor": 1.4,
     "away1HAgainst": 1,
@@ -48702,19 +48702,19 @@ window.MATCHES = [
     "homeCleanSheetRate": 0,
     "awayCleanSheetRate": 0,
     "homeFailedToScoreRate": 0,
-    "awayFailedToScoreRate": 0.5,
+    "awayFailedToScoreRate": 0.33,
     "home1HFor": 1.5,
     "home2HFor": 1.25,
     "home1HAgainst": 1.25,
     "home2HAgainst": 0.75,
-    "away1HFor": 0.5,
+    "away1HFor": 0.67,
     "away2HFor": 0,
-    "away1HAgainst": 1,
-    "away2HAgainst": 1,
+    "away1HAgainst": 1.33,
+    "away2HAgainst": 0.67,
     "homeOver25Rate": 0.25,
     "awayOver25Rate": 0,
     "homeOver15Rate": 1,
-    "awayOver15Rate": 0,
+    "awayOver15Rate": 0.33,
     "statsReal": true,
     "sameGroup": false,
     "isKnockout": false,
@@ -56220,19 +56220,19 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round of 16",
     "odds": {
-      "home": 17.5,
-      "draw": 6.25,
-      "away": 1.17,
+      "home": 18.5,
+      "draw": 6,
+      "away": 1.18,
       "over15": 1.18,
       "under15": 4.75,
       "over25": 1.57,
       "under25": 2.35,
-      "over35": 2.4,
-      "under35": 1.55,
-      "bttsYes": 2.3,
-      "bttsNo": 1.55,
-      "dc1x": 4.75,
-      "dc12": 1.09,
+      "over35": 2.45,
+      "under35": 1.53,
+      "bttsYes": 2.35,
+      "bttsNo": 1.53,
+      "dc1x": 4.5,
+      "dc12": 1.1,
       "dcx2": 1.02
     },
     "h2h": null
@@ -58466,7 +58466,22 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Group Stage - 2",
-    "odds": null,
+    "odds": {
+      "home": 4,
+      "draw": 3.6,
+      "away": 1.75,
+      "over15": 1.22,
+      "under15": 3.9,
+      "over25": 1.7,
+      "under25": 2.05,
+      "over35": 2.75,
+      "under35": 1.4,
+      "bttsYes": 1.62,
+      "bttsNo": 2.1,
+      "dc1x": 2,
+      "dc12": 1.2,
+      "dcx2": 1.17
+    },
     "h2h": null
   },
   {
@@ -58539,17 +58554,17 @@ window.MATCHES = [
       "home": 2.2,
       "draw": 3.3,
       "away": 2.9,
-      "over15": 1.28,
-      "under15": 3.4,
-      "over25": 1.85,
-      "under25": 1.85,
-      "over35": 3.2,
-      "under35": 1.3,
-      "bttsYes": 1.67,
-      "bttsNo": 2,
+      "over15": 1.3,
+      "under15": 3.25,
+      "over25": 1.93,
+      "under25": 1.8,
+      "over35": 3.35,
+      "under35": 1.28,
+      "bttsYes": 1.7,
+      "bttsNo": 1.95,
       "dc1x": 1.3,
       "dc12": 1.25,
-      "dcx2": 1.62
+      "dcx2": 1.6
     },
     "h2h": null
   },
@@ -58806,7 +58821,7 @@ window.MATCHES = [
       "goalsPerGame": 5.14,
       "drawRate": 0.13,
       "homeWinRate": 0.46,
-      "gamesPlayed": 161,
+      "gamesPlayed": 162,
       "reliable": true
     },
     "leagueTrends": null,
@@ -59156,7 +59171,22 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Regular Season - 19",
-    "odds": null,
+    "odds": {
+      "home": 2.38,
+      "draw": 3.35,
+      "away": 2.62,
+      "over15": 1.28,
+      "under15": 3.45,
+      "over25": 1.85,
+      "under25": 1.85,
+      "over35": 3.2,
+      "under35": 1.3,
+      "bttsYes": 1.67,
+      "bttsNo": 2,
+      "dc1x": 1.38,
+      "dc12": 1.22,
+      "dcx2": 1.53
+    },
     "h2h": null
   },
   {
@@ -59225,7 +59255,22 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Regular Season - 19",
-    "odds": null,
+    "odds": {
+      "home": 1.55,
+      "draw": 4,
+      "away": 5,
+      "over15": 1.18,
+      "under15": 4.33,
+      "over25": 1.62,
+      "under25": 2.2,
+      "over35": 2.5,
+      "under35": 1.48,
+      "bttsYes": 1.65,
+      "bttsNo": 2.05,
+      "dc1x": 1.11,
+      "dc12": 1.15,
+      "dcx2": 2.35
+    },
     "h2h": null
   },
   {
@@ -59294,7 +59339,22 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Regular Season - 17",
-    "odds": null,
+    "odds": {
+      "home": 1.7,
+      "draw": 4.2,
+      "away": 3.7,
+      "over15": null,
+      "under15": null,
+      "over25": 1.3,
+      "under25": 3.25,
+      "over35": 1.77,
+      "under35": 1.95,
+      "bttsYes": 1.3,
+      "bttsNo": 2.95,
+      "dc1x": 1.2,
+      "dc12": 1.15,
+      "dcx2": 2.05
+    },
     "h2h": null
   },
   {
@@ -60274,7 +60334,22 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Regular Season - 17",
-    "odds": null,
+    "odds": {
+      "home": 2.45,
+      "draw": 4,
+      "away": 2.3,
+      "over15": null,
+      "under15": null,
+      "over25": 1.3,
+      "under25": 3.25,
+      "over35": 1.77,
+      "under35": 1.95,
+      "bttsYes": 1.28,
+      "bttsNo": 3.1,
+      "dc1x": 1.5,
+      "dc12": 1.17,
+      "dcx2": 1.5
+    },
     "h2h": null
   },
   {
@@ -60791,7 +60866,7 @@ window.MATCHES = [
       "goalsPerGame": 5.14,
       "drawRate": 0.13,
       "homeWinRate": 0.46,
-      "gamesPlayed": 161,
+      "gamesPlayed": 162,
       "reliable": true
     },
     "leagueTrends": null,
@@ -63149,8 +63224,8 @@ window.MATCHES = [
       "under25": 1.7,
       "over35": 3.48,
       "under35": 1.22,
-      "bttsYes": 1.94,
-      "bttsNo": 1.73,
+      "bttsYes": 1.93,
+      "bttsNo": 1.74,
       "dc1x": 1.12,
       "dc12": 1.23,
       "dcx2": 1.97
@@ -64436,9 +64511,9 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 14",
     "odds": {
-      "home": 1.65,
-      "draw": 3.75,
-      "away": 4.33,
+      "home": 1.6,
+      "draw": 4.2,
+      "away": 4,
       "over15": 1.95,
       "under15": 1.75,
       "over25": 3.9,
@@ -64447,9 +64522,9 @@ window.MATCHES = [
       "under35": 1.05,
       "bttsYes": 1.4,
       "bttsNo": 2.7,
-      "dc1x": 1.18,
-      "dc12": 1.22,
-      "dcx2": 2.15
+      "dc1x": 1.2,
+      "dc12": 1.2,
+      "dcx2": 2.2
     },
     "h2h": null
   },
@@ -64520,9 +64595,9 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 14",
     "odds": {
-      "home": 2.4,
+      "home": 2.3,
       "draw": 3.5,
-      "away": 2.45,
+      "away": 2.5,
       "over15": 2.15,
       "under15": 1.62,
       "over25": 4.5,
@@ -64604,18 +64679,18 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 18",
     "odds": {
-      "home": 5,
-      "draw": 4.33,
-      "away": 1.47,
+      "home": 4.9,
+      "draw": 4.25,
+      "away": 1.49,
       "over15": 1.08,
-      "under15": 5.7,
-      "over25": 1.36,
-      "under25": 2.69,
+      "under15": 5.65,
+      "over25": 1.37,
+      "under25": 2.66,
       "over35": 2,
       "under35": 1.72,
-      "bttsYes": 1.48,
-      "bttsNo": 2.4,
-      "dc1x": 2.33,
+      "bttsYes": 1.47,
+      "bttsNo": 2.42,
+      "dc1x": 2.29,
       "dc12": 1.14,
       "dcx2": 1.1
     },
@@ -68780,8 +68855,8 @@ window.MATCHES = [
     "round": "Regular Season - 22",
     "odds": {
       "home": 1.69,
-      "draw": 3.8,
-      "away": 4.6,
+      "draw": 3.85,
+      "away": 4.55,
       "dc1x": 1.15,
       "dc12": 1.2,
       "dcx2": 2
@@ -70318,19 +70393,19 @@ window.MATCHES = [
     "round": "Round of 32",
     "odds": {
       "home": 1.16,
-      "draw": 6.5,
-      "away": 18,
+      "draw": 6.8,
+      "away": 17.5,
       "over15": 1.2,
       "under15": 4.33,
       "over25": 1.65,
       "under25": 2.2,
-      "over35": 2.6,
+      "over35": 2.62,
       "under35": 1.48,
       "bttsYes": 2.7,
       "bttsNo": 1.4,
       "dc1x": 1.02,
-      "dc12": 1.09,
-      "dcx2": 5
+      "dc12": 1.08,
+      "dcx2": 5.25
     },
     "h2h": null
   },
@@ -71272,19 +71347,19 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 17",
     "odds": {
-      "home": 2.64,
-      "draw": 2.98,
-      "away": 2.82,
-      "over15": 1.53,
-      "under15": 2.45,
+      "home": 2.68,
+      "draw": 3.1,
+      "away": 2.68,
+      "over15": 1.45,
+      "under15": 2.7,
       "over25": 2.38,
       "under25": 1.57,
-      "over35": 5.25,
-      "under35": 1.15,
-      "bttsYes": 2.05,
-      "bttsNo": 1.67,
-      "dc1x": 1.4,
-      "dc12": 1.33,
+      "over35": 4.5,
+      "under35": 1.2,
+      "bttsYes": 1.93,
+      "bttsNo": 1.75,
+      "dc1x": 1.45,
+      "dc12": 1.3,
       "dcx2": 1.45
     },
     "h2h": null
@@ -71917,8 +71992,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Group Stage - 2",
     "odds": {
-      "home": 1.5,
-      "draw": 3.95,
+      "home": 1.48,
+      "draw": 4.1,
       "away": 5.5,
       "over15": 1.2,
       "under15": 4.2,
@@ -71926,11 +72001,11 @@ window.MATCHES = [
       "under25": 2.15,
       "over35": 2.6,
       "under35": 1.45,
-      "bttsYes": 1.67,
-      "bttsNo": 2,
+      "bttsYes": 1.7,
+      "bttsNo": 1.95,
       "dc1x": 1.09,
-      "dc12": 1.17,
-      "dcx2": 2.4
+      "dc12": 1.15,
+      "dcx2": 2.45
     },
     "h2h": null
   },
@@ -72070,20 +72145,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Group Stage",
     "odds": {
-      "home": 2.1,
-      "draw": 3.25,
-      "away": 3.2,
+      "home": 1.91,
+      "draw": 3.3,
+      "away": 3.6,
       "over15": 1.3,
       "under15": 3.2,
       "over25": 1.95,
       "under25": 1.77,
       "over35": 3.45,
       "under35": 1.28,
-      "bttsYes": 1.73,
-      "bttsNo": 1.93,
-      "dc1x": 1.25,
+      "bttsYes": 1.77,
+      "bttsNo": 1.85,
+      "dc1x": 1.2,
       "dc12": 1.25,
-      "dcx2": 1.67
+      "dcx2": 1.8
     },
     "h2h": null
   },
@@ -72370,19 +72445,19 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Group Stage",
     "odds": {
-      "home": 1.5,
-      "draw": 3.95,
-      "away": 5.5,
-      "over15": 1.2,
-      "under15": 4.2,
-      "over25": 1.65,
-      "under25": 2.15,
-      "over35": 2.6,
-      "under35": 1.45,
-      "bttsYes": 1.67,
-      "bttsNo": 2,
-      "dc1x": 1.09,
-      "dc12": 1.17,
+      "home": 1.53,
+      "draw": 4.1,
+      "away": 5.1,
+      "over15": 1.17,
+      "under15": 4.5,
+      "over25": 1.55,
+      "under25": 2.35,
+      "over35": 2.38,
+      "under35": 1.53,
+      "bttsYes": 1.6,
+      "bttsNo": 2.1,
+      "dc1x": 1.1,
+      "dc12": 1.15,
       "dcx2": 2.4
     },
     "h2h": null
@@ -73317,20 +73392,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Group Stage",
     "odds": {
-      "home": 2.8,
-      "draw": 3.3,
-      "away": 2.3,
+      "home": 2.85,
+      "draw": 3.25,
+      "away": 2.25,
       "over15": 1.28,
-      "under15": 3.4,
+      "under15": 3.35,
       "over25": 1.85,
       "under25": 1.85,
       "over35": 3.2,
       "under35": 1.3,
-      "bttsYes": 1.67,
-      "bttsNo": 2,
-      "dc1x": 1.48,
+      "bttsYes": 1.65,
+      "bttsNo": 2.05,
+      "dc1x": 1.5,
       "dc12": 1.25,
-      "dcx2": 1.4
+      "dcx2": 1.38
     },
     "h2h": null
   },
@@ -73740,9 +73815,9 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 14",
     "odds": {
-      "home": 3.75,
-      "draw": 3.1,
-      "away": 1.91,
+      "home": 4,
+      "draw": 3,
+      "away": 1.85,
       "over15": 2.9,
       "under15": 1.35,
       "over25": 8,
@@ -73751,9 +73826,9 @@ window.MATCHES = [
       "under35": null,
       "bttsYes": 1.91,
       "bttsNo": 1.75,
-      "dc1x": 1.8,
+      "dc1x": 1.85,
       "dc12": 1.33,
-      "dcx2": 1.22
+      "dcx2": 1.2
     },
     "h2h": null
   },
@@ -73829,8 +73904,8 @@ window.MATCHES = [
       "away": 4.33,
       "over15": null,
       "under15": null,
-      "over25": 1.73,
-      "under25": 2.08,
+      "over25": 1.7,
+      "under25": 2.1,
       "over35": null,
       "under35": null,
       "dc1x": 1.22,
@@ -73906,20 +73981,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 1",
     "odds": {
-      "home": 1.91,
-      "draw": 3.25,
-      "away": 3.4,
-      "over15": 2.4,
+      "home": 1.75,
+      "draw": 3.3,
+      "away": 3.8,
+      "over15": 2.3,
       "under15": 1.5,
       "over25": 5.5,
-      "under25": 1.11,
+      "under25": 1.12,
       "over35": 13,
       "under35": 1.03,
       "bttsYes": 1.62,
       "bttsNo": 2.15,
-      "dc1x": 1.25,
+      "dc1x": 1.22,
       "dc12": 1.29,
-      "dcx2": 1.75
+      "dcx2": 1.85
     },
     "h2h": null
   },
@@ -75135,20 +75210,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 14",
     "odds": {
-      "home": 6,
-      "draw": 3.8,
-      "away": 1.44,
-      "over15": 2.5,
-      "under15": 1.44,
-      "over25": 6.5,
-      "under25": 1.1,
-      "over35": 19,
+      "home": 5,
+      "draw": 3.4,
+      "away": 1.6,
+      "over15": 2.8,
+      "under15": 1.4,
+      "over25": 7.5,
+      "under25": 1.08,
+      "over35": 23,
       "under35": 1.02,
-      "bttsYes": 2,
-      "bttsNo": 1.75,
-      "dc1x": 2.5,
-      "dc12": 1.22,
-      "dcx2": 1.11
+      "bttsYes": 1.91,
+      "bttsNo": 1.8,
+      "dc1x": 2.2,
+      "dc12": 1.25,
+      "dcx2": 1.15
     },
     "h2h": null
   },
@@ -75500,7 +75575,20 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
-    "odds": null,
+    "odds": {
+      "home": 1.14,
+      "draw": 7,
+      "away": 13,
+      "over15": null,
+      "under15": null,
+      "over25": 1.3,
+      "under25": 3.4,
+      "over35": null,
+      "under35": null,
+      "dc1x": 1.04,
+      "dc12": 1.36,
+      "dcx2": 2.62
+    },
     "h2h": null
   },
   {
@@ -75716,7 +75804,20 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
-    "odds": null,
+    "odds": {
+      "home": 10,
+      "draw": 7,
+      "away": 1.18,
+      "over15": null,
+      "under15": null,
+      "over25": 1.28,
+      "under25": 3.5,
+      "over35": null,
+      "under35": null,
+      "dc1x": 2.5,
+      "dc12": 1.36,
+      "dcx2": 1.06
+    },
     "h2h": null
   },
   {
@@ -75938,7 +76039,22 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Regular Season - 15",
-    "odds": null,
+    "odds": {
+      "home": 2.15,
+      "draw": 2.88,
+      "away": 3.3,
+      "over15": 3.25,
+      "under15": 1.3,
+      "over25": 9.5,
+      "under25": 1.05,
+      "over35": null,
+      "under35": null,
+      "bttsYes": 2,
+      "bttsNo": 1.7,
+      "dc1x": 1.3,
+      "dc12": 1.36,
+      "dcx2": 1.62
+    },
     "h2h": null
   },
   {
@@ -76326,6 +76442,75 @@ window.MATCHES = [
     "h2h": null
   },
   {
+    "home": "Hudson Valley Hammers",
+    "away": "Manhattan",
+    "league": "USL League Two",
+    "homeLogo": "https://media.api-sports.io/football/teams/18897.png",
+    "awayLogo": "https://media.api-sports.io/football/teams/4063.png",
+    "country": "USA",
+    "flag": "https://media.api-sports.io/flags/us.svg",
+    "status": "NS",
+    "kickoff": "2026-07-02T23:00:00+00:00",
+    "matchDate": "2026-07-02",
+    "homeGoals": null,
+    "awayGoals": null,
+    "homePos": 3,
+    "awayPos": 6,
+    "tableSize": 144,
+    "homePts": 24,
+    "awayPts": 11,
+    "homeGD": 7,
+    "awayGD": -6,
+    "homeForm": "LWDWW",
+    "awayForm": "WLLWL",
+    "homeScoredAtHome": 1.8,
+    "homeConcededAtHome": 0.8,
+    "awayScoredAway": 1.3,
+    "awayConcededAway": 2.2,
+    "homeVenueRank": 3,
+    "awayVenueRank": 7,
+    "homeVenuePts": 13,
+    "awayVenuePts": 5,
+    "homeVenueGames": 6,
+    "awayVenueGames": 6,
+    "venueTableSize": 10,
+    "leagueAvg": {
+      "goalsPerGame": 3.49,
+      "drawRate": 0.18,
+      "homeWinRate": 0.44,
+      "gamesPlayed": 886,
+      "reliable": true
+    },
+    "leagueTrends": null,
+    "homeWinRate": 0.67,
+    "awayWinRate": 0.25,
+    "homeUnbeatenRate": 0.67,
+    "awayUnbeatenRate": 0.5,
+    "homeCleanSheetRate": 0,
+    "awayCleanSheetRate": 0.25,
+    "homeFailedToScoreRate": 0,
+    "awayFailedToScoreRate": 0.25,
+    "home1HFor": 0,
+    "home2HFor": 0,
+    "home1HAgainst": 0,
+    "home2HAgainst": 0,
+    "away1HFor": 0,
+    "away2HFor": 0,
+    "away1HAgainst": 0,
+    "away2HAgainst": 0,
+    "homeOver25Rate": 0.67,
+    "awayOver25Rate": 0.44,
+    "homeOver15Rate": 0.78,
+    "awayOver15Rate": 0.56,
+    "statsReal": true,
+    "sameGroup": true,
+    "isKnockout": false,
+    "isTournament": true,
+    "round": "Group Stage",
+    "odds": null,
+    "h2h": null
+  },
+  {
     "home": "Rochester",
     "away": "Chicago Dutch Lions",
     "league": "USL League Two",
@@ -76530,8 +76715,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Sunflower State",
@@ -76600,8 +76784,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Fort Worth Vaqueros",
@@ -76670,8 +76853,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "U. Catolica",
@@ -76749,8 +76931,7 @@ window.MATCHES = [
       "dc12": 1.14,
       "dcx2": 2.4
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Mexico",
@@ -76834,8 +77015,7 @@ window.MATCHES = [
       "dc12": 1.36,
       "dcx2": 1.65
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Snohomish United",
@@ -76917,8 +77097,7 @@ window.MATCHES = [
       "dc12": 1.09,
       "dcx2": 4
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Colorado Storm",
@@ -76987,8 +77166,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Ventura County Fusion",
@@ -77057,8 +77235,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Bangers",
@@ -77127,8 +77304,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Septemvri Sofia",
@@ -77165,34 +77341,33 @@ window.MATCHES = [
     "venueTableSize": 20,
     "leagueAvg": null,
     "leagueTrends": null,
-    "homeWinRate": 0.2,
-    "awayWinRate": 0,
-    "homeUnbeatenRate": 0.2,
-    "awayUnbeatenRate": 0,
-    "homeCleanSheetRate": 0.2,
-    "awayCleanSheetRate": 0,
-    "homeFailedToScoreRate": 0.4,
-    "awayFailedToScoreRate": 0,
-    "home1HFor": 0.33,
-    "home2HFor": 0.33,
-    "home1HAgainst": 0.33,
-    "home2HAgainst": 0.5,
-    "away1HFor": 0,
-    "away2HFor": 0.25,
-    "away1HAgainst": 0.5,
-    "away2HAgainst": 0.75,
-    "homeOver25Rate": 0.17,
-    "awayOver25Rate": 0.5,
-    "homeOver15Rate": 0.17,
-    "awayOver15Rate": 0.5,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "home1HFor": null,
+    "home2HFor": null,
+    "home1HAgainst": null,
+    "home2HAgainst": null,
+    "away1HFor": null,
+    "away2HFor": null,
+    "away1HAgainst": null,
+    "away2HAgainst": null,
+    "homeOver25Rate": null,
+    "awayOver25Rate": null,
+    "homeOver15Rate": null,
+    "awayOver15Rate": null,
+    "statsReal": false,
     "sameGroup": false,
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Wisla Krakow",
@@ -77229,27 +77404,27 @@ window.MATCHES = [
     "venueTableSize": 20,
     "leagueAvg": null,
     "leagueTrends": null,
-    "homeWinRate": 0.14,
-    "awayWinRate": 0.33,
-    "homeUnbeatenRate": 0.57,
-    "awayUnbeatenRate": 0.33,
-    "homeCleanSheetRate": 0.29,
-    "awayCleanSheetRate": 0,
-    "homeFailedToScoreRate": 0.29,
-    "awayFailedToScoreRate": 0.33,
-    "home1HFor": 0.29,
-    "home2HFor": 0.43,
-    "home1HAgainst": 0.57,
-    "home2HAgainst": 0.71,
-    "away1HFor": 0.86,
-    "away2HFor": 0.57,
-    "away1HAgainst": 0.57,
-    "away2HAgainst": 0.29,
-    "homeOver25Rate": 0.29,
-    "awayOver25Rate": 0.43,
-    "homeOver15Rate": 0.29,
-    "awayOver15Rate": 0.57,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "home1HFor": null,
+    "home2HFor": null,
+    "home1HAgainst": null,
+    "home2HAgainst": null,
+    "away1HFor": null,
+    "away2HFor": null,
+    "away1HAgainst": null,
+    "away2HAgainst": null,
+    "homeOver25Rate": null,
+    "awayOver25Rate": null,
+    "homeOver15Rate": null,
+    "awayOver15Rate": null,
+    "statsReal": false,
     "sameGroup": false,
     "isKnockout": false,
     "isTournament": false,
@@ -77268,8 +77443,7 @@ window.MATCHES = [
       "dc12": 1.11,
       "dcx2": 2.75
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Krylia Sovetov",
@@ -77306,34 +77480,33 @@ window.MATCHES = [
     "venueTableSize": 20,
     "leagueAvg": null,
     "leagueTrends": null,
-    "homeWinRate": 0.4,
-    "awayWinRate": 0.4,
-    "homeUnbeatenRate": 0.6,
-    "awayUnbeatenRate": 0.8,
-    "homeCleanSheetRate": 0.2,
-    "awayCleanSheetRate": 0.4,
-    "homeFailedToScoreRate": 0.4,
-    "awayFailedToScoreRate": 0.4,
-    "home1HFor": 0.14,
-    "home2HFor": 0.71,
-    "home1HAgainst": 0.29,
-    "home2HAgainst": 0.29,
-    "away1HFor": 0.4,
-    "away2HFor": 0.8,
-    "away1HAgainst": 0,
-    "away2HAgainst": 0.6,
-    "homeOver25Rate": 0.43,
-    "awayOver25Rate": 0.4,
-    "homeOver15Rate": 0.57,
-    "awayOver15Rate": 0.4,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "home1HFor": null,
+    "home2HFor": null,
+    "home1HAgainst": null,
+    "home2HAgainst": null,
+    "away1HFor": null,
+    "away2HFor": null,
+    "away1HAgainst": null,
+    "away2HAgainst": null,
+    "homeOver25Rate": null,
+    "awayOver25Rate": null,
+    "homeOver15Rate": null,
+    "awayOver15Rate": null,
+    "statsReal": false,
     "sameGroup": false,
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "MTK Budapest",
@@ -77370,34 +77543,33 @@ window.MATCHES = [
     "venueTableSize": 20,
     "leagueAvg": null,
     "leagueTrends": null,
-    "homeWinRate": 0.75,
+    "homeWinRate": null,
     "awayWinRate": null,
-    "homeUnbeatenRate": 1,
+    "homeUnbeatenRate": null,
     "awayUnbeatenRate": null,
-    "homeCleanSheetRate": 0.25,
+    "homeCleanSheetRate": null,
     "awayCleanSheetRate": null,
-    "homeFailedToScoreRate": 0,
+    "homeFailedToScoreRate": null,
     "awayFailedToScoreRate": null,
-    "home1HFor": 1.5,
-    "home2HFor": 1.25,
-    "home1HAgainst": 0.75,
-    "home2HAgainst": 0.75,
+    "home1HFor": null,
+    "home2HFor": null,
+    "home1HAgainst": null,
+    "home2HAgainst": null,
     "away1HFor": null,
     "away2HFor": null,
     "away1HAgainst": null,
     "away2HAgainst": null,
-    "homeOver25Rate": 0.5,
+    "homeOver25Rate": null,
     "awayOver25Rate": null,
-    "homeOver15Rate": 0.75,
+    "homeOver15Rate": null,
     "awayOver15Rate": null,
-    "statsReal": true,
+    "statsReal": false,
     "sameGroup": false,
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Khovd Western",
@@ -77416,58 +77588,57 @@ window.MATCHES = [
     "awayPos": 8,
     "tableSize": 19,
     "homePts": 21,
-    "awayPts": 8,
-    "homeGD": -6,
-    "awayGD": -81,
-    "homeForm": "LWLDW",
-    "awayForm": "DWWDL",
+    "awayPts": 11,
+    "homeGD": -7,
+    "awayGD": -80,
+    "homeForm": "LLWLD",
+    "awayForm": "WDWWD",
     "homeScoredAtHome": 2.3,
-    "homeConcededAtHome": 2,
-    "awayScoredAway": 1.3,
-    "awayConcededAway": 6,
+    "homeConcededAtHome": 2.1,
+    "awayScoredAway": 1.5,
+    "awayConcededAway": 5.6,
     "homeVenueRank": 2,
-    "awayVenueRank": 3,
+    "awayVenueRank": 2,
     "homeVenuePts": 13,
-    "awayVenuePts": 6,
-    "homeVenueGames": 9,
-    "awayVenueGames": 10,
+    "awayVenuePts": 9,
+    "homeVenueGames": 10,
+    "awayVenueGames": 11,
     "venueTableSize": 5,
     "leagueAvg": {
       "goalsPerGame": 5.14,
       "drawRate": 0.13,
       "homeWinRate": 0.46,
-      "gamesPlayed": 161,
+      "gamesPlayed": 162,
       "reliable": true
     },
     "leagueTrends": null,
-    "homeWinRate": 0.44,
-    "awayWinRate": 0.2,
-    "homeUnbeatenRate": 0.56,
-    "awayUnbeatenRate": 0.2,
-    "homeCleanSheetRate": 0.33,
-    "awayCleanSheetRate": 0,
-    "homeFailedToScoreRate": 0.11,
-    "awayFailedToScoreRate": 0.4,
-    "home1HFor": 0.56,
-    "home2HFor": 1.22,
-    "home1HAgainst": 1.11,
-    "home2HAgainst": 1,
-    "away1HFor": 0.5,
-    "away2HFor": 0.61,
-    "away1HAgainst": 2.5,
-    "away2HAgainst": 3.44,
-    "homeOver25Rate": 0.33,
-    "awayOver25Rate": 0.17,
-    "homeOver15Rate": 0.39,
-    "awayOver15Rate": 0.28,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "home1HFor": null,
+    "home2HFor": null,
+    "home1HAgainst": null,
+    "home2HAgainst": null,
+    "away1HFor": null,
+    "away2HFor": null,
+    "away1HAgainst": null,
+    "away2HAgainst": null,
+    "homeOver25Rate": null,
+    "awayOver25Rate": null,
+    "homeOver15Rate": null,
+    "awayOver15Rate": null,
+    "statsReal": false,
     "sameGroup": true,
     "isKnockout": false,
     "isTournament": true,
     "round": "Regular Season - 22",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "GKS Katowice",
@@ -77504,27 +77675,27 @@ window.MATCHES = [
     "venueTableSize": 20,
     "leagueAvg": null,
     "leagueTrends": null,
-    "homeWinRate": 0.83,
-    "awayWinRate": 0.2,
-    "homeUnbeatenRate": 0.83,
-    "awayUnbeatenRate": 0.4,
-    "homeCleanSheetRate": 0.67,
-    "awayCleanSheetRate": 0.2,
-    "homeFailedToScoreRate": 0,
-    "awayFailedToScoreRate": 0.6,
-    "home1HFor": 1.14,
-    "home2HFor": 1.14,
-    "home1HAgainst": 0.14,
-    "home2HAgainst": 0.43,
-    "away1HFor": 0.4,
-    "away2HFor": 0,
-    "away1HAgainst": 0.6,
-    "away2HAgainst": 1,
-    "homeOver25Rate": 0.29,
-    "awayOver25Rate": 0,
-    "homeOver15Rate": 0.71,
-    "awayOver15Rate": 0,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "home1HFor": null,
+    "home2HFor": null,
+    "home1HAgainst": null,
+    "home2HAgainst": null,
+    "away1HFor": null,
+    "away2HFor": null,
+    "away1HAgainst": null,
+    "away2HAgainst": null,
+    "homeOver25Rate": null,
+    "awayOver25Rate": null,
+    "homeOver15Rate": null,
+    "awayOver15Rate": null,
+    "statsReal": false,
     "sameGroup": false,
     "isKnockout": false,
     "isTournament": false,
@@ -77545,8 +77716,7 @@ window.MATCHES = [
       "dc12": null,
       "dcx2": null
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Ajka",
@@ -77583,34 +77753,33 @@ window.MATCHES = [
     "venueTableSize": 20,
     "leagueAvg": null,
     "leagueTrends": null,
-    "homeWinRate": 0,
-    "awayWinRate": 0,
-    "homeUnbeatenRate": 0,
-    "awayUnbeatenRate": 0,
-    "homeCleanSheetRate": 0,
-    "awayCleanSheetRate": 0,
-    "homeFailedToScoreRate": 1,
-    "awayFailedToScoreRate": 0.5,
-    "home1HFor": 0,
-    "home2HFor": 0,
-    "home1HAgainst": 0.67,
-    "home2HAgainst": 0.33,
-    "away1HFor": 0.5,
-    "away2HFor": 0,
-    "away1HAgainst": 1,
-    "away2HAgainst": 1,
-    "homeOver25Rate": 0,
-    "awayOver25Rate": 0,
-    "homeOver15Rate": 0,
-    "awayOver15Rate": 0,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "home1HFor": null,
+    "home2HFor": null,
+    "home1HAgainst": null,
+    "home2HAgainst": null,
+    "away1HFor": null,
+    "away2HFor": null,
+    "away1HAgainst": null,
+    "away2HAgainst": null,
+    "homeOver25Rate": null,
+    "awayOver25Rate": null,
+    "homeOver15Rate": null,
+    "awayOver15Rate": null,
+    "statsReal": false,
     "sameGroup": false,
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Chrobry Głogów",
@@ -77647,27 +77816,27 @@ window.MATCHES = [
     "venueTableSize": 20,
     "leagueAvg": null,
     "leagueTrends": null,
-    "homeWinRate": 0.5,
-    "awayWinRate": 0,
-    "homeUnbeatenRate": 1,
-    "awayUnbeatenRate": 0.5,
-    "homeCleanSheetRate": 0.25,
-    "awayCleanSheetRate": 0.5,
-    "homeFailedToScoreRate": 0,
-    "awayFailedToScoreRate": 1,
-    "home1HFor": 0,
-    "home2HFor": 0.67,
-    "home1HAgainst": 0.17,
-    "home2HAgainst": 0.17,
-    "away1HFor": 0,
-    "away2HFor": 0,
-    "away1HAgainst": 0,
-    "away2HAgainst": 0.33,
-    "homeOver25Rate": 0.33,
-    "awayOver25Rate": 0.33,
-    "homeOver15Rate": 0.83,
-    "awayOver15Rate": 0.33,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "home1HFor": null,
+    "home2HFor": null,
+    "home1HAgainst": null,
+    "home2HAgainst": null,
+    "away1HFor": null,
+    "away2HFor": null,
+    "away1HAgainst": null,
+    "away2HAgainst": null,
+    "homeOver25Rate": null,
+    "awayOver25Rate": null,
+    "homeOver15Rate": null,
+    "awayOver15Rate": null,
+    "statsReal": false,
     "sameGroup": false,
     "isKnockout": false,
     "isTournament": false,
@@ -77688,8 +77857,7 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 2.4
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Odra Opole",
@@ -77726,34 +77894,33 @@ window.MATCHES = [
     "venueTableSize": 20,
     "leagueAvg": null,
     "leagueTrends": null,
-    "homeWinRate": 0.33,
-    "awayWinRate": 0.5,
-    "homeUnbeatenRate": 0.67,
-    "awayUnbeatenRate": 1,
-    "homeCleanSheetRate": 0.67,
-    "awayCleanSheetRate": 1,
-    "homeFailedToScoreRate": 0.67,
-    "awayFailedToScoreRate": 0.5,
-    "home1HFor": 0.29,
-    "home2HFor": 0,
-    "home1HAgainst": 0.57,
-    "home2HAgainst": 0.14,
-    "away1HFor": 0.75,
-    "away2HFor": 0.25,
-    "away1HAgainst": 0.25,
-    "away2HAgainst": 0.25,
-    "homeOver25Rate": 0.14,
-    "awayOver25Rate": 0,
-    "homeOver15Rate": 0.43,
-    "awayOver15Rate": 0.25,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "home1HFor": null,
+    "home2HFor": null,
+    "home1HAgainst": null,
+    "home2HAgainst": null,
+    "away1HFor": null,
+    "away2HFor": null,
+    "away1HAgainst": null,
+    "away2HAgainst": null,
+    "homeOver25Rate": null,
+    "awayOver25Rate": null,
+    "homeOver15Rate": null,
+    "awayOver15Rate": null,
+    "statsReal": false,
     "sameGroup": false,
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Baník Ostrava",
@@ -77790,34 +77957,33 @@ window.MATCHES = [
     "venueTableSize": 20,
     "leagueAvg": null,
     "leagueTrends": null,
-    "homeWinRate": 1,
-    "awayWinRate": 0.5,
-    "homeUnbeatenRate": 1,
-    "awayUnbeatenRate": 0.5,
-    "homeCleanSheetRate": 1,
-    "awayCleanSheetRate": 0.5,
-    "homeFailedToScoreRate": 0,
-    "awayFailedToScoreRate": 0.5,
-    "home1HFor": 0.8,
-    "home2HFor": 1.4,
-    "home1HAgainst": 1,
-    "home2HAgainst": 0.2,
-    "away1HFor": 1.14,
-    "away2HFor": 0.71,
-    "away1HAgainst": 0.29,
-    "away2HAgainst": 0.57,
-    "homeOver25Rate": 0.2,
-    "awayOver25Rate": 0.14,
-    "homeOver15Rate": 1,
-    "awayOver15Rate": 0.29,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "home1HFor": null,
+    "home2HFor": null,
+    "home1HAgainst": null,
+    "home2HAgainst": null,
+    "away1HFor": null,
+    "away2HFor": null,
+    "away1HAgainst": null,
+    "away2HAgainst": null,
+    "homeOver25Rate": null,
+    "awayOver25Rate": null,
+    "homeOver15Rate": null,
+    "awayOver15Rate": null,
+    "statsReal": false,
     "sameGroup": false,
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Monaro Panthers",
@@ -77886,8 +78052,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 3",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Hamilton Olympic",
@@ -77930,27 +78095,27 @@ window.MATCHES = [
       "reliable": true
     },
     "leagueTrends": null,
-    "homeWinRate": 0,
-    "awayWinRate": 0.29,
-    "homeUnbeatenRate": 0.5,
-    "awayUnbeatenRate": 0.43,
-    "homeCleanSheetRate": 0.13,
-    "awayCleanSheetRate": 0,
-    "homeFailedToScoreRate": 0.38,
-    "awayFailedToScoreRate": 0.29,
-    "home1HFor": 0.81,
-    "home2HFor": 0.81,
-    "home1HAgainst": 0.94,
-    "home2HAgainst": 0.81,
-    "away1HFor": 0.53,
-    "away2HFor": 1,
-    "away1HAgainst": 1,
-    "away2HAgainst": 1.2,
-    "homeOver25Rate": 0.19,
-    "awayOver25Rate": 0.2,
-    "homeOver15Rate": 0.5,
-    "awayOver15Rate": 0.4,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "home1HFor": null,
+    "home2HFor": null,
+    "home1HAgainst": null,
+    "home2HAgainst": null,
+    "away1HFor": null,
+    "away2HFor": null,
+    "away1HAgainst": null,
+    "away2HAgainst": null,
+    "homeOver25Rate": null,
+    "awayOver25Rate": null,
+    "homeOver15Rate": null,
+    "awayOver15Rate": null,
+    "statsReal": false,
     "sameGroup": true,
     "isKnockout": false,
     "isTournament": false,
@@ -77969,8 +78134,7 @@ window.MATCHES = [
       "dc12": 1.18,
       "dcx2": 1.75
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Changnyeong W",
@@ -78013,34 +78177,33 @@ window.MATCHES = [
       "reliable": true
     },
     "leagueTrends": null,
-    "homeWinRate": 0,
-    "awayWinRate": 0.75,
-    "homeUnbeatenRate": 0.17,
-    "awayUnbeatenRate": 0.75,
-    "homeCleanSheetRate": 0.17,
-    "awayCleanSheetRate": 0.75,
-    "homeFailedToScoreRate": 0.33,
-    "awayFailedToScoreRate": 0,
-    "home1HFor": 0.31,
-    "home2HFor": 0.69,
-    "home1HAgainst": 0.92,
-    "home2HAgainst": 1.23,
-    "away1HFor": 0.54,
-    "away2HFor": 0.54,
-    "away1HAgainst": 0.54,
-    "away2HAgainst": 0.69,
-    "homeOver25Rate": 0,
-    "awayOver25Rate": 0.08,
-    "homeOver15Rate": 0.31,
-    "awayOver15Rate": 0.08,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "home1HFor": null,
+    "home2HFor": null,
+    "home1HAgainst": null,
+    "home2HAgainst": null,
+    "away1HFor": null,
+    "away2HFor": null,
+    "away1HAgainst": null,
+    "away2HAgainst": null,
+    "homeOver25Rate": null,
+    "awayOver25Rate": null,
+    "homeOver15Rate": null,
+    "awayOver15Rate": null,
+    "statsReal": false,
     "sameGroup": true,
     "isKnockout": false,
     "isTournament": false,
     "round": "Regular Season - 9",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Seoul W",
@@ -78083,27 +78246,27 @@ window.MATCHES = [
       "reliable": true
     },
     "leagueTrends": null,
-    "homeWinRate": 0.6,
-    "awayWinRate": 0.86,
-    "homeUnbeatenRate": 0.6,
-    "awayUnbeatenRate": 0.86,
-    "homeCleanSheetRate": 0,
-    "awayCleanSheetRate": 0.43,
-    "homeFailedToScoreRate": 0.2,
-    "awayFailedToScoreRate": 0,
-    "home1HFor": 0.58,
-    "home2HFor": 0.42,
-    "home1HAgainst": 0.92,
-    "home2HAgainst": 0.67,
-    "away1HFor": 1,
-    "away2HFor": 1.58,
-    "away1HAgainst": 0.58,
-    "away2HAgainst": 0.42,
-    "homeOver25Rate": 0,
-    "awayOver25Rate": 0.42,
-    "homeOver15Rate": 0.33,
-    "awayOver15Rate": 0.67,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "home1HFor": null,
+    "home2HFor": null,
+    "home1HAgainst": null,
+    "home2HAgainst": null,
+    "away1HFor": null,
+    "away2HFor": null,
+    "away1HAgainst": null,
+    "away2HAgainst": null,
+    "homeOver25Rate": null,
+    "awayOver25Rate": null,
+    "homeOver15Rate": null,
+    "awayOver15Rate": null,
+    "statsReal": false,
     "sameGroup": true,
     "isKnockout": false,
     "isTournament": false,
@@ -78122,8 +78285,7 @@ window.MATCHES = [
       "dc12": 1.14,
       "dcx2": 1.1
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Stal Mielec",
@@ -78160,34 +78322,33 @@ window.MATCHES = [
     "venueTableSize": 20,
     "leagueAvg": null,
     "leagueTrends": null,
-    "homeWinRate": 1,
-    "awayWinRate": 0,
-    "homeUnbeatenRate": 1,
-    "awayUnbeatenRate": 0.33,
-    "homeCleanSheetRate": 1,
-    "awayCleanSheetRate": 0,
-    "homeFailedToScoreRate": 0,
-    "awayFailedToScoreRate": 0.67,
-    "home1HFor": 0,
-    "home2HFor": 0,
-    "home1HAgainst": 0,
-    "home2HAgainst": 0,
-    "away1HFor": 0.25,
-    "away2HFor": 0,
-    "away1HAgainst": 1.25,
-    "away2HAgainst": 0.25,
-    "homeOver25Rate": 0.33,
-    "awayOver25Rate": 0,
-    "homeOver15Rate": 0.33,
-    "awayOver15Rate": 0.25,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "home1HFor": null,
+    "home2HFor": null,
+    "home1HAgainst": null,
+    "home2HAgainst": null,
+    "away1HFor": null,
+    "away2HFor": null,
+    "away1HAgainst": null,
+    "away2HAgainst": null,
+    "homeOver25Rate": null,
+    "awayOver25Rate": null,
+    "homeOver15Rate": null,
+    "awayOver15Rate": null,
+    "statsReal": false,
     "sameGroup": false,
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Chornomorets",
@@ -78225,33 +78386,32 @@ window.MATCHES = [
     "leagueAvg": null,
     "leagueTrends": null,
     "homeWinRate": null,
-    "awayWinRate": 0.25,
+    "awayWinRate": null,
     "homeUnbeatenRate": null,
-    "awayUnbeatenRate": 0.5,
+    "awayUnbeatenRate": null,
     "homeCleanSheetRate": null,
-    "awayCleanSheetRate": 0,
+    "awayCleanSheetRate": null,
     "homeFailedToScoreRate": null,
-    "awayFailedToScoreRate": 0.25,
+    "awayFailedToScoreRate": null,
     "home1HFor": null,
     "home2HFor": null,
     "home1HAgainst": null,
     "home2HAgainst": null,
-    "away1HFor": 0.14,
-    "away2HFor": 0.29,
-    "away1HAgainst": 0.57,
-    "away2HAgainst": 0.71,
+    "away1HFor": null,
+    "away2HFor": null,
+    "away1HAgainst": null,
+    "away2HAgainst": null,
     "homeOver25Rate": null,
-    "awayOver25Rate": 0.14,
+    "awayOver25Rate": null,
     "homeOver15Rate": null,
-    "awayOver15Rate": 0.43,
-    "statsReal": true,
+    "awayOver15Rate": null,
+    "statsReal": false,
     "sameGroup": false,
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Radomiak Radom",
@@ -78288,34 +78448,33 @@ window.MATCHES = [
     "venueTableSize": 20,
     "leagueAvg": null,
     "leagueTrends": null,
-    "homeWinRate": 1,
+    "homeWinRate": null,
     "awayWinRate": null,
-    "homeUnbeatenRate": 1,
+    "homeUnbeatenRate": null,
     "awayUnbeatenRate": null,
-    "homeCleanSheetRate": 0.67,
+    "homeCleanSheetRate": null,
     "awayCleanSheetRate": null,
-    "homeFailedToScoreRate": 0,
+    "homeFailedToScoreRate": null,
     "awayFailedToScoreRate": null,
-    "home1HFor": 1.6,
-    "home2HFor": 1.2,
-    "home1HAgainst": 0.2,
-    "home2HAgainst": 0,
+    "home1HFor": null,
+    "home2HFor": null,
+    "home1HAgainst": null,
+    "home2HAgainst": null,
     "away1HFor": null,
     "away2HFor": null,
     "away1HAgainst": null,
     "away2HAgainst": null,
-    "homeOver25Rate": 0.6,
+    "homeOver25Rate": null,
     "awayOver25Rate": null,
-    "homeOver15Rate": 0.8,
+    "homeOver15Rate": null,
     "awayOver15Rate": null,
-    "statsReal": true,
+    "statsReal": false,
     "sameGroup": false,
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Qarabag",
@@ -78378,8 +78537,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Khovd",
@@ -78418,31 +78576,31 @@ window.MATCHES = [
       "goalsPerGame": 5.14,
       "drawRate": 0.13,
       "homeWinRate": 0.46,
-      "gamesPlayed": 161,
+      "gamesPlayed": 162,
       "reliable": true
     },
     "leagueTrends": null,
-    "homeWinRate": 0.3,
-    "awayWinRate": 0.13,
-    "homeUnbeatenRate": 0.3,
-    "awayUnbeatenRate": 0.13,
-    "homeCleanSheetRate": 0.2,
-    "awayCleanSheetRate": 0,
-    "homeFailedToScoreRate": 0.5,
-    "awayFailedToScoreRate": 0.38,
-    "home1HFor": 0.7,
-    "home2HFor": 0.9,
-    "home1HAgainst": 1.05,
-    "home2HAgainst": 3.05,
-    "away1HFor": 0.61,
-    "away2HFor": 1.06,
-    "away1HAgainst": 2.61,
-    "away2HAgainst": 2.89,
-    "homeOver25Rate": 0.2,
-    "awayOver25Rate": 0.17,
-    "homeOver15Rate": 0.35,
-    "awayOver15Rate": 0.44,
-    "statsReal": true,
+    "homeWinRate": null,
+    "awayWinRate": null,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": null,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": null,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": null,
+    "home1HFor": null,
+    "home2HFor": null,
+    "home1HAgainst": null,
+    "home2HAgainst": null,
+    "away1HFor": null,
+    "away2HFor": null,
+    "away1HAgainst": null,
+    "away2HAgainst": null,
+    "homeOver25Rate": null,
+    "awayOver25Rate": null,
+    "homeOver15Rate": null,
+    "awayOver15Rate": null,
+    "statsReal": false,
     "sameGroup": true,
     "isKnockout": false,
     "isTournament": true,
@@ -78461,8 +78619,7 @@ window.MATCHES = [
       "dc12": 1.14,
       "dcx2": 1.25
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Dinamo Barnaul",
@@ -78546,8 +78703,7 @@ window.MATCHES = [
       "dc12": 1.24,
       "dcx2": 1.44
     },
-    "h2h": null,
-    "elapsed": 64
+    "h2h": null
   },
   {
     "home": "KDV",
@@ -78616,8 +78772,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Division B - Group 4 - 15",
     "odds": null,
-    "h2h": null,
-    "elapsed": 45
+    "h2h": null
   },
   {
     "home": "Slavia Sofia",
@@ -78680,136 +78835,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
-  },
-  {
-    "home": "Botev Vratsa",
-    "away": "Spartak Pleven",
-    "league": "Friendlies Clubs",
-    "homeLogo": "https://media.api-sports.io/football/teams/859.png",
-    "awayLogo": "https://media.api-sports.io/football/teams/1418.png",
-    "country": "World",
-    "flag": null,
-    "status": "NS",
-    "kickoff": "2026-07-01T12:00:00+00:00",
-    "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
-    "homePos": null,
-    "awayPos": null,
-    "tableSize": 20,
-    "homePts": 0,
-    "awayPts": 0,
-    "homeGD": 0,
-    "awayGD": 0,
-    "homeForm": "—",
-    "awayForm": "—",
-    "homeScoredAtHome": 1.3,
-    "homeConcededAtHome": 1.1,
-    "awayScoredAway": 1,
-    "awayConcededAway": 1.4,
-    "homeVenueRank": null,
-    "awayVenueRank": null,
-    "homeVenuePts": null,
-    "awayVenuePts": null,
-    "homeVenueGames": null,
-    "awayVenueGames": null,
-    "venueTableSize": 20,
-    "leagueAvg": null,
-    "leagueTrends": null,
-    "homeWinRate": 0,
-    "awayWinRate": 0.25,
-    "homeUnbeatenRate": 1,
-    "awayUnbeatenRate": 0.25,
-    "homeCleanSheetRate": 0.25,
-    "awayCleanSheetRate": 0,
-    "homeFailedToScoreRate": 0.25,
-    "awayFailedToScoreRate": 0.75,
-    "home1HFor": 0,
-    "home2HFor": 0.4,
-    "home1HAgainst": 0,
-    "home2HAgainst": 0.4,
-    "away1HFor": 0,
-    "away2HFor": 0.4,
-    "away1HAgainst": 0.4,
-    "away2HAgainst": 0.2,
-    "homeOver25Rate": 0,
-    "awayOver25Rate": 0,
-    "homeOver15Rate": 0.2,
-    "awayOver15Rate": 0.4,
-    "statsReal": true,
-    "sameGroup": false,
-    "isKnockout": false,
-    "isTournament": false,
-    "round": "Club Friendlies",
-    "odds": null,
-    "h2h": null,
-    "elapsed": null
-  },
-  {
-    "home": "Rudes",
-    "away": "Cukaricki",
-    "league": "Friendlies Clubs",
-    "homeLogo": "https://media.api-sports.io/football/teams/1019.png",
-    "awayLogo": "https://media.api-sports.io/football/teams/2656.png",
-    "country": "World",
-    "flag": null,
-    "status": "NS",
-    "kickoff": "2026-07-01T12:00:00+00:00",
-    "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
-    "homePos": null,
-    "awayPos": null,
-    "tableSize": 20,
-    "homePts": 0,
-    "awayPts": 0,
-    "homeGD": 0,
-    "awayGD": 0,
-    "homeForm": "—",
-    "awayForm": "—",
-    "homeScoredAtHome": 1.3,
-    "homeConcededAtHome": 1.1,
-    "awayScoredAway": 1,
-    "awayConcededAway": 1.4,
-    "homeVenueRank": null,
-    "awayVenueRank": null,
-    "homeVenuePts": null,
-    "awayVenuePts": null,
-    "homeVenueGames": null,
-    "awayVenueGames": null,
-    "venueTableSize": 20,
-    "leagueAvg": null,
-    "leagueTrends": null,
-    "homeWinRate": 1,
-    "awayWinRate": 0.25,
-    "homeUnbeatenRate": 1,
-    "awayUnbeatenRate": 0.75,
-    "homeCleanSheetRate": 1,
-    "awayCleanSheetRate": 0.25,
-    "homeFailedToScoreRate": 0,
-    "awayFailedToScoreRate": 0.25,
-    "home1HFor": 2,
-    "home2HFor": 0,
-    "home1HAgainst": 0,
-    "home2HAgainst": 0,
-    "away1HFor": 0.5,
-    "away2HFor": 0.33,
-    "away1HAgainst": 0.83,
-    "away2HAgainst": 0.17,
-    "homeOver25Rate": 0,
-    "awayOver25Rate": 0.17,
-    "homeOver15Rate": 1,
-    "awayOver15Rate": 0.17,
-    "statsReal": true,
-    "sameGroup": false,
-    "isKnockout": false,
-    "isTournament": false,
-    "round": "Club Friendlies",
-    "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Austria Lustenau",
@@ -78887,8 +78913,7 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.2
     },
-    "h2h": null,
-    "elapsed": 45
+    "h2h": null
   },
   {
     "home": "Lokomotiv Sofia",
@@ -78951,72 +78976,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
-  },
-  {
-    "home": "Radnicki 1923",
-    "away": "OFK Beograd",
-    "league": "Friendlies Clubs",
-    "homeLogo": "https://media.api-sports.io/football/teams/2644.png",
-    "awayLogo": "https://media.api-sports.io/football/teams/2633.png",
-    "country": "World",
-    "flag": null,
-    "status": "NS",
-    "kickoff": "2026-07-01T12:00:00+00:00",
-    "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
-    "homePos": null,
-    "awayPos": null,
-    "tableSize": 20,
-    "homePts": 0,
-    "awayPts": 0,
-    "homeGD": 0,
-    "awayGD": 0,
-    "homeForm": "—",
-    "awayForm": "—",
-    "homeScoredAtHome": 1.3,
-    "homeConcededAtHome": 1.1,
-    "awayScoredAway": 1,
-    "awayConcededAway": 1.4,
-    "homeVenueRank": null,
-    "awayVenueRank": null,
-    "homeVenuePts": null,
-    "awayVenuePts": null,
-    "homeVenueGames": null,
-    "awayVenueGames": null,
-    "venueTableSize": 20,
-    "leagueAvg": null,
-    "leagueTrends": null,
-    "homeWinRate": 0.75,
-    "awayWinRate": 0.25,
-    "homeUnbeatenRate": 0.75,
-    "awayUnbeatenRate": 0.5,
-    "homeCleanSheetRate": 0.5,
-    "awayCleanSheetRate": 0,
-    "homeFailedToScoreRate": 0.25,
-    "awayFailedToScoreRate": 0.5,
-    "home1HFor": 0.4,
-    "home2HFor": 0.2,
-    "home1HAgainst": 0.2,
-    "home2HAgainst": 0.4,
-    "away1HFor": 0.25,
-    "away2HFor": 0.5,
-    "away1HAgainst": 0.75,
-    "away2HAgainst": 0.5,
-    "homeOver25Rate": 0.4,
-    "awayOver25Rate": 0,
-    "homeOver15Rate": 0.6,
-    "awayOver15Rate": 0.25,
-    "statsReal": true,
-    "sameGroup": false,
-    "isKnockout": false,
-    "isTournament": false,
-    "round": "Club Friendlies",
-    "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "ŁKS Łódź",
@@ -79079,72 +79039,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
-  },
-  {
-    "home": "Oleksandria",
-    "away": "SK Poltava",
-    "league": "Friendlies Clubs",
-    "homeLogo": "https://media.api-sports.io/football/teams/3619.png",
-    "awayLogo": "https://media.api-sports.io/football/teams/17165.png",
-    "country": "World",
-    "flag": null,
-    "status": "NS",
-    "kickoff": "2026-07-01T12:00:00+00:00",
-    "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
-    "homePos": null,
-    "awayPos": null,
-    "tableSize": 20,
-    "homePts": 0,
-    "awayPts": 0,
-    "homeGD": 0,
-    "awayGD": 0,
-    "homeForm": "—",
-    "awayForm": "—",
-    "homeScoredAtHome": 1.3,
-    "homeConcededAtHome": 1.1,
-    "awayScoredAway": 1,
-    "awayConcededAway": 1.4,
-    "homeVenueRank": null,
-    "awayVenueRank": null,
-    "homeVenuePts": null,
-    "awayVenuePts": null,
-    "homeVenueGames": null,
-    "awayVenueGames": null,
-    "venueTableSize": 20,
-    "leagueAvg": null,
-    "leagueTrends": null,
-    "homeWinRate": 0.5,
-    "awayWinRate": 0,
-    "homeUnbeatenRate": 0.88,
-    "awayUnbeatenRate": 0,
-    "homeCleanSheetRate": 0.38,
-    "awayCleanSheetRate": 0,
-    "homeFailedToScoreRate": 0.13,
-    "awayFailedToScoreRate": 1,
-    "home1HFor": 0,
-    "home2HFor": 0.38,
-    "home1HAgainst": 0.13,
-    "home2HAgainst": 0,
-    "away1HFor": 0,
-    "away2HFor": 0,
-    "away1HAgainst": 0.5,
-    "away2HAgainst": 0,
-    "homeOver25Rate": 0.25,
-    "awayOver25Rate": 0.5,
-    "homeOver15Rate": 0.38,
-    "awayOver15Rate": 0.5,
-    "statsReal": true,
-    "sameGroup": false,
-    "isKnockout": false,
-    "isTournament": false,
-    "round": "Club Friendlies",
-    "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Glentoran",
@@ -79206,9 +79101,21 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
-    "odds": null,
-    "h2h": null,
-    "elapsed": 45
+    "odds": {
+      "home": 2.5,
+      "draw": 3.4,
+      "away": 2.35,
+      "over15": null,
+      "under15": null,
+      "over25": 1.57,
+      "under25": 2.1,
+      "over35": null,
+      "under35": null,
+      "dc1x": 1.44,
+      "dc12": 1.2,
+      "dcx2": 1.48
+    },
+    "h2h": null
   },
   {
     "home": "Chelyabinsk",
@@ -79271,8 +79178,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Arsenal Česká Lípa",
@@ -79335,8 +79241,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "IMT Novi Beograd",
@@ -79399,8 +79304,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Austria U19 W",
@@ -79463,8 +79367,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Bhutan U19",
@@ -79533,8 +79436,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": null,
     "odds": null,
-    "h2h": null,
-    "elapsed": 45
+    "h2h": null
   },
   {
     "home": "Guairena FC",
@@ -79544,11 +79446,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/1189.png",
     "country": "Paraguay",
     "flag": "https://media.api-sports.io/flags/py.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-01T13:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 7,
     "awayPos": 10,
     "tableSize": 16,
@@ -79616,8 +79518,7 @@ window.MATCHES = [
       "dc12": 1.28,
       "dcx2": 1.53
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Zenit Penza",
@@ -79701,8 +79602,7 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.08
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Rubin Kazan 2",
@@ -79786,8 +79686,7 @@ window.MATCHES = [
       "dc12": 1.18,
       "dcx2": 2.21
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Epitsentr Dunayivtsi",
@@ -79850,8 +79749,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Krylya Sovetov II",
@@ -79920,8 +79818,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Division B - Group 4 - 15",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Izhevsk",
@@ -79990,8 +79887,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Division B - Group 4 - 15",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Erzgebirge Aue",
@@ -80054,8 +79950,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Zenit",
@@ -80118,8 +80013,70 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
+  },
+  {
+    "home": "Oleksandria",
+    "away": "SK Poltava",
+    "league": "Friendlies Clubs",
+    "homeLogo": "https://media.api-sports.io/football/teams/3619.png",
+    "awayLogo": "https://media.api-sports.io/football/teams/17165.png",
+    "country": "World",
+    "flag": null,
+    "status": "NS",
+    "kickoff": "2026-07-01T14:00:00+00:00",
+    "matchDate": "2026-07-01",
+    "homeGoals": null,
+    "awayGoals": null,
+    "homePos": null,
+    "awayPos": null,
+    "tableSize": 20,
+    "homePts": 0,
+    "awayPts": 0,
+    "homeGD": 0,
+    "awayGD": 0,
+    "homeForm": "—",
+    "awayForm": "—",
+    "homeScoredAtHome": 1.3,
+    "homeConcededAtHome": 1.1,
+    "awayScoredAway": 1,
+    "awayConcededAway": 1.4,
+    "homeVenueRank": null,
+    "awayVenueRank": null,
+    "homeVenuePts": null,
+    "awayVenuePts": null,
+    "homeVenueGames": null,
+    "awayVenueGames": null,
+    "venueTableSize": 20,
+    "leagueAvg": null,
+    "leagueTrends": null,
+    "homeWinRate": 0.5,
+    "awayWinRate": 0,
+    "homeUnbeatenRate": 0.88,
+    "awayUnbeatenRate": 0,
+    "homeCleanSheetRate": 0.38,
+    "awayCleanSheetRate": 0,
+    "homeFailedToScoreRate": 0.13,
+    "awayFailedToScoreRate": 1,
+    "home1HFor": 0,
+    "home2HFor": 0.38,
+    "home1HAgainst": 0.13,
+    "home2HAgainst": 0,
+    "away1HFor": 0,
+    "away2HFor": 0,
+    "away1HAgainst": 0.5,
+    "away2HAgainst": 0,
+    "homeOver25Rate": 0.25,
+    "awayOver25Rate": 0.5,
+    "homeOver15Rate": 0.38,
+    "awayOver15Rate": 0.5,
+    "statsReal": true,
+    "sameGroup": false,
+    "isKnockout": false,
+    "isTournament": false,
+    "round": "Club Friendlies",
+    "odds": null,
+    "h2h": null
   },
   {
     "home": "KAMAZ",
@@ -80182,8 +80139,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Humenné",
@@ -80246,8 +80202,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "OshMU Aldier",
@@ -80316,8 +80271,70 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 14",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
+  },
+  {
+    "home": "Radnicki 1923",
+    "away": "OFK Beograd",
+    "league": "Friendlies Clubs",
+    "homeLogo": "https://media.api-sports.io/football/teams/2644.png",
+    "awayLogo": "https://media.api-sports.io/football/teams/2633.png",
+    "country": "World",
+    "flag": null,
+    "status": "NS",
+    "kickoff": "2026-07-01T14:30:00+00:00",
+    "matchDate": "2026-07-01",
+    "homeGoals": null,
+    "awayGoals": null,
+    "homePos": null,
+    "awayPos": null,
+    "tableSize": 20,
+    "homePts": 0,
+    "awayPts": 0,
+    "homeGD": 0,
+    "awayGD": 0,
+    "homeForm": "—",
+    "awayForm": "—",
+    "homeScoredAtHome": 1.3,
+    "homeConcededAtHome": 1.1,
+    "awayScoredAway": 1,
+    "awayConcededAway": 1.4,
+    "homeVenueRank": null,
+    "awayVenueRank": null,
+    "homeVenuePts": null,
+    "awayVenuePts": null,
+    "homeVenueGames": null,
+    "awayVenueGames": null,
+    "venueTableSize": 20,
+    "leagueAvg": null,
+    "leagueTrends": null,
+    "homeWinRate": 0.75,
+    "awayWinRate": 0.25,
+    "homeUnbeatenRate": 0.75,
+    "awayUnbeatenRate": 0.5,
+    "homeCleanSheetRate": 0.5,
+    "awayCleanSheetRate": 0,
+    "homeFailedToScoreRate": 0.25,
+    "awayFailedToScoreRate": 0.5,
+    "home1HFor": 0.4,
+    "home2HFor": 0.2,
+    "home1HAgainst": 0.2,
+    "home2HAgainst": 0.4,
+    "away1HFor": 0.25,
+    "away2HFor": 0.5,
+    "away1HAgainst": 0.75,
+    "away2HAgainst": 0.5,
+    "homeOver25Rate": 0.4,
+    "awayOver25Rate": 0,
+    "homeOver15Rate": 0.6,
+    "awayOver15Rate": 0.25,
+    "statsReal": true,
+    "sameGroup": false,
+    "isKnockout": false,
+    "isTournament": false,
+    "round": "Club Friendlies",
+    "odds": null,
+    "h2h": null
   },
   {
     "home": "GKS Katowice",
@@ -80379,22 +80396,8 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
-    "odds": {
-      "home": 2.7,
-      "draw": 3.4,
-      "away": 2.25,
-      "over15": null,
-      "under15": null,
-      "over25": 1.65,
-      "under25": 2.2,
-      "over35": null,
-      "under35": null,
-      "dc1x": null,
-      "dc12": null,
-      "dcx2": null
-    },
-    "h2h": null,
-    "elapsed": null
+    "odds": null,
+    "h2h": null
   },
   {
     "home": "Houston FC",
@@ -80478,8 +80481,7 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.75
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "FA Šiauliai II",
@@ -80561,8 +80563,7 @@ window.MATCHES = [
       "dc12": 1.08,
       "dcx2": 1.04
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Tukums",
@@ -80635,19 +80636,18 @@ window.MATCHES = [
       "draw": 3.25,
       "away": 3.1,
       "over15": 1.3,
-      "under15": 3.2,
-      "over25": 1.95,
-      "under25": 1.77,
-      "over35": 3.45,
-      "under35": 1.28,
-      "bttsYes": 1.73,
-      "bttsNo": 1.93,
+      "under15": 3.25,
+      "over25": 1.93,
+      "under25": 1.8,
+      "over35": 3.3,
+      "under35": 1.3,
+      "bttsYes": 1.7,
+      "bttsNo": 1.95,
       "dc1x": 1.28,
       "dc12": 1.25,
       "dcx2": 1.65
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Khimik Dzerzhinsk",
@@ -80731,8 +80731,7 @@ window.MATCHES = [
       "dc12": 1.14,
       "dcx2": 2.74
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Zaglebie Lubin",
@@ -80795,8 +80794,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Helmond Sport",
@@ -80859,8 +80857,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Slavia Praha",
@@ -80923,8 +80920,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Plzen",
@@ -80987,21 +80983,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": {
-      "home": 1.4,
-      "draw": 4.5,
-      "away": 5.5,
+      "home": 1.33,
+      "draw": 4.4,
+      "away": 7,
       "over15": null,
       "under15": null,
       "over25": null,
       "under25": null,
-      "over35": 2,
-      "under35": 1.65,
-      "dc1x": 1.06,
+      "over35": 2.05,
+      "under35": 1.6,
+      "dc1x": 1.03,
       "dc12": 1.11,
-      "dcx2": 2.75
+      "dcx2": 3
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "PAOK",
@@ -81064,8 +81059,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Cherno More Varna",
@@ -81128,8 +81122,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Sigma Olomouc",
@@ -81192,8 +81185,70 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
+  },
+  {
+    "home": "Correcaminos Uat",
+    "away": "Necaxa",
+    "league": "Friendlies Clubs",
+    "homeLogo": "https://media.api-sports.io/football/teams/2313.png",
+    "awayLogo": "https://media.api-sports.io/football/teams/2288.png",
+    "country": "World",
+    "flag": null,
+    "status": "NS",
+    "kickoff": "2026-07-01T15:00:00+00:00",
+    "matchDate": "2026-07-01",
+    "homeGoals": null,
+    "awayGoals": null,
+    "homePos": null,
+    "awayPos": null,
+    "tableSize": 20,
+    "homePts": 0,
+    "awayPts": 0,
+    "homeGD": 0,
+    "awayGD": 0,
+    "homeForm": "—",
+    "awayForm": "—",
+    "homeScoredAtHome": 1.3,
+    "homeConcededAtHome": 1.1,
+    "awayScoredAway": 1,
+    "awayConcededAway": 1.4,
+    "homeVenueRank": null,
+    "awayVenueRank": null,
+    "homeVenuePts": null,
+    "awayVenuePts": null,
+    "homeVenueGames": null,
+    "awayVenueGames": null,
+    "venueTableSize": 20,
+    "leagueAvg": null,
+    "leagueTrends": null,
+    "homeWinRate": null,
+    "awayWinRate": 1,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": 1,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": 0,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": 0,
+    "home1HFor": null,
+    "home2HFor": null,
+    "home1HAgainst": null,
+    "home2HAgainst": null,
+    "away1HFor": 0,
+    "away2HFor": 0,
+    "away1HAgainst": 0,
+    "away2HAgainst": 0,
+    "homeOver25Rate": null,
+    "awayOver25Rate": 0,
+    "homeOver15Rate": null,
+    "awayOver15Rate": 0.5,
+    "statsReal": true,
+    "sameGroup": false,
+    "isKnockout": false,
+    "isTournament": false,
+    "round": "Club Friendlies",
+    "odds": null,
+    "h2h": null
   },
   {
     "home": "Tiszakecske FC",
@@ -81256,8 +81311,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Pardubice",
@@ -81302,39 +81356,25 @@ window.MATCHES = [
     "awayCleanSheetRate": 0.4,
     "homeFailedToScoreRate": 0,
     "awayFailedToScoreRate": 0.4,
-    "home1HFor": 0.75,
-    "home2HFor": 0.25,
-    "home1HAgainst": 0.25,
-    "home2HAgainst": 0.25,
+    "home1HFor": 0.6,
+    "home2HFor": 0.2,
+    "home1HAgainst": 0.2,
+    "home2HAgainst": 0.2,
     "away1HFor": 0.5,
     "away2HFor": 0.5,
     "away1HAgainst": 0.13,
     "away2HAgainst": 0.5,
     "homeOver25Rate": 0,
     "awayOver25Rate": 0.13,
-    "homeOver15Rate": 0.25,
+    "homeOver15Rate": 0.2,
     "awayOver15Rate": 0.25,
     "statsReal": true,
     "sameGroup": false,
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
-    "odds": {
-      "home": 2.45,
-      "draw": 3.6,
-      "away": 2.35,
-      "over15": null,
-      "under15": null,
-      "over25": 1.73,
-      "under25": 2.08,
-      "over35": null,
-      "under35": null,
-      "dc1x": null,
-      "dc12": null,
-      "dcx2": null
-    },
-    "h2h": null,
-    "elapsed": null
+    "odds": null,
+    "h2h": null
   },
   {
     "home": "Veres Rivne",
@@ -81397,8 +81437,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Rilski Sportist",
@@ -81461,8 +81500,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Spain U19 W",
@@ -81525,8 +81563,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Botev Plovdiv",
@@ -81589,8 +81626,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Ferencvarosi TC",
@@ -81653,8 +81689,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "England",
@@ -81723,23 +81758,22 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round of 32",
     "odds": {
-      "home": 1.28,
-      "draw": 4.9,
-      "away": 12,
-      "over15": 1.3,
-      "under15": 3.35,
-      "over25": 1.95,
-      "under25": 1.83,
-      "over35": 3.4,
-      "under35": 1.3,
+      "home": 1.3,
+      "draw": 4.7,
+      "away": 11.5,
+      "over15": 1.33,
+      "under15": 3.25,
+      "over25": 2,
+      "under25": 1.8,
+      "over35": 3.5,
+      "under35": 1.28,
       "bttsYes": 2.55,
       "bttsNo": 1.45,
-      "dc1x": 1.03,
-      "dc12": 1.15,
-      "dcx2": 3.55
+      "dc1x": 1.04,
+      "dc12": 1.17,
+      "dcx2": 3.4
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "HJK Helsinki",
@@ -81815,8 +81849,7 @@ window.MATCHES = [
       "dc12": 1.14,
       "dcx2": 2.25
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Atmosfera",
@@ -81898,8 +81931,7 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.5
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Dinamo Tbilisi",
@@ -81962,8 +81994,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "3rd Place",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Saburtalo",
@@ -82026,8 +82057,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Final",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Dunav Ruse",
@@ -82090,8 +82120,70 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
+  },
+  {
+    "home": "Botev Vratsa",
+    "away": "Spartak Pleven",
+    "league": "Friendlies Clubs",
+    "homeLogo": "https://media.api-sports.io/football/teams/859.png",
+    "awayLogo": "https://media.api-sports.io/football/teams/1418.png",
+    "country": "World",
+    "flag": null,
+    "status": "NS",
+    "kickoff": "2026-07-01T16:00:00+00:00",
+    "matchDate": "2026-07-01",
+    "homeGoals": null,
+    "awayGoals": null,
+    "homePos": null,
+    "awayPos": null,
+    "tableSize": 20,
+    "homePts": 0,
+    "awayPts": 0,
+    "homeGD": 0,
+    "awayGD": 0,
+    "homeForm": "—",
+    "awayForm": "—",
+    "homeScoredAtHome": 1.3,
+    "homeConcededAtHome": 1.1,
+    "awayScoredAway": 1,
+    "awayConcededAway": 1.4,
+    "homeVenueRank": null,
+    "awayVenueRank": null,
+    "homeVenuePts": null,
+    "awayVenuePts": null,
+    "homeVenueGames": null,
+    "awayVenueGames": null,
+    "venueTableSize": 20,
+    "leagueAvg": null,
+    "leagueTrends": null,
+    "homeWinRate": 0,
+    "awayWinRate": 0.25,
+    "homeUnbeatenRate": 1,
+    "awayUnbeatenRate": 0.25,
+    "homeCleanSheetRate": 0.25,
+    "awayCleanSheetRate": 0,
+    "homeFailedToScoreRate": 0.25,
+    "awayFailedToScoreRate": 0.75,
+    "home1HFor": 0,
+    "home2HFor": 0.4,
+    "home1HAgainst": 0,
+    "home2HAgainst": 0.4,
+    "away1HFor": 0,
+    "away2HFor": 0.4,
+    "away1HAgainst": 0.4,
+    "away2HAgainst": 0.2,
+    "homeOver25Rate": 0,
+    "awayOver25Rate": 0,
+    "homeOver15Rate": 0.2,
+    "awayOver15Rate": 0.4,
+    "statsReal": true,
+    "sameGroup": false,
+    "isKnockout": false,
+    "isTournament": false,
+    "round": "Club Friendlies",
+    "odds": null,
+    "h2h": null
   },
   {
     "home": "Neuchatel Xamax FC",
@@ -82154,23 +82246,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": {
-      "home": 5.5,
-      "draw": 3.9,
-      "away": 1.44,
-      "over15": 2,
-      "under15": 1.73,
-      "over25": 4.2,
-      "under25": 1.2,
-      "over35": 10,
-      "under35": 1.05,
-      "bttsYes": 1.67,
-      "bttsNo": 2.05,
-      "dc1x": 2.4,
-      "dc12": 1.22,
-      "dcx2": 1.12
+      "home": 6.6,
+      "draw": 3.95,
+      "away": 1.4,
+      "over15": null,
+      "under15": null,
+      "over25": 1.65,
+      "under25": 2,
+      "over35": null,
+      "under35": null,
+      "dc1x": 2.75,
+      "dc12": 1.14,
+      "dcx2": 1.03
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "NK Lokomotiva Zagreb",
@@ -82233,8 +82322,70 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
+  },
+  {
+    "home": "Rudes",
+    "away": "Cukaricki",
+    "league": "Friendlies Clubs",
+    "homeLogo": "https://media.api-sports.io/football/teams/1019.png",
+    "awayLogo": "https://media.api-sports.io/football/teams/2656.png",
+    "country": "World",
+    "flag": null,
+    "status": "NS",
+    "kickoff": "2026-07-01T16:00:00+00:00",
+    "matchDate": "2026-07-01",
+    "homeGoals": null,
+    "awayGoals": null,
+    "homePos": null,
+    "awayPos": null,
+    "tableSize": 20,
+    "homePts": 0,
+    "awayPts": 0,
+    "homeGD": 0,
+    "awayGD": 0,
+    "homeForm": "—",
+    "awayForm": "—",
+    "homeScoredAtHome": 1.3,
+    "homeConcededAtHome": 1.1,
+    "awayScoredAway": 1,
+    "awayConcededAway": 1.4,
+    "homeVenueRank": null,
+    "awayVenueRank": null,
+    "homeVenuePts": null,
+    "awayVenuePts": null,
+    "homeVenueGames": null,
+    "awayVenueGames": null,
+    "venueTableSize": 20,
+    "leagueAvg": null,
+    "leagueTrends": null,
+    "homeWinRate": 1,
+    "awayWinRate": 0.25,
+    "homeUnbeatenRate": 1,
+    "awayUnbeatenRate": 0.75,
+    "homeCleanSheetRate": 1,
+    "awayCleanSheetRate": 0.25,
+    "homeFailedToScoreRate": 0,
+    "awayFailedToScoreRate": 0.25,
+    "home1HFor": 2,
+    "home2HFor": 0,
+    "home1HAgainst": 0,
+    "home2HAgainst": 0,
+    "away1HFor": 0.5,
+    "away2HFor": 0.33,
+    "away1HAgainst": 0.83,
+    "away2HAgainst": 0.17,
+    "homeOver25Rate": 0,
+    "awayOver25Rate": 0.17,
+    "homeOver15Rate": 1,
+    "awayOver15Rate": 0.17,
+    "statsReal": true,
+    "sameGroup": false,
+    "isKnockout": false,
+    "isTournament": false,
+    "round": "Club Friendlies",
+    "odds": null,
+    "h2h": null
   },
   {
     "home": "CSKA 1948",
@@ -82297,8 +82448,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "FC Winterthur",
@@ -82361,8 +82511,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "FC Juarez",
@@ -82425,72 +82574,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
-  },
-  {
-    "home": "Omonia Nicosia",
-    "away": "Dinamo Bucuresti",
-    "league": "Friendlies Clubs",
-    "homeLogo": "https://media.api-sports.io/football/teams/3402.png",
-    "awayLogo": "https://media.api-sports.io/football/teams/635.png",
-    "country": "World",
-    "flag": null,
-    "status": "NS",
-    "kickoff": "2026-07-01T16:00:00+00:00",
-    "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
-    "homePos": null,
-    "awayPos": null,
-    "tableSize": 20,
-    "homePts": 0,
-    "awayPts": 0,
-    "homeGD": 0,
-    "awayGD": 0,
-    "homeForm": "—",
-    "awayForm": "—",
-    "homeScoredAtHome": 1.3,
-    "homeConcededAtHome": 1.1,
-    "awayScoredAway": 1,
-    "awayConcededAway": 1.4,
-    "homeVenueRank": null,
-    "awayVenueRank": null,
-    "homeVenuePts": null,
-    "awayVenuePts": null,
-    "homeVenueGames": null,
-    "awayVenueGames": null,
-    "venueTableSize": 20,
-    "leagueAvg": null,
-    "leagueTrends": null,
-    "homeWinRate": null,
-    "awayWinRate": 0.67,
-    "homeUnbeatenRate": null,
-    "awayUnbeatenRate": 0.67,
-    "homeCleanSheetRate": null,
-    "awayCleanSheetRate": 0.33,
-    "homeFailedToScoreRate": null,
-    "awayFailedToScoreRate": 0,
-    "home1HFor": null,
-    "home2HFor": null,
-    "home1HAgainst": null,
-    "home2HAgainst": null,
-    "away1HFor": 1.25,
-    "away2HFor": 0.25,
-    "away1HAgainst": 0,
-    "away2HAgainst": 0.75,
-    "homeOver25Rate": null,
-    "awayOver25Rate": 0.25,
-    "homeOver15Rate": null,
-    "awayOver15Rate": 0.75,
-    "statsReal": true,
-    "sameGroup": false,
-    "isKnockout": false,
-    "isTournament": false,
-    "round": "Club Friendlies",
-    "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Weiz",
@@ -82563,8 +82647,7 @@ window.MATCHES = [
       "over35": null,
       "under35": null
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Poprad",
@@ -82627,8 +82710,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Neustrelitz",
@@ -82691,8 +82773,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Schwabmünchen",
@@ -82755,8 +82836,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Celje",
@@ -82819,21 +82899,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": {
-      "home": 3.95,
-      "draw": 4,
-      "away": 1.62,
+      "home": 3,
+      "draw": 3.6,
+      "away": 1.95,
       "over15": null,
       "under15": null,
       "over25": null,
       "under25": null,
-      "over35": 2.15,
-      "under35": 1.55,
-      "dc1x": 2.15,
-      "dc12": 1.15,
-      "dcx2": 1.22
+      "over35": 2.25,
+      "under35": 1.5,
+      "dc1x": 1.77,
+      "dc12": 1.18,
+      "dcx2": 1.33
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "BSG Chemie Leipzig",
@@ -82896,8 +82975,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Macva",
@@ -82959,9 +83037,84 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Club Friendlies",
+    "odds": {
+      "home": 2.55,
+      "draw": 3.25,
+      "away": 2.4,
+      "over15": null,
+      "under15": null,
+      "over25": 1.85,
+      "under25": 1.75,
+      "over35": null,
+      "under35": null,
+      "dc1x": null,
+      "dc12": null,
+      "dcx2": null
+    },
+    "h2h": null
+  },
+  {
+    "home": "Omonia Nicosia",
+    "away": "Dinamo Bucuresti",
+    "league": "Friendlies Clubs",
+    "homeLogo": "https://media.api-sports.io/football/teams/3402.png",
+    "awayLogo": "https://media.api-sports.io/football/teams/635.png",
+    "country": "World",
+    "flag": null,
+    "status": "NS",
+    "kickoff": "2026-07-01T16:30:00+00:00",
+    "matchDate": "2026-07-01",
+    "homeGoals": null,
+    "awayGoals": null,
+    "homePos": null,
+    "awayPos": null,
+    "tableSize": 20,
+    "homePts": 0,
+    "awayPts": 0,
+    "homeGD": 0,
+    "awayGD": 0,
+    "homeForm": "—",
+    "awayForm": "—",
+    "homeScoredAtHome": 1.3,
+    "homeConcededAtHome": 1.1,
+    "awayScoredAway": 1,
+    "awayConcededAway": 1.4,
+    "homeVenueRank": null,
+    "awayVenueRank": null,
+    "homeVenuePts": null,
+    "awayVenuePts": null,
+    "homeVenueGames": null,
+    "awayVenueGames": null,
+    "venueTableSize": 20,
+    "leagueAvg": null,
+    "leagueTrends": null,
+    "homeWinRate": null,
+    "awayWinRate": 0.67,
+    "homeUnbeatenRate": null,
+    "awayUnbeatenRate": 0.67,
+    "homeCleanSheetRate": null,
+    "awayCleanSheetRate": 0.33,
+    "homeFailedToScoreRate": null,
+    "awayFailedToScoreRate": 0,
+    "home1HFor": null,
+    "home2HFor": null,
+    "home1HAgainst": null,
+    "home2HAgainst": null,
+    "away1HFor": 1.25,
+    "away2HFor": 0.25,
+    "away1HAgainst": 0,
+    "away2HAgainst": 0.75,
+    "homeOver25Rate": null,
+    "awayOver25Rate": 0.25,
+    "homeOver15Rate": null,
+    "awayOver15Rate": 0.75,
+    "statsReal": true,
+    "sameGroup": false,
+    "isKnockout": false,
+    "isTournament": false,
+    "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Austria Salzburg",
@@ -83024,8 +83177,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Cham",
@@ -83088,8 +83240,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Forge",
@@ -83173,8 +83324,7 @@ window.MATCHES = [
       "dc12": 1.18,
       "dcx2": 2.38
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Denmark U19",
@@ -83236,24 +83386,8 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Group Stage",
-    "odds": {
-      "home": 5.1,
-      "draw": 4.2,
-      "away": 1.5,
-      "over15": null,
-      "under15": null,
-      "over25": 1.48,
-      "under25": 2.5,
-      "over35": 2.2,
-      "under35": 1.62,
-      "bttsYes": 1.55,
-      "bttsNo": 2.2,
-      "dc1x": 2.45,
-      "dc12": 1.14,
-      "dcx2": 1.1
-    },
-    "h2h": null,
-    "elapsed": null
+    "odds": null,
+    "h2h": null
   },
   {
     "home": "Eskilsminne",
@@ -83337,8 +83471,7 @@ window.MATCHES = [
       "dc12": 1.2,
       "dcx2": 1.73
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "De Treffers",
@@ -83401,8 +83534,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Étoile Carouge",
@@ -83465,8 +83597,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Augsburg II",
@@ -83529,8 +83660,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Wacker Burghausen",
@@ -83593,8 +83723,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Luckenwalde",
@@ -83657,8 +83786,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Paderborn II",
@@ -83721,8 +83849,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Tasmania Berlin",
@@ -83785,8 +83912,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Lokeren-Temse",
@@ -83849,8 +83975,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Wolfenbuttel",
@@ -83913,8 +84038,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Großschwarzenlohe",
@@ -83977,8 +84101,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Slavia Mozyr",
@@ -84052,7 +84175,7 @@ window.MATCHES = [
       "away": 1.75,
       "over15": 2.9,
       "under15": 1.36,
-      "over25": 8,
+      "over25": 8.5,
       "under25": 1.07,
       "over35": 26,
       "under35": null,
@@ -84062,8 +84185,7 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.2
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Husqvarna",
@@ -84132,23 +84254,22 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Norra Götaland - 15",
     "odds": {
-      "home": 1.18,
+      "home": 1.17,
       "draw": 6,
-      "away": 11,
+      "away": 13,
       "over15": null,
       "under15": null,
       "over25": 1.3,
       "under25": 3.25,
       "over35": 1.77,
       "under35": 1.95,
-      "bttsYes": 1.67,
-      "bttsNo": 2,
+      "bttsYes": 1.7,
+      "bttsNo": 1.95,
       "dc1x": 1.01,
       "dc12": 1.05,
-      "dcx2": 3.7
+      "dcx2": 3.85
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Thes Sport",
@@ -84211,8 +84332,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Bonsucesso",
@@ -84281,8 +84401,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "1st Phase - 11",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Cuniburo",
@@ -84366,8 +84485,7 @@ window.MATCHES = [
       "dc12": 1.36,
       "dcx2": 1.73
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Ipatinga",
@@ -84436,8 +84554,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 8",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Coimbra",
@@ -84505,22 +84622,8 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Regular Season - 8",
-    "odds": {
-      "home": 2.05,
-      "draw": 2.9,
-      "away": 3.45,
-      "over15": null,
-      "under15": null,
-      "over25": 2.3,
-      "under25": 1.48,
-      "over35": null,
-      "under35": null,
-      "dc1x": 1.2,
-      "dc12": 1.28,
-      "dcx2": 1.67
-    },
-    "h2h": null,
-    "elapsed": null
+    "odds": null,
+    "h2h": null
   },
   {
     "home": "Flamengo U20",
@@ -84589,23 +84692,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 19",
     "odds": {
-      "home": 1.36,
-      "draw": 4.33,
-      "away": 6.5,
-      "over15": 2.2,
-      "under15": 1.57,
-      "over25": 5,
-      "under25": 1.14,
-      "over35": 13,
-      "under35": 1.03,
-      "bttsYes": 1.7,
-      "bttsNo": 2,
-      "dc1x": 1.08,
-      "dc12": 1.18,
-      "dcx2": 2.88
+      "home": 1.35,
+      "draw": 4.4,
+      "away": 6.6,
+      "over15": null,
+      "under15": null,
+      "over25": null,
+      "under25": null,
+      "over35": 2.15,
+      "under35": 1.55,
+      "dc1x": 1.03,
+      "dc12": 1.11,
+      "dcx2": 3
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Bahia U20",
@@ -84674,23 +84774,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 19",
     "odds": {
-      "home": 2,
-      "draw": 3.1,
-      "away": 3.25,
-      "over15": 2.3,
-      "under15": 1.5,
-      "over25": 5,
-      "under25": 1.12,
+      "home": 1.95,
+      "draw": 3.45,
+      "away": 3.2,
+      "over15": null,
+      "under15": null,
+      "over25": 1.65,
+      "under25": 2,
       "over35": null,
       "under35": null,
-      "bttsYes": 1.57,
-      "bttsNo": 2.2,
-      "dc1x": 1.29,
-      "dc12": 1.3,
-      "dcx2": 1.7
+      "dc1x": 1.22,
+      "dc12": 1.2,
+      "dcx2": 1.77
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Palmeiras U20",
@@ -84760,22 +84857,16 @@ window.MATCHES = [
     "round": "Regular Season - 19",
     "odds": {
       "home": 1.2,
-      "draw": 5.5,
-      "away": 10,
-      "over15": 1.91,
-      "under15": 1.75,
-      "over25": 4,
-      "under25": 1.2,
-      "over35": 9.5,
-      "under35": 1.05,
-      "bttsYes": 1.75,
-      "bttsNo": 1.95,
-      "dc1x": 1.05,
-      "dc12": 1.11,
-      "dcx2": 3.8
+      "draw": 5.25,
+      "away": 10.25,
+      "over15": null,
+      "under15": null,
+      "over25": null,
+      "under25": null,
+      "over35": 1.9,
+      "under35": 1.73
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "América Mineiro U20",
@@ -84844,23 +84935,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 19",
     "odds": {
-      "home": 3.1,
-      "draw": 3.3,
+      "home": 2.9,
+      "draw": 3.55,
       "away": 2,
-      "over15": 2.2,
-      "under15": 1.57,
-      "over25": 4.8,
-      "under25": 1.15,
-      "over35": 13,
-      "under35": 1.03,
-      "bttsYes": 1.44,
-      "bttsNo": 2.4,
-      "dc1x": 1.67,
-      "dc12": 1.29,
-      "dcx2": 1.3
+      "over15": null,
+      "under15": null,
+      "over25": 1.5,
+      "under25": 2.25,
+      "over35": 2.25,
+      "under35": 1.5,
+      "dc1x": 1.6,
+      "dc12": 1.18,
+      "dcx2": 1.36
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Athletico PR U20",
@@ -84929,8 +85017,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 19",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Criciuma U20",
@@ -84999,23 +85086,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 19",
     "odds": {
-      "home": 1.91,
-      "draw": 3.25,
-      "away": 3.4,
-      "over15": 2.3,
-      "under15": 1.53,
-      "over25": 5,
-      "under25": 1.12,
+      "home": 1.85,
+      "draw": 3.55,
+      "away": 3.35,
+      "over15": null,
+      "under15": null,
+      "over25": 1.55,
+      "under25": 2.15,
       "over35": null,
       "under35": null,
-      "bttsYes": 1.53,
-      "bttsNo": 2.3,
-      "dc1x": 1.25,
-      "dc12": 1.29,
-      "dcx2": 1.75
+      "dc1x": 1.22,
+      "dc12": 1.18,
+      "dcx2": 1.85
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Fortaleza U20",
@@ -85084,8 +85168,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 19",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Juventude U20",
@@ -85154,23 +85237,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 19",
     "odds": {
-      "home": 3.4,
-      "draw": 3.3,
-      "away": 1.85,
-      "over15": 2.3,
-      "under15": 1.53,
-      "over25": 5,
-      "under25": 1.12,
+      "home": 3.2,
+      "draw": 3.5,
+      "away": 1.91,
+      "over15": null,
+      "under15": null,
+      "over25": 1.55,
+      "under25": 2.15,
       "over35": null,
       "under35": null,
-      "bttsYes": 1.53,
-      "bttsNo": 2.3,
-      "dc1x": 1.8,
-      "dc12": 1.25,
-      "dcx2": 1.25
+      "dc1x": 1.67,
+      "dc12": 1.2,
+      "dcx2": 1.3
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Santos U20",
@@ -85239,23 +85319,20 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 19",
     "odds": {
-      "home": 1.83,
-      "draw": 3.3,
-      "away": 3.6,
-      "over15": 2.3,
-      "under15": 1.5,
-      "over25": 5.5,
-      "under25": 1.12,
+      "home": 1.85,
+      "draw": 3.5,
+      "away": 3.4,
+      "over15": null,
+      "under15": null,
+      "over25": 1.6,
+      "under25": 2.05,
       "over35": null,
       "under35": null,
-      "bttsYes": 1.6,
-      "bttsNo": 2.15,
-      "dc1x": 1.25,
-      "dc12": 1.29,
-      "dcx2": 1.8
+      "dc1x": 1.2,
+      "dc12": 1.2,
+      "dcx2": 1.85
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Botafogo U20",
@@ -85325,22 +85402,19 @@ window.MATCHES = [
     "round": "Regular Season - 19",
     "odds": {
       "home": 1.75,
-      "draw": 3.25,
+      "draw": 3.4,
       "away": 3.9,
-      "over15": 2.62,
-      "under15": 1.4,
-      "over25": 6.5,
-      "under25": 1.08,
+      "over15": null,
+      "under15": null,
+      "over25": 1.85,
+      "under25": 1.75,
       "over35": null,
       "under35": null,
-      "bttsYes": 1.7,
-      "bttsNo": 2,
-      "dc1x": 1.2,
-      "dc12": 1.29,
-      "dcx2": 1.85
+      "dc1x": 1.17,
+      "dc12": 1.2,
+      "dcx2": 1.95
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Blumenau",
@@ -85409,18 +85483,17 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 12",
     "odds": {
-      "home": 1.18,
-      "draw": 4.8,
-      "away": 14,
+      "home": 1.15,
+      "draw": 5.1,
+      "away": 17,
       "over15": null,
       "under15": null,
-      "over25": 1.75,
-      "under25": 1.85,
+      "over25": 1.8,
+      "under25": 1.8,
       "over35": null,
       "under35": null
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Jaraguá",
@@ -85489,8 +85562,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 12",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "RB Bragantino U17",
@@ -85559,8 +85631,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 6",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Montrose",
@@ -85623,8 +85694,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Legiao U20",
@@ -85693,8 +85763,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Regular Season - 5",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Sobradinho U20",
@@ -85763,8 +85832,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Regular Season - 5",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Tupan",
@@ -85833,8 +85901,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 5",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Universidad de Concepcion",
@@ -85897,23 +85964,22 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Group Stage - 2",
     "odds": {
-      "home": 2.65,
-      "draw": 3.3,
-      "away": 2.38,
-      "over15": 1.25,
-      "under15": 3.65,
-      "over25": 1.77,
-      "under25": 1.95,
-      "over35": 2.95,
-      "under35": 1.36,
-      "bttsYes": 1.6,
-      "bttsNo": 2.1,
-      "dc1x": 1.45,
-      "dc12": 1.22,
-      "dcx2": 1.44
+      "home": 2.8,
+      "draw": 3.2,
+      "away": 2.33,
+      "over15": 1.33,
+      "under15": 3.1,
+      "over25": 1.95,
+      "under25": 1.77,
+      "over35": 3.45,
+      "under35": 1.28,
+      "bttsYes": 1.73,
+      "bttsNo": 1.93,
+      "dc1x": 1.48,
+      "dc12": 1.25,
+      "dcx2": 1.4
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Wales U19",
@@ -85975,21 +86041,8 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Group Stage",
-    "odds": {
-      "home": 17,
-      "draw": 7.75,
-      "away": 1.09,
-      "over15": null,
-      "under15": null,
-      "over25": 1.25,
-      "under25": 3.55,
-      "over35": 1.7,
-      "under35": 2.05,
-      "bttsYes": 2,
-      "bttsNo": 1.67
-    },
-    "h2h": null,
-    "elapsed": null
+    "odds": null,
+    "h2h": null
   },
   {
     "home": "Haukar",
@@ -86057,22 +86110,8 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Regular Season - 11",
-    "odds": {
-      "home": 1.53,
-      "draw": 4.2,
-      "away": 4.33,
-      "over15": null,
-      "under15": null,
-      "over25": null,
-      "under25": null,
-      "over35": 1.65,
-      "under35": 2,
-      "dc1x": 1.13,
-      "dc12": 1.12,
-      "dcx2": 2.35
-    },
-    "h2h": null,
-    "elapsed": null
+    "odds": null,
+    "h2h": null
   },
   {
     "home": "Belgium",
@@ -86150,14 +86189,13 @@ window.MATCHES = [
       "under25": 1.83,
       "over35": 3.35,
       "under35": 1.3,
-      "bttsYes": 1.73,
-      "bttsNo": 2,
+      "bttsYes": 1.7,
+      "bttsNo": 2.05,
       "dc1x": 1.3,
       "dc12": 1.28,
       "dcx2": 1.67
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "SF Glens",
@@ -86226,8 +86264,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Project 51O",
@@ -86311,8 +86348,7 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.67
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "HFX Wanderers FC",
@@ -86381,23 +86417,22 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Group Stage",
     "odds": {
-      "home": 2.56,
-      "draw": 3.25,
-      "away": 2.56,
-      "over15": 1.33,
-      "under15": 3.2,
-      "over25": 2,
-      "under25": 1.77,
-      "over35": 3.45,
-      "under35": 1.28,
-      "bttsYes": 1.7,
-      "bttsNo": 1.95,
+      "home": 2.55,
+      "draw": 3.3,
+      "away": 2.55,
+      "over15": 1.28,
+      "under15": 3.55,
+      "over25": 1.8,
+      "under25": 1.93,
+      "over35": 3,
+      "under35": 1.36,
+      "bttsYes": 1.6,
+      "bttsNo": 2.1,
       "dc1x": 1.48,
       "dc12": 1.25,
       "dcx2": 1.48
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Atlas",
@@ -86460,8 +86495,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Puebla",
@@ -86524,72 +86558,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
-  },
-  {
-    "home": "Correcaminos Uat",
-    "away": "Necaxa",
-    "league": "Friendlies Clubs",
-    "homeLogo": "https://media.api-sports.io/football/teams/2313.png",
-    "awayLogo": "https://media.api-sports.io/football/teams/2288.png",
-    "country": "World",
-    "flag": null,
-    "status": "NS",
-    "kickoff": "2026-07-01T20:00:00+00:00",
-    "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
-    "homePos": null,
-    "awayPos": null,
-    "tableSize": 20,
-    "homePts": 0,
-    "awayPts": 0,
-    "homeGD": 0,
-    "awayGD": 0,
-    "homeForm": "—",
-    "awayForm": "—",
-    "homeScoredAtHome": 1.3,
-    "homeConcededAtHome": 1.1,
-    "awayScoredAway": 1,
-    "awayConcededAway": 1.4,
-    "homeVenueRank": null,
-    "awayVenueRank": null,
-    "homeVenuePts": null,
-    "awayVenuePts": null,
-    "homeVenueGames": null,
-    "awayVenueGames": null,
-    "venueTableSize": 20,
-    "leagueAvg": null,
-    "leagueTrends": null,
-    "homeWinRate": null,
-    "awayWinRate": 1,
-    "homeUnbeatenRate": null,
-    "awayUnbeatenRate": 1,
-    "homeCleanSheetRate": null,
-    "awayCleanSheetRate": 0,
-    "homeFailedToScoreRate": null,
-    "awayFailedToScoreRate": 0,
-    "home1HFor": null,
-    "home2HFor": null,
-    "home1HAgainst": null,
-    "home2HAgainst": null,
-    "away1HFor": 0,
-    "away2HFor": 0,
-    "away1HAgainst": 0,
-    "away2HAgainst": 0,
-    "homeOver25Rate": null,
-    "awayOver25Rate": 0,
-    "homeOver15Rate": null,
-    "awayOver15Rate": 0.5,
-    "statsReal": true,
-    "sameGroup": false,
-    "isKnockout": false,
-    "isTournament": false,
-    "round": "Club Friendlies",
-    "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Zamora FC",
@@ -86658,8 +86627,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round 1 - Group B",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Caracas FC",
@@ -86728,8 +86696,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round 1 - Group C",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Trujillanos FC",
@@ -86798,8 +86765,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round 1 - Group D",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Aragua FC",
@@ -86868,8 +86834,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round 1 - Group C",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Mineros de Guyana",
@@ -86938,8 +86903,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round 1 - Group E",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Atletico el Vigia FC",
@@ -87008,8 +86972,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round 1 - Group B",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Petare FC",
@@ -87078,8 +87041,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round 1 - Group A",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Rayo Zuliano",
@@ -87148,8 +87110,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round 1 - Group D",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Marítimo",
@@ -87218,8 +87179,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round 1 - Group A",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Bolívar",
@@ -87288,8 +87248,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round 1 - Group E",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "New England FC",
@@ -87358,8 +87317,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Asheville City",
@@ -87428,8 +87386,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Charlotte Independence",
@@ -87513,8 +87470,7 @@ window.MATCHES = [
       "dc12": 1.15,
       "dcx2": 2.4
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "LDU de Quito",
@@ -87598,8 +87554,7 @@ window.MATCHES = [
       "dc12": 1.2,
       "dcx2": 2.55
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "North Carolina II",
@@ -87668,8 +87623,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Weston",
@@ -87753,8 +87707,7 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.83
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Louisville City II",
@@ -87823,8 +87776,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Real Central New Jersey",
@@ -87893,8 +87845,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Staten Island Athletic",
@@ -87978,8 +87929,7 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.62
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Steel City",
@@ -88048,8 +87998,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Kings Hammer Columbus",
@@ -88118,8 +88067,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Connecticut Rush",
@@ -88203,8 +88151,7 @@ window.MATCHES = [
       "dc12": 1.18,
       "dcx2": 2.45
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Cobresal",
@@ -88282,8 +88229,7 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.77
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Deportes Limache",
@@ -88361,8 +88307,7 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.38
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Caldense",
@@ -88430,22 +88375,8 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Regular Season - 8",
-    "odds": {
-      "home": 2.1,
-      "draw": 2.8,
-      "away": 3.6,
-      "over15": null,
-      "under15": null,
-      "over25": 2.75,
-      "under25": 1.4,
-      "over35": null,
-      "under35": null,
-      "dc1x": 1.22,
-      "dc12": 1.33,
-      "dcx2": 1.6
-    },
-    "h2h": null,
-    "elapsed": null
+    "odds": null,
+    "h2h": null
   },
   {
     "home": "Mamoré",
@@ -88513,22 +88444,8 @@ window.MATCHES = [
     "isKnockout": false,
     "isTournament": false,
     "round": "Regular Season - 8",
-    "odds": {
-      "home": 2.15,
-      "draw": 3,
-      "away": 3.2,
-      "over15": null,
-      "under15": null,
-      "over25": 2.62,
-      "under25": 1.44,
-      "over35": null,
-      "under35": null,
-      "dc1x": 1.28,
-      "dc12": 1.3,
-      "dcx2": 1.57
-    },
-    "h2h": null,
-    "elapsed": null
+    "odds": null,
+    "h2h": null
   },
   {
     "home": "Minneapolis City",
@@ -88597,8 +88514,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Port City",
@@ -88667,8 +88583,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Uberaba",
@@ -88737,8 +88652,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 8",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "FC Miami City",
@@ -88807,8 +88721,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Virginia Beach City",
@@ -88877,78 +88790,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
-  },
-  {
-    "home": "Hudson Valley Hammers",
-    "away": "Manhattan",
-    "league": "USL League Two",
-    "homeLogo": "https://media.api-sports.io/football/teams/18897.png",
-    "awayLogo": "https://media.api-sports.io/football/teams/4063.png",
-    "country": "USA",
-    "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "NS",
-    "kickoff": "2026-07-01T23:00:00+00:00",
-    "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
-    "homePos": 3,
-    "awayPos": 6,
-    "tableSize": 144,
-    "homePts": 24,
-    "awayPts": 11,
-    "homeGD": 7,
-    "awayGD": -6,
-    "homeForm": "LWDWW",
-    "awayForm": "WLLWL",
-    "homeScoredAtHome": 1.8,
-    "homeConcededAtHome": 0.8,
-    "awayScoredAway": 1.3,
-    "awayConcededAway": 2.2,
-    "homeVenueRank": 3,
-    "awayVenueRank": 7,
-    "homeVenuePts": 13,
-    "awayVenuePts": 5,
-    "homeVenueGames": 6,
-    "awayVenueGames": 6,
-    "venueTableSize": 10,
-    "leagueAvg": {
-      "goalsPerGame": 3.49,
-      "drawRate": 0.18,
-      "homeWinRate": 0.44,
-      "gamesPlayed": 886,
-      "reliable": true
-    },
-    "leagueTrends": null,
-    "homeWinRate": 0.67,
-    "awayWinRate": 0.25,
-    "homeUnbeatenRate": 0.67,
-    "awayUnbeatenRate": 0.5,
-    "homeCleanSheetRate": 0,
-    "awayCleanSheetRate": 0.25,
-    "homeFailedToScoreRate": 0,
-    "awayFailedToScoreRate": 0.25,
-    "home1HFor": 0,
-    "home2HFor": 0,
-    "home1HAgainst": 0,
-    "home2HAgainst": 0,
-    "away1HFor": 0,
-    "away2HFor": 0,
-    "away1HAgainst": 0,
-    "away2HAgainst": 0,
-    "homeOver25Rate": 0.67,
-    "awayOver25Rate": 0.44,
-    "homeOver15Rate": 0.78,
-    "awayOver15Rate": 0.56,
-    "statsReal": true,
-    "sameGroup": true,
-    "isKnockout": false,
-    "isTournament": true,
-    "round": "Group Stage",
-    "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Chattanooga Red Wolves",
@@ -89032,8 +88874,7 @@ window.MATCHES = [
       "dc12": 1.13,
       "dcx2": 2.65
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Valeriodoce",
@@ -89102,8 +88943,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 8",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Nação",
@@ -89172,8 +89012,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 12",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Vitória ES",
@@ -89245,18 +89084,19 @@ window.MATCHES = [
       "home": 1.5,
       "draw": 4,
       "away": 5,
-      "over15": null,
-      "under15": null,
-      "over25": 1.85,
-      "under25": 1.95,
+      "over15": 2.5,
+      "under15": 1.44,
+      "over25": 6,
+      "under25": 1.11,
       "over35": null,
       "under35": null,
-      "dc1x": 1.11,
-      "dc12": 1.17,
-      "dcx2": 2.3
+      "bttsYes": 1.91,
+      "bttsNo": 1.8,
+      "dc1x": 1.12,
+      "dc12": 1.22,
+      "dcx2": 2.45
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Ceará U20",
@@ -89325,8 +89165,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Semi-finals",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Goiás U20",
@@ -89395,8 +89234,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Semi-finals",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Boston City",
@@ -89465,8 +89303,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Charlottesville Blues",
@@ -89535,8 +89372,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Hill Country Lobos",
@@ -89605,8 +89441,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Netherlands",
@@ -89690,8 +89525,7 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.57
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Unión Villa Krause",
@@ -89760,8 +89594,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Ulaanbaatar",
@@ -89800,7 +89633,7 @@ window.MATCHES = [
       "goalsPerGame": 5.14,
       "drawRate": 0.13,
       "homeWinRate": 0.46,
-      "gamesPlayed": 161,
+      "gamesPlayed": 162,
       "reliable": true
     },
     "leagueTrends": null,
@@ -89843,8 +89676,7 @@ window.MATCHES = [
       "dc12": 1.11,
       "dcx2": 2.88
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "SD Raiders U20",
@@ -89913,8 +89745,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 16",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "FC Sochi",
@@ -89977,8 +89808,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "SD Raiders",
@@ -90062,8 +89892,7 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.5
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Kazincbarcikai",
@@ -90126,8 +89955,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Logan Lightning",
@@ -90211,8 +90039,7 @@ window.MATCHES = [
       "dc12": 1.18,
       "dcx2": 1.5
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Deren",
@@ -90251,7 +90078,7 @@ window.MATCHES = [
       "goalsPerGame": 5.14,
       "drawRate": 0.13,
       "homeWinRate": 0.46,
-      "gamesPlayed": 161,
+      "gamesPlayed": 162,
       "reliable": true
     },
     "leagueTrends": null,
@@ -90294,8 +90121,7 @@ window.MATCHES = [
       "dc12": 1.15,
       "dcx2": 1.67
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Waalwijk",
@@ -90358,8 +90184,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Olimpia Grudziądz",
@@ -90422,8 +90247,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Clydebank",
@@ -90486,8 +90310,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "CSKA Moscow",
@@ -90565,8 +90388,7 @@ window.MATCHES = [
       "dc12": 1.09,
       "dcx2": 4.4
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "FC Aarau",
@@ -90629,8 +90451,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "VPS",
@@ -90706,8 +90527,7 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.33
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Rīgas FS",
@@ -90791,8 +90611,7 @@ window.MATCHES = [
       "dc12": 1.03,
       "dcx2": 4.75
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Nyiregyhaza",
@@ -90870,8 +90689,7 @@ window.MATCHES = [
       "dc12": null,
       "dcx2": null
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "FC Voluntari",
@@ -90934,8 +90752,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Táborsko",
@@ -90998,8 +90815,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Virtus",
@@ -91062,8 +90878,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Bosnia-Herzegovina U19",
@@ -91126,8 +90941,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "SJK-juniorit",
@@ -91209,8 +91023,7 @@ window.MATCHES = [
       "dc12": 1.14,
       "dcx2": 1.77
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Magdeburg II",
@@ -91273,8 +91086,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Nõmme United II",
@@ -91356,8 +91168,7 @@ window.MATCHES = [
       "dc12": 1.1,
       "dcx2": 1.14
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "FK Liepaja",
@@ -91441,8 +91252,7 @@ window.MATCHES = [
       "dc12": 1.1,
       "dcx2": 3.25
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Zorya Luhansk",
@@ -91505,8 +91315,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Sturm Graz",
@@ -91569,8 +91378,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Levski Sofia",
@@ -91646,8 +91454,7 @@ window.MATCHES = [
       "dc12": 1.13,
       "dcx2": 3.4
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Altona 93",
@@ -91710,8 +91517,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Železničar Pančevo",
@@ -91774,8 +91580,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Järva-Jaani",
@@ -91838,8 +91643,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round of 128",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Diegem Sport",
@@ -91902,8 +91706,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Brinje-Grosuplje",
@@ -91966,8 +91769,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Ivory Coast",
@@ -92051,8 +91853,7 @@ window.MATCHES = [
       "dc12": 1.28,
       "dcx2": 1.3
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Chevremont",
@@ -92115,8 +91916,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Luhe-Wildenau",
@@ -92179,8 +91979,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "FC Eindhoven",
@@ -92256,8 +92055,7 @@ window.MATCHES = [
       "dc12": 1.08,
       "dcx2": 4
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Campos AA",
@@ -92339,8 +92137,7 @@ window.MATCHES = [
       "dc12": 1.1,
       "dcx2": 2.85
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Central Ballester",
@@ -92424,8 +92221,7 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.3
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Claypole",
@@ -92509,8 +92305,7 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.33
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Cove Rangers",
@@ -92573,8 +92368,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Poland U19 W",
@@ -92637,8 +92431,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Botafogo U17",
@@ -92707,8 +92500,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 6",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Cruzeiro U17",
@@ -92777,8 +92569,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 6",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Flamengo RJ U17",
@@ -92847,8 +92638,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 6",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Fortaleza U17",
@@ -92917,8 +92707,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 6",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Gremio U17",
@@ -92987,8 +92776,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 6",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Internacional U17",
@@ -93057,8 +92845,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 6",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Santos U17",
@@ -93127,8 +92914,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 6",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Vitoria U17",
@@ -93197,8 +92983,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 6",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Resistencia",
@@ -93280,8 +93065,7 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.67
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Raith Rovers",
@@ -93344,8 +93128,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Ayr Utd",
@@ -93421,8 +93204,7 @@ window.MATCHES = [
       "dc12": 1.11,
       "dcx2": 2.8
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Alloa Athletic",
@@ -93498,8 +93280,7 @@ window.MATCHES = [
       "dc12": 1.13,
       "dcx2": 1.1
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Kelty Hearts",
@@ -93562,8 +93343,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Clachnacuddin",
@@ -93636,8 +93416,7 @@ window.MATCHES = [
       "over35": 1.65,
       "under35": 2
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Musselburgh Athletic",
@@ -93700,8 +93479,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Forfar Athletic",
@@ -93777,8 +93555,7 @@ window.MATCHES = [
       "dc12": 1.08,
       "dcx2": 1.02
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Caerau (Ely)",
@@ -93841,8 +93618,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Linlithgow Rose",
@@ -93905,8 +93681,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Clyde",
@@ -93982,8 +93757,7 @@ window.MATCHES = [
       "dc12": 1.15,
       "dcx2": 1.1
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Gretna 2008",
@@ -94046,8 +93820,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Nairn County",
@@ -94110,8 +93883,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Dunipace",
@@ -94174,8 +93946,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Club Friendlies",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Shamrock Rovers",
@@ -94251,8 +94022,7 @@ window.MATCHES = [
       "dc12": 1.2,
       "dcx2": 1.48
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Palmeiras U17",
@@ -94321,8 +94091,7 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 6",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "France",
@@ -94406,8 +94175,7 @@ window.MATCHES = [
       "dc12": 1.11,
       "dcx2": 3.65
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Independiente F.b.c.",
@@ -94489,8 +94257,7 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.62
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Inter Gainesville",
@@ -94559,8 +94326,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "A. Italiano",
@@ -94638,8 +94404,7 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.53
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Caxias",
@@ -94723,8 +94488,7 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 2.15
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Treze U20",
@@ -94793,8 +94557,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Semi-finals",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Botafogo SP",
@@ -94878,8 +94641,7 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.62
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Boston Bolts",
@@ -94961,8 +94723,7 @@ window.MATCHES = [
       "dc12": 1.13,
       "dcx2": 1.13
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Charlotte Eagles",
@@ -95031,8 +94792,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Reading United",
@@ -95101,8 +94861,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Kalamazoo FC",
@@ -95184,8 +94943,7 @@ window.MATCHES = [
       "dc12": 1.17,
       "dcx2": 1.4
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Midwest United",
@@ -95254,8 +95012,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Patuxent",
@@ -95324,8 +95081,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Erie Sports Center",
@@ -95394,8 +95150,7 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Botafogo PB",
@@ -95479,8 +95234,7 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.8
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Volta Redonda",
@@ -95564,8 +95318,7 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.8
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Virginia Marauders",
@@ -95647,8 +95400,7 @@ window.MATCHES = [
       "dc12": 1.08,
       "dcx2": 1.01
     },
-    "h2h": null,
-    "elapsed": null
+    "h2h": null
   },
   {
     "home": "Miami AC",
