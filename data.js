@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-06-30T23:11:53.478Z";
-window.SCORES_UPDATED = "2026-07-01T01:30:47.199Z";
+window.SCORES_UPDATED = "2026-07-01T01:31:48.287Z";
 window.MATCHES = [
   {
     "home": "Washington Spirit W",
@@ -56302,8 +56302,8 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-01T00:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": 0,
-    "awayGoals": 0,
+    "homeGoals": 2,
+    "awayGoals": 1,
     "homePos": 3,
     "awayPos": 1,
     "tableSize": 144,
@@ -56358,7 +56358,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 64
+    "elapsed": 65
   },
   {
     "home": "Fort Worth Vaqueros",
@@ -56671,7 +56671,7 @@ window.MATCHES = [
       "dcx2": 4.33
     },
     "h2h": null,
-    "elapsed": 25
+    "elapsed": 26
   },
   {
     "home": "Colorado Storm",
