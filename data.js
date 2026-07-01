@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-01T11:11:45.806Z";
-window.SCORES_UPDATED = "2026-07-01T11:35:28.078Z";
+window.SCORES_UPDATED = "2026-07-01T11:40:38.823Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -78040,7 +78040,7 @@ window.MATCHES = [
     "round": "Regular Season - 9",
     "odds": null,
     "h2h": null,
-    "elapsed": 80
+    "elapsed": 85
   },
   {
     "home": "Seoul W",
@@ -78123,7 +78123,7 @@ window.MATCHES = [
       "dcx2": 1.1
     },
     "h2h": null,
-    "elapsed": 80
+    "elapsed": 85
   },
   {
     "home": "Stal Mielec",
@@ -78137,7 +78137,7 @@ window.MATCHES = [
     "kickoff": "2026-07-01T10:00:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 1,
-    "awayGoals": 4,
+    "awayGoals": 5,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -78187,7 +78187,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 84
+    "elapsed": 89
   },
   {
     "home": "Chornomorets",
@@ -78251,7 +78251,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 73
+    "elapsed": 78
   },
   {
     "home": "Radomiak Radom",
@@ -78315,7 +78315,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 48
+    "elapsed": 54
   },
   {
     "home": "Qarabag",
@@ -78462,7 +78462,7 @@ window.MATCHES = [
       "dcx2": 1.25
     },
     "h2h": null,
-    "elapsed": 35
+    "elapsed": 41
   },
   {
     "home": "Dinamo Barnaul",
@@ -78547,7 +78547,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 6
+    "elapsed": 11
   },
   {
     "home": "KDV",
