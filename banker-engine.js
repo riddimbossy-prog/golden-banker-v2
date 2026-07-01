@@ -110,6 +110,196 @@ function classifyLeague(m){
   return { type, gpg, reliable, volatile, multiplier };
 }
 
+// ============================================================
+// LEAGUE-CONTEXT POST-FILTER  (goals-based — Sections 3, 5, 8, 9)
+// ------------------------------------------------------------
+// Applies the spec's league-adjusted RULES to an engine's chosen pick, using
+// goals as the xG proxy (xG isn't available on most of this board). Per the
+// spec's own law (Section 9): context can DOWNGRADE or REJECT a pick, never
+// upgrade a weak one. So this only ever makes a pick safer — it can turn a
+// banker into a non-banker, or a pick into No Bet, but never the reverse.
+//
+// It reads the same goal fields every engine already has:
+//   homeScoredAtHome / homeConcededAtHome / awayScoredAway / awayConcededAway
+// and the league class from classifyLeague(m).
+//
+// Returns { downgrade:bool, reject:bool, reason:string } — the caller applies it.
+function leagueContextVerdict(m, market){
+  const lc = classifyLeague(m);
+  if (lc.type === "Unknown") {
+    // Spec: "If league context is unknown: FINAL PICK = NO BET." We honour this
+    // only for table-less/unknown leagues, where a banker was never safe anyway.
+    return { downgrade:true, reject:hasNoStandings(m), reason:"League context unknown — cannot confirm market fits the environment." };
+  }
+  const mk = String(market||'').toLowerCase();
+  const hGF=m.homeScoredAtHome, hGA=m.homeConcededAtHome, aGF=m.awayScoredAway, aGA=m.awayConcededAway;
+  const combined = (hGF!=null && aGF!=null) ? (hGF+aGF) : null;       // goals-proxy for "combined xG"
+  const t = lc.type;
+
+  let downgrade=false, reject=false, reason="";
+
+  // --- Section 9 OVERRIDES: market fights the league environment ---
+  const isOver  = mk.includes("over");
+  const isUnder = mk.includes("under");
+  const isBTTSy = mk.includes("btts") && mk.includes("yes");
+  const isBTTSn = mk.includes("btts") && mk.includes("no");
+
+  if (combined != null) {
+    // Over markets in low/very-low-scoring leagues need elite goal proof (Sec 3/4).
+    if (isOver && (t==="Low-Scoring" || t==="Very Low-Scoring")) {
+      const need = t==="Very Low-Scoring" ? 3.30 : 3.20;            // adjusted Over 2.5 goal floor
+      if (mk.includes("2.5") && combined < need) { downgrade=true; reason=`Over in a ${t} league needs combined ${need}+ goals/game (have ${combined.toFixed(2)}).`; }
+      // Real hit-rate check (Sec 4): if we have both teams' Over 2.5 rates and the
+      // average is below the league-adjusted hit-rate floor, downgrade too.
+      if (mk.includes("2.5") && m.homeOver25Rate!=null && m.awayOver25Rate!=null) {
+        const hr = (m.homeOver25Rate + m.awayOver25Rate)/2;
+        const floor = t==="Very Low-Scoring" ? 0.68 : 0.65;
+        if (hr < floor) { downgrade=true; reason=`Over 2.5 in a ${t} league needs ${Math.round(floor*100)}%+ Over hit-rate (have ${Math.round(hr*100)}%).`; }
+      }
+      if (mk.includes("3.5")) { downgrade=true; reason=`Over 3.5 is not a default banker in a ${t} league.`; }
+    }
+    // Under markets in high-scoring leagues need very low combined goals (Sec 9).
+    if (isUnder && (t==="Very High-Scoring" || t==="High-Scoring")) {
+      const cap = t==="Very High-Scoring" ? 1.90 : 2.00;            // adjusted Under 2.5 cap
+      if (mk.includes("2.5") && combined > cap) { downgrade=true; reason=`Under in a ${t} league needs combined ${cap} or fewer goals/game (have ${combined.toFixed(2)}).`; }
+    }
+    // BTTS Yes in defensive leagues needs both sides to score reliably (Sec 9).
+    if (isBTTSy && (t==="Low-Scoring" || t==="Very Low-Scoring")) {
+      const each = t==="Very Low-Scoring" ? 1.45 : 1.35;
+      if (!(hGF>=each && aGF>=each)) { downgrade=true; reason=`BTTS Yes in a ${t} league needs both teams scoring ${each}+ /game.`; }
+    }
+    // BTTS No in very high-scoring leagues needs strong defensive proof (Sec 9).
+    if (isBTTSn && t==="Very High-Scoring") {
+      downgrade=true; reason="BTTS No in a very high-scoring league needs elite defensive numbers.";
+    }
+
+    // --- Over 1.5 (Sec 4): softer Over — only hostile in low-scoring leagues,
+    //     with a lower goal floor than Over 2.5. ---
+    if (isOver && mk.includes("1.5") && (t==="Low-Scoring" || t==="Very Low-Scoring")) {
+      const need = t==="Very Low-Scoring" ? 2.75 : 2.65;        // adjusted Over 1.5 goal floor
+      if (combined < need) { downgrade=true; reason=`Over 1.5 in a ${t} league needs combined ${need}+ goals/game (have ${combined.toFixed(2)}).`; }
+    }
+  }
+
+  // --- Section 5: STRAIGHT WIN — wants a clear favourite. Hostile in low-scoring
+  //     (goals hard to find) and volatile (upsets common). Goals-proxy for the
+  //     "gap": stronger team's win rate minus weaker side, plus table position. ---
+  const isWin = (mk==="home win" || mk==="away win" || mk.includes(" win") && !mk.includes("dnb") && !mk.includes("draw"));
+  if (isWin && (t==="Low-Scoring" || t==="Very Low-Scoring")) {
+    // The engine already vetted the favourite; we only ADD the spec's extra gap
+    // demand in leagues where straight wins are genuinely harder. Balanced and
+    // high-scoring leagues keep the engine's own judgement (no double-gating).
+    const hWR=m.homeWinRate, aWR=m.awayWinRate;
+    const wrGap = (hWR!=null && aWR!=null) ? Math.abs(hWR-aWR) : null;
+    const posGap = (m.homePos!=null && m.awayPos!=null) ? Math.abs(m.homePos-m.awayPos) : null;
+    const needWR = t==="Very Low-Scoring" ? 0.45 : 0.38;
+    const needPos = t==="Very Low-Scoring" ? 6 : 5;
+    const gapOK = (wrGap!=null && wrGap>=needWR) || (posGap!=null && posGap>=needPos);
+    if (!gapOK) { downgrade=true; reason=`Straight win in a ${t} league needs a clearer favourite (bigger quality gap).`; }
+  }
+
+  // --- Section 6: DNB — protective, SAFER in compressed/low-scoring leagues, so
+  //     only lightly tightened; volatile still demands a real gap. ---
+  const isDNB = mk.includes("dnb");
+  if (isDNB && (t==="Very High-Scoring" || t==="High-Scoring")) {
+    // DNB is protective and already safe in low/balanced leagues; the spec only
+    // demands a clearer edge where goals are plentiful (a draw is likelier to be
+    // broken, so the backed side must be the more probable winner).
+    const hWR=m.homeWinRate, aWR=m.awayWinRate;
+    const wrGap = (hWR!=null && aWR!=null) ? Math.abs(hWR-aWR) : null;
+    const need = t==="Very High-Scoring" ? 0.28 : 0.22;
+    if (wrGap!=null && wrGap < need) { downgrade=true; reason=`DNB in a ${t} league needs a clearer edge for the backed side.`; }
+  }
+
+  // --- Section 6: DOUBLE CHANCE — wants a side that rarely loses. Check the
+  //     backed side's unbeaten rate against the league-adjusted floor. ---
+  const isDC = mk.includes("double chance") || mk.startsWith("dc");
+  if (isDC) {
+    const ub = Math.max(m.homeUnbeatenRate??0, m.awayUnbeatenRate??0);
+    let need = 0.72;
+    if (t==="Very High-Scoring") need=0.75;
+    else if (t==="High-Scoring") need=0.74;
+    else if (t==="Very Low-Scoring") need=0.75;
+    if (ub < need) { downgrade=true; reason=`Double Chance in a ${t} league needs the backed side unbeaten ${Math.round(need*100)}%+ of games.`; }
+  }
+
+  // --- TEAM-TO-SCORE markets (Sec 2 "Team Over/Under Goals"). A single side's
+  //     goal expectation must fit the league. "Team Over 1.5" wants that side
+  //     scoring freely (hostile in low-scoring leagues); "Team Under 1.5"/"Team
+  //     Under 0.5" wants them kept quiet (hostile in high-scoring leagues). We
+  //     use the relevant side's goals-for average as the proxy. ---
+  const isHomeTeam = mk.includes("home team");
+  const isAwayTeam = mk.includes("away team");
+  if (isHomeTeam || isAwayTeam) {
+    const gf = isHomeTeam ? hGF : aGF;          // that side's goals-for /game
+    if (gf != null) {
+      const teamOver15  = mk.includes("over 1.5");
+      const teamOver05  = mk.includes("over 0.5");
+      const teamUnder15 = mk.includes("under 1.5");
+      if (teamOver15 && (t==="Low-Scoring" || t==="Very Low-Scoring")) {
+        const need = t==="Very Low-Scoring" ? 1.75 : 1.55;
+        if (gf < need) { downgrade=true; reason=`Team Over 1.5 in a ${t} league needs that side scoring ${need}+ /game (have ${gf.toFixed(2)}).`; }
+      }
+      if (teamOver05 && t==="Very Low-Scoring") {
+        if (gf < 1.05) { downgrade=true; reason=`Team Over 0.5 in a very low-scoring league needs that side scoring 1.05+ /game (have ${gf.toFixed(2)}).`; }
+      }
+      if (teamUnder15 && (t==="High-Scoring" || t==="Very High-Scoring")) {
+        const cap = t==="Very High-Scoring" ? 0.85 : 1.00;
+        if (gf > cap) { downgrade=true; reason=`Team Under 1.5 in a ${t} league needs that side scoring ${cap} or fewer /game (have ${gf.toFixed(2)}).`; }
+      }
+    }
+  }
+
+  // --- FIRST-HALF / SECOND-HALF goal markets. Uses REAL half-time goal
+  //     averages from the H2H sample (m.h2h.avg1H / avg2H) where available; if
+  //     not present (no HT data yet for this fixture), we DON'T guess — the
+  //     market is downgraded as unconfirmed (honesty-first: no fabricated half
+  //     splits). Thresholds scale with league scoring like the full-game ones. ---
+  const isFirstHalf  = mk.includes("1st half") || mk.includes("first half");
+  const isSecondHalf = mk.includes("2nd half") || mk.includes("second half");
+  if (isFirstHalf || isSecondHalf) {
+    const h2h = m.h2h || {};
+    // Prefer real per-team HT/FT half-splits (from /teams/statistics goals-by-
+    // minute) when present; fall back to the H2H sample average; else unknown.
+    const teamHalf = isFirstHalf
+      ? (m.home1HFor!=null && m.away1HFor!=null ? (m.home1HFor + m.away1HFor) : null)
+      : (m.home2HFor!=null && m.away2HFor!=null ? (m.home2HFor + m.away2HFor) : null);
+    const avg = teamHalf != null ? teamHalf : (isFirstHalf ? h2h.avg1H : h2h.avg2H);
+    if (avg == null) {
+      downgrade = true;
+      reason = `${isFirstHalf?'First':'Second'}-half market — no half-time goal data for this fixture yet (not confirmed).`;
+    } else {
+      const halfIsOver  = mk.includes("over");
+      const halfIsUnder = mk.includes("under");
+      // baseline half-goal floors, tightened in low-scoring / loosened in high.
+      const bump = (t==="Low-Scoring") ? 0.15 : (t==="Very Low-Scoring") ? 0.25 : 0;
+      const ease = (t==="High-Scoring") ? 0.10 : (t==="Very High-Scoring") ? 0.20 : 0;
+      if (halfIsOver && mk.includes("0.5")) {
+        const need = 0.80 + bump - ease;   // expect ~0.8 goals in the half to back Over 0.5
+        if (avg < need) { downgrade=true; reason=`${isFirstHalf?'1st':'2nd'}-half Over 0.5 needs ~${need.toFixed(2)}+ half-goals (have ${avg.toFixed(2)}).`; }
+      }
+      if (halfIsOver && mk.includes("1.5")) {
+        const need = 1.70 + bump - ease;
+        if (avg < need) { downgrade=true; reason=`${isFirstHalf?'1st':'2nd'}-half Over 1.5 needs ~${need.toFixed(2)}+ half-goals (have ${avg.toFixed(2)}).`; }
+      }
+      if (halfIsUnder && mk.includes("1.5")) {
+        const cap = 1.10 - bump + ease;
+        if (avg > cap) { downgrade=true; reason=`${isFirstHalf?'1st':'2nd'}-half Under 1.5 needs ~${cap.toFixed(2)} or fewer half-goals (have ${avg.toFixed(2)}).`; }
+      }
+      if (halfIsUnder && mk.includes("0.5")) {
+        const cap = 0.55 - bump + ease;
+        if (avg > cap) { downgrade=true; reason=`${isFirstHalf?'1st':'2nd'}-half Under 0.5 needs ~${cap.toFixed(2)} or fewer half-goals (have ${avg.toFixed(2)}).`; }
+      }
+    }
+  }
+  if (lc.volatile || t==="Volatile") {
+    downgrade=true;
+    reason = reason || "Volatile/unreliable league — confidence downgraded a tier (Section 8).";
+  }
+
+  return { downgrade, reject, reason };
+}
+
 // NO-STANDINGS DETECTOR — a matchup with no real league table (friendlies,
 // exhibition games, brand-new competitions). Both league positions null = no
 // table to judge the teams' real environment. Engines may still offer a LEAN
@@ -2193,7 +2383,31 @@ function proOut(m,market,conf,model,reasons,lowSample){
       if (out && typeof out === "object" && m) {
         const lc = classifyLeague(m);
         out.leagueClass = lc;
-        if (Array.isArray(out.reasons) && lc.type !== "Unknown") {
+
+        // Apply the spec's league-adjusted RULES (Sections 3,5,8,9) using goals
+        // as the xG proxy. Only ever makes a pick SAFER (downgrade or reject) —
+        // never upgrades. Skips No-Bet/blank picks and friendly leans.
+        const market = out.primary;
+        const isRealPick = market && market !== "No Bet" && !/lean/i.test(out.tier||out.tierName||"");
+        if (isRealPick && lc.type !== "Friendly") {
+          const v = leagueContextVerdict(m, market);
+          if (v.reject) {
+            // turn into No Bet
+            out.banker = false; out.bet = false;
+            if ("primary" in out) out.primary = "No Bet";
+            if ("confidence" in out && typeof out.confidence==="number") out.confidence = 0;
+            if (Array.isArray(out.reasons)) out.reasons = out.reasons.concat([`League context: rejected — ${v.reason}`]);
+          } else if (v.downgrade) {
+            // drop banker status; pull numeric confidence down one tier
+            if (out.banker) out.banker = false;
+            if (typeof out.confidence === "number") out.confidence = Math.max(0, out.confidence - 1);
+            else if (out.confidence === "High") out.confidence = "Medium";
+            else if (out.confidence === "Medium") out.confidence = "Low";
+            if (Array.isArray(out.reasons) && v.reason) out.reasons = out.reasons.concat([`League context: downgraded — ${v.reason}`]);
+          }
+        }
+
+        if (Array.isArray(out.reasons) && lc.type !== "Unknown" && !out.reasons.some(r=>/League context:/.test(r))) {
           out.reasons = out.reasons.concat([`League context: ${lc.type}${lc.volatile ? " (volatile — treat with caution)" : ""}.`]);
         }
       }
@@ -2210,8 +2424,122 @@ function proOut(m,market,conf,model,reasons,lowSample){
   proRecommend       = wrap(proRecommend);
 })();
 
+// ============================================================
+// LEAGUE TREND BANKER ENGINE  (70% Market Trend + Candidate Team Filter)
+// ------------------------------------------------------------
+// Studies the league FIRST (real league-wide hit-rates from m.leagueTrends),
+// keeps only markets hitting 70%+, ranks the top 3, then filters the fixture's
+// teams against that trend. A pick needs all three 70-70-70 layers to agree:
+//   Layer 1 League trend ≥70% · Layer 2 Team trend ≥70% · Layer 3 Match pass ≥70%
+// If the league data is missing/thin, or no layer passes → NO BET.
+// Confidence tiers escalate at 70/75/80/85 (Section 10). Output carries the
+// spec's full breakdown for the UI.
+function trendOut(m, market, tier, decision, layers, reasons, extra){
+  const noStand = (typeof hasNoStandings==='function') && hasNoStandings(m);
+  const banker = market!=="No Bet" && (tier==="Banker"||tier==="Strong Banker"||tier==="Elite Banker") && !noStand;
+  const confMap = { "Value Pick":6, "Banker":8, "Strong Banker":9, "Elite Banker":10 };
+  return {
+    match:m, engine:"trend", primary:market, bet:market!=="No Bet",
+    banker, confidence: market==="No Bet"?0:(confMap[tier]||6),
+    tier: tier||null, decision: decision||"NO BET",
+    layers: layers||null,   // {league, team, match} percentages
+    identity: (m.leagueTrends && m.leagueTrends.identity) || null,
+    topTrends: (m.leagueTrends && m.leagueTrends.top3) || null,
+    verdict: `${market}${market!=="No Bet"?` (League Trend — ${tier}, ${decision})`:` — ${decision}`}. ${reasons.join(' ')}`,
+    reasons, humanChecks:["Trend-based; verify lineups, motivation, and that the league trend still holds."],
+    ...(extra||{})
+  };
+}
+
+// team's own hit-rate for a market, from the per-team stats we fetch (0..1) or null
+function teamTrendFor(m, market){
+  const mk = String(market||"");
+  // use the real per-team rates captured in fetch-data where available
+  const avg=(a,b)=> (a!=null&&b!=null)?(a+b)/2 : (a!=null?a:(b!=null?b:null));
+  if(/Over 2\.5/i.test(mk))  return avg(m.homeOver25Rate, m.awayOver25Rate);
+  if(/Over 1\.5/i.test(mk))  return avg(m.homeOver15Rate, m.awayOver15Rate);
+  // BTTS Yes proxy: both teams' scoring reliability
+  if(/BTTS Yes/i.test(mk)){
+    const hs = m.homeScoredAtHome!=null ? Math.min(1, m.homeScoredAtHome/1.5) : null;
+    const as = m.awayScoredAway!=null ? Math.min(1, m.awayScoredAway/1.5) : null;
+    return avg(hs, as);
+  }
+  // Under markets proxy: inverse of over rate
+  if(/Under 3\.5/i.test(mk)){ const o=avg(m.homeOver25Rate,m.awayOver25Rate); return o!=null?Math.max(0,1-o*0.6):null; }
+  if(/Under 2\.5/i.test(mk)){ const o=avg(m.homeOver25Rate,m.awayOver25Rate); return o!=null?1-o:null; }
+  // Home/Away win proxy from win rates
+  if(/Home Win/i.test(mk))   return m.homeWinRate!=null?m.homeWinRate:null;
+  if(/Away Win/i.test(mk))   return m.awayWinRate!=null?m.awayWinRate:null;
+  if(/Home Team Over 0\.5/i.test(mk)) return m.homeScoredAtHome!=null?Math.min(1,m.homeScoredAtHome/1.3):null;
+  if(/Away Team Over 0\.5/i.test(mk)) return m.awayScoredAway!=null?Math.min(1,m.awayScoredAway/1.3):null;
+  // 1X / Double chance proxy from unbeaten
+  if(/1X|Double Chance/i.test(mk)) return Math.max(m.homeUnbeatenRate??0, m.awayUnbeatenRate??0)||null;
+  return null;
+}
+
+// match-threshold pass: reuse the existing engines' judgement as the Layer-3
+// signal. If the strong Normal engine already likes this market on this match,
+// treat it as a high match-pass; otherwise moderate/low.
+function matchPassFor(m, market){
+  try {
+    const r = recommend(m);
+    if(r && r.primary===market){
+      const c = typeof r.confidence==="number"?r.confidence:7;
+      return Math.min(1, 0.60 + c*0.04); // conf 10 → 1.00, conf 7 → 0.88, conf 5 → 0.80
+    }
+  } catch(e){}
+  // market not the Normal pick — give partial credit via team trend
+  const tt = teamTrendFor(m, market);
+  return tt!=null ? Math.min(0.85, tt) : 0.5;
+}
+
+function trendRecommend(m){
+  const lt = m && m.leagueTrends;
+  // Section 3: no league trend data (or <50 sample) → NO BET
+  if(!lt || !lt.top3 || !lt.top3.length){
+    return trendOut(m, "No Bet", null, "NO BET", null,
+      ["League trend data unavailable or sample below 50 matches — cannot study this league."]);
+  }
+  // Section 13: only consider the league's top-3 strongest trends
+  const candidates = [];
+  for(const t of lt.top3){
+    const leaguePct = t.rate;                       // Layer 1 (already ≥0.70 by construction)
+    const teamPct = teamTrendFor(m, t.market);      // Layer 2
+    if(teamPct==null) continue;
+    const matchPct = matchPassFor(m, t.market);     // Layer 3
+    candidates.push({ market:t.market, leaguePct, teamPct, matchPct });
+  }
+  // keep only those where ALL three layers ≥70% (the 70-70-70 rule)
+  const passing = candidates.filter(c=> c.leaguePct>=0.70 && c.teamPct>=0.70 && c.matchPct>=0.70);
+  if(!passing.length){
+    return trendOut(m, "No Bet", null, "NO BET", null,
+      ["No market cleared the 70-70-70 rule (league, team, and match must all pass 70%)."]);
+  }
+  // pick the strongest by the minimum of the three layers (weakest-link), then league rate
+  passing.forEach(c=> c.floor=Math.min(c.leaguePct,c.teamPct,c.matchPct));
+  passing.sort((a,b)=> b.floor-a.floor || b.leaguePct-a.leaguePct);
+  const best = passing[0];
+
+  // Section 10: tier escalates with the weakest of the three layers
+  const f = best.floor;
+  let tier, decision;
+  if(f>=0.85){ tier="Elite Banker"; decision="PLAY"; }
+  else if(f>=0.80){ tier="Strong Banker"; decision="PLAY"; }
+  else if(f>=0.75){ tier="Banker"; decision="PLAY"; }
+  else { tier="Value Pick"; decision="SMALL STAKE"; }
+
+  const pct=x=>Math.round(x*100);
+  const reasons = [
+    `League identity: ${lt.identity} (sample ${lt.sample}).`,
+    `${best.market}: league ${pct(best.leaguePct)}% · team ${pct(best.teamPct)}% · match ${pct(best.matchPct)}%.`,
+    `All three layers cleared 70% — weakest link ${pct(f)}%.`
+  ];
+  return trendOut(m, best.market, tier, decision,
+    { league:pct(best.leaguePct), team:pct(best.teamPct), match:pct(best.matchPct) }, reasons);
+}
+
 if (typeof module !== "undefined") module.exports = {
   analyseAll, recommend, scoreOver25, scoreBTTS, scoreWinDNB, settle,
   analyseStrict, strictRecommend, tierFromRank, streakRecommend, ultraRecommend, rulesProRecommend, apexRecommend, primeRecommend, valueRecommend, proRecommend,
-  classifyLeague
+  classifyLeague, leagueContextVerdict, trendRecommend
 };
