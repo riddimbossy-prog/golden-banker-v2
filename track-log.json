@@ -23321,9 +23321,10 @@
       "confidence": 8,
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.380Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "5-1",
+      "settledAt": "2026-07-01T16:35:29.797Z"
     },
     {
       "matchDate": "2026-07-01",
@@ -23335,9 +23336,10 @@
       "confidence": 8,
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.380Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "5-1",
+      "settledAt": "2026-07-01T16:35:29.797Z"
     },
     {
       "matchDate": "2026-07-01",
@@ -23349,9 +23351,10 @@
       "confidence": 8,
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.380Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "5-1",
+      "settledAt": "2026-07-01T16:35:29.797Z"
     },
     {
       "matchDate": "2026-07-01",
@@ -39072,6 +39075,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-01T16:31:34.802Z"
+    "updated": "2026-07-01T16:35:29.967Z"
   }
 }

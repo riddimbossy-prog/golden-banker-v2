@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-01T14:22:56.907Z";
-window.SCORES_UPDATED = "2026-07-01T16:31:34.531Z";
+window.SCORES_UPDATED = "2026-07-01T16:35:29.683Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -80263,11 +80263,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/12236.png",
     "country": "Kyrgyzstan",
     "flag": "https://media.api-sports.io/flags/kg.svg",
-    "status": "NS",
+    "status": "FT",
     "kickoff": "2026-07-01T14:30:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 5,
+    "awayGoals": 1,
     "homePos": 7,
     "awayPos": 11,
     "tableSize": 16,
@@ -80536,7 +80536,7 @@ window.MATCHES = [
       "dcx2": 1.75
     },
     "h2h": null,
-    "elapsed": 57
+    "elapsed": 62
   },
   {
     "home": "FA Šiauliai II",
@@ -80619,7 +80619,7 @@ window.MATCHES = [
       "dcx2": 1.04
     },
     "h2h": null,
-    "elapsed": 76
+    "elapsed": 81
   },
   {
     "home": "Tukums",
@@ -80704,7 +80704,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": 73
+    "elapsed": 78
   },
   {
     "home": "Khimik Dzerzhinsk",
@@ -80789,7 +80789,7 @@ window.MATCHES = [
       "dcx2": 2.74
     },
     "h2h": null,
-    "elapsed": 72
+    "elapsed": 76
   },
   {
     "home": "Zaglebie Lubin",
@@ -80867,7 +80867,7 @@ window.MATCHES = [
     "kickoff": "2026-07-01T15:00:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 0,
-    "awayGoals": 2,
+    "awayGoals": 3,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -80917,7 +80917,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 72
+    "elapsed": 76
   },
   {
     "home": "Slavia Praha",
@@ -80981,7 +80981,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 73
+    "elapsed": 78
   },
   {
     "home": "Plzen",
@@ -81058,7 +81058,7 @@ window.MATCHES = [
       "dcx2": 3
     },
     "h2h": null,
-    "elapsed": 74
+    "elapsed": 78
   },
   {
     "home": "PAOK",
@@ -81122,7 +81122,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 73
+    "elapsed": 77
   },
   {
     "home": "Cherno More Varna",
@@ -81186,7 +81186,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 77
+    "elapsed": 82
   },
   {
     "home": "Sigma Olomouc",
@@ -81250,7 +81250,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 75
+    "elapsed": 79
   },
   {
     "home": "Correcaminos Uat",
@@ -81378,7 +81378,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 80
+    "elapsed": 84
   },
   {
     "home": "Pardubice",
@@ -81506,7 +81506,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 71
+    "elapsed": 75
   },
   {
     "home": "Rilski Sportist",
@@ -81634,7 +81634,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 72
+    "elapsed": 76
   },
   {
     "home": "Botev Plovdiv",
@@ -81644,7 +81644,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/8530.png",
     "country": "World",
     "flag": null,
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-01T15:30:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 2,
@@ -81698,7 +81698,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 47
   },
   {
     "home": "Ferencvarosi TC",
@@ -81708,7 +81708,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/556.png",
     "country": "World",
     "flag": null,
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-01T15:30:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 1,
@@ -81762,7 +81762,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 47
   },
   {
     "home": "England",
@@ -81847,7 +81847,7 @@ window.MATCHES = [
       "dcx2": 3.4
     },
     "h2h": null,
-    "elapsed": 31
+    "elapsed": 35
   },
   {
     "home": "HJK Helsinki",
@@ -81924,7 +81924,7 @@ window.MATCHES = [
       "dcx2": 2.25
     },
     "h2h": null,
-    "elapsed": 31
+    "elapsed": 36
   },
   {
     "home": "Atmosfera",
@@ -81938,7 +81938,7 @@ window.MATCHES = [
     "kickoff": "2026-07-01T16:00:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 0,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": 8,
     "awayPos": 3,
     "tableSize": 16,
@@ -82007,7 +82007,7 @@ window.MATCHES = [
       "dcx2": 1.5
     },
     "h2h": null,
-    "elapsed": 28
+    "elapsed": 33
   },
   {
     "home": "Dinamo Tbilisi",
@@ -82071,7 +82071,7 @@ window.MATCHES = [
     "round": "3rd Place",
     "odds": null,
     "h2h": null,
-    "elapsed": 30
+    "elapsed": 35
   },
   {
     "home": "Saburtalo",
@@ -82135,7 +82135,7 @@ window.MATCHES = [
     "round": "Final",
     "odds": null,
     "h2h": null,
-    "elapsed": 28
+    "elapsed": 33
   },
   {
     "home": "Dunav Ruse",
@@ -82199,7 +82199,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 30
+    "elapsed": 35
   },
   {
     "home": "Botev Vratsa",
@@ -82263,7 +82263,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 29
+    "elapsed": 34
   },
   {
     "home": "Neuchatel Xamax FC",
@@ -82276,7 +82276,7 @@ window.MATCHES = [
     "status": "1H",
     "kickoff": "2026-07-01T16:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": 0,
+    "homeGoals": 1,
     "awayGoals": 2,
     "homePos": null,
     "awayPos": null,
@@ -82340,7 +82340,7 @@ window.MATCHES = [
       "dcx2": 1.03
     },
     "h2h": null,
-    "elapsed": 27
+    "elapsed": 32
   },
   {
     "home": "NK Lokomotiva Zagreb",
@@ -82404,7 +82404,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 23
+    "elapsed": 27
   },
   {
     "home": "Rudes",
@@ -82468,7 +82468,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 28
+    "elapsed": 33
   },
   {
     "home": "CSKA 1948",
@@ -82532,7 +82532,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 29
+    "elapsed": 34
   },
   {
     "home": "FC Winterthur",
@@ -82596,7 +82596,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 31
+    "elapsed": 36
   },
   {
     "home": "FC Juarez",
@@ -82734,7 +82734,7 @@ window.MATCHES = [
       "under35": null
     },
     "h2h": null,
-    "elapsed": 29
+    "elapsed": 33
   },
   {
     "home": "Poprad",
@@ -82798,7 +82798,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 28
+    "elapsed": 32
   },
   {
     "home": "Neustrelitz",
@@ -83003,7 +83003,7 @@ window.MATCHES = [
       "dcx2": 1.33
     },
     "h2h": null,
-    "elapsed": 13
+    "elapsed": 18
   },
   {
     "home": "BSG Chemie Leipzig",
@@ -83077,11 +83077,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/2643.png",
     "country": "World",
     "flag": null,
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-01T16:30:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 1,
+    "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -83144,7 +83144,7 @@ window.MATCHES = [
       "dcx2": null
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 3
   },
   {
     "home": "Omonia Nicosia",
@@ -83336,7 +83336,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 1
+    "elapsed": 5
   },
   {
     "home": "Forge",
