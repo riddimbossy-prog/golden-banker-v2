@@ -777,9 +777,11 @@ function renderMatches(){
   if(engineMode==='trend'){ renderTrendMatches(); return; }
   if(engineMode==='acca'){ renderAccaMatches(); return; }
   const root = document.getElementById('matches-root');
-  const rows = byDate[activeDate]||[];
+  const _allRows = byDate[activeDate]||[];
   const empty = document.getElementById('empty-state');
   root.innerHTML='';
+  const hasOdds = mt => { const o=mt&&mt.odds; return !!(o && (o.home!=null||o.over15!=null||o.under35!=null||o.bttsYes!=null)); };
+  const rows = _allRows.filter(r=> hasOdds(r.match));
   if(!rows.length){ empty.classList.remove('hidden'); return; } else empty.classList.add('hidden');
 
   // group by league
@@ -1537,9 +1539,11 @@ function renderUltraMatches(){
 
 function renderStrictMatches(){
   const root = document.getElementById('matches-root');
-  const rows = byDate[activeDate]||[];
+  const _allRows = byDate[activeDate]||[];
   const empty = document.getElementById('empty-state');
   root.innerHTML='';
+  const hasOdds = mt => { const o=mt&&mt.odds; return !!(o && (o.home!=null||o.over15!=null||o.under35!=null||o.bttsYes!=null)); };
+  const rows = _allRows.filter(r=> hasOdds(r.match));
   if(!rows.length){ empty.classList.remove('hidden'); return; } else empty.classList.add('hidden');
 
   // group by league, like normal mode
