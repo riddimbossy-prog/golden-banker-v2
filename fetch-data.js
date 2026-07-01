@@ -301,13 +301,15 @@ const FINISHED = new Set(["FT","AET","PEN"]);
       probes++;
       const seasonsToTry = [...new Set([season, String(parseInt(season,10)-1), String(parseInt(season,10)+1)])];
 
-      // FAST EMPTY-SKIP: probe TODAY on the primary season first. If that one
-      // call returns no games, treat the league as inactive and skip the other
-      // 8 season/date combinations entirely. This is what kills the off-season
-      // time sink (was up to 9 calls per empty league; now just 1).
+      // FAST EMPTY-SKIP: probe the WHOLE date window (from..to) in ONE call per
+      // season. Previously this probed only TODAY — which wrongly skipped any
+      // tournament with no game today but matches later in the window (e.g. the
+      // World Cup on a rest day between fixtures). Range-probing fixes that at
+      // the same 1-call cost.
+      const winFrom = DATE_WINDOW[0], winTo = DATE_WINDOW[DATE_WINDOW.length-1];
       let resolvedSeason = null;
       try {
-        const probe = await apiGet(`/fixtures?league=${leagueId}&season=${season}&date=${today}`, cfg.API_KEY);
+        const probe = await apiGet(`/fixtures?league=${leagueId}&season=${season}&from=${winFrom}&to=${winTo}`, cfg.API_KEY);
         requests++;
         if ((probe.response || []).length) resolvedSeason = season;
       } catch (e) {
@@ -316,14 +318,14 @@ const FINISHED = new Set(["FT","AET","PEN"]);
       }
       await sleep(SLEEP);
 
-      // If today's primary season was empty, try today on the OTHER seasons once
-      // each (handles season-rollover leagues) — but still just 1 call per season.
+      // If the primary season was empty across the window, try the OTHER seasons
+      // once each (handles season-rollover / tournament years) — 1 call per season.
       if (!resolvedSeason) {
         for (const s of seasonsToTry) {
           if (s === season) continue;
           if (requests >= REQUEST_BUDGET) { capped = true; break; }
           try {
-            const probe = await apiGet(`/fixtures?league=${leagueId}&season=${s}&date=${today}`, cfg.API_KEY);
+            const probe = await apiGet(`/fixtures?league=${leagueId}&season=${s}&from=${winFrom}&to=${winTo}`, cfg.API_KEY);
             requests++;
             if ((probe.response || []).length) { resolvedSeason = s; await sleep(SLEEP); break; }
           } catch (e) { if (!firstError) firstError = e.message; }
@@ -332,7 +334,7 @@ const FINISHED = new Set(["FT","AET","PEN"]);
       }
 
       if (capped) break;
-      if (!resolvedSeason) { console.log(`League ${leagueId}: inactive (no games today) — skipped`); continue; }
+      if (!resolvedSeason) { console.log(`League ${leagueId}: inactive (no games in window) — skipped`); continue; }
 
       // League is ACTIVE — now sweep the full date window on the resolved season.
       for (const date of DATE_WINDOW) {
