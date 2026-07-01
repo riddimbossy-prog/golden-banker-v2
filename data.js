@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-01T08:20:14.429Z";
-window.SCORES_UPDATED = "2026-07-01T09:25:31.481Z";
+window.SCORES_UPDATED = "2026-07-01T09:30:50.585Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -75987,7 +75987,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 66
+    "elapsed": 72
   },
   {
     "home": "MTK Budapest",
@@ -76119,7 +76119,7 @@ window.MATCHES = [
     "round": "Regular Season - 22",
     "odds": null,
     "h2h": null,
-    "elapsed": 65
+    "elapsed": 70
   },
   {
     "home": "GKS Katowice",
@@ -76197,7 +76197,7 @@ window.MATCHES = [
       "dcx2": null
     },
     "h2h": null,
-    "elapsed": 54
+    "elapsed": 59
   },
   {
     "home": "Ajka",
