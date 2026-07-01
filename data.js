@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-01T19:51:47.056Z";
-window.SCORES_UPDATED = "2026-07-01T20:25:29.557Z";
+window.SCORES_UPDATED = "2026-07-01T20:30:50.792Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -88521,7 +88521,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/18353.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-01T18:30:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 3,
@@ -88583,7 +88583,7 @@ window.MATCHES = [
     "round": "Regular Season - 5",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Tupan",
@@ -88669,7 +88669,7 @@ window.MATCHES = [
     "kickoff": "2026-07-01T19:00:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 0,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -88736,7 +88736,7 @@ window.MATCHES = [
       "dcx2": 1.36
     },
     "h2h": null,
-    "elapsed": 65
+    "elapsed": 71
   },
   {
     "home": "Wales U19",
@@ -88814,7 +88814,7 @@ window.MATCHES = [
       "bttsNo": 1.62
     },
     "h2h": null,
-    "elapsed": 67
+    "elapsed": 72
   },
   {
     "home": "Haukar",
@@ -88828,7 +88828,7 @@ window.MATCHES = [
     "kickoff": "2026-07-01T19:15:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 2,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": 1,
     "awayPos": 3,
     "tableSize": 12,
@@ -88899,7 +88899,7 @@ window.MATCHES = [
       "dcx2": 2.3
     },
     "h2h": null,
-    "elapsed": 53
+    "elapsed": 59
   },
   {
     "home": "Belgium",
@@ -88986,7 +88986,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 25
+    "elapsed": 31
   },
   {
     "home": "SF Glens",
@@ -89071,7 +89071,7 @@ window.MATCHES = [
     "status": "1H",
     "kickoff": "2026-07-01T20:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": 2,
+    "homeGoals": 0,
     "awayGoals": 0,
     "homePos": 5,
     "awayPos": 4,
@@ -89143,7 +89143,7 @@ window.MATCHES = [
       "dcx2": 1.42
     },
     "h2h": null,
-    "elapsed": 26
+    "elapsed": 32
   },
   {
     "home": "HFX Wanderers FC",
@@ -89230,7 +89230,7 @@ window.MATCHES = [
       "dcx2": 1.48
     },
     "h2h": null,
-    "elapsed": 14
+    "elapsed": 20
   },
   {
     "home": "Atlas",
