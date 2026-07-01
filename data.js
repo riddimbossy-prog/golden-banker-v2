@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-06-30T23:11:53.478Z";
-window.SCORES_UPDATED = "2026-07-01T02:15:33.015Z";
+window.SCORES_UPDATED = "2026-07-01T02:20:37.221Z";
 window.MATCHES = [
   {
     "home": "Washington Spirit W",
@@ -56505,7 +56505,7 @@ window.MATCHES = [
       "dcx2": 2.4
     },
     "h2h": null,
-    "elapsed": 84
+    "elapsed": 89
   },
   {
     "home": "Mexico",
@@ -56589,7 +56589,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": 15
+    "elapsed": 20
   },
   {
     "home": "Snohomish United",
@@ -56671,7 +56671,7 @@ window.MATCHES = [
       "dcx2": 4.33
     },
     "h2h": null,
-    "elapsed": 50
+    "elapsed": 55
   },
   {
     "home": "Colorado Storm",
@@ -56809,7 +56809,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 12
+    "elapsed": 17
   },
   {
     "home": "Bangers",
