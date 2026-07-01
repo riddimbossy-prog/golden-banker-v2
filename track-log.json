@@ -22915,8 +22915,8 @@
       "confidence": "High",
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.378Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -22929,8 +22929,8 @@
       "confidence": 10,
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.378Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -39058,6 +39058,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-01T11:25:30.797Z"
+    "updated": "2026-07-01T11:30:52.135Z"
   }
 }
