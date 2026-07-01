@@ -2206,7 +2206,7 @@ function valueOut(m, market, conf, model, reasons, lowSample){
   };
 }
 
-function streakRecommend(m) {
+function streakRecommendLegacy(m) {
   const reasons = [];
   const signals = [];
   const MIN_STREAK = 4; // ultra-strict: need 4+ in a row (of max 5)
@@ -2702,6 +2702,159 @@ function oddsLadderGate(m, market){
   // markets the ladder doesn't cover (e.g. Team Over, half markets): don't block,
   // but they still needed odds to exist (checked above).
   return { ok:true, block:false, reason:"" };
+}
+
+// ============================================================
+// STREAKS BANKER ENGINE  (League Trend + Team Streak + Opponent Weakness)
+// ------------------------------------------------------------
+// Filters teams on strong streaks (win / no-loss / no-draw / no-win / loss /
+// over / under) confirmed by the league trend, the opponent's goals profile,
+// an opponent-weakness score, and the odds ladder. Rejects streak collisions.
+// Skeptical by design (spec §25: a good streak alone is never enough — league
+// trend + team streak + opponent profile + odds must ALL agree). Streaks are
+// read from last-5 form strings, so the max streak length is 5 (no 6+ tier).
+//
+// Streak helpers — count the current run at the END of a form string "WWDLW".
+function tailStreak(form, pred){
+  const s=String(form||"").replace(/[^WDL]/gi,"").toUpperCase();
+  let n=0; for(let i=s.length-1;i>=0;i--){ if(pred(s[i])) n++; else break; } return n;
+}
+const winStreak    = f=>tailStreak(f,c=>c==="W");
+const lossStreak   = f=>tailStreak(f,c=>c==="L");
+const noLossStreak = f=>tailStreak(f,c=>c!=="L");   // W or D
+const noWinStreak  = f=>tailStreak(f,c=>c!=="W");   // D or L
+const noDrawStreak = f=>tailStreak(f,c=>c!=="D");   // W or L
+
+function streakOut(m, market, grade, score, side, reasons, extra){
+  const noStand = (typeof hasNoStandings==='function') && hasNoStandings(m);
+  const banker = market!=="No Bet" && (grade==="Banker"||grade==="Elite Banker") && !noStand;
+  const confMap = { "Strong Pick":7, "Banker":8, "Elite Banker":10 };
+  return {
+    match:m, engine:"streaks", primary:market, bet:market!=="No Bet",
+    banker, confidence: market==="No Bet"?0:(confMap[grade]||6),
+    grade: grade||null, score: score!=null?`${score}/18`:null, side: side||null,
+    verdict: `${market}${market!=="No Bet"?` (Streaks — ${grade}, ${score}/18)`:" — No Bet"}. ${reasons.join(' ')}`,
+    reasons, humanChecks:["Streak-based; verify the streak isn't stale, and check lineups/motivation."],
+    ...(extra||{})
+  };
+}
+
+function streakRecommend(m){
+  if(!m) return streakOut(m,"No Bet",null,null,null,["No match data."]);
+  const o=m.odds;
+  // odds are required (mandatory-odds policy) and the ladder confirms markets
+  if(!o || (o.home==null && o.over15==null && o.under35==null)){
+    return streakOut(m,"No Bet",null,null,null,["No bookmaker odds — streak picks need odds confirmation."]);
+  }
+
+  // ---- team streaks (home team = home form, away team = away form) ----
+  const hWin=winStreak(m.homeForm), aWin=winStreak(m.awayForm);
+  const hNoLoss=noLossStreak(m.homeForm), aNoLoss=noLossStreak(m.awayForm);
+  const hNoWin=noWinStreak(m.homeForm), aNoWin=noWinStreak(m.awayForm);
+  const hLoss=lossStreak(m.homeForm), aLoss=lossStreak(m.awayForm);
+  const hNoDraw=noDrawStreak(m.homeForm), aNoDraw=noDrawStreak(m.awayForm);
+
+  // ---- league trend (League First rule §1-2) ----
+  const lt=m.leagueTrends;
+  const leagueRate = mk => { if(!lt||!lt.rates) return null; return lt.rates[mk]!=null?lt.rates[mk]:null; };
+  const leagueWinTrend = Math.max(leagueRate("Home Win")||0, leagueRate("Away Win")||0);
+
+  // ---- opponent goals profile + venue split (§4-5) ----
+  // For a HOME pick, opponent is AWAY → use away scoring/conceding, and vice versa.
+  const prof = homeSide => homeSide
+    ? { oppScore:m.awayScoredAway, oppConcede:m.awayConcededAway, teamScore:m.homeScoredAtHome, teamConcede:m.homeConcededAtHome }
+    : { oppScore:m.homeScoredAtHome, oppConcede:m.homeConcededAtHome, teamScore:m.awayScoredAway, teamConcede:m.awayConcededAway };
+
+  // ---- opponent weakness score (§18) ----
+  function oppWeakness(homeSide){
+    const p=prof(homeSide); let s=0;
+    if(p.oppScore!=null){ if(p.oppScore<0.70)s+=3; else if(p.oppScore<1.00)s+=2; }
+    if(p.oppConcede!=null){ if(p.oppConcede>=1.60)s+=3; else if(p.oppConcede>=1.30)s+=2; }
+    const oppNoWin = homeSide? aNoWin : hNoWin;
+    const oppLoss  = homeSide? aLoss : hLoss;
+    if(oppNoWin>=5)s+=3; if(oppLoss>=4)s+=2;
+    const oppCS = homeSide? m.awayCleanSheetRate : m.homeCleanSheetRate;
+    if(oppCS!=null && oppCS<0.25)s+=1;
+    return s;
+  }
+
+  // ---- streak collision rejection (§17) ----
+  function collision(homeSide){
+    const teamWin  = homeSide? hWin : aWin;
+    const oppNoLoss= homeSide? aNoLoss : hNoLoss;
+    const oppWin   = homeSide? aWin : hWin;
+    if(teamWin>=4 && oppNoLoss>=5) return true;        // win streak vs opp no-loss
+    if(hNoWin>=5 && aNoWin>=5) return true;             // both on no-win
+    if(oppWin>=4 && (homeSide?hWin:aWin)<3) return true;// opp on a stronger win run
+    return false;
+  }
+
+  // ---- banker score (§19) ----
+  function bankerScore(homeSide, teamStreak, oddsConfirms){
+    let s=0;
+    const lw=leagueWinTrend;
+    if(lw>=0.70)s+=3; else if(lw>=0.65)s+=1;
+    if(teamStreak>=6)s+=4; else if(teamStreak>=5)s+=3; else if(teamStreak>=4)s+=2;
+    const ow=oppWeakness(homeSide);
+    if(ow>=7)s+=3; else if(ow>=5)s+=1;
+    if(oddsConfirms)s+=2;
+    if(homeSide)s+=1; // home advantage
+    if(!collision(homeSide))s+=2;
+    // market odds in safe zone (team priced as a real favourite)
+    const teamOdd=homeSide?o.home:o.away;
+    if(teamOdd!=null && teamOdd>=1.20 && teamOdd<=2.10)s+=2;
+    return s;
+  }
+
+  // choose which side (if any) has the qualifying streak — prefer the stronger run
+  const candidates=[];
+  // WIN / NO-LOSS streaks → win-family markets (§6,§7)
+  [[true,hWin,hNoLoss],[false,aWin,aNoLoss]].forEach(([homeSide,wStreak,nlStreak])=>{
+    const streak=Math.max(wStreak,nlStreak);
+    if(streak<4) return;
+    if(collision(homeSide)) return;
+    const teamOdd=homeSide?o.home:o.away;
+    if(teamOdd==null) return;
+    // pick market by odds ladder zone (validated by oddsLadderGate below)
+    let market;
+    if(teamOdd>=1.20 && teamOdd<=1.59) market = homeSide?"Home Win":"Away Win";
+    else if(teamOdd>=1.60 && teamOdd<=2.10) market = homeSide?"Home DNB":"Away DNB";
+    else if(teamOdd>2.10) market = homeSide?"Double Chance 1X":"Double Chance X2";
+    else return; // < 1.20 no value
+    const score=bankerScore(homeSide, streak, true);
+    candidates.push({ homeSide, market, streak, score, kind: wStreak>=4?"win":"no-loss" });
+  });
+
+  if(!candidates.length){
+    return streakOut(m,"No Bet",null,null,null,["No team has a qualifying 4+ win/no-loss streak with a safe price, or a streak collision blocked it."]);
+  }
+  candidates.sort((a,b)=>b.score-a.score||b.streak-a.streak);
+  const best=candidates[0];
+
+  // FINAL: odds ladder must confirm the chosen market (§16, reuse the gate)
+  const gate = (typeof oddsLadderGate==='function') ? oddsLadderGate(m, best.market) : {ok:true,block:false};
+  if(gate.block){
+    return streakOut(m,"No Bet",null,best.score,best.homeSide?"home":"away",
+      [`Streak found (${best.streak} games) but odds ladder rejected ${best.market}: ${gate.reason}`]);
+  }
+
+  // risk grade from banker score (§19)
+  let grade;
+  if(best.score>=15) grade="Elite Banker";
+  else if(best.score>=12) grade="Banker";
+  else if(best.score>=10) grade="Strong Pick";
+  else return streakOut(m,"No Bet",null,best.score,best.homeSide?"home":"away",
+    [`Streak candidate scored only ${best.score}/18 — below the 10-point banker floor.`]);
+
+  const teamName = best.homeSide? m.home : m.away;
+  const ow=oppWeakness(best.homeSide);
+  const reasons=[
+    `${teamName} on a ${best.streak}-game ${best.kind} streak.`,
+    `League win trend ${Math.round(leagueWinTrend*100)}%, opponent weakness ${ow}/17.`,
+    `Odds ladder confirms ${best.market}. Banker score ${best.score}/18.`
+  ];
+  return streakOut(m, best.market, grade, best.score, best.homeSide?"home":"away", reasons,
+    { streakLen:best.streak, oppWeak:ow });
 }
 
 if (typeof module !== "undefined") module.exports = {
