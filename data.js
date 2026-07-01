@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-01T19:51:47.056Z";
-window.SCORES_UPDATED = "2026-07-01T20:15:39.719Z";
+window.SCORES_UPDATED = "2026-07-01T20:20:39.252Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -88583,7 +88583,7 @@ window.MATCHES = [
     "round": "Regular Season - 5",
     "odds": null,
     "h2h": null,
-    "elapsed": 83
+    "elapsed": 88
   },
   {
     "home": "Tupan",
@@ -88736,7 +88736,7 @@ window.MATCHES = [
       "dcx2": 1.36
     },
     "h2h": null,
-    "elapsed": 56
+    "elapsed": 60
   },
   {
     "home": "Wales U19",
@@ -88750,7 +88750,7 @@ window.MATCHES = [
     "kickoff": "2026-07-01T19:00:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 0,
-    "awayGoals": 2,
+    "awayGoals": 3,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -88814,7 +88814,7 @@ window.MATCHES = [
       "bttsNo": 1.62
     },
     "h2h": null,
-    "elapsed": 57
+    "elapsed": 62
   },
   {
     "home": "Haukar",
@@ -88824,7 +88824,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4170.png",
     "country": "Iceland",
     "flag": "https://media.api-sports.io/flags/is.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-01T19:15:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 2,
@@ -88899,7 +88899,7 @@ window.MATCHES = [
       "dcx2": 2.3
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 48
   },
   {
     "home": "Belgium",
@@ -88986,7 +88986,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 15
+    "elapsed": 20
   },
   {
     "home": "SF Glens",
@@ -89143,7 +89143,7 @@ window.MATCHES = [
       "dcx2": 1.42
     },
     "h2h": null,
-    "elapsed": 17
+    "elapsed": 21
   },
   {
     "home": "HFX Wanderers FC",
@@ -89230,7 +89230,7 @@ window.MATCHES = [
       "dcx2": 1.48
     },
     "h2h": null,
-    "elapsed": 5
+    "elapsed": 9
   },
   {
     "home": "Atlas",
