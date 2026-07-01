@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-01T08:20:14.429Z";
-window.SCORES_UPDATED = "2026-07-01T09:35:32.586Z";
+window.SCORES_UPDATED = "2026-07-01T09:40:39.795Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -75987,7 +75987,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 76
+    "elapsed": 81
   },
   {
     "home": "MTK Budapest",
@@ -76063,8 +76063,8 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-01T08:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": 1,
-    "awayGoals": 2,
+    "homeGoals": 2,
+    "awayGoals": 3,
     "homePos": 6,
     "awayPos": 8,
     "tableSize": 19,
@@ -76119,7 +76119,7 @@ window.MATCHES = [
     "round": "Regular Season - 22",
     "odds": null,
     "h2h": null,
-    "elapsed": 75
+    "elapsed": 79
   },
   {
     "home": "GKS Katowice",
@@ -76197,7 +76197,7 @@ window.MATCHES = [
       "dcx2": null
     },
     "h2h": null,
-    "elapsed": 64
+    "elapsed": 69
   },
   {
     "home": "Ajka",
@@ -76665,7 +76665,7 @@ window.MATCHES = [
       "dcx2": 1.73
     },
     "h2h": null,
-    "elapsed": 2
+    "elapsed": 6
   },
   {
     "home": "Changnyeong W",
