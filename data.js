@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-01T18:23:26.071Z";
-window.SCORES_UPDATED = "2026-07-01T18:25:58.550Z";
+window.SCORES_UPDATED = "2026-07-01T18:30:54.826Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -85662,7 +85662,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/635.png",
     "country": "World",
     "flag": null,
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-01T16:30:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 2,
@@ -85718,7 +85718,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Austria Salzburg",
@@ -85937,7 +85937,7 @@ window.MATCHES = [
       "dcx2": 2.38
     },
     "h2h": null,
-    "elapsed": 50
+    "elapsed": 55
   },
   {
     "home": "Denmark U19",
@@ -86018,7 +86018,7 @@ window.MATCHES = [
       "dcx2": 1.07
     },
     "h2h": null,
-    "elapsed": 70
+    "elapsed": 75
   },
   {
     "home": "Eskilsminne",
@@ -86105,7 +86105,7 @@ window.MATCHES = [
       "dcx2": 1.85
     },
     "h2h": null,
-    "elapsed": 64
+    "elapsed": 69
   },
   {
     "home": "De Treffers",
@@ -86171,7 +86171,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 66
+    "elapsed": 71
   },
   {
     "home": "Étoile Carouge",
@@ -86567,7 +86567,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 61
+    "elapsed": 66
   },
   {
     "home": "Wolfenbuttel",
@@ -86883,7 +86883,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/735.png",
     "country": "World",
     "flag": null,
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-01T17:30:00+00:00",
     "matchDate": "2026-07-01",
     "homeGoals": 1,
@@ -86939,7 +86939,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 46
   },
   {
     "home": "Bonsucesso",
@@ -87011,7 +87011,7 @@ window.MATCHES = [
     "round": "1st Phase - 11",
     "odds": null,
     "h2h": null,
-    "elapsed": 40
+    "elapsed": 45
   },
   {
     "home": "Cuniburo",
@@ -87098,7 +87098,7 @@ window.MATCHES = [
       "dcx2": 1.73
     },
     "h2h": null,
-    "elapsed": 26
+    "elapsed": 31
   },
   {
     "home": "Ipatinga",
@@ -87255,7 +87255,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 26
+    "elapsed": 31
   },
   {
     "home": "Flamengo U20",
@@ -87340,7 +87340,7 @@ window.MATCHES = [
       "dcx2": 3
     },
     "h2h": null,
-    "elapsed": 26
+    "elapsed": 31
   },
   {
     "home": "Bahia U20",
@@ -87425,7 +87425,7 @@ window.MATCHES = [
       "dcx2": 1.77
     },
     "h2h": null,
-    "elapsed": 26
+    "elapsed": 31
   },
   {
     "home": "Palmeiras U20",
@@ -87507,7 +87507,7 @@ window.MATCHES = [
       "under35": 1.73
     },
     "h2h": null,
-    "elapsed": 25
+    "elapsed": 30
   },
   {
     "home": "América Mineiro U20",
@@ -87592,7 +87592,7 @@ window.MATCHES = [
       "dcx2": 1.36
     },
     "h2h": null,
-    "elapsed": 27
+    "elapsed": 32
   },
   {
     "home": "Athletico PR U20",
@@ -87664,7 +87664,7 @@ window.MATCHES = [
     "round": "Regular Season - 19",
     "odds": null,
     "h2h": null,
-    "elapsed": 25
+    "elapsed": 31
   },
   {
     "home": "Criciuma U20",
@@ -87749,7 +87749,7 @@ window.MATCHES = [
       "dcx2": 1.85
     },
     "h2h": null,
-    "elapsed": 27
+    "elapsed": 32
   },
   {
     "home": "Fortaleza U20",
@@ -87821,7 +87821,7 @@ window.MATCHES = [
     "round": "Regular Season - 19",
     "odds": null,
     "h2h": null,
-    "elapsed": 24
+    "elapsed": 29
   },
   {
     "home": "Juventude U20",
@@ -87906,7 +87906,7 @@ window.MATCHES = [
       "dcx2": 1.3
     },
     "h2h": null,
-    "elapsed": 25
+    "elapsed": 30
   },
   {
     "home": "Santos U20",
@@ -87991,7 +87991,7 @@ window.MATCHES = [
       "dcx2": 1.85
     },
     "h2h": null,
-    "elapsed": 27
+    "elapsed": 32
   },
   {
     "home": "Botafogo U20",
@@ -88076,7 +88076,7 @@ window.MATCHES = [
       "dcx2": 1.95
     },
     "h2h": null,
-    "elapsed": 26
+    "elapsed": 31
   },
   {
     "home": "Blumenau",
@@ -88230,7 +88230,7 @@ window.MATCHES = [
     "round": "Regular Season - 12",
     "odds": null,
     "h2h": null,
-    "elapsed": 26
+    "elapsed": 31
   },
   {
     "home": "RB Bragantino U17",
