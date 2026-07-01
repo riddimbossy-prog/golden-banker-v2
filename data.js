@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-01T19:51:47.056Z";
-window.SCORES_UPDATED = "2026-07-01T21:20:37.222Z";
+window.SCORES_UPDATED = "2026-07-01T21:25:26.836Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -88986,7 +88986,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 58
+    "elapsed": 63
   },
   {
     "home": "SF Glens",
@@ -89143,7 +89143,7 @@ window.MATCHES = [
       "dcx2": 1.42
     },
     "h2h": null,
-    "elapsed": 60
+    "elapsed": 65
   },
   {
     "home": "HFX Wanderers FC",
@@ -89230,7 +89230,7 @@ window.MATCHES = [
       "dcx2": 1.48
     },
     "h2h": null,
-    "elapsed": 47
+    "elapsed": 52
   },
   {
     "home": "Atlas",
@@ -90154,7 +90154,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 20
+    "elapsed": 25
   },
   {
     "home": "Asheville City",
