@@ -25018,8 +25018,8 @@
       "confidence": "High",
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.386Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -25032,8 +25032,8 @@
       "confidence": 9,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.386Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -25046,8 +25046,8 @@
       "confidence": 9,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.386Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -25060,8 +25060,8 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.386Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -25074,8 +25074,8 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.386Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -39099,10 +39099,24 @@
       "status": "pending",
       "result": null,
       "score": null
+    },
+    {
+      "matchDate": "2026-07-04",
+      "home": "Egersund",
+      "away": "Moss",
+      "league": "1. Division",
+      "engine": "Prime",
+      "market": "BTTS Yes",
+      "confidence": 8,
+      "leagueClass": "Very High-Scoring",
+      "recordedAt": "2026-07-01T19:55:32.551Z",
+      "status": "pending",
+      "result": null,
+      "score": null
     }
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-01T18:30:55.097Z"
+    "updated": "2026-07-01T19:55:32.588Z"
   }
 }
