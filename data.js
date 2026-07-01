@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-06-30T23:11:53.478Z";
-window.SCORES_UPDATED = "2026-07-01T01:55:25.155Z";
+window.SCORES_UPDATED = "2026-07-01T02:00:55.164Z";
 window.MATCHES = [
   {
     "home": "Washington Spirit W",
@@ -56358,7 +56358,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 88
+    "elapsed": 90
   },
   {
     "home": "Fort Worth Vaqueros",
@@ -56505,7 +56505,7 @@ window.MATCHES = [
       "dcx2": 2.4
     },
     "h2h": null,
-    "elapsed": 64
+    "elapsed": 69
   },
   {
     "home": "Mexico",
@@ -74753,11 +74753,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/27516.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "NS",
+    "status": "FT",
     "kickoff": "2026-06-30T23:00:00+00:00",
     "matchDate": "2026-06-30",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 1,
     "homePos": 8,
     "awayPos": null,
     "tableSize": 144,
