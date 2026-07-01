@@ -25092,9 +25092,10 @@
       "confidence": "High",
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.386Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "3-0",
+      "settledAt": "2026-07-01T23:35:29.185Z"
     },
     {
       "matchDate": "2026-07-01",
@@ -25106,9 +25107,10 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.386Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "3-0",
+      "settledAt": "2026-07-01T23:35:29.186Z"
     },
     {
       "matchDate": "2026-07-01",
@@ -25120,9 +25122,10 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.386Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "3-0",
+      "settledAt": "2026-07-01T23:35:29.186Z"
     },
     {
       "matchDate": "2026-07-01",
@@ -25134,9 +25137,10 @@
       "confidence": 10,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.386Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "3-0",
+      "settledAt": "2026-07-01T23:35:29.186Z"
     },
     {
       "matchDate": "2026-07-01",
@@ -25148,9 +25152,10 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.386Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "3-0",
+      "settledAt": "2026-07-01T23:35:29.186Z"
     },
     {
       "matchDate": "2026-07-01",
@@ -25162,9 +25167,10 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.386Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "3-0",
+      "settledAt": "2026-07-01T23:35:29.186Z"
     },
     {
       "matchDate": "2026-07-01",
@@ -26548,8 +26554,8 @@
       "confidence": "High",
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.391Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -26562,8 +26568,8 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.391Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -26576,8 +26582,8 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.391Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -26590,8 +26596,8 @@
       "confidence": 10,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.391Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -26604,8 +26610,8 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.391Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -26618,8 +26624,8 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.391Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -39121,6 +39127,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-01T23:30:48.889Z"
+    "updated": "2026-07-01T23:35:29.357Z"
   }
 }
