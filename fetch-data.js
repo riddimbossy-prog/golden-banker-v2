@@ -74,6 +74,100 @@ function apiGet(endpoint, key) {
 
 function fmtDate(d){ return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`; }
 
+// ============================================================
+// LEAGUE TREND DATA LAYER  (for the League Trend Banker Engine, 70-70-70)
+// ------------------------------------------------------------
+// Fetches every FINISHED match in a league this season and computes the REAL
+// hit-rate of each market across the whole league (Section 2/4/5 of the spec).
+// One fetch per league, cached for the whole run. Respects the spec's minimum
+// sample (50 matches) — below that, returns null so the engine returns NO BET.
+// Also assigns a league identity (Section 14) from the resulting rates.
+const LEAGUE_TREND_CACHE = {};
+const FINISHED_SET = new Set(["FT","AET","PEN","AWD","WO"]);
+async function getLeagueTrends(leagueId, season, key, sleepMs){
+  if (leagueId==null || !season) return null;
+  const ck = `${leagueId}|${season}`;
+  if (ck in LEAGUE_TREND_CACHE) return LEAGUE_TREND_CACHE[ck];
+  let result = null;
+  try {
+    // pull finished fixtures for the whole season (paginated defensively)
+    let all = [], page = 1, pages = 1;
+    do {
+      const r = await apiGet(`/fixtures?league=${leagueId}&season=${season}&status=FT-AET-PEN&page=${page}`, key);
+      if (r && Array.isArray(r.response)) all = all.concat(r.response);
+      pages = (r && r.paging && r.paging.total) ? r.paging.total : 1;
+      page++;
+      if (page<=pages && sleepMs) await sleep(sleepMs);
+    } while (page <= pages && page <= 6); // hard cap 6 pages (~600 matches) for safety
+
+    const games = all.filter(f => f && f.fixture && FINISHED_SET.has(String(f.fixture.status.short||"").toUpperCase())
+      && f.goals && f.goals.home!=null && f.goals.away!=null);
+    const n = games.length;
+    if (n < 50) { LEAGUE_TREND_CACHE[ck] = null; return null; } // spec minimum sample
+
+    // tally every market the spec scans
+    let over05=0,over15=0,over25=0,over35=0,under15=0,under25=0,under35=0,under45=0;
+    let bttsYes=0,bttsNo=0, homeWin=0,awayWin=0,draw=0, homeScored=0,awayScored=0;
+    let homeFTS=0,awayFTS=0, homeCS=0,awayCS=0, gib=0; // gib = goal in both halves
+    let fh_over05=0, fh_under15=0, sh_over05=0, sh_over15=0, htSamp=0;
+    for (const g of games){
+      const h=g.goals.home, a=g.goals.away, tot=h+a;
+      if(tot>=1)over05++; if(tot>=2)over15++; if(tot>=3)over25++; if(tot>=4)over35++;
+      if(tot<=1)under15++; if(tot<=2)under25++; if(tot<=3)under35++; if(tot<=4)under45++;
+      if(h>0&&a>0)bttsYes++; else bttsNo++;
+      if(h>a)homeWin++; else if(a>h)awayWin++; else draw++;
+      if(h>0)homeScored++; else homeFTS++;
+      if(a>0)awayScored++; else awayFTS++;
+      if(a===0)homeCS++; if(h===0)awayCS++;
+      const ht=g.score&&g.score.halftime;
+      if(ht&&ht.home!=null&&ht.away!=null){
+        htSamp++;
+        const h1=ht.home+ht.away, h2=tot-h1;
+        if(h1>=1)fh_over05++; if(h1<=1)fh_under15++;
+        if(h2>=1)sh_over05++; if(h2>=2)sh_over15++;
+        if(h1>0&&h2>0)gib++;
+      }
+    }
+    const R=(c,d)=> d>0 ? Math.round((c/d)*100)/100 : null;
+    const rates = {
+      "Over 0.5":R(over05,n),"Over 1.5":R(over15,n),"Over 2.5":R(over25,n),"Over 3.5":R(over35,n),
+      "Under 1.5":R(under15,n),"Under 2.5":R(under25,n),"Under 3.5":R(under35,n),"Under 4.5":R(under45,n),
+      "BTTS Yes":R(bttsYes,n),"BTTS No":R(bttsNo,n),
+      "Home Win":R(homeWin,n),"Away Win":R(awayWin,n),"Draw":R(draw,n),
+      "Home Team Over 0.5":R(homeScored,n),"Away Team Over 0.5":R(awayScored,n),
+      "Home Team FTS":R(homeFTS,n),"Away Team FTS":R(awayFTS,n),
+      "Home Clean Sheet":R(homeCS,n),"Away Clean Sheet":R(awayCS,n),
+    };
+    if(htSamp>=Math.min(30,n*0.5)){
+      rates["First Half Over 0.5"]=R(fh_over05,htSamp);
+      rates["First Half Under 1.5"]=R(fh_under15,htSamp);
+      rates["Second Half Over 0.5"]=R(sh_over05,htSamp);
+      rates["Second Half Over 1.5"]=R(sh_over15,htSamp);
+      rates["Goal in Both Halves"]=R(gib,htSamp);
+    }
+    // rank markets ≥70% strongest-first, keep top 3 (Section 12/13)
+    const ranked = Object.entries(rates)
+      .filter(([,v])=>v!=null && v>=0.70)
+      .sort((a,b)=>b[1]-a[1]);
+    const top3 = ranked.slice(0,3).map(([m,v])=>({market:m,rate:v}));
+
+    // league identity (Section 14) from headline rates
+    const gpg = R(over25,n)!=null ? (games.reduce((s,g)=>s+g.goals.home+g.goals.away,0)/n) : null;
+    const drawR = R(draw,n), homeWinR = R(homeWin,n);
+    let identity="Balanced";
+    if(gpg!=null){
+      if(gpg>=3.0 && rates["Over 2.5"]>=0.55) identity="Goal-Friendly";
+      else if(rates["Under 3.5"]!=null && rates["Under 3.5"]>=0.78) identity="Controlled";
+      else if(rates["BTTS No"]!=null && rates["BTTS No"]>=0.55 && gpg<2.4) identity="Defensive";
+      else if(homeWinR!=null && homeWinR>=0.50) identity="Home-Dominant";
+      else if(drawR!=null && drawR>=0.32) identity="Volatile";
+    }
+    result = { leagueId, season, sample:n, rates, top3, identity, gpg:gpg!=null?Math.round(gpg*100)/100:null };
+  } catch(e){ result = null; /* rate-limit or partial → NO BET for this league */ }
+  LEAGUE_TREND_CACHE[ck] = result;
+  return result;
+}
+
 function todayStr(){ return fmtDate(new Date()); }
 // Build the list of date strings to fetch: today-back .. today+fwd (inclusive).
 function buildDateWindow(back, fwd){
@@ -523,6 +617,12 @@ const FINISHED = new Set(["FT","AET","PEN"]);
 
     const oddsByFixture = await getOdds(leagueId, seasonForStandings, date);
 
+    // League Trend data (70-70-70 engine): real league-wide market hit-rates,
+    // fetched once per league and cached. null if <50 matches or fetch failed.
+    let leagueTrends = null;
+    try { leagueTrends = await getLeagueTrends(leagueId, seasonForStandings, cfg.API_KEY, SLEEP); requests++; }
+    catch(e){ leagueTrends = null; }
+
     for (const fx of fixtures) {
       const st = fx.fixture.status.short;
       const H = table[fx.teams.home.id] || {}, A = table[fx.teams.away.id] || {};
@@ -609,6 +709,7 @@ const FINISHED = new Set(["FT","AET","PEN"]);
         homeVenueGames: H._homeGames ?? null, awayVenueGames: A._awayGames ?? null,
         venueTableSize: H._groupSize ?? A._groupSize ?? tableSize,
         leagueAvg,  // per-league baseline averages for engine calibration
+        leagueTrends,  // 70-70-70 engine: real league-wide market hit-rates, top-3, identity
         // REAL stats (null when unavailable -> engines fall back to estimates)
         homeWinRate: homeStats ? round2(homeStats.homeWinRate ?? homeStats.winRate) : null,
         awayWinRate: awayStats ? round2(awayStats.awayWinRate ?? awayStats.winRate) : null,
