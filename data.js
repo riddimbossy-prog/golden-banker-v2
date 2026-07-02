@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T14:40:42.047Z";
+window.SCORES_UPDATED = "2026-07-02T14:45:38.183Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -75753,7 +75753,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-02T13:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": 4,
+    "homeGoals": 5,
     "awayGoals": 5,
     "homePos": 12,
     "awayPos": 11,
@@ -75812,7 +75812,7 @@ window.MATCHES = [
     "round": "Regular Season - 12",
     "odds": null,
     "h2h": null,
-    "elapsed": 81
+    "elapsed": 86
   },
   {
     "home": "Croatia U19",
@@ -75893,7 +75893,7 @@ window.MATCHES = [
       "dcx2": 1.3
     },
     "h2h": null,
-    "elapsed": 83
+    "elapsed": 88
   },
   {
     "home": "Khan Tengri",
@@ -75903,11 +75903,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4551.png",
     "country": "Kazakhstan",
     "flag": "https://media.api-sports.io/flags/kz.svg",
-    "status": "PST",
+    "status": "1H",
     "kickoff": "2026-07-02T14:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 6,
     "awayPos": 9,
     "tableSize": 14,
@@ -75965,7 +75965,7 @@ window.MATCHES = [
     "round": "Regular Season - 12",
     "odds": null,
     "h2h": null,
-    "elapsed": null
+    "elapsed": 4
   },
   {
     "home": "Dordoi Bishkek",
@@ -76109,7 +76109,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 39
+    "elapsed": 44
   },
   {
     "home": "Toktogul",
