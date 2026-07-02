@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T01:55:30.397Z";
+window.SCORES_UPDATED = "2026-07-02T02:00:56.855Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -73686,7 +73686,7 @@ window.MATCHES = [
       "away": 6.5
     },
     "lineupConfirmed": true,
-    "elapsed": 89
+    "elapsed": 90
   },
   {
     "home": "Delfin SC",
@@ -73928,8 +73928,8 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-02T00:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": 4,
-    "awayGoals": 1,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -73981,7 +73981,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 86
+    "elapsed": 90
   },
   {
     "home": "GFI",
@@ -74126,8 +74126,8 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-02T00:30:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": 1,
-    "awayGoals": 2,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -74192,7 +74192,7 @@ window.MATCHES = [
       "dcx2": 2.3
     },
     "h2h": null,
-    "elapsed": 51
+    "elapsed": 56
   },
   {
     "home": "Marin",
@@ -74405,7 +74405,7 @@ window.MATCHES = [
       "dcx2": 2.5
     },
     "h2h": null,
-    "elapsed": 64
+    "elapsed": 70
   },
   {
     "home": "Albion Colorado",
