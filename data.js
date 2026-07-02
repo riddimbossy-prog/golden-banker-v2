@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T17:10:45.489Z";
+window.SCORES_UPDATED = "2026-07-02T17:15:36.701Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -76784,7 +76784,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 62
+    "elapsed": 67
   },
   {
     "home": "Dekani",
@@ -76863,7 +76863,7 @@ window.MATCHES = [
       "dcx2": 1.01
     },
     "h2h": null,
-    "elapsed": 55
+    "elapsed": 60
   },
   {
     "home": "Wieczysta Kraków",
@@ -76956,7 +76956,7 @@ window.MATCHES = [
     "kickoff": "2026-07-02T15:30:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 1,
-    "awayGoals": 3,
+    "awayGoals": 4,
     "homePos": 8,
     "awayPos": 2,
     "tableSize": 10,
@@ -77029,7 +77029,7 @@ window.MATCHES = [
       "dcx2": 1.17
     },
     "h2h": null,
-    "elapsed": 82
+    "elapsed": 87
   },
   {
     "home": "Lyn",
@@ -77042,7 +77042,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-02T16:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": 5,
+    "homeGoals": 6,
     "awayGoals": 0,
     "homePos": 16,
     "awayPos": 13,
@@ -77126,7 +77126,7 @@ window.MATCHES = [
       "draw": 3.7,
       "away": 3.5
     },
-    "elapsed": 54
+    "elapsed": 59
   },
   {
     "home": "FC jazz",
@@ -77213,7 +77213,7 @@ window.MATCHES = [
       "dcx2": 2.45
     },
     "h2h": null,
-    "elapsed": 54
+    "elapsed": 59
   },
   {
     "home": "PPJ",
@@ -77300,7 +77300,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": 52
+    "elapsed": 58
   },
   {
     "home": "Tartu Welco",
@@ -77385,7 +77385,7 @@ window.MATCHES = [
       "dcx2": 1.5
     },
     "h2h": null,
-    "elapsed": 56
+    "elapsed": 61
   },
   {
     "home": "Kuressaare",
@@ -77399,7 +77399,7 @@ window.MATCHES = [
     "kickoff": "2026-07-02T16:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
-    "awayGoals": 1,
+    "awayGoals": 2,
     "homePos": 9,
     "awayPos": 2,
     "tableSize": 10,
@@ -77472,7 +77472,7 @@ window.MATCHES = [
       "dcx2": 1.07
     },
     "h2h": null,
-    "elapsed": 51
+    "elapsed": 56
   },
   {
     "home": "FC BW Linz",
@@ -77763,7 +77763,7 @@ window.MATCHES = [
     "kickoff": "2026-07-02T17:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": 7,
     "awayPos": 2,
     "tableSize": 16,
@@ -77836,7 +77836,7 @@ window.MATCHES = [
       "dcx2": 1.15
     },
     "h2h": null,
-    "elapsed": 11
+    "elapsed": 16
   },
   {
     "home": "Thor Akureyri",
@@ -77849,7 +77849,7 @@ window.MATCHES = [
     "status": "1H",
     "kickoff": "2026-07-02T17:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": 1,
+    "homeGoals": 2,
     "awayGoals": 0,
     "homePos": 10,
     "awayPos": 2,
@@ -77923,7 +77923,7 @@ window.MATCHES = [
       "dcx2": 1.06
     },
     "h2h": null,
-    "elapsed": 9
+    "elapsed": 14
   },
   {
     "home": "Serbia U19",
@@ -78004,7 +78004,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 10
+    "elapsed": 15
   },
   {
     "home": "Peckeloh",
