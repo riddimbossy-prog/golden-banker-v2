@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T23:50:39.221Z";
+window.SCORES_UPDATED = "2026-07-02T23:55:26.862Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -78790,7 +78790,7 @@ window.MATCHES = [
     "kickoff": "2026-07-02T22:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 1,
-    "awayGoals": 1,
+    "awayGoals": 2,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -79118,7 +79118,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 43
+    "elapsed": 45
   },
   {
     "home": "Rochester",
@@ -79128,7 +79128,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/18889.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-02T23:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
@@ -79184,7 +79184,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 44
+    "elapsed": 45
   },
   {
     "home": "Apotheos",
@@ -79250,7 +79250,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 12
+    "elapsed": 17
   },
   {
     "home": "Memphis 901",
