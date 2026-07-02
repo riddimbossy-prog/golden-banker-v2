@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T10:50:37.132Z";
+window.SCORES_UPDATED = "2026-07-02T10:55:33.503Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -75087,7 +75087,7 @@ window.MATCHES = [
       "dcx2": null
     },
     "h2h": null,
-    "elapsed": 59
+    "elapsed": 64
   },
   {
     "home": "Akademiya Ontustik",
