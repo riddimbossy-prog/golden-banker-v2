@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T14:50:43.067Z";
+window.SCORES_UPDATED = "2026-07-02T14:55:30.127Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -75750,7 +75750,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4546.png",
     "country": "Kazakhstan",
     "flag": "https://media.api-sports.io/flags/kz.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-02T13:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 5,
@@ -75812,7 +75812,7 @@ window.MATCHES = [
     "round": "Regular Season - 12",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Croatia U19",
@@ -75965,7 +75965,7 @@ window.MATCHES = [
     "round": "Regular Season - 12",
     "odds": null,
     "h2h": null,
-    "elapsed": 9
+    "elapsed": 15
   },
   {
     "home": "Dordoi Bishkek",
