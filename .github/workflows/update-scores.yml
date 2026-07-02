@@ -1,24 +1,24 @@
 name: Update scores (fast)
-# Lightweight: updates ONLY match scores/status from the API every 30 minutes,
+# Lightweight: updates ONLY match scores/status from the API every 15 minutes,
 # so finished games settle quickly without waiting for the slow full fetch.
 # Does NOT refetch stats/odds/standings. Runs in ~1-2 minutes.
-
 on:
   schedule:
     - cron: "*/15 * * * *"   # every 15 minutes (GitHub cron is best-effort;
                               # also pinged by cron-job.org for reliability)
   workflow_dispatch: {}
-
 permissions:
   contents: write
   pages: write
   id-token: write
-
+# CONCURRENCY (fixed): this scheduled job runs in its OWN group so it can never
+# cancel a manual "Publish daily image" deploy that is mid-flight. If a scores
+# run is already going, a new scores run just waits (does not pile up), and it
+# never touches the publish lane. This ends the "higher priority waiting
+# request for pages-deploy" cancellations.
 concurrency:
-  group: "pages-deploy"
-  cancel-in-progress: true
-
-
+  group: "pages-scores"
+  cancel-in-progress: false
 jobs:
   scores:
     runs-on: ubuntu-latest
@@ -65,6 +65,11 @@ jobs:
   deploy:
     needs: scores
     runs-on: ubuntu-latest
+    # This deploy shares the DEPLOY lane with the manual publish, but WAITS for
+    # an in-flight publish instead of cancelling it (cancel-in-progress:false).
+    concurrency:
+      group: "pages-deploy"
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
