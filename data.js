@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T22:35:31.859Z";
+window.SCORES_UPDATED = "2026-07-02T23:20:38.800Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -78714,7 +78714,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/1150.png",
     "country": "Ecuador",
     "flag": "https://media.api-sports.io/flags/ec.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-02T20:30:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 3,
@@ -78776,7 +78776,7 @@ window.MATCHES = [
     "round": "Regular Season - 15",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Huachipato",
@@ -78786,11 +78786,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/5635.png",
     "country": "Chile",
     "flag": "https://media.api-sports.io/flags/cl.svg",
-    "status": "1H",
+    "status": "2H",
     "kickoff": "2026-07-02T22:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 1,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -78857,7 +78857,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 36
+    "elapsed": 58
   },
   {
     "home": "Portugal",
@@ -78867,11 +78867,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3.png",
     "country": "World",
     "flag": null,
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-02T23:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 2,
     "awayPos": 2,
     "tableSize": 60,
@@ -78955,7 +78955,7 @@ window.MATCHES = [
       "away": 4.75
     },
     "lineupConfirmed": true,
-    "elapsed": null
+    "elapsed": 19
   },
   {
     "home": "Cuiaba",
@@ -78965,11 +78965,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/125.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-02T23:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 13,
     "awayPos": 20,
     "tableSize": 20,
@@ -79052,7 +79052,7 @@ window.MATCHES = [
       "draw": 3.3,
       "away": 5
     },
-    "elapsed": null
+    "elapsed": 18
   },
   {
     "home": "Cedar Stars Rush",
@@ -79062,11 +79062,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4062.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-02T23:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -79118,7 +79118,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": null
+    "elapsed": 11
   },
   {
     "home": "Rochester",
@@ -79128,11 +79128,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/18889.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-02T23:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -79184,7 +79184,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": null
+    "elapsed": 12
   },
   {
     "home": "Apotheos",
