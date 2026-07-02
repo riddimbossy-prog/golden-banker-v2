@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T18:15:36.931Z";
+window.SCORES_UPDATED = "2026-07-02T18:20:41.532Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -77763,7 +77763,7 @@ window.MATCHES = [
     "kickoff": "2026-07-02T17:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
-    "awayGoals": 2,
+    "awayGoals": 3,
     "homePos": 7,
     "awayPos": 2,
     "tableSize": 16,
@@ -77836,7 +77836,7 @@ window.MATCHES = [
       "dcx2": 1.15
     },
     "h2h": null,
-    "elapsed": 60
+    "elapsed": 65
   },
   {
     "home": "Thor Akureyri",
@@ -77923,7 +77923,7 @@ window.MATCHES = [
       "dcx2": 1.06
     },
     "h2h": null,
-    "elapsed": 56
+    "elapsed": 60
   },
   {
     "home": "Serbia U19",
@@ -78004,7 +78004,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 58
+    "elapsed": 63
   },
   {
     "home": "Peckeloh",
@@ -78080,7 +78080,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/16718.png",
     "country": "Estonia",
     "flag": "https://media.api-sports.io/flags/ee.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-02T17:30:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
@@ -78215,7 +78215,7 @@ window.MATCHES = [
       "dcx2": 5
     },
     "h2h": null,
-    "elapsed": 15
+    "elapsed": 20
   },
   {
     "home": "Sao Luis",
