@@ -269,6 +269,9 @@ body.light .won-card .wc-badge{ background:rgba(22,163,74,.10); border-color:rgb
   <!-- BANKER OF THE DAY — the strongest consensus pick across all engines, ready to post -->
   <div id="botd" class="mb-6"></div>
 
+  <!-- WORLD CUP — dedicated consensus picks section (only shows during the tournament) -->
+  <div id="worldcup" class="mb-6"></div>
+
   <!-- ============================================================
        JOIN CHANNELS — replace the two href="#" links below with your
        real Telegram and WhatsApp channel links once created:
@@ -445,6 +448,9 @@ body.light .won-card .wc-badge{ background:rgba(22,163,74,.10); border-color:rgb
 
 /* ============ DATA ============ */
 const MATCHES = window.MATCHES || [];
+/* Real xG (xgHomeReal/xgAwayReal/xgReal) is baked directly into each match by
+   enrich-xg.js during the data run, so no client-side merge is needed — the
+   engines read those fields straight off the match object. */
 const { results: _allResults } = analyseAll(MATCHES);
 // Hide skipped matches with no signal — but KEEP skips that carry a league
 // lean (same-tier games whose goals profile follows the league character),
@@ -1390,7 +1396,7 @@ function renderStreakMatches(){
       </summary>
       <div class="px-4 pb-4 pt-3 text-sm" style="border-top:1px solid var(--line);background:var(--panel-2)">
         <div style="font-weight:600;margin-bottom:.4rem">${u.verdict}</div>
-        ${u.streakLen?`<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:.4rem"><span style="padding:1px 8px;border-radius:6px;font-size:.7rem;font-weight:700;background:rgba(76,175,39,.14);color:#7ed957">${u.streakLen}-game streak</span>${u.oppWeak!=null?`<span style="padding:1px 8px;border-radius:6px;font-size:.7rem;font-weight:700;background:rgba(245,183,61,.15);color:#f5b73d">opp weakness ${u.oppWeak}</span>`:''}</div>`:''}
+        ${u.streakLen?`<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:.4rem"><span style="padding:1px 8px;border-radius:6px;font-size:.7rem;font-weight:700;background:rgba(76,175,39,.14);color:#7ed957">${u.streakLen}-game streak</span>${u.oppWeak!=null?`<span style="padding:1px 8px;border-radius:6px;font-size:.7rem;font-weight:700;background:rgba(245,183,61,.15);color:#f5b73d">opp weakness ${u.oppWeak}</span>`:''}${u.htft&&u.htft.holdLeadRate!=null?`<span style="padding:1px 8px;border-radius:6px;font-size:.7rem;font-weight:700;background:rgba(99,102,241,.14);color:#a5b4fc">holds leads ${Math.round(u.htft.holdLeadRate*100)}%</span>`:''}</div>`:''}
         ${(u.humanChecks||[]).length?`<div style="color:#b45309;font-size:.75rem;margin-top:.5rem"><i class="fa-solid fa-user-check"></i> ${u.humanChecks[0]}</div>`:''}
       </div>
     </details>`;
@@ -1725,7 +1731,7 @@ function renderStrictMatches(){
 })();
 
 /* ============ MASTER RENDER ============ */
-function renderAll(){ renderStrip(); renderStats(); renderWonTicker(); renderBankerOfDay(); renderCards(); renderSidebar(); renderMatches(); }
+function renderAll(){ renderStrip(); renderStats(); renderWonTicker(); renderBankerOfDay(); renderWorldCup(); renderCards(); renderSidebar(); renderMatches(); }
 
 // BANKER OF THE DAY: runs all engines on today's games, finds the match+market
 // the MOST engines agree on (consensus = strongest signal), and shows it as a
@@ -1788,6 +1794,72 @@ function renderBankerOfDay(){
   // ready-to-share text = HERO only
   const hb=hero.match;
   window.__botdText = `⚽ PREDICT2U — BANKER OF THE DAY\n\n${hb.home} v ${hb.away}\n${hero.market}  (${hero.count}/7 engines agree)\n${hb.league||''}\n\nMore picks → predict2u.com\n⚠️ Not a guarantee. 18+. Gamble responsibly.`;
+}
+
+// WORLD CUP — dedicated section showing CONSENSUS picks (markets multiple
+// engines independently agree on) for World Cup matches only. Runs all engines
+// on each WC fixture, tallies agreement, and shows the picks with the most
+// engine support. Only renders during the tournament (when WC matches exist).
+function renderWorldCup(){
+  const host=document.getElementById('worldcup'); if(!host) return;
+  const rows=(byDate[activeDate]||[]).filter(r=> r.match && (r.match.leagueId===1 || /world cup/i.test(r.match.league||'')));
+  if(!rows.length){ host.innerHTML=''; return; }
+
+  const tally={};
+  const norm=s=>String(s||'').trim();
+  function add(match, market, engine, conf){
+    if(!market||market==='No Bet') return;
+    const key=(norm(match.home)+'|'+norm(match.away)+'|'+norm(market)).toLowerCase();
+    if(!tally[key]) tally[key]={count:0,engines:[],match,market,confSum:0};
+    tally[key].count++; tally[key].engines.push(engine); tally[key].confSum+=(conf||7);
+  }
+  // run every engine on each WC match
+  rows.forEach(r=>{
+    const m=r.match;
+    try{ const u=recommend(m); if(u.banker||u.bet) add(m,u.primary,'Normal',confValue(u.confidence)); }catch(e){}
+    try{ const s=strictRecommend(m); if(s&&s.bet) add(m,s.market||s.primary,'Strict',s.confidence); }catch(e){}
+    [['Ultra',ultraRecommend],['Elite',rulesProRecommend],['Apex',apexRecommend],['Prime',primeRecommend],['Value',valueRecommend],['Pro',proRecommend],['Trend',trendRecommend],['Streaks',streakRecommend]].forEach(([name,fn])=>{
+      try{ if(typeof fn==='function'){ const u=fn(m); if(u.bet) add(m,u.primary,name,u.confidence);} }catch(e){}
+    });
+  });
+
+  // consensus = 2+ engines agree on the SAME market for the SAME match
+  let picks=Object.values(tally).filter(x=>x.count>=2).sort((a,b)=> b.count-a.count || b.confSum-a.confSum);
+
+  const TOTAL_ENGINES=10;
+  const header=`<div class="flex items-center gap-2 mb-3">
+    <span class="text-lg">🏆</span>
+    <span class="display text-lg font-bold">World Cup — Consensus Picks</span>
+  </div>`;
+
+  if(!picks.length){
+    host.innerHTML=`<div class="panel rounded-2xl p-4">${header}<div class="text-sm" style="color:var(--muted)">World Cup matches are loaded, but no market has 2+ engines in agreement yet. Consensus picks appear when engines line up.</div></div>`;
+    return;
+  }
+
+  const card=p=>{
+    const b=p.match;
+    const res=settle(p.market,b.homeGoals,b.awayGoals,b.status);
+    const resTag=res?`<span class="px-2 py-0.5 rounded text-[11px] font-bold ${resClass(res)}">${res.toUpperCase()}</span>`:'';
+    const t=b.kickoff?fmtTime(b.kickoff):'';
+    const strong = p.count>=4;
+    return `<div class="rounded-xl p-3 mb-2" style="background:var(--panel-2);border:1px solid ${strong?'rgba(76,175,39,.4)':'var(--line)'}">
+      <div class="flex items-center justify-between mb-1">
+        <span class="text-[13px] font-semibold flex items-center gap-2 flex-wrap">${rowFlag(b)}${b.home} <span style="color:var(--muted)">v</span> ${b.away} ${resTag}</span>
+        <span class="text-[11px] font-bold px-2 py-0.5 rounded-lg" style="background:rgba(76,175,39,.2);color:var(--brand)">${p.count}/${TOTAL_ENGINES} agree</span>
+      </div>
+      <div class="flex items-center justify-between">
+        <span class="px-2 py-1 rounded-lg text-[12px] font-semibold ${pill(p.market)}">${p.market}</span>
+        <span class="text-[10px]" style="color:var(--muted)">${t?t+' · ':''}${p.engines.join(', ')}</span>
+      </div>
+    </div>`;
+  };
+
+  host.innerHTML=`<div class="panel rounded-2xl p-4">
+    ${header}
+    <div class="text-[11px] mb-3" style="color:var(--muted)">Markets where multiple engines independently agree. More agreement = stronger consensus. Not a guarantee — 18+.</div>
+    ${picks.slice(0,8).map(card).join('')}
+  </div>`;
 }
 function shareBotd(){
   const t=window.__botdText||''; if(!t) return;
