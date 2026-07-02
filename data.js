@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T09:35:31.930Z";
+window.SCORES_UPDATED = "2026-07-02T09:40:44.417Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
