@@ -29,19 +29,25 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Write config.txt from secrets
+      - name: Inject secret keys into config.txt (preserve committed LEAGUES etc.)
         run: |
-          cat > config.txt <<EOF
-          API_KEY=${{ secrets.API_KEY }}
-          SEASON=${{ secrets.SEASON }}
-          DAYS_BACK=${{ secrets.DAYS_BACK }}
-          EOF
+          # The repo's committed config.txt holds LEAGUES, SEASON, DAYS_*, budgets.
+          # We must NOT overwrite it — only append the secret API keys so the
+          # fetcher has credentials. Appended keys win (parser takes last value).
+          if [ ! -f config.txt ]; then echo "WARNING: config.txt missing from repo"; fi
+          {
+            echo "";
+            echo "API_KEY=${{ secrets.API_KEY }}";
+            echo "STATS_API_KEY=${{ secrets.STATS_API_KEY }}";
+          } >> config.txt
+
       - name: Update scores only
         run: node fetch-scores.js || echo "scores update skipped"
       - name: Update forward tracker (settle + record bankers)
         run: node track-log.js || echo "track-log skipped"
-      - name: Remove config before commit
-        run: rm -f config.txt
+      - name: Restore clean config.txt before commit
+        run: |
+          git checkout -- config.txt 2>/dev/null || rm -f config.txt
       - name: Commit updated scores (if changed)
         run: |
           git config user.name "predicto-bot"
