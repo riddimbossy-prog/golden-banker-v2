@@ -2928,8 +2928,321 @@ function streakRecommend(m){
     { streakLen:best.streak, oppWeak:ow, htft: teamHtft||null });
 }
 
+// ============================================================
+// INTERNATIONAL FRAME  (INTERNATIONAL COMPETITION STREAKS spec as a LAYER)
+// ------------------------------------------------------------
+// NOT a standalone engine. This is a shared frame — like oddsLadderGate and
+// leagueContextVerdict — that wraps EVERY engine's pick whenever the match is
+// a national-team competition game (World Cup, WC qualifiers, friendlies,
+// continental champs + qualifiers, Nations League, Olympics, youth,
+// invitationals). Club matches pass through completely untouched.
+//
+// What the frame enforces on international picks (owner's 27-section spec):
+//   §3/§4  Knockout protection — Over/GG picks need a proven extreme
+//          mismatch (6+ of 9 checks) or they are rejected/downgraded.
+//   §10-13 Scoring-class conflicts — aggressive Overs in low-scoring /
+//          draw-prone competitions and tight Unders in high-scoring ones
+//          are downgraded one notch unless the stats justify them.
+//   §15/§21 Friendlies NEVER carry banker status (motivation unverifiable).
+//   §20    Streak collisions — one collision downgrades, two rejects.
+//   §17    Every downgraded market is re-run through oddsLadderGate; if the
+//          safer market fails the ladder too, the pick becomes No Bet.
+//   Thin/absent competition sample → pick kept, banker status stripped.
+//
+// Pedigree is HYBRID (agreed approach): manual override from pedigree.js
+// (window.PEDIGREE / require) when the team is listed, otherwise an auto
+// proxy computed from real stats + market odds. Squad news / rotation is
+// NOT in the data feed, so knockout/friendly picks carry a humanChecks note.
+
+// ---- eligibility: national-team competition, NOT a club competition ----
+function isInternationalComp(m){
+  if(!m) return false;
+  if(m.leagueId===1 || m.leagueId==="1") return true;               // World Cup
+  const L=String(m.league||m.competition||"").toLowerCase();
+  // explicit CLUB internationals are excluded even though country="World"
+  if(/champions league|europa|conference league|libertadores|sudamericana|club world cup|club friendl|afc champions|caf champions|concacaf champions|intercontinental|super cup/.test(L)) return false;
+  if(/world cup|fifa|friendl|nations league|qualif|euro(pean championship)?\b|copa am[eé]rica|africa cup|afcon|african nations|asian cup|gold cup|olympi|confederations|\bu-?1[6-9]\b|\bu-?2[0-3]\b|youth|toulon|kirin|king's cup|baltic cup|cosafa|wafu|gulf cup|arab cup/.test(L)) return true;
+  // API-Football marks national-team comps with country "World"
+  if(String(m.country||"").toLowerCase()==="world") return true;
+  return false;
+}
+
+// ---- match type / stage (spec §2, §25 step 2) ----
+function intlMatchType(m){
+  const L=String(m.league||"").toLowerCase();
+  const R=String(m.round||"").toLowerCase();
+  const isFinal = /(^|\s)final(s)?($|\s)/.test(R) && !/semi|quarter/.test(R);
+  if(m.isKnockout || /final|semi|quarter|round of|knockout|play-?off|1\/8|1\/4|1\/2/.test(R))
+    return { type: isFinal ? "Final" : "Knockout", knockout:true, final:isFinal,
+             semi:/semi/.test(R) };
+  if(/friendl/.test(L)) return { type:"Friendly", knockout:false, friendly:true };
+  if(/qualif/.test(L)||/qualif/.test(R)) return { type:"Qualifier", knockout:false, qualifier:true };
+  if(m.sameGroup || /group/.test(R)) return { type:"Group Stage", knockout:false, group:true };
+  return { type:"Group Stage", knockout:false, group:true }; // tournament default
+}
+
+// ---- competition scoring classification (spec §1) ----
+function intlScoringClass(m){
+  const t=m.leagueTrends, r=t&&t.rates;
+  const la=m.leagueAvg||{};
+  const gpg = (t&&t.gpg!=null)?t.gpg : (la.goalsPerGame!=null? la.goalsPerGame*2 : null); // leagueAvg gpg is per-team
+  const drawR = (r&&r["Draw"]!=null)?r["Draw"] : (la.drawRate!=null? la.drawRate : null);
+  const o15=r?r["Over 1.5"]:null, o25=r?r["Over 2.5"]:null,
+        u25=r?r["Under 2.5"]:null, btts=r?r["BTTS Yes"]:null;
+  const sample=t?t.sample:null;
+  if(gpg==null) return null; // no data → caller decides No Bet
+  let cls;
+  if(gpg>=2.80 && (o15==null||o15>=0.75) && (o25==null||o25>=0.55) && (btts==null||btts>=0.52))
+    cls="High-Scoring";
+  else if(gpg>=2.40 && (o15==null||o15>=0.68))
+    cls="Middle-Scoring";
+  else if(gpg<2.40 || (u25!=null&&u25>=0.55) || (o25!=null&&o25<0.45))
+    cls="Low-Scoring";
+  else cls="Middle-Scoring";
+  // draw-prone overlays low/middle when the draw rate is high (spec §1D)
+  if(drawR!=null && drawR>=0.30 && cls!=="High-Scoring") cls="Draw-Prone";
+  return { cls, gpg:Math.round(gpg*100)/100, drawR, o15, o25, u25, btts, sample, thin:!(sample>=50) };
+}
+
+// ---- real per-team scoring / conceding averages ----
+// Prefer the REAL half-split sums (goals-by-minute) over venue splits, which
+// carry defaults (1.3/1.0) when data is missing. Flags quality.
+function intlAtt(m, side){
+  const f1=m[side+"1HFor"], f2=m[side+"2HFor"];
+  if(f1!=null&&f2!=null) return { v:Math.round((f1+f2)*100)/100, real:true };
+  const v = side==="home"?m.homeScoredAtHome:m.awayScoredAway;
+  return v!=null?{v, real:!!m.statsReal}:null;
+}
+function intlDef(m, side){
+  const a1=m[side+"1HAgainst"], a2=m[side+"2HAgainst"];
+  if(a1!=null&&a2!=null) return { v:Math.round((a1+a2)*100)/100, real:true };
+  const v = side==="home"?m.homeConcededAtHome:m.awayConcededAway;
+  return v!=null?{v, real:!!m.statsReal}:null;
+}
+
+// ---- pedigree (spec §5) — HYBRID: manual pedigree.js else stats proxy ----
+function intlPedigree(m, side){
+  const name = side==="home"?m.home:m.away;
+  // 1) manual override
+  let map=null;
+  try{ map = (typeof window!=="undefined"&&window.PEDIGREE)||(typeof PEDIGREE!=="undefined"?PEDIGREE:null); }catch(e){}
+  if(!map){ try{ map = require("./pedigree.js"); }catch(e){} }
+  if(map){
+    const key=Object.keys(map).find(k=>k.toLowerCase()===String(name||"").toLowerCase());
+    if(key!=null){ const p=map[key];
+      return { pts:p, grade:p>=12?"Elite":p>=9?"Strong":p>=6?"Usable":"Weak", source:"manual" }; }
+  }
+  // 2) auto proxy from real stats + market odds
+  let pts=0;
+  const wr = side==="home"?m.homeWinRate:m.awayWinRate;
+  const ur = side==="home"?m.homeUnbeatenRate:m.awayUnbeatenRate;
+  const att=intlAtt(m,side), def=intlDef(m,side);
+  const o=m.odds, own = o?(side==="home"?o.home:o.away):null;
+  const form = String(side==="home"?m.homeForm:m.awayForm||"").replace(/[^WDL]/gi,"");
+  if(wr!=null){ pts += wr>=0.65?4:wr>=0.55?3:wr>=0.45?2:wr>=0.30?1:0; }
+  if(ur!=null){ pts += ur>=0.70?2:ur>=0.55?1:0; }
+  if(att){ pts += att.v>=1.8?2:att.v>=1.4?1:0; }
+  if(def){ pts += def.v<=0.9?2:def.v<=1.2?1:0; }
+  if(own!=null){ pts += own<=1.50?2:own<=2.10?1:0; }
+  if((form.match(/W/g)||[]).length>=4) pts += 1;
+  return { pts, grade:pts>=12?"Elite":pts>=9?"Strong":pts>=6?"Usable":"Weak", source:"auto" };
+}
+
+// ---- streak strength (spec §6) ----
+function intlStreakTier(n){
+  if(n>=6) return "Elite streak"; if(n>=5) return "Banker streak";
+  if(n>=4) return "Strong streak"; if(n>=3) return "Watchlist"; return null;
+}
+
+// ---- extreme-mismatch test (spec §4) — needs 6+ of the checks ----
+function intlMismatch(m, sPed, wPed, sAtt, wDef, strongSide){
+  const o=m.odds||{};
+  const fav = strongSide==="home"?o.home:o.away;
+  const dog = strongSide==="home"?o.away:o.home;
+  const sStk = strongSide==="home"?m.homeStreaks:m.awayStreaks;
+  const wStk = strongSide==="home"?m.awayStreaks:m.homeStreaks;
+  const checks=[
+    sPed&&sPed.pts>=12,                                 // strong pedigree 12+
+    wPed&&wPed.pts<=5,                                  // weak pedigree ≤5
+    sAtt!=null&&sAtt>=2.00,                             // strong scores 2.00+
+    wDef!=null&&wDef>=1.70,                             // weak concedes 1.70+
+    !!(sStk&&sStk.win>=4),                              // proxy: scored/won run
+    !!(wStk&&(wStk.loss>=3||wStk.noWin>=4)),            // weak team sinking
+    fav!=null&&fav>=1.20&&fav<=1.45,                    // favourite 1.20–1.45
+    dog!=null&&dog>=7.00,                               // opponent 7.00+
+    o.draw!=null&&o.draw>=4.50                          // draw 4.50+
+  ];
+  const passed=checks.filter(Boolean).length;
+  return { passed, pass:passed>=6, strong:passed>=7 };
+}
+
+// ---- THE FRAME ITSELF ----
+// intlFrameApply(m, out): takes any engine's output object and, if the match
+// is an international, validates/downgrades/rejects the pick per the spec.
+// Idempotent (out._intlFramed) because some engines call others internally.
+function intlFrameApply(m, out){
+  try{
+    if(!out || out._intlFramed || !m) return out;
+    if(!isInternationalComp(m)) return out;
+    out._intlFramed = true;
+
+    const isNormalShape = out.rankWeight !== undefined;   // the Normal engine
+    let market = out.primary != null ? out.primary : out.market;
+    if(!market || market === "No Bet" || market === "Skip") return out;
+    const setMkt = nm => { if(out.primary !== undefined) out.primary = nm;
+                           if(out.market  !== undefined) out.market  = nm; market = nm; };
+
+    // --- context ---
+    const stage = intlMatchType(m);
+    const sc    = intlScoringClass(m);                    // may be null
+    const hPed  = intlPedigree(m,"home"), aPed = intlPedigree(m,"away");
+    const homeStronger = hPed.pts >= aPed.pts;
+    const sSide = homeStronger ? "home" : "away", wSide = homeStronger ? "away" : "home";
+    const sPed  = homeStronger ? hPed : aPed,  wPed = homeStronger ? aPed : hPed;
+    const wName = homeStronger ? m.away : m.home;
+    const sAttO = intlAtt(m,sSide), wAttO = intlAtt(m,wSide);
+    const wDefO = intlDef(m,wSide);
+    const sAtt = sAttO ? sAttO.v : null, wAtt = wAttO ? wAttO.v : null;
+    const wDef = wDefO ? wDefO.v : null;
+    const combined = (sAtt != null && wAtt != null) ? Math.round((sAtt + wAtt) * 100) / 100 : null;
+    const mm   = intlMismatch(m, sPed, wPed, sAtt, wDef, sSide);
+    const sStk = (sSide === "home" ? m.homeStreaks : m.awayStreaks) || null;
+    const wStk = (wSide === "home" ? m.homeStreaks : m.awayStreaks) || null;
+
+    const notes = [];
+    let dropBanker = false, rejected = false;
+
+    const reject = why => { rejected = true; notes.push(why + " → No Bet."); };
+    const SAFER = { "Over 3.5":"Over 2.5", "Over 2.5":"Over 1.5", "Over 2.5 + BTTS":"Over 1.5",
+                    "Under 1.5":"Under 2.5", "Under 2.5":"Under 3.5", "BTTS Yes":"Over 1.5",
+                    "Home Win":"Home DNB", "Away Win":"Away DNB",
+                    "Home DNB":"Double Chance 1X", "Away DNB":"Double Chance X2" };
+    const downgrade = why => {
+      const nm = SAFER[market];
+      if(!nm){ dropBanker = true; notes.push(why + " — pick held, banker status off."); return; }
+      const g = oddsLadderGate(m, nm);
+      if(g.block){ reject(why + `; safer ${nm} also fails the odds ladder (${g.reason})`); return; }
+      notes.push(why + ` → downgraded to ${nm}.`); setMkt(nm); dropBanker = true;
+    };
+
+    const overFam   = /over|btts/i.test(market);
+    const underFam  = /under/i.test(market);
+    const resultFam = /win|dnb|double chance|1x|x2/i.test(market);
+
+    // --- 1) KNOCKOUT PROTECTION (§3/§4/§24) ---
+    if(stage.knockout && !rejected){
+      if(/btts/i.test(market)){
+        reject(`Knockout protection (§3/§24): GG is not in the knockout market hierarchy`);
+      } else if(overFam){
+        if(!mm.pass){
+          reject(`Knockout protection (§3): no proven extreme mismatch (${mm.passed}/9 checks) to justify an Over`);
+        } else {
+          notes.push(`Extreme mismatch confirmed (${mm.passed}/9) — Over may stand in a knockout (§4).`);
+          if(market === "Over 3.5" &&
+             !(mm.strong && combined != null && combined >= 3.40 && sAtt != null && sAtt >= 2.30 && wDef != null && wDef >= 1.90)){
+            downgrade("Over 3.5 needs the strongest mismatch stats (§4) — never from reputation alone");
+          } else if(/Over 2.5/.test(market) && !mm.strong){
+            downgrade("Over 2.5 in a knockout needs a STRONG mismatch (7+/9, §4)");
+          }
+        }
+      } else if(resultFam && !rejected){
+        const gap = sPed.pts - wPed.pts;
+        if(!(mm.pass || gap >= 5)){
+          if(/win/i.test(market) && !/dnb|double|1x|x2/i.test(market)){
+            downgrade(`Knockout result pick without a clear pedigree gap (${sPed.pts} v ${wPed.pts}, §24)`);
+          } else { dropBanker = true; notes.push(`Knockout caution (§24): result pick kept, banker status off (pedigree gap ${gap}).`); }
+        }
+      }
+      if(stage.final && !rejected){ dropBanker = true; notes.push("Tournament FINAL — banker status withheld (§23)."); }
+      else if(stage.semi && !rejected){ dropBanker = true; notes.push("Semifinal — banker status withheld (§23)."); }
+    }
+
+    // --- 2) SCORING-CLASS CONFLICTS (§10–§13, non-knockout, class known) ---
+    if(!stage.knockout && sc && !rejected){
+      if(sc.cls === "Low-Scoring" || sc.cls === "Draw-Prone"){
+        if(/^Over (2\.5|3\.5)/.test(market) &&
+           !(mm.pass || (sAtt != null && sAtt >= 2.00 && wDef != null && wDef >= 1.70))){
+          downgrade(`${sc.cls} competition (${sc.gpg} goals/game): aggressive Over unsupported (§12/§13)`);
+        } else if(/btts/i.test(market) && !(sAtt != null && sAtt >= 1.20 && wAtt != null && wAtt >= 1.20)){
+          dropBanker = true; notes.push(`${sc.cls} competition: GG kept but banker status off (§19).`);
+        }
+      }
+      if((sc.cls === "High-Scoring" || sc.cls === "Middle-Scoring") && underFam && market !== "Under 3.5"){
+        const okU = combined != null && combined < 2.40 && ((sAtt != null && sAtt < 1.00) || (wAtt != null && wAtt < 1.00));
+        if(!okU) downgrade(`${sc.cls} competition (${sc.gpg} goals/game) contradicts a tight Under (§10/§11)`);
+      }
+    }
+
+    // --- 3) FRIENDLIES: never a banker (§15/§21) ---
+    if(stage.friendly && !rejected){
+      dropBanker = true;
+      notes.push("International friendly — motivation and rotation unverifiable, never a banker (§15/§21).");
+    }
+
+    // --- 4) STREAK COLLISIONS (§20) ---
+    if(!rejected){
+      const collisions = [];
+      if(overFam  && wStk && wStk.under25 >= 4) collisions.push(`${wName} on a ${wStk.under25}-game Under 2.5 run`);
+      if(underFam && ((sStk && sStk.over25 >= 4) || (wStk && wStk.over25 >= 4))) collisions.push("an Over 2.5 streak contradicts the Under");
+      if(resultFam && wStk && wStk.noLoss >= 4) collisions.push(`${wName} unbeaten in ${wStk.noLoss}`);
+      if(overFam  && wDef != null && wDef < 0.90 && wPed.pts < 6) collisions.push(`${wName} concedes only ${wDef} despite weak pedigree`);
+      if(collisions.length >= 2) reject(`Streak collisions (§20): ${collisions.join("; ")}`);
+      else if(collisions.length === 1) downgrade(`Streak collision (§20): ${collisions[0]}`);
+    }
+
+    // --- 5) SAMPLE CAUTION ---
+    if(!rejected && (!sc || sc.thin)){
+      dropBanker = true;
+      notes.push(sc ? `Thin competition sample (${sc.sample || 0} games) — banker status off.`
+                    : "No competition-wide sample — stage rules applied only, banker status off.");
+    }
+
+    // --- APPLY ---
+    if(rejected){
+      setMkt(isNormalShape ? "Skip" : "No Bet");
+      if(out.bet !== undefined) out.bet = false;
+      out.banker = false;
+      if(typeof out.confidence === "number") out.confidence = 0;
+      else if(typeof out.confidence === "string") out.confidence = "Low";
+      if(out.rankWeight !== undefined) out.rankWeight = 0;
+    } else if(dropBanker && out.banker){ out.banker = false; }
+    else if(dropBanker) out.banker = false;
+
+    if(notes.length){
+      const tag = " ⚑ INTL FRAME: " + notes.join(" ");
+      if(out.verdict !== undefined) out.verdict = (out.verdict || "") + tag;
+      if(out.summary !== undefined) out.summary = (out.summary || "") + tag;
+      if(Array.isArray(out.reasons)) out.reasons.push("INTL FRAME: " + notes.join(" "));
+      if(Array.isArray(out.failed) && rejected) out.failed.push("INTL FRAME: " + notes.join(" "));
+    }
+    if(!rejected && Array.isArray(out.humanChecks) && (stage.friendly || stage.knockout)){
+      out.humanChecks.push("International: verify lineups, rotation and motivation before staking — squad news is not in the data feed.");
+    }
+    out.intlFrame = { applied:true, stage:stage.type, scoringClass: sc ? sc.cls : null,
+                      mismatch: mm.pass ? (mm.strong ? "Extreme (strong)" : "Extreme") : "None",
+                      changed: notes.length > 0, rejected, notes };
+    return out;
+  }catch(e){ return out; }
+}
+
+// ---- wrap EVERY engine so the frame runs automatically ----
+function withIntlFrame(fn){
+  return function(m){ return intlFrameApply(m, fn(m)); };
+}
+recommend        = withIntlFrame(recommend);
+strictRecommend  = withIntlFrame(strictRecommend);
+ultraRecommend   = withIntlFrame(ultraRecommend);
+rulesProRecommend= withIntlFrame(rulesProRecommend);
+apexRecommend    = withIntlFrame(apexRecommend);
+primeRecommend   = withIntlFrame(primeRecommend);
+valueRecommend   = withIntlFrame(valueRecommend);
+proRecommend     = withIntlFrame(proRecommend);
+trendRecommend   = withIntlFrame(trendRecommend);
+streakRecommend  = withIntlFrame(streakRecommend);
+
 if (typeof module !== "undefined") module.exports = {
   analyseAll, recommend, scoreOver25, scoreBTTS, scoreWinDNB, settle,
   analyseStrict, strictRecommend, tierFromRank, streakRecommend, ultraRecommend, rulesProRecommend, apexRecommend, primeRecommend, valueRecommend, proRecommend,
-  classifyLeague, leagueContextVerdict, trendRecommend, oddsLadderGate
+  classifyLeague, leagueContextVerdict, trendRecommend, oddsLadderGate,
+  intlFrameApply, isInternationalComp
 };
