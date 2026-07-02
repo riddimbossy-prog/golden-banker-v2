@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T01:35:27.917Z";
+window.SCORES_UPDATED = "2026-07-02T01:40:41.518Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -73686,7 +73686,7 @@ window.MATCHES = [
       "away": 6.5
     },
     "lineupConfirmed": true,
-    "elapsed": 70
+    "elapsed": 75
   },
   {
     "home": "Delfin SC",
@@ -73928,7 +73928,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-02T00:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": 3,
+    "homeGoals": 0,
     "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
@@ -73981,7 +73981,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 66
+    "elapsed": 71
   },
   {
     "home": "GFI",
@@ -74127,7 +74127,7 @@ window.MATCHES = [
     "kickoff": "2026-07-02T00:30:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
-    "awayGoals": 2,
+    "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -74334,11 +74334,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/2326.png",
     "country": "Chile",
     "flag": "https://media.api-sports.io/flags/cl.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-02T00:30:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -74405,7 +74405,7 @@ window.MATCHES = [
       "dcx2": 2.5
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 50
   },
   {
     "home": "Albion Colorado",
