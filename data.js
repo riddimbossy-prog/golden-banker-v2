@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T22:10:38.846Z";
+window.SCORES_UPDATED = "2026-07-02T22:15:35.676Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -78704,7 +78704,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": 81
+    "elapsed": 85
   },
   {
     "home": "Atletico FC",
@@ -78776,7 +78776,7 @@ window.MATCHES = [
     "round": "Regular Season - 15",
     "odds": null,
     "h2h": null,
-    "elapsed": 72
+    "elapsed": 76
   },
   {
     "home": "Huachipato",
@@ -78857,7 +78857,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 11
+    "elapsed": 15
   },
   {
     "home": "Portugal",
