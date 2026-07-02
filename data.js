@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T12:40:39.303Z";
+window.SCORES_UPDATED = "2026-07-02T12:45:35.901Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -75159,7 +75159,7 @@ window.MATCHES = [
     "round": "Regular Season - 12",
     "odds": null,
     "h2h": null,
-    "elapsed": 40
+    "elapsed": 45
   },
   {
     "home": "Astana II",
@@ -75231,7 +75231,7 @@ window.MATCHES = [
     "round": "Regular Season - 12",
     "odds": null,
     "h2h": null,
-    "elapsed": 40
+    "elapsed": 45
   },
   {
     "home": "Dundee",
@@ -75740,7 +75740,7 @@ window.MATCHES = [
     "round": null,
     "odds": null,
     "h2h": null,
-    "elapsed": 40
+    "elapsed": 45
   },
   {
     "home": "Tobol 2",
