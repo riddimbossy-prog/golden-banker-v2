@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T22:07:52.494Z";
+window.SCORES_UPDATED = "2026-07-02T22:10:38.846Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -78630,7 +78630,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-02T20:30:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": 3,
+    "homeGoals": 4,
     "awayGoals": 0,
     "homePos": 10,
     "awayPos": 11,
@@ -78704,7 +78704,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": 78
+    "elapsed": 81
   },
   {
     "home": "Atletico FC",
@@ -78776,7 +78776,7 @@ window.MATCHES = [
     "round": "Regular Season - 15",
     "odds": null,
     "h2h": null,
-    "elapsed": 69
+    "elapsed": 72
   },
   {
     "home": "Huachipato",
@@ -78857,7 +78857,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 8
+    "elapsed": 11
   },
   {
     "home": "Portugal",
