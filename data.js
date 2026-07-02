@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T18:20:41.532Z";
+window.SCORES_UPDATED = "2026-07-02T19:00:56.124Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -74952,11 +74952,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/573.png",
     "country": "World",
     "flag": null,
-    "status": "NS",
+    "status": "FT",
     "kickoff": "2026-07-02T08:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 1,
+    "awayGoals": 2,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -77759,7 +77759,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/394.png",
     "country": "Belarus",
     "flag": "https://media.api-sports.io/flags/by.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-02T17:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
@@ -77836,7 +77836,7 @@ window.MATCHES = [
       "dcx2": 1.15
     },
     "h2h": null,
-    "elapsed": 65
+    "elapsed": null
   },
   {
     "home": "Thor Akureyri",
@@ -77846,11 +77846,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/271.png",
     "country": "Iceland",
     "flag": "https://media.api-sports.io/flags/is.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-02T17:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 3,
-    "awayGoals": 1,
+    "awayGoals": 3,
     "homePos": 10,
     "awayPos": 2,
     "tableSize": 12,
@@ -77923,7 +77923,7 @@ window.MATCHES = [
       "dcx2": 1.06
     },
     "h2h": null,
-    "elapsed": 60
+    "elapsed": null
   },
   {
     "home": "Serbia U19",
@@ -77933,7 +77933,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/10352.png",
     "country": "World",
     "flag": null,
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-02T17:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 1,
@@ -78004,7 +78004,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 63
+    "elapsed": null
   },
   {
     "home": "Peckeloh",
@@ -78080,11 +78080,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/16718.png",
     "country": "Estonia",
     "flag": "https://media.api-sports.io/flags/ee.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-02T17:30:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
-    "awayGoals": 5,
+    "awayGoals": 8,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -78136,7 +78136,7 @@ window.MATCHES = [
     "round": "Round of 128",
     "odds": null,
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 76
   },
   {
     "home": "Cove Rangers",
@@ -78146,7 +78146,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/7452.png",
     "country": "World",
     "flag": null,
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-02T18:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
@@ -78215,7 +78215,7 @@ window.MATCHES = [
       "dcx2": 5
     },
     "h2h": null,
-    "elapsed": 20
+    "elapsed": 45
   },
   {
     "home": "Sao Luis",
@@ -78395,11 +78395,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/6777.png",
     "country": "World",
     "flag": null,
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-02T19:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -78464,7 +78464,7 @@ window.MATCHES = [
       "dcx2": 1.03
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 1
   },
   {
     "home": "Vikingur Reykjavik",
