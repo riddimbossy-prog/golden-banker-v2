@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T02:10:38.025Z";
+window.SCORES_UPDATED = "2026-07-02T02:15:33.274Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -74192,7 +74192,7 @@ window.MATCHES = [
       "dcx2": 2.3
     },
     "h2h": null,
-    "elapsed": 66
+    "elapsed": 71
   },
   {
     "home": "Marin",
@@ -74405,7 +74405,7 @@ window.MATCHES = [
       "dcx2": 2.5
     },
     "h2h": null,
-    "elapsed": 79
+    "elapsed": 84
   },
   {
     "home": "Albion Colorado",
@@ -74568,7 +74568,7 @@ window.MATCHES = [
       "draw": 3.3,
       "away": 3.25
     },
-    "elapsed": 3
+    "elapsed": 8
   },
   {
     "home": "New Mexico United",
@@ -74648,7 +74648,7 @@ window.MATCHES = [
     "kickoff": "2026-07-02T02:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -74713,7 +74713,7 @@ window.MATCHES = [
       "dcx2": 1.8
     },
     "h2h": null,
-    "elapsed": 2
+    "elapsed": 7
   },
   {
     "home": "West Seattle Junction",
