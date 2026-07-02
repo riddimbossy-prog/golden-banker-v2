@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T01:45:35.743Z";
+window.SCORES_UPDATED = "2026-07-02T01:50:41.588Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -73601,7 +73601,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-02T00:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": 1,
+    "homeGoals": 2,
     "awayGoals": 0,
     "homePos": 1,
     "awayPos": 5,
@@ -73686,7 +73686,7 @@ window.MATCHES = [
       "away": 6.5
     },
     "lineupConfirmed": true,
-    "elapsed": 79
+    "elapsed": 85
   },
   {
     "home": "Delfin SC",
@@ -73929,7 +73929,7 @@ window.MATCHES = [
     "kickoff": "2026-07-02T00:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 4,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -73981,7 +73981,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 76
+    "elapsed": 81
   },
   {
     "home": "GFI",
@@ -74123,7 +74123,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/24018.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-02T00:30:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
@@ -74192,7 +74192,7 @@ window.MATCHES = [
       "dcx2": 2.3
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 46
   },
   {
     "home": "Marin",
@@ -74405,7 +74405,7 @@ window.MATCHES = [
       "dcx2": 2.5
     },
     "h2h": null,
-    "elapsed": 54
+    "elapsed": 60
   },
   {
     "home": "Albion Colorado",
@@ -90706,11 +90706,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4089.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "NS",
+    "status": "FT",
     "kickoff": "2026-07-01T22:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -90772,11 +90772,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/21281.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "NS",
+    "status": "FT",
     "kickoff": "2026-07-01T22:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 6,
+    "awayGoals": 1,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -90917,11 +90917,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/25938.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "NS",
+    "status": "FT",
     "kickoff": "2026-07-01T22:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 1,
+    "awayGoals": 1,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -91813,11 +91813,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/10280.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "NS",
+    "status": "FT",
     "kickoff": "2026-07-01T23:00:00+00:00",
     "matchDate": "2026-07-01",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 1,
+    "awayGoals": 1,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
