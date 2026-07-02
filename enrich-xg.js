@@ -108,6 +108,8 @@ function loadMatches(){
 
   // build a lookup of TheStatsAPI matches by date -> [{home,away,id,xg_available}]
   const tsaByDate = {};
+  const teamFormCache = {};      // rolling xG form per TSA team id (cached per run)
+  const XG_LOOKBACK = 10;        // recent finished matches to average for form
   let calls = 0, enriched = 0, matchedGames = 0;
   for(const date of dateList){
     try{
@@ -169,6 +171,51 @@ function loadMatches(){
         await sleep(250);
       }
     }catch(e){ /* leave xG absent */ }
+
+    // ROLLING TEAM xG FORM (for UPCOMING matches). The per-match xG above is
+    // null before kickoff, but the engines need each team's recent xG form to
+    // sharpen pre-match. So when this match has no xG yet, pull each team's last
+    // finished matches from TheStatsAPI and average their xG-for/against, then
+    // stamp that as the team's expected-goals level. Cached per team per run.
+    if(!m.xgReal){
+      const teamXgForm = async (tsaTeamId, teamName)=>{
+        if(tsaTeamId==null) return null;
+        if(teamFormCache[tsaTeamId]!==undefined) return teamFormCache[tsaTeamId];
+        let form=null;
+        try{
+          const r=await api(`/football/matches?team_id=${tsaTeamId}&status=finished&per_page=${XG_LOOKBACK}`, cfg.STATS_API_KEY); calls++;
+          const list=(r&&r.data)||[]; const fors=[], againsts=[];
+          for(const g of list.slice(0, XG_LOOKBACK)){
+            const mid=g.match_id||g.id; if(!mid) continue;
+            // xG may be on the row, else fetch stats
+            let hx=(g.home&&g.home.xg), ax=(g.away&&g.away.xg);
+            if(hx==null||ax==null){
+              try{ const s=await api(`/football/matches/${mid}/stats`, cfg.STATS_API_KEY); calls++;
+                const eg=s&&s.data&&s.data.overview&&s.data.overview.expected_goals&&s.data.overview.expected_goals.all;
+                if(eg){ hx=eg.home; ax=eg.away; } await sleep(200);
+              }catch(_){}
+            }
+            if(hx==null||ax==null) continue;
+            const homeIsTeam = g.home && (g.home.id===tsaTeamId || g.home.team_id===tsaTeamId);
+            fors.push(homeIsTeam?+hx:+ax); againsts.push(homeIsTeam?+ax:+hx);
+          }
+          if(fors.length){
+            const avg=a=>Math.round((a.reduce((s,x)=>s+x,0)/a.length)*100)/100;
+            form={ xgFor:avg(fors), xgAgainst:avg(againsts), samples:fors.length };
+          }
+          await sleep(200);
+        }catch(e){ /* leave form null */ }
+        teamFormCache[tsaTeamId]=form;
+        return form;
+      };
+      try{
+        const hForm = await teamXgForm(tsa.home_team&&tsa.home_team.id, m.home);
+        const aForm = await teamXgForm(tsa.away_team&&tsa.away_team.id, m.away);
+        if(hForm){ m.xgHomeReal=hForm.xgFor; m.homeXgAgainst=hForm.xgAgainst; m.xgReal=true; }
+        if(aForm){ m.xgAwayReal=aForm.xgFor; m.awayXgAgainst=aForm.xgAgainst; m.xgReal=true; }
+        if(m.xgReal) enriched++;
+      }catch(e){ /* form optional */ }
+    }
 
     // confirmed lineups (announced ~1h pre-kickoff; 404 before that)
     try{
