@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T17:58:29.231Z";
+window.SCORES_UPDATED = "2026-07-02T18:00:56.571Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -78136,7 +78136,7 @@ window.MATCHES = [
     "round": "Round of 128",
     "odds": null,
     "h2h": null,
-    "elapsed": 27
+    "elapsed": 30
   },
   {
     "home": "Cove Rangers",
