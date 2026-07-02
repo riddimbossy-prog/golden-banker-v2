@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T22:15:35.676Z";
+window.SCORES_UPDATED = "2026-07-02T22:20:40.842Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -77693,11 +77693,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/14621.png",
     "country": "World",
     "flag": null,
-    "status": "NS",
+    "status": "FT",
     "kickoff": "2026-07-02T16:45:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 1,
+    "awayGoals": 1,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -78704,7 +78704,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": 85
+    "elapsed": 90
   },
   {
     "home": "Atletico FC",
@@ -78717,7 +78717,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-02T20:30:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": 2,
+    "homeGoals": 3,
     "awayGoals": 0,
     "homePos": 3,
     "awayPos": 12,
@@ -78776,7 +78776,7 @@ window.MATCHES = [
     "round": "Regular Season - 15",
     "odds": null,
     "h2h": null,
-    "elapsed": 76
+    "elapsed": 82
   },
   {
     "home": "Huachipato",
@@ -78857,7 +78857,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 15
+    "elapsed": 21
   },
   {
     "home": "Portugal",
