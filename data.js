@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T15:45:43.577Z";
+window.SCORES_UPDATED = "2026-07-02T15:50:43.542Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -75965,7 +75965,7 @@ window.MATCHES = [
     "round": "Regular Season - 12",
     "odds": null,
     "h2h": null,
-    "elapsed": 48
+    "elapsed": 54
   },
   {
     "home": "Dordoi Bishkek",
@@ -76109,7 +76109,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 84
+    "elapsed": 90
   },
   {
     "home": "Toktogul",
@@ -76271,7 +76271,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/389.png",
     "country": "Belarus",
     "flag": "https://media.api-sports.io/flags/by.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-02T15:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
@@ -76358,7 +76358,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/10696.png",
     "country": "Lithuania",
     "flag": "https://media.api-sports.io/flags/lt.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-02T15:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 2,
@@ -76433,7 +76433,7 @@ window.MATCHES = [
       "dcx2": 1.8
     },
     "h2h": null,
-    "elapsed": 44
+    "elapsed": 45
   },
   {
     "home": "Žalgiris II",
@@ -76443,7 +76443,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/23156.png",
     "country": "Lithuania",
     "flag": "https://media.api-sports.io/flags/lt.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-02T15:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 1,
@@ -76718,7 +76718,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 40
+    "elapsed": 45
   },
   {
     "home": "NK Varazdin",
@@ -76873,7 +76873,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4257.png",
     "country": "World",
     "flag": null,
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-02T15:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 1,
@@ -76942,7 +76942,7 @@ window.MATCHES = [
       "dcx2": 1.83
     },
     "h2h": null,
-    "elapsed": 44
+    "elapsed": 45
   },
   {
     "home": "EBK",
@@ -77029,7 +77029,7 @@ window.MATCHES = [
       "dcx2": 1.17
     },
     "h2h": null,
-    "elapsed": 15
+    "elapsed": 21
   },
   {
     "home": "Lyn",
