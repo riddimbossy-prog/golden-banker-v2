@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T22:25:27.061Z";
+window.SCORES_UPDATED = "2026-07-02T22:30:49.396Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -78776,7 +78776,7 @@ window.MATCHES = [
     "round": "Regular Season - 15",
     "odds": null,
     "h2h": null,
-    "elapsed": 86
+    "elapsed": 90
   },
   {
     "home": "Huachipato",
@@ -78857,7 +78857,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 25
+    "elapsed": 31
   },
   {
     "home": "Portugal",
