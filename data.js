@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T18:00:56.571Z";
+window.SCORES_UPDATED = "2026-07-02T18:05:29.506Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -77759,7 +77759,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/394.png",
     "country": "Belarus",
     "flag": "https://media.api-sports.io/flags/by.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-02T17:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
@@ -77836,7 +77836,7 @@ window.MATCHES = [
       "dcx2": 1.15
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 49
   },
   {
     "home": "Thor Akureyri",
@@ -77933,7 +77933,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/10352.png",
     "country": "World",
     "flag": null,
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-02T17:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 1,
@@ -78004,7 +78004,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 47
   },
   {
     "home": "Peckeloh",
@@ -78084,7 +78084,7 @@ window.MATCHES = [
     "kickoff": "2026-07-02T17:30:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
-    "awayGoals": 2,
+    "awayGoals": 3,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -78136,7 +78136,7 @@ window.MATCHES = [
     "round": "Round of 128",
     "odds": null,
     "h2h": null,
-    "elapsed": 30
+    "elapsed": 34
   },
   {
     "home": "Cove Rangers",
@@ -78146,11 +78146,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/7452.png",
     "country": "World",
     "flag": null,
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-02T18:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -78215,7 +78215,7 @@ window.MATCHES = [
       "dcx2": 5
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 4
   },
   {
     "home": "Sao Luis",
