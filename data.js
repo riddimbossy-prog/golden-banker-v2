@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T14:00:56.523Z";
+window.SCORES_UPDATED = "2026-07-02T14:05:33.262Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -75750,7 +75750,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4546.png",
     "country": "Kazakhstan",
     "flag": "https://media.api-sports.io/flags/kz.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-02T13:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 3,
@@ -75812,7 +75812,7 @@ window.MATCHES = [
     "round": "Regular Season - 12",
     "odds": null,
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 47
   },
   {
     "home": "Croatia U19",
@@ -75822,7 +75822,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/10338.png",
     "country": "World",
     "flag": null,
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-02T13:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
@@ -75893,7 +75893,7 @@ window.MATCHES = [
       "dcx2": 1.3
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 48
   },
   {
     "home": "Khan Tengri",
@@ -76047,11 +76047,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/27432.png",
     "country": "Kyrgyzstan",
     "flag": "https://media.api-sports.io/flags/kg.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-02T14:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 5,
     "awayPos": 3,
     "tableSize": 16,
@@ -76109,7 +76109,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": null
+    "elapsed": 5
   },
   {
     "home": "Toktogul",
