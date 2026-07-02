@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T23:35:40.406Z";
+window.SCORES_UPDATED = "2026-07-02T23:40:36.307Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -78857,7 +78857,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 75
+    "elapsed": 80
   },
   {
     "home": "Portugal",
@@ -78955,7 +78955,7 @@ window.MATCHES = [
       "away": 4.75
     },
     "lineupConfirmed": true,
-    "elapsed": 36
+    "elapsed": 41
   },
   {
     "home": "Cuiaba",
@@ -79052,7 +79052,7 @@ window.MATCHES = [
       "draw": 3.3,
       "away": 5
     },
-    "elapsed": 35
+    "elapsed": 40
   },
   {
     "home": "Cedar Stars Rush",
@@ -79118,7 +79118,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 28
+    "elapsed": 33
   },
   {
     "home": "Rochester",
@@ -79184,7 +79184,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 29
+    "elapsed": 34
   },
   {
     "home": "Apotheos",
@@ -79194,11 +79194,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/10097.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-02T23:30:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -79250,7 +79250,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": null
+    "elapsed": 2
   },
   {
     "home": "Memphis 901",
