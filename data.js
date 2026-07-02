@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T14:20:42.667Z";
+window.SCORES_UPDATED = "2026-07-02T14:25:28.551Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -75812,7 +75812,7 @@ window.MATCHES = [
     "round": "Regular Season - 12",
     "odds": null,
     "h2h": null,
-    "elapsed": 62
+    "elapsed": 66
   },
   {
     "home": "Croatia U19",
@@ -75893,7 +75893,7 @@ window.MATCHES = [
       "dcx2": 1.3
     },
     "h2h": null,
-    "elapsed": 63
+    "elapsed": 68
   },
   {
     "home": "Khan Tengri",
@@ -76109,7 +76109,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 20
+    "elapsed": 24
   },
   {
     "home": "Toktogul",
