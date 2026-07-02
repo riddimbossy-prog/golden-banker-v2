@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T02:00:56.855Z";
+window.SCORES_UPDATED = "2026-07-02T02:05:27.515Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -73925,11 +73925,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/21286.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-02T00:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": 0,
-    "awayGoals": 0,
+    "homeGoals": 5,
+    "awayGoals": 1,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -73981,7 +73981,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "GFI",
@@ -74126,8 +74126,8 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-02T00:30:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": 0,
-    "awayGoals": 0,
+    "homeGoals": 1,
+    "awayGoals": 2,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -74192,7 +74192,7 @@ window.MATCHES = [
       "dcx2": 2.3
     },
     "h2h": null,
-    "elapsed": 56
+    "elapsed": 61
   },
   {
     "home": "Marin",
@@ -74405,7 +74405,7 @@ window.MATCHES = [
       "dcx2": 2.5
     },
     "h2h": null,
-    "elapsed": 70
+    "elapsed": 74
   },
   {
     "home": "Albion Colorado",
