@@ -803,7 +803,8 @@ function renderMatches(){
   const empty = document.getElementById('empty-state');
   root.innerHTML='';
   const hasOdds = mt => { const o=mt&&mt.odds; return !!(o && (o.home!=null||o.over15!=null||o.under35!=null||o.bttsYes!=null)); };
-  const rows = _allRows.filter(r=> hasOdds(r.match));
+  const isWorldCup = mt => { if(!mt) return false; if(mt.leagueId===1||mt.leagueId==="1") return true; const L=String(mt.league||mt.competition||"").toLowerCase(); return /world cup/.test(L)||/fifa/.test(L)||/\bwc\b/.test(L); };
+  const rows = _allRows.filter(r=> hasOdds(r.match) || isWorldCup(r.match));
   if(!rows.length){ empty.classList.remove('hidden'); return; } else empty.classList.add('hidden');
 
   // group by league
@@ -1601,7 +1602,8 @@ function renderStrictMatches(){
   const empty = document.getElementById('empty-state');
   root.innerHTML='';
   const hasOdds = mt => { const o=mt&&mt.odds; return !!(o && (o.home!=null||o.over15!=null||o.under35!=null||o.bttsYes!=null)); };
-  const rows = _allRows.filter(r=> hasOdds(r.match));
+  const isWorldCup = mt => { if(!mt) return false; if(mt.leagueId===1||mt.leagueId==="1") return true; const L=String(mt.league||mt.competition||"").toLowerCase(); return /world cup/.test(L)||/fifa/.test(L)||/\bwc\b/.test(L); };
+  const rows = _allRows.filter(r=> hasOdds(r.match) || isWorldCup(r.match));
   if(!rows.length){ empty.classList.remove('hidden'); return; } else empty.classList.add('hidden');
 
   // group by league, like normal mode
