@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T02:45:33.820Z";
+window.SCORES_UPDATED = "2026-07-02T02:50:40.061Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -74568,7 +74568,7 @@ window.MATCHES = [
       "draw": 3.3,
       "away": 3.25
     },
-    "elapsed": 38
+    "elapsed": 43
   },
   {
     "home": "New Mexico United",
@@ -74648,7 +74648,7 @@ window.MATCHES = [
     "kickoff": "2026-07-02T02:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
-    "awayGoals": 2,
+    "awayGoals": 3,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -74713,7 +74713,7 @@ window.MATCHES = [
       "dcx2": 1.8
     },
     "h2h": null,
-    "elapsed": 37
+    "elapsed": 42
   },
   {
     "home": "West Seattle Junction",
@@ -74727,7 +74727,7 @@ window.MATCHES = [
     "kickoff": "2026-07-02T02:30:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -74779,7 +74779,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 8
+    "elapsed": 13
   },
   {
     "home": "Union Omaha",
@@ -74876,7 +74876,7 @@ window.MATCHES = [
       "draw": 3.75,
       "away": 4.1
     },
-    "elapsed": 9
+    "elapsed": 14
   },
   {
     "home": "Karpaty",
