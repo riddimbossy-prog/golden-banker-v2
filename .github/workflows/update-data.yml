@@ -33,15 +33,21 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Write config.txt from secrets
+      - name: Inject secret keys into config.txt (preserve committed LEAGUES etc.)
         run: |
-          cat > config.txt <<EOF
-          API_KEY=${{ secrets.API_KEY }}
-          SEASON=${{ secrets.SEASON }}
-          DAYS_BACK=${{ secrets.DAYS_BACK }}
-          DAYS_FWD=${{ secrets.DAYS_FWD }}
-          STATS_API_KEY=${{ secrets.STATS_API_KEY }}
-          EOF
+          # The repo's committed config.txt holds LEAGUES, SEASON, DAYS_*, budgets.
+          # Overwriting it wipes LEAGUES and the fetcher finds no games. So we only
+          # APPEND the secret API keys; the parser takes the LAST value per key, so
+          # these fill in credentials while your committed settings stay intact.
+          if [ ! -f config.txt ]; then
+            echo "ERROR: config.txt missing from repo (must be committed with LEAGUES)."; exit 1
+          fi
+          {
+            echo ""
+            echo "API_KEY=${{ secrets.API_KEY }}"
+            echo "STATS_API_KEY=${{ secrets.STATS_API_KEY }}"
+          } >> config.txt
+          echo "LEAGUES line present:"; grep -c "^LEAGUES=" config.txt || echo "0 — WARNING no LEAGUES"
 
       - name: Run the fetcher (fixtures, odds, standings, stats)
         run: node fetch-data.js || echo "fetch-data skipped/partial"
@@ -54,8 +60,9 @@ jobs:
           npm install sharp --no-save || echo "sharp install issue"
           node generate-image.js || echo "image generation skipped"
 
-      - name: Remove config before commit
-        run: rm -f config.txt
+      - name: Restore clean config.txt before commit (never commit the API key)
+        run: |
+          git checkout -- config.txt 2>/dev/null || rm -f config.txt
 
       - name: Commit updated data.js (if changed)
         run: |
@@ -66,14 +73,12 @@ jobs:
           fi
           git add data.js xg.js today.png today.svg daily/ 2>/dev/null
           git commit -m "Update Predicto data (fixtures + xG + image)"
-          # These are GENERATED files — there is no "true" version to preserve, so
-          # on a race with the scores workflow we take OUR freshly-built copy and
-          # move on, instead of failing on an unmergeable rebase conflict.
+          # Generated files — on a race with the scores workflow, keep OUR fresh copy
+          # rather than dying on an unmergeable rebase conflict (the bug that blocked
+          # the push before). Retry with backoff.
           for i in 1 2 3 4 5; do
             git fetch origin main
-            if git rebase origin/main; then
-              :
-            else
+            if ! git rebase origin/main; then
               echo "Rebase conflict on generated files — keeping our fresh copies."
               git checkout --ours data.js xg.js today.png today.svg 2>/dev/null || true
               git checkout --ours daily/ 2>/dev/null || true
