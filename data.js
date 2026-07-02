@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T01:20:40.765Z";
+window.SCORES_UPDATED = "2026-07-02T01:25:32.411Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -73686,7 +73686,7 @@ window.MATCHES = [
       "away": 6.5
     },
     "lineupConfirmed": true,
-    "elapsed": 55
+    "elapsed": 60
   },
   {
     "home": "Delfin SC",
@@ -73981,7 +73981,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 51
+    "elapsed": 56
   },
   {
     "home": "GFI",
@@ -74192,7 +74192,7 @@ window.MATCHES = [
       "dcx2": 2.3
     },
     "h2h": null,
-    "elapsed": 39
+    "elapsed": 44
   },
   {
     "home": "Marin",
@@ -92541,7 +92541,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 85
+    "elapsed": 90
   },
   {
     "home": "Charlottesville Blues",
