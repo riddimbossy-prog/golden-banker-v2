@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T23:30:45.797Z";
+window.SCORES_UPDATED = "2026-07-02T23:35:40.406Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -78857,7 +78857,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 71
+    "elapsed": 75
   },
   {
     "home": "Portugal",
@@ -78955,7 +78955,7 @@ window.MATCHES = [
       "away": 4.75
     },
     "lineupConfirmed": true,
-    "elapsed": 31
+    "elapsed": 36
   },
   {
     "home": "Cuiaba",
@@ -79052,7 +79052,7 @@ window.MATCHES = [
       "draw": 3.3,
       "away": 5
     },
-    "elapsed": 31
+    "elapsed": 35
   },
   {
     "home": "Cedar Stars Rush",
@@ -79118,7 +79118,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 23
+    "elapsed": 28
   },
   {
     "home": "Rochester",
@@ -79184,7 +79184,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 24
+    "elapsed": 29
   },
   {
     "home": "Apotheos",
