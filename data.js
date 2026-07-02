@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T14:55:30.127Z";
+window.SCORES_UPDATED = "2026-07-02T15:01:04.574Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -75965,7 +75965,7 @@ window.MATCHES = [
     "round": "Regular Season - 12",
     "odds": null,
     "h2h": null,
-    "elapsed": 15
+    "elapsed": 20
   },
   {
     "home": "Dordoi Bishkek",
