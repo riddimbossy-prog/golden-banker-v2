@@ -21873,8 +21873,8 @@
       "confidence": 9,
       "leagueClass": "Very Low-Scoring",
       "recordedAt": "2026-06-30T22:00:54.375Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -21887,8 +21887,8 @@
       "confidence": 8,
       "leagueClass": "Very Low-Scoring",
       "recordedAt": "2026-06-30T22:00:54.375Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -21901,8 +21901,8 @@
       "confidence": 8,
       "leagueClass": "Very Low-Scoring",
       "recordedAt": "2026-06-30T22:00:54.375Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -21915,8 +21915,8 @@
       "confidence": "High",
       "leagueClass": "Very Low-Scoring",
       "recordedAt": "2026-06-30T22:00:54.375Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -21929,8 +21929,8 @@
       "confidence": 9,
       "leagueClass": "Very Low-Scoring",
       "recordedAt": "2026-06-30T22:00:54.375Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -21943,8 +21943,8 @@
       "confidence": 10,
       "leagueClass": "Very Low-Scoring",
       "recordedAt": "2026-06-30T22:00:54.375Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -39210,13 +39210,13 @@
       "confidence": 8,
       "leagueClass": "Very Low-Scoring",
       "recordedAt": "2026-07-02T17:10:45.816Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     }
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-02T19:26:32.332Z"
+    "updated": "2026-07-02T22:07:52.850Z"
   }
 }

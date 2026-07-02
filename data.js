@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-02T19:26:31.972Z";
+window.SCORES_UPDATED = "2026-07-02T22:07:52.494Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -78014,11 +78014,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/188.png",
     "country": "World",
     "flag": null,
-    "status": "NS",
+    "status": "FT",
     "kickoff": "2026-07-02T17:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 3,
+    "awayGoals": 7,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -78146,10 +78146,10 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/7452.png",
     "country": "World",
     "flag": null,
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-02T18:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": 0,
+    "homeGoals": 1,
     "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
@@ -78215,7 +78215,7 @@ window.MATCHES = [
       "dcx2": 5
     },
     "h2h": null,
-    "elapsed": 70
+    "elapsed": null
   },
   {
     "home": "Sao Luis",
@@ -78225,11 +78225,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/25043.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "NS",
+    "status": "FT",
     "kickoff": "2026-07-02T18:30:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 3,
+    "awayGoals": 0,
     "homePos": 2,
     "awayPos": 4,
     "tableSize": 12,
@@ -78297,10 +78297,10 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/775.png",
     "country": "World",
     "flag": null,
-    "status": "1H",
+    "status": "FT",
     "kickoff": "2026-07-02T19:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": 0,
+    "homeGoals": 3,
     "awayGoals": 0,
     "homePos": 1,
     "awayPos": 2,
@@ -78385,7 +78385,7 @@ window.MATCHES = [
       "away": 11
     },
     "lineupConfirmed": true,
-    "elapsed": 26
+    "elapsed": null
   },
   {
     "home": "Dundee II",
@@ -78395,11 +78395,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/6777.png",
     "country": "World",
     "flag": null,
-    "status": "1H",
+    "status": "FT",
     "kickoff": "2026-07-02T19:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": 0,
-    "awayGoals": 0,
+    "homeGoals": 1,
+    "awayGoals": 3,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -78464,7 +78464,7 @@ window.MATCHES = [
       "dcx2": 1.03
     },
     "h2h": null,
-    "elapsed": 27
+    "elapsed": null
   },
   {
     "home": "Vikingur Reykjavik",
@@ -78474,11 +78474,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/272.png",
     "country": "Iceland",
     "flag": "https://media.api-sports.io/flags/is.svg",
-    "status": "1H",
+    "status": "FT",
     "kickoff": "2026-07-02T19:15:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": 1,
-    "awayGoals": 0,
+    "homeGoals": 3,
+    "awayGoals": 2,
     "homePos": 1,
     "awayPos": 8,
     "tableSize": 12,
@@ -78551,7 +78551,7 @@ window.MATCHES = [
       "dcx2": 4.33
     },
     "h2h": null,
-    "elapsed": 11
+    "elapsed": null
   },
   {
     "home": "Birmingham Legion II",
@@ -78627,11 +78627,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/25736.png",
     "country": "Ecuador",
     "flag": "https://media.api-sports.io/flags/ec.svg",
-    "status": "NS",
+    "status": "2H",
     "kickoff": "2026-07-02T20:30:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 3,
+    "awayGoals": 0,
     "homePos": 10,
     "awayPos": 11,
     "tableSize": 12,
@@ -78704,7 +78704,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 78
   },
   {
     "home": "Atletico FC",
@@ -78714,11 +78714,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/1150.png",
     "country": "Ecuador",
     "flag": "https://media.api-sports.io/flags/ec.svg",
-    "status": "NS",
+    "status": "2H",
     "kickoff": "2026-07-02T20:30:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 2,
+    "awayGoals": 0,
     "homePos": 3,
     "awayPos": 12,
     "tableSize": 12,
@@ -78776,7 +78776,7 @@ window.MATCHES = [
     "round": "Regular Season - 15",
     "odds": null,
     "h2h": null,
-    "elapsed": null
+    "elapsed": 69
   },
   {
     "home": "Huachipato",
@@ -78786,11 +78786,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/5635.png",
     "country": "Chile",
     "flag": "https://media.api-sports.io/flags/cl.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-02T22:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -78857,7 +78857,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 8
   },
   {
     "home": "Portugal",
