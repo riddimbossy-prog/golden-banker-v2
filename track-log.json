@@ -15096,9 +15096,10 @@
       "confidence": "High",
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.355Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Lost",
+      "score": "2-3",
+      "settledAt": "2026-07-03T07:00:57.353Z"
     },
     {
       "matchDate": "2026-07-03",
@@ -15110,9 +15111,10 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.355Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "2-3",
+      "settledAt": "2026-07-03T07:00:57.353Z"
     },
     {
       "matchDate": "2026-07-03",
@@ -15124,9 +15126,10 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.355Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "2-3",
+      "settledAt": "2026-07-03T07:00:57.353Z"
     },
     {
       "matchDate": "2026-07-03",
@@ -15138,9 +15141,10 @@
       "confidence": 10,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.355Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "2-3",
+      "settledAt": "2026-07-03T07:00:57.353Z"
     },
     {
       "matchDate": "2026-07-03",
@@ -15152,9 +15156,10 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.355Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "2-3",
+      "settledAt": "2026-07-03T07:00:57.353Z"
     },
     {
       "matchDate": "2026-07-03",
@@ -15166,9 +15171,10 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.355Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "2-3",
+      "settledAt": "2026-07-03T07:00:57.353Z"
     },
     {
       "matchDate": "2026-07-03",
@@ -39226,6 +39232,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-03T06:55:29.161Z"
+    "updated": "2026-07-03T07:00:57.561Z"
   }
 }
