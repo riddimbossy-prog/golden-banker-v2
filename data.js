@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T09:10:39.042Z";
+window.SCORES_UPDATED = "2026-07-03T09:15:38.152Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -60744,7 +60744,7 @@ window.MATCHES = [
     "kickoff": "2026-07-03T08:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 0,
-    "awayGoals": 1,
+    "awayGoals": 2,
     "homePos": 2,
     "awayPos": 3,
     "tableSize": 19,
@@ -60802,7 +60802,7 @@ window.MATCHES = [
     "round": "Regular Season - 23",
     "odds": null,
     "h2h": null,
-    "elapsed": 50
+    "elapsed": 56
   },
   {
     "home": "Arka Gdynia",
@@ -60868,7 +60868,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 2
+    "elapsed": 8
   },
   {
     "home": "AS Trencin",
@@ -60934,7 +60934,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 7
+    "elapsed": 14
   },
   {
     "home": "Universitatea Cluj",
@@ -61000,7 +61000,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 7
+    "elapsed": 13
   },
   {
     "home": "Schwarz-Weiß Bregenz",
@@ -63902,7 +63902,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 56
+    "elapsed": 62
   },
   {
     "home": "CSKA Sofia",
@@ -64166,7 +64166,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 50
+    "elapsed": 56
   },
   {
     "home": "Obolon'-Brovar",
