@@ -286,6 +286,7 @@
         <span style="position:absolute;right:10px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--muted);font-size:10px">▼</span>
       </div>
       <button id="eng-acca" class="px-3 py-1.5 rounded-lg text-sm font-semibold whitespace-nowrap" style="background:transparent;color:#6fd44a;border:1.5px solid #6fd44a">All Bankers Slip</button>
+      <button id="wc-hub-btn" onclick="openWcHub()" class="px-3 py-1.5 rounded-lg text-sm font-bold whitespace-nowrap hidden" style="background:linear-gradient(135deg,#b98a00,#ffd54a);color:#1a1400;border:1.5px solid #ffd54a"><i class="fa-solid fa-trophy"></i> World Cup</button>
     </div>
     <!-- Hidden buttons preserve the original switching logic; the dropdown drives them. -->
     <div style="display:none">
@@ -1826,7 +1827,7 @@ function renderStrictMatches(){
 })();
 
 /* ============ MASTER RENDER ============ */
-function renderAll(){ renderStrip(); renderStats(); renderWonTicker(); renderBankerOfDay(); renderWorldCup(); renderCards(); renderSidebar(); renderMatches(); }
+function renderAll(){ renderStrip(); renderStats(); renderWonTicker(); renderBankerOfDay(); renderWorldCup(); renderCards(); renderSidebar(); renderMatches(); wcHubButtonCheck(); }
 
 // BANKER OF THE DAY: runs all engines on today's games, finds the match+market
 // the MOST engines agree on (consensus = strongest signal), and shows it as a
@@ -1890,6 +1891,84 @@ function renderBankerOfDay(){
   const hb=hero.match;
   window.__botdText = `⚽ PREDICT2U — BANKER OF THE DAY\n\n${hb.home} v ${hb.away}\n${hero.market}  (${hero.count}/7 engines agree)\n${hb.league||''}\n\nMore picks → predict2u.com\n⚠️ Not a guarantee. 18+. Gamble responsibly.`;
 }
+
+/* ==================== WORLD CUP HUB (all dates + bracket) ==================== */
+function wcIsWC(m){ if(!m) return false;
+  if(m.leagueId===1||m.leagueId==="1") return true;
+  const L=String(m.league||m.competition||"").toLowerCase();
+  if(/club world cup/.test(L)) return false;
+  return /world cup/.test(L)||/\bfifa\b/.test(L)||/\bwc\b/.test(L); }
+function wcRoundKey(r){ const s=String(r||"").toLowerCase();
+  if(/round of 32|1\/16/.test(s))return 1; if(/round of 16|1\/8/.test(s))return 2;
+  if(/quarter/.test(s))return 3; if(/semi/.test(s))return 4;
+  if(/3rd|third/.test(s))return 5; if(/final/.test(s))return 6;
+  if(/group/.test(s))return 0; return -1; }
+const WC_ROUND_NAMES={0:"Group Stage",1:"Round of 32",2:"Round of 16",3:"Quarter-finals",4:"Semi-finals",5:"3rd Place",6:"Final"};
+function wcAllRows(){ return (typeof results!=="undefined"?results:[]).filter(r=>wcIsWC(r.match)); }
+function wcConsensus(m){
+  const engines=[['Normal',recommend],['Strict',strictRecommend],['Ultra',ultraRecommend],['Elite',rulesProRecommend],['Apex',apexRecommend],['Prime',primeRecommend],['Value',valueRecommend],['Pro',proRecommend],['Trend',trendRecommend],['Streaks',streakRecommend],['Halves',halvesRecommend]];
+  const markets={};
+  engines.forEach(([name,fn])=>{ try{ if(typeof fn!=='function')return; const u=fn(m);
+    const mk=u.primary!=null?u.primary:u.market; if(!mk||mk==='No Bet'||mk==='Skip'||u.bet===false)return;
+    const k=String(mk).trim(); if(!markets[k])markets[k]={market:k,count:0,engines:[],anyBanker:false};
+    markets[k].count++; markets[k].engines.push(name); if(u.banker)markets[k].anyBanker=true; }catch(e){} });
+  const best=Object.values(markets).sort((a,b)=>b.count-a.count||(b.anyBanker?1:0)-(a.anyBanker?1:0))[0]||null;
+  if(!best) return null;
+  let tier='LEAN'; if(best.count>=4)tier='ELITE BANKER'; else if(best.count===3)tier='BANKER'; else if(best.count===2)tier=best.anyBanker?'BANKER':'LEAN';
+  return {...best,tier};
+}
+function wcTrophySVG(){ return '<svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" style="position:absolute;right:-20px;top:-10px;height:130%;opacity:.07;pointer-events:none"><g fill="#ffd54a"><path d="M60 20h80v14c22 0 34-2 34 16 0 30-24 44-36 46-8 18-22 28-30 30v22h22c8 0 12 6 12 12H58c0-6 4-12 12-12h22v-22c-8-2-22-12-30-30-12-2-36-16-36-46 0-18 12-16 34-16V20zm-8 26c-12 0-18 1-18 6 0 14 10 26 20 32-2-10-2-26-2-38zm96 0c0 12 0 28-2 38 10-6 20-18 20-32 0-5-6-6-18-6z"/><rect x="62" y="176" width="76" height="12" rx="3"/><rect x="52" y="190" width="96" height="30" rx="4"/></g></svg>'; }
+function wcHubEl(){ let el=document.getElementById('wc-hub');
+  if(!el){ el=document.createElement('div'); el.id='wc-hub';
+    el.style.cssText='display:none;position:fixed;inset:0;z-index:80;background:rgba(4,10,4,.97);overflow-y:auto';
+    document.body.appendChild(el); } return el; }
+function closeWcHub(){ wcHubEl().style.display='none'; document.body.style.overflow=''; }
+function openWcHub(){
+  const el=wcHubEl(); const rows=wcAllRows();
+  const played=m=>m.homeGoals!=null&&m.awayGoals!=null;
+  // ---- bracket: knockout games grouped by round ----
+  const ko=rows.filter(r=>{ const k=wcRoundKey(r.match.round); return k>=1 || (k===-1&&r.match.isKnockout); });
+  const byRound={}; ko.forEach(r=>{ const k=Math.max(wcRoundKey(r.match.round),1); (byRound[k]=byRound[k]||[]).push(r); });
+  Object.values(byRound).forEach(a=>a.sort((x,y)=>String(x.match.kickoff||'').localeCompare(String(y.match.kickoff||''))));
+  const brCol=k=>{ const games=byRound[k]||[]; if(!games.length)return '';
+    return `<div style="min-width:210px"><div class="text-xs font-bold uppercase tracking-wider mb-2" style="color:#ffd54a">${WC_ROUND_NAMES[k]}</div>${games.map(r=>{const m=r.match;const p=played(m);const hw=p&&m.homeGoals>m.awayGoals,aw=p&&m.awayGoals>m.homeGoals;
+      return `<div class="rounded-lg p-2 mb-2 text-xs" style="background:rgba(255,213,74,.06);border:1px solid rgba(255,213,74,.25)">
+        <div style="${hw?'color:#ffd54a;font-weight:700':''}">${m.home} ${p?`<span style="float:right">${m.homeGoals}</span>`:''}</div>
+        <div style="${aw?'color:#ffd54a;font-weight:700':''}">${m.away} ${p?`<span style="float:right">${m.awayGoals}</span>`:''}</div>
+        <div style="color:var(--muted);margin-top:2px">${p?'FT':(m.matchDate||'')}</div></div>`;}).join('')}</div>`; };
+  const bracket=[1,2,3,4,5,6].map(brCol).filter(Boolean).join('');
+  // ---- games by date with consensus ----
+  const byD={}; rows.forEach(r=>{ const d=r.match.matchDate||'?'; (byD[d]=byD[d]||[]).push(r); });
+  const dates=Object.keys(byD).sort();
+  const gameCard=r=>{ const m=r.match; const c=wcConsensus(m); const res=c&&played(m)?settle(c.market,m.homeGoals,m.awayGoals,m.status):null;
+    const tierBg=c&&c.tier==='ELITE BANKER'?'#ffd54a':c&&c.tier==='BANKER'?'#6fd44a':'#8a8a8a';
+    return `<div class="rounded-xl p-3 mb-2" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,213,74,.2)">
+      <div class="flex items-center justify-between gap-2">
+        <div class="text-sm font-semibold">${m.home} <span style="color:var(--muted)">v</span> ${m.away}
+          ${played(m)?`<span class="text-xs ml-1" style="color:#ffd54a">${m.homeGoals}-${m.awayGoals}</span>`:''}</div>
+        <div class="text-xs" style="color:var(--muted)">${m.round||''}</div></div>
+      ${c?`<div class="flex items-center gap-2 mt-1.5 text-xs">
+        <span class="px-2 py-0.5 rounded font-bold" style="background:${tierBg};color:#101400">${c.tier}</span>
+        <span class="font-semibold">${c.market}</span>
+        <span style="color:var(--muted)">${c.count}/11: ${c.engines.join(', ')}</span>
+        ${res?`<span class="font-bold" style="color:${res==='Won'?'#6fd44a':res==='Lost'?'#ff6a6a':'var(--muted)'}">${res.toUpperCase()}</span>`:''}
+      </div>`:`<div class="text-xs mt-1" style="color:var(--muted)">No engine consensus — honest No Bet.</div>`}</div>`; };
+  el.innerHTML=`<div style="position:relative;max-width:1100px;margin:0 auto;padding:20px 16px 60px;overflow:hidden">
+    ${wcTrophySVG()}
+    <div class="flex items-center justify-between mb-4" style="position:relative">
+      <div><div class="text-xs font-bold uppercase tracking-widest" style="color:#ffd54a">FIFA World Cup 2026</div>
+      <h2 class="text-2xl font-extrabold" style="color:#fff">World Cup <span style="color:#ffd54a">Hub</span></h2>
+      <div class="text-xs" style="color:var(--muted)">${rows.length} matches saved across all days — bankers, results and the road to the final.</div></div>
+      <button onclick="closeWcHub()" class="px-3 py-2 rounded-lg font-bold" style="background:rgba(255,255,255,.08);color:#fff">✕ Close</button></div>
+    ${bracket?`<div class="mb-6" style="position:relative"><div class="text-sm font-bold mb-2" style="color:#fff"><i class="fa-solid fa-sitemap" style="color:#ffd54a"></i> Knockout Bracket</div>
+      <div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:8px">${bracket}</div></div>`:''}
+    <div style="position:relative"><div class="text-sm font-bold mb-2" style="color:#fff"><i class="fa-solid fa-futbol" style="color:#ffd54a"></i> Matches &amp; Consensus Bankers</div>
+    ${dates.map(d=>`<div class="text-xs font-bold uppercase tracking-wider mt-4 mb-2" style="color:#ffd54a">${d}</div>${byD[d].map(gameCard).join('')}`).join('')||'<div style="color:var(--muted)">No World Cup matches in the saved data yet.</div>'}
+    </div>
+    <div class="text-[10px] mt-6" style="color:var(--muted)">Not a guarantee. 18+. Gamble responsibly.</div></div>`;
+  el.style.display='block'; document.body.style.overflow='hidden';
+}
+function wcHubButtonCheck(){ const b=document.getElementById('wc-hub-btn'); if(!b)return; b.classList.toggle('hidden', wcAllRows().length===0); }
 
 // WORLD CUP — dedicated section showing CONSENSUS picks (markets multiple
 // engines independently agree on) for World Cup matches only. Runs all engines
