@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T14:55:28.625Z";
+window.SCORES_UPDATED = "2026-07-03T15:00:55.925Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -64919,7 +64919,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 63
+    "elapsed": 68
   },
   {
     "home": "Zenit U19",
@@ -65774,7 +65774,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 19
+    "elapsed": 30
   },
   {
     "home": "Talant",
@@ -65846,7 +65846,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 20
+    "elapsed": 30
   },
   {
     "home": "Muras United",
@@ -65918,7 +65918,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 20
+    "elapsed": 31
   },
   {
     "home": "Ozgon",
