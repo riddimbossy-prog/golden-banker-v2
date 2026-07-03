@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T03:30:48.555Z";
+window.SCORES_UPDATED = "2026-07-03T03:35:27.181Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -60413,7 +60413,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/18905.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-03T01:30:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 1,
@@ -60500,7 +60500,7 @@ window.MATCHES = [
       "draw": 3.3,
       "away": 2.6
     },
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Redlands",
@@ -60664,7 +60664,7 @@ window.MATCHES = [
       "away": 6
     },
     "lineupConfirmed": true,
-    "elapsed": 30
+    "elapsed": 35
   },
   {
     "home": "FC BW Linz",
