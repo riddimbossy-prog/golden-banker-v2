@@ -281,6 +281,7 @@
           <option value="pro">Pro</option>
           <option value="trend">League Trend</option>
           <option value="streaks">Streaks</option>
+          <option value="halves">Halves (HT/FT)</option>
         </select>
         <span style="position:absolute;right:10px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--muted);font-size:10px">▼</span>
       </div>
@@ -701,6 +702,11 @@ function enginePicks(rows){
   }
   if(engineMode==='streaks' && typeof streakRecommend==='function'){
     return rows.map(r=>{ const u=streakRecommend(r.match); if(!u.bet) return null;
+      return { match:r.match, primary:u.primary, confidence:u.confidence>=8?'High':'Medium',
+               banker:u.banker, weight:u.confidence, reason:u.verdict||'' }; }).filter(Boolean);
+  }
+  if(engineMode==='halves' && typeof halvesRecommend==='function'){
+    return rows.map(r=>{ const u=halvesRecommend(r.match); if(!u.bet) return null;
       return { match:r.match, primary:u.primary, confidence:u.confidence>=8?'High':'Medium',
                banker:u.banker, weight:u.confidence, reason:u.verdict||'' }; }).filter(Boolean);
   }
@@ -1798,7 +1804,7 @@ function renderStrictMatches(){
     quick(bn, mode==='normal');
     quick(bac, mode==='acca', '#6fd44a'); // green-outlined slip keeps green text when idle
     if(sel){
-      const inDropdown=['strict','ultra','rulespro','apex','prime','value','pro','trend','streaks'].includes(mode);
+      const inDropdown=['strict','ultra','rulespro','apex','prime','value','pro','trend','streaks','halves'].includes(mode);
       sel.value = inDropdown ? mode : '';
       if(inDropdown){ sel.style.background='linear-gradient(135deg,var(--gold),#6fd44a)'; sel.style.color='#0a0e17'; }
       else { sel.style.background='var(--panel)'; sel.style.color='var(--muted)'; }
@@ -1903,11 +1909,11 @@ function renderWorldCup(){
   try{ if(window.console) console.log(`World Cup Bankers: ${rows.length} WC match(es) for ${activeDate}.`); }catch(e){}
   if(!rows.length){ host.innerHTML=''; return; }
 
-  const TOTAL_ENGINES=10;
+  const TOTAL_ENGINES=11;
   const norm=s=>String(s||'').trim();
   const engines=[['Normal',recommend],['Strict',strictRecommend],['Ultra',ultraRecommend],
     ['Elite',rulesProRecommend],['Apex',apexRecommend],['Prime',primeRecommend],
-    ['Value',valueRecommend],['Pro',proRecommend],['Trend',trendRecommend],['Streaks',streakRecommend]];
+    ['Value',valueRecommend],['Pro',proRecommend],['Trend',trendRecommend],['Streaks',streakRecommend],['Halves',halvesRecommend]];
 
   /* For EVERY WC game (upcoming OR finished) run all 10 frame-wrapped engines and
      tally which market they back. Finished games still get a pick — we settle it
