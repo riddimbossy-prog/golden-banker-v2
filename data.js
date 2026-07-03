@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T04:05:27.235Z";
+window.SCORES_UPDATED = "2026-07-03T04:10:41.657Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -60579,7 +60579,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-03T03:00:00+00:00",
     "matchDate": "2026-07-03",
-    "homeGoals": 1,
+    "homeGoals": 2,
     "awayGoals": 0,
     "homePos": 1,
     "awayPos": 6,
@@ -60664,7 +60664,7 @@ window.MATCHES = [
       "away": 6
     },
     "lineupConfirmed": true,
-    "elapsed": 46
+    "elapsed": 51
   },
   {
     "home": "FC BW Linz",
