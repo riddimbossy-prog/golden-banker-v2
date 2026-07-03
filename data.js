@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T12:55:29.659Z";
+window.SCORES_UPDATED = "2026-07-03T13:00:57.812Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -62727,11 +62727,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/27697.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "NS",
+    "status": "FT",
     "kickoff": "2026-07-03T10:30:00+00:00",
     "matchDate": "2026-07-03",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 5,
+    "awayGoals": 2,
     "homePos": 10,
     "awayPos": 6,
     "tableSize": 14,
@@ -62799,7 +62799,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3792.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-03T11:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 1,
@@ -62861,7 +62861,7 @@ window.MATCHES = [
     "round": "Regular Season - 17",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Aalborg",
@@ -62999,7 +62999,7 @@ window.MATCHES = [
     "round": "Regular Season - 23",
     "odds": null,
     "h2h": null,
-    "elapsed": 83
+    "elapsed": 89
   },
   {
     "home": "Minsk II",
@@ -63081,7 +63081,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/840.png",
     "country": "China",
     "flag": "https://media.api-sports.io/flags/cn.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-03T12:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 0,
@@ -63240,7 +63240,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4559.png",
     "country": "Kazakhstan",
     "flag": "https://media.api-sports.io/flags/kz.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-03T12:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 3,
@@ -64634,7 +64634,7 @@ window.MATCHES = [
     "round": "Regular Season - 2",
     "odds": null,
     "h2h": null,
-    "elapsed": 27
+    "elapsed": 33
   },
   {
     "home": "Naftan",

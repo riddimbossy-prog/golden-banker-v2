@@ -16278,9 +16278,10 @@
       "confidence": 9,
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.357Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Lost",
+      "score": "5-2",
+      "settledAt": "2026-07-03T13:00:57.924Z"
     },
     {
       "matchDate": "2026-07-03",
@@ -39232,6 +39233,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-03T12:55:29.985Z"
+    "updated": "2026-07-03T13:00:58.133Z"
   }
 }
