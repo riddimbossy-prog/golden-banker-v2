@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-03T20:12:54.418Z";
-window.SCORES_UPDATED = "2026-07-03T22:00:58.245Z";
+window.SCORES_UPDATED = "2026-07-03T22:05:31.610Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -57089,11 +57089,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/1533.png",
     "country": "World",
     "flag": null,
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-03T22:00:00+00:00",
     "matchDate": "2026-07-03",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 1,
     "awayPos": 2,
     "tableSize": 60,
@@ -57244,7 +57244,7 @@ window.MATCHES = [
     "xgAwayReal": 0.49,
     "awayXgAgainst": 1.94,
     "lineupConfirmed": true,
-    "elapsed": null
+    "elapsed": 5
   },
   {
     "home": "Inter Gainesville",
