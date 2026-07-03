@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-03T20:12:54.418Z";
-window.SCORES_UPDATED = "2026-07-03T20:30:54.271Z";
+window.SCORES_UPDATED = "2026-07-03T20:35:30.873Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -54637,7 +54637,7 @@ window.MATCHES = [
       "dcx2": 2.7
     },
     "h2h": null,
-    "elapsed": 87
+    "elapsed": 90
   },
   {
     "home": "Sligo Rovers",
@@ -54787,7 +54787,7 @@ window.MATCHES = [
       "dcx2": 1.13
     },
     "h2h": null,
-    "elapsed": 89
+    "elapsed": 90
   },
   {
     "home": "St Patrick's Athl.",
@@ -54798,7 +54798,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3851.png",
     "country": "Ireland",
     "flag": "https://media.api-sports.io/flags/ie.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-03T18:45:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 3,
@@ -54937,7 +54937,7 @@ window.MATCHES = [
       "dcx2": 2.9
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Drogheda United",
@@ -55087,7 +55087,7 @@ window.MATCHES = [
       "dcx2": 1.18
     },
     "h2h": null,
-    "elapsed": 87
+    "elapsed": 90
   },
   {
     "home": "Finn Harps",
@@ -55098,7 +55098,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3855.png",
     "country": "Ireland",
     "flag": "https://media.api-sports.io/flags/ie.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-03T18:45:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 1,
@@ -55253,7 +55253,7 @@ window.MATCHES = [
     "xgAwayReal": 0.61,
     "awayXgAgainst": 1.57,
     "lineupConfirmed": true,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Bray Wanderers",
@@ -55419,7 +55419,7 @@ window.MATCHES = [
     "xgAwayReal": 1.06,
     "awayXgAgainst": 1.71,
     "lineupConfirmed": true,
-    "elapsed": 87
+    "elapsed": 90
   },
   {
     "home": "Cobh Ramblers",
@@ -55583,7 +55583,7 @@ window.MATCHES = [
     "homeXgAgainst": 1.97,
     "xgReal": true,
     "lineupConfirmed": true,
-    "elapsed": 88
+    "elapsed": 90
   },
   {
     "home": "Treaty United",
@@ -55747,7 +55747,7 @@ window.MATCHES = [
     "awayXgAgainst": 2.18,
     "xgReal": true,
     "lineupConfirmed": true,
-    "elapsed": 89
+    "elapsed": 90
   },
   {
     "home": "Akron City",
@@ -55882,7 +55882,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 63
+    "elapsed": 67
   },
   {
     "home": "Shelbourne",
@@ -56032,7 +56032,7 @@ window.MATCHES = [
       "dcx2": 1.83
     },
     "h2h": null,
-    "elapsed": 73
+    "elapsed": 77
   },
   {
     "home": "FH hafnarfjordur",
@@ -56182,7 +56182,7 @@ window.MATCHES = [
       "dcx2": 1.48
     },
     "h2h": null,
-    "elapsed": 60
+    "elapsed": 64
   },
   {
     "home": "Grotta",
@@ -56332,7 +56332,7 @@ window.MATCHES = [
       "dcx2": 1.28
     },
     "h2h": null,
-    "elapsed": 58
+    "elapsed": 63
   },
   {
     "home": "IR Reykjavik",
@@ -56482,7 +56482,7 @@ window.MATCHES = [
       "dcx2": 1.28
     },
     "h2h": null,
-    "elapsed": 59
+    "elapsed": 64
   },
   {
     "home": "Njardvik",
@@ -56632,7 +56632,7 @@ window.MATCHES = [
       "dcx2": 1.48
     },
     "h2h": null,
-    "elapsed": 61
+    "elapsed": 65
   },
   {
     "home": "Ægir",
@@ -56782,7 +56782,7 @@ window.MATCHES = [
       "dcx2": 1.11
     },
     "h2h": null,
-    "elapsed": 59
+    "elapsed": 64
   },
   {
     "home": "KFG",
@@ -56797,7 +56797,7 @@ window.MATCHES = [
     "kickoff": "2026-07-03T19:15:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 2,
-    "awayGoals": 2,
+    "awayGoals": 3,
     "homePos": 8,
     "awayPos": 4,
     "tableSize": 12,
@@ -56930,7 +56930,7 @@ window.MATCHES = [
       "dcx2": 1.13
     },
     "h2h": null,
-    "elapsed": 53
+    "elapsed": 58
   },
   {
     "home": "Fernando De La Mora",
@@ -57078,7 +57078,7 @@ window.MATCHES = [
       "dcx2": 1.7
     },
     "h2h": null,
-    "elapsed": 31
+    "elapsed": 36
   },
   {
     "home": "Argentina",
