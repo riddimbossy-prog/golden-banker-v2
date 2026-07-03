@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T03:20:36.911Z";
+window.SCORES_UPDATED = "2026-07-03T03:25:27.371Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -60500,7 +60500,7 @@ window.MATCHES = [
       "draw": 3.3,
       "away": 2.6
     },
-    "elapsed": 83
+    "elapsed": 86
   },
   {
     "home": "Redlands",
@@ -60664,7 +60664,7 @@ window.MATCHES = [
       "away": 6
     },
     "lineupConfirmed": true,
-    "elapsed": 21
+    "elapsed": 24
   },
   {
     "home": "FC BW Linz",
