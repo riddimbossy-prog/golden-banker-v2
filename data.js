@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T14:15:33.149Z";
+window.SCORES_UPDATED = "2026-07-03T14:20:36.741Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -63770,7 +63770,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 11
+    "elapsed": 17
   },
   {
     "home": "AS Trencin",
@@ -64232,7 +64232,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 5
+    "elapsed": 10
   },
   {
     "home": "Radomlje",
@@ -64572,11 +64572,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/12956.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-03T12:30:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 0,
-    "awayGoals": 9,
+    "awayGoals": 10,
     "homePos": 7,
     "awayPos": 2,
     "tableSize": 14,
@@ -64634,7 +64634,7 @@ window.MATCHES = [
     "round": "Regular Season - 2",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Naftan",
@@ -64648,7 +64648,7 @@ window.MATCHES = [
     "kickoff": "2026-07-03T13:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 2,
-    "awayGoals": 3,
+    "awayGoals": 4,
     "homePos": 16,
     "awayPos": 8,
     "tableSize": 16,
@@ -64721,7 +64721,7 @@ window.MATCHES = [
       "dcx2": 1.05
     },
     "h2h": null,
-    "elapsed": 57
+    "elapsed": 63
   },
   {
     "home": "Brann",
@@ -64787,7 +64787,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 59
+    "elapsed": 65
   },
   {
     "home": "Ried",
@@ -64919,7 +64919,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 41
+    "elapsed": 45
   },
   {
     "home": "Zenit U19",
@@ -64991,7 +64991,7 @@ window.MATCHES = [
     "round": "Regular Season - 13",
     "odds": null,
     "h2h": null,
-    "elapsed": 16
+    "elapsed": 21
   },
   {
     "home": "CSKA Moskva U19",
@@ -65063,7 +65063,7 @@ window.MATCHES = [
     "round": "Regular Season - 13",
     "odds": null,
     "h2h": null,
-    "elapsed": 13
+    "elapsed": 19
   },
   {
     "home": "Spartak Moskva U19",
@@ -65135,7 +65135,7 @@ window.MATCHES = [
     "round": "Regular Season - 13",
     "odds": null,
     "h2h": null,
-    "elapsed": 11
+    "elapsed": 16
   },
   {
     "home": "Chertanovo U20",
@@ -65207,7 +65207,7 @@ window.MATCHES = [
     "round": "Regular Season - 13",
     "odds": null,
     "h2h": null,
-    "elapsed": 12
+    "elapsed": 18
   },
   {
     "home": "Fakel U19",
@@ -65279,7 +65279,7 @@ window.MATCHES = [
     "round": "Regular Season - 13",
     "odds": null,
     "h2h": null,
-    "elapsed": 14
+    "elapsed": 19
   },
   {
     "home": "Dynamo Makhachkala U19",
@@ -65351,7 +65351,7 @@ window.MATCHES = [
     "round": "Regular Season - 13",
     "odds": null,
     "h2h": null,
-    "elapsed": 13
+    "elapsed": 19
   },
   {
     "home": "FC Astana",
@@ -65438,7 +65438,7 @@ window.MATCHES = [
       "dcx2": 2.15
     },
     "h2h": null,
-    "elapsed": 16
+    "elapsed": 22
   },
   {
     "home": "Lokomotiv",
@@ -65570,7 +65570,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 15
+    "elapsed": 20
   },
   {
     "home": "Farul Constanta",
