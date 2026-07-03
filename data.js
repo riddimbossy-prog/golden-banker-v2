@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T17:50:41.706Z";
+window.SCORES_UPDATED = "2026-07-03T17:55:29.483Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -66723,7 +66723,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/758.png",
     "country": "Norway",
     "flag": "https://media.api-sports.io/flags/no.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-03T16:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 5,
@@ -66810,7 +66810,7 @@ window.MATCHES = [
       "draw": 4.33,
       "away": 4
     },
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Raufoss",
@@ -66820,7 +66820,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/2147.png",
     "country": "Norway",
     "flag": "https://media.api-sports.io/flags/no.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-03T16:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 1,
@@ -66897,7 +66897,7 @@ window.MATCHES = [
       "dcx2": 1.53
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Nõmme United",
@@ -66907,7 +66907,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/662.png",
     "country": "Estonia",
     "flag": "https://media.api-sports.io/flags/ee.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-03T16:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 1,
@@ -66984,7 +66984,7 @@ window.MATCHES = [
       "dcx2": 1.15
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Džiugas Telšiai",
@@ -67071,7 +67071,7 @@ window.MATCHES = [
       "dcx2": 1.11
     },
     "h2h": null,
-    "elapsed": 88
+    "elapsed": 90
   },
   {
     "home": "Riga",
@@ -67081,7 +67081,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/18834.png",
     "country": "Latvia",
     "flag": "https://media.api-sports.io/flags/lv.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-03T16:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 3,
@@ -67158,7 +67158,7 @@ window.MATCHES = [
       "dcx2": 3.42
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Wolfsberger AC",
@@ -67432,7 +67432,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/12831.png",
     "country": "World",
     "flag": null,
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-03T16:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 1,
@@ -67488,7 +67488,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 89
+    "elapsed": null
   },
   {
     "home": "Oudenaarde",
@@ -67752,7 +67752,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 66
+    "elapsed": 71
   },
   {
     "home": "Wildon",
@@ -67898,7 +67898,7 @@ window.MATCHES = [
     "kickoff": "2026-07-03T16:30:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 0,
-    "awayGoals": 9,
+    "awayGoals": 11,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -67950,7 +67950,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 62
+    "elapsed": 67
   },
   {
     "home": "Germania Teveren",
@@ -67960,7 +67960,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4259.png",
     "country": "World",
     "flag": null,
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-03T16:30:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 1,
@@ -68016,7 +68016,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 50
   },
   {
     "home": "VfL Halle",
@@ -68148,7 +68148,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 67
+    "elapsed": 72
   },
   {
     "home": "Ranheim",
@@ -68734,7 +68734,7 @@ window.MATCHES = [
     "round": "Regular Season - 13",
     "odds": null,
     "h2h": null,
-    "elapsed": 20
+    "elapsed": 24
   },
   {
     "home": "Tallinna Kalev",
@@ -68747,7 +68747,7 @@ window.MATCHES = [
     "status": "1H",
     "kickoff": "2026-07-03T17:30:00+00:00",
     "matchDate": "2026-07-03",
-    "homeGoals": 1,
+    "homeGoals": 2,
     "awayGoals": 1,
     "homePos": 5,
     "awayPos": 7,
@@ -68819,7 +68819,7 @@ window.MATCHES = [
       "dcx2": 1.7
     },
     "h2h": null,
-    "elapsed": 18
+    "elapsed": 23
   },
   {
     "home": "Atlas Delmenhorst",
@@ -69029,7 +69029,7 @@ window.MATCHES = [
     "round": "Regular Season - 8",
     "odds": null,
     "h2h": null,
-    "elapsed": 7
+    "elapsed": 12
   },
   {
     "home": "EC Resende",
@@ -69101,7 +69101,7 @@ window.MATCHES = [
     "round": "Regular Season - 8",
     "odds": null,
     "h2h": null,
-    "elapsed": 6
+    "elapsed": 11
   },
   {
     "home": "Uni Souza",
@@ -69111,11 +69111,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/23636.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-03T17:45:00+00:00",
     "matchDate": "2026-07-03",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 1,
+    "awayGoals": 0,
     "homePos": 5,
     "awayPos": 7,
     "tableSize": 32,
@@ -69173,7 +69173,7 @@ window.MATCHES = [
     "round": "Regular Season - 8",
     "odds": null,
     "h2h": null,
-    "elapsed": null
+    "elapsed": 5
   },
   {
     "home": "Uniao Central",
@@ -69245,7 +69245,7 @@ window.MATCHES = [
     "round": "Regular Season - 8",
     "odds": null,
     "h2h": null,
-    "elapsed": 1
+    "elapsed": 6
   },
   {
     "home": "Australia",
