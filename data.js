@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T01:01:05.482Z";
+window.SCORES_UPDATED = "2026-07-03T01:05:28.232Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -60322,7 +60322,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 25
+    "elapsed": 29
   },
   {
     "home": "O'Higgins",
@@ -60403,7 +60403,7 @@ window.MATCHES = [
       "dcx2": 1.3
     },
     "h2h": null,
-    "elapsed": 31
+    "elapsed": 35
   },
   {
     "home": "Boise",
@@ -79061,7 +79061,7 @@ window.MATCHES = [
     "kickoff": "2026-07-02T23:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 2,
-    "awayGoals": 1,
+    "awayGoals": 2,
     "homePos": 2,
     "awayPos": 2,
     "tableSize": 60,
@@ -79252,11 +79252,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4062.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-02T23:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": 0,
-    "awayGoals": 0,
+    "homeGoals": 1,
+    "awayGoals": 1,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -79308,7 +79308,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Rochester",
@@ -79388,7 +79388,7 @@ window.MATCHES = [
     "kickoff": "2026-07-02T23:30:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -79440,7 +79440,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 66
+    "elapsed": 71
   },
   {
     "home": "Memphis 901",
