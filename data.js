@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T09:01:02.863Z";
+window.SCORES_UPDATED = "2026-07-03T09:05:28.824Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -60740,7 +60740,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/16185.png",
     "country": "Mongolia",
     "flag": "https://media.api-sports.io/flags/mn.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-03T08:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 0,
@@ -60802,7 +60802,7 @@ window.MATCHES = [
     "round": "Regular Season - 23",
     "odds": null,
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 46
   },
   {
     "home": "Arka Gdynia",
@@ -60878,11 +60878,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/603.png",
     "country": "World",
     "flag": null,
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-03T09:00:00+00:00",
     "matchDate": "2026-07-03",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -60934,7 +60934,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": null
+    "elapsed": 3
   },
   {
     "home": "Universitatea Cluj",
@@ -60944,11 +60944,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/2403.png",
     "country": "World",
     "flag": null,
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-03T09:00:00+00:00",
     "matchDate": "2026-07-03",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -61000,7 +61000,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": null
+    "elapsed": 3
   },
   {
     "home": "Schwarz-Weiß Bregenz",
@@ -63902,7 +63902,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 47
+    "elapsed": 51
   },
   {
     "home": "CSKA Sofia",
