@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T01:05:28.232Z";
+window.SCORES_UPDATED = "2026-07-03T01:10:40.406Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -59736,7 +59736,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/139.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-03T00:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 0,
@@ -59808,7 +59808,7 @@ window.MATCHES = [
       "draw": 5,
       "away": 9
     },
-    "elapsed": 45
+    "elapsed": 50
   },
   {
     "home": "Santo Domingo",
@@ -59818,7 +59818,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/2238.png",
     "country": "Ecuador",
     "flag": "https://media.api-sports.io/flags/ec.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-03T00:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 1,
@@ -59895,7 +59895,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 51
   },
   {
     "home": "Birmingham Legion",
@@ -60002,7 +60002,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/16682.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-03T00:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 2,
@@ -60058,7 +60058,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 48
   },
   {
     "home": "Flatirons Rush",
@@ -60322,7 +60322,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 29
+    "elapsed": 35
   },
   {
     "home": "O'Higgins",
@@ -60403,7 +60403,7 @@ window.MATCHES = [
       "dcx2": 1.3
     },
     "h2h": null,
-    "elapsed": 35
+    "elapsed": 41
   },
   {
     "home": "Boise",
@@ -79057,11 +79057,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3.png",
     "country": "World",
     "flag": null,
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-02T23:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 2,
-    "awayGoals": 2,
+    "awayGoals": 1,
     "homePos": 2,
     "awayPos": 2,
     "tableSize": 60,
@@ -79145,7 +79145,7 @@ window.MATCHES = [
       "away": 4.75
     },
     "lineupConfirmed": true,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Cuiaba",
@@ -79388,7 +79388,7 @@ window.MATCHES = [
     "kickoff": "2026-07-02T23:30:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
-    "awayGoals": 1,
+    "awayGoals": 2,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -79440,7 +79440,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 71
+    "elapsed": 76
   },
   {
     "home": "Memphis 901",
