@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T14:50:39.457Z";
+window.SCORES_UPDATED = "2026-07-03T14:55:28.625Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -64644,7 +64644,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/386.png",
     "country": "Belarus",
     "flag": "https://media.api-sports.io/flags/by.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-03T13:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 2,
@@ -64721,7 +64721,7 @@ window.MATCHES = [
       "dcx2": 1.05
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Brann",
@@ -64731,7 +64731,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/320.png",
     "country": "World",
     "flag": null,
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-03T13:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 1,
@@ -64787,7 +64787,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Ried",
@@ -64919,7 +64919,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 57
+    "elapsed": 63
   },
   {
     "home": "Zenit U19",
@@ -65073,7 +65073,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/15175.png",
     "country": "Russia",
     "flag": "https://media.api-sports.io/flags/ru.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-03T14:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 1,
@@ -65145,7 +65145,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/27237.png",
     "country": "Russia",
     "flag": "https://media.api-sports.io/flags/ru.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-03T14:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 0,
