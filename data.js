@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-03T22:07:07.413Z";
-window.SCORES_UPDATED = "2026-07-03T23:05:30.071Z";
+window.SCORES_UPDATED = "2026-07-03T23:10:42.542Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -61519,7 +61519,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/1533.png",
     "country": "World",
     "flag": null,
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-03T22:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 1,
@@ -61704,7 +61704,7 @@ window.MATCHES = [
     "xgAwayReal": 0.49,
     "awayXgAgainst": 1.94,
     "lineupConfirmed": true,
-    "elapsed": 45
+    "elapsed": 50
   },
   {
     "home": "Inter Gainesville",
@@ -62555,7 +62555,7 @@ window.MATCHES = [
       "dcx2": 1.02
     },
     "h2h": null,
-    "elapsed": 1
+    "elapsed": 7
   },
   {
     "home": "Loudoun United",
