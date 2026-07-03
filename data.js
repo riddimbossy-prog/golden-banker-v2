@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T08:45:36.108Z";
+window.SCORES_UPDATED = "2026-07-03T08:50:41.394Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -60740,7 +60740,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/16185.png",
     "country": "Mongolia",
     "flag": "https://media.api-sports.io/flags/mn.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-03T08:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 0,
@@ -64110,7 +64110,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3985.png",
     "country": "World",
     "flag": null,
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-03T12:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 0,
@@ -64166,7 +64166,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 41
+    "elapsed": 45
   },
   {
     "home": "Obolon'-Brovar",
@@ -65702,7 +65702,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 81
+    "elapsed": 87
   },
   {
     "home": "Abdish-Ata",
