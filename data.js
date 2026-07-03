@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T12:50:39.161Z";
+window.SCORES_UPDATED = "2026-07-03T12:55:29.659Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -62861,7 +62861,7 @@ window.MATCHES = [
     "round": "Regular Season - 17",
     "odds": null,
     "h2h": null,
-    "elapsed": 87
+    "elapsed": 90
   },
   {
     "home": "Aalborg",
@@ -62871,7 +62871,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/2070.png",
     "country": "World",
     "flag": null,
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-03T11:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 3,
@@ -62927,7 +62927,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Khangarid",
@@ -62999,7 +62999,7 @@ window.MATCHES = [
     "round": "Regular Season - 23",
     "odds": null,
     "h2h": null,
-    "elapsed": 78
+    "elapsed": 83
   },
   {
     "home": "Minsk II",
@@ -64576,7 +64576,7 @@ window.MATCHES = [
     "kickoff": "2026-07-03T12:30:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 0,
-    "awayGoals": 2,
+    "awayGoals": 3,
     "homePos": 7,
     "awayPos": 2,
     "tableSize": 14,
@@ -64634,7 +64634,7 @@ window.MATCHES = [
     "round": "Regular Season - 2",
     "odds": null,
     "h2h": null,
-    "elapsed": 23
+    "elapsed": 27
   },
   {
     "home": "Naftan",
