@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T17:20:37.680Z";
+window.SCORES_UPDATED = "2026-07-03T17:25:28.884Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -66467,7 +66467,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/9177.png",
     "country": "Finland",
     "flag": "https://media.api-sports.io/flags/fi.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-03T15:30:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 2,
@@ -66529,7 +66529,7 @@ window.MATCHES = [
     "round": "Group B",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Kooteepee",
@@ -66626,7 +66626,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/9198.png",
     "country": "Finland",
     "flag": "https://media.api-sports.io/flags/fi.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-03T15:30:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 1,
@@ -66713,7 +66713,7 @@ window.MATCHES = [
       "draw": 3.5,
       "away": 3.75
     },
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Kongsvinger",
@@ -66810,7 +66810,7 @@ window.MATCHES = [
       "draw": 4.33,
       "away": 4
     },
-    "elapsed": 62
+    "elapsed": 67
   },
   {
     "home": "Raufoss",
@@ -66897,7 +66897,7 @@ window.MATCHES = [
       "dcx2": 1.53
     },
     "h2h": null,
-    "elapsed": 63
+    "elapsed": 68
   },
   {
     "home": "Nõmme United",
@@ -66984,7 +66984,7 @@ window.MATCHES = [
       "dcx2": 1.15
     },
     "h2h": null,
-    "elapsed": 61
+    "elapsed": 66
   },
   {
     "home": "Džiugas Telšiai",
@@ -67071,7 +67071,7 @@ window.MATCHES = [
       "dcx2": 1.11
     },
     "h2h": null,
-    "elapsed": 58
+    "elapsed": 63
   },
   {
     "home": "Riga",
@@ -67158,7 +67158,7 @@ window.MATCHES = [
       "dcx2": 3.42
     },
     "h2h": null,
-    "elapsed": 63
+    "elapsed": 69
   },
   {
     "home": "Wolfsberger AC",
@@ -67171,7 +67171,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-03T16:00:00+00:00",
     "matchDate": "2026-07-03",
-    "homeGoals": 6,
+    "homeGoals": 7,
     "awayGoals": 2,
     "homePos": null,
     "awayPos": null,
@@ -67224,7 +67224,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 62
+    "elapsed": 67
   },
   {
     "home": "SKN ST. Polten",
@@ -67290,7 +67290,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 67
+    "elapsed": 72
   },
   {
     "home": "Energie Cottbus",
@@ -67488,7 +67488,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 59
+    "elapsed": 64
   },
   {
     "home": "Oudenaarde",
@@ -67554,7 +67554,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 61
+    "elapsed": 66
   },
   {
     "home": "Schöningen",
@@ -67818,7 +67818,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 18
+    "elapsed": 23
   },
   {
     "home": "ZFC Meuselwitz",
@@ -68016,7 +68016,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 38
+    "elapsed": 43
   },
   {
     "home": "VfL Halle",
@@ -68092,7 +68092,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4990.png",
     "country": "World",
     "flag": null,
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-03T16:30:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 0,
@@ -68235,7 +68235,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 20
+    "elapsed": 25
   },
   {
     "home": "Sirius",
@@ -68332,7 +68332,7 @@ window.MATCHES = [
       "draw": 4.1,
       "away": 5
     },
-    "elapsed": 19
+    "elapsed": 24
   },
   {
     "home": "Fortuna Sittard",
@@ -68398,7 +68398,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 18
+    "elapsed": 23
   },
   {
     "home": "Heerenveen",
@@ -68530,7 +68530,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 17
+    "elapsed": 22
   },
   {
     "home": "Schwabach",
