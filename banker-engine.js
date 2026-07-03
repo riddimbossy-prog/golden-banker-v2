@@ -2905,8 +2905,63 @@ function streakRecommend(m){
     candidates.push({ homeSide, market, streak, score, kind: wStreak>=4?"win":"no-loss" });
   });
 
+  // ---- MARKET STREAKS (beyond wins) — team streak in a market only counts
+  // when the OPPONENT'S record in the SAME market agrees (owner request). All
+  // fields are the new fetcher extensions; absent on old data → skips honestly.
+  const lr = mk => { if(!lt||!lt.rates) return null; return lt.rates[mk]!=null?lt.rates[mk]:null; };
+  function mkCand(market, score, streak, why){ if(score>=10) candidates.push({homeSide:null, market, streak, score, kind:"market", why}); }
+  if(hs&&as){
+    const trendBoost = mk => { const r=lr(mk); return r==null?0 : r>=0.70?3 : r>=0.60?1 : r<=0.40?-3 : 0; };
+    // OVER 2.5 — both teams on over runs, league not an under-league
+    if((hs.over25||0)>=4 && (as.over25||0)>=3)
+      mkCand("Over 2.5 Goals", 8+Math.min(hs.over25+as.over25-7,4)+trendBoost("Over 2.5"), Math.min(hs.over25,as.over25),
+        `Both sides trending over: home ${hs.over25} straight O2.5, away ${as.over25}.`);
+    // UNDER — both on under runs
+    if((hs.under25||0)>=4 && (as.under25||0)>=3)
+      mkCand("Under 2.5 Goals", 8+Math.min(hs.under25+as.under25-7,4)+trendBoost("Under 2.5"), Math.min(hs.under25,as.under25),
+        `Both sides trending under: home ${hs.under25} straight U2.5, away ${as.under25}.`);
+    else if((hs.under35||0)>=4 && (as.under35||0)>=4)
+      mkCand("Under 3.5 Goals", 8+trendBoost("Under 3.5"), Math.min(hs.under35,as.under35),
+        `Both sides ${hs.under35}/${as.under35} straight U3.5.`);
+    // GG — both scoring AND both conceding streaks agree
+    if((hs.btts||0)>=3 && (as.btts||0)>=3 && (hs.concededEvery||0)>=3 && (as.concededEvery||0)>=3)
+      mkCand("BTTS Yes", 8+Math.min(hs.btts+as.btts-5,4)+trendBoost("BTTS Yes"), Math.min(hs.btts,as.btts),
+        `GG streaks align: home ${hs.btts} straight BTTS, away ${as.btts}; both concede every game.`);
+    // NG — one side shutting teams out vs an opponent that can't score
+    if((hs.cleanSheet||0)>=3 && (as.failedToScore||0)>=2)
+      mkCand("BTTS No", 8+trendBoost("BTTS No"), hs.cleanSheet,
+        `Home ${hs.cleanSheet} straight clean sheets vs away failing to score (${as.failedToScore} straight).`);
+    else if((as.cleanSheet||0)>=3 && (hs.failedToScore||0)>=2)
+      mkCand("BTTS No", 8+trendBoost("BTTS No"), as.cleanSheet,
+        `Away ${as.cleanSheet} straight clean sheets vs home failing to score.`);
+    // TEAM OVER 1.5 — scoring streak vs an opponent conceding EVERY game
+    if((hs.teamOver15||0)>=3 && (as.concededEvery||0)>=4)
+      mkCand("Home Team Over 1.5 Goals", 10, hs.teamOver15,
+        `Home scored 2+ in ${hs.teamOver15} straight; away conceded in ${as.concededEvery} straight.`);
+    if((as.teamOver15||0)>=3 && (hs.concededEvery||0)>=4)
+      mkCand("Away Team Over 1.5 Goals", 10, as.teamOver15,
+        `Away scored 2+ in ${as.teamOver15} straight; home conceded in ${hs.concededEvery} straight.`);
+  }
+
+  // ---- LEAGUE-TREND ALIGNMENT — ship games that FIT the league's identity:
+  // low-scoring defensive teams in a low-scoring league, GG teams in a GG
+  // league, over-teams in a goal-friendly league (owner request).
+  if(lt&&lt.rates){
+    const hAtt=m.homeScoredAtHome, aAtt=m.awayScoredAway, hDef=m.homeConcededAtHome, aDef=m.awayConcededAway;
+    const u25=lr("Under 2.5"), gg=lr("BTTS Yes"), o25=lr("Over 2.5");
+    if(u25!=null&&u25>=0.58 && hAtt!=null&&aAtt!=null&&hAtt<=1.20&&aAtt<=1.10 && hDef!=null&&aDef!=null&&hDef<=1.10&&aDef<=1.20)
+      mkCand("Under 2.5 Goals", 10+(u25>=0.65?2:0), null,
+        `League-trend fit: ${Math.round(u25*100)}% of this league goes under, and both teams are low-scoring/defensive.`);
+    if(gg!=null&&gg>=0.58 && hAtt!=null&&aAtt!=null&&hAtt>=1.20&&aAtt>=1.00 && hDef!=null&&aDef!=null&&hDef>=1.00&&aDef>=1.00)
+      mkCand("BTTS Yes", 10+(gg>=0.65?2:0), null,
+        `League-trend fit: ${Math.round(gg*100)}% GG league, and both teams score and concede freely.`);
+    if(o25!=null&&o25>=0.60 && hAtt!=null&&aAtt!=null&&(hAtt+aAtt)>=2.80)
+      mkCand("Over 2.5 Goals", 10+(o25>=0.68?2:0), null,
+        `League-trend fit: ${Math.round(o25*100)}% of games go over in a goal-friendly league, and these attacks average ${(hAtt+aAtt).toFixed(1)} between them.`);
+  }
+
   if(!candidates.length){
-    return streakOut(m,"No Bet",null,null,null,["No team has a qualifying 4+ win/no-loss streak with a safe price, or a streak collision blocked it."]);
+    return streakOut(m,"No Bet",null,null,null,["No qualifying streak in any market (win, totals, GG, clean-sheet) and no league-trend fit — honest No Bet."]);
   }
   candidates.sort((a,b)=>b.score-a.score||b.streak-a.streak);
   const best=candidates[0];
@@ -2914,8 +2969,9 @@ function streakRecommend(m){
   // FINAL: odds ladder must confirm the chosen market (§16, reuse the gate)
   const gate = (typeof oddsLadderGate==='function') ? oddsLadderGate(m, best.market) : {ok:true,block:false};
   if(gate.block){
+    const lead = best.kind==="market" ? best.why : `Streak found (${best.streak} games).`;
     return streakOut(m,"No Bet",null,best.score,best.homeSide?"home":"away",
-      [`Streak found (${best.streak} games) but odds ladder rejected ${best.market}: ${gate.reason}`]);
+      [`${lead} But the odds ladder rejected ${best.market}: ${gate.reason}`]);
   }
 
   // risk grade from banker score (§19)
@@ -2926,6 +2982,15 @@ function streakRecommend(m){
   else return streakOut(m,"No Bet",null,best.score,best.homeSide?"home":"away",
     [`Streak candidate scored only ${best.score}/18 — below the 10-point banker floor.`]);
 
+  // MARKET/TREND candidates have no single backed side — emit directly.
+  if(best.kind==="market"){
+    const g2=(typeof oddsLadderGate==='function')?oddsLadderGate(m,best.market):{ok:true,block:false};
+    if(g2.block) return streakOut(m,"No Bet",null,best.score,null,[`${best.why} But the odds ladder rejected ${best.market}: ${g2.reason}`]);
+    const grade2 = best.score>=14?"Elite Banker":best.score>=12?"Banker":"Strong Pick";
+    return streakOut(m,best.market,grade2,Math.min(best.score,18),null,
+      [best.why, `Opponent-confirmed market streak / league-trend fit. Score ${Math.min(best.score,18)}/18.`],
+      { streakLen:best.streak||null });
+  }
   const teamName = best.homeSide? m.home : m.away;
   const ow=oppWeakness(best.homeSide);
   // HT/FT context on the backed team and opponent, for the reason line + a
