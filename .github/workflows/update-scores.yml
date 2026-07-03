@@ -47,7 +47,16 @@ jobs:
         run: node track-log.js || echo "track-log skipped"
       - name: Restore clean config.txt before commit
         run: |
-          git checkout -- config.txt 2>/dev/null || rm -f config.txt
+          # config.txt was modified in-place (secret keys appended). It must NOT be
+          # committed AND must not be left dirty, or the rebase below aborts with
+          # exit 128 ("cannot rebase: you have unstaged changes"). Restore the
+          # committed version from HEAD; if it isn't tracked, just remove it.
+          if git ls-files --error-unmatch config.txt >/dev/null 2>&1; then
+            git checkout HEAD -- config.txt
+          else
+            rm -f config.txt
+          fi
+          git status --porcelain config.txt || true
       - name: Commit updated scores (if changed)
         run: |
           git config user.name "predicto-bot"
@@ -57,6 +66,11 @@ jobs:
           fi
           git add data.js track-log.json
           git commit -m "Update scores + forward tracker"
+          # Guarantee a CLEAN tree before rebase. Anything not part of this commit
+          # (restored config.txt, node_modules, stray build files) is discarded here
+          # so `git rebase` can't abort with exit 128 on a dirty tree.
+          git stash -u 2>/dev/null || true
+          git stash drop 2>/dev/null || true
           # data.js / track-log.json are GENERATED — on a race with the full data
           # fetch, take OUR fresh copy rather than dying on an unmergeable rebase.
           for i in 1 2 3 4 5; do
