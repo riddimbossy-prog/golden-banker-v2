@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T00:05:31.698Z";
+window.SCORES_UPDATED = "2026-07-03T00:10:38.190Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -59808,7 +59808,7 @@ window.MATCHES = [
       "draw": 5,
       "away": 9
     },
-    "elapsed": 6
+    "elapsed": 11
   },
   {
     "home": "Santo Domingo",
@@ -59895,7 +59895,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 6
+    "elapsed": 11
   },
   {
     "home": "Birmingham Legion",
@@ -59905,11 +59905,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/9043.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-03T00:00:00+00:00",
     "matchDate": "2026-07-03",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 1,
     "homePos": 10,
     "awayPos": 3,
     "tableSize": 25,
@@ -59992,7 +59992,7 @@ window.MATCHES = [
       "draw": 3.25,
       "away": 2.35
     },
-    "elapsed": null
+    "elapsed": 4
   },
   {
     "home": "FC Motown II",
@@ -60058,7 +60058,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 1
+    "elapsed": 6
   },
   {
     "home": "Flatirons Rush",
@@ -79057,7 +79057,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3.png",
     "country": "World",
     "flag": null,
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-02T23:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
@@ -79145,7 +79145,7 @@ window.MATCHES = [
       "away": 4.75
     },
     "lineupConfirmed": true,
-    "elapsed": 45
+    "elapsed": 50
   },
   {
     "home": "Cuiaba",
@@ -79242,7 +79242,7 @@ window.MATCHES = [
       "draw": 3.3,
       "away": 5
     },
-    "elapsed": 46
+    "elapsed": 51
   },
   {
     "home": "Cedar Stars Rush",
@@ -79252,7 +79252,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4062.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-02T23:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
@@ -79308,7 +79308,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 46
   },
   {
     "home": "Rochester",
@@ -79318,7 +79318,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/18889.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-02T23:00:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
@@ -79374,7 +79374,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 47
   },
   {
     "home": "Apotheos",
@@ -79440,7 +79440,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 27
+    "elapsed": 32
   },
   {
     "home": "Memphis 901",

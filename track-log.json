@@ -14808,8 +14808,8 @@
       "confidence": "High",
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.354Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -14822,8 +14822,8 @@
       "confidence": 10,
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.354Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -14836,8 +14836,8 @@
       "confidence": 8,
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.354Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -14850,8 +14850,8 @@
       "confidence": 8,
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.354Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -39218,6 +39218,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-03T00:05:32.046Z"
+    "updated": "2026-07-03T00:10:38.541Z"
   }
 }
