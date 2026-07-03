@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T02:35:31.698Z";
+window.SCORES_UPDATED = "2026-07-03T02:40:35.551Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -60266,7 +60266,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/25950.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-03T00:30:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 1,
@@ -60322,7 +60322,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "O'Higgins",
