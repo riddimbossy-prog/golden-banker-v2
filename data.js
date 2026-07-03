@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T12:30:48.322Z";
+window.SCORES_UPDATED = "2026-07-03T12:35:28.155Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -62861,7 +62861,7 @@ window.MATCHES = [
     "round": "Regular Season - 17",
     "odds": null,
     "h2h": null,
-    "elapsed": 67
+    "elapsed": 72
   },
   {
     "home": "Aalborg",
@@ -62927,7 +62927,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 71
+    "elapsed": 76
   },
   {
     "home": "Khangarid",
@@ -62999,7 +62999,7 @@ window.MATCHES = [
     "round": "Regular Season - 23",
     "odds": null,
     "h2h": null,
-    "elapsed": 59
+    "elapsed": 63
   },
   {
     "home": "Minsk II",
@@ -63071,7 +63071,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 29
+    "elapsed": 34
   },
   {
     "home": "Yunnan Yukun",
@@ -63158,7 +63158,7 @@ window.MATCHES = [
       "dcx2": 1.53
     },
     "h2h": null,
-    "elapsed": 31
+    "elapsed": 35
   },
   {
     "home": "Nizhny Novgorod U19",
@@ -63230,7 +63230,7 @@ window.MATCHES = [
     "round": "Regular Season - 13",
     "odds": null,
     "h2h": null,
-    "elapsed": 30
+    "elapsed": 35
   },
   {
     "home": "Sport Academy Kairat",
@@ -63302,7 +63302,7 @@ window.MATCHES = [
     "round": "Regular Season - 12",
     "odds": null,
     "h2h": null,
-    "elapsed": 30
+    "elapsed": 34
   },
   {
     "home": "Arys",
@@ -63316,7 +63316,7 @@ window.MATCHES = [
     "kickoff": "2026-07-03T12:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 2,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": 13,
     "awayPos": 14,
     "tableSize": 14,
@@ -63374,7 +63374,7 @@ window.MATCHES = [
     "round": "Regular Season - 12",
     "odds": null,
     "h2h": null,
-    "elapsed": 31
+    "elapsed": 35
   },
   {
     "home": "Vitesse",
@@ -63440,7 +63440,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 31
+    "elapsed": 35
   },
   {
     "home": "SC Braga",
@@ -64562,7 +64562,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 29
+    "elapsed": 34
   },
   {
     "home": "Juazeiro EC U20",
@@ -64576,7 +64576,7 @@ window.MATCHES = [
     "kickoff": "2026-07-03T12:30:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 0,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": 7,
     "awayPos": 2,
     "tableSize": 14,
@@ -64634,7 +64634,7 @@ window.MATCHES = [
     "round": "Regular Season - 2",
     "odds": null,
     "h2h": null,
-    "elapsed": 3
+    "elapsed": 8
   },
   {
     "home": "Naftan",
