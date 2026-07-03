@@ -6,7 +6,7 @@
    then settles each once the match finishes — building an append-only,
    per-engine win/loss history in track-log.json.
 
-   Why per-engine: the daily results image collapses all 8 engines into one
+   Why per-engine: the daily results image collapses all 10 engines into one
    "consensus" number. That hides which engine is carrying the others. This log
    keeps each engine's own record so you can see, after a few weeks, that (say)
    Strict hits 71% while Apex hits 52% — and retire or trust accordingly.
