@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-03T20:12:54.418Z";
-window.SCORES_UPDATED = "2026-07-03T21:55:27.601Z";
+window.SCORES_UPDATED = "2026-07-03T22:00:58.245Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -56941,7 +56941,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/21374.png",
     "country": "Paraguay",
     "flag": "https://media.api-sports.io/flags/py.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-03T20:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 2,
@@ -57078,7 +57078,7 @@ window.MATCHES = [
       "dcx2": 1.7
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Argentina",
