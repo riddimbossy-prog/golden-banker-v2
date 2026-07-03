@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T13:15:36.754Z";
+window.SCORES_UPDATED = "2026-07-03T13:20:39.467Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -63071,7 +63071,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 55
+    "elapsed": 60
   },
   {
     "home": "Yunnan Yukun",
@@ -63158,7 +63158,7 @@ window.MATCHES = [
       "dcx2": 1.53
     },
     "h2h": null,
-    "elapsed": 47
+    "elapsed": 52
   },
   {
     "home": "Nizhny Novgorod U19",
@@ -63230,7 +63230,7 @@ window.MATCHES = [
     "round": "Regular Season - 13",
     "odds": null,
     "h2h": null,
-    "elapsed": 56
+    "elapsed": 61
   },
   {
     "home": "Sport Academy Kairat",
@@ -63302,7 +63302,7 @@ window.MATCHES = [
     "round": "Regular Season - 12",
     "odds": null,
     "h2h": null,
-    "elapsed": 55
+    "elapsed": 60
   },
   {
     "home": "Arys",
@@ -63374,7 +63374,7 @@ window.MATCHES = [
     "round": "Regular Season - 12",
     "odds": null,
     "h2h": null,
-    "elapsed": 56
+    "elapsed": 61
   },
   {
     "home": "Vitesse",
@@ -63440,7 +63440,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 60
+    "elapsed": 65
   },
   {
     "home": "SC Braga",
@@ -64509,7 +64509,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-03T12:00:00+00:00",
     "matchDate": "2026-07-03",
-    "homeGoals": 1,
+    "homeGoals": 2,
     "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
@@ -64562,7 +64562,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 57
+    "elapsed": 62
   },
   {
     "home": "Juazeiro EC U20",
@@ -64648,7 +64648,7 @@ window.MATCHES = [
     "kickoff": "2026-07-03T13:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 0,
-    "awayGoals": 1,
+    "awayGoals": 2,
     "homePos": 16,
     "awayPos": 8,
     "tableSize": 16,
@@ -64721,7 +64721,7 @@ window.MATCHES = [
       "dcx2": 1.05
     },
     "h2h": null,
-    "elapsed": 15
+    "elapsed": 20
   },
   {
     "home": "Brann",
@@ -64787,7 +64787,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 13
+    "elapsed": 18
   },
   {
     "home": "Ried",
