@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T07:50:38.374Z";
+window.SCORES_UPDATED = "2026-07-03T07:55:32.925Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -65646,7 +65646,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/6493.png",
     "country": "World",
     "flag": null,
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-03T14:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 0,
@@ -65702,7 +65702,7 @@ window.MATCHES = [
     "round": "Club Friendlies",
     "odds": null,
     "h2h": null,
-    "elapsed": 43
+    "elapsed": 45
   },
   {
     "home": "Abdish-Ata",
