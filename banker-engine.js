@@ -1508,6 +1508,19 @@ function estCleanSheet(gc){ if(gc==null) return null; return clamp(0.62-(gc-0.6)
 // Failed-to-score % from goals scored/game. 2.2->~8%, 1.4->~22%, 0.8->~42%.
 function estFTS(gf){ if(gf==null) return null; return clamp(0.50-(gf-0.7)*0.22,0.05,0.7); }
 
+// ---- GENUINE-FAVORITE FILTER (v80) ----------------------------------------
+// Distinguishes a RELATIVE favorite (only better than a weak opponent) from a
+// GENUINE strong favorite with absolute quality. Used to withhold Team Over 1.5
+// from teams that are merely relatively better (the "Bentleigh Greens" problem:
+// big table edge, but PPG < 1.0 — the standings alone don't prove they score 2+).
+// Absolute thresholds: PPG 1.50+, win rate 45%+, GD/game > 0, scoring 1.40+,
+// form 7+/15. Returns true only when EVERY available metric passes; a metric
+// that's missing (null) does not count as a pass, so we fail safe (withhold).
+function genuineFavorite(ppg, winRate, gdPerGame, scoreAvg, form15){
+  if(ppg==null || winRate==null || gdPerGame==null || scoreAvg==null || form15==null) return false;
+  return ppg>=1.50 && winRate>=0.45 && gdPerGame>0 && scoreAvg>=1.40 && form15>=7;
+}
+
 function rulesProRecommend(m){
   const size = m.tableSize ?? 20;
   const blocked = [];
@@ -1616,11 +1629,17 @@ function rulesProRecommend(m){
     }
     // ---- TEAM GOALS ----
     if(hGF!=null&&aGA!=null){
-      if(hGF>=2.00 && aGA>=1.50 && hFTS!=null&&hFTS<=0.20) add("Home Team Over 1.5 Goals",7,"Home O1.5 thresholds met (FTS% estimated).",true);
+      if(hGF>=2.00 && aGA>=1.50 && hFTS!=null&&hFTS<=0.20){
+        if(genuineFavorite(hPPG,hWin,hGD,hGF,hForm)) add("Home Team Over 1.5 Goals",7,"Home O1.5 thresholds met, home is a genuine favorite (FTS% estimated).",true);
+        else blocked.push({market:"Home Team Over 1.5 Goals",why:"Relative favorite only (fails absolute quality: PPG/win%/GD/scoring/form) — Over 1.5 withheld; standings edge alone doesn't prove 2+ goals."});
+      }
       if(hGF<=1.10 && aGA<=1.00 && hFTS!=null&&hFTS>=0.35) add("Home Team Under 1.5 Goals",7,"Home U1.5 thresholds met (FTS% estimated).",true);
     }
     if(aGF!=null&&hGA!=null){
-      if(aGF>=1.80 && hGA>=1.50 && aFTS!=null&&aFTS<=0.20) add("Away Team Over 1.5 Goals",7,"Away O1.5 thresholds met (FTS% estimated).",true);
+      if(aGF>=1.80 && hGA>=1.50 && aFTS!=null&&aFTS<=0.20){
+        if(genuineFavorite(aPPG,aWin,aGD,aGF,aForm)) add("Away Team Over 1.5 Goals",7,"Away O1.5 thresholds met, away is a genuine favorite (FTS% estimated).",true);
+        else blocked.push({market:"Away Team Over 1.5 Goals",why:"Relative favorite only (fails absolute quality: PPG/win%/GD/scoring/form) — Over 1.5 withheld; standings edge alone doesn't prove 2+ goals."});
+      }
       if(aGF<=1.00 && hGA<=1.00 && aFTS!=null&&aFTS>=0.35) add("Away Team Under 1.5 Goals",7,"Away U1.5 thresholds met (FTS% estimated).",true);
     }
   }
@@ -3226,6 +3245,108 @@ function intlFrameApply(m, out){
 }
 
 // ---- wrap EVERY engine so the frame runs automatically ----
+/* ============================== HALVES ENGINE ==============================
+   HT/FT-driven engine ("halves"). Predicts across all markets purely from
+   half-time/full-time behaviour. FAIL-SAFE BY DESIGN: if the htft blocks are
+   absent or the sample is under 8 matches (spec minimum), it returns an honest
+   No Bet — it never guesses from season averages.
+
+   DATA CONTRACT — fetch-data.js must emit, per team, on
+   m.homeStreaks.htft / m.awayStreaks.htft (team-perspective rates 0..1):
+     sample        matches where both HT and FT results are known (int)
+     htWin/htDraw/htLoss     share of matches leading/level/trailing at HT
+     ftWin/ftDraw/ftLoss     share of matches won/drawn/lost at FT
+     drawToWin     P(FT win | HT draw)
+     holdLeadRate  P(FT win | HT lead)
+     throwLeadRate P(FT not-win | HT lead)
+     collapseRate  P(FT loss | HT trailing)   (matches Streaks-engine semantics)
+     comebackRate  P(FT win or draw | HT trailing)
+     drawEndRate   share of matches drawn at FT
+     fhFor/fhAg    avg 1st-half goals scored/conceded
+     shFor/shAg    avg 2nd-half goals scored/conceded
+     fhBtts        share of matches where both teams scored in the 1st half
+     htCleanSheet  share of matches with opponent scoreless at HT
+   All computable from API-Football score.halftime/score.fulltime on the
+   team's last ~12-18 fixtures.
+============================================================================ */
+function halvesOut(m, market, grade, score, reasons, extra){
+  const noStand=(typeof hasNoStandings==='function')&&hasNoStandings(m);
+  const banker = market!=="No Bet" && (grade==="Banker"||grade==="Elite Banker") && !noStand;
+  const confMap={ "Strong Pick":7, "Banker":8, "Elite Banker":10 };
+  return { match:m, engine:"halves", primary:market, bet:market!=="No Bet",
+    banker, confidence: market==="No Bet"?0:(confMap[grade]||6),
+    grade:grade||null, score:score!=null?`${score}/12`:null,
+    verdict:`${market}${market!=="No Bet"?` (Halves — ${grade}, ${score}/12)`:" — No Bet"}. ${reasons.join(' ')}`,
+    reasons, humanChecks:["HT/FT-pattern based; confirm lineups and that the sample isn't stale."],
+    ...(extra||{}) };
+}
+function halvesRecommend(m){
+  if(!m) return halvesOut(m,"No Bet",null,null,["No match data."]);
+  const o=m.odds;
+  if(!o||(o.home==null&&o.over15==null&&o.under35==null)){
+    return halvesOut(m,"No Bet",null,null,["No bookmaker odds — HT/FT picks need odds confirmation."]);
+  }
+  const H=m.homeStreaks&&m.homeStreaks.htft, A=m.awayStreaks&&m.awayStreaks.htft;
+  if(!H||!A) return halvesOut(m,"No Bet",null,null,["No HT/FT data for one or both teams — engine stands down (honest No Bet)."]);
+  if((H.sample||0)<8||(A.sample||0)<8){
+    return halvesOut(m,"No Bet",null,null,[`HT/FT sample too small (${H.sample||0}/${A.sample||0}, need 8+) — no reliable pattern.`]);
+  }
+  const n=v=>v==null?null:+v;
+  // expected goals per half from both teams' half splits
+  const expFH=((n(H.fhFor)||0)+(n(A.fhAg)||0))/2 + ((n(A.fhFor)||0)+(n(H.fhAg)||0))/2;
+  const expSH=((n(H.shFor)||0)+(n(A.shAg)||0))/2 + ((n(A.shFor)||0)+(n(H.shAg)||0))/2;
+  const expT=expFH+expSH;
+  const cands=[]; const C=(market,score,why)=>cands.push({market,score,why});
+
+  // ---- RESULT MARKETS: lead-and-hold vs comeback profiles ----
+  if(n(H.htWin)>=0.45&&n(H.holdLeadRate)>=0.75&&n(H.ftWin)>=0.50&&n(A.comebackRate)!=null&&A.comebackRate<0.35)
+    C("Home Win",8+(H.holdLeadRate>=0.85?2:0),`Home leads at HT ${Math.round(H.htWin*100)}% and holds ${Math.round(H.holdLeadRate*100)}% of leads; away rarely comes back.`);
+  if(n(A.htWin)>=0.45&&n(A.holdLeadRate)>=0.75&&n(A.ftWin)>=0.50&&n(H.comebackRate)!=null&&H.comebackRate<0.35)
+    C("Away Win",8+(A.holdLeadRate>=0.85?2:0),`Away leads at HT ${Math.round(A.htWin*100)}% and holds ${Math.round(A.holdLeadRate*100)}% of leads.`);
+  if(n(H.htWin)>=0.40&&n(H.throwLeadRate)!=null&&H.throwLeadRate<=0.25&&n(H.ftLoss)<=0.25)
+    C("Home DNB",7,`Home rarely throws a lead (${Math.round(H.throwLeadRate*100)}%) and loses only ${Math.round(H.ftLoss*100)}% overall.`);
+  if(n(A.htWin)>=0.40&&n(A.throwLeadRate)!=null&&A.throwLeadRate<=0.25&&n(A.ftLoss)<=0.25)
+    C("Away DNB",7,`Away rarely throws a lead and loses only ${Math.round(A.ftLoss*100)}% overall.`);
+  // second-half surge → safer DNB rather than straight win
+  if(n(H.htDraw)>=0.45&&n(H.drawToWin)>=0.35&&n(H.shFor)>n(H.fhFor)&&n(A.shAg)>=0.8)
+    C("Home DNB",7,`Home converts HT draws to wins ${Math.round(H.drawToWin*100)}% of the time and is stronger after the break.`);
+
+  // ---- HT/FT COMBO (spec Priority 8: strict) ----
+  if(n(H.htDraw)>=0.45&&n(H.drawToWin)>=0.35&&n(H.ftWin)>=0.50&&n(H.shFor)>n(H.fhFor)&&n(A.shAg)>=0.9)
+    C("HT Draw / FT Home Win",6,`Strong X/1 pattern: HT draw ${Math.round(H.htDraw*100)}%, converts ${Math.round(H.drawToWin*100)}%, second-half dominant.`);
+
+  // ---- TOTALS from half splits ----
+  if(expT<=2.40&&n(H.fhFor)<=0.60&&n(A.fhFor)<=0.60&&Math.max(n(H.drawEndRate)||0,n(A.drawEndRate)||0)>=0.30)
+    C("Under 2.5 Goals",8,`Both sides quiet in first halves; expected total ${expT.toFixed(2)}.`);
+  if(expT<3.00&&expFH<=1.20)
+    C("Under 3.5 Goals",7,`Half-split expectancy ${expT.toFixed(2)} with slow first halves (${expFH.toFixed(2)}).`);
+  if(expT>=3.20&&n(H.fhBtts)>=0.35&&n(A.fhBtts)>=0.35)
+    C("Over 2.5 Goals",8,`Open halves on both sides; expected total ${expT.toFixed(2)}, first-half BTTS ${Math.round(H.fhBtts*100)}%/${Math.round(A.fhBtts*100)}%.`);
+  if(expFH>=1.30&&n(H.fhFor)>=0.70&&n(A.fhFor)>=0.50)
+    C("Over 1.5 Goals",7,`Fast starts: expected first-half goals ${expFH.toFixed(2)} alone.`);
+
+  // ---- BTTS from half behaviour ----
+  if(n(H.fhBtts)>=0.40&&n(A.fhBtts)>=0.40&&n(H.htCleanSheet)<=0.35&&n(A.htCleanSheet)<=0.35)
+    C("BTTS Yes",7,`Both teams' matches see both nets ripple early (${Math.round(H.fhBtts*100)}%/${Math.round(A.fhBtts*100)}% first-half BTTS).`);
+  if((n(H.htCleanSheet)>=0.55&&n(A.fhFor)<=0.40)||(n(A.htCleanSheet)>=0.55&&n(H.fhFor)<=0.40))
+    C("BTTS No",7,`One side keeps HT clean sheets ${Math.round(Math.max(H.htCleanSheet||0,A.htCleanSheet||0)*100)}% while the opponent starts scoreless.`);
+
+  if(!cands.length) return halvesOut(m,"No Bet",null,null,["No HT/FT pattern strong enough — honest No Bet."]);
+  cands.sort((x,y)=>y.score-x.score);
+  let best=cands[0];
+  // universal odds ladder must confirm; try next candidates if blocked
+  for(const c of cands){
+    const g=(typeof oddsLadderGate==='function')?oddsLadderGate(m,c.market):{ok:true,block:false};
+    if(g.ok){ best=c; best.gateNote=g.reason||null; break; }
+    best=null;
+  }
+  if(!best) return halvesOut(m,"No Bet",null,null,["HT/FT pattern found but the odds ladder rejected every candidate market."]);
+  const grade = best.score>=10?"Elite Banker":best.score>=8?"Banker":"Strong Pick";
+  const reasons=[best.why]; if(best.gateNote) reasons.push(best.gateNote);
+  reasons.push(`Samples: home ${H.sample}, away ${A.sample} matches.`);
+  return halvesOut(m,best.market,grade,best.score,reasons);
+}
+
 function withIntlFrame(fn){
   return function(m){ return intlFrameApply(m, fn(m)); };
 }
@@ -3239,10 +3360,11 @@ valueRecommend   = withIntlFrame(valueRecommend);
 proRecommend     = withIntlFrame(proRecommend);
 trendRecommend   = withIntlFrame(trendRecommend);
 streakRecommend  = withIntlFrame(streakRecommend);
+halvesRecommend  = withIntlFrame(halvesRecommend);
 
 if (typeof module !== "undefined") module.exports = {
   analyseAll, recommend, scoreOver25, scoreBTTS, scoreWinDNB, settle,
   analyseStrict, strictRecommend, tierFromRank, streakRecommend, ultraRecommend, rulesProRecommend, apexRecommend, primeRecommend, valueRecommend, proRecommend,
-  classifyLeague, leagueContextVerdict, trendRecommend, oddsLadderGate,
+  classifyLeague, leagueContextVerdict, trendRecommend, halvesRecommend, oddsLadderGate,
   intlFrameApply, isInternationalComp
 };
