@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-03T22:07:07.413Z";
-window.SCORES_UPDATED = "2026-07-03T23:25:26.059Z";
+window.SCORES_UPDATED = "2026-07-03T23:30:53.892Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -61704,7 +61704,7 @@ window.MATCHES = [
     "xgAwayReal": 0.49,
     "awayXgAgainst": 1.94,
     "lineupConfirmed": true,
-    "elapsed": 65
+    "elapsed": 70
   },
   {
     "home": "Inter Gainesville",
@@ -61718,7 +61718,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-03T22:00:00+00:00",
     "matchDate": "2026-07-03",
-    "homeGoals": 1,
+    "homeGoals": 0,
     "awayGoals": 0,
     "homePos": 5,
     "awayPos": 3,
@@ -61869,7 +61869,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 64
+    "elapsed": 69
   },
   {
     "home": "AFC Ann Arbor",
@@ -62555,7 +62555,7 @@ window.MATCHES = [
       "dcx2": 1.02
     },
     "h2h": null,
-    "elapsed": 22
+    "elapsed": 27
   },
   {
     "home": "Loudoun United",
