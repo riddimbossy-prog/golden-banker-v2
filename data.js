@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T00:20:40.187Z";
+window.SCORES_UPDATED = "2026-07-03T00:25:30.606Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -59808,7 +59808,7 @@ window.MATCHES = [
       "draw": 5,
       "away": 9
     },
-    "elapsed": 21
+    "elapsed": 26
   },
   {
     "home": "Santo Domingo",
@@ -59895,7 +59895,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 21
+    "elapsed": 26
   },
   {
     "home": "Birmingham Legion",
@@ -59992,7 +59992,7 @@ window.MATCHES = [
       "draw": 3.25,
       "away": 2.35
     },
-    "elapsed": 14
+    "elapsed": 19
   },
   {
     "home": "FC Motown II",
@@ -60058,7 +60058,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 16
+    "elapsed": 21
   },
   {
     "home": "Flatirons Rush",
@@ -79145,7 +79145,7 @@ window.MATCHES = [
       "away": 4.75
     },
     "lineupConfirmed": true,
-    "elapsed": 61
+    "elapsed": 66
   },
   {
     "home": "Cuiaba",
@@ -79242,7 +79242,7 @@ window.MATCHES = [
       "draw": 3.3,
       "away": 5
     },
-    "elapsed": 61
+    "elapsed": 66
   },
   {
     "home": "Cedar Stars Rush",
@@ -79255,7 +79255,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-02T23:00:00+00:00",
     "matchDate": "2026-07-02",
-    "homeGoals": 0,
+    "homeGoals": 1,
     "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
@@ -79308,7 +79308,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 56
+    "elapsed": 61
   },
   {
     "home": "Rochester",
@@ -79374,7 +79374,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 57
+    "elapsed": 62
   },
   {
     "home": "Apotheos",
@@ -79384,7 +79384,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/10097.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-02T23:30:00+00:00",
     "matchDate": "2026-07-02",
     "homeGoals": 0,
@@ -79440,7 +79440,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 42
+    "elapsed": 45
   },
   {
     "home": "Memphis 901",
