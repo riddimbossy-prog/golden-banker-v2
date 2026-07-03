@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T02:30:48.323Z";
+window.SCORES_UPDATED = "2026-07-03T02:35:31.698Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -60269,8 +60269,8 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-03T00:30:00+00:00",
     "matchDate": "2026-07-03",
-    "homeGoals": 0,
-    "awayGoals": 0,
+    "homeGoals": 1,
+    "awayGoals": 4,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
