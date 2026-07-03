@@ -78,20 +78,24 @@ jobs:
           git stash -u 2>/dev/null || true
           git stash drop 2>/dev/null || true
           # data.js / track-log.json are GENERATED — on a race with the full data
-          # fetch, take OUR fresh copy rather than dying on an unmergeable rebase.
+          # fetch, take OUR fresh copy. NOTE: during a rebase, --ours/--theirs are
+          # INVERTED (--ours = origin's side), so the old `git checkout --ours`
+          # kept the STALE remote files. `git rebase -X theirs` favors THIS run's.
+          PUSHED=0
           for i in 1 2 3 4 5; do
             git fetch origin main
-            if git rebase origin/main; then
-              :
-            else
-              echo "Rebase conflict on generated files — keeping our fresh copies."
-              git checkout --ours data.js track-log.json 2>/dev/null || true
-              git add data.js track-log.json 2>/dev/null || true
-              GIT_EDITOR=true git rebase --continue || git rebase --abort
+            if ! git rebase -X theirs origin/main; then
+              echo "Rebase failed even with -X theirs — aborting and retrying."
+              git rebase --abort 2>/dev/null || true
+              sleep $((5 * i)); continue
             fi
-            if git push origin HEAD:main; then echo "pushed (attempt $i)."; break; fi
+            if git push origin HEAD:main; then echo "pushed (attempt $i)."; PUSHED=1; break; fi
             echo "Push attempt $i failed (remote moved) — syncing and retrying..."; sleep $((5 * i))
           done
+          if [ "$PUSHED" != "1" ]; then
+            echo "ERROR: failed to push after 5 attempts — updates NOT published."
+            exit 1
+          fi
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload site as Pages artifact
