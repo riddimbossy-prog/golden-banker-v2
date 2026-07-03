@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T02:25:27.969Z";
+window.SCORES_UPDATED = "2026-07-03T02:30:48.323Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -60269,8 +60269,8 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-03T00:30:00+00:00",
     "matchDate": "2026-07-03",
-    "homeGoals": 1,
-    "awayGoals": 4,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -60332,7 +60332,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/2315.png",
     "country": "Chile",
     "flag": "https://media.api-sports.io/flags/cl.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-03T00:30:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 4,
@@ -60403,7 +60403,7 @@ window.MATCHES = [
       "dcx2": 1.3
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Boise",
@@ -60413,7 +60413,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/18905.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-03T01:30:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 1,
