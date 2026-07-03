@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-02T01:16:59.972Z";
-window.SCORES_UPDATED = "2026-07-03T02:00:58.058Z";
+window.SCORES_UPDATED = "2026-07-03T02:05:29.933Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -60322,7 +60322,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 65
+    "elapsed": 70
   },
   {
     "home": "O'Higgins",
@@ -60403,7 +60403,7 @@ window.MATCHES = [
       "dcx2": 1.3
     },
     "h2h": null,
-    "elapsed": 71
+    "elapsed": 76
   },
   {
     "home": "Boise",
@@ -60500,7 +60500,7 @@ window.MATCHES = [
       "draw": 3.3,
       "away": 2.6
     },
-    "elapsed": 23
+    "elapsed": 27
   },
   {
     "home": "Redlands",
