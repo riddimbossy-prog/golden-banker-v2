@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T00:04:59.265Z";
-window.SCORES_UPDATED = "2026-07-04T00:55:28.997Z";
+window.SCORES_UPDATED = "2026-07-04T01:00:58.547Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -20053,7 +20053,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/2998.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T00:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -66112,7 +66112,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4087.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-03T23:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 1,
@@ -66297,7 +66297,7 @@ window.MATCHES = [
       "dcx2": 1.02
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Loudoun United",
@@ -66495,7 +66495,7 @@ window.MATCHES = [
       "dcx2": 2.15
     },
     "h2h": null,
-    "elapsed": 57
+    "elapsed": 61
   },
   {
     "home": "Western Mass Pioneers",
@@ -66678,7 +66678,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 66
+    "elapsed": 72
   },
   {
     "home": "West Chester United",
