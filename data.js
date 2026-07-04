@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T00:04:59.265Z";
-window.SCORES_UPDATED = "2026-07-04T00:25:27.744Z";
+window.SCORES_UPDATED = "2026-07-04T00:30:53.186Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -20042,7 +20042,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 0.65,
     "awayXgAgainst": 1.29,
-    "elapsed": 26
+    "elapsed": 30
   },
   {
     "home": "Washington Spirit W",
@@ -20255,7 +20255,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.67,
     "awayXgAgainst": 1.64,
-    "elapsed": 17
+    "elapsed": 21
   },
   {
     "home": "Des Moines Menace",
@@ -20634,7 +20634,7 @@ window.MATCHES = [
       "dcx2": 1.75
     },
     "h2h": null,
-    "elapsed": 19
+    "elapsed": 24
   },
   {
     "home": "Lionsbridge",
@@ -21000,7 +21000,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 18
+    "elapsed": 22
   },
   {
     "home": "Fort Worth Vaqueros",
@@ -65153,7 +65153,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/1533.png",
     "country": "World",
     "flag": null,
-    "status": "ET",
+    "status": "FT",
     "kickoff": "2026-07-03T22:00:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 2,
@@ -65356,7 +65356,7 @@ window.MATCHES = [
     "xgAwayReal": 0.49,
     "awayXgAgainst": 1.94,
     "lineupConfirmed": true,
-    "elapsed": 109
+    "elapsed": null
   },
   {
     "home": "Inter Gainesville",
@@ -66297,7 +66297,7 @@ window.MATCHES = [
       "dcx2": 1.02
     },
     "h2h": null,
-    "elapsed": 62
+    "elapsed": 68
   },
   {
     "home": "Loudoun United",
@@ -66308,7 +66308,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/25959.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-03T23:30:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 0,
