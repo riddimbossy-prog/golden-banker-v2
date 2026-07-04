@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T03:33:42.911Z";
-window.SCORES_UPDATED = "2026-07-04T04:05:31.594Z";
+window.SCORES_UPDATED = "2026-07-04T04:10:46.057Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -35182,7 +35182,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/25951.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T02:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 4,
@@ -35354,7 +35354,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Tacoma Stars",
@@ -35748,7 +35748,7 @@ window.MATCHES = [
       "dcx2": 1.95
     },
     "h2h": null,
-    "elapsed": 5
+    "elapsed": 11
   },
   {
     "home": "Canberra White Eagles",
