@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T06:49:17.438Z";
-window.SCORES_UPDATED = "2026-07-04T07:30:49.767Z";
+window.SCORES_UPDATED = "2026-07-04T07:35:29.114Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -36550,7 +36550,7 @@ window.MATCHES = [
       "dcx2": 1.62
     },
     "h2h": null,
-    "elapsed": 23
+    "elapsed": 27
   },
   {
     "home": "Armadale",
@@ -36752,7 +36752,7 @@ window.MATCHES = [
       "dcx2": 1.3
     },
     "h2h": null,
-    "elapsed": 26
+    "elapsed": 30
   },
   {
     "home": "Perth Glory II",
@@ -36954,7 +36954,7 @@ window.MATCHES = [
       "dcx2": 1.7
     },
     "h2h": null,
-    "elapsed": 26
+    "elapsed": 30
   },
   {
     "home": "Stirling Lions",
@@ -37156,7 +37156,7 @@ window.MATCHES = [
       "dcx2": 1.5
     },
     "h2h": null,
-    "elapsed": 28
+    "elapsed": 32
   },
   {
     "home": "Fremantle City",
@@ -37358,7 +37358,7 @@ window.MATCHES = [
       "dcx2": 1.3
     },
     "h2h": null,
-    "elapsed": 25
+    "elapsed": 29
   },
   {
     "home": "Western Knights",
@@ -37372,7 +37372,7 @@ window.MATCHES = [
     "status": "1H",
     "kickoff": "2026-07-04T07:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 0,
+    "homeGoals": 1,
     "awayGoals": 0,
     "homePos": 6,
     "awayPos": 7,
@@ -37545,7 +37545,7 @@ window.MATCHES = [
     "round": "Regular Season - 17",
     "odds": null,
     "h2h": null,
-    "elapsed": 27
+    "elapsed": 31
   },
   {
     "home": "Jincheon",
@@ -37741,7 +37741,7 @@ window.MATCHES = [
       "dcx2": 1.17
     },
     "h2h": null,
-    "elapsed": 29
+    "elapsed": 33
   },
   {
     "home": "Sutherland Sharks",
