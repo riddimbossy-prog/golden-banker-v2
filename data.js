@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T00:04:59.265Z";
-window.SCORES_UPDATED = "2026-07-04T01:25:26.889Z";
+window.SCORES_UPDATED = "2026-07-04T01:30:50.778Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -20042,7 +20042,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 0.65,
     "awayXgAgainst": 1.29,
-    "elapsed": 66
+    "elapsed": 71
   },
   {
     "home": "Washington Spirit W",
@@ -20255,7 +20255,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.67,
     "awayXgAgainst": 1.64,
-    "elapsed": 56
+    "elapsed": 62
   },
   {
     "home": "Des Moines Menace",
@@ -20452,7 +20452,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-04T00:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 2,
+    "homeGoals": 3,
     "awayGoals": 1,
     "homePos": 4,
     "awayPos": 8,
@@ -20634,7 +20634,7 @@ window.MATCHES = [
       "dcx2": 1.75
     },
     "h2h": null,
-    "elapsed": 60
+    "elapsed": 66
   },
   {
     "home": "Lionsbridge",
@@ -21000,7 +21000,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 48
+    "elapsed": 54
   },
   {
     "home": "Fort Worth Vaqueros",
@@ -21194,11 +21194,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/1504.png",
     "country": "World",
     "flag": null,
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T01:30:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 1,
     "awayPos": 3,
     "tableSize": 60,
@@ -21397,7 +21397,7 @@ window.MATCHES = [
     "xgAwayReal": 0.82,
     "awayXgAgainst": 1.3,
     "lineupConfirmed": true,
-    "elapsed": null
+    "elapsed": 1
   },
   {
     "home": "Denver Summit W",
@@ -66311,7 +66311,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-03T23:30:00+00:00",
     "matchDate": "2026-07-03",
-    "homeGoals": 1,
+    "homeGoals": 2,
     "awayGoals": 1,
     "homePos": 11,
     "awayPos": 13,
@@ -66495,7 +66495,7 @@ window.MATCHES = [
       "dcx2": 2.15
     },
     "h2h": null,
-    "elapsed": 86
+    "elapsed": 90
   },
   {
     "home": "Western Mass Pioneers",
@@ -66506,7 +66506,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4034.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-03T23:30:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 1,
@@ -66678,7 +66678,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "West Chester United",
@@ -66861,7 +66861,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 62
+    "elapsed": 67
   },
   {
     "home": "USA",
