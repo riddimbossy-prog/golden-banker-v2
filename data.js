@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T22:05:04.488Z";
-window.SCORES_UPDATED = "2026-07-04T22:55:26.573Z";
+window.SCORES_UPDATED = "2026-07-04T23:00:58.318Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -49714,7 +49714,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/12944.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T21:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -49903,7 +49903,7 @@ window.MATCHES = [
       "dcx2": 2.35
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Marcílio Dias",
@@ -49914,7 +49914,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/1214.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T21:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -50103,7 +50103,7 @@ window.MATCHES = [
       "dcx2": 1.33
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Quilmes",
@@ -50114,10 +50114,10 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/1948.png",
     "country": "Argentina",
     "flag": "https://media.api-sports.io/flags/ar.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T21:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 1,
+    "homeGoals": 2,
     "awayGoals": 1,
     "homePos": 13,
     "awayPos": 2,
@@ -50305,7 +50305,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Goiatuba EC",
@@ -50505,7 +50505,7 @@ window.MATCHES = [
       "dcx2": 1.57
     },
     "h2h": null,
-    "elapsed": 65
+    "elapsed": 70
   },
   {
     "home": "LDU Portoviejo",
@@ -50707,7 +50707,7 @@ window.MATCHES = [
       "dcx2": 1.36
     },
     "h2h": null,
-    "elapsed": 62
+    "elapsed": 68
   },
   {
     "home": "Confiança",
@@ -51309,7 +51309,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/20808.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T22:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -51914,7 +51914,7 @@ window.MATCHES = [
       "dcx2": 1.62
     },
     "h2h": null,
-    "elapsed": 25
+    "elapsed": 31
   },
   {
     "home": "Goias",
