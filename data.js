@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T03:33:42.911Z";
-window.SCORES_UPDATED = "2026-07-04T05:15:33.572Z";
+window.SCORES_UPDATED = "2026-07-04T05:20:41.828Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -35748,7 +35748,7 @@ window.MATCHES = [
       "dcx2": 1.95
     },
     "h2h": null,
-    "elapsed": 58
+    "elapsed": 64
   },
   {
     "home": "Canberra White Eagles",
@@ -36152,7 +36152,7 @@ window.MATCHES = [
     "status": "1H",
     "kickoff": "2026-07-04T05:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 0,
+    "homeGoals": 1,
     "awayGoals": 0,
     "homePos": 9,
     "awayPos": 16,
@@ -36336,7 +36336,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": 7
+    "elapsed": 12
   },
   {
     "home": "UNSW",
@@ -36534,7 +36534,7 @@ window.MATCHES = [
       "dcx2": 1.7
     },
     "h2h": null,
-    "elapsed": 7
+    "elapsed": 13
   },
   {
     "home": "Adelaide City",
@@ -36727,7 +36727,7 @@ window.MATCHES = [
       "under35": null
     },
     "h2h": null,
-    "elapsed": 10
+    "elapsed": 16
   },
   {
     "home": "Avondale",
@@ -36925,7 +36925,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 15
+    "elapsed": 21
   },
   {
     "home": "Altona Magic",
@@ -36936,11 +36936,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/20783.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T05:15:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 11,
     "awayPos": 6,
     "tableSize": 14,
@@ -37123,7 +37123,7 @@ window.MATCHES = [
       "dcx2": 1.45
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 4
   },
   {
     "home": "Adelaide United II",
