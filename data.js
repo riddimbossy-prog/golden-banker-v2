@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T05:12:07.930Z";
-window.SCORES_UPDATED = "2026-07-04T06:31:43.854Z";
+window.SCORES_UPDATED = "2026-07-04T06:35:32.211Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -34535,7 +34535,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T05:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
-    "awayGoals": 1,
+    "awayGoals": 2,
     "homePos": 11,
     "awayPos": 3,
     "tableSize": 11,
@@ -34719,7 +34719,7 @@ window.MATCHES = [
       "bttsNo": 1.25
     },
     "h2h": null,
-    "elapsed": 54
+    "elapsed": 58
   },
   {
     "home": "Queanbeyan City",
@@ -34932,7 +34932,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-04T05:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 1,
+    "homeGoals": 2,
     "awayGoals": 1,
     "homePos": 9,
     "awayPos": 16,
@@ -35120,7 +35120,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": 64
+    "elapsed": 68
   },
   {
     "home": "UNSW",
@@ -35322,7 +35322,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": 63
+    "elapsed": 67
   },
   {
     "home": "Adelaide City",
@@ -35519,7 +35519,7 @@ window.MATCHES = [
       "under35": null
     },
     "h2h": null,
-    "elapsed": 70
+    "elapsed": 73
   },
   {
     "home": "Avondale",
@@ -35721,7 +35721,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 74
+    "elapsed": 78
   },
   {
     "home": "Altona Magic",
@@ -35923,7 +35923,7 @@ window.MATCHES = [
       "dcx2": 1.45
     },
     "h2h": null,
-    "elapsed": 56
+    "elapsed": 60
   },
   {
     "home": "Adelaide United II",
@@ -36134,7 +36134,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/16768.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-04T05:30:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -36323,7 +36323,7 @@ window.MATCHES = [
       "dcx2": 1.5
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 46
   },
   {
     "home": "Belconnen United",
