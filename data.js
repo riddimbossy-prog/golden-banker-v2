@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T00:04:59.265Z";
-window.SCORES_UPDATED = "2026-07-04T01:15:35.503Z";
+window.SCORES_UPDATED = "2026-07-04T01:20:45.950Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -20042,7 +20042,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 0.65,
     "awayXgAgainst": 1.29,
-    "elapsed": 56
+    "elapsed": 61
   },
   {
     "home": "Washington Spirit W",
@@ -20056,7 +20056,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-04T00:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 0,
+    "homeGoals": 1,
     "awayGoals": 0,
     "homePos": 4,
     "awayPos": 11,
@@ -20255,7 +20255,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.67,
     "awayXgAgainst": 1.64,
-    "elapsed": 47
+    "elapsed": 52
   },
   {
     "home": "Des Moines Menace",
@@ -20634,7 +20634,7 @@ window.MATCHES = [
       "dcx2": 1.75
     },
     "h2h": null,
-    "elapsed": 51
+    "elapsed": 56
   },
   {
     "home": "Lionsbridge",
@@ -66311,7 +66311,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-03T23:30:00+00:00",
     "matchDate": "2026-07-03",
-    "homeGoals": 0,
+    "homeGoals": 1,
     "awayGoals": 1,
     "homePos": 11,
     "awayPos": 13,
@@ -66495,7 +66495,7 @@ window.MATCHES = [
       "dcx2": 2.15
     },
     "h2h": null,
-    "elapsed": 76
+    "elapsed": 82
   },
   {
     "home": "Western Mass Pioneers",
@@ -66678,7 +66678,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 87
+    "elapsed": 90
   },
   {
     "home": "West Chester United",
@@ -66861,7 +66861,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 52
+    "elapsed": 57
   },
   {
     "home": "USA",
