@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T06:49:17.438Z";
-window.SCORES_UPDATED = "2026-07-04T09:55:27.682Z";
+window.SCORES_UPDATED = "2026-07-04T10:01:03.087Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -38354,7 +38354,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3808.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T08:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -38545,7 +38545,7 @@ window.MATCHES = [
       "dcx2": 1.02
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Dianella White Eagle",
@@ -39316,7 +39316,7 @@ window.MATCHES = [
       "dcx2": 2.25
     },
     "h2h": null,
-    "elapsed": 4
+    "elapsed": 10
   },
   {
     "home": "Yanbian Longding",
@@ -39327,11 +39327,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/1445.png",
     "country": "China",
     "flag": "https://media.api-sports.io/flags/cn.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T10:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 5,
     "awayPos": 7,
     "tableSize": 16,
@@ -39518,7 +39518,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 1
   },
   {
     "home": "Gangneung City",
@@ -39529,11 +39529,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/27860.png",
     "country": "South-Korea",
     "flag": "https://media.api-sports.io/flags/kr.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T10:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -39714,7 +39714,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 1
   },
   {
     "home": "Mokpo City",
@@ -40102,11 +40102,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/25720.png",
     "country": "South-Korea",
     "flag": "https://media.api-sports.io/flags/kr.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T10:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -40287,7 +40287,7 @@ window.MATCHES = [
       "dcx2": 2.8
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 1
   },
   {
     "home": "Haman",
@@ -40298,11 +40298,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/18653.png",
     "country": "South-Korea",
     "flag": "https://media.api-sports.io/flags/kr.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T10:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -40483,7 +40483,7 @@ window.MATCHES = [
       "dcx2": 1.02
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 1
   },
   {
     "home": "Yangcheon TNT",
