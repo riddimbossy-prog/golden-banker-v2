@@ -6,7 +6,7 @@
    then settles each once the match finishes — building an append-only,
    per-engine win/loss history in track-log.json.
 
-   Why per-engine: the daily results image collapses all 11 engines into one
+   Why per-engine: the daily results image collapses all 12 engines into one
    "consensus" number. That hides which engine is carrying the others. This log
    keeps each engine's own record so you can see, after a few weeks, that (say)
    Strict hits 71% while Apex hits 52% — and retire or trust accordingly.
@@ -57,7 +57,7 @@ function bankersFor(m){
   try{ const r=eng.strictRecommend(m);  if(r.bet)    push("Strict", r.market,  r.confidence); }catch(e){}
   [["Ultra",eng.ultraRecommend],["Elite",eng.rulesProRecommend],["Apex",eng.apexRecommend],
    ["Prime",eng.primeRecommend],["Value",eng.valueRecommend],["Pro",eng.proRecommend],
-   ["Trend",eng.trendRecommend],["Streaks",eng.streakRecommend],["Halves",eng.halvesRecommend]
+   ["Trend",eng.trendRecommend],["Streaks",eng.streakRecommend],["Halves",eng.halvesRecommend],["Mismatch",eng.mismatchRecommend]
   ].forEach(([name,fn])=>{ try{ const r=fn(m); if(r.banker) push(name, r.primary, r.confidence); }catch(e){} });
   return out;
 }
