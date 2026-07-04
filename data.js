@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T05:12:07.930Z";
-window.SCORES_UPDATED = "2026-07-04T05:55:26.460Z";
+window.SCORES_UPDATED = "2026-07-04T06:00:58.807Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -34719,7 +34719,7 @@ window.MATCHES = [
       "bttsNo": 1.25
     },
     "h2h": null,
-    "elapsed": 35
+    "elapsed": 41
   },
   {
     "home": "Queanbeyan City",
@@ -34929,7 +34929,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3774.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T05:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -35131,7 +35131,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3773.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T05:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 2,
@@ -35923,7 +35923,7 @@ window.MATCHES = [
       "dcx2": 1.45
     },
     "h2h": null,
-    "elapsed": 39
+    "elapsed": 44
   },
   {
     "home": "Adelaide United II",
@@ -36123,7 +36123,7 @@ window.MATCHES = [
       "dcx2": 1.6
     },
     "h2h": null,
-    "elapsed": 21
+    "elapsed": 26
   },
   {
     "home": "Sturt Lions",
@@ -36323,7 +36323,7 @@ window.MATCHES = [
       "dcx2": 1.5
     },
     "h2h": null,
-    "elapsed": 22
+    "elapsed": 27
   },
   {
     "home": "Belconnen United",
