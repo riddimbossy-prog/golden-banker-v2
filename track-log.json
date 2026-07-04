@@ -5000,8 +5000,8 @@
       "confidence": 10,
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-06-30T22:00:54.319Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -5014,8 +5014,8 @@
       "confidence": 8,
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-06-30T22:00:54.319Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -5028,8 +5028,8 @@
       "confidence": 8,
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-06-30T22:00:54.319Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -5140,8 +5140,8 @@
       "confidence": "High",
       "leagueClass": "Balanced",
       "recordedAt": "2026-06-30T22:00:54.319Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -5154,8 +5154,8 @@
       "confidence": 8,
       "leagueClass": "Balanced",
       "recordedAt": "2026-06-30T22:00:54.319Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -5168,8 +5168,8 @@
       "confidence": 8,
       "leagueClass": "Balanced",
       "recordedAt": "2026-06-30T22:00:54.319Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -5182,8 +5182,8 @@
       "confidence": 8,
       "leagueClass": "Balanced",
       "recordedAt": "2026-06-30T22:00:54.319Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -5196,8 +5196,8 @@
       "confidence": 10,
       "leagueClass": "Balanced",
       "recordedAt": "2026-06-30T22:00:54.319Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -5210,8 +5210,8 @@
       "confidence": 8,
       "leagueClass": "Balanced",
       "recordedAt": "2026-06-30T22:00:54.319Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -5224,8 +5224,8 @@
       "confidence": 8,
       "leagueClass": "Balanced",
       "recordedAt": "2026-06-30T22:00:54.319Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -5350,8 +5350,8 @@
       "confidence": 9,
       "leagueClass": "Balanced",
       "recordedAt": "2026-06-30T22:00:54.320Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -40383,8 +40383,8 @@
       "confidence": 10,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-04T03:50:41.109Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -40848,10 +40848,192 @@
       "status": "pending",
       "result": null,
       "score": null
+    },
+    {
+      "matchDate": "2026-07-05",
+      "home": "South Melbourne",
+      "away": "Dandenong Thunder",
+      "league": "Victoria NPL",
+      "engine": "Halves",
+      "market": "Home Win",
+      "confidence": 8,
+      "leagueClass": "High-Scoring",
+      "recordedAt": "2026-07-04T10:35:31.081Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-05",
+      "home": "Project 51O",
+      "away": "Davis Legacy",
+      "league": "USL League Two",
+      "engine": "Halves",
+      "market": "Home Win",
+      "confidence": 10,
+      "leagueClass": "Very High-Scoring",
+      "recordedAt": "2026-07-04T10:35:31.116Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-04",
+      "home": "HIFK Helsinki",
+      "away": "MyPa",
+      "league": "Kakkonen - Lohko A",
+      "engine": "Prime",
+      "market": "Home Team Over 0.5 Goals",
+      "confidence": 10,
+      "leagueClass": "Very High-Scoring",
+      "recordedAt": "2026-07-04T10:35:31.124Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-04",
+      "home": "SalPa",
+      "away": "VJS",
+      "league": "Ykkönen",
+      "engine": "Mismatch",
+      "market": "Over 2.5 Goals",
+      "confidence": 10,
+      "leagueClass": "Very High-Scoring",
+      "recordedAt": "2026-07-04T10:35:31.128Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-04",
+      "home": "Fjardabyggd / Leiknir",
+      "away": "Vikingur Olafsiik",
+      "league": "2. Deild",
+      "engine": "Mismatch",
+      "market": "Home Team Over 1.5 Goals",
+      "confidence": 8,
+      "leagueClass": "Very High-Scoring",
+      "recordedAt": "2026-07-04T10:35:31.132Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-04",
+      "home": "HPS",
+      "away": "Reipas",
+      "league": "Kakkonen - Lohko A",
+      "engine": "Mismatch",
+      "market": "Over 2.5 Goals",
+      "confidence": 10,
+      "leagueClass": "Very High-Scoring",
+      "recordedAt": "2026-07-04T10:35:31.134Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-04",
+      "home": "OLS",
+      "away": "Inter Turku II",
+      "league": "Ykkönen",
+      "engine": "Mismatch",
+      "market": "Home Team Over 1.5 Goals",
+      "confidence": 8,
+      "leagueClass": "Very High-Scoring",
+      "recordedAt": "2026-07-04T10:35:31.135Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-04",
+      "home": "LDU Portoviejo",
+      "away": "9 de Octubre",
+      "league": "Liga Pro Serie B",
+      "engine": "Mismatch",
+      "market": "Under 2.5 Goals",
+      "confidence": 10,
+      "leagueClass": "Very Low-Scoring",
+      "recordedAt": "2026-07-04T10:35:31.151Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-04",
+      "home": "Santa Cruz",
+      "away": "Ituano",
+      "league": "Serie C",
+      "engine": "Normal",
+      "market": "Under 3.5",
+      "confidence": "High",
+      "leagueClass": "Low-Scoring",
+      "recordedAt": "2026-07-04T10:35:31.153Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-04",
+      "home": "Santa Cruz",
+      "away": "Ituano",
+      "league": "Serie C",
+      "engine": "Prime",
+      "market": "Under 3.5",
+      "confidence": 10,
+      "leagueClass": "Low-Scoring",
+      "recordedAt": "2026-07-04T10:35:31.153Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-04",
+      "home": "Santa Cruz",
+      "away": "Ituano",
+      "league": "Serie C",
+      "engine": "Value",
+      "market": "Under 3.5",
+      "confidence": 8,
+      "leagueClass": "Low-Scoring",
+      "recordedAt": "2026-07-04T10:35:31.153Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-04",
+      "home": "Santa Cruz",
+      "away": "Ituano",
+      "league": "Serie C",
+      "engine": "Pro",
+      "market": "Under 3.5",
+      "confidence": 8,
+      "leagueClass": "Low-Scoring",
+      "recordedAt": "2026-07-04T10:35:31.153Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-04",
+      "home": "Pittsburgh Riverhounds",
+      "away": "Brooklyn",
+      "league": "USL Championship",
+      "engine": "Streaks",
+      "market": "Home DNB",
+      "confidence": 8,
+      "leagueClass": "High-Scoring",
+      "recordedAt": "2026-07-04T10:35:31.153Z",
+      "status": "pending",
+      "result": null,
+      "score": null
     }
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-04T10:30:56.632Z"
+    "updated": "2026-07-04T10:35:31.177Z"
   }
 }
