@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T01:55:29.086Z";
-window.SCORES_UPDATED = "2026-07-04T02:35:30.646Z";
+window.SCORES_UPDATED = "2026-07-04T02:40:45.359Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -32174,11 +32174,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/25947.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "NS",
+    "status": "FT",
     "kickoff": "2026-07-04T00:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 1,
     "awayPos": 4,
     "tableSize": 144,
@@ -33102,7 +33102,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/1504.png",
     "country": "World",
     "flag": null,
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-04T01:30:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -33305,7 +33305,7 @@ window.MATCHES = [
     "xgAwayReal": 0.82,
     "awayXgAgainst": 1.3,
     "lineupConfirmed": true,
-    "elapsed": 45
+    "elapsed": 47
   },
   {
     "home": "Denver Summit W",
@@ -33530,7 +33530,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/25936.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-04T01:30:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -33715,7 +33715,7 @@ window.MATCHES = [
       "dcx2": 1.13
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 48
   },
   {
     "home": "Angel City W",
@@ -33928,7 +33928,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.56,
     "awayXgAgainst": 1.8,
-    "elapsed": 24
+    "elapsed": 29
   },
   {
     "home": "Ventura County Fusion",
@@ -34125,7 +34125,7 @@ window.MATCHES = [
     "status": "1H",
     "kickoff": "2026-07-04T02:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 1,
+    "homeGoals": 2,
     "awayGoals": 0,
     "homePos": 2,
     "awayPos": 8,
@@ -34294,7 +34294,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 27
+    "elapsed": 33
   },
   {
     "home": "Tacoma Stars",
@@ -34490,7 +34490,7 @@ window.MATCHES = [
       "dcx2": 1.01
     },
     "h2h": null,
-    "elapsed": 32
+    "elapsed": 38
   },
   {
     "home": "Hume City",
