@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T03:33:42.911Z";
-window.SCORES_UPDATED = "2026-07-04T04:45:33.904Z";
+window.SCORES_UPDATED = "2026-07-04T04:50:41.353Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -35561,7 +35561,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3800.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T04:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
