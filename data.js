@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T20:08:29.082Z";
-window.SCORES_UPDATED = "2026-07-04T21:20:41.724Z";
+window.SCORES_UPDATED = "2026-07-04T21:25:26.123Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -51972,7 +51972,7 @@ window.MATCHES = [
     "round": "Round of 32",
     "odds": null,
     "h2h": null,
-    "elapsed": 83
+    "elapsed": 89
   },
   {
     "home": "Maranhão",
@@ -51987,7 +51987,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T20:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": 16,
     "awayPos": 6,
     "tableSize": 20,
@@ -52174,7 +52174,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 59
+    "elapsed": 65
   },
   {
     "home": "Águia de Marabá",
@@ -52189,7 +52189,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T20:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 2,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": 2,
     "awayPos": 1,
     "tableSize": 96,
@@ -52374,7 +52374,7 @@ window.MATCHES = [
       "dcx2": 1.38
     },
     "h2h": null,
-    "elapsed": 56
+    "elapsed": 62
   },
   {
     "home": "Ipatinga",
@@ -52576,7 +52576,7 @@ window.MATCHES = [
       "dcx2": 1.25
     },
     "h2h": null,
-    "elapsed": 58
+    "elapsed": 64
   },
   {
     "home": "Indy Eleven",
@@ -52794,7 +52794,7 @@ window.MATCHES = [
     "xgAwayReal": 1.12,
     "awayXgAgainst": 1.84,
     "lineupConfirmed": true,
-    "elapsed": 54
+    "elapsed": 60
   },
   {
     "home": "San Luis",
@@ -52975,7 +52975,7 @@ window.MATCHES = [
     "round": "Group Stage - 5",
     "odds": null,
     "h2h": null,
-    "elapsed": 59
+    "elapsed": 65
   },
   {
     "home": "Plaza Colonia",
@@ -53177,7 +53177,7 @@ window.MATCHES = [
       "dcx2": 1.77
     },
     "h2h": null,
-    "elapsed": 60
+    "elapsed": 66
   },
   {
     "home": "Paraguay",
@@ -53395,7 +53395,7 @@ window.MATCHES = [
     "xgAwayReal": 0.92,
     "awayXgAgainst": 2.05,
     "lineupConfirmed": true,
-    "elapsed": 16
+    "elapsed": 22
   },
   {
     "home": "Luverdense",
@@ -53595,7 +53595,7 @@ window.MATCHES = [
       "dcx2": 2.35
     },
     "h2h": null,
-    "elapsed": 21
+    "elapsed": 27
   },
   {
     "home": "Marcílio Dias",
@@ -53795,7 +53795,7 @@ window.MATCHES = [
       "dcx2": 1.33
     },
     "h2h": null,
-    "elapsed": 16
+    "elapsed": 22
   },
   {
     "home": "Quilmes",
@@ -53997,7 +53997,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 18
+    "elapsed": 24
   },
   {
     "home": "Goiatuba EC",
