@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T06:49:17.438Z";
-window.SCORES_UPDATED = "2026-07-04T07:50:43.779Z";
+window.SCORES_UPDATED = "2026-07-04T07:55:26.368Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -36348,7 +36348,7 @@ window.MATCHES = [
       "bttsNo": 1.36
     },
     "h2h": null,
-    "elapsed": 48
+    "elapsed": 53
   },
   {
     "home": "Manly United",
@@ -36359,7 +36359,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/16777.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T07:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -36550,7 +36550,7 @@ window.MATCHES = [
       "dcx2": 1.62
     },
     "h2h": null,
-    "elapsed": 43
+    "elapsed": 45
   },
   {
     "home": "Armadale",
@@ -36561,7 +36561,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/20890.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T07:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -36763,11 +36763,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3813.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T07:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": 10,
     "awayPos": 12,
     "tableSize": 12,
@@ -37167,7 +37167,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3814.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T07:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -37369,7 +37369,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3823.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T07:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -37943,7 +37943,7 @@ window.MATCHES = [
       "dcx2": 1.11
     },
     "h2h": null,
-    "elapsed": 13
+    "elapsed": 18
   },
   {
     "home": "FK Beograd",
@@ -38143,7 +38143,7 @@ window.MATCHES = [
       "dcx2": 2.05
     },
     "h2h": null,
-    "elapsed": 14
+    "elapsed": 18
   },
   {
     "home": "Monaro Panthers",
@@ -38343,7 +38343,7 @@ window.MATCHES = [
       "dcx2": 8.5
     },
     "h2h": null,
-    "elapsed": 2
+    "elapsed": 6
   },
   {
     "home": "Sunshine Georgies",
