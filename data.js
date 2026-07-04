@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T06:49:17.438Z";
-window.SCORES_UPDATED = "2026-07-04T09:10:40.942Z";
+window.SCORES_UPDATED = "2026-07-04T09:15:35.865Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -37741,7 +37741,7 @@ window.MATCHES = [
       "dcx2": 1.17
     },
     "h2h": null,
-    "elapsed": 88
+    "elapsed": 90
   },
   {
     "home": "Sutherland Sharks",
@@ -37755,8 +37755,8 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-04T07:30:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 2,
-    "awayGoals": 1,
+    "homeGoals": 3,
+    "awayGoals": 2,
     "homePos": 6,
     "awayPos": 2,
     "tableSize": 16,
@@ -37943,7 +37943,7 @@ window.MATCHES = [
       "dcx2": 1.11
     },
     "h2h": null,
-    "elapsed": 71
+    "elapsed": 81
   },
   {
     "home": "FK Beograd",
@@ -38143,7 +38143,7 @@ window.MATCHES = [
       "dcx2": 2.05
     },
     "h2h": null,
-    "elapsed": 72
+    "elapsed": 82
   },
   {
     "home": "Monaro Panthers",
@@ -38157,7 +38157,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-04T07:45:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 5,
+    "homeGoals": 7,
     "awayGoals": 0,
     "homePos": 2,
     "awayPos": 10,
@@ -38343,7 +38343,7 @@ window.MATCHES = [
       "dcx2": 8.5
     },
     "h2h": null,
-    "elapsed": 61
+    "elapsed": 71
   },
   {
     "home": "Sunshine Georgies",
@@ -38357,7 +38357,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-04T08:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 0,
+    "homeGoals": 1,
     "awayGoals": 1,
     "homePos": 8,
     "awayPos": 1,
@@ -38545,7 +38545,7 @@ window.MATCHES = [
       "dcx2": 1.02
     },
     "h2h": null,
-    "elapsed": 46
+    "elapsed": 56
   },
   {
     "home": "Dianella White Eagle",
@@ -38556,11 +38556,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3819.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T09:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 2,
     "homePos": 9,
     "awayPos": 4,
     "tableSize": 12,
@@ -38732,7 +38732,7 @@ window.MATCHES = [
     "round": "Regular Season - 17",
     "odds": null,
     "h2h": null,
-    "elapsed": null
+    "elapsed": 8
   },
   {
     "home": "Changwon City",
@@ -38928,7 +38928,7 @@ window.MATCHES = [
       "dcx2": 2.05
     },
     "h2h": null,
-    "elapsed": 6
+    "elapsed": 16
   },
   {
     "home": "Pocheon",
@@ -39116,7 +39116,7 @@ window.MATCHES = [
       "dcx2": 1.53
     },
     "h2h": null,
-    "elapsed": 4
+    "elapsed": 14
   },
   {
     "home": "MetroStars",
