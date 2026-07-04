@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T01:55:29.086Z";
-window.SCORES_UPDATED = "2026-07-04T02:20:39.054Z";
+window.SCORES_UPDATED = "2026-07-04T02:25:30.902Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -32736,7 +32736,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/20961.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T00:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -32908,7 +32908,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Fort Worth Vaqueros",
@@ -33102,7 +33102,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/1504.png",
     "country": "World",
     "flag": null,
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T01:30:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -33519,7 +33519,7 @@ window.MATCHES = [
     "xgAwayReal": 0.91,
     "awayXgAgainst": 2.35,
     "lineupConfirmed": true,
-    "elapsed": 42
+    "elapsed": 45
   },
   {
     "home": "Midlakes United",
@@ -33928,7 +33928,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.56,
     "awayXgAgainst": 1.8,
-    "elapsed": 9
+    "elapsed": 14
   },
   {
     "home": "Ventura County Fusion",
@@ -34294,7 +34294,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 12
+    "elapsed": 17
   },
   {
     "home": "Tacoma Stars",
@@ -34490,7 +34490,7 @@ window.MATCHES = [
       "dcx2": 1.01
     },
     "h2h": null,
-    "elapsed": 17
+    "elapsed": 22
   },
   {
     "home": "Hume City",
