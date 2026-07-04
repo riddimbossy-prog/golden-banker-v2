@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T22:05:04.488Z";
-window.SCORES_UPDATED = "2026-07-04T22:40:46.276Z";
+window.SCORES_UPDATED = "2026-07-04T22:45:38.100Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -49703,7 +49703,7 @@ window.MATCHES = [
     "xgAwayReal": 0.92,
     "awayXgAgainst": 2.05,
     "lineupConfirmed": true,
-    "elapsed": 77
+    "elapsed": 82
   },
   {
     "home": "Luverdense",
@@ -49903,7 +49903,7 @@ window.MATCHES = [
       "dcx2": 2.35
     },
     "h2h": null,
-    "elapsed": 79
+    "elapsed": 84
   },
   {
     "home": "Marcílio Dias",
@@ -50103,7 +50103,7 @@ window.MATCHES = [
       "dcx2": 1.33
     },
     "h2h": null,
-    "elapsed": 77
+    "elapsed": 82
   },
   {
     "home": "Quilmes",
@@ -50305,7 +50305,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 80
+    "elapsed": 85
   },
   {
     "home": "Goiatuba EC",
@@ -50505,7 +50505,7 @@ window.MATCHES = [
       "dcx2": 1.57
     },
     "h2h": null,
-    "elapsed": 50
+    "elapsed": 55
   },
   {
     "home": "LDU Portoviejo",
@@ -50707,7 +50707,7 @@ window.MATCHES = [
       "dcx2": 1.36
     },
     "h2h": null,
-    "elapsed": 48
+    "elapsed": 53
   },
   {
     "home": "Confiança",
@@ -50909,7 +50909,7 @@ window.MATCHES = [
       "dcx2": 1.75
     },
     "h2h": null,
-    "elapsed": 40
+    "elapsed": 45
   },
   {
     "home": "Maringá",
@@ -50923,7 +50923,7 @@ window.MATCHES = [
     "status": "1H",
     "kickoff": "2026-07-04T22:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 2,
+    "homeGoals": 3,
     "awayGoals": 0,
     "homePos": 13,
     "awayPos": 9,
@@ -51111,7 +51111,7 @@ window.MATCHES = [
       "dcx2": 2.2
     },
     "h2h": null,
-    "elapsed": 40
+    "elapsed": 45
   },
   {
     "home": "Velo Clube",
@@ -51298,7 +51298,7 @@ window.MATCHES = [
     "round": "Round of 32",
     "odds": null,
     "h2h": null,
-    "elapsed": 41
+    "elapsed": 45
   },
   {
     "home": "Tampa Bay Rowdies",
@@ -51516,7 +51516,7 @@ window.MATCHES = [
     "xgAwayReal": 1.3,
     "awayXgAgainst": 1.36,
     "lineupConfirmed": true,
-    "elapsed": 34
+    "elapsed": 39
   },
   {
     "home": "Deportes Iquique",
@@ -51712,7 +51712,7 @@ window.MATCHES = [
       "dcx2": 1.25
     },
     "h2h": null,
-    "elapsed": 40
+    "elapsed": 45
   },
   {
     "home": "Santa Cruz",
@@ -51914,7 +51914,7 @@ window.MATCHES = [
       "dcx2": 1.62
     },
     "h2h": null,
-    "elapsed": 11
+    "elapsed": 16
   },
   {
     "home": "Goias",
