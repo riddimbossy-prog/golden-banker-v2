@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T14:19:08.286Z";
-window.SCORES_UPDATED = "2026-07-04T16:00:59.857Z";
+window.SCORES_UPDATED = "2026-07-04T16:05:27.726Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -45364,7 +45364,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/27270.png",
     "country": "Syria",
     "flag": "https://media.api-sports.io/flags/sy.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T14:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 2,
@@ -45540,7 +45540,7 @@ window.MATCHES = [
     "round": "Regular Season - 30",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Shorta",
@@ -48527,7 +48527,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/9419.png",
     "country": "Belarus",
     "flag": "https://media.api-sports.io/flags/by.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-04T15:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -48718,7 +48718,7 @@ window.MATCHES = [
       "dcx2": 2.2
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 46
   },
   {
     "home": "FC Slutsk",
@@ -48729,7 +48729,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/13149.png",
     "country": "Belarus",
     "flag": "https://media.api-sports.io/flags/by.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-04T15:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -48905,7 +48905,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 47
   },
   {
     "home": "VPS",
@@ -49130,7 +49130,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/18518.png",
     "country": "Finland",
     "flag": "https://media.api-sports.io/flags/fi.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-04T15:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -49321,7 +49321,7 @@ window.MATCHES = [
       "dcx2": 3.35
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 49
   },
   {
     "home": "Rīgas FS",
@@ -49332,7 +49332,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4135.png",
     "country": "Latvia",
     "flag": "https://media.api-sports.io/flags/lv.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-04T15:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -49523,7 +49523,7 @@ window.MATCHES = [
       "dcx2": 3
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 46
   },
   {
     "home": "Politehnica UTM",
@@ -49731,11 +49731,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/2146.png",
     "country": "Norway",
     "flag": "https://media.api-sports.io/flags/no.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T16:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 11,
     "awayPos": 7,
     "tableSize": 16,
@@ -49937,7 +49937,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1,
     "awayXgAgainst": 1.91,
-    "elapsed": null
+    "elapsed": 4
   },
   {
     "home": "Deportivo Camioneros",
@@ -50150,11 +50150,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/8378.png",
     "country": "Argentina",
     "flag": "https://media.api-sports.io/flags/ar.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T16:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 6,
     "awayPos": 14,
     "tableSize": 28,
@@ -50341,7 +50341,7 @@ window.MATCHES = [
       "dcx2": 1.95
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 2
   },
   {
     "home": "IBV Vestmannaeyjar",
@@ -50352,11 +50352,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/274.png",
     "country": "Iceland",
     "flag": "https://media.api-sports.io/flags/is.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T16:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 11,
     "awayPos": 5,
     "tableSize": 12,
@@ -50543,7 +50543,7 @@ window.MATCHES = [
       "dcx2": 1.6
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 5
   },
   {
     "home": "Leiknir R.",
@@ -50554,11 +50554,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4166.png",
     "country": "Iceland",
     "flag": "https://media.api-sports.io/flags/is.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T16:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 6,
     "awayPos": 12,
     "tableSize": 12,
@@ -50745,7 +50745,7 @@ window.MATCHES = [
       "dcx2": 2.4
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 4
   },
   {
     "home": "Magni",
@@ -50756,11 +50756,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4171.png",
     "country": "Iceland",
     "flag": "https://media.api-sports.io/flags/is.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T16:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 12,
     "awayPos": 11,
     "tableSize": 12,
@@ -50945,7 +50945,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 5
   },
   {
     "home": "Trans Narva",
@@ -50956,11 +50956,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/2273.png",
     "country": "Estonia",
     "flag": "https://media.api-sports.io/flags/ee.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T16:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 10,
     "awayPos": 1,
     "tableSize": 10,
@@ -51147,7 +51147,7 @@ window.MATCHES = [
       "dcx2": 1.01
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 5
   },
   {
     "home": "Paide",
@@ -51158,11 +51158,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3525.png",
     "country": "Estonia",
     "flag": "https://media.api-sports.io/flags/ee.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T16:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 4,
     "awayPos": 6,
     "tableSize": 10,
@@ -51349,7 +51349,7 @@ window.MATCHES = [
       "dcx2": 2.55
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 5
   },
   {
     "home": "Metta / LU",
@@ -51360,11 +51360,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/16835.png",
     "country": "Latvia",
     "flag": "https://media.api-sports.io/flags/lv.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T16:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 1,
     "awayPos": 9,
     "tableSize": 14,
@@ -51546,7 +51546,7 @@ window.MATCHES = [
       "under35": 2
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 5
   },
   {
     "home": "AB",
