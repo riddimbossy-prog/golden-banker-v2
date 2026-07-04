@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T22:05:04.488Z";
-window.SCORES_UPDATED = "2026-07-04T23:50:39.296Z";
+window.SCORES_UPDATED = "2026-07-04T23:55:29.989Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -50722,7 +50722,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T22:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
-    "awayGoals": 1,
+    "awayGoals": 2,
     "homePos": 18,
     "awayPos": 17,
     "tableSize": 20,
@@ -51111,7 +51111,7 @@ window.MATCHES = [
       "dcx2": 2.2
     },
     "h2h": null,
-    "elapsed": 89
+    "elapsed": 90
   },
   {
     "home": "Velo Clube",
@@ -51125,7 +51125,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-04T22:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 1,
+    "homeGoals": 2,
     "awayGoals": 1,
     "homePos": 3,
     "awayPos": 4,
@@ -51313,7 +51313,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T22:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
-    "awayGoals": 3,
+    "awayGoals": 4,
     "homePos": 1,
     "awayPos": 10,
     "tableSize": 25,
@@ -51516,7 +51516,7 @@ window.MATCHES = [
     "xgAwayReal": 1.3,
     "awayXgAgainst": 1.36,
     "lineupConfirmed": true,
-    "elapsed": 83
+    "elapsed": 88
   },
   {
     "home": "Deportes Iquique",
@@ -51914,7 +51914,7 @@ window.MATCHES = [
       "dcx2": 1.62
     },
     "h2h": null,
-    "elapsed": 58
+    "elapsed": 62
   },
   {
     "home": "Goias",
@@ -52737,7 +52737,7 @@ window.MATCHES = [
       "dcx2": 2.55
     },
     "h2h": null,
-    "elapsed": 19
+    "elapsed": 24
   },
   {
     "home": "Ferroviária",
@@ -52939,7 +52939,7 @@ window.MATCHES = [
       "dcx2": 1.7
     },
     "h2h": null,
-    "elapsed": 20
+    "elapsed": 25
   },
   {
     "home": "North Carolina Courage W",
@@ -53156,7 +53156,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.21,
     "awayXgAgainst": 1.48,
-    "elapsed": 12
+    "elapsed": 17
   },
   {
     "home": "Rhode Island",
@@ -53373,7 +53373,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.2,
     "awayXgAgainst": 1.43,
-    "elapsed": 12
+    "elapsed": 17
   },
   {
     "home": "Fortaleza EC",
