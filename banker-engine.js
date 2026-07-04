@@ -3431,6 +3431,75 @@ function halvesRecommend(m){
   return halvesOut(m,best.market,grade,best.score,reasons);
 }
 
+/* ============================== MISMATCH ENGINE ==============================
+   Fires ONLY when both teams' venue profiles point the SAME direction in a
+   market: home's home-record and away's away-record agreeing. A true mismatch
+   is two arrows aligned — not one strong team vs an unknown. Fail-safe: any
+   missing venue stat = honest No Bet. */
+function mismatchOut(m, market, grade, score, reasons){
+  const noStand=(typeof hasNoStandings==='function')&&hasNoStandings(m);
+  const banker= market!=="No Bet" && (grade==="Banker"||grade==="Elite Banker") && !noStand;
+  const confMap={ "Strong Pick":7, "Banker":8, "Elite Banker":10 };
+  return { match:m, engine:"mismatch", primary:market, bet:market!=="No Bet",
+    banker, confidence: market==="No Bet"?0:(confMap[grade]||6), grade:grade||null,
+    score:score!=null?`${score}/12`:null,
+    verdict:`${market}${market!=="No Bet"?` (Mismatch — ${grade}, ${score}/12)`:" — No Bet"}. ${reasons.join(' ')}`,
+    reasons, humanChecks:["Direction-alignment pick; confirm lineups and motivation."] };
+}
+function mismatchRecommend(m){
+  if(!m) return mismatchOut(m,"No Bet",null,null,["No match data."]);
+  if(!m.odds) return mismatchOut(m,"No Bet",null,null,["No bookmaker odds — alignment needs price confirmation."]);
+  const hA=m.homeScoredAtHome, hD=m.homeConcededAtHome, aA=m.awayScoredAway, aD=m.awayConcededAway;
+  if(hA==null||hD==null||aA==null||aD==null)
+    return mismatchOut(m,"No Bet",null,null,["Venue profiles incomplete — no alignment read (honest No Bet)."]);
+  const gdH=m.homeGD, gdA=m.awayGD, posGap=(m.homePos!=null&&m.awayPos!=null)?(m.awayPos-m.homePos):null;
+  const cands=[]; const C=(mk,sc,why)=>{ if(sc>=8) cands.push({market:mk,score:Math.min(sc,12),why}); };
+
+  // RESULT — home arrow UP and away arrow DOWN (or the reverse)
+  const homeUp = hA>=1.50&&hD<=1.00&&(gdH==null||gdH>0);
+  const awayDown = aA<=0.90&&aD>=1.50&&(gdA==null||gdA<0);
+  if(homeUp&&awayDown)
+    C("Home Win", 9+(posGap!=null&&posGap>=6?2:0)+((hA-aA)>=1.0?1:0),
+      `Both arrows aligned: home scores ${hA}/concedes ${hD} at home while away manages ${aA} and ships ${aD} on the road.`);
+  const awayUp = aA>=1.40&&aD<=1.00&&(gdA==null||gdA>0);
+  const homeDown = hA<=0.90&&hD>=1.40&&(gdH==null||gdH<0);
+  if(awayUp&&homeDown)
+    C("Away Win", 9+(posGap!=null&&posGap<=-6?2:0),
+      `Both arrows aligned the other way: away travels well (${aA} for, ${aD} against) into a home side leaking ${hD}.`);
+
+  // TOTALS — both profiles pointing low / high
+  if(hA<=1.10&&hD<=1.00&&aA<=1.00&&aD<=1.10)
+    C("Under 2.5 Goals", 9+((hA+aA)<=1.7?2:0), `All four venue numbers point low: ${hA}/${hD} home, ${aA}/${aD} away.`);
+  else if((hA+aA)<=2.30&&(hD+aD)<=2.30)
+    C("Under 3.5 Goals", 8, `Combined attack ${(hA+aA).toFixed(1)} and defence ${(hD+aD).toFixed(1)} both point to a quiet game.`);
+  if(hA>=1.60&&hD>=1.20&&aA>=1.20&&aD>=1.40)
+    C("Over 2.5 Goals", 9+((hA+aA)>=3.2?2:0), `Every arrow points to goals: both attack, both concede.`);
+  else if((hA+aA)>=2.60&&(hD+aD)>=2.40)
+    C("Over 1.5 Goals", 8, `Attacks total ${(hA+aA).toFixed(1)} into defences shipping ${(hD+aD).toFixed(1)} — 2+ goals aligned.`);
+
+  // BTTS — mutual scoring vs one-way shutout
+  if(hA>=1.30&&hD>=1.00&&aA>=1.00&&aD>=1.00)
+    C("BTTS Yes", 8+((hA>=1.6&&aA>=1.2)?1:0), `Both score and both concede at their venues — GG alignment.`);
+  if(hD<=0.80&&aA<=0.80)
+    C("BTTS No", 8, `Home concedes only ${hD} while away scores only ${aA} on the road — same direction, one net.`);
+
+  // TEAM GOALS — strong attack into a leaking defence, both pointing the same way
+  if(hA>=1.80&&aD>=1.60)
+    C("Home Team Over 1.5 Goals", 8+(hA>=2.1?1:0), `Home banging in ${hA} at home into a defence conceding ${aD} away.`);
+
+  if(!cands.length) return mismatchOut(m,"No Bet",null,null,["No directional alignment — the teams' profiles disagree (honest No Bet)."]);
+  cands.sort((x,y)=>y.score-x.score);
+  let best=null;
+  for(const c of cands){
+    const g=(typeof oddsLadderGate==='function')?oddsLadderGate(m,c.market):{ok:true,block:false};
+    if(!g.block){ best=c; best.gateNote=g.reason||null; break; }
+  }
+  if(!best) return mismatchOut(m,"No Bet",null,cands[0].score,[`${cands[0].why} But the odds ladder rejected every aligned market.`]);
+  const grade=best.score>=11?"Elite Banker":best.score>=9?"Banker":"Strong Pick";
+  const reasons=[best.why]; if(best.gateNote)reasons.push(best.gateNote);
+  return mismatchOut(m,best.market,grade,best.score,reasons);
+}
+
 function withIntlFrame(fn){
   return function(m){ return intlFrameApply(m, fn(m)); };
 }
@@ -3445,10 +3514,11 @@ proRecommend     = withIntlFrame(proRecommend);
 trendRecommend   = withIntlFrame(trendRecommend);
 streakRecommend  = withIntlFrame(streakRecommend);
 halvesRecommend  = withIntlFrame(halvesRecommend);
+mismatchRecommend = withIntlFrame(mismatchRecommend);
 
 if (typeof module !== "undefined") module.exports = {
   analyseAll, recommend, scoreOver25, scoreBTTS, scoreWinDNB, settle,
   analyseStrict, strictRecommend, tierFromRank, streakRecommend, ultraRecommend, rulesProRecommend, apexRecommend, primeRecommend, valueRecommend, proRecommend,
-  classifyLeague, leagueContextVerdict, trendRecommend, halvesRecommend, oddsLadderGate,
+  classifyLeague, leagueContextVerdict, trendRecommend, halvesRecommend, mismatchRecommend, oddsLadderGate,
   intlFrameApply, isInternationalComp
 };
