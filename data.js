@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T00:04:59.265Z";
-window.SCORES_UPDATED = "2026-07-04T01:00:58.547Z";
+window.SCORES_UPDATED = "2026-07-04T01:05:29.996Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -19840,7 +19840,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/1980.png",
     "country": "Ecuador",
     "flag": "https://media.api-sports.io/flags/ec.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-04T00:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -20042,7 +20042,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 0.65,
     "awayXgAgainst": 1.29,
-    "elapsed": 45
+    "elapsed": 46
   },
   {
     "home": "Washington Spirit W",
@@ -20828,7 +20828,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/20961.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T00:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -66495,7 +66495,7 @@ window.MATCHES = [
       "dcx2": 2.15
     },
     "h2h": null,
-    "elapsed": 61
+    "elapsed": 66
   },
   {
     "home": "Western Mass Pioneers",
@@ -66678,7 +66678,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 72
+    "elapsed": 77
   },
   {
     "home": "West Chester United",
@@ -66689,7 +66689,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/25938.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-03T23:30:00+00:00",
     "matchDate": "2026-07-03",
     "homeGoals": 0,
