@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T06:49:17.438Z";
-window.SCORES_UPDATED = "2026-07-04T08:50:43.167Z";
+window.SCORES_UPDATED = "2026-07-04T08:55:31.254Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -36550,7 +36550,7 @@ window.MATCHES = [
       "dcx2": 1.62
     },
     "h2h": null,
-    "elapsed": 84
+    "elapsed": 90
   },
   {
     "home": "Armadale",
@@ -36561,11 +36561,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/20890.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T07:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
-    "awayGoals": 5,
+    "awayGoals": 6,
     "homePos": 11,
     "awayPos": 2,
     "tableSize": 12,
@@ -36752,7 +36752,7 @@ window.MATCHES = [
       "dcx2": 1.3
     },
     "h2h": null,
-    "elapsed": 89
+    "elapsed": null
   },
   {
     "home": "Perth Glory II",
@@ -36954,7 +36954,7 @@ window.MATCHES = [
       "dcx2": 1.7
     },
     "h2h": null,
-    "elapsed": 87
+    "elapsed": 90
   },
   {
     "home": "Stirling Lions",
@@ -36965,7 +36965,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/18732.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T07:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -37156,7 +37156,7 @@ window.MATCHES = [
       "dcx2": 1.5
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Fremantle City",
@@ -37358,7 +37358,7 @@ window.MATCHES = [
       "dcx2": 1.3
     },
     "h2h": null,
-    "elapsed": 86
+    "elapsed": 90
   },
   {
     "home": "Western Knights",
@@ -37545,7 +37545,7 @@ window.MATCHES = [
     "round": "Regular Season - 17",
     "odds": null,
     "h2h": null,
-    "elapsed": 89
+    "elapsed": 90
   },
   {
     "home": "Jincheon",
@@ -37560,7 +37560,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T07:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": null,
     "awayPos": null,
     "tableSize": 20,
@@ -37741,7 +37741,7 @@ window.MATCHES = [
       "dcx2": 1.17
     },
     "h2h": null,
-    "elapsed": 74
+    "elapsed": 79
   },
   {
     "home": "Sutherland Sharks",
@@ -37755,7 +37755,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-04T07:30:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 1,
+    "homeGoals": 2,
     "awayGoals": 1,
     "homePos": 6,
     "awayPos": 2,
@@ -37943,7 +37943,7 @@ window.MATCHES = [
       "dcx2": 1.11
     },
     "h2h": null,
-    "elapsed": 56
+    "elapsed": 61
   },
   {
     "home": "FK Beograd",
@@ -38143,7 +38143,7 @@ window.MATCHES = [
       "dcx2": 2.05
     },
     "h2h": null,
-    "elapsed": 58
+    "elapsed": 63
   },
   {
     "home": "Monaro Panthers",
@@ -38343,7 +38343,7 @@ window.MATCHES = [
       "dcx2": 8.5
     },
     "h2h": null,
-    "elapsed": 46
+    "elapsed": 51
   },
   {
     "home": "Sunshine Georgies",
