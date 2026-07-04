@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T14:19:08.286Z";
-window.SCORES_UPDATED = "2026-07-04T15:35:27.102Z";
+window.SCORES_UPDATED = "2026-07-04T15:40:44.252Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -45540,7 +45540,7 @@ window.MATCHES = [
     "round": "Regular Season - 30",
     "odds": null,
     "h2h": null,
-    "elapsed": 77
+    "elapsed": 82
   },
   {
     "home": "Shorta",
@@ -45914,7 +45914,7 @@ window.MATCHES = [
     "round": "Regular Season - 30",
     "odds": null,
     "h2h": null,
-    "elapsed": 67
+    "elapsed": 73
   },
   {
     "home": "hodd",
@@ -46116,7 +46116,7 @@ window.MATCHES = [
       "dcx2": 1.07
     },
     "h2h": null,
-    "elapsed": 77
+    "elapsed": 83
   },
   {
     "home": "FC Energetik-Bgu Minsk",
@@ -46131,7 +46131,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T14:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 4,
-    "awayGoals": 1,
+    "awayGoals": 2,
     "homePos": 2,
     "awayPos": 3,
     "tableSize": 18,
@@ -46303,7 +46303,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 79
+    "elapsed": 85
   },
   {
     "home": "IA Akranes",
@@ -46505,7 +46505,7 @@ window.MATCHES = [
       "dcx2": 1.55
     },
     "h2h": null,
-    "elapsed": 73
+    "elapsed": 79
   },
   {
     "home": "Grindavik",
@@ -46707,7 +46707,7 @@ window.MATCHES = [
       "dcx2": 1.5
     },
     "h2h": null,
-    "elapsed": 77
+    "elapsed": 83
   },
   {
     "home": "Fjolnir",
@@ -46907,7 +46907,7 @@ window.MATCHES = [
       "dcx2": 1.8
     },
     "h2h": null,
-    "elapsed": 77
+    "elapsed": 82
   },
   {
     "home": "Fjardabyggd / Leiknir",
@@ -47107,7 +47107,7 @@ window.MATCHES = [
       "dcx2": 1.73
     },
     "h2h": null,
-    "elapsed": 74
+    "elapsed": 80
   },
   {
     "home": "SJK",
@@ -47121,7 +47121,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-04T14:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 2,
+    "homeGoals": 3,
     "awayGoals": 1,
     "homePos": 10,
     "awayPos": 7,
@@ -47309,7 +47309,7 @@ window.MATCHES = [
       "dcx2": 2.1
     },
     "h2h": null,
-    "elapsed": 76
+    "elapsed": 82
   },
   {
     "home": "FF Jaro",
@@ -47527,7 +47527,7 @@ window.MATCHES = [
     "xgAwayReal": 1.18,
     "awayXgAgainst": 2.61,
     "lineupConfirmed": true,
-    "elapsed": 76
+    "elapsed": 82
   },
   {
     "home": "KuPS Akatemia",
@@ -47729,7 +47729,7 @@ window.MATCHES = [
       "dcx2": 1.11
     },
     "h2h": null,
-    "elapsed": 76
+    "elapsed": 82
   },
   {
     "home": "HPS",
@@ -47929,7 +47929,7 @@ window.MATCHES = [
       "dcx2": 1.4
     },
     "h2h": null,
-    "elapsed": 79
+    "elapsed": 85
   },
   {
     "home": "TP-47",
@@ -48329,7 +48329,7 @@ window.MATCHES = [
       "dcx2": 1.14
     },
     "h2h": null,
-    "elapsed": 81
+    "elapsed": 86
   },
   {
     "home": "TB",
@@ -48516,7 +48516,7 @@ window.MATCHES = [
     "round": "Regular Season - 16",
     "odds": null,
     "h2h": null,
-    "elapsed": 79
+    "elapsed": 84
   },
   {
     "home": "Neman",
@@ -48718,7 +48718,7 @@ window.MATCHES = [
       "dcx2": 2.2
     },
     "h2h": null,
-    "elapsed": 35
+    "elapsed": 41
   },
   {
     "home": "FC Slutsk",
@@ -48905,7 +48905,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 34
+    "elapsed": 40
   },
   {
     "home": "VPS",
@@ -49119,7 +49119,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 2.58,
     "awayXgAgainst": 1.28,
-    "elapsed": 34
+    "elapsed": 40
   },
   {
     "home": "OLS",
@@ -49321,7 +49321,7 @@ window.MATCHES = [
       "dcx2": 3.35
     },
     "h2h": null,
-    "elapsed": 34
+    "elapsed": 40
   },
   {
     "home": "Rīgas FS",
@@ -49523,7 +49523,7 @@ window.MATCHES = [
       "dcx2": 3
     },
     "h2h": null,
-    "elapsed": 34
+    "elapsed": 40
   },
   {
     "home": "Politehnica UTM",
@@ -49720,7 +49720,7 @@ window.MATCHES = [
       "under35": 1.65
     },
     "h2h": null,
-    "elapsed": 34
+    "elapsed": 40
   },
   {
     "home": "Bryne",
