@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T16:14:30.024Z";
-window.SCORES_UPDATED = "2026-07-04T16:50:40.599Z";
+window.SCORES_UPDATED = "2026-07-04T16:55:28.458Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -45291,7 +45291,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/13149.png",
     "country": "Belarus",
     "flag": "https://media.api-sports.io/flags/by.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T15:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -45467,7 +45467,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "VPS",
@@ -45478,10 +45478,10 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/587.png",
     "country": "Finland",
     "flag": "https://media.api-sports.io/flags/fi.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T15:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 3,
+    "homeGoals": 4,
     "awayGoals": 0,
     "homePos": 5,
     "awayPos": 12,
@@ -45682,7 +45682,7 @@ window.MATCHES = [
     "xgAwayReal": 2.58,
     "awayXgAgainst": 1.28,
     "lineupConfirmed": true,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "OLS",
@@ -45693,7 +45693,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/18518.png",
     "country": "Finland",
     "flag": "https://media.api-sports.io/flags/fi.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T15:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -45884,7 +45884,7 @@ window.MATCHES = [
       "dcx2": 3.35
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Rīgas FS",
@@ -46097,7 +46097,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/568.png",
     "country": "Moldova",
     "flag": "https://media.api-sports.io/flags/md.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T15:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -46283,7 +46283,7 @@ window.MATCHES = [
       "under35": 1.65
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Bryne",
@@ -46512,7 +46512,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/1956.png",
     "country": "Argentina",
     "flag": "https://media.api-sports.io/flags/ar.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T16:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 2,
@@ -47118,7 +47118,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4166.png",
     "country": "Iceland",
     "flag": "https://media.api-sports.io/flags/is.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T16:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -48312,7 +48312,7 @@ window.MATCHES = [
       "dcx2": 1.91
     },
     "h2h": null,
-    "elapsed": 35
+    "elapsed": 40
   },
   {
     "home": "ÍF II",
@@ -48512,7 +48512,7 @@ window.MATCHES = [
       "dcx2": 1.3
     },
     "h2h": null,
-    "elapsed": 18
+    "elapsed": 24
   },
   {
     "home": "Canada",
