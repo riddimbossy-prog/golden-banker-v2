@@ -3453,7 +3453,13 @@ function mismatchRecommend(m){
   if(hA==null||hD==null||aA==null||aD==null)
     return mismatchOut(m,"No Bet",null,null,["Venue profiles incomplete — no alignment read (honest No Bet)."]);
   const gdH=m.homeGD, gdA=m.awayGD, posGap=(m.homePos!=null&&m.awayPos!=null)?(m.awayPos-m.homePos):null;
-  const cands=[]; const C=(mk,sc,why)=>{ if(sc>=8) cands.push({market:mk,score:Math.min(sc,12),why}); };
+  // ---- league context: the environment steers WHICH line we take ----
+  const lt=m.leagueTrends, LR=k=>(lt&&lt.rates&&lt.rates[k]!=null)?lt.rates[k]:null;
+  const gpg=(lt&&lt.gpg!=null)?lt.gpg:null;
+  const highLg=(LR("Over 2.5")!=null&&LR("Over 2.5")>=0.55)||(gpg!=null&&gpg>=2.90);
+  const lowLg =(LR("Under 2.5")!=null&&LR("Under 2.5")>=0.55)||(gpg!=null&&gpg<=2.40);
+  const lgB=mk=>{ const r=LR(mk); return r==null?0 : r>=0.62?2 : r>=0.52?1 : r<=0.40?-2 : 0; };
+  const cands=[]; const C=(mk,sc,why)=>{ sc+=lgB(mk); if(sc>=8) cands.push({market:mk,score:Math.min(sc,12),why}); };
 
   // RESULT — home arrow UP and away arrow DOWN (or the reverse)
   const homeUp = hA>=1.50&&hD<=1.00&&(gdH==null||gdH>0);
@@ -3467,21 +3473,39 @@ function mismatchRecommend(m){
     C("Away Win", 9+(posGap!=null&&posGap<=-6?2:0),
       `Both arrows aligned the other way: away travels well (${aA} for, ${aD} against) into a home side leaking ${hD}.`);
 
-  // TOTALS — both profiles pointing low / high
-  if(hA<=1.10&&hD<=1.00&&aA<=1.00&&aD<=1.10)
-    C("Under 2.5 Goals", 9+((hA+aA)<=1.7?2:0), `All four venue numbers point low: ${hA}/${hD} home, ${aA}/${aD} away.`);
+  // TOTALS — both profiles pointing low / high; LEAGUE decides the line
+  if(hA<=1.10&&hD<=1.00&&aA<=1.00&&aD<=1.10){
+    if(highLg){
+      // low-scoring pair in a HIGH-scoring league: the league inflates goals —
+      // take the SAFER line and outrank BTTS No (owner rule)
+      C("Under 3.5 Goals", 10+((hA+aA)<=1.7?1:0), `Low-scoring pair (${hA}/${aA} for) in a high-scoring league — safer Under 3.5 over the tight line.`);
+      C("Under 2.5 Goals", 8, `All four venue numbers point low, but the league runs hot — U2.5 is second choice.`);
+    } else if(lowLg){
+      // low pair in a LOW league: environment supports the tight line
+      C("Under 2.5 Goals", 10+((hA+aA)<=1.7?2:0), `All four venue numbers point low (${hA}/${hD}, ${aA}/${aD}) in a league that stays under — U2.5 preferred.`);
+    } else {
+      C("Under 2.5 Goals", 9+((hA+aA)<=1.7?2:0), `All four venue numbers point low: ${hA}/${hD} home, ${aA}/${aD} away.`);
+    }
+  }
   else if((hA+aA)<=2.30&&(hD+aD)<=2.30)
-    C("Under 3.5 Goals", 8, `Combined attack ${(hA+aA).toFixed(1)} and defence ${(hD+aD).toFixed(1)} both point to a quiet game.`);
-  if(hA>=1.60&&hD>=1.20&&aA>=1.20&&aD>=1.40)
-    C("Over 2.5 Goals", 9+((hA+aA)>=3.2?2:0), `Every arrow points to goals: both attack, both concede.`);
+    C("Under 3.5 Goals", 8+(highLg?1:0), `Combined attack ${(hA+aA).toFixed(1)} and defence ${(hD+aD).toFixed(1)} both point to a quiet game.`);
+  if(hA>=1.60&&hD>=1.20&&aA>=1.20&&aD>=1.40){
+    if(lowLg){
+      // attacking pair in a LOW-scoring league: don't fight the environment — safer over line
+      C("Over 1.5 Goals", 10, `Both sides attack, but the league runs cold — Over 1.5 preferred over 2.5.`);
+      C("Over 2.5 Goals", 8, `Goal alignment in a low-scoring league — O2.5 second choice.`);
+    } else {
+      C("Over 2.5 Goals", 9+((hA+aA)>=3.2?2:0)+(highLg?1:0), `Every arrow points to goals: both attack, both concede.`);
+    }
+  }
   else if((hA+aA)>=2.60&&(hD+aD)>=2.40)
     C("Over 1.5 Goals", 8, `Attacks total ${(hA+aA).toFixed(1)} into defences shipping ${(hD+aD).toFixed(1)} — 2+ goals aligned.`);
 
-  // BTTS — mutual scoring vs one-way shutout
+  // BTTS — mutual scoring vs one-way shutout (league-rate boosted/penalised via lgB)
   if(hA>=1.30&&hD>=1.00&&aA>=1.00&&aD>=1.00)
     C("BTTS Yes", 8+((hA>=1.6&&aA>=1.2)?1:0), `Both score and both concede at their venues — GG alignment.`);
   if(hD<=0.80&&aA<=0.80)
-    C("BTTS No", 8, `Home concedes only ${hD} while away scores only ${aA} on the road — same direction, one net.`);
+    C("BTTS No", 8-(highLg?2:0), `Home concedes only ${hD} while away scores only ${aA} on the road — same direction, one net.`);
 
   // TEAM GOALS — strong attack into a leaking defence, both pointing the same way
   if(hA>=1.80&&aD>=1.60)
