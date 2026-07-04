@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T06:49:17.438Z";
-window.SCORES_UPDATED = "2026-07-04T09:05:30.844Z";
+window.SCORES_UPDATED = "2026-07-04T09:10:40.942Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
