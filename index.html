@@ -522,6 +522,15 @@ const { results: _allResults } = analyseAll(MATCHES);
 const results = _allResults.filter(r => r.primary && (r.primary !== 'Skip' || r.lean));
 
 /* helpers */
+function shortMarket(mk){
+  return String(mk||"")
+    .replace("Home Team Over 1.5 Goals","Home Over 1.5").replace("Away Team Over 1.5 Goals","Away Over 1.5")
+    .replace("Home Team Under 1.5 Goals","Home Under 1.5").replace("Away Team Under 1.5 Goals","Away Under 1.5")
+    .replace("Double Chance 1X","DC 1X").replace("Double Chance X2","DC X2")
+    .replace("HT Draw / FT Home Win","HT X / FT 1").replace("HT Draw / FT Away Win","HT X / FT 2")
+    .replace(/ Goals$/,"");
+}
+
 const pill = bet =>
   bet.includes('DNB') ? 'chip-dnb' :
   bet.includes('Win') ? 'chip-green' :
@@ -826,7 +835,7 @@ function renderCardsLegacy(){
       <div class="display font-semibold mb-1 flex items-center gap-2 flex-wrap">${b.match.home} <span style="color:var(--muted)">v</span> ${b.match.away} ${resTag}</div>
       <div class="text-xs mb-3" style="color:var(--muted)">${(b.reason||'').slice(0,90)}</div>
       <div class="flex items-center justify-between">
-        <span class="px-3 py-1 rounded-lg text-sm font-semibold ${pill(b.primary)}">${b.primary}</span>
+        <span class="px-3 py-1 rounded-lg text-sm font-semibold ${pill(b.primary)}">${shortMarket(b.primary)}</span>
         <span class="text-xs" style="color:var(--muted)">${b.confidence}</span>
       </div>
     </div>`;
@@ -936,7 +945,7 @@ function renderMatches(){
       top.forEach((r,i)=>{
         const res=settle(r.primary, r.match.homeGoals, r.match.awayGoals, r.match.status);
         const rt=res?`<span class="px-1.5 py-0.5 rounded text-[10px] font-bold ${resClass(res)}">${res.toUpperCase()}</span>`:'';
-        html+=`<div class="flex items-center gap-2 text-sm"><span class="w-5 h-5 bg-gold rounded flex items-center justify-center text-[11px] font-bold flex-shrink-0">${i+1}</span><span class="flex-1 truncate">${r.match.home} v ${r.match.away} ${rt}</span><span class="px-2 py-0.5 rounded text-xs ${pill(r.primary)}">${r.primary}</span></div>`;
+        html+=`<div class="flex items-center gap-2 text-sm"><span class="w-5 h-5 bg-gold rounded flex items-center justify-center text-[11px] font-bold flex-shrink-0">${i+1}</span><span class="flex-1 truncate">${r.match.home} v ${r.match.away} ${rt}</span><span class="px-2 py-0.5 rounded text-xs ${pill(r.primary)}">${shortMarket(r.primary)}</span></div>`;
       });
       html += `</div></div>`;
     }
@@ -1157,7 +1166,7 @@ function generateSlip(){
   const rows=chosen.map(e=>`<div class="flex items-center gap-2 py-2" style="border-bottom:1px solid var(--line)">
       <div class="flex-1 min-w-0"><div class="text-sm font-medium truncate">${e.r.match.home} v ${e.r.match.away}</div>
       <div class="text-[11px]" style="color:var(--muted)">${e.r.match.league||''} · ${e.r.confidence}</div></div>
-      <span class="px-2 py-0.5 rounded text-xs font-semibold ${pill(e.r.primary)}">${e.r.primary}</span>
+      <span class="px-2 py-0.5 rounded text-xs font-semibold ${pill(e.r.primary)}">${shortMarket(e.r.primary)}</span>
       <span class="display font-bold tnum w-14 text-right">${e.odd.toFixed(2)}${e.est?'<span style="color:#b45309" title="estimated odd">*</span>':''}</span></div>`).join('');
   host.innerHTML=`<div class="panel-2 rounded-xl p-3">${rows}
       <div class="flex items-center justify-between pt-3"><span class="text-sm font-semibold">${chosen.length}-leg accumulator</span>
@@ -1269,7 +1278,7 @@ function renderRulesProMatches(){
         </div>
         <div class="flex flex-col items-end gap-1 flex-shrink-0 w-28">
           <span class="text-[9px] font-bold uppercase" style="color:var(--brand)">${tierName} ${r.confidence}/10</span>
-          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(r.primary)} text-right leading-tight">${r.primary}</span>
+          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(r.primary)} text-right leading-tight">${shortMarket(r.primary)}</span>
           ${rowSettle(r.match,r.primary)}
         </div>
         <i class="fa-solid fa-chevron-down chev text-sm" style="color:var(--muted)"></i>
@@ -1375,7 +1384,7 @@ function renderAccaMatches(){
         </div>
         <div class="flex flex-col items-end gap-1 flex-shrink-0 w-28">
           <span class="text-[9px] font-bold uppercase" style="color:var(--brand)">Rated ${l.rating}/10</span>
-          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(l.market)} text-right leading-tight">${l.market}</span>
+          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(l.market)} text-right leading-tight">${shortMarket(l.market)}</span>
           <span class="text-[10px]" style="color:var(--muted)">${l.est?'~':''}${l.odd.toFixed(2)}${l.est?' est':''}</span>
         </div>
         <i class="fa-solid fa-chevron-down chev text-sm" style="color:var(--muted)"></i>
@@ -1421,7 +1430,7 @@ function renderProMatches(){
         </div>
         <div class="flex flex-col items-end gap-1 flex-shrink-0 w-28">
           <span class="text-[9px] font-bold uppercase" style="color:${r.usedXg?'#7ee05a':'var(--brand)'}">${tierName}${r.usedXg?' · xG':''} ${r.confidence}/10</span>
-          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(r.primary)} text-right leading-tight">${r.primary}</span>
+          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(r.primary)} text-right leading-tight">${shortMarket(r.primary)}</span>
           ${rowSettle(r.match,r.primary)}
         </div>
         <i class="fa-solid fa-chevron-down chev text-sm" style="color:var(--muted)"></i>
@@ -1460,7 +1469,7 @@ function renderTrendMatches(){
         </div>
         <div class="flex flex-col items-end gap-1 flex-shrink-0 w-28">
           <span class="text-[9px] font-bold uppercase" style="color:${u.decision==='SMALL STAKE'?'#f5b73d':'var(--brand)'}">${tierName} · ${u.decision}</span>
-          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(u.primary)} text-right leading-tight">${u.primary}</span>
+          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(u.primary)} text-right leading-tight">${shortMarket(u.primary)}</span>
           ${rowSettle(u.match,u.primary)}
         </div>
         <i class="fa-solid fa-chevron-down chev text-sm" style="color:var(--muted)"></i>
@@ -1497,7 +1506,7 @@ function renderStreakMatches(){
         </div>
         <div class="flex flex-col items-end gap-1 flex-shrink-0 w-28">
           <span class="text-[9px] font-bold uppercase" style="color:var(--brand)">${grade}${u.score?` · ${u.score}`:''}</span>
-          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(u.primary)} text-right leading-tight">${u.primary}</span>
+          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(u.primary)} text-right leading-tight">${shortMarket(u.primary)}</span>
           ${rowSettle(u.match,u.primary)}
         </div>
         <i class="fa-solid fa-chevron-down chev text-sm" style="color:var(--muted)"></i>
@@ -1589,7 +1598,7 @@ function renderValueMatches(){
         </div>
         <div class="flex flex-col items-end gap-1 flex-shrink-0 w-28">
           <span class="text-[9px] font-bold uppercase" style="color:${r.isValue?'#7ee05a':'var(--brand)'}">${tierName} ${r.confidence}/10</span>
-          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(r.primary)} text-right leading-tight">${r.primary}</span>
+          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(r.primary)} text-right leading-tight">${shortMarket(r.primary)}</span>
           ${rowSettle(r.match,r.primary)}
         </div>
         <i class="fa-solid fa-chevron-down chev text-sm" style="color:var(--muted)"></i>
@@ -1628,7 +1637,7 @@ function renderPrimeMatches(){
         </div>
         <div class="flex flex-col items-end gap-1 flex-shrink-0 w-28">
           <span class="text-[9px] font-bold uppercase" style="color:var(--brand)">${r.tier} · risk ${r.riskPoints}</span>
-          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(r.primary)} text-right leading-tight">${r.primary}</span>
+          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(r.primary)} text-right leading-tight">${shortMarket(r.primary)}</span>
           ${rowSettle(r.match,r.primary)}
         </div>
         <i class="fa-solid fa-chevron-down chev text-sm" style="color:var(--muted)"></i>
@@ -1669,7 +1678,7 @@ function renderApexMatches(){
         </div>
         <div class="flex flex-col items-end gap-1 flex-shrink-0 w-28">
           <span class="text-[9px] font-bold uppercase" style="color:var(--brand)">${tierName} ${r.confidence}/10</span>
-          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(r.primary)} text-right leading-tight">${r.primary}</span>
+          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(r.primary)} text-right leading-tight">${shortMarket(r.primary)}</span>
           ${rowSettle(r.match,r.primary)}
         </div>
         <i class="fa-solid fa-chevron-down chev text-sm" style="color:var(--muted)"></i>
@@ -1727,7 +1736,7 @@ function renderUltraMatches(){
         </div>
         <div class="flex flex-col items-end gap-1 flex-shrink-0 w-28">
           <span class="text-[9px] font-bold uppercase" style="color:var(--brand)">${tierName} ${r.confidence}/10</span>
-          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(r.primary)} text-right leading-tight">${r.primary}</span>
+          <span class="px-2 py-1 rounded-lg text-[11px] font-semibold ${pill(r.primary)} text-right leading-tight">${shortMarket(r.primary)}</span>
           ${rowSettle(r.match,r.primary)}
         </div>
         <i class="fa-solid fa-chevron-down chev text-sm" style="color:var(--muted)"></i>
@@ -1970,7 +1979,7 @@ function renderBankerOfDay(){
       <div class="display ${isHero?'text-xl':'text-base'} font-bold mb-1 flex items-center gap-2 flex-wrap">${rowFlag(b)}${b.home} <span style="color:var(--muted)">v</span> ${b.away} ${resTag}</div>
       <div class="text-[11px] mb-2" style="color:var(--muted)">${b.league||''}${t?' · '+t:''}${isHero?' · '+p.engines.join(', '):''}</div>
       <div class="flex items-center justify-between">
-        <span class="px-3 py-1 rounded-lg text-sm font-bold ${pill(p.market)}">${p.market}</span>
+        <span class="px-3 py-1 rounded-lg text-sm font-bold ${pill(p.market)}">${shortMarket(p.market)}</span>
         ${isHero?`<button onclick="shareBotd()" class="text-xs px-3 py-1.5 rounded-lg font-semibold text-white" style="background:var(--brand)"><i class="fa-solid fa-share-nodes"></i> Share</button>`:''}
       </div>
     </div>`;
@@ -2311,7 +2320,7 @@ function renderWorldCup(){
       <div class="flex items-center justify-between gap-2">
         <div class="flex items-center gap-2">
           ${scoreOrTime}
-          <span class="px-2 py-1 rounded-lg text-[12px] font-semibold ${pill(p.market)}">${p.market}</span>
+          <span class="px-2 py-1 rounded-lg text-[12px] font-semibold ${pill(p.market)}">${shortMarket(p.market)}</span>
         </div>
         <span class="text-[10px] text-right" style="color:var(--muted)">${p.count}/${TOTAL_ENGINES}: ${p.engines.join(', ')}</span>
       </div>
