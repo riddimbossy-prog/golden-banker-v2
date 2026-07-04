@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T16:14:30.024Z";
-window.SCORES_UPDATED = "2026-07-04T17:05:26.846Z";
+window.SCORES_UPDATED = "2026-07-04T17:10:44.664Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -46501,7 +46501,7 @@ window.MATCHES = [
     "xgAwayReal": 1,
     "awayXgAgainst": 1.91,
     "lineupConfirmed": true,
-    "elapsed": 47
+    "elapsed": 52
   },
   {
     "home": "Deportivo Camioneros",
@@ -46512,7 +46512,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/1956.png",
     "country": "Argentina",
     "flag": "https://media.api-sports.io/flags/ar.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-04T16:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 2,
@@ -46703,7 +46703,7 @@ window.MATCHES = [
       "dcx2": 1.8
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 47
   },
   {
     "home": "Lugano",
@@ -46714,7 +46714,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/8378.png",
     "country": "Argentina",
     "flag": "https://media.api-sports.io/flags/ar.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-04T16:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -46905,7 +46905,7 @@ window.MATCHES = [
       "dcx2": 1.85
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 48
   },
   {
     "home": "IBV Vestmannaeyjar",
@@ -47107,7 +47107,7 @@ window.MATCHES = [
       "dcx2": 1.6
     },
     "h2h": null,
-    "elapsed": 48
+    "elapsed": 54
   },
   {
     "home": "Leiknir R.",
@@ -47509,7 +47509,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 49
+    "elapsed": 54
   },
   {
     "home": "Trans Narva",
@@ -47711,7 +47711,7 @@ window.MATCHES = [
       "dcx2": 1.01
     },
     "h2h": null,
-    "elapsed": 48
+    "elapsed": 54
   },
   {
     "home": "Paide",
@@ -47913,7 +47913,7 @@ window.MATCHES = [
       "dcx2": 2.6
     },
     "h2h": null,
-    "elapsed": 50
+    "elapsed": 56
   },
   {
     "home": "Metta / LU",
@@ -47928,7 +47928,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T16:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": 1,
     "awayPos": 9,
     "tableSize": 14,
@@ -48110,7 +48110,7 @@ window.MATCHES = [
       "under35": 2
     },
     "h2h": null,
-    "elapsed": 49
+    "elapsed": 54
   },
   {
     "home": "AB",
@@ -48512,7 +48512,7 @@ window.MATCHES = [
       "dcx2": 1.3
     },
     "h2h": null,
-    "elapsed": 33
+    "elapsed": 39
   },
   {
     "home": "Canada",
@@ -48730,7 +48730,7 @@ window.MATCHES = [
     "xgAwayReal": 1.1,
     "awayXgAgainst": 1.44,
     "lineupConfirmed": true,
-    "elapsed": 5
+    "elapsed": 10
   },
   {
     "home": "Rentistas",
@@ -48932,7 +48932,7 @@ window.MATCHES = [
       "dcx2": 2
     },
     "h2h": null,
-    "elapsed": 2
+    "elapsed": 8
   },
   {
     "home": "Petrocub",
@@ -49132,7 +49132,7 @@ window.MATCHES = [
       "dcx2": 2.1
     },
     "h2h": null,
-    "elapsed": 4
+    "elapsed": 10
   },
   {
     "home": "Ituzaingó",
