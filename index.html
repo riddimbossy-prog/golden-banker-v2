@@ -1521,6 +1521,14 @@ function renderFnEngineMatches(engFn,label){
   if(typeof engFn!=='function'){ host.innerHTML='<div class="p-6 text-center" style="color:var(--muted)">Halves engine unavailable — deploy the latest banker-engine.js.</div>'; return; }
   const dayMatches=dayRows();
   const all=dayMatches.map(r=>engFn(r.match));
+  // MAX 4 BANKERS PER LEAGUE (spec rule 1): rank by confidence within each
+  // league; excess bankers are downgraded, never silently dropped.
+  const perLg={};
+  all.filter(r=>r.banker).sort((a,b)=>b.confidence-a.confidence).forEach(r=>{
+    const k=r.match.league||'?'; perLg[k]=(perLg[k]||0)+1;
+    if(perLg[k]>4){ r.banker=false; r.grade='Strong Pick';
+      (r.reasons=r.reasons||[]).push('Quota: league already has 4 stronger bankers — downgraded.'); }
+  });
   const picks=all.filter(r=>r.bet).sort((a,b)=>(b.confidence-a.confidence));
   const noBets=all.filter(r=>!r.bet);
   let html='';
@@ -1892,7 +1900,7 @@ function renderStrictMatches(){
 
 /* ============ MASTER RENDER ============ */
 const ENGINE_HERO={
-  normal:  {t:"Today's safest ", g:"football bankers", s:"Auto-analysed with the Predict2u Rules — DNB-first protection, strict mismatch criteria, max 4 bankers per league."},
+  normal:  {t:"Today's safest ", g:"football bankers", s:"Strict Filter Engine v3 — split-data first, HT/FT transition checks, multi-layer confirmation, max 4 bankers per league. Default decision: No Bet."},
   strict:  {t:"Strict's iron-gate ", g:"bankers for today", s:"The toughest filter on the board — every pick must clear exact thresholds or it's an honest No Bet."},
   ultra:   {t:"Ultra's high-conviction ", g:"bankers for today", s:"Only overwhelming statistical mismatches make this list — few picks, maximum conviction."},
   rulespro:{t:"Elite's precision ", g:"bankers for today", s:"Exact-threshold gates on every market — a pick fires only when the numbers line up to the decimal."},
