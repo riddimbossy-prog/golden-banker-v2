@@ -992,10 +992,14 @@ function settle(primary, homeGoals, awayGoals, status) {
 /* ---------------- TOP-LEVEL: analyse all + pick Top 4 -------- */
 function analyseAll(matches) {
   const results = matches.map(recommend);
-  const bankers = results
-    .filter(r => r.banker)
-    .sort((a, b) => b.rankWeight - a.rankWeight)
-    .slice(0, 4); // Rule 1: max 4
+  // spec §1: MAX 4 BANKERS PER LEAGUE — rank by confidence, demote the rest
+  const perLg={};
+  results.filter(r=>r.banker).sort((a,b)=>b.rankWeight-a.rankWeight).forEach(r=>{
+    const k=(r.match&&r.match.league)||'?'; perLg[k]=(perLg[k]||0)+1;
+    if(perLg[k]>4){ r.banker=false;
+      r.summary=`No Bet — Quota Exceeded. League already has 4 stronger bankers. (was: ${r.primary}, ${(r.rankWeight||0).toFixed(1)}/10)`; }
+  });
+  const bankers = results.filter(r=>r.banker).sort((a,b)=>b.rankWeight-a.rankWeight);
   return { results, bankers };
 }
 
@@ -3524,6 +3528,235 @@ function mismatchRecommend(m){
   return mismatchOut(m,best.market,grade,best.score,reasons);
 }
 
+/* ==================== NORMAL ENGINE v3.0 (spec replacement) ====================
+   STRICT FOOTBALL BETTING MARKET FILTER ENGINE — Integrated PPG + Goals + HT/FT
+   Transition Model. DEFAULT DECISION = NO BET. Replaces the legacy Normal
+   engine; same return contract so the board, tracker, WC consensus and image
+   generators keep working unchanged. Uses only data the fetcher provides —
+   never invents statistics (spec Final Command). */
+function v3Recommend(m){
+  const NB=(why,cls)=>({ match:m, over:null,btts:null,under:null,wdnb:null,
+    primary:"No Bet", confidence:"Low", banker:false, rankWeight:0,
+    summary:`No Bet${cls?` — ${cls}`:""}. ${why}`, value:null, chosenKind:"v3", lean:null,
+    reasons:[why], grade:null, bet:false });
+  if(!m) return NB("No match data.","Insufficient Data");
+  if(String(m.league||'').toLowerCase().includes('friendl'))
+    return NB("Friendlies carry no reliable competitive data.","Insufficient Data");
+  // ---- gather (venue-split first: spec data priority) ----
+  const hPPG=(m.homeVenuePts!=null&&m.homeVenueGames)?m.homeVenuePts/m.homeVenueGames:null;
+  const aPPG=(m.awayVenuePts!=null&&m.awayVenueGames)?m.awayVenuePts/m.awayVenueGames:null;
+  const hGP=m.homeVenueGames||0, aGP=m.awayVenueGames||0;
+  const hA=m.homeScoredAtHome, hD=m.homeConcededAtHome, aA=m.awayScoredAway, aD=m.awayConcededAway;
+  const gdH=m.homeGD, gdA=m.awayGD;
+  const fH=(typeof formPoints==='function')?formPoints(m.homeForm):null;
+  const fA=(typeof formPoints==='function')?formPoints(m.awayForm):null;
+  const hCS=m.homeCleanSheetRate, aCS=m.awayCleanSheetRate, hFTS=m.homeFailedToScoreRate, aFTS=m.awayFailedToScoreRate;
+  const HS=m.homeStreaks&&m.homeStreaks.htft, AS=m.awayStreaks&&m.awayStreaks.htft;
+  const cell=(T,k)=>(T&&T.cells&&(T.sample||T.samples))?( (T.cells[k]||0)/(T.sample||T.samples) ):null;
+  const R=(T,k)=>T&&T[k]!=null?T[k]:null;
+  const sMin=Math.min(HS?(HS.sample||HS.samples||0):0, AS?(AS.sample||AS.samples||0):0);
+  const lt=m.leagueTrends, LR=k=>(lt&&lt.rates&&lt.rates[k]!=null)?lt.rates[k]:null;
+  if(hPPG==null||aPPG==null||hA==null||hD==null||aA==null||aD==null)
+    return NB("Relevant home/away split statistics are missing.","Insufficient Data");
+  if(hGP<4||aGP<4) return NB(`Venue samples too small (${hGP}/${aGP} games).`,"Insufficient Data");
+  const expT=((hA+aD)/2)+((aA+hD)/2);
+  const diff=hPPG-aPPG, adiff=Math.abs(diff);
+  // ---- ABSOLUTE REJECTIONS (spec §9) ----
+  if(hPPG<1.50&&aPPG<1.00&&gdH!=null&&gdA!=null&&gdH<0&&gdA<0)
+    return NB(`Home ${hPPG.toFixed(2)} / away ${aPPG.toFixed(2)} PPG, both negative goal difference — a weak-versus-weak trap.`,"Weak vs Weak");
+  const sameTier = adiff<0.35 && (gdH==null||gdA==null||Math.abs(gdH-gdA)<=5) && (fH==null||fA==null||Math.abs(fH-fA)<=3);
+  // ---- HT/FT derived (only what exists; never assumed) ----
+  const D={
+    hWW:cell(HS,'WW'),hWD:cell(HS,'WD'),hWL:cell(HS,'WL'),hDW:cell(HS,'DW'),hDL:cell(HS,'DL'),hLL:cell(HS,'LL'),hLW:cell(HS,'LW'),
+    aWW:cell(AS,'WW'),aWD:cell(AS,'WD'),aWL:cell(AS,'WL'),aDW:cell(AS,'DW'),aDL:cell(AS,'DL'),aLL:cell(AS,'LL'),aLW:cell(AS,'LW'),
+    hHT:R(HS,'htWin'),aHT:R(AS,'htWin'),hHTD:R(HS,'htDraw'),aHTD:R(AS,'htDraw'),
+    hFTW:R(HS,'ftWin'),aFTW:R(AS,'ftWin'),hFTL:R(HS,'ftLoss'),aFTL:R(AS,'ftLoss'),
+    hHold:R(HS,'holdLeadRate'),aHold:R(AS,'holdLeadRate'),hThr:R(HS,'throwLeadRate'),aThr:R(AS,'throwLeadRate'),
+    hRec:R(HS,'comebackRate'),aRec:R(AS,'comebackRate'),hD2W:R(HS,'drawToWin'),aD2W:R(AS,'drawToWin'),
+    hDE:R(HS,'drawEndRate'),aDE:R(AS,'drawEndRate'),hSH:R(HS,'shFor'),aSH:R(AS,'shFor'),hFH:R(HS,'fhFor'),aFH:R(AS,'fhFor')
+  };
+  const hFTR=D.aRec!=null?null:null; // placeholder clarity
+  const aFail=D.aRec!=null?1-D.aRec:null, hFail=D.hRec!=null?1-D.hRec:null;
+  const htOK=sMin>=5; // §8: <5 blocks HT/FT-dependent markets
+  const capBySample = sMin>=10?10 : sMin>=7?8.5 : sMin>=5?7.0 : 6.9;
+  const ge=(x,t)=>x!=null&&x>=t, le=(x,t)=>x!=null&&x<=t;
+  const two=arr=>arr.filter(Boolean).length>=2;
+  const anyT=arr=>arr.some(Boolean);
+  const gate=mk=>{ const g=(typeof oddsLadderGate==='function')?oddsLadderGate(m,mk):{block:false}; return !g.block; };
+  // confidence (§37) — components scored from what exists
+  function conf(side, market, goalsFit, htDirect, htTrans, conflict){
+    let c=0;
+    c+=Math.min(Math.max(side==='H'?diff:side==='A'?-diff:adiff,0)/1.25,1)*1.5;         // PPG advantage
+    const wr=side==='H'?(D.hFTW!=null&&D.aFTL!=null?(D.hFTW+D.aFTL)/2:null):side==='A'?(D.aFTW!=null&&D.hFTL!=null?(D.aFTW+D.hFTL)/2:null):null;
+    c+=wr!=null?Math.min(wr/0.65,1)*1.0:0.3;                                             // win/loss rates
+    c+=Math.min(Math.max(goalsFit,0),1)*1.5;                                             // goals data
+    c+=0;                                                                                 // xG unavailable
+    c+=Math.min(Math.max(htDirect,0),1)*1.5;                                             // HT/FT direct
+    c+=Math.min(Math.max(htTrans,0),1)*1.0;                                              // HT/FT transition
+    if((side==='H'||side==='A') && adiff>=1.75) c+=0.5;                                  // §39 extreme mismatch
+    c+=(fH!=null&&fA!=null)?Math.min(Math.max((side==='H'?fH-fA:side==='A'?fA-fH:8)/8,0),1)*0.75:0.3; // form
+    const lr=LR(market); c+=lr!=null?Math.min(Math.max((lr-0.4)/0.3,0),1)*0.5:0.2;       // league context
+    c+=gate(market)?0.75:0;                                                              // odds confirmation
+    c+=Math.min(sMin,10)/10*0.5;                                                         // sample reliability
+    if(conflict) c-=1.0;                                                                  // §37 conflict deduction
+    return Math.min(Math.round(c*10)/10, capBySample);
+  }
+  const out=[];
+  function put(mk,side,mand,confPairs,blocks,goalsFit,why){
+    if(!mand.every(Boolean)) return;
+    if(blocks.some(Boolean)) return;
+    const known=confPairs.filter(x=>x!=null);
+    const passed=known.filter(Boolean).length;
+    if(htOK && known.length>=2 && passed<2) return;   // §10: HT/FT must support
+    const htDirect=known.length?passed/Math.max(known.length,2):0.3;
+    const sc=conf(side,mk,Math.max(goalsFit,0.8),htDirect,htDirect,false); // mandatory pass floors goals support
+    if(sc<7.0) return;
+    if(!gate(mk)) return;
+    // §38: never pick an extremely short market merely because it looks safe
+    const OMAP={"Home Win":"home","Away Win":"away","Double Chance 1X":"dc1x","Double Chance X2":"dcx2","Over 1.5 Goals":"over15","Over 2.5 Goals":"over25","Under 2.5 Goals":"under25","Under 3.5 Goals":"under35","BTTS Yes":"bttsYes","BTTS No":"bttsNo"};
+    const real=m.odds&&OMAP[mk]?m.odds[OMAP[mk]]:null;
+    if(real!=null&&real<1.22) return;
+    out.push({mk,sc,why});
+  }
+  const teamBlockedBySameTier = sameTier; // §9: no team market without a clear mismatch
+  // ---- MARKETS in the safety hierarchy (§38), feasible subset ----
+  if(!teamBlockedBySameTier){
+    // DOUBLE CHANCE 1X (§13)
+    put("Double Chance 1X",'H',
+      [ge(1-(D.hFTL==null?1:D.hFTL),0.75)||le(D.hFTL,0.25), hPPG>=1.50, aPPG<=1.30, (D.aFTW==null||D.aFTW<=0.25)],
+      [ge(D.hRec,0.35), D.aWW!=null?D.aWW<0.35:null, D.aHold!=null?D.aHold<0.75:null, le(D.hLL,0.20)],
+      [], Math.min((hPPG-aPPG)/1.0,1),
+      `Home unbeaten profile (${D.hFTL!=null?Math.round((1-D.hFTL)*100)+'%':'n/a'}) vs a side winning ${D.aFTW!=null?Math.round(D.aFTW*100)+'%':'little'} away.`);
+    // HOME DNB (§12)
+    put("Home DNB",'H',
+      [hPPG>=1.80, aPPG<=1.20, diff>=0.60, le(D.hFTL,0.20)],
+      [ge(D.hDW,0.20)||ge(D.hWW,0.35)||ge(D.hRec,0.40), (D.aDL!=null&&D.aLL!=null)?(D.aDL+D.aLL)>=0.45:null, D.aLW!=null?D.aLW<=0.15:null],
+      [], Math.min(diff/1.0,1),
+      `Home ${hPPG.toFixed(2)} PPG at home vs away ${aPPG.toFixed(2)} on the road; home loses only ${D.hFTL!=null?Math.round(D.hFTL*100)+'%':'few'} here.`);
+    // AWAY DNB
+    put("Away DNB",'A',
+      [aPPG>=1.80, hPPG<=1.20, -diff>=0.60, le(D.aFTL,0.20)],
+      [ge(D.aDW,0.20)||ge(D.aWW,0.35)||ge(D.aRec,0.40), (D.hDL!=null&&D.hLL!=null)?(D.hDL+D.hLL)>=0.45:null, D.hLW!=null?D.hLW<=0.15:null],
+      [], Math.min(-diff/1.0,1),
+      `Away ${aPPG.toFixed(2)} PPG on the road against a home side at ${hPPG.toFixed(2)}.`);
+  }
+  // OVER 1.5 (§16)
+  put("Over 1.5 Goals",'N',
+    [expT>=2.30, (hA>=1.50&&aD>=1.20)||(aA>=1.50&&hD>=1.20)],
+    [ (D.hWW!=null||D.aWW!=null)?(Math.max(D.hWW||0,D.aWW||0)>=0.35):null,
+      (D.hDW!=null&&D.hDL!=null)?(D.hDW+D.hDL>=0.30)||(D.aDW+D.aDL>=0.30):null,
+      (D.hDE!=null&&D.aDE!=null)?((D.hDE+D.aDE)/2<0.30):null,
+      (D.hSH!=null&&D.aSH!=null)?(D.hSH>=0.9||D.aSH>=0.9):null ],
+    [ (D.hDE!=null&&D.aDE!=null&&D.hDE>=0.40&&D.aDE>=0.40), (D.hSH!=null&&D.aSH!=null&&D.hSH<0.6&&D.aSH<0.6) ],
+    Math.min((expT-1.8)/1.0,1),
+    `Expected ${expT.toFixed(2)} goals from the venue splits.`);
+  // UNDER 3.5 (§21)
+  put("Under 3.5 Goals",'N',
+    [expT<=2.60, (hA+aA)<=2.60],
+    [ le(D.hThr,0.25)&&le(D.aThr,0.25), le(D.hRec,0.35)&&le(D.aRec,0.35), (D.hSH!=null&&D.aSH!=null)?(D.hSH<=1.0&&D.aSH<=1.0):null ],
+    [], Math.min((3.0-expT)/1.0,1),
+    `Half-controlled profile: expected total ${expT.toFixed(2)}, low reversal rates.`);
+  if(!teamBlockedBySameTier){
+    // HOME WIN (§11)
+    put("Home Win",'H',
+      [hPPG>=2.50, (D.hFTW==null?m.homeWinRate!=null&&m.homeWinRate>=0.75:D.hFTW>=0.75), hA>=1.80, aPPG<=1.00, ge(D.aFTL,0.60), diff>=1.25, gdH!=null&&gdA!=null?gdH>gdA+6:true, fH==null||fA==null||fH>=fA],
+      [ge(D.hWW,0.40), ge(D.hDW,0.20), ge(D.hHold,0.75), ge(D.aDL,0.20), ge(D.aLL,0.35), ge(aFail,0.65)],
+      [ (D.hWD!=null&&D.hWL!=null&&(D.hWD+D.hWL)>0.30), ge(D.aRec,0.45), ge(D.aLW,0.151) ],
+      Math.min((hA-1.5)/1.0,1)*0.5+Math.min(diff/1.75,1)*0.5,
+      `Extreme mismatch: home ${hPPG.toFixed(2)} vs away ${aPPG.toFixed(2)} PPG (gap ${diff.toFixed(2)}).`);
+    // AWAY WIN with §9 away protection
+    put("Away Win",'A',
+      [aPPG>=2.50, ge(D.aFTW,0.75), aA>=1.80, hPPG<=1.00, ge(D.hFTL,0.55), -diff>=1.25, gdH!=null&&gdA!=null?gdA>gdH+6:true, fH==null||fA==null||fA>=fH],
+      [ge(D.aWW,0.40), ge(D.aDW,0.20), ge(D.aHold,0.75), ge(D.hDL,0.20), ge(D.hLL,0.35), ge(hFail,0.65)],
+      [ hPPG>1.20, ge(D.hRec,0.40), ge(D.hLW,0.151), ge(D.aThr,0.301) ],
+      Math.min((aA-1.5)/1.0,1)*0.5+Math.min(-diff/1.75,1)*0.5,
+      `Road mismatch: away ${aPPG.toFixed(2)} vs home ${hPPG.toFixed(2)} PPG.`);
+    // TEAM OVER 1.5 — HOME (§25)
+    put("Home Team Over 1.5 Goals",'H',
+      [hA>=2.00, aD>=1.60],
+      [ge(D.hWW,0.40)||ge(D.hDW,0.25), ge(D.aLL,0.35), ge(aFail,0.65), ge(D.hSH,0.9)],
+      [], Math.min((hA-1.6)/0.8,1),
+      `Home averaging ${hA} at home into a defence shipping ${aD} away.`);
+    put("Away Team Over 1.5 Goals",'A',
+      [aA>=2.00, hD>=1.60],
+      [ge(D.aWW,0.40)||ge(D.aDW,0.25), ge(D.hLL,0.35), ge(hFail,0.65), ge(D.aSH,0.9)],
+      [], Math.min((aA-1.6)/0.8,1),
+      `Away averaging ${aA} on the road into a home defence shipping ${hD}.`);
+  }
+  // BTTS YES (§22)
+  put("BTTS Yes",'N',
+    [hA>=1.20, aA>=1.20, hD>=1.10, aD>=1.10, hFTS==null||hFTS<=0.30, aFTS==null||aFTS<=0.30],
+    [ (D.hDW!=null&&D.aDW!=null)?(D.hDW>=0.15&&D.aDW>=0.10):null,
+      (D.hRec!=null&&D.aRec!=null)?(D.hRec>=0.30&&D.aRec>=0.30):null,
+      le(D.hLL,0.30)&&le(D.aLL,0.30),
+      (D.hSH!=null&&D.aSH!=null)?(D.hSH>=0.8&&D.aSH>=0.7):null,
+      (D.hHold!=null&&D.aHold!=null)?(D.hHold<0.90&&D.aHold<0.90):null ],
+    [ ge(hFail,0.751)||ge(aFail,0.751), ge(hFTS,0.401)||ge(aFTS,0.401), ge(D.hLL,0.55)||ge(D.aLL,0.55), (ge(hCS,0.45)&&ge(D.hWW,0.45)) ],
+    Math.min((Math.min(hA,aA)-1.0)/0.6,1),
+    `Both score and both concede at their venues (${hA}/${hD} home, ${aA}/${aD} away).`);
+  // BTTS NO (§23)
+  put("BTTS No",'N',
+    [ge(hCS,0.45)||ge(aCS,0.45), ge(hFTS,0.40)||ge(aFTS,0.40), (hA<1.00||aA<1.00)],
+    [ (D.hWW!=null&&D.aLL!=null)?(D.hWW>=0.35&&D.aLL>=0.35)||(D.aWW!=null&&D.hLL!=null&&D.aWW>=0.35&&D.hLL>=0.35):null,
+      ge(aFail,0.65)||ge(hFail,0.65),
+      le(D.aLW,0.10)||le(D.hLW,0.10),
+      ge(D.hHold,0.80)||ge(D.aHold,0.80) ],
+    [], Math.min((0.45-(Math.min(hA,aA)-0.55))/0.45,1),
+    `One-way traffic: clean sheets one side, blanks the other.`);
+  // OVER 2.5 (§17)
+  put("Over 2.5 Goals",'N',
+    [expT>=3.00, (hA>=1.70||aA>=1.70), (hD>=1.40||aD>=1.40)],
+    [ (D.hWW!=null&&Math.max(D.hWW,D.aWW||0)>=0.35&&(hA>=1.8||aA>=1.8)),
+      (D.hDW!=null&&D.hDL!=null)?((D.hDW+D.hDL>=0.35)||(D.aDW+D.aDL>=0.35)):null,
+      ge(D.hLW,0.15)||ge(D.aLW,0.15),
+      ge(D.hSH,1.0)||ge(D.aSH,1.0),
+      (D.hDE!=null&&D.aDE!=null)?((D.hDE+D.aDE)/2<0.25):null ],
+    [ (D.hDE!=null&&D.aDE!=null&&D.hDE>=0.40&&D.aDE>=0.40),
+      (le(D.hRec,0.20)&&le(D.aRec,0.20)&&le(D.hThr,0.15)&&le(D.aThr,0.15)) ],
+    Math.min((expT-2.6)/0.8,1),
+    `Open-game alignment: expected total ${expT.toFixed(2)}.`);
+  // UNDER 2.5 (§20)
+  put("Under 2.5 Goals",'N',
+    [expT<=2.10, hA<=1.40, aA<=1.40],
+    [ (D.hHTD!=null&&D.aHTD!=null)?(D.hHTD>=0.40&&D.aHTD>=0.35):null,
+      le(D.hSH,0.75)&&le(D.aSH,0.75),
+      le(D.hLW,0.12)&&le(D.aLW,0.12),
+      (D.hDE!=null&&D.aDE!=null)?((D.hDE+D.aDE)/2>=0.28):null ],
+    [ ge(D.hD2W,0.451)||ge(D.aD2W,0.451), ge(D.hSH,1.01)||ge(D.aSH,1.01) ],
+    Math.min((2.4-expT)/0.8,1),
+    `Closed-game alignment: expected total ${expT.toFixed(2)}, both attacks quiet.`);
+  // X/1 (§14, feasible clauses)
+  if(!teamBlockedBySameTier&&htOK)
+    put("HT Draw / FT Home Win",'H',
+      [ge(D.hHTD,0.40), ge(D.hDW,0.25), ge(D.hD2W,0.45), hPPG>=2.00, aPPG<=1.00, ge(D.aDL,0.25)],
+      [ (D.hSH!=null&&D.hFH!=null)?(D.hSH>D.hFH):null, ge(D.hSH,0.9) ],
+      [], 0.7, `Slow-starting winner profile: converts ${Math.round((D.hD2W||0)*100)}% of half-time draws.`);
+
+  if(!out.length){
+    const cls = sameTier?"Same Tier":(sMin<5&&htOK===false?"Insufficient Data":"Statistical Conflict");
+    const why = sameTier?`PPG gap only ${adiff.toFixed(2)} with similar profiles — no clear market-specific mismatch.`
+      : sMin<5?`HT/FT sample too small (${sMin}) and no market cleared its thresholds without it.`
+      : `No market passed all mandatory thresholds with HT/FT support (expected total ${expT.toFixed(2)}, PPG ${hPPG.toFixed(2)} v ${aPPG.toFixed(2)}).`;
+    return NB(why,cls);
+  }
+  // §38 hierarchy selection among qualified
+  const HIER=["Double Chance 1X","Home DNB","Away DNB","Over 1.5 Goals","Under 3.5 Goals","Home Win","Away Win","Home Team Over 1.5 Goals","Away Team Over 1.5 Goals","BTTS Yes","BTTS No","Over 2.5 Goals","Under 2.5 Goals","HT Draw / FT Home Win"];
+  // safest market wins only among near-equals: first in hierarchy within 0.5 of the top score
+  const best=Math.max(...out.map(o=>o.sc));
+  out.sort((a,b)=>HIER.indexOf(a.mk)-HIER.indexOf(b.mk));
+  const pick=out.find(o=>o.sc>=best-0.5)||out[0];
+  const cls = pick.sc>=9.0?"Elite Banker":pick.sc>=8.5?"Strong Banker":pick.sc>=8.0?"Qualified Banker":pick.sc>=7.5?"Value Selection":"Borderline";
+  const banker=pick.sc>=8.0;
+  return { match:m, over:null,btts:null,under:null,wdnb:null,
+    primary:pick.mk, bet:true,
+    confidence: pick.sc>=8.5?"High":pick.sc>=7.5?"Medium":"Low",
+    banker, grade: banker?(pick.sc>=9?"Elite Banker":"Banker"):null,
+    rankWeight: pick.sc,
+    summary:`${cls} (${pick.sc.toFixed(1)}/10). ${pick.why}`,
+    reasons:[pick.why, `v3 confidence ${pick.sc.toFixed(1)}/10 — ${cls}.`],
+    value:null, chosenKind:"v3", lean:null };
+}
+
 /* ===================== UNIVERSAL OVERLAY (all 12 engines) =====================
    Two owner rules applied AFTER every engine (and after the intl frame):
    1) TABLE PROXIMITY — never back a TEAM (Win/DNB/DC/team-goals) when the two
@@ -3595,6 +3828,8 @@ function overlayApply(m, res){
 function withIntlFrame(fn){
   return function(m){ return overlayApply(m, intlFrameApply(m, fn(m))); };
 }
+const legacyRecommend = recommend;
+recommend = v3Recommend;                     // spec v3.0 replaces the Normal engine
 recommend        = withIntlFrame(recommend);
 strictRecommend  = withIntlFrame(strictRecommend);
 ultraRecommend   = withIntlFrame(ultraRecommend);
