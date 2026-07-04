@@ -75,7 +75,7 @@ const ENGINES=[
   ["Apex", ()=>top2Fn(eng.apexRecommend)], ["Prime", ()=>top2Fn(eng.primeRecommend)],
   ["Value", ()=>top2Fn(eng.valueRecommend)], ["Pro", ()=>top2Fn(eng.proRecommend)],
   ["Trend", ()=>top2Fn(eng.trendRecommend)], ["Streaks", ()=>top2Fn(eng.streakRecommend)],
-  ["Halves", ()=>top2Fn(eng.halvesRecommend)],
+  ["Halves", ()=>top2Fn(eng.halvesRecommend)], ["Mismatch", ()=>top2Fn(eng.mismatchRecommend)],
 ];
 
 (async ()=>{
