@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T14:19:08.286Z";
-window.SCORES_UPDATED = "2026-07-04T15:10:45.883Z";
+window.SCORES_UPDATED = "2026-07-04T15:15:43.146Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -45151,7 +45151,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 83
+    "elapsed": 88
   },
   {
     "home": "B36 Torshavn",
@@ -45353,7 +45353,7 @@ window.MATCHES = [
       "dcx2": 1.38
     },
     "h2h": null,
-    "elapsed": 84
+    "elapsed": 89
   },
   {
     "home": "Al Karama",
@@ -45540,7 +45540,7 @@ window.MATCHES = [
     "round": "Regular Season - 30",
     "odds": null,
     "h2h": null,
-    "elapsed": 52
+    "elapsed": 57
   },
   {
     "home": "Shorta",
@@ -45914,7 +45914,7 @@ window.MATCHES = [
     "round": "Regular Season - 30",
     "odds": null,
     "h2h": null,
-    "elapsed": 48
+    "elapsed": 47
   },
   {
     "home": "hodd",
@@ -46116,7 +46116,7 @@ window.MATCHES = [
       "dcx2": 1.07
     },
     "h2h": null,
-    "elapsed": 52
+    "elapsed": 57
   },
   {
     "home": "FC Energetik-Bgu Minsk",
@@ -46130,7 +46130,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-04T14:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 3,
+    "homeGoals": 4,
     "awayGoals": 1,
     "homePos": 2,
     "awayPos": 3,
@@ -46303,7 +46303,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 55
+    "elapsed": 59
   },
   {
     "home": "IA Akranes",
@@ -46505,7 +46505,7 @@ window.MATCHES = [
       "dcx2": 1.55
     },
     "h2h": null,
-    "elapsed": 49
+    "elapsed": 53
   },
   {
     "home": "Grindavik",
@@ -46707,7 +46707,7 @@ window.MATCHES = [
       "dcx2": 1.5
     },
     "h2h": null,
-    "elapsed": 52
+    "elapsed": 57
   },
   {
     "home": "Fjolnir",
@@ -46907,7 +46907,7 @@ window.MATCHES = [
       "dcx2": 1.8
     },
     "h2h": null,
-    "elapsed": 52
+    "elapsed": 57
   },
   {
     "home": "Fjardabyggd / Leiknir",
@@ -47107,7 +47107,7 @@ window.MATCHES = [
       "dcx2": 1.73
     },
     "h2h": null,
-    "elapsed": 50
+    "elapsed": 54
   },
   {
     "home": "SJK",
@@ -47122,7 +47122,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T14:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": 10,
     "awayPos": 7,
     "tableSize": 12,
@@ -47309,7 +47309,7 @@ window.MATCHES = [
       "dcx2": 2.1
     },
     "h2h": null,
-    "elapsed": 51
+    "elapsed": 56
   },
   {
     "home": "FF Jaro",
@@ -47527,7 +47527,7 @@ window.MATCHES = [
     "xgAwayReal": 1.18,
     "awayXgAgainst": 2.61,
     "lineupConfirmed": true,
-    "elapsed": 51
+    "elapsed": 56
   },
   {
     "home": "KuPS Akatemia",
@@ -47729,7 +47729,7 @@ window.MATCHES = [
       "dcx2": 1.11
     },
     "h2h": null,
-    "elapsed": 51
+    "elapsed": 56
   },
   {
     "home": "HPS",
@@ -47929,7 +47929,7 @@ window.MATCHES = [
       "dcx2": 1.4
     },
     "h2h": null,
-    "elapsed": 55
+    "elapsed": 59
   },
   {
     "home": "TP-47",
@@ -48329,7 +48329,7 @@ window.MATCHES = [
       "dcx2": 1.14
     },
     "h2h": null,
-    "elapsed": 56
+    "elapsed": 61
   },
   {
     "home": "TB",
@@ -48516,7 +48516,7 @@ window.MATCHES = [
     "round": "Regular Season - 16",
     "odds": null,
     "h2h": null,
-    "elapsed": 54
+    "elapsed": 59
   },
   {
     "home": "Neman",
@@ -48718,7 +48718,7 @@ window.MATCHES = [
       "dcx2": 2.2
     },
     "h2h": null,
-    "elapsed": 11
+    "elapsed": 15
   },
   {
     "home": "FC Slutsk",
@@ -48905,7 +48905,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 10
+    "elapsed": 14
   },
   {
     "home": "VPS",
@@ -49119,7 +49119,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 2.58,
     "awayXgAgainst": 1.28,
-    "elapsed": 9
+    "elapsed": 14
   },
   {
     "home": "OLS",
@@ -49130,11 +49130,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/18518.png",
     "country": "Finland",
     "flag": "https://media.api-sports.io/flags/fi.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T15:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 4,
     "awayPos": 9,
     "tableSize": 12,
@@ -49321,7 +49321,7 @@ window.MATCHES = [
       "dcx2": 3.35
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 14
   },
   {
     "home": "Rīgas FS",
@@ -49523,7 +49523,7 @@ window.MATCHES = [
       "dcx2": 3
     },
     "h2h": null,
-    "elapsed": 9
+    "elapsed": 14
   },
   {
     "home": "Politehnica UTM",
@@ -49720,7 +49720,7 @@ window.MATCHES = [
       "under35": 1.65
     },
     "h2h": null,
-    "elapsed": 10
+    "elapsed": 14
   },
   {
     "home": "Bryne",
