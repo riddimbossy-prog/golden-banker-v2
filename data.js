@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T12:19:14.861Z";
-window.SCORES_UPDATED = "2026-07-04T13:35:28.297Z";
+window.SCORES_UPDATED = "2026-07-04T13:40:42.656Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -41918,7 +41918,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/5695.png",
     "country": "China",
     "flag": "https://media.api-sports.io/flags/cn.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T11:35:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 3,
@@ -42125,7 +42125,7 @@ window.MATCHES = [
     "xgAwayReal": 1.26,
     "awayXgAgainst": 1.85,
     "lineupConfirmed": true,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Egersund",
@@ -42343,7 +42343,7 @@ window.MATCHES = [
     "xgAwayReal": 2.04,
     "awayXgAgainst": 2.39,
     "lineupConfirmed": true,
-    "elapsed": 79
+    "elapsed": 84
   },
   {
     "home": "Shakhter Soligorsk",
@@ -42530,7 +42530,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 82
+    "elapsed": 87
   },
   {
     "home": "Tianjin Teda",
@@ -42732,7 +42732,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": 74
+    "elapsed": 79
   },
   {
     "home": "Lahti",
@@ -42950,7 +42950,7 @@ window.MATCHES = [
     "xgAwayReal": 1.32,
     "awayXgAgainst": 1.08,
     "lineupConfirmed": true,
-    "elapsed": 73
+    "elapsed": 77
   },
   {
     "home": "HIFK Helsinki",
@@ -42965,7 +42965,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T12:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 3,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": 2,
     "awayPos": 8,
     "tableSize": 10,
@@ -43150,7 +43150,7 @@ window.MATCHES = [
       "dcx2": 3
     },
     "h2h": null,
-    "elapsed": 67
+    "elapsed": 72
   },
   {
     "home": "Kraft",
@@ -43350,7 +43350,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 77
+    "elapsed": 82
   },
   {
     "home": "FC Tallinn",
@@ -43550,7 +43550,7 @@ window.MATCHES = [
       "dcx2": 1.3
     },
     "h2h": null,
-    "elapsed": 77
+    "elapsed": 82
   },
   {
     "home": "B71",
@@ -43737,7 +43737,7 @@ window.MATCHES = [
     "round": "Regular Season - 16",
     "odds": null,
     "h2h": null,
-    "elapsed": 75
+    "elapsed": 80
   },
   {
     "home": "NSÍ II",
@@ -43924,7 +43924,7 @@ window.MATCHES = [
     "round": "Regular Season - 16",
     "odds": null,
     "h2h": null,
-    "elapsed": 77
+    "elapsed": 82
   },
   {
     "home": "Altay",
@@ -44111,7 +44111,7 @@ window.MATCHES = [
     "round": "Regular Season - 16",
     "odds": null,
     "h2h": null,
-    "elapsed": 76
+    "elapsed": 81
   },
   {
     "home": "Blue Eagles",
@@ -44298,7 +44298,7 @@ window.MATCHES = [
     "round": "Regular Season - 9",
     "odds": null,
     "h2h": null,
-    "elapsed": 47
+    "elapsed": 52
   },
   {
     "home": "Karonga United",
@@ -44309,7 +44309,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/18747.png",
     "country": "Malawi",
     "flag": "https://media.api-sports.io/flags/mw.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-04T12:30:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -44498,7 +44498,7 @@ window.MATCHES = [
       "dcx2": 2.1
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 47
   },
   {
     "home": "Nyasa Big Bullets",
@@ -44685,7 +44685,7 @@ window.MATCHES = [
     "round": "Regular Season - 9",
     "odds": null,
     "h2h": null,
-    "elapsed": 49
+    "elapsed": 54
   },
   {
     "home": "Bulawayo Chiefs",
@@ -44699,7 +44699,7 @@ window.MATCHES = [
     "status": "1H",
     "kickoff": "2026-07-04T13:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 0,
+    "homeGoals": 1,
     "awayGoals": 0,
     "homePos": 12,
     "awayPos": 8,
@@ -44872,7 +44872,7 @@ window.MATCHES = [
     "round": "Regular Season - 21",
     "odds": null,
     "h2h": null,
-    "elapsed": 36
+    "elapsed": 41
   },
   {
     "home": "Ngezi Platinum",
@@ -45059,7 +45059,7 @@ window.MATCHES = [
     "round": "Regular Season - 21",
     "odds": null,
     "h2h": null,
-    "elapsed": 34
+    "elapsed": 39
   },
   {
     "home": "TelOne",
@@ -45246,7 +45246,7 @@ window.MATCHES = [
     "round": "Regular Season - 21",
     "odds": null,
     "h2h": null,
-    "elapsed": 35
+    "elapsed": 40
   },
   {
     "home": "Hunters",
@@ -45433,7 +45433,7 @@ window.MATCHES = [
     "round": "Regular Season - 21",
     "odds": null,
     "h2h": null,
-    "elapsed": 37
+    "elapsed": 42
   },
   {
     "home": "Halmstad",
@@ -45650,7 +45650,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.13,
     "awayXgAgainst": 1.9,
-    "elapsed": 35
+    "elapsed": 40
   },
   {
     "home": "Degerfors IF",
@@ -45868,7 +45868,7 @@ window.MATCHES = [
     "xgAwayReal": 1.29,
     "awayXgAgainst": 2.17,
     "lineupConfirmed": true,
-    "elapsed": 35
+    "elapsed": 40
   },
   {
     "home": "FC Vitebsk",
@@ -46070,7 +46070,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": 36
+    "elapsed": 41
   },
   {
     "home": "Niva",
@@ -46257,7 +46257,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 33
+    "elapsed": 38
   },
   {
     "home": "SalPa",
@@ -46459,7 +46459,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 32
+    "elapsed": 37
   },
   {
     "home": "Atlantis",
@@ -46659,7 +46659,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": 33
+    "elapsed": 38
   },
   {
     "home": "Union Plaani",
@@ -46859,7 +46859,7 @@ window.MATCHES = [
       "dcx2": 1.4
     },
     "h2h": null,
-    "elapsed": 33
+    "elapsed": 37
   },
   {
     "home": "P-Iirot",
@@ -47059,7 +47059,7 @@ window.MATCHES = [
       "dcx2": 1.45
     },
     "h2h": null,
-    "elapsed": 34
+    "elapsed": 38
   },
   {
     "home": "Panevėžys",
@@ -47261,7 +47261,7 @@ window.MATCHES = [
       "dcx2": 1.57
     },
     "h2h": null,
-    "elapsed": 33
+    "elapsed": 38
   },
   {
     "home": "Mārupe",
@@ -47461,7 +47461,7 @@ window.MATCHES = [
       "dcx2": 2.95
     },
     "h2h": null,
-    "elapsed": 35
+    "elapsed": 40
   },
   {
     "home": "BFC Daugavpils",
@@ -47663,7 +47663,7 @@ window.MATCHES = [
       "dcx2": 1.33
     },
     "h2h": null,
-    "elapsed": 35
+    "elapsed": 40
   },
   {
     "home": "Kyzyl-Zhar",
@@ -47865,7 +47865,7 @@ window.MATCHES = [
       "dcx2": 1.36
     },
     "h2h": null,
-    "elapsed": 36
+    "elapsed": 41
   },
   {
     "home": "Bumprom",
@@ -48052,7 +48052,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 6
+    "elapsed": 11
   },
   {
     "home": "B36 Torshavn",
@@ -48254,7 +48254,7 @@ window.MATCHES = [
       "dcx2": 1.38
     },
     "h2h": null,
-    "elapsed": 5
+    "elapsed": 10
   },
   {
     "home": "Al Karama",
