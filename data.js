@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T14:19:08.286Z";
-window.SCORES_UPDATED = "2026-07-04T16:05:27.726Z";
+window.SCORES_UPDATED = "2026-07-04T16:10:44.824Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -45738,7 +45738,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/9114.png",
     "country": "Syria",
     "flag": "https://media.api-sports.io/flags/sy.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T14:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 3,
@@ -45914,7 +45914,7 @@ window.MATCHES = [
     "round": "Regular Season - 30",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "hodd",
@@ -48718,7 +48718,7 @@ window.MATCHES = [
       "dcx2": 2.2
     },
     "h2h": null,
-    "elapsed": 46
+    "elapsed": 51
   },
   {
     "home": "FC Slutsk",
@@ -48732,7 +48732,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-04T15:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 0,
+    "homeGoals": 1,
     "awayGoals": 0,
     "homePos": 1,
     "awayPos": 14,
@@ -48905,7 +48905,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 47
+    "elapsed": 52
   },
   {
     "home": "VPS",
@@ -48916,7 +48916,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/587.png",
     "country": "Finland",
     "flag": "https://media.api-sports.io/flags/fi.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-04T15:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 2,
@@ -49119,7 +49119,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 2.58,
     "awayXgAgainst": 1.28,
-    "elapsed": 45
+    "elapsed": 50
   },
   {
     "home": "OLS",
@@ -49321,7 +49321,7 @@ window.MATCHES = [
       "dcx2": 3.35
     },
     "h2h": null,
-    "elapsed": 49
+    "elapsed": 54
   },
   {
     "home": "Rīgas FS",
@@ -49523,7 +49523,7 @@ window.MATCHES = [
       "dcx2": 3
     },
     "h2h": null,
-    "elapsed": 46
+    "elapsed": 51
   },
   {
     "home": "Politehnica UTM",
@@ -49534,7 +49534,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/568.png",
     "country": "Moldova",
     "flag": "https://media.api-sports.io/flags/md.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-04T15:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -49720,7 +49720,7 @@ window.MATCHES = [
       "under35": 1.65
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 50
   },
   {
     "home": "Bryne",
@@ -49937,7 +49937,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1,
     "awayXgAgainst": 1.91,
-    "elapsed": 4
+    "elapsed": 9
   },
   {
     "home": "Deportivo Camioneros",
@@ -49948,11 +49948,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/1956.png",
     "country": "Argentina",
     "flag": "https://media.api-sports.io/flags/ar.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T16:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 6,
     "awayPos": 11,
     "tableSize": 44,
@@ -50139,7 +50139,7 @@ window.MATCHES = [
       "dcx2": 1.85
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 5
   },
   {
     "home": "Lugano",
@@ -50341,7 +50341,7 @@ window.MATCHES = [
       "dcx2": 1.95
     },
     "h2h": null,
-    "elapsed": 2
+    "elapsed": 7
   },
   {
     "home": "IBV Vestmannaeyjar",
@@ -50543,7 +50543,7 @@ window.MATCHES = [
       "dcx2": 1.6
     },
     "h2h": null,
-    "elapsed": 5
+    "elapsed": 10
   },
   {
     "home": "Leiknir R.",
@@ -50745,7 +50745,7 @@ window.MATCHES = [
       "dcx2": 2.4
     },
     "h2h": null,
-    "elapsed": 4
+    "elapsed": 9
   },
   {
     "home": "Magni",
@@ -50945,7 +50945,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 5
+    "elapsed": 10
   },
   {
     "home": "Trans Narva",
@@ -51147,7 +51147,7 @@ window.MATCHES = [
       "dcx2": 1.01
     },
     "h2h": null,
-    "elapsed": 5
+    "elapsed": 10
   },
   {
     "home": "Paide",
@@ -51349,7 +51349,7 @@ window.MATCHES = [
       "dcx2": 2.55
     },
     "h2h": null,
-    "elapsed": 5
+    "elapsed": 10
   },
   {
     "home": "Metta / LU",
@@ -51546,7 +51546,7 @@ window.MATCHES = [
       "under35": 2
     },
     "h2h": null,
-    "elapsed": 5
+    "elapsed": 10
   },
   {
     "home": "AB",
