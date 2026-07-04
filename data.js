@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T06:49:17.438Z";
-window.SCORES_UPDATED = "2026-07-04T09:30:52.419Z";
+window.SCORES_UPDATED = "2026-07-04T09:35:27.923Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -37752,7 +37752,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3764.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T07:30:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 3,
@@ -37943,7 +37943,7 @@ window.MATCHES = [
       "dcx2": 1.11
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "FK Beograd",
@@ -38157,7 +38157,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-04T07:45:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 8,
+    "homeGoals": 9,
     "awayGoals": 0,
     "homePos": 2,
     "awayPos": 10,
@@ -38343,7 +38343,7 @@ window.MATCHES = [
       "dcx2": 8.5
     },
     "h2h": null,
-    "elapsed": 86
+    "elapsed": 90
   },
   {
     "home": "Sunshine Georgies",
@@ -38545,7 +38545,7 @@ window.MATCHES = [
       "dcx2": 1.02
     },
     "h2h": null,
-    "elapsed": 71
+    "elapsed": 76
   },
   {
     "home": "Dianella White Eagle",
@@ -38559,7 +38559,7 @@ window.MATCHES = [
     "status": "1H",
     "kickoff": "2026-07-04T09:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 1,
+    "homeGoals": 2,
     "awayGoals": 1,
     "homePos": 9,
     "awayPos": 4,
@@ -38732,7 +38732,7 @@ window.MATCHES = [
     "round": "Regular Season - 17",
     "odds": null,
     "h2h": null,
-    "elapsed": 23
+    "elapsed": 28
   },
   {
     "home": "Changwon City",
@@ -38746,7 +38746,7 @@ window.MATCHES = [
     "status": "1H",
     "kickoff": "2026-07-04T09:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 0,
+    "homeGoals": 2,
     "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
@@ -38928,7 +38928,7 @@ window.MATCHES = [
       "dcx2": 2.05
     },
     "h2h": null,
-    "elapsed": 31
+    "elapsed": 35
   },
   {
     "home": "Pocheon",
@@ -39116,7 +39116,7 @@ window.MATCHES = [
       "dcx2": 1.53
     },
     "h2h": null,
-    "elapsed": 30
+    "elapsed": 34
   },
   {
     "home": "MetroStars",
