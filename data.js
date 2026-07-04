@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T10:19:09.623Z";
-window.SCORES_UPDATED = "2026-07-04T10:40:40.647Z";
+window.SCORES_UPDATED = "2026-07-04T10:46:33.653Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -36839,7 +36839,7 @@ window.MATCHES = [
       "dcx2": 1.35
     },
     "h2h": null,
-    "elapsed": 78
+    "elapsed": 83
   },
   {
     "home": "Changwon City",
@@ -37035,7 +37035,7 @@ window.MATCHES = [
       "dcx2": 2.05
     },
     "h2h": null,
-    "elapsed": 83
+    "elapsed": 89
   },
   {
     "home": "Pocheon",
@@ -37223,7 +37223,7 @@ window.MATCHES = [
       "dcx2": 1.53
     },
     "h2h": null,
-    "elapsed": 79
+    "elapsed": 85
   },
   {
     "home": "MetroStars",
@@ -37625,7 +37625,7 @@ window.MATCHES = [
       "dcx2": 1.8
     },
     "h2h": null,
-    "elapsed": 40
+    "elapsed": 45
   },
   {
     "home": "Gangneung City",
@@ -37821,7 +37821,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": 41
+    "elapsed": 45
   },
   {
     "home": "Mokpo City",
@@ -38002,7 +38002,7 @@ window.MATCHES = [
     "round": "Round of 128",
     "odds": null,
     "h2h": null,
-    "elapsed": 31
+    "elapsed": 37
   },
   {
     "home": "Ulsan Citizen",
@@ -38016,7 +38016,7 @@ window.MATCHES = [
     "status": "1H",
     "kickoff": "2026-07-04T10:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 0,
+    "homeGoals": 1,
     "awayGoals": 0,
     "homePos": null,
     "awayPos": null,
@@ -38198,7 +38198,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 40
+    "elapsed": 45
   },
   {
     "home": "Jinju Citizen",
@@ -38394,7 +38394,7 @@ window.MATCHES = [
       "dcx2": 2.8
     },
     "h2h": null,
-    "elapsed": 40
+    "elapsed": 45
   },
   {
     "home": "Haman",
@@ -38590,7 +38590,7 @@ window.MATCHES = [
       "dcx2": 1.02
     },
     "h2h": null,
-    "elapsed": 41
+    "elapsed": 45
   },
   {
     "home": "Yangcheon TNT",
@@ -38771,7 +38771,7 @@ window.MATCHES = [
     "round": "Round of 128",
     "odds": null,
     "h2h": null,
-    "elapsed": 37
+    "elapsed": 43
   },
   {
     "home": "Ulsan FC",
@@ -38952,7 +38952,7 @@ window.MATCHES = [
     "round": "Round of 128",
     "odds": null,
     "h2h": null,
-    "elapsed": 38
+    "elapsed": 44
   },
   {
     "home": "Riga FC II",
@@ -39152,7 +39152,7 @@ window.MATCHES = [
       "dcx2": 1.95
     },
     "h2h": null,
-    "elapsed": 40
+    "elapsed": 45
   },
   {
     "home": "FC Anyang",
@@ -39369,7 +39369,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.26,
     "awayXgAgainst": 1.52,
-    "elapsed": 9
+    "elapsed": 15
   },
   {
     "home": "Daejeon Citizen",
@@ -39586,7 +39586,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 0.87,
     "awayXgAgainst": 0.97,
-    "elapsed": 10
+    "elapsed": 16
   },
   {
     "home": "Jeonbuk Motors",
@@ -39803,7 +39803,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.2,
     "awayXgAgainst": 1.44,
-    "elapsed": 10
+    "elapsed": 16
   },
   {
     "home": "Ansan Greeners",
@@ -40020,7 +40020,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.65,
     "awayXgAgainst": 1.5,
-    "elapsed": 10
+    "elapsed": 16
   },
   {
     "home": "Suwon Bluewings",
@@ -40237,7 +40237,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.29,
     "awayXgAgainst": 1.45,
-    "elapsed": 10
+    "elapsed": 16
   },
   {
     "home": "Cheongju",
@@ -40454,7 +40454,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.69,
     "awayXgAgainst": 1.98,
-    "elapsed": 11
+    "elapsed": 16
   },
   {
     "home": "Paju Citizen",
@@ -40669,7 +40669,7 @@ window.MATCHES = [
     "xgHomeReal": 1.55,
     "homeXgAgainst": 1.4,
     "xgReal": true,
-    "elapsed": 10
+    "elapsed": 16
   },
   {
     "home": "Shenyang Urban",
