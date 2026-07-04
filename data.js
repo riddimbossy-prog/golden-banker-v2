@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T06:49:17.438Z";
-window.SCORES_UPDATED = "2026-07-04T09:20:42.577Z";
+window.SCORES_UPDATED = "2026-07-04T09:25:28.869Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -37741,7 +37741,7 @@ window.MATCHES = [
       "dcx2": 1.17
     },
     "h2h": null,
-    "elapsed": 95
+    "elapsed": 101
   },
   {
     "home": "Sutherland Sharks",
@@ -37943,7 +37943,7 @@ window.MATCHES = [
       "dcx2": 1.11
     },
     "h2h": null,
-    "elapsed": 85
+    "elapsed": 90
   },
   {
     "home": "FK Beograd",
@@ -38143,7 +38143,7 @@ window.MATCHES = [
       "dcx2": 2.05
     },
     "h2h": null,
-    "elapsed": 87
+    "elapsed": 90
   },
   {
     "home": "Monaro Panthers",
@@ -38343,7 +38343,7 @@ window.MATCHES = [
       "dcx2": 8.5
     },
     "h2h": null,
-    "elapsed": 75
+    "elapsed": 81
   },
   {
     "home": "Sunshine Georgies",
@@ -38545,7 +38545,7 @@ window.MATCHES = [
       "dcx2": 1.02
     },
     "h2h": null,
-    "elapsed": 61
+    "elapsed": 66
   },
   {
     "home": "Dianella White Eagle",
@@ -38732,7 +38732,7 @@ window.MATCHES = [
     "round": "Regular Season - 17",
     "odds": null,
     "h2h": null,
-    "elapsed": 13
+    "elapsed": 18
   },
   {
     "home": "Changwon City",
@@ -38928,7 +38928,7 @@ window.MATCHES = [
       "dcx2": 2.05
     },
     "h2h": null,
-    "elapsed": 20
+    "elapsed": 26
   },
   {
     "home": "Pocheon",
@@ -39116,7 +39116,7 @@ window.MATCHES = [
       "dcx2": 1.53
     },
     "h2h": null,
-    "elapsed": 19
+    "elapsed": 25
   },
   {
     "home": "MetroStars",
