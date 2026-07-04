@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T03:33:42.911Z";
-window.SCORES_UPDATED = "2026-07-04T04:30:54.391Z";
+window.SCORES_UPDATED = "2026-07-04T04:35:29.072Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -35748,7 +35748,7 @@ window.MATCHES = [
       "dcx2": 1.95
     },
     "h2h": null,
-    "elapsed": 31
+    "elapsed": 35
   },
   {
     "home": "Canberra White Eagles",
