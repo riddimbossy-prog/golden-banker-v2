@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T20:08:29.082Z";
-window.SCORES_UPDATED = "2026-07-04T22:10:41.629Z";
+window.SCORES_UPDATED = "2026-07-04T22:15:33.850Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -53395,7 +53395,7 @@ window.MATCHES = [
     "xgAwayReal": 0.92,
     "awayXgAgainst": 2.05,
     "lineupConfirmed": true,
-    "elapsed": 47
+    "elapsed": 52
   },
   {
     "home": "Luverdense",
@@ -53595,7 +53595,7 @@ window.MATCHES = [
       "dcx2": 2.35
     },
     "h2h": null,
-    "elapsed": 49
+    "elapsed": 53
   },
   {
     "home": "Marcílio Dias",
@@ -53795,7 +53795,7 @@ window.MATCHES = [
       "dcx2": 1.33
     },
     "h2h": null,
-    "elapsed": 47
+    "elapsed": 52
   },
   {
     "home": "Quilmes",
@@ -53997,7 +53997,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 50
+    "elapsed": 55
   },
   {
     "home": "Goiatuba EC",
@@ -54197,7 +54197,7 @@ window.MATCHES = [
       "dcx2": 1.57
     },
     "h2h": null,
-    "elapsed": 41
+    "elapsed": 45
   },
   {
     "home": "LDU Portoviejo",
@@ -54399,7 +54399,7 @@ window.MATCHES = [
       "dcx2": 1.4
     },
     "h2h": null,
-    "elapsed": 40
+    "elapsed": 44
   },
   {
     "home": "Confiança",
@@ -54601,7 +54601,7 @@ window.MATCHES = [
       "dcx2": 1.73
     },
     "h2h": null,
-    "elapsed": 10
+    "elapsed": 15
   },
   {
     "home": "Maringá",
@@ -54803,7 +54803,7 @@ window.MATCHES = [
       "dcx2": 2.2
     },
     "h2h": null,
-    "elapsed": 10
+    "elapsed": 15
   },
   {
     "home": "Velo Clube",
@@ -54990,7 +54990,7 @@ window.MATCHES = [
     "round": "Round of 32",
     "odds": null,
     "h2h": null,
-    "elapsed": 11
+    "elapsed": 16
   },
   {
     "home": "Tampa Bay Rowdies",
@@ -55207,7 +55207,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.3,
     "awayXgAgainst": 1.36,
-    "elapsed": 4
+    "elapsed": 9
   },
   {
     "home": "Deportes Iquique",
@@ -55403,7 +55403,7 @@ window.MATCHES = [
       "dcx2": 1.25
     },
     "h2h": null,
-    "elapsed": 10
+    "elapsed": 15
   },
   {
     "home": "Santa Cruz",
