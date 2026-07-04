@@ -10883,8 +10883,8 @@
       "confidence": 8,
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.342Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -10897,8 +10897,8 @@
       "confidence": 9,
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.342Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -10911,8 +10911,8 @@
       "confidence": 9,
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-06-30T22:00:54.342Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -41107,6 +41107,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-04T16:15:32.620Z"
+    "updated": "2026-07-04T16:20:43.264Z"
   }
 }
