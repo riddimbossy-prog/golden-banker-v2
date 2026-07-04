@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T06:49:17.438Z";
-window.SCORES_UPDATED = "2026-07-04T08:40:41.442Z";
+window.SCORES_UPDATED = "2026-07-04T08:45:33.349Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -36550,7 +36550,7 @@ window.MATCHES = [
       "dcx2": 1.62
     },
     "h2h": null,
-    "elapsed": 75
+    "elapsed": 79
   },
   {
     "home": "Armadale",
@@ -36752,7 +36752,7 @@ window.MATCHES = [
       "dcx2": 1.3
     },
     "h2h": null,
-    "elapsed": 79
+    "elapsed": 84
   },
   {
     "home": "Perth Glory II",
@@ -36767,7 +36767,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T07:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
-    "awayGoals": 1,
+    "awayGoals": 2,
     "homePos": 10,
     "awayPos": 12,
     "tableSize": 12,
@@ -36954,7 +36954,7 @@ window.MATCHES = [
       "dcx2": 1.7
     },
     "h2h": null,
-    "elapsed": 77
+    "elapsed": 82
   },
   {
     "home": "Stirling Lions",
@@ -37156,7 +37156,7 @@ window.MATCHES = [
       "dcx2": 1.5
     },
     "h2h": null,
-    "elapsed": 80
+    "elapsed": 85
   },
   {
     "home": "Fremantle City",
@@ -37358,7 +37358,7 @@ window.MATCHES = [
       "dcx2": 1.3
     },
     "h2h": null,
-    "elapsed": 76
+    "elapsed": 81
   },
   {
     "home": "Western Knights",
@@ -37545,7 +37545,7 @@ window.MATCHES = [
     "round": "Regular Season - 17",
     "odds": null,
     "h2h": null,
-    "elapsed": 79
+    "elapsed": 84
   },
   {
     "home": "Jincheon",
@@ -37741,7 +37741,7 @@ window.MATCHES = [
       "dcx2": 1.17
     },
     "h2h": null,
-    "elapsed": 64
+    "elapsed": 69
   },
   {
     "home": "Sutherland Sharks",
@@ -37943,7 +37943,7 @@ window.MATCHES = [
       "dcx2": 1.11
     },
     "h2h": null,
-    "elapsed": 46
+    "elapsed": 51
   },
   {
     "home": "FK Beograd",
@@ -38143,7 +38143,7 @@ window.MATCHES = [
       "dcx2": 2.05
     },
     "h2h": null,
-    "elapsed": 48
+    "elapsed": 53
   },
   {
     "home": "Monaro Panthers",
@@ -38545,7 +38545,7 @@ window.MATCHES = [
       "dcx2": 1.02
     },
     "h2h": null,
-    "elapsed": 39
+    "elapsed": 44
   },
   {
     "home": "Dianella White Eagle",
