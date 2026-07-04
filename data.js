@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T00:04:59.265Z";
-window.SCORES_UPDATED = "2026-07-04T00:23:52.011Z";
+window.SCORES_UPDATED = "2026-07-04T00:25:27.744Z";
 window.MATCHES = [
   {
     "home": "Santa Cruz",
@@ -20042,7 +20042,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 0.65,
     "awayXgAgainst": 1.29,
-    "elapsed": 24
+    "elapsed": 26
   },
   {
     "home": "Washington Spirit W",
@@ -20255,7 +20255,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.67,
     "awayXgAgainst": 1.64,
-    "elapsed": 15
+    "elapsed": 17
   },
   {
     "home": "Des Moines Menace",
@@ -20634,7 +20634,7 @@ window.MATCHES = [
       "dcx2": 1.75
     },
     "h2h": null,
-    "elapsed": 18
+    "elapsed": 19
   },
   {
     "home": "Lionsbridge",
@@ -21000,7 +21000,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 16
+    "elapsed": 18
   },
   {
     "home": "Fort Worth Vaqueros",
@@ -66297,7 +66297,7 @@ window.MATCHES = [
       "dcx2": 1.02
     },
     "h2h": null,
-    "elapsed": 61
+    "elapsed": 62
   },
   {
     "home": "Loudoun United",
