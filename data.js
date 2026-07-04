@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T20:08:29.082Z";
-window.SCORES_UPDATED = "2026-07-04T21:50:42.573Z";
+window.SCORES_UPDATED = "2026-07-04T21:55:28.710Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -52374,7 +52374,7 @@ window.MATCHES = [
       "dcx2": 1.38
     },
     "h2h": null,
-    "elapsed": 87
+    "elapsed": 90
   },
   {
     "home": "Ipatinga",
@@ -52576,7 +52576,7 @@ window.MATCHES = [
       "dcx2": 1.25
     },
     "h2h": null,
-    "elapsed": 89
+    "elapsed": 90
   },
   {
     "home": "Indy Eleven",
@@ -52794,7 +52794,7 @@ window.MATCHES = [
     "xgAwayReal": 1.12,
     "awayXgAgainst": 1.84,
     "lineupConfirmed": true,
-    "elapsed": 85
+    "elapsed": 90
   },
   {
     "home": "San Luis",
@@ -52989,7 +52989,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-04T20:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 0,
+    "homeGoals": 1,
     "awayGoals": 0,
     "homePos": 4,
     "awayPos": 12,
@@ -53188,7 +53188,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/2.png",
     "country": "World",
     "flag": null,
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T21:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -53406,7 +53406,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/12944.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T21:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -53606,7 +53606,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/1214.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T21:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -54197,7 +54197,7 @@ window.MATCHES = [
       "dcx2": 1.57
     },
     "h2h": null,
-    "elapsed": 21
+    "elapsed": 25
   },
   {
     "home": "LDU Portoviejo",
@@ -54399,7 +54399,7 @@ window.MATCHES = [
       "dcx2": 1.4
     },
     "h2h": null,
-    "elapsed": 20
+    "elapsed": 24
   },
   {
     "home": "Confiança",
