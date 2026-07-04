@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T01:55:29.086Z";
-window.SCORES_UPDATED = "2026-07-04T03:25:27.139Z";
+window.SCORES_UPDATED = "2026-07-04T03:30:50.831Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -33320,7 +33320,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T01:30:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
-    "awayGoals": 2,
+    "awayGoals": 3,
     "homePos": 9,
     "awayPos": 6,
     "tableSize": 16,
@@ -33519,7 +33519,7 @@ window.MATCHES = [
     "xgAwayReal": 0.91,
     "awayXgAgainst": 2.35,
     "lineupConfirmed": true,
-    "elapsed": 86
+    "elapsed": 90
   },
   {
     "home": "Midlakes United",
@@ -33530,7 +33530,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/25936.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T01:30:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 2,
@@ -33715,7 +33715,7 @@ window.MATCHES = [
       "dcx2": 1.13
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Angel City W",
@@ -33729,7 +33729,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-04T02:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 1,
+    "homeGoals": 2,
     "awayGoals": 0,
     "homePos": 12,
     "awayPos": 8,
@@ -33928,7 +33928,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.56,
     "awayXgAgainst": 1.8,
-    "elapsed": 56
+    "elapsed": 62
   },
   {
     "home": "Ventura County Fusion",
@@ -34125,7 +34125,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-04T02:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 3,
+    "homeGoals": 4,
     "awayGoals": 0,
     "homePos": 2,
     "awayPos": 8,
@@ -34294,7 +34294,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 50
+    "elapsed": 56
   },
   {
     "home": "Tacoma Stars",
@@ -34490,7 +34490,7 @@ window.MATCHES = [
       "dcx2": 1.01
     },
     "h2h": null,
-    "elapsed": 61
+    "elapsed": 67
   },
   {
     "home": "Hume City",
