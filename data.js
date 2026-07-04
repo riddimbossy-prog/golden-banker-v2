@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T18:10:30.854Z";
-window.SCORES_UPDATED = "2026-07-04T18:55:29.482Z";
+window.SCORES_UPDATED = "2026-07-04T19:00:57.818Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -46603,7 +46603,7 @@ window.MATCHES = [
       "dcx2": 1.42
     },
     "h2h": null,
-    "elapsed": 65
+    "elapsed": 71
   },
   {
     "home": "Skála",
@@ -46805,7 +46805,7 @@ window.MATCHES = [
       "dcx2": 1.8
     },
     "h2h": null,
-    "elapsed": 65
+    "elapsed": 71
   },
   {
     "home": "Colegiales",
@@ -47815,7 +47815,7 @@ window.MATCHES = [
       "dcx2": 1.38
     },
     "h2h": null,
-    "elapsed": 37
+    "elapsed": 43
   },
   {
     "home": "Argentino Rosario",
@@ -48623,7 +48623,7 @@ window.MATCHES = [
       "dcx2": 1.5
     },
     "h2h": null,
-    "elapsed": 23
+    "elapsed": 29
   },
   {
     "home": "Almagro",
@@ -48825,7 +48825,7 @@ window.MATCHES = [
       "dcx2": 1.6
     },
     "h2h": null,
-    "elapsed": 24
+    "elapsed": 29
   },
   {
     "home": "Nueva Chicago",
@@ -49027,7 +49027,7 @@ window.MATCHES = [
       "dcx2": 1.77
     },
     "h2h": null,
-    "elapsed": 22
+    "elapsed": 28
   },
   {
     "home": "Defensores De Belgrano",
@@ -49229,7 +49229,7 @@ window.MATCHES = [
       "dcx2": 1.42
     },
     "h2h": null,
-    "elapsed": 26
+    "elapsed": 32
   },
   {
     "home": "Almirante Brown",
@@ -49431,7 +49431,7 @@ window.MATCHES = [
       "dcx2": 1.48
     },
     "h2h": null,
-    "elapsed": 18
+    "elapsed": 24
   },
   {
     "home": "Deportivo Armenio",
@@ -49633,7 +49633,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": 20
+    "elapsed": 26
   },
   {
     "home": "Huracan Las Heras",
@@ -49820,7 +49820,7 @@ window.MATCHES = [
     "round": "Regular Season - 16",
     "odds": null,
     "h2h": null,
-    "elapsed": 19
+    "elapsed": 25
   },
   {
     "home": "Defensores de Vilelas",
@@ -50007,7 +50007,7 @@ window.MATCHES = [
     "round": "Regular Season - 16",
     "odds": null,
     "h2h": null,
-    "elapsed": 23
+    "elapsed": 28
   },
   {
     "home": "Longford Town",
@@ -50209,7 +50209,7 @@ window.MATCHES = [
       "dcx2": 1.25
     },
     "h2h": null,
-    "elapsed": 25
+    "elapsed": 31
   },
   {
     "home": "Criciuma",
