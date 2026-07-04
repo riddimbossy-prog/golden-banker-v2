@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T06:49:17.438Z";
-window.SCORES_UPDATED = "2026-07-04T09:50:40.851Z";
+window.SCORES_UPDATED = "2026-07-04T09:55:27.682Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -38556,7 +38556,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3819.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T09:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 2,
@@ -38732,7 +38732,7 @@ window.MATCHES = [
     "round": "Regular Season - 17",
     "odds": null,
     "h2h": null,
-    "elapsed": 43
+    "elapsed": 45
   },
   {
     "home": "Changwon City",
@@ -39127,11 +39127,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/16769.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T09:45:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 1,
     "awayPos": 2,
     "tableSize": 12,
@@ -39316,7 +39316,7 @@ window.MATCHES = [
       "dcx2": 2.25
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 4
   },
   {
     "home": "Yanbian Longding",
