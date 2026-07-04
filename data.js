@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T03:33:42.911Z";
-window.SCORES_UPDATED = "2026-07-04T05:05:30.449Z";
+window.SCORES_UPDATED = "2026-07-04T05:10:41.645Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -35748,7 +35748,7 @@ window.MATCHES = [
       "dcx2": 1.95
     },
     "h2h": null,
-    "elapsed": 49
+    "elapsed": 54
   },
   {
     "home": "Canberra White Eagles",
@@ -36149,11 +36149,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3774.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T05:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 9,
     "awayPos": 16,
     "tableSize": 16,
@@ -36336,7 +36336,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 2
   },
   {
     "home": "UNSW",
@@ -36347,11 +36347,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3773.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T05:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 13,
     "awayPos": 5,
     "tableSize": 16,
@@ -36534,7 +36534,7 @@ window.MATCHES = [
       "dcx2": 1.7
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 2
   },
   {
     "home": "Adelaide City",
@@ -36545,11 +36545,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3794.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T05:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 1,
+    "awayGoals": 0,
     "homePos": 3,
     "awayPos": 12,
     "tableSize": 12,
@@ -36727,7 +36727,7 @@ window.MATCHES = [
       "under35": null
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 5
   },
   {
     "home": "Avondale",
@@ -36925,7 +36925,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 5
+    "elapsed": 10
   },
   {
     "home": "Altona Magic",
