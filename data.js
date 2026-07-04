@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T05:12:07.930Z";
-window.SCORES_UPDATED = "2026-07-04T06:35:32.211Z";
+window.SCORES_UPDATED = "2026-07-04T06:40:40.765Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -34719,7 +34719,7 @@ window.MATCHES = [
       "bttsNo": 1.25
     },
     "h2h": null,
-    "elapsed": 58
+    "elapsed": 63
   },
   {
     "home": "Queanbeyan City",
@@ -35120,7 +35120,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": 68
+    "elapsed": 73
   },
   {
     "home": "UNSW",
@@ -35322,7 +35322,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": 67
+    "elapsed": 72
   },
   {
     "home": "Adelaide City",
@@ -35519,7 +35519,7 @@ window.MATCHES = [
       "under35": null
     },
     "h2h": null,
-    "elapsed": 73
+    "elapsed": 78
   },
   {
     "home": "Avondale",
@@ -35721,7 +35721,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 78
+    "elapsed": 83
   },
   {
     "home": "Altona Magic",
@@ -35923,7 +35923,7 @@ window.MATCHES = [
       "dcx2": 1.45
     },
     "h2h": null,
-    "elapsed": 60
+    "elapsed": 65
   },
   {
     "home": "Adelaide United II",
@@ -35934,7 +35934,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3791.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-04T05:30:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -36123,7 +36123,7 @@ window.MATCHES = [
       "dcx2": 1.6
     },
     "h2h": null,
-    "elapsed": 45
+    "elapsed": 47
   },
   {
     "home": "Sturt Lions",
@@ -36323,7 +36323,7 @@ window.MATCHES = [
       "dcx2": 1.5
     },
     "h2h": null,
-    "elapsed": 46
+    "elapsed": 51
   },
   {
     "home": "Belconnen United",
@@ -36334,11 +36334,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/23517.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T06:30:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 9,
     "awayPos": 6,
     "tableSize": 11,
@@ -36522,7 +36522,7 @@ window.MATCHES = [
       "bttsNo": 1.36
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 5
   },
   {
     "home": "Manly United",
