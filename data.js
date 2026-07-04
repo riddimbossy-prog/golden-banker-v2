@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T14:19:08.286Z";
-window.SCORES_UPDATED = "2026-07-04T14:47:38.160Z";
+window.SCORES_UPDATED = "2026-07-04T14:50:44.978Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -41981,7 +41981,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/25735.png",
     "country": "Zimbabwe",
     "flag": "https://media.api-sports.io/flags/zw.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T13:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -42157,7 +42157,7 @@ window.MATCHES = [
     "round": "Regular Season - 21",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Ngezi Platinum",
@@ -42344,7 +42344,7 @@ window.MATCHES = [
     "round": "Regular Season - 21",
     "odds": null,
     "h2h": null,
-    "elapsed": 88
+    "elapsed": 90
   },
   {
     "home": "TelOne",
@@ -42531,7 +42531,7 @@ window.MATCHES = [
     "round": "Regular Season - 21",
     "odds": null,
     "h2h": null,
-    "elapsed": 85
+    "elapsed": 88
   },
   {
     "home": "Halmstad",
@@ -42749,7 +42749,7 @@ window.MATCHES = [
     "xgAwayReal": 1.13,
     "awayXgAgainst": 1.9,
     "lineupConfirmed": true,
-    "elapsed": 89
+    "elapsed": 90
   },
   {
     "home": "Degerfors IF",
@@ -42978,7 +42978,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/384.png",
     "country": "Belarus",
     "flag": "https://media.api-sports.io/flags/by.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T13:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -43169,7 +43169,7 @@ window.MATCHES = [
       "dcx2": 1.6
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Niva",
@@ -43180,7 +43180,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/23272.png",
     "country": "Belarus",
     "flag": "https://media.api-sports.io/flags/by.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T13:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 5,
@@ -43356,7 +43356,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "SalPa",
@@ -43558,7 +43558,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 87
+    "elapsed": 90
   },
   {
     "home": "Atlantis",
@@ -43758,7 +43758,7 @@ window.MATCHES = [
       "dcx2": 1.67
     },
     "h2h": null,
-    "elapsed": 88
+    "elapsed": 90
   },
   {
     "home": "Union Plaani",
@@ -43958,7 +43958,7 @@ window.MATCHES = [
       "dcx2": 1.42
     },
     "h2h": null,
-    "elapsed": 88
+    "elapsed": 90
   },
   {
     "home": "P-Iirot",
@@ -44172,7 +44172,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-04T13:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 0,
+    "homeGoals": 1,
     "awayGoals": 1,
     "homePos": 8,
     "awayPos": 7,
@@ -44360,7 +44360,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": 89
+    "elapsed": 90
   },
   {
     "home": "Mārupe",
@@ -44371,7 +44371,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4142.png",
     "country": "Latvia",
     "flag": "https://media.api-sports.io/flags/lv.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T13:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 2,
@@ -44560,7 +44560,7 @@ window.MATCHES = [
       "dcx2": 2.95
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "BFC Daugavpils",
@@ -44575,7 +44575,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T13:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 3,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": 7,
     "awayPos": 4,
     "tableSize": 10,
@@ -44964,7 +44964,7 @@ window.MATCHES = [
       "dcx2": 1.36
     },
     "h2h": null,
-    "elapsed": 89
+    "elapsed": 90
   },
   {
     "home": "Bumprom",
@@ -45151,7 +45151,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 61
+    "elapsed": 64
   },
   {
     "home": "B36 Torshavn",
@@ -45353,7 +45353,7 @@ window.MATCHES = [
       "dcx2": 1.38
     },
     "h2h": null,
-    "elapsed": 61
+    "elapsed": 65
   },
   {
     "home": "Al Karama",
@@ -45364,7 +45364,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/27270.png",
     "country": "Syria",
     "flag": "https://media.api-sports.io/flags/sy.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T14:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -45914,7 +45914,7 @@ window.MATCHES = [
     "round": "Regular Season - 30",
     "odds": null,
     "h2h": null,
-    "elapsed": 44
+    "elapsed": 45
   },
   {
     "home": "hodd",
@@ -45925,7 +45925,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/324.png",
     "country": "Norway",
     "flag": "https://media.api-sports.io/flags/no.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T14:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 3,
@@ -46516,7 +46516,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4165.png",
     "country": "Iceland",
     "flag": "https://media.api-sports.io/flags/is.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T14:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -46718,7 +46718,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/6093.png",
     "country": "Iceland",
     "flag": "https://media.api-sports.io/flags/is.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T14:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -46918,7 +46918,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/828.png",
     "country": "Iceland",
     "flag": "https://media.api-sports.io/flags/is.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T14:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -47538,7 +47538,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/9190.png",
     "country": "Finland",
     "flag": "https://media.api-sports.io/flags/fi.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T14:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
