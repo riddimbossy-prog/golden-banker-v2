@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T14:19:08.286Z";
-window.SCORES_UPDATED = "2026-07-04T16:20:43.057Z";
+window.SCORES_UPDATED = "2026-07-04T16:25:30.236Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -45551,11 +45551,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/15301.png",
     "country": "Syria",
     "flag": "https://media.api-sports.io/flags/sy.svg",
-    "status": "NS",
+    "status": "FT",
     "kickoff": "2026-07-04T14:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 1,
     "homePos": 10,
     "awayPos": 11,
     "tableSize": 16,
@@ -48718,7 +48718,7 @@ window.MATCHES = [
       "dcx2": 2.2
     },
     "h2h": null,
-    "elapsed": 61
+    "elapsed": 66
   },
   {
     "home": "FC Slutsk",
@@ -48733,7 +48733,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T15:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": 1,
     "awayPos": 14,
     "tableSize": 18,
@@ -48905,7 +48905,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 62
+    "elapsed": 67
   },
   {
     "home": "VPS",
@@ -49119,7 +49119,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 2.58,
     "awayXgAgainst": 1.28,
-    "elapsed": 59
+    "elapsed": 65
   },
   {
     "home": "OLS",
@@ -49321,7 +49321,7 @@ window.MATCHES = [
       "dcx2": 3.35
     },
     "h2h": null,
-    "elapsed": 64
+    "elapsed": 69
   },
   {
     "home": "Rīgas FS",
@@ -49336,7 +49336,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T15:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": 2,
     "awayPos": 3,
     "tableSize": 10,
@@ -49523,7 +49523,7 @@ window.MATCHES = [
       "dcx2": 3
     },
     "h2h": null,
-    "elapsed": 61
+    "elapsed": 66
   },
   {
     "home": "Politehnica UTM",
@@ -49720,7 +49720,7 @@ window.MATCHES = [
       "under35": 1.65
     },
     "h2h": null,
-    "elapsed": 61
+    "elapsed": 66
   },
   {
     "home": "Bryne",
@@ -49937,7 +49937,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1,
     "awayXgAgainst": 1.91,
-    "elapsed": 20
+    "elapsed": 25
   },
   {
     "home": "Deportivo Camioneros",
@@ -50139,7 +50139,7 @@ window.MATCHES = [
       "dcx2": 1.85
     },
     "h2h": null,
-    "elapsed": 15
+    "elapsed": 20
   },
   {
     "home": "Lugano",
@@ -50341,7 +50341,7 @@ window.MATCHES = [
       "dcx2": 1.95
     },
     "h2h": null,
-    "elapsed": 18
+    "elapsed": 23
   },
   {
     "home": "IBV Vestmannaeyjar",
@@ -50543,7 +50543,7 @@ window.MATCHES = [
       "dcx2": 1.6
     },
     "h2h": null,
-    "elapsed": 20
+    "elapsed": 25
   },
   {
     "home": "Leiknir R.",
@@ -50745,7 +50745,7 @@ window.MATCHES = [
       "dcx2": 2.4
     },
     "h2h": null,
-    "elapsed": 19
+    "elapsed": 24
   },
   {
     "home": "Magni",
@@ -50945,7 +50945,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 20
+    "elapsed": 25
   },
   {
     "home": "Trans Narva",
@@ -51147,7 +51147,7 @@ window.MATCHES = [
       "dcx2": 1.01
     },
     "h2h": null,
-    "elapsed": 20
+    "elapsed": 24
   },
   {
     "home": "Paide",
@@ -51162,7 +51162,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T16:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": 4,
     "awayPos": 6,
     "tableSize": 10,
@@ -51349,7 +51349,7 @@ window.MATCHES = [
       "dcx2": 2.55
     },
     "h2h": null,
-    "elapsed": 20
+    "elapsed": 24
   },
   {
     "home": "Metta / LU",
@@ -51546,7 +51546,7 @@ window.MATCHES = [
       "under35": 2
     },
     "h2h": null,
-    "elapsed": 20
+    "elapsed": 25
   },
   {
     "home": "AB",
@@ -51748,7 +51748,7 @@ window.MATCHES = [
       "dcx2": 1.91
     },
     "h2h": null,
-    "elapsed": 4
+    "elapsed": 9
   },
   {
     "home": "ÍF II",
