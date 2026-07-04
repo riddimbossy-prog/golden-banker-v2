@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T12:19:14.861Z";
-window.SCORES_UPDATED = "2026-07-04T12:40:39.669Z";
+window.SCORES_UPDATED = "2026-07-04T12:45:32.289Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -37020,7 +37020,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/27856.png",
     "country": "South-Korea",
     "flag": "https://media.api-sports.io/flags/kr.svg",
-    "status": "FT",
+    "status": "AET",
     "kickoff": "2026-07-04T10:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 3,
@@ -37789,7 +37789,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/18656.png",
     "country": "South-Korea",
     "flag": "https://media.api-sports.io/flags/kr.svg",
-    "status": "FT",
+    "status": "AET",
     "kickoff": "2026-07-04T10:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -40066,7 +40066,7 @@ window.MATCHES = [
       "dcx2": 1.7
     },
     "h2h": null,
-    "elapsed": 78
+    "elapsed": 83
   },
   {
     "home": "Qingdao Youth Island",
@@ -40284,7 +40284,7 @@ window.MATCHES = [
     "xgAwayReal": 1.2,
     "awayXgAgainst": 1.49,
     "lineupConfirmed": true,
-    "elapsed": 72
+    "elapsed": 77
   },
   {
     "home": "Suzhou Dongwu",
@@ -40486,7 +40486,7 @@ window.MATCHES = [
       "dcx2": 1.03
     },
     "h2h": null,
-    "elapsed": 83
+    "elapsed": 87
   },
   {
     "home": "Shenzhen Juniors",
@@ -40688,7 +40688,7 @@ window.MATCHES = [
       "dcx2": 1.5
     },
     "h2h": null,
-    "elapsed": 81
+    "elapsed": 86
   },
   {
     "home": "Shaanxi Union",
@@ -40890,7 +40890,7 @@ window.MATCHES = [
       "dcx2": 1.93
     },
     "h2h": null,
-    "elapsed": 83
+    "elapsed": 88
   },
   {
     "home": "Ningbo Professional",
@@ -41092,7 +41092,7 @@ window.MATCHES = [
       "dcx2": 1.85
     },
     "h2h": null,
-    "elapsed": 79
+    "elapsed": 84
   },
   {
     "home": "Honka",
@@ -41106,7 +41106,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-04T11:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 6,
+    "homeGoals": 7,
     "awayGoals": 1,
     "homePos": 1,
     "awayPos": 9,
@@ -41289,7 +41289,7 @@ window.MATCHES = [
       "under35": null
     },
     "h2h": null,
-    "elapsed": 85
+    "elapsed": 90
   },
   {
     "home": "JS Hercules",
@@ -41303,7 +41303,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-04T11:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 1,
+    "homeGoals": 2,
     "awayGoals": 1,
     "homePos": 10,
     "awayPos": 9,
@@ -41489,7 +41489,7 @@ window.MATCHES = [
       "dcx2": 1.5
     },
     "h2h": null,
-    "elapsed": 79
+    "elapsed": 84
   },
   {
     "home": "JDFS Alberts",
@@ -41689,7 +41689,7 @@ window.MATCHES = [
       "dcx2": 1.53
     },
     "h2h": null,
-    "elapsed": 84
+    "elapsed": 89
   },
   {
     "home": "Beijing Guoan",
@@ -41907,7 +41907,7 @@ window.MATCHES = [
     "xgAwayReal": 1.25,
     "awayXgAgainst": 1.8,
     "lineupConfirmed": true,
-    "elapsed": 46
+    "elapsed": 51
   },
   {
     "home": "Dalian Zhixing",
@@ -42343,7 +42343,7 @@ window.MATCHES = [
     "xgAwayReal": 2.04,
     "awayXgAgainst": 2.39,
     "lineupConfirmed": true,
-    "elapsed": 40
+    "elapsed": 45
   },
   {
     "home": "Shakhter Soligorsk",
@@ -42354,7 +42354,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/11266.png",
     "country": "Belarus",
     "flag": "https://media.api-sports.io/flags/by.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T12:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -42530,7 +42530,7 @@ window.MATCHES = [
     "round": "Regular Season - 14",
     "odds": null,
     "h2h": null,
-    "elapsed": 43
+    "elapsed": 45
   },
   {
     "home": "Tianjin Teda",
@@ -42732,7 +42732,7 @@ window.MATCHES = [
       "dcx2": 1.65
     },
     "h2h": null,
-    "elapsed": 41
+    "elapsed": 45
   },
   {
     "home": "Lahti",
@@ -42950,7 +42950,7 @@ window.MATCHES = [
     "xgAwayReal": 1.32,
     "awayXgAgainst": 1.08,
     "lineupConfirmed": true,
-    "elapsed": 38
+    "elapsed": 43
   },
   {
     "home": "HIFK Helsinki",
@@ -43150,7 +43150,7 @@ window.MATCHES = [
       "dcx2": 3
     },
     "h2h": null,
-    "elapsed": 35
+    "elapsed": 40
   },
   {
     "home": "Kraft",
@@ -43350,7 +43350,7 @@ window.MATCHES = [
       "dcx2": 1.44
     },
     "h2h": null,
-    "elapsed": 38
+    "elapsed": 44
   },
   {
     "home": "FC Tallinn",
@@ -43364,7 +43364,7 @@ window.MATCHES = [
     "status": "1H",
     "kickoff": "2026-07-04T12:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 2,
+    "homeGoals": 3,
     "awayGoals": 1,
     "homePos": 10,
     "awayPos": 7,
@@ -43550,7 +43550,7 @@ window.MATCHES = [
       "dcx2": 1.3
     },
     "h2h": null,
-    "elapsed": 39
+    "elapsed": 44
   },
   {
     "home": "B71",
@@ -43737,7 +43737,7 @@ window.MATCHES = [
     "round": "Regular Season - 16",
     "odds": null,
     "h2h": null,
-    "elapsed": 36
+    "elapsed": 41
   },
   {
     "home": "NSÍ II",
@@ -43924,7 +43924,7 @@ window.MATCHES = [
     "round": "Regular Season - 16",
     "odds": null,
     "h2h": null,
-    "elapsed": 40
+    "elapsed": 45
   },
   {
     "home": "Altay",
@@ -44111,7 +44111,7 @@ window.MATCHES = [
     "round": "Regular Season - 16",
     "odds": null,
     "h2h": null,
-    "elapsed": 40
+    "elapsed": 45
   },
   {
     "home": "Blue Eagles",
@@ -44298,7 +44298,7 @@ window.MATCHES = [
     "round": "Regular Season - 9",
     "odds": null,
     "h2h": null,
-    "elapsed": 10
+    "elapsed": 15
   },
   {
     "home": "Karonga United",
@@ -44498,7 +44498,7 @@ window.MATCHES = [
       "dcx2": 2.1
     },
     "h2h": null,
-    "elapsed": 10
+    "elapsed": 15
   },
   {
     "home": "Nyasa Big Bullets",
@@ -44685,7 +44685,7 @@ window.MATCHES = [
     "round": "Regular Season - 9",
     "odds": null,
     "h2h": null,
-    "elapsed": 12
+    "elapsed": 17
   },
   {
     "home": "Bulawayo Chiefs",
