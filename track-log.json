@@ -41086,10 +41086,24 @@
       "status": "pending",
       "result": null,
       "score": null
+    },
+    {
+      "matchDate": "2026-07-05",
+      "home": "Gimhae City",
+      "away": "Seoul E-Land FC",
+      "league": "K League 2",
+      "engine": "Normal",
+      "market": "Away DNB",
+      "confidence": "High",
+      "leagueClass": "Balanced",
+      "recordedAt": "2026-07-04T14:40:39.689Z",
+      "status": "pending",
+      "result": null,
+      "score": null
     }
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-04T14:35:27.271Z"
+    "updated": "2026-07-04T14:40:39.787Z"
   }
 }
