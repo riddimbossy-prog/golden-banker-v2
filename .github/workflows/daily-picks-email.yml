@@ -25,6 +25,9 @@ jobs:
       - name: Build acca slips + top-banker cards
         run: |
           npm install sharp --no-save || echo "sharp install issue"
+          # remove yesterday's page files first, so stale slips never linger,
+          # get re-committed, or get re-attached by the glob below
+          rm -f acca-*.png acca-*.svg today-*.png today-*.svg
           node generate-acca.js  || echo "acca generation skipped"
           node generate-image.js || echo "top-bankers generation skipped"
       - name: Commit the images (if changed)
@@ -32,7 +35,9 @@ jobs:
           git config user.name "predicto-bot"
           git config user.email "bot@users.noreply.github.com"
           # per-path guarded adds — a missing file must never kill the job
-          for p in acca.png acca.svg acca-*.png acca-*.svg today.png today.svg today-*.png today-*.svg daily/; do
+          # -A stages DELETIONS of stale pages as well as new files
+          git add -A -- 'acca*' 'today*' 2>/dev/null || true
+          for p in daily/; do
             git add -- $p 2>/dev/null || echo "note: $p not present - skipped"
           done
           if git diff --staged --quiet; then echo "Nothing staged."; exit 0; fi
