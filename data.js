@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T03:33:42.911Z";
-window.SCORES_UPDATED = "2026-07-04T03:55:31.922Z";
+window.SCORES_UPDATED = "2026-07-04T04:01:04.489Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -34988,7 +34988,7 @@ window.MATCHES = [
     "xgAwayReal": 1.56,
     "awayXgAgainst": 1.8,
     "lineupConfirmed": true,
-    "elapsed": 87
+    "elapsed": 90
   },
   {
     "home": "Ventura County Fusion",
@@ -35186,7 +35186,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T02:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 4,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": 2,
     "awayPos": 8,
     "tableSize": 144,
@@ -35354,7 +35354,7 @@ window.MATCHES = [
     "round": "Group Stage",
     "odds": null,
     "h2h": null,
-    "elapsed": 81
+    "elapsed": 86
   },
   {
     "home": "Tacoma Stars",
@@ -35365,11 +35365,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/25948.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T02:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 1,
-    "awayGoals": 1,
+    "homeGoals": 2,
+    "awayGoals": 2,
     "homePos": 9,
     "awayPos": 2,
     "tableSize": 144,
@@ -35550,7 +35550,7 @@ window.MATCHES = [
       "dcx2": 1.01
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Hume City",
@@ -35561,11 +35561,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3800.png",
     "country": "Australia",
     "flag": "https://media.api-sports.io/flags/au.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T04:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 2,
     "awayPos": 7,
     "tableSize": 14,
@@ -35748,7 +35748,7 @@ window.MATCHES = [
       "dcx2": 1.95
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 1
   },
   {
     "home": "Canberra White Eagles",
