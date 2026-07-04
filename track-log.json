@@ -13053,8 +13053,8 @@
       "confidence": 8,
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-06-30T22:00:54.350Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -41387,6 +41387,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-04T20:55:26.100Z"
+    "updated": "2026-07-04T21:01:02.045Z"
   }
 }

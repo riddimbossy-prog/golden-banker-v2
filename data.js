@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T20:08:29.082Z";
-window.SCORES_UPDATED = "2026-07-04T20:55:25.876Z";
+window.SCORES_UPDATED = "2026-07-04T21:01:01.809Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -48976,7 +48976,7 @@ window.MATCHES = [
     "xgAwayReal": 1.32,
     "awayXgAgainst": 1.38,
     "lineupConfirmed": true,
-    "elapsed": 87
+    "elapsed": 90
   },
   {
     "home": "Londrina",
@@ -48987,7 +48987,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/146.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T19:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 5,
@@ -49194,7 +49194,7 @@ window.MATCHES = [
     "xgAwayReal": 1.21,
     "awayXgAgainst": 1.46,
     "lineupConfirmed": true,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Novorizontino",
@@ -49812,7 +49812,7 @@ window.MATCHES = [
       "dcx2": 1.33
     },
     "h2h": null,
-    "elapsed": 87
+    "elapsed": 90
   },
   {
     "home": "Sao Jose",
@@ -50023,7 +50023,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/12921.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T19:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -50199,7 +50199,7 @@ window.MATCHES = [
     "round": "Round of 32",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Trem",
@@ -50210,7 +50210,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/2233.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T19:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -50386,7 +50386,7 @@ window.MATCHES = [
     "round": "Round of 32",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "CRAC",
@@ -50397,7 +50397,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/7787.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T19:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 2,
@@ -50586,7 +50586,7 @@ window.MATCHES = [
       "dcx2": 1.45
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Porto Velho",
@@ -51393,7 +51393,7 @@ window.MATCHES = [
     "xgAwayReal": 0.55,
     "awayXgAgainst": 2.2,
     "lineupConfirmed": true,
-    "elapsed": 88
+    "elapsed": 90
   },
   {
     "home": "Magallanes",
@@ -51404,7 +51404,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/2318.png",
     "country": "Chile",
     "flag": "https://media.api-sports.io/flags/cl.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T19:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -51589,7 +51589,7 @@ window.MATCHES = [
       "dcx2": 1.18
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Union San Felipe",
@@ -51972,7 +51972,7 @@ window.MATCHES = [
     "round": "Round of 32",
     "odds": null,
     "h2h": null,
-    "elapsed": 59
+    "elapsed": 64
   },
   {
     "home": "Maranhão",
@@ -52587,7 +52587,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3990.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T20:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -53406,11 +53406,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/12944.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-04T21:00:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 2,
     "awayPos": 1,
     "tableSize": 96,
@@ -53595,7 +53595,7 @@ window.MATCHES = [
       "dcx2": 2.35
     },
     "h2h": null,
-    "elapsed": null
+    "elapsed": 2
   },
   {
     "home": "Marcílio Dias",
