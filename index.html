@@ -1866,7 +1866,7 @@ function renderStrictMatches(){
       else { sel.style.background='var(--panel)'; sel.style.color='var(--muted)'; }
     }
 
-    renderStats(); renderMatches();
+    updateHero(); renderStats(); renderMatches();
   }
   bn.addEventListener('click',()=>setMode('normal'));
   bs.addEventListener('click',()=>setMode('strict'));
