@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-04T16:14:30.024Z";
-window.SCORES_UPDATED = "2026-07-04T17:55:30.848Z";
+window.SCORES_UPDATED = "2026-07-04T18:00:58.207Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -46714,7 +46714,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/8378.png",
     "country": "Argentina",
     "flag": "https://media.api-sports.io/flags/ar.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T16:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
@@ -46905,7 +46905,7 @@ window.MATCHES = [
       "dcx2": 1.85
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "IBV Vestmannaeyjar",
@@ -47122,7 +47122,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T16:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 3,
-    "awayGoals": 2,
+    "awayGoals": 3,
     "homePos": 6,
     "awayPos": 12,
     "tableSize": 12,
@@ -47309,7 +47309,7 @@ window.MATCHES = [
       "dcx2": 2.4
     },
     "h2h": null,
-    "elapsed": 89
+    "elapsed": 90
   },
   {
     "home": "Magni",
@@ -48312,7 +48312,7 @@ window.MATCHES = [
       "dcx2": 1.91
     },
     "h2h": null,
-    "elapsed": 84
+    "elapsed": 90
   },
   {
     "home": "ÍF II",
@@ -48326,7 +48326,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-04T16:30:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 2,
+    "homeGoals": 3,
     "awayGoals": 2,
     "homePos": 4,
     "awayPos": 2,
@@ -48512,7 +48512,7 @@ window.MATCHES = [
       "dcx2": 1.3
     },
     "h2h": null,
-    "elapsed": 63
+    "elapsed": 69
   },
   {
     "home": "Canada",
@@ -49334,7 +49334,7 @@ window.MATCHES = [
       "dcx2": 1.42
     },
     "h2h": null,
-    "elapsed": 23
+    "elapsed": 28
   },
   {
     "home": "Skála",
@@ -49536,7 +49536,7 @@ window.MATCHES = [
       "dcx2": 1.8
     },
     "h2h": null,
-    "elapsed": 23
+    "elapsed": 29
   },
   {
     "home": "Colegiales",
