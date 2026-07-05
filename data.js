@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-05T02:04:07.486Z";
-window.SCORES_UPDATED = "2026-07-05T03:50:45.189Z";
+window.SCORES_UPDATED = "2026-07-05T03:55:30.216Z";
 window.MATCHES = [
   {
     "home": "Mexico",
@@ -8190,7 +8190,7 @@ window.MATCHES = [
     "kickoff": "2026-07-05T02:30:00+00:00",
     "matchDate": "2026-07-05",
     "homeGoals": 1,
-    "awayGoals": 1,
+    "awayGoals": 2,
     "homePos": 11,
     "awayPos": 9,
     "tableSize": 25,
@@ -8392,7 +8392,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.21,
     "awayXgAgainst": 1.57,
-    "elapsed": 50
+    "elapsed": 55
   },
   {
     "home": "Canberra FC",
