@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-05T00:03:26.838Z";
-window.SCORES_UPDATED = "2026-07-05T00:55:30.671Z";
+window.SCORES_UPDATED = "2026-07-05T01:00:59.963Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -227,7 +227,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3995.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-05T00:00:00+00:00",
     "matchDate": "2026-07-05",
     "homeGoals": 0,
@@ -1607,7 +1607,7 @@ window.MATCHES = [
       "dcx2": 2.95
     },
     "h2h": null,
-    "elapsed": 25
+    "elapsed": 30
   },
   {
     "home": "San Diego Wave W",
@@ -1824,7 +1824,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.15,
     "awayXgAgainst": 1.65,
-    "elapsed": 8
+    "elapsed": 13
   },
   {
     "home": "Colorado Springs",
@@ -50859,7 +50859,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/129.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T23:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 2,
@@ -51066,7 +51066,7 @@ window.MATCHES = [
     "xgAwayReal": 0.95,
     "awayXgAgainst": 1.3,
     "lineupConfirmed": true,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Pittsburgh Riverhounds",
@@ -51295,7 +51295,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/2351.png",
     "country": "Uruguay",
     "flag": "https://media.api-sports.io/flags/uy.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T23:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -51471,7 +51471,7 @@ window.MATCHES = [
     "round": "2nd Phase - 9",
     "odds": null,
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Guarani Campinas",
@@ -51673,7 +51673,7 @@ window.MATCHES = [
       "dcx2": 2.55
     },
     "h2h": null,
-    "elapsed": 64
+    "elapsed": 70
   },
   {
     "home": "Ferroviária",
@@ -51875,7 +51875,7 @@ window.MATCHES = [
       "dcx2": 1.7
     },
     "h2h": null,
-    "elapsed": 65
+    "elapsed": 70
   },
   {
     "home": "North Carolina Courage W",
@@ -52093,7 +52093,7 @@ window.MATCHES = [
     "xgAwayReal": 1.21,
     "awayXgAgainst": 1.48,
     "lineupConfirmed": true,
-    "elapsed": 56
+    "elapsed": 61
   },
   {
     "home": "Rhode Island",
@@ -52311,7 +52311,7 @@ window.MATCHES = [
     "xgAwayReal": 1.2,
     "awayXgAgainst": 1.43,
     "lineupConfirmed": true,
-    "elapsed": 53
+    "elapsed": 59
   },
   {
     "home": "Fortaleza EC",
