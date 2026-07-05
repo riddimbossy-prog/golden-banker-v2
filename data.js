@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-05T00:03:26.838Z";
-window.SCORES_UPDATED = "2026-07-05T01:55:31.904Z";
+window.SCORES_UPDATED = "2026-07-05T02:01:04.905Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -10,7 +10,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/1154.png",
     "country": "Ecuador",
     "flag": "https://media.api-sports.io/flags/ec.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-05T00:00:00+00:00",
     "matchDate": "2026-07-05",
     "homeGoals": 2,
@@ -216,7 +216,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 0.86,
     "awayXgAgainst": 1.16,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Louisville City",
@@ -1607,7 +1607,7 @@ window.MATCHES = [
       "dcx2": 2.95
     },
     "h2h": null,
-    "elapsed": 65
+    "elapsed": 70
   },
   {
     "home": "San Diego Wave W",
@@ -1824,7 +1824,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.15,
     "awayXgAgainst": 1.65,
-    "elapsed": 47
+    "elapsed": 53
   },
   {
     "home": "Colorado Springs",
@@ -2475,7 +2475,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.46,
     "awayXgAgainst": 1.83,
-    "elapsed": 17
+    "elapsed": 23
   },
   {
     "home": "Las Vegas Lights",
@@ -51081,7 +51081,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T23:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
-    "awayGoals": 1,
+    "awayGoals": 2,
     "homePos": 6,
     "awayPos": 12,
     "tableSize": 25,
