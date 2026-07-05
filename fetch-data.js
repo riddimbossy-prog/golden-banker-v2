@@ -84,6 +84,9 @@ function fmtDate(d){ return `${d.getFullYear()}-${String(d.getMonth()+1).padStar
 // sample (50 matches) — below that, returns null so the engine returns NO BET.
 // Also assigns a league identity (Section 14) from the resulting rates.
 const LEAGUE_TREND_CACHE = {};
+// Tally of how the Trend engine's data source did this run — printed at the end
+// so the Actions log shows, at a glance, whether Trend has data to work with.
+const TREND_STATS = { okLeagues:new Set(), nullLeagues:new Set(), backfilledLeagues:new Set(), tierLeagues:new Set() };
 const FINISHED_SET = new Set(["FT","AET","PEN","AWD","WO"]);
 async function getLeagueTrends(leagueId, season, key, sleepMs, table, tableSize){
   if (leagueId==null || !season) return null;
@@ -91,20 +94,44 @@ async function getLeagueTrends(leagueId, season, key, sleepMs, table, tableSize)
   if (ck in LEAGUE_TREND_CACHE) return LEAGUE_TREND_CACHE[ck];
   let result = null;
   try {
-    // pull finished fixtures for the whole season (paginated defensively)
-    let all = [], page = 1, pages = 1;
-    do {
-      const r = await apiGet(`/fixtures?league=${leagueId}&season=${season}&status=FT-AET-PEN&page=${page}`, key);
-      if (r && Array.isArray(r.response)) all = all.concat(r.response);
-      pages = (r && r.paging && r.paging.total) ? r.paging.total : 1;
-      page++;
-      if (page<=pages && sleepMs) await sleep(sleepMs);
-    } while (page <= pages && page <= 6); // hard cap 6 pages (~600 matches) for safety
+    // pull finished fixtures for the CURRENT season AND the PREVIOUS season, so
+    // tier-patterns have real depth even in early/off-season when the current
+    // season is too thin on its own. Games are tagged by season so we can track
+    // how much of each pattern is current vs backfilled (honesty flag below).
+    const prevSeason = String(parseInt(season,10) - 1);
+    const fetchSeason = async (seasonId) => {
+      let acc = [], page = 1, pages = 1;
+      do {
+        const r = await apiGet(`/fixtures?league=${leagueId}&season=${seasonId}&status=FT-AET-PEN&page=${page}`, key);
+        if (r && Array.isArray(r.response)) acc = acc.concat(r.response);
+        pages = (r && r.paging && r.paging.total) ? r.paging.total : 1;
+        page++;
+        if (page<=pages && sleepMs) await sleep(sleepMs);
+      } while (page <= pages && page <= 6); // hard cap 6 pages per season
+      return acc;
+    };
 
-    const games = all.filter(f => f && f.fixture && FINISHED_SET.has(String(f.fixture.status.short||"").toUpperCase())
-      && f.goals && f.goals.home!=null && f.goals.away!=null);
+    const curRaw = await fetchSeason(season);
+    const keep = f => f && f.fixture && FINISHED_SET.has(String(f.fixture.status.short||"").toUpperCase())
+      && f.goals && f.goals.home!=null && f.goals.away!=null;
+    let curGames = curRaw.filter(keep).map(g => (g.__season = "current", g));
+
+    // Only spend the extra API calls on the previous season if the current one
+    // is thin. If current already has depth, don't bother backfilling.
+    let prevGames = [];
+    if (curGames.length < 50) {
+      if (sleepMs) await sleep(sleepMs);
+      const prevRaw = await fetchSeason(prevSeason);
+      prevGames = prevRaw.filter(keep).map(g => (g.__season = "previous", g));
+    }
+
+    const games = curGames.concat(prevGames);
     const n = games.length;
-    if (n < 50) { LEAGUE_TREND_CACHE[ck] = null; return null; } // spec minimum sample
+    const nCurrent = curGames.length;
+    if (n < 30) { LEAGUE_TREND_CACHE[ck] = null; return null; } // min COMBINED sample; per-bucket guards (n>=8/10/12) remain the real quality gate
+    const smallSample = nCurrent < 30;              // current season alone is thin
+    const backfilled = prevGames.length > 0;        // patterns lean on last season
+    const currentShare = n ? Math.round((nCurrent/n)*100)/100 : 0;
 
     // tally every market the spec scans
     let over05=0,over15=0,over25=0,over35=0,under15=0,under25=0,under35=0,under45=0;
@@ -155,7 +182,13 @@ async function getLeagueTrends(leagueId, season, key, sleepMs, table, tableSize)
     if (table && tableSize) {
       const tierOf = pos => pos==null?null : pos===1?"LDR" : pos<=4?"TOP" : pos>tableSize-4?"BOT" : "MID";
       const B = {};
+      // TIER buckets use CURRENT-season games ONLY: they're classified by the
+      // current table, so last-season games (whose teams may sit elsewhere now,
+      // or aren't in this table) would be mis-tiered. League-wide market rates
+      // above safely use both seasons; tier-pairings stay current-only for
+      // correctness and fill in as the season plays.
       for (const g of games){
+        if (g.__season !== "current") continue;
         const hR=table[g.teams&&g.teams.home&&g.teams.home.id], aR=table[g.teams&&g.teams.away&&g.teams.away.id];
         const th=tierOf(hR&&hR.rank), ta=tierOf(aR&&aR.rank);
         if(!th||!ta) continue;
@@ -197,7 +230,7 @@ async function getLeagueTrends(leagueId, season, key, sleepMs, table, tableSize)
       else if(homeWinR!=null && homeWinR>=0.50) identity="Home-Dominant";
       else if(drawR!=null && drawR>=0.32) identity="Volatile";
     }
-    result = { leagueId, season, sample:n, rates, top3, identity, tierPatterns, gpg:gpg!=null?Math.round(gpg*100)/100:null };
+    result = { leagueId, season, sample:n, sampleCurrent:nCurrent, currentShare, backfilled, smallSample, rates, top3, identity, tierPatterns, gpg:gpg!=null?Math.round(gpg*100)/100:null };
   } catch(e){ result = null; /* rate-limit or partial → NO BET for this league */ }
   LEAGUE_TREND_CACHE[ck] = result;
   return result;
@@ -766,8 +799,9 @@ const FINISHED = new Set(["FT","AET","PEN"]);
     // fetched once per league and cached. null if <50 matches or fetch failed.
     let leagueTrends = null;
     try { leagueTrends = await getLeagueTrends(leagueId, seasonForStandings, cfg.API_KEY, SLEEP, table, tableSize); requests++;
-      if(!leagueTrends) console.log(`    trends: league ${leagueId} -> null (sample <50 or empty response)`); }
-    catch(e){ leagueTrends = null; console.log(`    trends: league ${leagueId} FAILED -> ${e.message}`); }
+      if(!leagueTrends){ TREND_STATS.nullLeagues.add(leagueId); console.log(`    trends: league ${leagueId} -> null (combined sample <30 or empty response)`); }
+      else { TREND_STATS.okLeagues.add(leagueId); if(leagueTrends.backfilled) TREND_STATS.backfilledLeagues.add(leagueId); if(leagueTrends.tierPatterns) TREND_STATS.tierLeagues.add(leagueId); } }
+    catch(e){ leagueTrends = null; TREND_STATS.nullLeagues.add(leagueId); console.log(`    trends: league ${leagueId} FAILED -> ${e.message}`); }
 
     for (const fx of fixtures) {
       const st = fx.fixture.status.short;
@@ -947,5 +981,6 @@ const FINISHED = new Set(["FT","AET","PEN"]);
   const daysCovered = [...new Set(out.map(x=>x.matchDate))].sort();
   console.log(`\nDone. Window: ${out.length} match(es) across ${daysCovered.length} day(s) [${daysCovered.join(", ")}] (${finishedCount} finished). ${requests} requests used.`);
   console.log(`Board now holds ${merged.length} match(es) across all saved days.`);
+  console.log(`Trend data: ${TREND_STATS.okLeagues.size} league(s) qualified (${TREND_STATS.backfilledLeagues.size} used last-season backfill, ${TREND_STATS.tierLeagues.size} have tier-patterns); ${TREND_STATS.nullLeagues.size} league(s) had too few games. If qualified = 0, the Trend engine will show No Bet everywhere — that's the calendar, not a bug.`);
   console.log("Next: commit data.js (the workflow deploys it), or for local runs upload your folder.\n");
 })();
