@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-05T02:04:07.486Z";
-window.ENRICHED_AT = "2026-07-05T02:17:52.765Z";
+window.SCORES_UPDATED = "2026-07-05T02:20:41.696Z";
 window.MATCHES = [
   {
     "home": "Mexico",
@@ -5702,7 +5702,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/1154.png",
     "country": "Ecuador",
     "flag": "https://media.api-sports.io/flags/ec.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-05T00:00:00+00:00",
     "matchDate": "2026-07-05",
     "homeGoals": 2,
@@ -5910,7 +5910,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 0.92,
     "awayXgAgainst": 1.26,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Louisville City",
@@ -5921,7 +5922,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3995.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-05T00:00:00+00:00",
     "matchDate": "2026-07-05",
     "homeGoals": 1,
@@ -6127,7 +6128,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.45,
     "awayXgAgainst": 1.14,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Brazos Valley",
@@ -6313,7 +6315,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "GFI",
@@ -6499,7 +6502,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Jackson Boom",
@@ -6698,7 +6702,8 @@ window.MATCHES = [
       "dc12": 1.08,
       "dcx2": 1.01
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "FC Tulsa",
@@ -6914,7 +6919,8 @@ window.MATCHES = [
     "homeXgAgainst": 1.58,
     "xgReal": true,
     "xgAwayReal": 1.35,
-    "awayXgAgainst": 1.3
+    "awayXgAgainst": 1.3,
+    "elapsed": null
   },
   {
     "home": "McKinney Chupacabras",
@@ -7100,7 +7106,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "U. Catolica",
@@ -7111,10 +7118,10 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/2343.png",
     "country": "Chile",
     "flag": "https://media.api-sports.io/flags/cl.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-05T00:30:00+00:00",
     "matchDate": "2026-07-05",
-    "homeGoals": 0,
+    "homeGoals": 2,
     "awayGoals": 1,
     "homePos": null,
     "awayPos": null,
@@ -7295,7 +7302,8 @@ window.MATCHES = [
       "dc12": 1.11,
       "dcx2": 2.95
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": 90
   },
   {
     "home": "San Diego Wave W",
@@ -7512,7 +7520,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.15,
     "awayXgAgainst": 1.65,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": 72
   },
   {
     "home": "Colorado Springs",
@@ -7523,10 +7532,10 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4009.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "1H",
+    "status": "2H",
     "kickoff": "2026-07-05T01:00:00+00:00",
     "matchDate": "2026-07-05",
-    "homeGoals": 0,
+    "homeGoals": 2,
     "awayGoals": 1,
     "homePos": 10,
     "awayPos": 7,
@@ -7729,7 +7738,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.58,
     "awayXgAgainst": 2.24,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": 56
   },
   {
     "home": "San Antonio",
@@ -7740,7 +7750,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/18375.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "1H",
+    "status": "2H",
     "kickoff": "2026-07-05T01:00:00+00:00",
     "matchDate": "2026-07-05",
     "homeGoals": 0,
@@ -7946,7 +7956,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.09,
     "awayXgAgainst": 2.16,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": 55
   },
   {
     "home": "New Mexico United",
@@ -7960,8 +7971,8 @@ window.MATCHES = [
     "status": "1H",
     "kickoff": "2026-07-05T01:30:00+00:00",
     "matchDate": "2026-07-05",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 2,
+    "awayGoals": 0,
     "homePos": 6,
     "awayPos": 3,
     "tableSize": 25,
@@ -8163,7 +8174,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.46,
     "awayXgAgainst": 1.83,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": 42
   },
   {
     "home": "Las Vegas Lights",
@@ -8379,7 +8391,8 @@ window.MATCHES = [
     "homeXgAgainst": 1.66,
     "xgReal": true,
     "xgAwayReal": 1.21,
-    "awayXgAgainst": 1.57
+    "awayXgAgainst": 1.57,
+    "elapsed": null
   },
   {
     "home": "Canberra FC",
@@ -8577,7 +8590,8 @@ window.MATCHES = [
       "bttsYes": 2.75,
       "bttsNo": 1.36
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Blacktown City",
@@ -8778,7 +8792,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.22
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Marconi Stallions",
@@ -8979,7 +8994,8 @@ window.MATCHES = [
       "dc12": 1.1,
       "dcx2": 3
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Rockdale City Suns",
@@ -9180,7 +9196,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.65
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Wollongong Wolves",
@@ -9381,7 +9398,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.55
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "South Melbourne",
@@ -9582,7 +9600,8 @@ window.MATCHES = [
       "dc12": 1.05,
       "dcx2": 4.2
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Geoje Citizen",
@@ -9777,7 +9796,8 @@ window.MATCHES = [
       "dc12": 1.1,
       "dcx2": 1.02
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Namyangju",
@@ -9972,7 +9992,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.65
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Busan Transportation",
@@ -10167,7 +10188,8 @@ window.MATCHES = [
       "dc12": 1.08,
       "dcx2": 3.4
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Gyeongju HNP",
@@ -10359,7 +10381,8 @@ window.MATCHES = [
       "bttsYes": 2.1,
       "bttsNo": 1.6
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Pyeongtaek Citizen",
@@ -10554,7 +10577,8 @@ window.MATCHES = [
       "dc12": 1.2,
       "dcx2": 1.08
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Gwangju FC",
@@ -10770,7 +10794,8 @@ window.MATCHES = [
     "homeXgAgainst": 1.01,
     "xgReal": true,
     "xgAwayReal": 1.97,
-    "awayXgAgainst": 1.71
+    "awayXgAgainst": 1.71,
+    "elapsed": null
   },
   {
     "home": "FC Seoul",
@@ -10986,7 +11011,8 @@ window.MATCHES = [
     "homeXgAgainst": 1.21,
     "xgReal": true,
     "xgAwayReal": 1.11,
-    "awayXgAgainst": 1.64
+    "awayXgAgainst": 1.64,
+    "elapsed": null
   },
   {
     "home": "Gimcheon Sangmu FC",
@@ -11202,7 +11228,8 @@ window.MATCHES = [
     "homeXgAgainst": 2.07,
     "xgReal": true,
     "xgAwayReal": 0.53,
-    "awayXgAgainst": 1.42
+    "awayXgAgainst": 1.42,
+    "elapsed": null
   },
   {
     "home": "Gyeongnam FC",
@@ -11418,7 +11445,8 @@ window.MATCHES = [
     "homeXgAgainst": 1.1,
     "xgReal": true,
     "xgAwayReal": 1.57,
-    "awayXgAgainst": 1.73
+    "awayXgAgainst": 1.73,
+    "elapsed": null
   },
   {
     "home": "Jeonnam Dragons",
@@ -11634,7 +11662,8 @@ window.MATCHES = [
     "homeXgAgainst": 1.33,
     "xgReal": true,
     "xgAwayReal": 1.46,
-    "awayXgAgainst": 1.83
+    "awayXgAgainst": 1.83,
+    "elapsed": null
   },
   {
     "home": "Gimhae City",
@@ -11850,7 +11879,8 @@ window.MATCHES = [
     "homeXgAgainst": 1.64,
     "xgReal": true,
     "xgAwayReal": 1.3,
-    "awayXgAgainst": 1.51
+    "awayXgAgainst": 1.51,
+    "elapsed": null
   },
   {
     "home": "Gimpo Citizen",
@@ -12051,7 +12081,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.8
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Smorgon",
@@ -12237,7 +12268,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 14",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Qingdao Jonoon",
@@ -12438,7 +12470,8 @@ window.MATCHES = [
       "dc12": 1.17,
       "dcx2": 1.09
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Ilves II",
@@ -12637,7 +12670,8 @@ window.MATCHES = [
       "dc12": 1.12,
       "dcx2": 2.3
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Meizhou Kejia",
@@ -12838,7 +12872,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.36
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Nanjing City",
@@ -13039,7 +13074,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.7
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Guangxi Hengchen",
@@ -13240,7 +13276,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.75
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Shanghai Shenhua",
@@ -13441,7 +13478,8 @@ window.MATCHES = [
       "dc12": 1.17,
       "dcx2": 2.1
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "IFK Goteborg",
@@ -13642,7 +13680,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.65
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Kalmar FF",
@@ -13858,7 +13897,8 @@ window.MATCHES = [
     "homeXgAgainst": 1.71,
     "xgReal": true,
     "xgAwayReal": 1.17,
-    "awayXgAgainst": 2.07
+    "awayXgAgainst": 2.07,
+    "elapsed": null
   },
   {
     "home": "Osipovichy",
@@ -14044,7 +14084,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 14",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "TPV",
@@ -14245,7 +14286,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.18
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Flora II",
@@ -14444,7 +14486,8 @@ window.MATCHES = [
       "dc12": 1.14,
       "dcx2": 2
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Nõmme Kalju II",
@@ -14643,7 +14686,8 @@ window.MATCHES = [
       "dc12": 1.17,
       "dcx2": 1.4
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Valmiera / BSS",
@@ -14842,7 +14886,8 @@ window.MATCHES = [
       "dc12": 1.12,
       "dcx2": 2.55
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Rīgas FS II",
@@ -15041,7 +15086,8 @@ window.MATCHES = [
       "dc12": 1.18,
       "dcx2": 1.45
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Be Forward Wanderers",
@@ -15240,7 +15286,8 @@ window.MATCHES = [
       "dc12": 1.18,
       "dcx2": 2.4
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Chitipa United",
@@ -15439,7 +15486,8 @@ window.MATCHES = [
       "dc12": 1.17,
       "dcx2": 1.04
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Red Lions",
@@ -15625,7 +15673,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 9",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Masters FC",
@@ -15811,7 +15860,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 9",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Mitundu Baptist",
@@ -15997,7 +16047,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 9",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Dynamos",
@@ -16183,7 +16234,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 21",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Highlanders",
@@ -16382,7 +16434,8 @@ window.MATCHES = [
       "dc12": 1.36,
       "dcx2": 1.55
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Manica Diamonds",
@@ -16568,7 +16621,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 21",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Triangle United",
@@ -16754,7 +16808,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 21",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Hardrock",
@@ -16940,7 +16995,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 21",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Rops",
@@ -17141,7 +17197,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 2.2
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Deportivo Santani",
@@ -17342,7 +17399,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.44
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Sidama Bunna",
@@ -17528,7 +17586,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 38",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Grobiņa",
@@ -17729,7 +17788,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.7
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Ypiranga-RS",
@@ -17930,7 +17990,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.6
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "ODD Ballklubb",
@@ -18131,7 +18192,8 @@ window.MATCHES = [
       "dc12": 1.18,
       "dcx2": 1.55
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Lida",
@@ -18317,7 +18379,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 14",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Berazategui",
@@ -18518,7 +18581,8 @@ window.MATCHES = [
       "dc12": 1.2,
       "dcx2": 2.15
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "07 Vestur",
@@ -18719,7 +18783,8 @@ window.MATCHES = [
       "dc12": 1.15,
       "dcx2": 1.07
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Aktobe",
@@ -18920,7 +18985,8 @@ window.MATCHES = [
       "dc12": 1.2,
       "dcx2": 2.15
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Atyrau",
@@ -19121,7 +19187,8 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.75
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "IF Elfsborg",
@@ -19337,7 +19404,8 @@ window.MATCHES = [
     "homeXgAgainst": 1.12,
     "xgReal": true,
     "xgAwayReal": 1.26,
-    "awayXgAgainst": 2.28
+    "awayXgAgainst": 2.28,
+    "elapsed": null
   },
   {
     "home": "Belshina",
@@ -19523,7 +19591,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 14",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Moghreb Tetouan",
@@ -19709,7 +19778,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 30",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Chabab Atl. Khenifra",
@@ -19895,7 +19965,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 30",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Mouloudia Oujda",
@@ -20081,7 +20152,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 30",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "El Massira",
@@ -20267,7 +20339,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 30",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Riadi Salmi",
@@ -20466,7 +20539,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.83
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Widad Témara",
@@ -20665,7 +20739,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.62
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Chabab Mohammédia",
@@ -20864,7 +20939,8 @@ window.MATCHES = [
       "dc12": 1.36,
       "dcx2": 1.5
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Union Sportive Boujaad",
@@ -21050,7 +21126,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 30",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "VPS II",
@@ -21249,7 +21326,8 @@ window.MATCHES = [
       "dc12": 1.14,
       "dcx2": 1.91
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Ordabasy",
@@ -21450,7 +21528,8 @@ window.MATCHES = [
       "dc12": 1.11,
       "dcx2": 3.2
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Kaisar",
@@ -21651,7 +21730,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.57
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Dacia-Buiucani",
@@ -21850,7 +21930,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.8
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Šiauliai",
@@ -22036,7 +22117,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 21",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Argentino Quilmes",
@@ -22237,7 +22319,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.35
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Sportivo Italiano",
@@ -22438,7 +22521,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.48
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Sacachispas",
@@ -22639,7 +22723,8 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.7
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Victoriano Arenas",
@@ -22840,7 +22925,8 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.73
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Boston Legacy W",
@@ -23026,7 +23112,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Tammeka",
@@ -23227,7 +23314,8 @@ window.MATCHES = [
       "dc12": 1.29,
       "dcx2": 1.73
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Santiago Wanderers",
@@ -23422,7 +23510,8 @@ window.MATCHES = [
       "dc12": 1.18,
       "dcx2": 1.18
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "D. La Serena",
@@ -23617,7 +23706,8 @@ window.MATCHES = [
       "dc12": 1.2,
       "dcx2": 1.8
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Difaa EL Jadida",
@@ -23818,7 +23908,8 @@ window.MATCHES = [
       "dc12": 1.2,
       "dcx2": 1.04
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Wydad AC",
@@ -24019,7 +24110,8 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.48
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "FAR Rabat",
@@ -24220,7 +24312,8 @@ window.MATCHES = [
       "dc12": 1.17,
       "dcx2": 3
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Hassania Agadir",
@@ -24436,7 +24529,8 @@ window.MATCHES = [
     "homeXgAgainst": 1.34,
     "xgReal": true,
     "xgAwayReal": 0.54,
-    "awayXgAgainst": 1.19
+    "awayXgAgainst": 1.19,
+    "elapsed": null
   },
   {
     "home": "Ittihad Tanger",
@@ -24637,7 +24731,8 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.62
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Olympique Safi",
@@ -24838,7 +24933,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.1
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "FUS Rabat",
@@ -25039,7 +25135,8 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.33
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Maghreb Fès",
@@ -25240,7 +25337,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 2.25
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Danubio",
@@ -25456,7 +25554,8 @@ window.MATCHES = [
     "homeXgAgainst": 1.53,
     "xgReal": true,
     "xgAwayReal": 0.78,
-    "awayXgAgainst": 1.54
+    "awayXgAgainst": 1.54,
+    "elapsed": null
   },
   {
     "home": "Fenix",
@@ -25642,7 +25741,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "2nd Phase - 9",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Zimbru",
@@ -25841,7 +25941,8 @@ window.MATCHES = [
       "dc12": 1.08,
       "dcx2": 4.33
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Torpedo Zhodino",
@@ -26042,7 +26143,8 @@ window.MATCHES = [
       "dc12": 1.36,
       "dcx2": 1.44
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Deportivo Madryn",
@@ -26243,7 +26345,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.6
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "CA Estudiantes",
@@ -26444,7 +26547,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.85
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Defensores Unidos",
@@ -26645,7 +26749,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.42
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "San Martín Burzaco",
@@ -26846,7 +26951,8 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.62
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Atletico Atlas",
@@ -27047,7 +27153,8 @@ window.MATCHES = [
       "dc12": 1.35,
       "dcx2": 1.38
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Canuelas",
@@ -27248,7 +27355,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.55
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "General Lamadrid",
@@ -27449,7 +27557,8 @@ window.MATCHES = [
       "dc12": 1.35,
       "dcx2": 1.3
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Lujan",
@@ -27635,7 +27744,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Regular Season - 18",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Olimpo Bahia Blanca",
@@ -27836,7 +27946,8 @@ window.MATCHES = [
       "dc12": 1.4,
       "dcx2": 1.57
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Guillermo Brown",
@@ -28022,7 +28133,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 16",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Douglas Haig",
@@ -28223,7 +28335,8 @@ window.MATCHES = [
       "dc12": 1.28,
       "dcx2": 1.95
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Sol de Mayo",
@@ -28424,7 +28537,8 @@ window.MATCHES = [
       "dc12": 1.36,
       "dcx2": 1.4
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Alvarado",
@@ -28625,7 +28739,8 @@ window.MATCHES = [
       "dc12": 1.17,
       "dcx2": 3
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Gimnasia Concepción",
@@ -28826,7 +28941,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.33
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Atenas",
@@ -29027,7 +29143,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.8
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Macara",
@@ -29228,7 +29345,8 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.36
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Sportivo Carapeguá",
@@ -29429,7 +29547,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.29
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "12 de Junio VH",
@@ -29630,7 +29749,8 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 2
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Patronato",
@@ -29831,7 +29951,8 @@ window.MATCHES = [
       "dc12": 1.36,
       "dcx2": 1.57
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Ferro Carril Oeste",
@@ -30032,7 +30153,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 2.15
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Chaco For Ever",
@@ -30233,7 +30355,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.62
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Boca Unidos",
@@ -30434,7 +30557,8 @@ window.MATCHES = [
       "dc12": 1.28,
       "dcx2": 1.91
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Cipolletti",
@@ -30620,7 +30744,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 16",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Defensores de Belgrano VR",
@@ -30806,7 +30931,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 16",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "San Martin S.J.",
@@ -31007,7 +31133,8 @@ window.MATCHES = [
       "dc12": 1.28,
       "dcx2": 1.95
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Atletico Mitre",
@@ -31208,7 +31335,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.67
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Midland",
@@ -31409,7 +31537,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.55
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "San Martin Formosa",
@@ -31610,7 +31739,8 @@ window.MATCHES = [
       "dc12": 1.28,
       "dcx2": 1.8
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Sportivo Belgrano",
@@ -31796,7 +31926,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 16",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "San Martín Mendoza",
@@ -31997,7 +32128,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.62
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Gimnasia Chivilcoy",
@@ -32198,7 +32330,8 @@ window.MATCHES = [
       "dc12": 1.2,
       "dcx2": 2.88
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Tucuman Central",
@@ -32384,7 +32517,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 16",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "St. Croix",
@@ -32570,7 +32704,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Universidad de Concepcion",
@@ -32750,7 +32885,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Group Stage - 5",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Cobresal",
@@ -32945,7 +33081,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.77
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Nublense",
@@ -33140,7 +33277,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 2.2
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "D. Puerto Montt",
@@ -33335,7 +33473,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.45
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Central Norte",
@@ -33521,7 +33660,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Regular Season - 19",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Deportivo Maipu",
@@ -33722,7 +33862,8 @@ window.MATCHES = [
       "dc12": 1.28,
       "dcx2": 1.67
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Brazil",
@@ -33939,7 +34080,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.53,
     "awayXgAgainst": 1.84,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Project 51O",
@@ -34138,7 +34280,8 @@ window.MATCHES = [
       "dc12": 1.12,
       "dcx2": 2.6
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Eagle FC",
@@ -34337,7 +34480,8 @@ window.MATCHES = [
       "dc12": 1.12,
       "dcx2": 1.07
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Deportes Santa Cruz",
@@ -34532,7 +34676,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.45
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Tacuarembo",
@@ -34733,7 +34878,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.48
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Chicago Red Stars W",
@@ -34949,7 +35095,8 @@ window.MATCHES = [
     "homeXgAgainst": 1.88,
     "xgReal": true,
     "xgAwayReal": 1.13,
-    "awayXgAgainst": 1.89
+    "awayXgAgainst": 1.89,
+    "elapsed": null
   },
   {
     "home": "Ballard",
@@ -35135,7 +35282,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Virginia Marauders",
@@ -35321,7 +35469,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "West Seattle Junction",
@@ -35507,7 +35656,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "City SC",
@@ -35693,7 +35843,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Union Espanola",
@@ -35888,7 +36039,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.36
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Delfin SC",
@@ -36104,7 +36256,8 @@ window.MATCHES = [
     "homeXgAgainst": 0.79,
     "xgReal": true,
     "xgAwayReal": 1.13,
-    "awayXgAgainst": 1.74
+    "awayXgAgainst": 1.74,
+    "elapsed": null
   },
   {
     "home": "North Carolina II",
@@ -36290,7 +36443,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "San Francisco City",
@@ -36476,7 +36630,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Portland Thorns W",
@@ -36692,7 +36847,8 @@ window.MATCHES = [
     "homeXgAgainst": 1.28,
     "xgReal": true,
     "xgAwayReal": 1.74,
-    "awayXgAgainst": 1.61
+    "awayXgAgainst": 1.61,
+    "elapsed": null
   },
   {
     "home": "Miami FC",
@@ -36898,7 +37054,8 @@ window.MATCHES = [
     "homeXgAgainst": 1.92,
     "xgReal": true,
     "xgAwayReal": 1.11,
-    "awayXgAgainst": 1.76
+    "awayXgAgainst": 1.76,
+    "elapsed": null
   },
   {
     "home": "FC Miami City",
@@ -37084,7 +37241,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Little Rock Rangers",
@@ -37270,7 +37428,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Christos",
@@ -37456,7 +37615,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "PA Classics",
@@ -37642,7 +37802,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Bigfoot",
@@ -37828,7 +37989,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Colón",
@@ -38029,7 +38191,8 @@ window.MATCHES = [
       "dc12": 1.28,
       "dcx2": 1.62
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Nautico Recife",
@@ -38245,7 +38408,8 @@ window.MATCHES = [
     "homeXgAgainst": 1.56,
     "xgReal": true,
     "xgAwayReal": 0.72,
-    "awayXgAgainst": 1.72
+    "awayXgAgainst": 1.72,
+    "elapsed": null
   },
   {
     "home": "East Atlanta",
@@ -38431,7 +38595,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Ironbound",
@@ -38617,7 +38782,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Independiente del Valle",
@@ -38724,7 +38890,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 0.69,
     "awayXgAgainst": 1.34,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Washington Spirit W",
@@ -38831,7 +38998,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.64,
     "awayXgAgainst": 1.68,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Des Moines Menace",
@@ -38905,7 +39073,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Houston FC",
@@ -38992,7 +39161,8 @@ window.MATCHES = [
       "dc12": 1.17,
       "dcx2": 1.75
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Lionsbridge",
@@ -39066,7 +39236,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Hickory",
@@ -39140,7 +39311,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Fort Worth Vaqueros",
@@ -39214,7 +39386,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Colombia",
@@ -39319,7 +39492,8 @@ window.MATCHES = [
     "xgReal": true,
     "npxgHomeReal": 2.19,
     "npxgAwayReal": 0.27,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Denver Summit W",
@@ -39426,7 +39600,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 0.96,
     "awayXgAgainst": 2.48,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Midlakes United",
@@ -39513,7 +39688,8 @@ window.MATCHES = [
       "dc12": 1.13,
       "dcx2": 1.13
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Angel City W",
@@ -39620,7 +39796,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.5,
     "awayXgAgainst": 2.02,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Ventura County Fusion",
@@ -39694,7 +39871,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Tucson",
@@ -39768,7 +39946,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Group Stage",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Tacoma Stars",
@@ -39855,7 +40034,8 @@ window.MATCHES = [
       "dc12": 1.13,
       "dcx2": 1.01
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Hume City",
@@ -39944,7 +40124,8 @@ window.MATCHES = [
       "dc12": 1.18,
       "dcx2": 1.95
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Canberra White Eagles",
@@ -40030,7 +40211,8 @@ window.MATCHES = [
       "bttsYes": 3.3,
       "bttsNo": 1.25
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Queanbeyan City",
@@ -40228,7 +40410,8 @@ window.MATCHES = [
       "bttsYes": 2.9,
       "bttsNo": 1.33
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Western Sydney Wanderers U23",
@@ -40317,7 +40500,8 @@ window.MATCHES = [
       "dc12": 1.2,
       "dcx2": 1.65
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "UNSW",
@@ -40406,7 +40590,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.65
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Adelaide City",
@@ -40490,7 +40675,8 @@ window.MATCHES = [
       "over35": null,
       "under35": null
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Avondale",
@@ -40579,7 +40765,8 @@ window.MATCHES = [
       "dc12": 1.2,
       "dcx2": 1.67
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Altona Magic",
@@ -40668,7 +40855,8 @@ window.MATCHES = [
       "dc12": 1.2,
       "dcx2": 1.5
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Adelaide United II",
@@ -40755,7 +40943,8 @@ window.MATCHES = [
       "dc12": 1.17,
       "dcx2": 1.6
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Sturt Lions",
@@ -40842,7 +41031,8 @@ window.MATCHES = [
       "dc12": 1.15,
       "dcx2": 1.5
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Belconnen United",
@@ -40928,7 +41118,8 @@ window.MATCHES = [
       "bttsYes": 2.62,
       "bttsNo": 1.4
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Manly United",
@@ -41017,7 +41208,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.7
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Armadale",
@@ -41106,7 +41298,8 @@ window.MATCHES = [
       "dc12": 1.17,
       "dcx2": 1.25
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Perth Glory II",
@@ -41195,7 +41388,8 @@ window.MATCHES = [
       "dc12": 1.17,
       "dcx2": 1.77
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Stirling Lions",
@@ -41284,7 +41478,8 @@ window.MATCHES = [
       "dc12": 1.2,
       "dcx2": 1.5
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Fremantle City",
@@ -41373,7 +41568,8 @@ window.MATCHES = [
       "dc12": 1.17,
       "dcx2": 1.25
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Western Knights",
@@ -41462,7 +41658,8 @@ window.MATCHES = [
       "dc12": 1.13,
       "dcx2": 2.62
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Jincheon",
@@ -41545,7 +41742,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.17
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Sutherland Sharks",
@@ -41634,7 +41832,8 @@ window.MATCHES = [
       "dc12": 1.17,
       "dcx2": 1.11
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "FK Beograd",
@@ -41721,7 +41920,8 @@ window.MATCHES = [
       "dc12": 1.14,
       "dcx2": 2.05
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Monaro Panthers",
@@ -41808,7 +42008,8 @@ window.MATCHES = [
       "dc12": 1.01,
       "dcx2": 8.5
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Sunshine Georgies",
@@ -41897,7 +42098,8 @@ window.MATCHES = [
       "dc12": 1.11,
       "dcx2": 1.03
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Dianella White Eagle",
@@ -41986,7 +42188,8 @@ window.MATCHES = [
       "dc12": 1.17,
       "dcx2": 1.35
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Changwon City",
@@ -42069,7 +42272,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 2.05
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Pocheon",
@@ -42144,7 +42348,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.53
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "MetroStars",
@@ -42231,7 +42436,8 @@ window.MATCHES = [
       "dc12": 1.14,
       "dcx2": 2.25
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Yanbian Longding",
@@ -42320,7 +42526,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.8
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Gangneung City",
@@ -42403,7 +42610,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.62
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Mokpo City",
@@ -42471,7 +42679,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round of 128",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Ulsan Citizen",
@@ -42554,7 +42763,8 @@ window.MATCHES = [
       "dc12": 1.28,
       "dcx2": 1.45
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Jinju Citizen",
@@ -42637,7 +42847,8 @@ window.MATCHES = [
       "dc12": 1.13,
       "dcx2": 2.8
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Haman",
@@ -42720,7 +42931,8 @@ window.MATCHES = [
       "dc12": 1.14,
       "dcx2": 1.04
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Yangcheon TNT",
@@ -42788,7 +43000,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round of 128",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Ulsan FC",
@@ -42856,7 +43069,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round of 128",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Riga FC II",
@@ -42943,7 +43157,8 @@ window.MATCHES = [
       "dc12": 1.17,
       "dcx2": 1.95
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "FC Anyang",
@@ -43048,7 +43263,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.34,
     "awayXgAgainst": 1.18,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Daejeon Citizen",
@@ -43153,7 +43369,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.13,
     "awayXgAgainst": 0.94,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Jeonbuk Motors",
@@ -43258,7 +43475,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.44,
     "awayXgAgainst": 1.26,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Ansan Greeners",
@@ -43363,7 +43581,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.71,
     "awayXgAgainst": 1.4,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Suwon Bluewings",
@@ -43468,7 +43687,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.29,
     "awayXgAgainst": 1.51,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Cheongju",
@@ -43573,7 +43793,8 @@ window.MATCHES = [
     "xgReal": true,
     "npxgHomeReal": 0.71,
     "npxgAwayReal": 2.04,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Paju Citizen",
@@ -43676,7 +43897,8 @@ window.MATCHES = [
     "xgHomeReal": 1.61,
     "homeXgAgainst": 1.26,
     "xgReal": true,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Shenyang Urban",
@@ -43765,7 +43987,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.7
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Qingdao Youth Island",
@@ -43872,7 +44095,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.32,
     "awayXgAgainst": 1.55,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Suzhou Dongwu",
@@ -43961,7 +44185,8 @@ window.MATCHES = [
       "dc12": 1.15,
       "dcx2": 1.03
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Shenzhen Juniors",
@@ -44050,7 +44275,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.5
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Shaanxi Union",
@@ -44139,7 +44365,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.93
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Ningbo Professional",
@@ -44228,7 +44455,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.85
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Honka",
@@ -44312,7 +44540,8 @@ window.MATCHES = [
       "over35": null,
       "under35": null
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "JS Hercules",
@@ -44399,7 +44628,8 @@ window.MATCHES = [
       "dc12": 1.14,
       "dcx2": 1.5
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "JDFS Alberts",
@@ -44486,7 +44716,8 @@ window.MATCHES = [
       "dc12": 1.2,
       "dcx2": 1.53
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Beijing Guoan",
@@ -44593,7 +44824,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.28,
     "awayXgAgainst": 1.83,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Dalian Zhixing",
@@ -44700,7 +44932,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.46,
     "awayXgAgainst": 1.88,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Egersund",
@@ -44805,7 +45038,8 @@ window.MATCHES = [
     "xgReal": true,
     "npxgHomeReal": 4.32,
     "npxgAwayReal": 0.22,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Shakhter Soligorsk",
@@ -44879,7 +45113,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 14",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Tianjin Teda",
@@ -44968,7 +45203,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.65
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Lahti",
@@ -45073,7 +45309,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.38,
     "awayXgAgainst": 1.15,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "HIFK Helsinki",
@@ -45160,7 +45397,8 @@ window.MATCHES = [
       "dc12": 1.06,
       "dcx2": 3
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Kraft",
@@ -45247,7 +45485,8 @@ window.MATCHES = [
       "dc12": 1.14,
       "dcx2": 1.44
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "FC Tallinn",
@@ -45334,7 +45573,8 @@ window.MATCHES = [
       "dc12": 1.12,
       "dcx2": 1.3
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "B71",
@@ -45408,7 +45648,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 16",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "NSÍ II",
@@ -45482,7 +45723,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 16",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Altay",
@@ -45556,7 +45798,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 16",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Blue Eagles",
@@ -45630,7 +45873,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 9",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Karonga United",
@@ -45717,7 +45961,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 2.1
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Nyasa Big Bullets",
@@ -45791,7 +46036,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 9",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Bulawayo Chiefs",
@@ -45865,7 +46111,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 21",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Ngezi Platinum",
@@ -45939,7 +46186,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 21",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "TelOne",
@@ -46013,7 +46261,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 21",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Hunters",
@@ -46087,7 +46336,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 21",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Halmstad",
@@ -46194,7 +46444,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.13,
     "awayXgAgainst": 1.9,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Degerfors IF",
@@ -46299,7 +46550,8 @@ window.MATCHES = [
     "xgReal": true,
     "npxgHomeReal": 0.19,
     "npxgAwayReal": 0.49,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "FC Vitebsk",
@@ -46388,7 +46640,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.6
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Niva",
@@ -46477,7 +46730,8 @@ window.MATCHES = [
       "dc12": 1.11,
       "dcx2": 3.15
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "SalPa",
@@ -46566,7 +46820,8 @@ window.MATCHES = [
       "dc12": 1.18,
       "dcx2": 1.67
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Atlantis",
@@ -46653,7 +46908,8 @@ window.MATCHES = [
       "dc12": 1.15,
       "dcx2": 1.67
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Union Plaani",
@@ -46740,7 +46996,8 @@ window.MATCHES = [
       "dc12": 1.17,
       "dcx2": 1.42
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "P-Iirot",
@@ -46827,7 +47084,8 @@ window.MATCHES = [
       "dc12": 1.18,
       "dcx2": 1.44
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Panevėžys",
@@ -46916,7 +47174,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.65
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Mārupe",
@@ -47003,7 +47262,8 @@ window.MATCHES = [
       "dc12": 1.13,
       "dcx2": 2.65
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "BFC Daugavpils",
@@ -47092,7 +47352,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.38
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Kyzyl-Zhar",
@@ -47181,7 +47442,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.4
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Bumprom",
@@ -47255,7 +47517,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 14",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "B36 Torshavn",
@@ -47344,7 +47607,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.38
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Al Karama",
@@ -47418,7 +47682,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 30",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Shorta",
@@ -47492,7 +47757,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 30",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Damascus Al-Ahli",
@@ -47566,7 +47832,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 30",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "hodd",
@@ -47655,7 +47922,8 @@ window.MATCHES = [
       "dc12": 1.12,
       "dcx2": 1.07
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "FC Energetik-Bgu Minsk",
@@ -47744,7 +48012,8 @@ window.MATCHES = [
       "dc12": 1.14,
       "dcx2": 2.13
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "IA Akranes",
@@ -47833,7 +48102,8 @@ window.MATCHES = [
       "dc12": 1.18,
       "dcx2": 1.55
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Grindavik",
@@ -47922,7 +48192,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.5
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Fjolnir",
@@ -48009,7 +48280,8 @@ window.MATCHES = [
       "dc12": 1.15,
       "dcx2": 1.8
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Fjardabyggd / Leiknir",
@@ -48096,7 +48368,8 @@ window.MATCHES = [
       "dc12": 1.14,
       "dcx2": 1.7
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "SJK",
@@ -48185,7 +48458,8 @@ window.MATCHES = [
       "dc12": 1.2,
       "dcx2": 2
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "FF Jaro",
@@ -48290,7 +48564,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.22,
     "awayXgAgainst": 2.63,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "KuPS Akatemia",
@@ -48379,7 +48654,8 @@ window.MATCHES = [
       "dc12": 1.15,
       "dcx2": 1.11
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "HPS",
@@ -48466,7 +48742,8 @@ window.MATCHES = [
       "dc12": 1.17,
       "dcx2": 1.4
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "TP-47",
@@ -48553,7 +48830,8 @@ window.MATCHES = [
       "dc12": 1.15,
       "dcx2": 1.67
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Rēzekne FA",
@@ -48640,7 +48918,8 @@ window.MATCHES = [
       "dc12": 1.14,
       "dcx2": 1.14
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "TB",
@@ -48714,7 +48993,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 16",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Neman",
@@ -48803,7 +49083,8 @@ window.MATCHES = [
       "dc12": 1.29,
       "dcx2": 2.2
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "FC Slutsk",
@@ -48877,7 +49158,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 14",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "VPS",
@@ -48979,7 +49261,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 2.93,
     "awayXgAgainst": 1.13,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "OLS",
@@ -49068,7 +49351,8 @@ window.MATCHES = [
       "dc12": 1.05,
       "dcx2": 3.35
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Rīgas FS",
@@ -49157,7 +49441,8 @@ window.MATCHES = [
       "dc12": 1.11,
       "dcx2": 3
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Politehnica UTM",
@@ -49241,7 +49526,8 @@ window.MATCHES = [
       "over35": 2,
       "under35": 1.65
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Bryne",
@@ -49346,7 +49632,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 0.92,
     "awayXgAgainst": 2.04,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Deportivo Camioneros",
@@ -49435,7 +49722,8 @@ window.MATCHES = [
       "dc12": 1.28,
       "dcx2": 1.8
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Lugano",
@@ -49524,7 +49812,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.85
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "IBV Vestmannaeyjar",
@@ -49613,7 +49902,8 @@ window.MATCHES = [
       "dc12": 1.2,
       "dcx2": 1.6
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Leiknir R.",
@@ -49702,7 +49992,8 @@ window.MATCHES = [
       "dc12": 1.15,
       "dcx2": 2.4
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Magni",
@@ -49789,7 +50080,8 @@ window.MATCHES = [
       "dc12": 1.17,
       "dcx2": 1.44
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Trans Narva",
@@ -49878,7 +50170,8 @@ window.MATCHES = [
       "dc12": 1.05,
       "dcx2": 1.01
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Paide",
@@ -49967,7 +50260,8 @@ window.MATCHES = [
       "dc12": 1.12,
       "dcx2": 2.6
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Metta / LU",
@@ -50051,7 +50345,8 @@ window.MATCHES = [
       "over35": 1.65,
       "under35": 2
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "AB",
@@ -50140,7 +50435,8 @@ window.MATCHES = [
       "dc12": 1.2,
       "dcx2": 1.91
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "ÍF II",
@@ -50227,7 +50523,8 @@ window.MATCHES = [
       "dc12": 1.15,
       "dcx2": 1.3
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Canada",
@@ -50332,7 +50629,8 @@ window.MATCHES = [
     "xgReal": true,
     "npxgHomeReal": 0.86,
     "npxgAwayReal": 0.77,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Rentistas",
@@ -50421,7 +50719,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 2
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Petrocub",
@@ -50508,7 +50807,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 2.1
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Ituzaingó",
@@ -50597,7 +50897,8 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.42
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Skála",
@@ -50686,7 +50987,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.8
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Colegiales",
@@ -50775,7 +51077,8 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.8
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Flandria",
@@ -50864,7 +51167,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.42
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Dock Sud",
@@ -50953,7 +51257,8 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.25
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Comunicaciones",
@@ -51042,7 +51347,8 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.4
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Deportivo Merlo",
@@ -51131,7 +51437,8 @@ window.MATCHES = [
       "dc12": 1.35,
       "dcx2": 1.38
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Argentino Rosario",
@@ -51220,7 +51527,8 @@ window.MATCHES = [
       "dc12": 1.38,
       "dcx2": 1.45
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Estrella Del Sur",
@@ -51309,7 +51617,8 @@ window.MATCHES = [
       "dc12": 1.28,
       "dcx2": 1.85
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Leones de Rosario",
@@ -51398,7 +51707,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 2.5
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Temperley",
@@ -51487,7 +51797,8 @@ window.MATCHES = [
       "dc12": 1.4,
       "dcx2": 1.57
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Almagro",
@@ -51576,7 +51887,8 @@ window.MATCHES = [
       "dc12": 1.35,
       "dcx2": 1.57
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Nueva Chicago",
@@ -51665,7 +51977,8 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.8
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Defensores De Belgrano",
@@ -51754,7 +52067,8 @@ window.MATCHES = [
       "dc12": 1.38,
       "dcx2": 1.42
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Almirante Brown",
@@ -51843,7 +52157,8 @@ window.MATCHES = [
       "dc12": 1.38,
       "dcx2": 1.48
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Deportivo Armenio",
@@ -51932,7 +52247,8 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.67
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Huracan Las Heras",
@@ -52006,7 +52322,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 16",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Defensores de Vilelas",
@@ -52080,7 +52397,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Regular Season - 16",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Longford Town",
@@ -52169,7 +52487,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.28
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Criciuma",
@@ -52274,7 +52593,8 @@ window.MATCHES = [
     "xgReal": true,
     "npxgHomeReal": 1.43,
     "npxgAwayReal": 0.99,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Londrina",
@@ -52379,7 +52699,8 @@ window.MATCHES = [
     "xgReal": true,
     "npxgHomeReal": 1.65,
     "npxgAwayReal": 1.1,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Novorizontino",
@@ -52484,7 +52805,8 @@ window.MATCHES = [
     "xgReal": true,
     "npxgHomeReal": 1.47,
     "npxgAwayReal": 0.47,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Cianorte",
@@ -52571,7 +52893,8 @@ window.MATCHES = [
       "dc12": 1.35,
       "dcx2": 1.55
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Imperatriz",
@@ -52658,7 +52981,8 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.3
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Sao Jose",
@@ -52745,7 +53069,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.57
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Nacional AM",
@@ -52819,7 +53144,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round of 32",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Trem",
@@ -52893,7 +53219,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round of 32",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "CRAC",
@@ -52980,7 +53307,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.45
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Porto Velho",
@@ -53054,7 +53382,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round of 32",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Maguary PE",
@@ -53141,7 +53470,8 @@ window.MATCHES = [
       "dc12": 1.28,
       "dcx2": 1.62
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Ciudad de Bolívar",
@@ -53230,7 +53560,8 @@ window.MATCHES = [
       "dc12": 1.36,
       "dcx2": 1.38
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Libertad",
@@ -53337,7 +53668,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 0.59,
     "awayXgAgainst": 2.13,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Magallanes",
@@ -53420,7 +53752,8 @@ window.MATCHES = [
       "dc12": 1.18,
       "dcx2": 1.18
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Union San Felipe",
@@ -53503,7 +53836,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.36
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Serra Branca",
@@ -53577,7 +53911,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round of 32",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Maranhão",
@@ -53666,7 +54001,8 @@ window.MATCHES = [
       "dc12": 1.28,
       "dcx2": 1.45
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Águia de Marabá",
@@ -53753,7 +54089,8 @@ window.MATCHES = [
       "dc12": 1.28,
       "dcx2": 1.38
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Ipatinga",
@@ -53842,7 +54179,8 @@ window.MATCHES = [
       "dc12": 1.4,
       "dcx2": 1.25
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Indy Eleven",
@@ -53949,7 +54287,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.1,
     "awayXgAgainst": 1.91,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "San Luis",
@@ -54017,7 +54356,8 @@ window.MATCHES = [
     "isTournament": false,
     "round": "Group Stage - 5",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Plaza Colonia",
@@ -54106,7 +54446,8 @@ window.MATCHES = [
       "dc12": 1.25,
       "dcx2": 1.75
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Paraguay",
@@ -54211,7 +54552,8 @@ window.MATCHES = [
     "xgReal": true,
     "npxgHomeReal": 0.15,
     "npxgAwayReal": 0.59,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Luverdense",
@@ -54298,7 +54640,8 @@ window.MATCHES = [
       "dc12": 1.18,
       "dcx2": 2.4
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Marcílio Dias",
@@ -54385,7 +54728,8 @@ window.MATCHES = [
       "dc12": 1.36,
       "dcx2": 1.33
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Quilmes",
@@ -54474,7 +54818,8 @@ window.MATCHES = [
       "dc12": 1.35,
       "dcx2": 1.44
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Goiatuba EC",
@@ -54561,7 +54906,8 @@ window.MATCHES = [
       "dc12": 1.33,
       "dcx2": 1.57
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "LDU Portoviejo",
@@ -54650,7 +54996,8 @@ window.MATCHES = [
       "dc12": 1.44,
       "dcx2": 1.36
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Confiança",
@@ -54739,7 +55086,8 @@ window.MATCHES = [
       "dc12": 1.28,
       "dcx2": 1.75
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Maringá",
@@ -54828,7 +55176,8 @@ window.MATCHES = [
       "dc12": 1.2,
       "dcx2": 2.2
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Velo Clube",
@@ -54902,7 +55251,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "Round of 32",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Tampa Bay Rowdies",
@@ -55009,7 +55359,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.19,
     "awayXgAgainst": 1.37,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Deportes Iquique",
@@ -55092,7 +55443,8 @@ window.MATCHES = [
       "dc12": 1.22,
       "dcx2": 1.25
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Santa Cruz",
@@ -55181,7 +55533,8 @@ window.MATCHES = [
       "dc12": 1.28,
       "dcx2": 1.62
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Goias",
@@ -55286,7 +55639,8 @@ window.MATCHES = [
     "xgReal": true,
     "npxgHomeReal": 0.52,
     "npxgAwayReal": 0.68,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Pittsburgh Riverhounds",
@@ -55297,11 +55651,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/27252.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T23:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
-    "awayGoals": 1,
+    "awayGoals": 2,
     "homePos": 6,
     "awayPos": 12,
     "tableSize": 25,
@@ -55487,7 +55841,8 @@ window.MATCHES = [
       "dc12": 1.2,
       "dcx2": 2.15
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Oriental",
@@ -55561,7 +55916,8 @@ window.MATCHES = [
     "isTournament": true,
     "round": "2nd Phase - 9",
     "odds": null,
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Guarani Campinas",
@@ -55762,7 +56118,8 @@ window.MATCHES = [
       "dc12": 1.18,
       "dcx2": 2.55
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "Ferroviária",
@@ -55963,7 +56320,8 @@ window.MATCHES = [
       "dc12": 1.3,
       "dcx2": 1.7
     },
-    "h2h": null
+    "h2h": null,
+    "elapsed": null
   },
   {
     "home": "North Carolina Courage W",
@@ -56182,7 +56540,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.27,
     "awayXgAgainst": 1.3,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Rhode Island",
@@ -56401,7 +56760,8 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.25,
     "awayXgAgainst": 1.48,
-    "lineupConfirmed": true
+    "lineupConfirmed": true,
+    "elapsed": null
   },
   {
     "home": "Fortaleza EC",
