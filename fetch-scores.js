@@ -11,6 +11,7 @@
 const fs = require("fs");
 const path = require("path");
 const https = require("https");
+const { buildOddsCalib } = require("./calib");
 const HERE = __dirname;
 
 function readConfig() {
@@ -165,6 +166,14 @@ function loadExistingMatches() {
     const mm = raw.match(/window\.DATA_UPDATED\s*=\s*"([^"]+)"/);
     if (mm) existingUpdated = mm[1];
   } catch(e){}
+
+  // Just settled games -> rebuild the calibration ledger so this write carries
+  // it too. Without this, the 30-min scores writer overwrites data.js WITHOUT
+  // a ledger and silently wipes calibration off every match (the bug fix).
+  {
+    const r = buildOddsCalib(matches);
+    console.log(`Odds calibration rebuilt on scores write: ${r.leagues} leagues, attached to ${r.attached} matches.`);
+  }
 
   const out =
     `window.DATA_UPDATED = ${JSON.stringify(existingUpdated)};\n` +
