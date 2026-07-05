@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-05T02:04:07.486Z";
-window.SCORES_UPDATED = "2026-07-05T02:40:43.533Z";
+window.SCORES_UPDATED = "2026-07-05T02:45:31.270Z";
 window.MATCHES = [
   {
     "home": "Mexico",
@@ -7317,7 +7317,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-05T00:45:00+00:00",
     "matchDate": "2026-07-05",
-    "homeGoals": 1,
+    "homeGoals": 2,
     "awayGoals": 0,
     "homePos": 1,
     "awayPos": 6,
@@ -7535,7 +7535,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-05T01:00:00+00:00",
     "matchDate": "2026-07-05",
-    "homeGoals": 2,
+    "homeGoals": 3,
     "awayGoals": 1,
     "homePos": 10,
     "awayPos": 7,
@@ -7739,7 +7739,7 @@ window.MATCHES = [
     "xgAwayReal": 1.58,
     "awayXgAgainst": 2.24,
     "lineupConfirmed": true,
-    "elapsed": 76
+    "elapsed": 81
   },
   {
     "home": "San Antonio",
@@ -7957,7 +7957,7 @@ window.MATCHES = [
     "xgAwayReal": 1.09,
     "awayXgAgainst": 2.16,
     "lineupConfirmed": true,
-    "elapsed": 75
+    "elapsed": 80
   },
   {
     "home": "New Mexico United",
@@ -8392,7 +8392,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.21,
     "awayXgAgainst": 1.57,
-    "elapsed": 3
+    "elapsed": 8
   },
   {
     "home": "Canberra FC",
