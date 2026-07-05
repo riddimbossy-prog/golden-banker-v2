@@ -1,0 +1,37 @@
+name: Probe SOT coverage
+# ONE-OFF PROBE, manual trigger only: checks whether API-Football returns
+# Shots-on-Target for your leagues (needed before building the SOT engine).
+# Writes NOTHING to the repo — the verdict appears in this workflow's log.
+# Run it from the Actions tab -> "Probe SOT coverage" -> Run workflow.
+on:
+  workflow_dispatch: {}
+permissions:
+  contents: read
+concurrency:
+  group: "probe-sot"
+  cancel-in-progress: true
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Inject secret key into config.txt (same pattern as update-data)
+        run: |
+          if [ ! -f config.txt ]; then
+            echo "ERROR: config.txt missing from repo."; exit 1
+          fi
+          {
+            echo ""
+            echo "API_KEY=${{ secrets.API_KEY }}"
+          } >> config.txt
+
+      - name: Run the SOT coverage probe (verdict prints below)
+        run: node probe-sot.js
