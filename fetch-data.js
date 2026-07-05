@@ -103,8 +103,11 @@ async function getLeagueTrends(leagueId, season, key, sleepMs, table, tableSize)
       let acc = [], page = 1, pages = 1;
       do {
         let r = null;
+        // API-Football rejects &page on some single-page league queries ("The Page
+        // field do not exist"), so only append it when actually paginating (page>1).
+        const pageParam = page > 1 ? `&page=${page}` : "";
         for (let attempt = 0; attempt < 3; attempt++) {
-          try { r = await apiGet(`/fixtures?league=${leagueId}&season=${seasonId}&status=FT-AET-PEN&page=${page}`, key); break; }
+          try { r = await apiGet(`/fixtures?league=${leagueId}&season=${seasonId}&status=FT-AET-PEN${pageParam}`, key); break; }
           catch (e) {
             if (String(e.message).includes("RATE_LIMIT") && attempt < 2) {
               await sleep(2000 * (attempt + 1)); // back off 2s, then 4s, then give up
@@ -243,7 +246,7 @@ async function getLeagueTrends(leagueId, season, key, sleepMs, table, tableSize)
       else if(drawR!=null && drawR>=0.32) identity="Volatile";
     }
     result = { leagueId, season, sample:n, sampleCurrent:nCurrent, currentShare, backfilled, smallSample, rates, top3, identity, tierPatterns, gpg:gpg!=null?Math.round(gpg*100)/100:null };
-  } catch(e){ result = null; console.log(`    trends: league ${leagueId} THREW -> ${e.message} (this is why it's null — likely rate limit if RATE_LIMIT)`); }
+  } catch(e){ result = null; console.log(`    trends: league ${leagueId} THREW -> ${e.message}`); }
   LEAGUE_TREND_CACHE[ck] = result;
   return result;
 }
