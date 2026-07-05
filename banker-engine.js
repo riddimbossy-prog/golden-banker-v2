@@ -2588,90 +2588,69 @@ function matchPassFor(m, market){
 }
 
 function trendRecommend(m){
-  const lt = m && m.leagueTrends;
-  // Section 3: no league trend data (or <50 sample) → NO BET
-  if(!lt || !lt.top3 || !lt.top3.length){
-    return trendOut(m, "No Bet", null, "NO BET", null,
-      ["League trend data unavailable or sample below 50 matches — cannot study this league."]);
+  // POSITIONAL PATTERN ENGINE (owner spec): what matches between teams of these
+  // TABLE TIERS historically produce in THIS league — leader-at-home records,
+  // mid-table meeting totals, top-4 clashes, etc. Fires only on strong,
+  // well-sampled tier patterns.
+  const lt=m&&m.leagueTrends, tp=lt&&lt.tierPatterns;
+  if(!tp) return trendOut(m,"No Bet",null,"NO BET",null,
+    ["Positional pattern data not in this data build yet — arrives with the next full run."]);
+  const hP=m.homePos, aP=m.awayPos, size=m.tableSize;
+  if(hP==null||aP==null||!size) return trendOut(m,"No Bet",null,"NO BET",null,
+    ["Table positions unavailable — tier patterns need standings."]);
+  const tierOf=p=>p===1?"LDR":p<=4?"TOP":p>size-4?"BOT":"MID";
+  const th=tierOf(hP), ta=tierOf(aP);
+  const NAME={LDR:"the leader",TOP:"a top-4 side",MID:"a mid-table side",BOT:"a bottom-4 side"};
+  // pattern buckets that apply to THIS fixture, most specific first
+  const buckets=[];
+  const push=(k,label)=>{ if(tp[k]) buckets.push({k,b:tp[k],label}); };
+  push(`${th}v${ta}`, `${NAME[th]} at home vs ${NAME[ta]}`);
+  if((th==="LDR"||th==="TOP")&&(ta==="LDR"||ta==="TOP")) push("TOP4vTOP4","top-4 clashes");
+  if(th==="LDR") push("LDR_HOME","the leader at home");
+  if(!buckets.length) return trendOut(m,"No Bet",null,"NO BET",null,
+    [`No sampled history for ${NAME[th]}-hosts-${NAME[ta]} meetings in this league yet.`]);
+  const noOdds=!m.odds||(m.odds.home==null&&m.odds.over15==null&&m.odds.under35==null);
+  if(noOdds&&!isUpcomingNoScore(m)) return trendOut(m,"No Bet",null,"NO BET",null,
+    ["No bookmaker odds on a settled game."]);
+  // candidate markets from each applicable bucket
+  const cands=[];
+  for(const {b,label} of buckets){
+    const r=b.rates, n=b.n;
+    const add=(mk,rate,text)=>{ if(rate==null)return;
+      let sc=0;
+      if(rate>=0.90&&n>=10) sc=11; else if(rate>=0.85&&n>=8) sc=10;
+      else if(rate>=0.78&&n>=8) sc=9; else if(rate>=0.72&&n>=12) sc=8;
+      if(!sc) return;
+      cands.push({mk,sc,rate,n,why:`Pattern — ${label} in this league: ${text} in ${Math.round(rate*n)}/${n} (${Math.round(rate*100)}%).`}); };
+    add("Double Chance 1X", r["Home No Loss"], "the home side avoided defeat");
+    add("Home Win",        r["Home Win"],     "home won");
+    add("Away Win",        r["Away Win"],     "away won");
+    add("Under 2.5 Goals", r["Under 2.5"],    "under 2.5 goals");
+    add("Under 3.5 Goals", r["Under 3.5"],    "under 3.5 goals");
+    add("Over 1.5 Goals",  r["Over 1.5"],     "2+ goals");
+    add("Over 2.5 Goals",  r["Over 2.5"],     "over 2.5 goals");
+    add("BTTS Yes",        r["BTTS Yes"],     "both teams scored");
+    add("BTTS No",         r["BTTS No"],      "at least one side blanked");
   }
-  // Section 13: only consider the league's top-3 strongest trends
-  const candidates = [];
-  for(const t of lt.top3){
-    const leaguePct = t.rate;                       // Layer 1 (already ≥0.70 by construction)
-    const teamPct = teamTrendFor(m, t.market);      // Layer 2
-    if(teamPct==null) continue;
-    const matchPct = matchPassFor(m, t.market);     // Layer 3
-    candidates.push({ market:t.market, leaguePct, teamPct, matchPct });
+  if(!cands.length) return trendOut(m,"No Bet",null,"NO BET",null,
+    [`This tier pairing exists in the data (${buckets.map(x=>x.b.n).join("/")} games) but no market repeats strongly enough — honest No Bet.`]);
+  cands.sort((x,y)=>y.sc-x.sc||y.rate*Math.min(y.n,20)-x.rate*Math.min(x.n,20));
+  if(noOdds){ const c=cands[0];
+    return provisionalize(trendOut(m,c.mk,"PATTERN","PROVISIONAL",null,[c.why]), c.mk, [c.why]); }
+  let best=null;
+  for(const c of cands){
+    const g=(typeof oddsLadderGate==='function')?oddsLadderGate(m,c.mk):{block:false};
+    if(!g.block){ best=c; best.gateNote=g.reason||null; break; }
   }
-  // keep only markets that clear the league-relative rule:
-  //   Layer 1 (league) ≥70%  ·  Layer 3 (match) ≥70%  (flat, unchanged)
-  //   Layer 2 (team) must BEAT the league's own baseline, not a flat 70:
-  //     teamBar = max(0.66, leagueRate − 0.05 cushion)
-  //   → a strong league (85%) demands a strong team (80%); a weak-but-qualifying
-  //     league (71%) floors the team bar at 66%, so a 67% team in a defensive
-  //     league now qualifies where flat-70 wrongly rejected it. Net strictness
-  //     moves to where the league signal is, instead of a blanket 70.
-  const TEAM_FLOOR = 0.66, CUSHION = 0.05;
-  candidates.forEach(c=> c.bar = Math.max(TEAM_FLOOR, c.leaguePct - CUSHION));
-  // Layer 1 (league) stays flat ≥70%; Layers 2 (team) and 3 (match) must each
-  // beat the league-relative bar. So a weak-but-qualifying league floors both at
-  // 66%, and a strong league raises both toward 80% — strictness follows the
-  // league signal instead of a blanket 70 on all three.
-  //
-  // ELITE-LEAGUE-TREND OVERRIDE: when the league trend is very strong (≥80% over
-  // the full season), a team/match that's CLOSE to the bar (within 10 points) is
-  // admitted — the large-sample league signal earns the benefit of the doubt over
-  // a small-sample team proxy. But a team FAR below the bar is still rejected, so
-  // a genuinely mismatched side can't ride in on the league trend alone.
-  const ELITE_LEAGUE = 0.80, GRACE = 0.10;
-  const clears = (c, layerPct) => {
-    if (layerPct >= c.bar) return true;
-    if (c.leaguePct >= ELITE_LEAGUE && layerPct >= c.bar - GRACE) return true; // within grace of a strong trend
-    return false;
-  };
-  const passing = candidates.filter(c=> c.leaguePct>=0.70 && clears(c, c.teamPct) && clears(c, c.matchPct));
-  candidates.forEach(c=> c.viaOverride = c.leaguePct>=ELITE_LEAGUE && (c.teamPct < c.bar || c.matchPct < c.bar));
-  if(!passing.length){
-    return trendOut(m, "No Bet", null, "NO BET", null,
-      ["No market cleared the league-relative rule (team and match must beat the league's own baseline)."]);
-  }
-  // RANK BY STRONGEST LEAGUE TREND FIRST. The league rate is computed from the
-  // full season (large, robust sample); the team/match layers come from a small,
-  // noisy per-team proxy. So a strong league trend should not be vetoed by a
-  // shakier team proxy — as long as the pick still CLEARS its bar (the floors
-  // above), we prefer the market with the highest league hit-rate. Weakest-link
-  // is only a tiebreaker between equally-strong league trends.
-  passing.forEach(c=> c.floor=Math.min(c.leaguePct,c.teamPct,c.matchPct));
-  passing.sort((a,b)=> b.leaguePct-a.leaguePct || b.floor-a.floor);
-  const best = passing[0];
-
-  // Tier escalates with the weakest of the three layers (a pick is only as
-  // strong as its shakiest leg), but SELECTION is by league strength above.
-  const f = best.floor;
-  let tier, decision;
-  if(f>=0.85){ tier="Elite Banker"; decision="PLAY"; }
-  else if(f>=0.80){ tier="Strong Banker"; decision="PLAY"; }
-  else if(f>=0.75){ tier="Banker"; decision="PLAY"; }
-  else { tier="Value Pick"; decision="SMALL STAKE"; }
-
-  // A pick admitted via the elite-league-trend override leaned on the league
-  // signal, not a clean team fit — cap it at Banker and drop to SMALL STAKE so it
-  // is never presented as a top-tier certainty.
-  if(best.viaOverride){
-    if(tier==="Elite Banker"||tier==="Strong Banker") tier="Banker";
-    decision = "SMALL STAKE";
-  }
-
-  const pct=x=>Math.round(x*100);
-  const reasons = [
-    `League identity: ${lt.identity} (sample ${lt.sample}).`,
-    `${best.market}: league ${pct(best.leaguePct)}% (strongest qualifying trend) · team ${pct(best.teamPct)}% · match ${pct(best.matchPct)}% (bar ${pct(best.bar)}%).`,
-    best.viaOverride
-      ? `Admitted on a strong league trend (${pct(best.leaguePct)}%) despite a team/match layer just under the bar — staked small.`
-      : `Selected as the strongest league trend that cleared its bar; tier set by weakest link ${pct(f)}%.`
-  ];
-  return trendOut(m, best.market, tier, decision,
-    { league:pct(best.leaguePct), team:pct(best.teamPct), match:pct(best.matchPct), bar:pct(best.bar) }, reasons);
+  if(!best) return trendOut(m,"No Bet",null,"NO BET",null,
+    [`${cands[0].why} But the odds ladder rejected every pattern market.`]);
+  const grade=best.sc>=11?"Elite Banker":best.sc>=9?"Banker":"Strong Pick";
+  const reasons=[best.why]; if(best.gateNote)reasons.push(best.gateNote);
+  reasons.push(`Sample ${best.n} matches; hit rate ${Math.round(best.rate*100)}%.`);
+  const out=trendOut(m,best.mk,grade,grade.toUpperCase(),null,reasons);
+  out.bet=true; out.banker=(grade!=="Strong Pick"); out.grade=grade;
+  out.confidence=best.sc>=11?10:best.sc>=9?8:7;
+  return out;
 }
 
 // ============================================================
@@ -3795,6 +3774,16 @@ function provisionalize(res, market, reasons){
    2) VENUE-SPLIT CONFIRMATION — the pick must not contradict the home/away
       split data (home's record AT HOME, away's record ON THE ROAD). Hard
       contradictions are vetoed; lukewarm splits strip banker status. */
+function oddsCalibFor(m, market){
+  if(!m||!m.oddsCalib||!m.odds) return null;
+  const F={"Home Win":"home","Away Win":"away","Over 1.5 Goals":"over15","Over 2.5 Goals":"over25",
+    "Under 2.5 Goals":"under25","Under 3.5 Goals":"under35","BTTS Yes":"bttsYes","BTTS No":"bttsNo"};
+  const f=F[market]; if(!f) return null;
+  const o=m.odds[f]; if(o==null) return null;
+  const band=o<1.45?"1.20-1.44":o<1.70?"1.45-1.69":o<2.00?"1.70-1.99":o<2.50?"2.00-2.49":"2.50+";
+  const c=m.oddsCalib[market]&&m.oddsCalib[market][band];
+  return c?{...c,band,price:o}:null;
+}
 function overlayIsTeamMarket(mk){
   return /(home|away).*(win|dnb)|^(home|away) win|dnb|double chance|ht draw.*win|team over|team under/i.test(mk)
          && !/^over|^under|^btts/i.test(mk);
@@ -3835,7 +3824,20 @@ function overlayApply(m, res){
   if(hA==null||hD==null||aA==null||aD==null) return res;
   const backsHome=/(^|\s)home (win|dnb)|double chance 1x|ht draw \/ ft home/i.test(mk);
   const backsAway=/(^|\s)away (win|dnb)|double chance x2|ht draw \/ ft away/i.test(mk);
-  if(!backsHome&&!backsAway) return res; // goals/BTTS/team-goals markets: rule 2 does not apply
+  if(!backsHome&&!backsAway){
+    const c=oddsCalibFor(m,mk);
+    if(c){
+      const pct=Math.round(c.hit*100);
+      if(res.banker&&c.n>=10&&c.hit<=0.55)
+        return { ...res, banker:false, grade:"Strong Pick",
+          reasons:[...(res.reasons||[]), `League odds history: ${mk} at ${c.band} lands only ${pct}% here (${c.n} games) — banker stripped.`],
+          overlay:{...(res.overlay||{}), calib:"stripped"} };
+      if(c.n>=8)
+        return { ...res, reasons:[...(res.reasons||[]), `League odds history: ${mk} at ${c.band} lands ${pct}% here (${c.n} games).`],
+          overlay:{...(res.overlay||{}), calib:c.hit>=0.78?"backed":"noted"} };
+    }
+    return res;
+  }
   const veto=(why)=>({ ...res, bet:false, banker:false, primary:"No Bet", market:"No Bet", grade:null, confidence:0,
     verdict:`No Bet — overlay: ${why} (engine wanted ${mk}).`,
     reasons:[...(res.reasons||[]), `Overlay veto (venue-split): ${why}.`], overlay:{rule:"venue-split"} });
@@ -3849,11 +3851,28 @@ function overlayApply(m, res){
     if(aA<1.00||aD>=1.40) soft=`away road split is lukewarm (${aA} for, ${aD} against)`;
   }
   if(soft){
-    if(res.banker) return { ...res, banker:false, grade:(res.grade==="Elite Banker"||res.grade==="Banker")?"Strong Pick":res.grade,
-      reasons:[...(res.reasons||[]), `Overlay: ${soft} — banker stripped, kept as a pick.`], overlay:{rule:"venue-soft"} };
-    return { ...res, reasons:[...(res.reasons||[]), `Overlay: ${soft} — proceed with caution.`], overlay:{rule:"venue-soft"} };
+    if(res.banker) return calibPass({ ...res, banker:false, grade:(res.grade==="Elite Banker"||res.grade==="Banker")?"Strong Pick":res.grade,
+      reasons:[...(res.reasons||[]), `Overlay: ${soft} — banker stripped, kept as a pick.`], overlay:{rule:"venue-soft"} });
+    return calibPass({ ...res, reasons:[...(res.reasons||[]), `Overlay: ${soft} — proceed with caution.`], overlay:{rule:"venue-soft"} });
   }
-  return { ...res, reasons:[...(res.reasons||[]), `Overlay: venue splits confirm ${mk}.`], overlay:{rule:"confirmed"} };
+  return calibPass({ ...res, reasons:[...(res.reasons||[]), `Overlay: venue splits confirm ${mk}.`], overlay:{rule:"confirmed"} });
+  // ---- ODDS-CALIBRATION LAYER (owner spec): this league's REAL hit rate for
+  // this market at this price band, from the board's own settled history.
+  function calibPass(r){
+    const c=oddsCalibFor(m, mk); if(!c) return r;
+    const pct=Math.round(c.hit*100), imp=Math.round((1/c.price)*100);
+    if(r.banker && c.n>=10 && c.hit<=0.55)
+      return { ...r, banker:false, grade:"Strong Pick",
+        reasons:[...(r.reasons||[]), `League odds history: ${mk} at ${c.band} lands only ${pct}% here (${c.n} games) — banker stripped.`],
+        overlay:{...(r.overlay||{}), calib:"stripped"} };
+    if(c.n>=8 && c.hit>=0.78)
+      return { ...r, reasons:[...(r.reasons||[]), `League odds history backs it: ${mk} at ${c.band} lands ${pct}% here vs ${imp}% implied (${c.n} games).`],
+        overlay:{...(r.overlay||{}), calib:"backed"} };
+    if(c.n>=8)
+      return { ...r, reasons:[...(r.reasons||[]), `League odds history: ${mk} at ${c.band} lands ${pct}% here (${c.n} games).`],
+        overlay:{...(r.overlay||{}), calib:"noted"} };
+    return r;
+  }
 }
 function withIntlFrame(fn){
   return function(m){ return overlayApply(m, intlFrameApply(m, fn(m))); };
