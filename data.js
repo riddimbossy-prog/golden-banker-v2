@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-05T00:03:26.838Z";
-window.SCORES_UPDATED = "2026-07-05T01:30:56.579Z";
+window.SCORES_UPDATED = "2026-07-05T01:35:28.151Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -216,7 +216,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 0.86,
     "awayXgAgainst": 1.16,
-    "elapsed": 69
+    "elapsed": 74
   },
   {
     "home": "Louisville City",
@@ -230,7 +230,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-05T00:00:00+00:00",
     "matchDate": "2026-07-05",
-    "homeGoals": 0,
+    "homeGoals": 1,
     "awayGoals": 0,
     "homePos": 5,
     "awayPos": 7,
@@ -433,7 +433,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.37,
     "awayXgAgainst": 1.23,
-    "elapsed": 65
+    "elapsed": 69
   },
   {
     "home": "Brazos Valley",
@@ -1621,7 +1621,7 @@ window.MATCHES = [
     "status": "1H",
     "kickoff": "2026-07-05T00:45:00+00:00",
     "matchDate": "2026-07-05",
-    "homeGoals": 0,
+    "homeGoals": 1,
     "awayGoals": 0,
     "homePos": 1,
     "awayPos": 6,
@@ -1824,7 +1824,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.15,
     "awayXgAgainst": 1.65,
-    "elapsed": 43
+    "elapsed": 45
   },
   {
     "home": "Colorado Springs",
@@ -2041,7 +2041,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.58,
     "awayXgAgainst": 2.24,
-    "elapsed": 24
+    "elapsed": 28
   },
   {
     "home": "San Antonio",
@@ -2258,7 +2258,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.09,
     "awayXgAgainst": 2.16,
-    "elapsed": 23
+    "elapsed": 28
   },
   {
     "home": "New Mexico United",
@@ -52311,7 +52311,7 @@ window.MATCHES = [
     "xgAwayReal": 1.2,
     "awayXgAgainst": 1.43,
     "lineupConfirmed": true,
-    "elapsed": 89
+    "elapsed": 90
   },
   {
     "home": "Fortaleza EC",
