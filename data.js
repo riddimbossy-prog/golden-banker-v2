@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-05T02:04:07.486Z";
-window.SCORES_UPDATED = "2026-07-05T03:30:54.500Z";
+window.SCORES_UPDATED = "2026-07-05T03:35:26.759Z";
 window.MATCHES = [
   {
     "home": "Mexico",
@@ -8175,7 +8175,7 @@ window.MATCHES = [
     "xgAwayReal": 1.46,
     "awayXgAgainst": 1.83,
     "lineupConfirmed": true,
-    "elapsed": 89
+    "elapsed": 90
   },
   {
     "home": "Las Vegas Lights",
