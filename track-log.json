@@ -37569,8 +37569,8 @@
       "confidence": "High",
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-01T04:25:28.300Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -37583,8 +37583,8 @@
       "confidence": 9,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-01T04:25:28.300Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -37597,8 +37597,8 @@
       "confidence": 10,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-01T04:25:28.300Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -37611,8 +37611,8 @@
       "confidence": 8,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-01T04:25:28.300Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -37625,8 +37625,8 @@
       "confidence": 8,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-01T04:25:28.300Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -40301,8 +40301,8 @@
       "confidence": 8,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-04T02:15:33.862Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -40315,8 +40315,8 @@
       "confidence": 8,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-04T02:15:33.862Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -40329,8 +40329,8 @@
       "confidence": 8,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-04T02:15:33.862Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -40693,8 +40693,8 @@
       "confidence": 10,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-04T10:15:37.198Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -42005,6 +42005,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-05T21:05:27.697Z"
+    "updated": "2026-07-05T21:10:45.558Z"
   }
 }
