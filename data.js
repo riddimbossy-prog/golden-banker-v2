@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-05T00:03:26.838Z";
-window.SCORES_UPDATED = "2026-07-05T00:25:27.254Z";
+window.SCORES_UPDATED = "2026-07-05T00:30:53.353Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -216,7 +216,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 0.86,
     "awayXgAgainst": 1.16,
-    "elapsed": 25
+    "elapsed": 31
   },
   {
     "home": "Louisville City",
@@ -433,7 +433,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.37,
     "awayXgAgainst": 1.23,
-    "elapsed": 19
+    "elapsed": 25
   },
   {
     "home": "Brazos Valley",
@@ -50657,7 +50657,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/7779.png",
     "country": "Brazil",
     "flag": "https://media.api-sports.io/flags/br.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-04T22:30:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -50848,7 +50848,7 @@ window.MATCHES = [
       "dcx2": 1.62
     },
     "h2h": null,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Goias",
@@ -51066,7 +51066,7 @@ window.MATCHES = [
     "xgAwayReal": 0.95,
     "awayXgAgainst": 1.3,
     "lineupConfirmed": true,
-    "elapsed": 66
+    "elapsed": 71
   },
   {
     "home": "Pittsburgh Riverhounds",
@@ -51284,7 +51284,7 @@ window.MATCHES = [
     "xgAwayReal": 1.19,
     "awayXgAgainst": 1.6,
     "lineupConfirmed": true,
-    "elapsed": 18
+    "elapsed": 24
   },
   {
     "home": "Oriental",
@@ -51299,7 +51299,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T23:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
-    "awayGoals": 1,
+    "awayGoals": 2,
     "homePos": 3,
     "awayPos": 11,
     "tableSize": 56,
@@ -51471,7 +51471,7 @@ window.MATCHES = [
     "round": "2nd Phase - 9",
     "odds": null,
     "h2h": null,
-    "elapsed": 65
+    "elapsed": 71
   },
   {
     "home": "Guarani Campinas",
@@ -51886,7 +51886,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3002.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T23:30:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 1,
@@ -52104,7 +52104,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4007.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-04T23:30:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
