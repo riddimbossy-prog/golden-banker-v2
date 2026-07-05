@@ -41746,10 +41746,24 @@
       "status": "pending",
       "result": null,
       "score": null
+    },
+    {
+      "matchDate": "2026-07-06",
+      "home": "Mexico",
+      "away": "England",
+      "league": "World Cup",
+      "engine": "Halves",
+      "market": "Under 3.5 Goals",
+      "confidence": 8,
+      "leagueClass": "Volatile",
+      "recordedAt": "2026-07-05T04:50:43.167Z",
+      "status": "pending",
+      "result": null,
+      "score": null
     }
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-05T04:45:33.787Z"
+    "updated": "2026-07-05T04:50:43.285Z"
   }
 }
