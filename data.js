@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-05T00:03:26.838Z";
-window.SCORES_UPDATED = "2026-07-05T02:01:04.905Z";
+window.SCORES_UPDATED = "2026-07-05T02:05:27.624Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -227,7 +227,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3995.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "2H",
+    "status": "FT",
     "kickoff": "2026-07-05T00:00:00+00:00",
     "matchDate": "2026-07-05",
     "homeGoals": 1,
@@ -433,7 +433,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.37,
     "awayXgAgainst": 1.23,
-    "elapsed": 90
+    "elapsed": null
   },
   {
     "home": "Brazos Valley",
@@ -1425,7 +1425,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-05T00:30:00+00:00",
     "matchDate": "2026-07-05",
-    "homeGoals": 1,
+    "homeGoals": 2,
     "awayGoals": 1,
     "homePos": null,
     "awayPos": null,
@@ -1607,7 +1607,7 @@ window.MATCHES = [
       "dcx2": 2.95
     },
     "h2h": null,
-    "elapsed": 70
+    "elapsed": 75
   },
   {
     "home": "San Diego Wave W",
@@ -1824,7 +1824,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.15,
     "awayXgAgainst": 1.65,
-    "elapsed": 53
+    "elapsed": 57
   },
   {
     "home": "Colorado Springs",
@@ -2475,7 +2475,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.46,
     "awayXgAgainst": 1.83,
-    "elapsed": 23
+    "elapsed": 27
   },
   {
     "home": "Las Vegas Lights",
