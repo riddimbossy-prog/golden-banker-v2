@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-05T02:04:07.486Z";
-window.SCORES_UPDATED = "2026-07-05T02:35:26.150Z";
+window.SCORES_UPDATED = "2026-07-05T02:40:43.533Z";
 window.MATCHES = [
   {
     "home": "Mexico",
@@ -6140,11 +6140,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/9028.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "NS",
+    "status": "FT",
     "kickoff": "2026-07-05T00:00:00+00:00",
     "matchDate": "2026-07-05",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 1,
+    "awayGoals": 2,
     "homePos": 6,
     "awayPos": 1,
     "tableSize": 144,
@@ -6514,11 +6514,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4064.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "NS",
+    "status": "FT",
     "kickoff": "2026-07-05T00:00:00+00:00",
     "matchDate": "2026-07-05",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 5,
     "homePos": null,
     "awayPos": 7,
     "tableSize": 144,
@@ -7521,7 +7521,7 @@ window.MATCHES = [
     "xgAwayReal": 1.15,
     "awayXgAgainst": 1.65,
     "lineupConfirmed": true,
-    "elapsed": 87
+    "elapsed": 90
   },
   {
     "home": "Colorado Springs",
@@ -7739,7 +7739,7 @@ window.MATCHES = [
     "xgAwayReal": 1.58,
     "awayXgAgainst": 2.24,
     "lineupConfirmed": true,
-    "elapsed": 71
+    "elapsed": 76
   },
   {
     "home": "San Antonio",
@@ -7957,7 +7957,7 @@ window.MATCHES = [
     "xgAwayReal": 1.09,
     "awayXgAgainst": 2.16,
     "lineupConfirmed": true,
-    "elapsed": 69
+    "elapsed": 75
   },
   {
     "home": "New Mexico United",
@@ -8186,11 +8186,11 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3993.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "NS",
+    "status": "1H",
     "kickoff": "2026-07-05T02:30:00+00:00",
     "matchDate": "2026-07-05",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 0,
+    "awayGoals": 0,
     "homePos": 11,
     "awayPos": 9,
     "tableSize": 25,
@@ -8392,7 +8392,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.21,
     "awayXgAgainst": 1.57,
-    "elapsed": null
+    "elapsed": 3
   },
   {
     "home": "Canberra FC",
