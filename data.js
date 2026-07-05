@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-05T00:03:26.838Z";
-window.SCORES_UPDATED = "2026-07-05T01:10:42.835Z";
+window.SCORES_UPDATED = "2026-07-05T01:15:35.004Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -216,7 +216,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 0.86,
     "awayXgAgainst": 1.16,
-    "elapsed": 49
+    "elapsed": 54
   },
   {
     "home": "Louisville City",
@@ -227,7 +227,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/3995.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-05T00:00:00+00:00",
     "matchDate": "2026-07-05",
     "homeGoals": 0,
@@ -433,7 +433,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.37,
     "awayXgAgainst": 1.23,
-    "elapsed": 45
+    "elapsed": 50
   },
   {
     "home": "Brazos Valley",
@@ -1607,7 +1607,7 @@ window.MATCHES = [
       "dcx2": 2.95
     },
     "h2h": null,
-    "elapsed": 40
+    "elapsed": 45
   },
   {
     "home": "San Diego Wave W",
@@ -1824,7 +1824,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.15,
     "awayXgAgainst": 1.65,
-    "elapsed": 23
+    "elapsed": 28
   },
   {
     "home": "Colorado Springs",
@@ -1839,7 +1839,7 @@ window.MATCHES = [
     "kickoff": "2026-07-05T01:00:00+00:00",
     "matchDate": "2026-07-05",
     "homeGoals": 0,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": 9,
     "awayPos": 6,
     "tableSize": 25,
@@ -2041,7 +2041,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.58,
     "awayXgAgainst": 2.24,
-    "elapsed": 4
+    "elapsed": 9
   },
   {
     "home": "San Antonio",
@@ -2258,7 +2258,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.09,
     "awayXgAgainst": 2.16,
-    "elapsed": 3
+    "elapsed": 8
   },
   {
     "home": "New Mexico United",
@@ -51081,7 +51081,7 @@ window.MATCHES = [
     "kickoff": "2026-07-04T23:00:00+00:00",
     "matchDate": "2026-07-04",
     "homeGoals": 0,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "homePos": 6,
     "awayPos": 12,
     "tableSize": 25,
@@ -51284,7 +51284,7 @@ window.MATCHES = [
     "xgAwayReal": 1.19,
     "awayXgAgainst": 1.6,
     "lineupConfirmed": true,
-    "elapsed": 47
+    "elapsed": 52
   },
   {
     "home": "Oriental",
@@ -51673,7 +51673,7 @@ window.MATCHES = [
       "dcx2": 2.55
     },
     "h2h": null,
-    "elapsed": 79
+    "elapsed": 84
   },
   {
     "home": "Ferroviária",
@@ -51875,7 +51875,7 @@ window.MATCHES = [
       "dcx2": 1.7
     },
     "h2h": null,
-    "elapsed": 80
+    "elapsed": 85
   },
   {
     "home": "North Carolina Courage W",
@@ -51889,7 +51889,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-04T23:30:00+00:00",
     "matchDate": "2026-07-04",
-    "homeGoals": 2,
+    "homeGoals": 3,
     "awayGoals": 1,
     "homePos": 7,
     "awayPos": 11,
@@ -52093,7 +52093,7 @@ window.MATCHES = [
     "xgAwayReal": 1.21,
     "awayXgAgainst": 1.48,
     "lineupConfirmed": true,
-    "elapsed": 71
+    "elapsed": 76
   },
   {
     "home": "Rhode Island",
@@ -52311,7 +52311,7 @@ window.MATCHES = [
     "xgAwayReal": 1.2,
     "awayXgAgainst": 1.43,
     "lineupConfirmed": true,
-    "elapsed": 68
+    "elapsed": 73
   },
   {
     "home": "Fortaleza EC",
