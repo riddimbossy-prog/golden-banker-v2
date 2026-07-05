@@ -128,6 +128,8 @@ async function getLeagueTrends(leagueId, season, key, sleepMs, table, tableSize)
     const games = curGames.concat(prevGames);
     const n = games.length;
     const nCurrent = curGames.length;
+    // DIAGNOSTIC: show real counts so a null result is explainable, not mysterious.
+    console.log(`    trends: league ${leagueId} season ${season} -> current=${nCurrent} prev=${prevGames.length} combined=${n} (need 30)`);
     if (n < 30) { LEAGUE_TREND_CACHE[ck] = null; return null; } // min COMBINED sample; per-bucket guards (n>=8/10/12) remain the real quality gate
     const smallSample = nCurrent < 30;              // current season alone is thin
     const backfilled = prevGames.length > 0;        // patterns lean on last season
