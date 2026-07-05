@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-05T00:03:26.838Z";
-window.SCORES_UPDATED = "2026-07-05T01:15:35.004Z";
+window.SCORES_UPDATED = "2026-07-05T01:20:45.748Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -216,7 +216,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 0.86,
     "awayXgAgainst": 1.16,
-    "elapsed": 54
+    "elapsed": 60
   },
   {
     "home": "Louisville City",
@@ -433,7 +433,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.37,
     "awayXgAgainst": 1.23,
-    "elapsed": 50
+    "elapsed": 55
   },
   {
     "home": "Brazos Valley",
@@ -1422,7 +1422,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/2343.png",
     "country": "Chile",
     "flag": "https://media.api-sports.io/flags/cl.svg",
-    "status": "1H",
+    "status": "HT",
     "kickoff": "2026-07-05T00:30:00+00:00",
     "matchDate": "2026-07-05",
     "homeGoals": 0,
@@ -1824,7 +1824,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.15,
     "awayXgAgainst": 1.65,
-    "elapsed": 28
+    "elapsed": 33
   },
   {
     "home": "Colorado Springs",
@@ -2041,7 +2041,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.58,
     "awayXgAgainst": 2.24,
-    "elapsed": 9
+    "elapsed": 14
   },
   {
     "home": "San Antonio",
@@ -2258,7 +2258,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.09,
     "awayXgAgainst": 2.16,
-    "elapsed": 8
+    "elapsed": 13
   },
   {
     "home": "New Mexico United",
@@ -51284,7 +51284,7 @@ window.MATCHES = [
     "xgAwayReal": 1.19,
     "awayXgAgainst": 1.6,
     "lineupConfirmed": true,
-    "elapsed": 52
+    "elapsed": 57
   },
   {
     "home": "Oriental",
@@ -51673,7 +51673,7 @@ window.MATCHES = [
       "dcx2": 2.55
     },
     "h2h": null,
-    "elapsed": 84
+    "elapsed": 89
   },
   {
     "home": "Ferroviária",
@@ -51875,7 +51875,7 @@ window.MATCHES = [
       "dcx2": 1.7
     },
     "h2h": null,
-    "elapsed": 85
+    "elapsed": 90
   },
   {
     "home": "North Carolina Courage W",
@@ -52093,7 +52093,7 @@ window.MATCHES = [
     "xgAwayReal": 1.21,
     "awayXgAgainst": 1.48,
     "lineupConfirmed": true,
-    "elapsed": 76
+    "elapsed": 81
   },
   {
     "home": "Rhode Island",
@@ -52311,7 +52311,7 @@ window.MATCHES = [
     "xgAwayReal": 1.2,
     "awayXgAgainst": 1.43,
     "lineupConfirmed": true,
-    "elapsed": 73
+    "elapsed": 78
   },
   {
     "home": "Fortaleza EC",
