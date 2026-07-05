@@ -1,5 +1,5 @@
 window.DATA_UPDATED = "2026-07-05T00:03:26.838Z";
-window.SCORES_UPDATED = "2026-07-05T02:10:46.314Z";
+window.SCORES_UPDATED = "2026-07-05T02:15:38.247Z";
 window.MATCHES = [
   {
     "home": "Barcelona SC",
@@ -1018,7 +1018,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/4015.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "PST",
+    "status": "NS",
     "kickoff": "2026-07-05T00:30:00+00:00",
     "matchDate": "2026-07-05",
     "homeGoals": null,
@@ -1607,7 +1607,7 @@ window.MATCHES = [
       "dcx2": 2.95
     },
     "h2h": null,
-    "elapsed": 80
+    "elapsed": 85
   },
   {
     "home": "San Diego Wave W",
@@ -1824,7 +1824,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.15,
     "awayXgAgainst": 1.65,
-    "elapsed": 62
+    "elapsed": 67
   },
   {
     "home": "Colorado Springs",
@@ -1838,7 +1838,7 @@ window.MATCHES = [
     "status": "2H",
     "kickoff": "2026-07-05T01:00:00+00:00",
     "matchDate": "2026-07-05",
-    "homeGoals": 1,
+    "homeGoals": 2,
     "awayGoals": 1,
     "homePos": 9,
     "awayPos": 6,
@@ -2041,7 +2041,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.58,
     "awayXgAgainst": 2.24,
-    "elapsed": 46
+    "elapsed": 51
   },
   {
     "home": "San Antonio",
@@ -2052,7 +2052,7 @@ window.MATCHES = [
     "awayLogo": "https://media.api-sports.io/football/teams/18375.png",
     "country": "USA",
     "flag": "https://media.api-sports.io/flags/us.svg",
-    "status": "HT",
+    "status": "2H",
     "kickoff": "2026-07-05T01:00:00+00:00",
     "matchDate": "2026-07-05",
     "homeGoals": 0,
@@ -2258,7 +2258,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.09,
     "awayXgAgainst": 2.16,
-    "elapsed": 45
+    "elapsed": 50
   },
   {
     "home": "New Mexico United",
@@ -2475,7 +2475,7 @@ window.MATCHES = [
     "xgReal": true,
     "xgAwayReal": 1.46,
     "awayXgAgainst": 1.83,
-    "elapsed": 32
+    "elapsed": 37
   },
   {
     "home": "Las Vegas Lights",
