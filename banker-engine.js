@@ -4066,6 +4066,67 @@ function applyQualityCheck(m, mk, res){
   }
   return res; // markets we don't quality-grade (win/DNB/DC) pass through untouched
 }
+// ============================================================================
+// HT RISK ARBITRATION (owner spec) — before a pick is final, ask: is a
+// HALF-TIME market the SAFER expression of this same read? Only steps down when
+// (a) the FT pick is MARGINAL — the quality/calibration layer flagged it, or the
+// goals projection sits near the line — AND (b) a matching HT market clears a
+// high confirmation bar. One pick per match: the HT market REPLACES the FT pick,
+// it is not shown alongside. Strong, well-supported FT picks are never touched.
+// Needs the HT rate fields (from the pipeline) + team half splits; silent without.
+// ============================================================================
+function applyHTArbitration(m, mk, res){
+  if(!res || res.bet===false || !mk || mk==="No Bet") return res;
+  if(res.overlay && res.overlay.htArb) return res; // idempotent
+  const H=m && m.homeStreaks && m.homeStreaks.htft, A=m && m.awayStreaks && m.awayStreaks.htft;
+  if(!H || !A) return res;                          // no HT evidence -> leave FT pick
+  const n=v=> v==null?null:+v;
+
+  // Is the FT pick MARGINAL? Two signals: the layers already flagged it
+  // (stripped/trimmed), or the profile goals-projection sits near the market line.
+  const flagged = res.overlay && (res.overlay.calib==="stripped"||res.overlay.calib==="trimmed"||res.overlay.qual==="stripped"||res.overlay.qual==="trimmed");
+  const hp=m.homeProfile, ap=m.awayProfile;
+  let proj=null;
+  if(hp&&ap&&hp.goalsFor&&ap.goalsFor&&hp.goalsAg&&ap.goalsAg&&hp.goalsFor.n>=4&&ap.goalsFor.n>=4){
+    proj=((hp.goalsFor.v+ap.goalsAg.v)/2)+((ap.goalsFor.v+hp.goalsAg.v)/2);
+  }
+  const near=(line)=> proj!=null && Math.abs(proj-line)<=0.35; // projection hugging the line
+  const marginal = flagged || (proj!=null);
+  if(!marginal) return res;                          // confident FT pick -> untouched
+
+  const conf = typeof res.confidence==='number' ? res.confidence : (res.banker?8:6);
+  const swap=(htMk, why, minConf)=> ({ ...res, primary:htMk, market:htMk,
+    banker:false, grade: res.grade==="Elite Banker"||res.grade==="Banker"?"Strong Pick":res.grade,
+    confidence: Math.max(minConf||6, conf-1),
+    reasons:[...(res.reasons||[]), why],
+    overlay:{...(res.overlay||{}), htArb:true, htFrom:mk} });
+
+  // GOALS DOWN: Over X.5 -> Over 0.5 HT when both sides reliably score early
+  if(/^Over (1\.5|2\.5)/.test(mk) && n(H.fhOver05)!=null && n(A.fhOver05)!=null){
+    if((flagged || near(mk.includes("2.5")?2.5:1.5)) && H.fhOver05>=0.80 && A.fhOver05>=0.80)
+      return swap("Over 0.5 Goals HT",
+        `Risk step-down: ${mk} was marginal${proj!=null?` (projected ${proj.toFixed(2)} goals)`:``}; a first-half goal is the safer expression — lands in ${Math.round(H.fhOver05*100)}%/${Math.round(A.fhOver05*100)}% of both sides' games.`, 7);
+  }
+  // GOALS UP (unders): Under X.5 -> Under 1.5 HT when both start slow
+  if(/^Under (2\.5|3\.5)/.test(mk) && n(H.fhUnder15)!=null && n(A.fhUnder15)!=null){
+    if((flagged || near(mk.includes("2.5")?2.5:3.5)) && H.fhUnder15>=0.74 && A.fhUnder15>=0.74)
+      return swap("Under 1.5 Goals HT",
+        `Risk step-down: ${mk} was marginal; a quiet first half is the safer expression — first halves stay under 1.5 in ${Math.round(H.fhUnder15*100)}%/${Math.round(A.fhUnder15*100)}% of games.`, 7);
+  }
+  // RESULT (marginal win): -> Win Either Half when the side reliably wins a half
+  if(/^Home Win$/.test(mk) && flagged && n(H.wonEitherHalf)!=null && H.wonEitherHalf>=0.78)
+    return swap("Home Win Either Half",
+      `Risk step-down: straight Home Win was flagged; winning at least one half is safer — home does it in ${Math.round(H.wonEitherHalf*100)}% of games.`, 7);
+  if(/^Away Win$/.test(mk) && flagged && n(A.wonEitherHalf)!=null && A.wonEitherHalf>=0.78)
+    return swap("Away Win Either Half",
+      `Risk step-down: straight Away Win was flagged; winning at least one half is safer — away does it in ${Math.round(A.wonEitherHalf*100)}% of games.`, 7);
+  // DRAWISH: a flagged DNB/DC on a draw-heavy pair -> Draw HT or FT safety net
+  if(/(DNB|Double Chance)/.test(mk) && flagged && n(H.drawHTorFT)!=null && n(A.drawHTorFT)!=null && H.drawHTorFT>=0.62 && A.drawHTorFT>=0.62)
+    return swap("Draw HT or FT",
+      `Risk step-down: ${mk} was flagged and both sides draw often at HT or FT (${Math.round(H.drawHTorFT*100)}%/${Math.round(A.drawHTorFT*100)}%) — the safety-net market.`, 6);
+
+  return res; // no safer HT expression cleared the bar -> keep the FT pick
+}
 function withIntlFrame(fn){
   return function(m){
     const res = overlayApply(m, intlFrameApply(m, fn(m)));
@@ -4075,7 +4136,10 @@ function withIntlFrame(fn){
     const mk = res && String(res.primary||res.market||"");
     const calibrated = applyCalibration(m, mk, res);
     const mk2 = calibrated && String(calibrated.primary||calibrated.market||"");
-    return applyQualityCheck(m, mk2, calibrated);
+    const quality = applyQualityCheck(m, mk2, calibrated);
+    // FINAL step: is a half-time market the safer expression of this pick?
+    const mk3 = quality && String(quality.primary||quality.market||"");
+    return applyHTArbitration(m, mk3, quality);
   };
 }
 const legacyRecommend = recommend;
