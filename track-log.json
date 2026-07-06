@@ -42558,10 +42558,66 @@
       "status": "pending",
       "result": null,
       "score": null
+    },
+    {
+      "matchDate": "2026-07-06",
+      "home": "Centro Español",
+      "away": "Mercedes",
+      "league": "Primera C",
+      "engine": "Value",
+      "market": "Under 3.5",
+      "confidence": 8,
+      "leagueClass": "Very Low-Scoring",
+      "recordedAt": "2026-07-06T13:21:24.192Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-06",
+      "home": "Centro Español",
+      "away": "Mercedes",
+      "league": "Primera C",
+      "engine": "Pro",
+      "market": "Under 3.5",
+      "confidence": 8,
+      "leagueClass": "Very Low-Scoring",
+      "recordedAt": "2026-07-06T13:21:24.192Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-06",
+      "home": "Centro Español",
+      "away": "Mercedes",
+      "league": "Primera C",
+      "engine": "Streaks",
+      "market": "Under 3.5 Goals",
+      "confidence": 8,
+      "leagueClass": "Very Low-Scoring",
+      "recordedAt": "2026-07-06T13:21:24.192Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-06",
+      "home": "Deportivo Muñiz",
+      "away": "Deportivo Español",
+      "league": "Primera C",
+      "engine": "Halves",
+      "market": "BTTS No",
+      "confidence": 8,
+      "leagueClass": "Very Low-Scoring",
+      "recordedAt": "2026-07-06T13:21:24.192Z",
+      "status": "pending",
+      "result": null,
+      "score": null
     }
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-06T13:17:36.120Z"
+    "updated": "2026-07-06T13:21:24.234Z"
   }
 }
