@@ -42694,7 +42694,7 @@
       "market": "Under 3.5 Goals",
       "confidence": 8,
       "leagueClass": "Low-Scoring",
-      "recordedAt": "2026-07-06T22:11:38.031Z",
+      "recordedAt": "2026-07-06T22:12:40.373Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -42708,7 +42708,7 @@
       "market": "Under 3.5 Goals",
       "confidence": 8,
       "leagueClass": "Low-Scoring",
-      "recordedAt": "2026-07-06T22:11:38.031Z",
+      "recordedAt": "2026-07-06T22:12:40.373Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -42716,6 +42716,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-06T22:11:38.073Z"
+    "updated": "2026-07-06T22:12:40.415Z"
   }
 }
