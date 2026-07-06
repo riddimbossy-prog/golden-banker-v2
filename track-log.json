@@ -41760,8 +41760,8 @@
       "confidence": 8,
       "leagueClass": "Volatile",
       "recordedAt": "2026-07-05T04:50:43.167Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -42176,6 +42176,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-06T00:56:02.634Z"
+    "updated": "2026-07-06T01:01:35.843Z"
   }
 }
