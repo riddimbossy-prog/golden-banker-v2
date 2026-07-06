@@ -946,7 +946,7 @@ function recommend(m) {
    Returns "Won" / "Lost" / "Void" / "" (empty = not finished yet).
    homeGoals/awayGoals are the final score numbers.
    ---------------------------------------------------------------- */
-function settle(primary, homeGoals, awayGoals, status) {
+function settle(primary, homeGoals, awayGoals, status, m) {
   if (homeGoals == null || awayGoals == null) return ""; // not played yet
   // If a status is provided, only settle FINISHED matches. Live/in-play games
   // (1H, 2H, HT, ET, LIVE, P, etc.) are NOT decided yet — never settle them.
@@ -960,7 +960,16 @@ function settle(primary, homeGoals, awayGoals, status) {
   const awayWon = awayGoals > homeGoals;
   const draw = homeGoals === awayGoals;
 
+  // HALF-TIME MARKETS settle from the stored half-time score (m.htHome/htAway).
+  // Without it they stay UNSETTLED ("") — never guessed from the FT score.
+  const HT = (m && m.htHome!=null && m.htAway!=null) ? {h:+m.htHome, a:+m.htAway} : null;
   switch (primary) {
+    case "HT Draw": return HT ? (HT.h===HT.a ? "Won" : "Lost") : "";
+    case "Over 0.5 Goals HT": return HT ? (HT.h+HT.a>=1 ? "Won" : "Lost") : "";
+    case "Under 1.5 Goals HT": return HT ? (HT.h+HT.a<=1 ? "Won" : "Lost") : "";
+    case "Home Win Either Half": return HT ? ((HT.h>HT.a || (homeGoals-HT.h)>(awayGoals-HT.a)) ? "Won" : "Lost") : "";
+    case "Away Win Either Half": return HT ? ((HT.a>HT.h || (awayGoals-HT.a)>(homeGoals-HT.h)) ? "Won" : "Lost") : "";
+    case "Draw HT or FT": return draw ? "Won" : (HT ? (HT.h===HT.a ? "Won" : "Lost") : "");
     case "Home Win": return homeWon ? "Won" : "Lost";
     case "Away Win": return awayWon ? "Won" : "Lost";
     case "Home DNB": return draw ? "Void" : (homeWon ? "Won" : "Lost");
@@ -3449,12 +3458,34 @@ function halvesRecommend(m){
     }
   }
 
+  // ---- NATIVE HALF-TIME MARKETS (owner spec): HT evidence answering HT
+  // questions — no stretch to full time. Both teams must confirm the same
+  // pattern. These have NO bookmaker odds in our data, so they bypass the
+  // odds ladder as clearly-labelled pattern-only picks, and they settle
+  // against the stored half-time score (htHome/htAway).
+  const HT_MARKETS=new Set(["HT Draw","Over 0.5 Goals HT","Under 1.5 Goals HT","Home Win Either Half","Away Win Either Half","Draw HT or FT"]);
+  if(n(H.fhOver05)!=null&&n(A.fhOver05)!=null){
+    if(H.fhOver05>=0.78&&A.fhOver05>=0.78&&expFH>=1.05)
+      C("Over 0.5 Goals HT",8,`A first-half goal lands in ${Math.round(H.fhOver05*100)}%/${Math.round(A.fhOver05*100)}% of their games; expected first-half goals ${expFH.toFixed(2)}.`);
+    if(H.fhUnder15>=0.72&&A.fhUnder15>=0.72&&expFH<=0.95)
+      C("Under 1.5 Goals HT",8,`Slow starts both sides: first halves stay under 1.5 in ${Math.round(H.fhUnder15*100)}%/${Math.round(A.fhUnder15*100)}% of games (expected FH goals ${expFH.toFixed(2)}).`);
+  }
+  if(n(H.htDraw)!=null&&n(A.htDraw)!=null&&H.htDraw>=0.55&&A.htDraw>=0.55&&expFH<=1.05)
+    C("HT Draw",7,`Both sides level at the break in ${Math.round(H.htDraw*100)}%/${Math.round(A.htDraw*100)}% of matches, with slow first halves.`);
+  if(n(H.wonEitherHalf)!=null&&H.wonEitherHalf>=0.75&&n(A.wonEitherHalf)!=null&&A.wonEitherHalf<=0.45&&n(H.ftLoss)<=0.30)
+    C("Home Win Either Half",8,`Home wins at least one half in ${Math.round(H.wonEitherHalf*100)}% of games while away manages it only ${Math.round(A.wonEitherHalf*100)}%.`);
+  if(n(A.wonEitherHalf)!=null&&A.wonEitherHalf>=0.75&&n(H.wonEitherHalf)!=null&&H.wonEitherHalf<=0.45&&n(A.ftLoss)<=0.30)
+    C("Away Win Either Half",8,`Away wins at least one half in ${Math.round(A.wonEitherHalf*100)}% of games while home manages it only ${Math.round(H.wonEitherHalf*100)}%.`);
+  if(n(H.drawHTorFT)!=null&&n(A.drawHTorFT)!=null&&H.drawHTorFT>=0.62&&A.drawHTorFT>=0.62)
+    C("Draw HT or FT",7,`A draw shows at half-time or full-time in ${Math.round(H.drawHTorFT*100)}%/${Math.round(A.drawHTorFT*100)}% of their matches — the safety net when the total-goals read is unclear.`);
+
   if(!cands.length) return halvesOut(m,"No Bet",null,null,["No HT/FT pattern strong enough — honest No Bet."]);
   cands.sort((x,y)=>y.score-x.score);
   if(noOdds) return provisionalize(halvesOut(m,cands[0].market,"Strong Pick",cands[0].score,[cands[0].why]), cands[0].market, [cands[0].why]);
   let best=cands[0];
   // universal odds ladder must confirm; try next candidates if blocked
   for(const c of cands){
+    if(HT_MARKETS.has(c.market)){ best=c; best.gateNote="Half-time market — no bookmaker HT odds in our data, pattern-only pick."; break; }
     const g=(typeof oddsLadderGate==='function')?oddsLadderGate(m,c.market):{ok:true,block:false};
     if(g.ok){ best=c; best.gateNote=g.reason||null; break; }
     best=null;
