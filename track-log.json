@@ -42628,10 +42628,24 @@
       "status": "pending",
       "result": null,
       "score": null
+    },
+    {
+      "matchDate": "2026-07-06",
+      "home": "Colo Colo",
+      "away": "Recoleta",
+      "league": "Copa Chile",
+      "engine": "Halves",
+      "market": "Over 1.5 Goals",
+      "confidence": 8,
+      "leagueClass": "Unknown",
+      "recordedAt": "2026-07-06T18:01:45.255Z",
+      "status": "pending",
+      "result": null,
+      "score": null
     }
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-06T17:57:22.079Z"
+    "updated": "2026-07-06T18:01:45.285Z"
   }
 }
