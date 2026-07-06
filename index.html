@@ -131,7 +131,7 @@
   .match-line:hover{ background:rgba(238,244,238,.025); }
   /* CONSENSUS-CARD LOOK — every engine row rendered as a gold-bordered card
      (matches the World Cup hub's Consensus Bankers design). */
-  .match-item{ background:#0c0c0f; border:1px solid rgba(250,204,21,.3);
+  .match-item{ background:var(--card-bg, #0c0c0f); border:1px solid rgba(250,204,21,.3);
     border-radius:16px; margin:0 0 18px 0; overflow:hidden;
     transition:transform .25s cubic-bezier(.4,0,.2,1), border-color .25s, box-shadow .25s; }
   .match-item:hover{ transform:translateY(-3px); border-color:rgba(250,204,21,.55);
@@ -196,6 +196,10 @@
   body.light .res-won{ background:#c9f0d4; border-color:#8fdcaa; color:#15803d; }
   body.light .res-lost{ background:#fddbe1; border-color:#f5a8b6; color:#b91c1c; }
   body.light .res-void{ background:#e4e9e4; border-color:#cfd8cf; color:#475549; }
+  /* consensus-card background follows the theme so team names (which use --ink)
+     always contrast — dark card in dark mode, white card in light mode. */
+  body.light .match-item{ --card-bg:#ffffff; border-color:rgba(185,134,29,.45); }
+  body.light .match-item:hover{ border-color:rgba(185,134,29,.7); box-shadow:0 10px 30px rgba(0,0,0,.12); }
   body.light .date-pill.active{ color:#f7fbf7; box-shadow:0 0 14px -6px rgba(34,149,78,.6); }
   body.light .odd-cell{ color:#0c130e; }
   body.light .odd-cell.best{ color:var(--brand); }
