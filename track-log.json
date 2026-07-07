@@ -43002,7 +43002,7 @@
       "market": "BTTS Yes",
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
-      "recordedAt": "2026-07-07T09:48:32.135Z",
+      "recordedAt": "2026-07-07T09:49:38.138Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -43016,7 +43016,7 @@
       "market": "BTTS Yes",
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
-      "recordedAt": "2026-07-07T09:48:32.135Z",
+      "recordedAt": "2026-07-07T09:49:38.138Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -43030,7 +43030,7 @@
       "market": "Under 3.5",
       "confidence": 10,
       "leagueClass": "Very High-Scoring",
-      "recordedAt": "2026-07-07T09:48:32.166Z",
+      "recordedAt": "2026-07-07T09:49:38.169Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -43038,6 +43038,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-07T09:48:32.200Z"
+    "updated": "2026-07-07T09:49:38.202Z"
   }
 }
