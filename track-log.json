@@ -42992,10 +42992,52 @@
       "status": "pending",
       "result": null,
       "score": null
+    },
+    {
+      "matchDate": "2026-07-08",
+      "home": "Texoma",
+      "away": "Denton Diablos",
+      "league": "USL League Two",
+      "engine": "Streaks",
+      "market": "BTTS Yes",
+      "confidence": 8,
+      "leagueClass": "Very High-Scoring",
+      "recordedAt": "2026-07-07T09:48:32.135Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-08",
+      "home": "Texoma",
+      "away": "Denton Diablos",
+      "league": "USL League Two",
+      "engine": "Mismatch",
+      "market": "BTTS Yes",
+      "confidence": 8,
+      "leagueClass": "Very High-Scoring",
+      "recordedAt": "2026-07-07T09:48:32.135Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-07",
+      "home": "Union Macomb",
+      "away": "AFC Ann Arbor",
+      "league": "USL League Two",
+      "engine": "Prime",
+      "market": "Under 3.5",
+      "confidence": 10,
+      "leagueClass": "Very High-Scoring",
+      "recordedAt": "2026-07-07T09:48:32.166Z",
+      "status": "pending",
+      "result": null,
+      "score": null
     }
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-07T09:47:25.772Z"
+    "updated": "2026-07-07T09:48:32.200Z"
   }
 }
