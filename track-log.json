@@ -43314,10 +43314,52 @@
       "status": "pending",
       "result": null,
       "score": null
+    },
+    {
+      "matchDate": "2026-07-08",
+      "home": "Real Oruro",
+      "away": "Universitario de Vinto",
+      "league": "Primera División",
+      "engine": "Streaks",
+      "market": "Over 1.5 Goals",
+      "confidence": 8,
+      "leagueClass": "High-Scoring",
+      "recordedAt": "2026-07-07T21:53:58.843Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-08",
+      "home": "Real Oruro",
+      "away": "Universitario de Vinto",
+      "league": "Primera División",
+      "engine": "Halves",
+      "market": "Over 0.5 Goals HT",
+      "confidence": 8,
+      "leagueClass": "High-Scoring",
+      "recordedAt": "2026-07-07T21:53:58.843Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-08",
+      "home": "Real Oruro",
+      "away": "Universitario de Vinto",
+      "league": "Primera División",
+      "engine": "Mismatch",
+      "market": "BTTS Yes",
+      "confidence": 8,
+      "leagueClass": "High-Scoring",
+      "recordedAt": "2026-07-07T21:53:58.843Z",
+      "status": "pending",
+      "result": null,
+      "score": null
     }
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-07T21:52:52.499Z"
+    "updated": "2026-07-07T21:53:58.895Z"
   }
 }
