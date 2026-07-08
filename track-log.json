@@ -44140,10 +44140,80 @@
       "status": "pending",
       "result": null,
       "score": null
+    },
+    {
+      "matchDate": "2026-07-09",
+      "home": "Deportivo Cuenca Juniors",
+      "away": "LDU Portoviejo",
+      "league": "Liga Pro Serie B",
+      "engine": "Ultra",
+      "market": "Home DNB",
+      "confidence": 8,
+      "leagueClass": "Very Low-Scoring",
+      "recordedAt": "2026-07-08T19:47:33.292Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-09",
+      "home": "Deportivo Cuenca Juniors",
+      "away": "LDU Portoviejo",
+      "league": "Liga Pro Serie B",
+      "engine": "Value",
+      "market": "Double Chance 1X",
+      "confidence": 8,
+      "leagueClass": "Very Low-Scoring",
+      "recordedAt": "2026-07-08T19:47:33.293Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-09",
+      "home": "Deportivo Cuenca Juniors",
+      "away": "LDU Portoviejo",
+      "league": "Liga Pro Serie B",
+      "engine": "Pro",
+      "market": "Double Chance 1X",
+      "confidence": 8,
+      "leagueClass": "Very Low-Scoring",
+      "recordedAt": "2026-07-08T19:47:33.293Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-09",
+      "home": "Deportivo Cuenca Juniors",
+      "away": "LDU Portoviejo",
+      "league": "Liga Pro Serie B",
+      "engine": "Streaks",
+      "market": "Under 3.5 Goals",
+      "confidence": 8,
+      "leagueClass": "Very Low-Scoring",
+      "recordedAt": "2026-07-08T19:47:33.293Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-09",
+      "home": "Deportivo Cuenca Juniors",
+      "away": "LDU Portoviejo",
+      "league": "Liga Pro Serie B",
+      "engine": "Halves",
+      "market": "BTTS No",
+      "confidence": 8,
+      "leagueClass": "Very Low-Scoring",
+      "recordedAt": "2026-07-08T19:47:33.293Z",
+      "status": "pending",
+      "result": null,
+      "score": null
     }
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-08T19:46:20.583Z"
+    "updated": "2026-07-08T19:47:33.340Z"
   }
 }
