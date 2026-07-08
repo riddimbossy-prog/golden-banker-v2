@@ -301,6 +301,7 @@
           <option value="streaks">Streaks</option>
           <option value="halves">Halves (HT/FT)</option>
           <option value="mismatch">Mismatch</option>
+          <option value="indicator">Market Indicators</option>
         </select>
         <span style="position:absolute;right:10px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--muted);font-size:10px">▼</span>
       </div>
@@ -745,6 +746,11 @@ function enginePicks(rows){
       return { match:r.match, primary:u.primary, confidence:u.confidence>=8?'High':'Medium',
                banker:u.banker, weight:u.confidence, reason:u.verdict||'' }; }).filter(Boolean);
   }
+  if(engineMode==='indicator' && typeof indicatorRecommend==='function'){
+    return rows.map(r=>{ const u=indicatorRecommend(r.match); if(!u.bet) return null;
+      return { match:r.match, primary:u.primary, confidence:u.confidence>=8?'High':'Medium',
+               banker:u.banker, weight:u.confidence, reason:u.verdict||'' }; }).filter(Boolean);
+  }
   if(engineMode==='acca'){
     return accaLegs(rows).map(l=>({ match:l.match, primary:l.market,
       confidence:l.rating>=8?'High':l.rating>=7?'Medium':'Low', banker:true,
@@ -961,6 +967,7 @@ function renderMatches(){
   if(engineMode==='streaks'){ renderStreakMatches(); return; }
   if(engineMode==='halves'){ renderHalvesMatches(); return; }
   if(engineMode==='mismatch'){ renderMismatchMatches(); return; }
+  if(engineMode==='indicator'){ renderIndicatorMatches(); return; }
   if(engineMode==='acca'){ renderAccaMatches(); return; }
   const root = document.getElementById('matches-root');
   const _allRows = byDate[activeDate]||[];
@@ -1604,6 +1611,7 @@ function renderStreakMatches(){
 function renderHalvesMatches(){ return renderFnEngineMatches(typeof halvesRecommend!=='undefined'?halvesRecommend:null,'HT/FT'); }
 
 function renderMismatchMatches(){ return renderFnEngineMatches(typeof mismatchRecommend!=='undefined'?mismatchRecommend:null,'mismatch-alignment'); }
+function renderIndicatorMatches(){ return renderFnEngineMatches(typeof indicatorRecommend!=='undefined'?indicatorRecommend:null,'market indicators'); }
 function renderFnEngineMatches(engFn,label){
   const host=document.getElementById('matches-root');
   if(typeof engFn!=='function'){ host.innerHTML='<div class="p-6 text-center" style="color:var(--muted)">Halves engine unavailable — deploy the latest banker-engine.js.</div>'; return; }
@@ -1965,7 +1973,7 @@ function renderStrictMatches(){
     quick(bn, mode==='normal');
     quick(bac, mode==='acca', '#6fd44a'); // green-outlined slip keeps green text when idle
     if(sel){
-      const inDropdown=['strict','ultra','rulespro','apex','prime','value','pro','trend','streaks','halves','mismatch'].includes(mode);
+      const inDropdown=['strict','ultra','rulespro','apex','prime','value','pro','trend','streaks','halves','mismatch','indicator'].includes(mode);
       sel.value = inDropdown ? mode : '';
       if(inDropdown){ sel.style.background='linear-gradient(135deg,var(--gold),#6fd44a)'; sel.style.color='#0a0e17'; }
       else { sel.style.background='var(--panel)'; sel.style.color='var(--muted)'; }
@@ -1999,7 +2007,8 @@ const ENGINE_HERO={
   trend:   {t:"Trend's pattern ", g:"bankers for today", s:"Positional history — what leaders at home, mid-table meetings and top-4 clashes actually produce in this league."},
   streaks: {t:"Streaks' pattern ", g:"bankers for today", s:"Live runs across every market — wins, goals, GG, clean sheets — confirmed by the opponent's record and the league's trend."},
   halves:  {t:"Halves' HT/FT ", g:"bankers for today", s:"Built purely from half-time behaviour — lead-holders, comeback kings, fast and slow starters. Honest No Bet when the sample's too thin."},
-  mismatch:{t:"Mismatch's aligned ", g:"bankers for today", s:"Fires only when both teams' venue profiles point the same direction — two arrows, one market."}
+  mismatch:{t:"Mismatch's aligned ", g:"bankers for today", s:"Fires only when both teams' venue profiles point the same direction — two arrows, one market."},
+  indicator:{t:"Market Indicators' cross-market ", g:"bankers for today", s:"Reads one market's odds to predict a different market — 10 rules, minimum three statistical confirmations, honest No Bet when the odds disagree with the stats."}
 };
 function updateHero(){
   const h=document.getElementById('hero-title'), p=document.getElementById('hero-sub');
@@ -2087,7 +2096,7 @@ function wcRoundKey(r){ const s=String(r||"").toLowerCase();
 const WC_ROUND_NAMES={0:"Group Stage",1:"Round of 32",2:"Round of 16",3:"Quarter-finals",4:"Semi-finals",5:"3rd Place",6:"Final"};
 function wcAllRows(){ const src=(typeof _allResults!=="undefined")?_allResults:(typeof results!=="undefined"?results:[]); return src.filter(r=>wcIsWC(r.match)); }
 function wcConsensus(m){
-  const engines=[['Normal',recommend],['Strict',strictRecommend],['Ultra',ultraRecommend],['Elite',rulesProRecommend],['Apex',apexRecommend],['Prime',primeRecommend],['Value',valueRecommend],['Pro',proRecommend],['Trend',trendRecommend],['Streaks',streakRecommend],['Halves',halvesRecommend],['Mismatch',mismatchRecommend]];
+  const engines=[['Normal',recommend],['Strict',strictRecommend],['Ultra',ultraRecommend],['Elite',rulesProRecommend],['Apex',apexRecommend],['Prime',primeRecommend],['Value',valueRecommend],['Pro',proRecommend],['Trend',trendRecommend],['Streaks',streakRecommend],['Halves',halvesRecommend],['Mismatch',mismatchRecommend],['Market Indicators',indicatorRecommend]];
   const markets={};
   engines.forEach(([name,fn])=>{ try{ if(typeof fn!=='function')return; const u=fn(m); if(u&&u.awaitingOdds)return;
     const mk=u.primary!=null?u.primary:u.market; if(!mk||mk==='No Bet'||mk==='Skip'||u.bet===false)return;
@@ -2320,7 +2329,7 @@ function renderWorldCup(){
   const norm=s=>String(s||'').trim();
   const engines=[['Normal',recommend],['Strict',strictRecommend],['Ultra',ultraRecommend],
     ['Elite',rulesProRecommend],['Apex',apexRecommend],['Prime',primeRecommend],
-    ['Value',valueRecommend],['Pro',proRecommend],['Trend',trendRecommend],['Streaks',streakRecommend],['Halves',halvesRecommend],['Mismatch',mismatchRecommend]];
+    ['Value',valueRecommend],['Pro',proRecommend],['Trend',trendRecommend],['Streaks',streakRecommend],['Halves',halvesRecommend],['Mismatch',mismatchRecommend],['Market Indicators',indicatorRecommend]];
 
   /* For EVERY WC game (upcoming OR finished) run all 10 frame-wrapped engines and
      tally which market they back. Finished games still get a pick — we settle it
