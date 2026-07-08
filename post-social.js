@@ -53,14 +53,14 @@ const yr = record(settledOn(YDAY));
 if (yr.n > 0) {
   const tone = yr.pct >= 70 ? "Strong board." : yr.pct >= 50 ? "Mixed board — posted anyway. Every result counts here." : "Rough board. We post the losses too — that's the whole point.";
   messages.push({
-    photo: fs.existsSync(path.join(HERE, "results.png")) ? "results.png" : null,
+    photo: ["social-results.png","results.png"].find(f => fs.existsSync(path.join(HERE, f))) || null,
     caption: `YESTERDAY'S RESULTS — ${YDAY}\n\n${yr.w} WON  •  ${yr.l} LOST  (${yr.pct}%)\n${tone}\n\nFull settled board, every engine: ${SITE}\n\n${RG}`
   });
 }
 
 // 2) TODAY'S PICKS — teaser, drive to the site.
 const todaysPicks = picks.filter(p => (p.matchDate || "").slice(0, 10) === TODAY);
-const todayImg = ["today.png", "today-1.png"].find(f => fs.existsSync(path.join(HERE, f)));
+const todayImg = ["social-today.png", "today.png", "today-1.png"].find(f => fs.existsSync(path.join(HERE, f)));
 if (todaysPicks.length && todayImg) {
   const markets = {};
   todaysPicks.forEach(p => { if (p.market) markets[p.market] = (markets[p.market] || 0) + 1; });
