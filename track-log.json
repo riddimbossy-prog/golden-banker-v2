@@ -43622,10 +43622,80 @@
       "status": "pending",
       "result": null,
       "score": null
+    },
+    {
+      "matchDate": "2026-07-09",
+      "home": "Midwest United",
+      "away": "Union Macomb",
+      "league": "USL League Two",
+      "engine": "Mismatch",
+      "market": "BTTS Yes",
+      "confidence": 10,
+      "leagueClass": "Very High-Scoring",
+      "recordedAt": "2026-07-08T05:53:08.900Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-08",
+      "home": "El Nacional",
+      "away": "Cumbayá",
+      "league": "Liga Pro Serie B",
+      "engine": "Prime",
+      "market": "Under 3.5",
+      "confidence": 10,
+      "leagueClass": "Very Low-Scoring",
+      "recordedAt": "2026-07-08T05:53:08.905Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-08",
+      "home": "El Nacional",
+      "away": "Cumbayá",
+      "league": "Liga Pro Serie B",
+      "engine": "Trend",
+      "market": "Under 3.5 Goals",
+      "confidence": 10,
+      "leagueClass": "Very Low-Scoring",
+      "recordedAt": "2026-07-08T05:53:08.905Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-08",
+      "home": "El Nacional",
+      "away": "Cumbayá",
+      "league": "Liga Pro Serie B",
+      "engine": "Streaks",
+      "market": "Under 2.5 Goals",
+      "confidence": 7,
+      "leagueClass": "Very Low-Scoring",
+      "recordedAt": "2026-07-08T05:53:08.905Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-08",
+      "home": "El Nacional",
+      "away": "Cumbayá",
+      "league": "Liga Pro Serie B",
+      "engine": "Halves",
+      "market": "BTTS No",
+      "confidence": 8,
+      "leagueClass": "Very Low-Scoring",
+      "recordedAt": "2026-07-08T05:53:08.905Z",
+      "status": "pending",
+      "result": null,
+      "score": null
     }
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-08T05:52:02.127Z"
+    "updated": "2026-07-08T05:53:08.948Z"
   }
 }
