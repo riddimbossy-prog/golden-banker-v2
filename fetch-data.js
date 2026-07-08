@@ -795,6 +795,29 @@ const FINISHED = new Set(["FT","AET","PEN"]);
                 const dGet = lbl => { const v = dc.values.find(x => new RegExp(lbl,"i").test(x.value)); return v ? parseFloat(v.odd) : null; };
                 vals.dc1x = dGet("home/draw|1x|^1\\/x"); vals.dc12 = dGet("home/away|12|^1\\/2"); vals.dcx2 = dGet("draw/away|x2|^x\\/2");
               }
+              // --- MARKET INDICATOR ENGINE inputs (same odds response, zero extra calls) ---
+              // First-Half 1X2
+              const fh = findBet(/first half winner|1st half (winner|result)|half[- ]?time result|ht result/i);
+              if (fh && fh.values) {
+                const fGet = lbl => { const v = fh.values.find(x => new RegExp(lbl,"i").test(x.value)); return v ? parseFloat(v.odd) : null; };
+                vals.fhHome = fGet("^home|^1$"); vals.fhDraw = fGet("^draw|^x$"); vals.fhAway = fGet("^away|^2$");
+              }
+              // First-Half Over/Under
+              const fhou = findBet(/(first|1st) half.*over\/under|over\/under.*(first|1st) half|goals.*(first|1st) half/i);
+              if (fhou && fhou.values) {
+                const foGet = lbl => { const v = fhou.values.find(x => new RegExp(lbl,"i").test(x.value)); return v ? parseFloat(v.odd) : null; };
+                vals.fhOver05 = foGet("over 0\\.5"); vals.fhOver15 = foGet("over 1\\.5"); vals.fhUnder15 = foGet("under 1\\.5");
+              }
+              // GG / NG spec aliases (BTTS prices already parsed above)
+              if (vals.bttsYes != null) vals.gg = vals.bttsYes;
+              if (vals.bttsNo  != null) vals.ng = vals.bttsNo;
+              // GG2+ (both-teams-score-2+ / multigoal family) — defensive multi-pattern;
+              // stays null if this book doesn't price it, engine must treat null as "no signal"
+              const g2 = findBet(/both teams.*score.*2|gg\s*2|multi ?goals?/i);
+              if (g2 && g2.values) {
+                const gGet = lbl => { const v = g2.values.find(x => new RegExp(lbl,"i").test(x.value)); return v ? parseFloat(v.odd) : null; };
+                vals.gg2 = gGet("^yes$|^2\\+$|2\\+ goals");
+              }
               break;
             }
           }
