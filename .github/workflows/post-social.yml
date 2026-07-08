@@ -1,0 +1,37 @@
+name: Post to social (Telegram)
+# Posts yesterday's honest results + today's picks to the Telegram channel,
+# and writes social-captions.txt for a 30-second WhatsApp Channel forward.
+# Runs AFTER the email workflows (00:15 picks images, 00:30 results image)
+# have committed the fresh PNGs. Sundays add a 7-day record recap.
+
+on:
+  schedule:
+    - cron: "50 0 * * *"     # 00:50 UTC daily — fresh images are already committed
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Post to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node post-social.js
+      - name: Commit the WhatsApp caption file (if changed)
+        run: |
+          git config user.name "predicto-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add social-captions.txt 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "Update social captions"
+          git pull --rebase -X theirs || true
+          git push || echo "push skipped"
