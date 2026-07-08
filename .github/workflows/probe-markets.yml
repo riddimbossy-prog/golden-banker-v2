@@ -1,0 +1,23 @@
+name: Probe market availability
+on:
+  workflow_dispatch: {}
+permissions:
+  contents: read
+concurrency:
+  group: "probe-markets"
+  cancel-in-progress: true
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Inject secret key into config.txt
+        run: |
+          if [ ! -f config.txt ]; then echo "ERROR: config.txt missing"; exit 1; fi
+          printf '\nAPI_KEY=%s\n' "${{ secrets.API_KEY }}" >> config.txt
+      - name: Run the market-availability probe (verdict prints below)
+        run: node probe-markets.js
