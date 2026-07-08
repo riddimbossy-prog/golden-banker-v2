@@ -42835,8 +42835,8 @@
       "confidence": 8,
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-07-07T02:04:51.910Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -42849,8 +42849,8 @@
       "confidence": 9,
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-07-07T02:04:51.910Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -42863,8 +42863,8 @@
       "confidence": 8,
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-07-07T02:04:51.910Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -42877,8 +42877,8 @@
       "confidence": 8,
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-07-07T02:04:51.910Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -43703,8 +43703,8 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-08T15:52:25.685Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -44067,8 +44067,8 @@
       "confidence": 10,
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-07-08T17:47:48.538Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -44081,8 +44081,8 @@
       "confidence": 9,
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-07-08T17:47:48.538Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -44095,8 +44095,8 @@
       "confidence": 9,
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-07-08T17:47:48.538Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -44214,6 +44214,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-08T22:54:11.654Z"
+    "updated": "2026-07-08T23:05:15.519Z"
   }
 }
