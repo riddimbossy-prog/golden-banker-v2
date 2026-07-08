@@ -766,6 +766,8 @@ const FINISHED = new Set(["FT","AET","PEN"]);
         let vals = null;
         for (const bk of (entry.bookmakers || [])) {
           const bets = bk.bets || [];
+          global.__betNames = global.__betNames || new Set();
+          bets.forEach(b => { if (b && b.name) global.__betNames.add(b.name); }); // debug: distinct bet names
           const findBet = re => bets.find(b => re.test(b.name || ""));
           // 1X2 / Match Winner
           const mw = findBet(/match winner|1x2|full time result/i);
@@ -933,6 +935,7 @@ const FINISHED = new Set(["FT","AET","PEN"]);
 
       const __ht = fx.score && fx.score.halftime;
       out.push({
+        id: (fx.fixture && fx.fixture.id) || null, // stable fixture id — slips/community reference matches by this
         home: fx.teams.home.name, away: fx.teams.away.name, league: leagueName, leagueId: leagueId,
         htHome: (__ht && __ht.home!=null) ? __ht.home : null,  // half-time score —
         htAway: (__ht && __ht.away!=null) ? __ht.away : null,  // settles HT markets
@@ -1051,5 +1054,6 @@ const FINISHED = new Set(["FT","AET","PEN"]);
   console.log(`\nDone. Window: ${out.length} match(es) across ${daysCovered.length} day(s) [${daysCovered.join(", ")}] (${finishedCount} finished). ${requests} requests used.`);
   console.log(`Board now holds ${merged.length} match(es) across all saved days.`);
   console.log(`Trend data: ${TREND_STATS.okLeagues.size} league(s) qualified (${TREND_STATS.backfilledLeagues.size} used last-season backfill, ${TREND_STATS.tierLeagues.size} have tier-patterns); ${TREND_STATS.nullLeagues.size} league(s) had too few games. If qualified = 0, the Trend engine will show No Bet everywhere — that's the calendar, not a bug.`);
+  if (global.__betNames && global.__betNames.size) console.log("DEBUG distinct odds bet names seen: " + [...global.__betNames].sort().join(" | "));
   console.log("Next: commit data.js (the workflow deploys it), or for local runs upload your folder.\n");
 })();
