@@ -43632,7 +43632,7 @@
       "market": "BTTS Yes",
       "confidence": 10,
       "leagueClass": "Very High-Scoring",
-      "recordedAt": "2026-07-08T05:53:08.900Z",
+      "recordedAt": "2026-07-08T05:54:11.200Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -43646,7 +43646,7 @@
       "market": "Under 3.5",
       "confidence": 10,
       "leagueClass": "Very Low-Scoring",
-      "recordedAt": "2026-07-08T05:53:08.905Z",
+      "recordedAt": "2026-07-08T05:54:11.205Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -43660,7 +43660,7 @@
       "market": "Under 3.5 Goals",
       "confidence": 10,
       "leagueClass": "Very Low-Scoring",
-      "recordedAt": "2026-07-08T05:53:08.905Z",
+      "recordedAt": "2026-07-08T05:54:11.205Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -43674,7 +43674,7 @@
       "market": "Under 2.5 Goals",
       "confidence": 7,
       "leagueClass": "Very Low-Scoring",
-      "recordedAt": "2026-07-08T05:53:08.905Z",
+      "recordedAt": "2026-07-08T05:54:11.205Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -43688,7 +43688,7 @@
       "market": "BTTS No",
       "confidence": 8,
       "leagueClass": "Very Low-Scoring",
-      "recordedAt": "2026-07-08T05:53:08.905Z",
+      "recordedAt": "2026-07-08T05:54:11.205Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -43696,6 +43696,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-08T05:53:08.948Z"
+    "updated": "2026-07-08T05:54:11.246Z"
   }
 }
