@@ -22,6 +22,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+      - name: Build feed-native social cards
+        run: |
+          npm install sharp --no-save || echo "sharp install issue"
+          node generate-social-card.js || echo "social card generation skipped"
       - name: Post to Telegram
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
