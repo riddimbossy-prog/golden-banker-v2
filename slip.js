@@ -126,6 +126,13 @@ const P2USlip=(()=>{
     }, true);
     render();
   }
-  return {btn, add, init, render};
+  return {btn, add, init, render,
+    get legs(){ return legs.slice(); },
+    get stake(){ return stake; },
+    state: slipState,
+    clear(){ legs=[]; save(); render(); },
+    /* load a slip's legs into the drawer (used by "tail" in Step 4) */
+    load(newLegs){ if(Array.isArray(newLegs)){ legs=newLegs.slice(0,MAX); save(); render(); } }
+  };
 })();
 if(document.body) P2USlip.init(); else document.addEventListener('DOMContentLoaded', P2USlip.init);
