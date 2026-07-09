@@ -1,1 +1,35 @@
+name: Settle community slips
+# Grades every open public slip with the same settle() that grades the engines,
+# then sends batched win emails (max one per user per 24h).
+# Runs after the scores workflow has written fresh results into data.js.
 
+on:
+  schedule:
+    - cron: "20 * * * *"      # hourly, at :20 — just after the :15 scores run commits
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Compute and print without writing"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  settle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Settle open public slips
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
+        run: node settle-slips.js
