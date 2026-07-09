@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>Predict2u • Every pick posted. Every result kept.</title>
 <meta name="description" content="Thirteen football engines publish their bankers daily — wins and losses stay on the record. Free, no signup."/>
 <link rel="manifest" href="manifest.webmanifest"/>
@@ -18,9 +18,11 @@ if(new URLSearchParams(location.search).get('view')==='top'){ location.replace('
   --brand:#3ecf6e; --brand-2:#7ede8f; --gold:#e8c15a;
   --ink:#f2f7f0; --muted:#8fa093; --loss:#e07a7a;
 }
-*{ box-sizing:border-box; margin:0; }
+*{ box-sizing:border-box; margin:0; min-width:0; }
+html,body{ overflow-x:hidden; max-width:100%; }
+img{ max-width:100%; }
 html{ scroll-behavior:smooth; }
-body{ background:var(--pitch); color:var(--ink); font-family:'Schibsted Grotesk',system-ui,sans-serif; line-height:1.55; }
+body{ padding-left:env(safe-area-inset-left); padding-right:env(safe-area-inset-right); background:var(--pitch); color:var(--ink); font-family:'Schibsted Grotesk',system-ui,sans-serif; line-height:1.55; }
 a{ color:inherit; text-decoration:none; }
 a:focus-visible,button:focus-visible{ outline:2px solid var(--brand); outline-offset:2px; border-radius:6px; }
 .wrap{ max-width:1100px; margin:0 auto; padding:0 20px; }
@@ -103,6 +105,49 @@ body.light .sc-cell{ background:rgba(0,0,0,.03); }
 .day .bar{ height:5px; border-radius:3px; background:#240f0f; overflow:hidden; }
 .day .bar i{ display:block; height:100%; background:var(--brand); }
 .day.quiet{ opacity:.55; } .day.quiet .wl{ color:var(--muted); font-size:13px; padding:4px 0; }
+
+/* ===== narrow phones + fold cover screens ===== */
+@media(max-width:400px){
+  .wrap{ padding:0 12px; }
+  .hero{ padding:26px 0 18px; gap:22px; }
+  .hero h1{ font-size:clamp(32px,10vw,44px); }
+  .hero p{ font-size:15px; }
+  .btn{ padding:12px 16px; font-size:13px; }
+  .hero-cta .btn{ flex:1 1 100%; justify-content:center; }
+  .score-card{ padding:16px; }
+  .sc-cell{ padding:10px 6px; }
+  .sc-grid{ grid-template-columns:repeat(3,1fr); }
+  .sc-cell .l{ font-size:8.5px; letter-spacing:.8px; }
+  .sc-cell .n{ font-size:26px; }
+  .strip{ padding:16px 14px; }
+  .pick{ padding:12px; gap:10px; }
+  .pick .who{ min-width:130px; }
+  .brand .bn{ font-size:20px; }
+  .brand .slogan{ font-size:8.5px; letter-spacing:1.6px; }
+  .brand img{ width:32px; height:32px; }
+  .nav{ gap:8px; }
+  .nav-links a{ padding:6px 9px; font-size:12.5px; }
+  .band{ padding:18px; }
+  .engines{ grid-template-columns:1fr; }
+  .strip-days{ grid-template-columns:repeat(3,1fr); }
+  .strip-days .day:nth-child(n+4){ display:none; }
+}
+@media(max-width:320px){
+  .wrap{ padding:0 8px; }
+  .hero h1{ font-size:28px; }
+  .sc-grid{ grid-template-columns:1fr; }
+  .strip-days{ grid-template-columns:repeat(2,1fr); }
+  .strip-days .day:nth-child(n+3){ display:none; }
+  .pick{ flex-wrap:wrap; }
+  .pick .agree{ order:3; }
+  .nav-links a.wc{ padding:6px 8px; font-size:11px; }
+}
+@media(pointer:coarse){ .btn,.nav-links a,.tbtn{ min-height:40px; display:inline-flex; align-items:center; } }
+/* Z Fold open + tablets */
+@media(min-width:700px) and (max-width:900px){
+  .hero{ grid-template-columns:1fr; }
+  .engines{ grid-template-columns:repeat(2,1fr); }
+}
 
 /* ---------- sections ---------- */
 section{ padding:34px 0; }
