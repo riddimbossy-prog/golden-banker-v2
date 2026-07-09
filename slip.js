@@ -37,8 +37,10 @@
 const P2USlip=(()=>{
   const KEY='p2u_slip_v1', SKEY='p2u_stake_v1', MAX=10;
   let legs=[]; try{ legs=JSON.parse(localStorage.getItem(KEY)||'[]')||[]; }catch(e){ legs=[]; }
+  let tailedFrom=null, tailedHandle=null; try{ const t=JSON.parse(localStorage.getItem('p2u_tail_v1')||'null'); if(t){ tailedFrom=t.id; tailedHandle=t.handle; } }catch(e){}
   let stake=parseFloat(localStorage.getItem(SKEY)||'1')||1;
-  const save=()=>{ try{ localStorage.setItem(KEY, JSON.stringify(legs)); localStorage.setItem(SKEY,String(stake)); }catch(e){} };
+  const save=()=>{ try{ localStorage.setItem(KEY, JSON.stringify(legs)); localStorage.setItem(SKEY,String(stake));
+    if(tailedFrom) localStorage.setItem('p2u_tail_v1', JSON.stringify({id:tailedFrom,handle:tailedHandle})); else localStorage.removeItem('p2u_tail_v1'); }catch(e){} };
   const esc=t=>String(t==null?'':t).replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
   const mKey=m=> (m && m.id!=null) ? 'f'+m.id : ((m&&m.home||'')+'|'+(m&&m.away||'')+'|'+(m&&m.matchDate||''));
   const findMatch=leg=> (window.MATCHES||[]).find(m=> mKey(m)===leg.k) || null;
@@ -51,6 +53,7 @@ const P2USlip=(()=>{
     const id=++REG.n; REG.map[id]={m,market};
     return `<button class="slip-add" data-slipreg="${id}">+ Slip</button>`;
   }
+  let onSave=null;
   let toastT=null;
   function toast(msg){
     let el=document.getElementById('p2u-toast');
@@ -101,6 +104,12 @@ const P2USlip=(()=>{
         <input id="p2u-stake" type="number" min="0" step="0.5" value="${stake}"> = <b>${s.priced? ret.toFixed(2):'—'}</b></div>
       </div>
       ${s.status!=='empty'&&s.status!=='open'? `<div style="margin-top:8px;font-weight:800;color:${s.status==='won'?'#7ede8f':s.status==='lost'?'#e07a7a':'var(--muted)'}">Slip ${s.status.toUpperCase()} · ${s.w}W-${s.l}L${s.v?('-'+s.v+'V'):''}</div>`:''}
+      ${tailedHandle?`<div style="margin-top:8px;font-size:11px;color:var(--muted)">Copied from <b style="color:var(--brand-2)">@${esc(tailedHandle)}</b> — save it and the result is yours.</div>`:''}
+      <div id="p2u-save-row" style="display:${legs.length?'flex':'none'};gap:8px;margin-top:12px;flex-wrap:wrap">
+        <button id="p2u-save-public" style="flex:1;min-width:140px;background:var(--brand,#3ecf6e);color:#06120a;border:none;border-radius:9px;padding:10px;font-weight:800;font-size:13px;cursor:pointer">Post publicly</button>
+        <button id="p2u-save-private" style="flex:1;min-width:120px;background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:9px;padding:10px;font-weight:800;font-size:13px;cursor:pointer">Save private</button>
+      </div>
+      <div id="p2u-save-msg" style="font-size:12px;color:var(--brand-2);margin-top:6px;min-height:16px"></div>
       <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px">
         <button id="p2u-slip-clear" style="border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:8px;padding:5px 12px;font-size:12px">Clear slip</button>
         <div style="font-size:10px;color:var(--muted)">Records, not wagers · 18+ · <a href="responsible-gambling.html" style="text-decoration:underline">bet responsibly</a></div>
@@ -108,7 +117,15 @@ const P2USlip=(()=>{
     const st=document.getElementById('p2u-stake');
     if(st) st.addEventListener('change',()=>{ stake=Math.max(0,parseFloat(st.value)||0); save(); render(); });
     const cl=document.getElementById('p2u-slip-clear');
-    if(cl) cl.addEventListener('click',()=>{ legs=[]; save(); render(); });
+    if(cl) cl.addEventListener('click',()=>{ legs=[]; tailedFrom=null; tailedHandle=null; save(); render(); });
+    const sp=document.getElementById('p2u-save-public'), sv=document.getElementById('p2u-save-private');
+    const doSave=isPublic=>{
+      const msgEl=document.getElementById('p2u-save-msg');
+      if(typeof onSave!=='function'){ if(msgEl){ msgEl.style.color='var(--muted)'; msgEl.innerHTML='Saving slips needs an account — <a href="community.html" style="text-decoration:underline;color:inherit">join the community</a>.'; } return; }
+      onSave(isPublic,{legs:legs.slice(),stake,tailedFrom});
+    };
+    if(sp) sp.addEventListener('click',()=>doSave(true));
+    if(sv) sv.addEventListener('click',()=>doSave(false));
   }
   function init(){
     if(document.getElementById('p2u-slip-fab')) return;
@@ -129,10 +146,15 @@ const P2USlip=(()=>{
   return {btn, add, init, render,
     get legs(){ return legs.slice(); },
     get stake(){ return stake; },
+    get tailedFrom(){ return tailedFrom; },
     state: slipState,
-    clear(){ legs=[]; save(); render(); },
-    /* load a slip's legs into the drawer (used by "tail" in Step 4) */
-    load(newLegs){ if(Array.isArray(newLegs)){ legs=newLegs.slice(0,MAX); save(); render(); } }
+    clear(){ legs=[]; tailedFrom=null; tailedHandle=null; save(); render(); },
+    /* the page registers a save handler; without one the buttons point at the community page */
+    onSave(fn){ onSave=fn; render(); },
+    msg(t,bad){ const el=document.getElementById('p2u-save-msg'); if(el){ el.textContent=t; el.style.color=bad?'#e07a7a':'var(--brand-2)'; } },
+    /* tail: load someone's legs, remembering who to credit */
+    load(newLegs, credit){ if(Array.isArray(newLegs)){ legs=newLegs.slice(0,MAX);
+      tailedFrom=credit?credit.id:null; tailedHandle=credit?credit.handle:null; save(); render(); } }
   };
 })();
 if(document.body) P2USlip.init(); else document.addEventListener('DOMContentLoaded', P2USlip.init);
