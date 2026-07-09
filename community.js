@@ -46,7 +46,7 @@
     if(!session){ showAuth('signedout'); }
     else { await loadProfile(); showAuth(profile?'signedin':'handle'); }
     await loadMyFollows();
-    renderDashboard(); renderMySlips(); loadFeed(); loadTopPicks(); loadPopular();
+    renderDashboard(); renderMySlips(); loadMembers(); loadFeed(); loadTopPicks(); loadPopular();
   }
 
   /* ================= engine board (Step 3) ================= */
@@ -93,20 +93,22 @@
 
   /* ================= save slip ================= */
   async function saveSlip(isPublic){
-    const msg=t=>{ if($('save-msg')) $('save-msg').textContent=t; };
-    if(!session||!profile){ msg('Sign in and claim a handle first.'); return; }
+    const msg=(t,bad)=>{ if(typeof P2USlip!=='undefined') P2USlip.msg(t,bad); if($('save-msg')) $('save-msg').textContent=t; };
+    if(!session){ msg('Sign in first — scroll up to the sign-in card.',1); return; }
+    if(!profile){ msg('Claim your handle first — scroll up.',1); return; }
     const legs=P2USlip.legs;
-    if(!legs.length){ msg('Your slip is empty — add picks from the board.'); return; }
+    if(!legs.length){ msg('Your slip is empty — add picks from the board.',1); return; }
     const st=P2USlip.state();
     const payload=legs.map(l=>({k:l.k,home:l.home,away:l.away,league:l.league,market:l.market,
       oddsAtAdd:l.odds,kickoff:l.kickoff||null,source:l.source||'engine',engine:l.engine||null}));
     msg('Saving…');
     const {error}=await sb.from('slips').insert({user_id:session.user.id,legs:payload,stake:P2USlip.stake,
       combined_odds:st.priced?Math.round(st.odds*100)/100:null,is_public:!!isPublic,
+      tailed_from:P2USlip.tailedFrom||null,
       match_date:(window.MATCHES||[]).find(m=>('f'+m.id)===legs[0].k)?.matchDate||null});
-    if(error){ msg('Could not save: '+error.message); return; }
-    msg(isPublic?'Saved and posted publicly ✓ — it settles itself, win or lose.':'Saved to your account ✓');
-    P2USlip.clear(); renderMySlips(); renderDashboard(); loadFeed(); loadTopPicks();
+    if(error){ msg('Could not save: '+error.message,1); return; }
+    msg(isPublic?'Posted publicly ✓ — it settles itself, win or lose.':'Saved to your account ✓');
+    P2USlip.clear(); renderMySlips(); renderDashboard(); loadFeed(); loadTopPicks(); loadPopular();
   }
 
   /* ================= slip rendering helpers ================= */
@@ -170,15 +172,25 @@
     const url=data.publicUrl+'?t='+Date.now();
     const {error:e2}=await sb.from('profiles').update({avatar_url:url}).eq('id',profile.id);
     if(e2){ msg('Could not save: '+e2.message); return; }
-    profile.avatar_url=url; msg('Updated ✓'); renderDashboard(); loadFeed();
+    profile.avatar_url=url; renderDashboard(); loadFeed(); loadMembers(); closeEditor(); flash('Changes made ✓');
   }
+  function flash(t){
+    let el=$('p2u-flash');
+    if(!el){ el=document.createElement('div'); el.id='p2u-flash';
+      el.style.cssText='position:fixed;left:50%;transform:translateX(-50%);top:16px;z-index:90;background:var(--brand);color:#06120a;font-weight:800;font-size:13px;border-radius:10px;padding:10px 18px;box-shadow:0 4px 16px rgba(0,0,0,.35)';
+      document.body.appendChild(el); }
+    el.textContent=t; el.style.display='block';
+    clearTimeout(flash._t); flash._t=setTimeout(()=>{ el.style.display='none'; },2000);
+  }
+  function closeEditor(){ const d=$('edit-profile'); if(d) d.open=false; if($('av-msg')) $('av-msg').textContent=''; }
+
   async function saveBio(){
     const msg=t=>{ if($('av-msg')) $('av-msg').textContent=t; };
     if(!profile) return;
     const bio=($('bio-input').value||'').trim().slice(0,160);
     const {error}=await sb.from('profiles').update({bio}).eq('id',profile.id);
     if(error){ msg('Could not save bio.'); return; }
-    profile.bio=bio; msg('Saved ✓'); renderDashboard();
+    profile.bio=bio; renderDashboard(); closeEditor(); flash('Changes made ✓');
   }
 
   /* ================= follows ================= */
@@ -192,18 +204,38 @@
       await sb.from('follows').insert({follower_id:profile.id,followee_id:id});
       myFollows.add(id); btn.textContent='Following'; btn.classList.add('on');
     }
-    renderDashboard();
+    renderDashboard(); loadMembers();
   }
 
   /* ================= tail ================= */
-  async function tailSlip(slipId,legs){
+  async function tailSlip(slipId,legs,handle){
     legs=legs||[];
-    if(!profile){ alert('Sign in to tail a slip.'); return; }
+    if(!profile){ alert('Sign in to copy a slip.'); return; }
     if(typeof P2USlip!=='undefined'){ P2USlip.load(legs.map(l=>({k:l.k,home:l.home,away:l.away,league:l.league,
-      market:l.market,odds:l.oddsAtAdd,kickoff:l.kickoff,source:'tail',engine:l.engine}))); }
+      market:l.market,odds:l.oddsAtAdd,kickoff:l.kickoff,source:'tail',engine:l.engine})), {id:slipId,handle}); }
     await sb.from('tails').upsert({slip_id:slipId,user_id:profile.id});
     loadPopular();
-    alert('Copied into your slip. Review it, then save it as your own.');
+    const fab=document.getElementById('p2u-slip-fab'); if(fab) fab.click();
+  }
+
+  /* ================= members (browse + follow) ================= */
+  async function loadMembers(){
+    const host=$('members'); if(!host) return;
+    const {data,error}=await sb.from('profile_stats').select('*').order('followers',{ascending:false}).limit(24);
+    if(error||!data||!data.length){ host.innerHTML='<div class="empty">No members yet.</div>'; return; }
+    host.innerHTML=data.map(u=>{
+      const isMe=profile&&u.id===profile.id;
+      const following=myFollows.has(u.id);
+      const btn=isMe?'<span class="you">You</span>'
+        :(!profile?'<span class="you" style="color:var(--muted)">Sign in to follow</span>'
+        :`<button class="follow ${following?'on':''}" data-follow="${u.id}">${following?'Following':'Follow'}</button>`);
+      return `<div class="member">${avatar(u.avatar_url,u.handle,52)}
+        <div class="mh">@${esc(u.handle)}</div>
+        <div class="mb">${esc(u.bio||'')}</div>
+        <div class="mstats">${u.followers} follower${u.followers==1?'':'s'} · ${u.public_slips} slip${u.public_slips==1?'':'s'}</div>
+        ${btn}</div>`;
+    }).join('');
+    host.querySelectorAll('[data-follow]').forEach(b=>b.addEventListener('click',()=>toggleFollow(b.dataset.follow,b)));
   }
 
   /* ================= public feed ================= */
@@ -220,20 +252,21 @@
       const isMe=profile&&s.user_id===profile.id;
       const following=myFollows.has(s.user_id);
       const followBtn=(!profile||isMe)?'':`<button class="follow ${following?'on':''}" data-follow="${s.user_id}">${following?'Following':'Follow'}</button>`;
+      const credit=s.tailed_from_handle?`<span class="credit">copied from <b>@${esc(s.tailed_from_handle)}</b></span>`:'';
       return `<div class="slip-card"><div class="slip-top">
           ${avatar(s.avatar_url,s.handle,32)}
-          <span style="font-weight:700">@${esc(s.handle)}</span>${followBtn}
+          <span style="font-weight:700">@${esc(s.handle)}</span>${credit}${followBtn}
           <span style="margin-left:auto;font-size:11px;color:var(--muted)">${ago(s.created_at)} ago</span></div>
         <div class="slip-top" style="margin-bottom:6px">${statusPill(s.status)}
-          <span style="font-size:12px;color:var(--muted)">${(s.legs||[]).length} legs${s.combined_odds?' · @'+s.combined_odds:''}${s.tail_count?' · '+s.tail_count+' tailed':''}</span></div>
+          <span style="font-size:12px;color:var(--muted)">${(s.legs||[]).length} legs${s.combined_odds?' · @'+s.combined_odds:''}${s.tail_count?' · copied '+s.tail_count+'×':''}</span></div>
         ${legRows(s.legs)}
         <div style="display:flex;gap:8px;margin-top:10px">
-          ${s.status==='open'?`<button class="mini" data-tail="${s.id}">Tail this slip</button>`:''}
+          ${s.status==='open'?`<button class="mini" data-tail="${s.id}">Copy this slip</button>`:''}
           ${profile&&!isMe?`<button class="mini ghost" data-report="${s.id}">Report</button>`:''}
         </div></div>`;
     }).join('');
     host.querySelectorAll('[data-tail]').forEach(b=>b.addEventListener('click',()=>{
-      const s=data.find(x=>x.id===b.dataset.tail); if(s) tailSlip(s.id,s.legs); }));
+      const s=data.find(x=>x.id===b.dataset.tail); if(s) tailSlip(s.id,s.legs,s.handle); }));
     host.querySelectorAll('[data-follow]').forEach(b=>b.addEventListener('click',()=>toggleFollow(b.dataset.follow,b)));
     host.querySelectorAll('[data-report]').forEach(b=>b.addEventListener('click',async()=>{
       const reason=prompt('What is wrong with this slip? (a short reason)');
@@ -262,10 +295,10 @@
     const host=$('popular'); if(!host) return;
     const {data}=await sb.from('popular_slips').select('*').limit(1);
     const s=data&&data[0];
-    if(!s||!s.tail_count){ host.innerHTML='<div class="empty">No slip has been tailed yet this week. The most-copied slip shows up here.</div>'; return; }
+    if(!s||!s.tail_count){ host.innerHTML='<div class="empty">No slip has been copied yet this week. The most-copied slip shows up here.</div>'; return; }
     host.innerHTML=`<div class="slip-card" style="border-color:var(--gold)">
       <div class="slip-top">${avatar(s.avatar_url,s.handle,32)}<span style="font-weight:700">@${esc(s.handle)}</span>
-        <span class="pill gold">${s.tail_count} TAILED</span>
+        <span class="pill gold">COPIED ${s.tail_count}×</span>
         <span style="margin-left:auto;font-size:11px;color:var(--muted)">${ago(s.created_at)} ago</span></div>
       <div class="slip-top" style="margin-bottom:6px">${statusPill(s.status)}
         <span style="font-size:12px;color:var(--muted)">${(s.legs||[]).length} legs${s.combined_odds?' · @'+s.combined_odds:''}</span></div>
@@ -293,10 +326,11 @@
     $('c-signout').addEventListener('click',async()=>{ await sb.auth.signOut(); await refresh(); });
     $('board-search').addEventListener('input',renderBoard);
     $('board-min').addEventListener('change',renderBoard);
-    $('save-private').addEventListener('click',()=>saveSlip(false));
-    $('save-public').addEventListener('click',()=>saveSlip(true));
+    if(typeof P2USlip!=='undefined') P2USlip.onSave(isPublic=>saveSlip(isPublic));
     $('av-file').addEventListener('change',e=>{ if(e.target.files[0]) uploadAvatar(e.target.files[0]); });
     $('bio-save').addEventListener('click',saveBio);
+    const ed=$('edit-profile');
+    if(ed) ed.addEventListener('toggle',()=>{ if(ed.open&&profile&&$('bio-input')) $('bio-input').value=profile.bio||''; });
     $('feed-all').addEventListener('click',()=>{ feedMine=false; $('feed-all').classList.add('on'); $('feed-following').classList.remove('on'); loadFeed(); });
     $('feed-following').addEventListener('click',()=>{ if(!profile){ alert('Sign in to see who you follow.'); return; }
       feedMine=true; $('feed-following').classList.add('on'); $('feed-all').classList.remove('on'); loadFeed(); });
