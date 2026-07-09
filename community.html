@@ -25,6 +25,26 @@ h1{ font-family:'Saira Condensed'; font-weight:900; font-size:40px; text-transfo
 input{ width:100%; background:rgba(127,127,127,.08); border:1px solid var(--line); border-radius:10px; padding:12px 14px; color:inherit; font-size:15px; margin:8px 0; }
 button{ background:var(--brand); color:#06120a; border:none; border-radius:10px; padding:12px 20px; font-weight:800; font-size:14px; cursor:pointer; }
 button.ghost{ background:transparent; color:var(--muted); border:1px solid var(--line); }
+.dash-head{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+.av{ border-radius:50%; object-fit:cover; display:inline-block; vertical-align:middle; }
+.av-fb{ background:var(--brand); color:#06120a; font-weight:900; text-align:center; font-family:'Saira Condensed'; }
+.stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin:16px 0 4px; }
+@media(max-width:520px){ .stats{ grid-template-columns:repeat(2,1fr); } }
+.stat{ background:rgba(127,127,127,.06); border:1px solid var(--line); border-radius:10px; padding:10px; text-align:center; }
+.stat b{ display:block; font-family:'Saira Condensed'; font-size:22px; font-weight:900; }
+.stat span{ font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); }
+.note{ font-size:12px; color:var(--muted); margin-top:10px; }
+.tabs{ display:flex; gap:8px; margin-top:10px; }
+.tab{ background:transparent; border:1px solid var(--line); color:var(--muted); border-radius:999px; padding:7px 16px; font-size:13px; font-weight:700; cursor:pointer; }
+.tab.on{ background:var(--brand); color:#06120a; border-color:var(--brand); }
+.follow{ background:transparent; border:1px solid var(--brand); color:var(--brand-2); border-radius:999px; padding:4px 12px; font-size:11px; font-weight:800; cursor:pointer; }
+.follow.on{ background:var(--brand); color:#06120a; }
+.mini{ font-size:12px; padding:7px 14px; border-radius:8px; cursor:pointer; }
+.mini.ghost{ background:transparent; border:1px solid var(--line); color:var(--muted); }
+.pill.gold{ background:rgba(232,193,90,.15); color:var(--gold); }
+.rank{ font-family:'Saira Condensed'; font-weight:900; font-size:20px; color:var(--gold); width:22px; text-align:center; }
+#top-picks .pick{ border-left-color:var(--gold); }
+input[type=file]{ padding:8px; }
 .msg{ font-size:13px; margin-top:8px; min-height:18px; }
 .filters{ display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
 .filters input,.filters select{ margin:0; }
@@ -83,6 +103,41 @@ footer{ text-align:center; color:var(--muted); font-size:12.5px; padding:30px 0 
     <div style="margin-top:14px"><button class="ghost" id="c-signout">Sign out</button></div>
   </div>
 
+  <div class="card" id="dashboard" style="display:none">
+    <div class="dash-head">
+      <div id="dash-av"></div>
+      <div style="flex:1;min-width:150px">
+        <div id="dash-handle" style="font-family:'Saira Condensed';font-weight:900;font-size:26px;color:var(--brand-2)">@</div>
+        <div id="dash-bio" style="font-size:13px;color:var(--muted)"></div>
+      </div>
+    </div>
+    <div class="stats" id="dash-stats"></div>
+    <div class="note" id="dash-note"></div>
+    <details style="margin-top:12px">
+      <summary style="cursor:pointer;font-size:13px;color:var(--brand-2);font-weight:700">Edit profile</summary>
+      <div style="margin-top:10px">
+        <label style="font-size:12px;color:var(--muted)">Profile picture (PNG/JPG/WebP, max 2MB)</label>
+        <input type="file" id="av-file" accept="image/png,image/jpeg,image/webp"/>
+        <label style="font-size:12px;color:var(--muted)">Bio (160 characters)</label>
+        <input id="bio-input" maxlength="160" placeholder="Say something about how you pick."/>
+        <button id="bio-save">Save bio</button>
+        <div class="msg" id="av-msg"></div>
+      </div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h2>Top 6 picks, backed by users</h2>
+    <p style="font-size:13.5px;color:var(--muted)">Which picks the community is actually putting on public slips right now. One user, one vote per pick — counts can't be inflated.</p>
+    <div id="top-picks" style="margin-top:12px"><div class="empty">Loading…</div></div>
+  </div>
+
+  <div class="card">
+    <h2>Most popular slip</h2>
+    <p style="font-size:13.5px;color:var(--muted)">The most-tailed public slip of the last 7 days.</p>
+    <div id="popular" style="margin-top:12px"><div class="empty">Loading…</div></div>
+  </div>
+
   <div class="card">
     <h2 id="board-date">Today's bankers</h2>
     <p style="font-size:14px;color:var(--muted)">Every banker from all 13 engines. Tap “+ Slip” to build yours — then save it. Saved slips settle themselves and stay on your record, win or lose.</p>
@@ -107,6 +162,15 @@ footer{ text-align:center; color:var(--muted); font-size:12.5px; padding:30px 0 
       <button class="ghost" id="save-private">Save privately</button>
     </div>
     <div class="msg" id="save-msg"></div>
+  </div>
+
+  <div class="card">
+    <h2>Community feed</h2>
+    <div class="tabs">
+      <button class="tab on" id="feed-all">Everyone</button>
+      <button class="tab" id="feed-following">Following</button>
+    </div>
+    <div id="feed" style="margin-top:12px"><div class="empty">Loading…</div></div>
   </div>
 
   <div class="card">
