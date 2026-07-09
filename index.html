@@ -41,6 +41,15 @@ header{ position:sticky; top:0; z-index:50; background:rgba(7,13,8,.9); backdrop
 .nav-links a{ font-size:13px; font-weight:600; color:var(--muted); padding:7px 12px; border-radius:10px; }
 .nav-links a:hover{ color:var(--ink); background:var(--panel); }
 .nav-links a.cta{ color:#06120a; background:var(--brand); font-weight:800; }
+.nav-links a.wc{ color:#1d1602; background:linear-gradient(135deg,var(--gold),#f0d989); font-weight:800; }
+.tbtn{ border:1px solid var(--line); background:var(--panel); color:var(--ink); width:34px; height:34px; border-radius:10px; cursor:pointer; font-size:15px; }
+body.light{ --pitch:#f2f6f1; --panel:#ffffff; --panel-2:#e9f1e7; --line:#d3e0d0; --ink:#152418; --muted:#5c6f5f; }
+body.light header{ background:rgba(242,246,241,.92); }
+body.light .mk{ background:#e4f5dc; }
+body.light .wm-card{ background:#e9f6e2; }
+body.light .day .bar{ background:#efdede; }
+body.light .band{ background:linear-gradient(120deg,#eaf4e6,#f2f6f1); }
+body.light .sc-cell{ background:rgba(0,0,0,.03); }
 @media(max-width:640px){ .nav-links a.hide-m{ display:none; } }
 
 /* ---------- hero ---------- */
@@ -139,10 +148,11 @@ footer a{ text-decoration:underline; }
     <a class="brand" href="index.html"><img src="icon-192.png" alt="Predict2u logo"/>
       <span><span class="bn">Predict<b>2u</b></span><span class="slogan">Know the game <b>— predict better</b></span></span></a>
     <nav class="nav-links">
-      <a href="board.html">Full board</a>
       <a href="#engines" class="hide-m">Engines</a>
-      <a href="board.html?view=top" class="hide-m">Top bankers</a>
-      <a class="cta" href="board.html">Open today's board</a>
+      <a href="board.html?engine=top" class="hide-m">Top bankers</a>
+      <a href="board.html?wc=open" class="wc">&#127942; World Cup</a>
+      <button id="theme-btn" class="tbtn" title="Switch theme" aria-label="Switch theme">&#9681;</button>
+      <a class="cta" href="board.html?engine=acca">Open today&#39;s Acca</a>
     </nav>
   </div>
 </header>
@@ -155,7 +165,7 @@ footer a{ text-decoration:underline; }
       <h1>Every pick posted.<br/><em>Every result kept.</em></h1>
       <p>Thirteen engines read the day's football and publish their bankers — with full reasoning, real settlement, and No&nbsp;Bet as an honest answer. Wins and losses stay on the record.</p>
       <div class="hero-cta">
-        <a class="btn primary" href="board.html">Open the full board</a>
+        <a class="btn primary" href="board.html?engine=acca">Open today&#39;s Acca</a>
         <a class="btn" href="https://t.me/Predict2ucomm" target="_blank" rel="noopener">Join the Telegram channel</a>
       </div>
     </div>
@@ -186,7 +196,7 @@ footer a{ text-decoration:underline; }
   <section id="today">
     <div class="sec-head">
       <h2>Today's top bankers</h2>
-      <a href="board.html">See all engines &rarr;</a>
+      <a href="board.html?engine=top">All top bankers &rarr;</a>
     </div>
     <div class="picks" id="top-picks"><div class="skeleton">Reading the board…</div></div>
   </section>
@@ -194,7 +204,7 @@ footer a{ text-decoration:underline; }
   <section id="engines">
     <div class="sec-head">
       <h2>Thirteen engines, one honest board</h2>
-      <a href="board.html">Open the board &rarr;</a>
+      <a href="board.html?engine=normal">Open the engines &rarr;</a>
     </div>
     <div class="engines" id="engine-grid"></div>
   </section>
@@ -296,7 +306,7 @@ footer a{ text-decoration:underline; }
       <span class="agree">${p.n} engine${p.n>1?'s':''} agree</span>
       <span class="mk">${esc(String(p.market).replace(/ Goals$/,''))}</span>${tail}
     </div>`;
-  }).join('') : `<div class="empty">The board is quiet — no consensus bankers yet for ${esc(showDate)}. Odds usually arrive close to kickoff; the full board shows every engine's view.</div>`;
+  }).join('') : `<div class="empty">The board is quiet — no consensus bankers yet for ${esc(showDate)}. Odds usually arrive close to kickoff; each engine page shows its full view.</div>`;
 
   /* -------- today's winners marquee (requestAnimationFrame — immune to
      the device reduce-motion setting that silently kills CSS marquees) ---- */
@@ -358,6 +368,15 @@ footer a{ text-decoration:underline; }
     ['mismatch','Mismatch','Two aligned venue profiles, one market.'],
     ['indicator','Market Indicators','One market\'s odds predict another — 10 rules, three confirmations minimum.'],
   ];
+  /* -------- theme toggle (same key as the engines page, so it follows you) */
+  (function(){
+    const tb=document.getElementById('theme-btn');
+    const setT=m=>{ document.body.classList.toggle('light',m==='light'); try{localStorage.setItem('predicto-theme',m);}catch(e){} };
+    let saved=null; try{ saved=localStorage.getItem('predicto-theme'); }catch(e){}
+    setT(saved==='light'?'light':'dark');
+    if(tb) tb.addEventListener('click',()=>setT(document.body.classList.contains('light')?'dark':'light'));
+  })();
+
   $('engine-grid').innerHTML = DIR.map(([v,n,d])=>
     `<a class="eng${v==='indicator'?' new':''}" href="board.html?engine=${v}"><div class="n">${n}</div><div class="d">${d}</div><span class="go">Open ${n} &rarr;</span></a>`
   ).join('');
