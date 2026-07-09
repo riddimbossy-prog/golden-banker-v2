@@ -22,6 +22,8 @@
     if(url) return `<img class="av" src="${esc(url)}" alt="" style="width:${s}px;height:${s}px" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'av av-fb',textContent:'${esc((handle||'?')[0].toUpperCase())}',style:'width:${s}px;height:${s}px;line-height:${s}px'}))"/>`;
     return `<span class="av av-fb" style="width:${s}px;height:${s}px;line-height:${s}px">${esc((handle||'?')[0].toUpperCase())}</span>`;
   };
+  const verifiedBadge=v=>v?'<span class="vb" title="20+ settled slip wins — granted by results, never bought">✓</span>':'';
+  const rankChip=t=>t?`<span class="rank-chip r-${String(t).toLowerCase()}">${esc(t)}</span>`:'';
   const statusPill=s=>`<span class="pill ${s==='won'?'w':s==='lost'?'l':s==='void'?'v':'o'}">${String(s).toUpperCase()}</span>`;
 
   /* ================= auth ================= */
@@ -46,7 +48,7 @@
     if(!session){ showAuth('signedout'); }
     else { await loadProfile(); showAuth(profile?'signedin':'handle'); }
     await loadMyFollows();
-    renderDashboard(); renderMySlips(); loadMembers(); loadFeed(); loadTopPicks(); loadPopular();
+    renderDashboard(); renderMySlips(); loadBoard(); loadMembers(); loadFeed(); loadTopPicks(); loadPopular();
   }
 
   /* ================= engine board (Step 3) ================= */
@@ -93,7 +95,7 @@
 
   /* ================= save slip ================= */
   async function saveSlip(isPublic){
-    const msg=(t,bad)=>{ if(typeof P2USlip!=='undefined') P2USlip.msg(t,bad); if($('save-msg')) $('save-msg').textContent=t; };
+    const msg=(t,bad)=>{ if(typeof P2USlip!=='undefined') P2USlip.msg(t,bad); };
     if(!session){ msg('Sign in first — scroll up to the sign-in card.',1); return; }
     if(!profile){ msg('Claim your handle first — scroll up.',1); return; }
     const legs=P2USlip.legs;
@@ -115,7 +117,7 @@
   function legRows(legs){
     const M=window.MATCHES||[];
     return (legs||[]).map(l=>{
-      const m=M.find(x=>('f'+x.id)===l.k||(x.home+'|'+x.away+'|'+x.matchDate)===l.k);
+      const m=M.find(x=>(x.id!=null&&('f'+x.id)===l.k)||(x.home+'|'+x.away+'|'+x.matchDate)===l.k);
       let res=''; if(m&&typeof settle==='function'){ try{ res=settle(l.market,m.homeGoals,m.awayGoals,m.status,m)||''; }catch(e){} }
       const chip=res?`<span class="res ${res==='Won'?'w':res==='Lost'?'l':'v'}">${res.toUpperCase()}</span>`:'<span class="res o">OPEN</span>';
       return `<div class="leg"><span>${esc(l.home)} v ${esc(l.away)} · ${esc(shortMk(l.market))}${l.oddsAtAdd?' @'+l.oddsAtAdd:''}</span>${chip}</div>`;
@@ -152,9 +154,16 @@
       <div class="stat"><b>${st?st.following:0}</b><span>Following</span></div>
       <div class="stat"><b>${open}</b><span>Open slips</span></div>
       <div class="stat"><b>${pct==null?'—':pct+'%'}</b><span>${w}W–${l}L settled</span></div>`;
-    $('dash-note').textContent = (w+l)===0
-      ? 'Your record starts when your first public slip settles. Ranks and the verified badge come with the settlement worker.'
-      : 'Every settled slip above is permanent — wins and losses alike.';
+    const {data:rk}=await sb.from('user_ranks').select('*').eq('user_id',profile.id).maybeSingle();
+    if(rk){
+      $('dash-handle').innerHTML='@'+esc(profile.handle)+verifiedBadge(rk.verified)+' '+rankChip(rk.rank_tier);
+      const toGo=Math.max(0,20-(rk.slips_won||0));
+      $('dash-note').innerHTML = rk.verified
+        ? 'Verified — 20+ settled slip wins. Granted by results, and it cannot be taken away or bought.'
+        : (w+l)===0
+          ? 'Your record starts when your first public slip settles. Every result is permanent, win or lose.'
+          : `Every settled slip is permanent — wins and losses alike. <b>${toGo} more settled wins</b> to verified.`;
+    }
   }
 
   /* ================= avatar upload ================= */
@@ -218,6 +227,24 @@
     const fab=document.getElementById('p2u-slip-fab'); if(fab) fab.click();
   }
 
+  /* ================= users board (hit rate, minimum sample) ================= */
+  async function loadBoard(){
+    const host=$('users-board'); if(!host) return;
+    const {data,error}=await sb.from('leaderboard').select('*').limit(20);
+    if(error){ host.innerHTML='<div class="empty">Could not load the board.</div>'; return; }
+    if(!data||!data.length){
+      host.innerHTML='<div class="empty">Nobody has five settled slips yet. The board ranks by hit rate once there is enough of a record to mean something — no shortcuts, no small samples.</div>'; return; }
+    host.innerHTML=`<div class="lb-note">Ranked by hit rate over at least five settled slips. Units are shown, never ranked on — profit rewards staking more, not picking better.</div>`+
+      data.map((u,i)=>`<div class="lb-row${profile&&u.user_id===profile.id?' me':''}">
+        <span class="lb-pos">${i+1}</span>
+        ${avatar(u.avatar_url,u.handle,36)}
+        <div class="lb-who"><div class="lb-h">@${esc(u.handle)}${verifiedBadge(u.verified)}</div>
+          <div class="lb-m">${rankChip(u.rank_tier)} ${u.settled} settled</div></div>
+        <div class="lb-stat"><b>${u.hit_pct}%</b><span>${u.slips_won}W–${u.slips_lost}L</span></div>
+        <div class="lb-stat"><b class="${u.units_pl>=0?'up':'down'}">${u.units_pl>=0?'+':''}${Number(u.units_pl).toFixed(1)}</b><span>units</span></div>
+      </div>`).join('');
+  }
+
   /* ================= members (browse + follow) ================= */
   async function loadMembers(){
     const host=$('members'); if(!host) return;
@@ -230,7 +257,8 @@
         :(!profile?'<span class="you" style="color:var(--muted)">Sign in to follow</span>'
         :`<button class="follow ${following?'on':''}" data-follow="${u.id}">${following?'Following':'Follow'}</button>`);
       return `<div class="member">${avatar(u.avatar_url,u.handle,52)}
-        <div class="mh">@${esc(u.handle)}</div>
+        <div class="mh">@${esc(u.handle)}${verifiedBadge(u.verified)}</div>
+        <div class="mr">${rankChip(u.rank_tier)}${u.hit_pct?` <span style="font-size:10.5px;color:var(--muted)">${u.hit_pct}%</span>`:''}</div>
         <div class="mb">${esc(u.bio||'')}</div>
         <div class="mstats">${u.followers} follower${u.followers==1?'':'s'} · ${u.public_slips} slip${u.public_slips==1?'':'s'}</div>
         ${btn}</div>`;
@@ -330,7 +358,17 @@
     $('av-file').addEventListener('change',e=>{ if(e.target.files[0]) uploadAvatar(e.target.files[0]); });
     $('bio-save').addEventListener('click',saveBio);
     const ed=$('edit-profile');
-    if(ed) ed.addEventListener('toggle',()=>{ if(ed.open&&profile&&$('bio-input')) $('bio-input').value=profile.bio||''; });
+    if(ed) ed.addEventListener('toggle',()=>{ if(ed.open&&profile){ if($('bio-input')) $('bio-input').value=profile.bio||'';
+      if($('em-wins')) $('em-wins').checked=profile.email_wins!==false;
+      if($('em-digest')) $('em-digest').checked=profile.email_digest!==false; } });
+    const savePrefs=async()=>{
+      if(!profile) return;
+      const email_wins=$('em-wins').checked, email_digest=$('em-digest').checked;
+      const {error}=await sb.from('profiles').update({email_wins,email_digest}).eq('id',profile.id);
+      if(!error){ profile.email_wins=email_wins; profile.email_digest=email_digest; flash('Email preferences saved ✓'); }
+    };
+    if($('em-wins')) $('em-wins').addEventListener('change',savePrefs);
+    if($('em-digest')) $('em-digest').addEventListener('change',savePrefs);
     $('feed-all').addEventListener('click',()=>{ feedMine=false; $('feed-all').classList.add('on'); $('feed-following').classList.remove('on'); loadFeed(); });
     $('feed-following').addEventListener('click',()=>{ if(!profile){ alert('Sign in to see who you follow.'); return; }
       feedMine=true; $('feed-following').classList.add('on'); $('feed-all').classList.remove('on'); loadFeed(); });
