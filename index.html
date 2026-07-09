@@ -15,7 +15,7 @@ if(new URLSearchParams(location.search).get('view')==='top'){ location.replace('
 @import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800;900&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap');
 :root{
   --pitch:#070d08; --panel:#0d150e; --panel-2:#101b11; --line:#1b2a1c;
-  --brand:#6fd44a; --brand-2:#9be07a; --gold:#e8c15a;
+  --brand:#3ecf6e; --brand-2:#7ede8f; --gold:#e8c15a;
   --ink:#f2f7f0; --muted:#8fa093; --loss:#e07a7a;
 }
 *{ box-sizing:border-box; margin:0; }
@@ -38,12 +38,12 @@ header{ position:sticky; top:0; z-index:50; background:rgba(7,13,8,.9); backdrop
 .brand .slogan b{ color:var(--brand-2); }
 .brand b{ color:var(--brand); }
 .nav-links{ margin-left:auto; display:flex; gap:6px; align-items:center; }
-.nav-links a{ font-size:13px; font-weight:600; color:var(--muted); padding:7px 12px; border-radius:10px; }
+.nav-links a{ font-size:13.5px; font-weight:600; color:var(--muted); padding:7px 12px; border-radius:10px; }
 .nav-links a:hover{ color:var(--ink); background:var(--panel); }
 .nav-links a.cta{ color:#06120a; background:var(--brand); font-weight:800; }
 .nav-links a.wc{ color:#1d1602; background:linear-gradient(135deg,var(--gold),#f0d989); font-weight:800; }
 .tbtn{ border:1px solid var(--line); background:var(--panel); color:var(--ink); width:34px; height:34px; border-radius:10px; cursor:pointer; font-size:15px; }
-body.light{ --pitch:#f2f6f1; --panel:#ffffff; --panel-2:#e9f1e7; --line:#d3e0d0; --ink:#152418; --muted:#5c6f5f; }
+body.light{ --brand:#22954e; --brand-2:#1b7a3f; --pitch:#f2f6f1; --panel:#ffffff; --panel-2:#e9f1e7; --line:#d3e0d0; --ink:#152418; --muted:#5c6f5f; }
 body.light header{ background:rgba(242,246,241,.92); }
 body.light .mk{ background:#e4f5dc; }
 body.light .wm-card{ background:#e9f6e2; }
@@ -58,7 +58,7 @@ body.light .sc-cell{ background:rgba(0,0,0,.03); }
 .eyebrow{ display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:800; letter-spacing:2.5px; text-transform:uppercase; color:var(--brand-2); border:1px solid var(--line); padding:5px 12px; border-radius:999px; background:var(--panel); }
 .hero h1{ font-family:'Saira Condensed'; font-weight:900; font-size:clamp(44px,7vw,76px); line-height:.95; letter-spacing:.5px; text-transform:uppercase; margin:18px 0 14px; }
 .hero h1 em{ font-style:normal; color:var(--brand); }
-.hero p{ color:var(--muted); max-width:46ch; font-size:16px; }
+.hero p{ color:var(--muted); max-width:46ch; font-size:17px; }
 .hero-cta{ display:flex; gap:10px; margin-top:24px; flex-wrap:wrap; }
 .btn{ display:inline-flex; align-items:center; gap:8px; font-weight:800; font-size:14px; padding:13px 22px; border-radius:12px; border:1px solid var(--line); background:var(--panel); color:var(--ink); cursor:pointer; }
 .btn.primary{ background:var(--brand); color:#06120a; border-color:var(--brand); }
@@ -80,9 +80,10 @@ body.light .sc-cell{ background:rgba(0,0,0,.03); }
 .winners .wm-label{ font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
 .wm{ overflow:hidden; border:1px solid var(--line); border-radius:14px; background:var(--panel); padding:10px 0; }
 .wm-track{ display:inline-flex; gap:10px; white-space:nowrap; will-change:transform; padding-left:12px; }
-.wm-card{ display:inline-flex; align-items:center; gap:8px; border:1px solid var(--brand); background:#0f1f0c; border-radius:999px; padding:6px 14px; font-size:12.5px; font-weight:700; }
+.wm-card{ display:inline-flex; align-items:center; gap:8px; border:1px solid var(--brand); background:#0f1f0c; border-radius:999px; padding:7px 15px; font-size:13.5px; font-weight:700; }
 .wm-card .mkt{ color:var(--brand-2); font-family:'Saira Condensed'; letter-spacing:.5px; }
 .wm-card .tick{ color:var(--brand); font-weight:900; }
+.wm-card .cr{ width:18px; height:18px; object-fit:contain; }
 
 /* ---------- form strip (signature) ---------- */
 .strip{ margin:8px 0 12px; background:var(--panel); border:1px solid var(--line); border-radius:20px; padding:20px 22px; }
@@ -112,9 +113,10 @@ section{ padding:34px 0; }
 /* top bankers */
 .picks{ display:grid; gap:10px; }
 .pick{ display:flex; align-items:center; gap:14px; background:var(--panel); border:1px solid var(--line); border-left:4px solid var(--brand); border-radius:16px; padding:14px 16px; flex-wrap:wrap; }
+.pick .fl{ width:22px; height:15px; object-fit:cover; border-radius:2px; flex-shrink:0; }
 .pick .who{ flex:1; min-width:180px; }
-.pick .who .t{ font-weight:700; font-size:15px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-.pick .who .m{ font-size:12px; color:var(--muted); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.pick .who .t{ font-weight:700; font-size:16.5px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.pick .who .m{ font-size:13px; color:var(--muted); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .pick .mk{ font-family:'Saira Condensed'; font-weight:800; font-size:15px; letter-spacing:.5px; color:var(--brand-2); background:#12240f; border:1px solid var(--brand); padding:6px 14px; border-radius:999px; white-space:nowrap; }
 .pick .agree{ font-size:10px; font-weight:800; letter-spacing:1px; color:var(--gold); text-transform:uppercase; white-space:nowrap; }
 .empty{ color:var(--muted); background:var(--panel); border:1px dashed var(--line); border-radius:16px; padding:26px; text-align:center; font-size:14px; }
@@ -123,8 +125,8 @@ section{ padding:34px 0; }
 .engines{ display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:10px; }
 .eng{ background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:16px; display:block; transition:border-color .15s; }
 .eng:hover{ border-color:var(--brand); }
-.eng .n{ font-family:'Saira Condensed'; font-weight:800; font-size:19px; letter-spacing:.5px; text-transform:uppercase; }
-.eng .d{ font-size:12.5px; color:var(--muted); margin-top:4px; }
+.eng .n{ font-family:'Saira Condensed'; font-weight:800; font-size:21px; letter-spacing:.5px; text-transform:uppercase; }
+.eng .d{ font-size:13.5px; color:var(--muted); margin-top:4px; }
 .eng .go{ font-size:11px; font-weight:800; color:var(--brand-2); margin-top:10px; display:inline-block; }
 .eng.new .n::after{ content:"NEW"; font-size:9px; color:#06120a; background:var(--gold); border-radius:6px; padding:1px 6px; margin-left:8px; vertical-align:middle; }
 
@@ -135,7 +137,7 @@ section{ padding:34px 0; }
 .band .grow{ flex:1; min-width:240px; }
 
 /* footer */
-footer{ border-top:1px solid var(--line); margin-top:20px; padding:26px 0 90px; color:var(--muted); font-size:12.5px; text-align:center; }
+footer{ border-top:1px solid var(--line); margin-top:20px; padding:26px 0 90px; color:var(--muted); font-size:13.5px; text-align:center; }
 footer .links{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:8px; }
 footer a{ text-decoration:underline; }
 .skeleton{ color:var(--muted); font-size:13px; padding:8px 0; }
@@ -145,7 +147,7 @@ footer a{ text-decoration:underline; }
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="index.html"><img src="icon-192.png" alt="Predict2u logo"/>
+    <a class="brand" href="index.html"><img src="predict2u-mark.png" alt="Predict2u logo"/>
       <span><span class="bn">Predict<b>2u</b></span><span class="slogan">Know the game <b>— predict better</b></span></span></a>
     <nav class="nav-links">
       <a href="#engines" class="hide-m">Engines</a>
@@ -226,6 +228,10 @@ footer a{ text-decoration:underline; }
   <div class="wrap">
     Predict2u · heuristic analysis tool · not financial advice · a banker fits our rules, not a sure win.<br/>
     Only stake what you can afford to lose. 18+ · Gamble responsibly.
+    <div class="links" style="margin-bottom:10px">
+      <a href="https://t.me/Predict2ucomm" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://whatsapp.com/channel/0029Vb8J7g4Bvvsnwo8d191r" target="_blank" rel="noopener">WhatsApp Channel</a>
+    </div>
     <div class="links">
       <a href="terms.html">Terms</a><a href="privacy.html">Privacy</a>
       <a href="responsible-gambling.html">Responsible Gambling</a><a href="disclaimer.html">Disclaimer</a>
@@ -300,8 +306,9 @@ footer a{ text-decoration:underline; }
     const tail = res
       ? `<span class="slip-res ${res==='Won'?'w':res==='Lost'?'l':'v'}" style="font-size:11px;font-weight:900;padding:4px 10px;border-radius:8px">${res.toUpperCase()}</span>`
       : (typeof P2USlip!=='undefined' ? P2USlip.btn(p.m,p.market) : '');
+    const fl = p.m.flag ? `<img class="fl" src="${esc(p.m.flag)}" alt="" onerror="this.style.display='none'"/>` : '';
     return `<div class="pick">
-      <div class="who"><div class="t">${esc(p.m.home)} <span style="color:var(--brand)">v</span> ${esc(p.m.away)}</div>
+      ${fl}<div class="who"><div class="t">${esc(p.m.home)} <span style="color:var(--brand)">v</span> ${esc(p.m.away)}</div>
       <div class="m">${esc(p.m.league||'')}</div></div>
       <span class="agree">${p.n} engine${p.n>1?'s':''} agree</span>
       <span class="mk">${esc(String(p.market).replace(/ Goals$/,''))}</span>${tail}
@@ -315,7 +322,8 @@ footer a{ text-decoration:underline; }
     if(!wins.length) return;
     const box=$('winners'), track=$('wm-track');
     $('wm-label').textContent = `Today's winners · ${wins.length} settled ✓`;
-    const cards = wins.map(p=>`<span class="wm-card">${esc(p.m.home)} v ${esc(p.m.away)} <span class="mkt">${esc(String(p.market).replace(/ Goals$/,''))}</span> <span class="tick">WON</span></span>`).join('');
+    const crest=u=>u?`<img class="cr" src="${esc(u)}" alt="" onerror="this.style.display='none'"/>`:'';
+    const cards = wins.map(p=>`<span class="wm-card">${crest(p.m.homeLogo)}${esc(p.m.home)} <span style="color:var(--brand);font-weight:900">v</span> ${crest(p.m.awayLogo)}${esc(p.m.away)} <span class="mkt">${esc(String(p.market).replace(/ Goals$/,''))}</span> <span class="tick">WON</span></span>`).join('');
     track.innerHTML = cards + cards;
     box.classList.add('on');
     const wrap = track.parentElement;
