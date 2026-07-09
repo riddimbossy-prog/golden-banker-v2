@@ -3,440 +3,699 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-<title>Predict2u • Every pick posted. Every result kept.</title>
-<meta name="description" content="Thirteen football engines publish their bankers daily — wins and losses stay on the record. Free, no signup."/>
+<title>Predict2u • Know the game. Predict better.</title>
+<meta name="description" content="Thirteen specialized engines. Full transparency. Real results — wins and losses on the record."/>
 <link rel="manifest" href="manifest.webmanifest"/>
 <link rel="icon" href="icon-192.png"/>
-<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
-<meta name="theme-color" content="#070d08"/>
-<script>/* PWA shortcut compatibility: Top Bankers shortcut goes to the board */
-if(new URLSearchParams(location.search).get('view')==='top'){ location.replace('board.html?view=top'); }</script>
+<meta name="theme-color" content="#0a0a0f"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800;900&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+/* palette sampled directly from the design */
 :root{
-  --pitch:#070d08; --panel:#0d150e; --panel-2:#101b11; --line:#1b2a1c;
-  --brand:#3ecf6e; --brand-2:#7ede8f; --gold:#e8c15a;
-  --ink:#f2f7f0; --muted:#8fa093; --loss:#e07a7a;
+  --bg:#0a0a0f; --card:#0f0f13; --panel:#111114; --line:#16161b; --line-2:#28282b;
+  --ink:#ffffff; --ink-2:#b8b8b9; --muted:#676769;
+  --em:#34d399; --em-dim:rgba(52,211,153,.12); --em-line:rgba(52,211,153,.25);
+  --amber:#fbbf24; --amber-dim:rgba(251,191,36,.12);
+  --loss:#f4636e;
 }
-*{ box-sizing:border-box; margin:0; min-width:0; }
+*{ box-sizing:border-box; min-width:0; }
 html,body{ overflow-x:hidden; max-width:100%; }
-img{ max-width:100%; }
-html{ scroll-behavior:smooth; }
-body{ padding-left:env(safe-area-inset-left); padding-right:env(safe-area-inset-right); background:var(--pitch); color:var(--ink); font-family:'Schibsted Grotesk',system-ui,sans-serif; line-height:1.55; }
+body{ background:var(--bg); color:var(--ink); font-family:Inter,system-ui,-apple-system,sans-serif;
+  font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased;
+  padding-left:env(safe-area-inset-left); padding-right:env(safe-area-inset-right); }
+img{ max-width:100%; } button{ font:inherit; cursor:pointer; } input,select{ font:inherit; }
+:focus-visible{ outline:2px solid var(--em); outline-offset:2px; border-radius:8px; }
 a{ color:inherit; text-decoration:none; }
-a:focus-visible,button:focus-visible{ outline:2px solid var(--brand); outline-offset:2px; border-radius:6px; }
-.wrap{ max-width:1100px; margin:0 auto; padding:0 20px; }
-.display{ font-family:'Saira Condensed',sans-serif; }
+
+/* type scale — matched to the design */
+.t-hero{ font-size:clamp(40px,6.6vw,66px); font-weight:800; line-height:.97; letter-spacing:-.038em; }
+.t-lead{ font-size:15px; color:var(--ink-2); line-height:1.55; }
+.t-h2{ font-size:19px; font-weight:700; letter-spacing:-.02em; }
+.t-h3{ font-size:14.5px; font-weight:600; letter-spacing:-.008em; line-height:1.35; }
+.t-num{ font-size:40px; font-weight:700; letter-spacing:-.035em; line-height:1; font-variant-numeric:tabular-nums; }
+.t-sm{ font-size:12.5px; color:var(--ink-2); }
+.t-xs{ font-size:11px; color:var(--muted); }
+.t-lbl{ font-size:10.5px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); }
+.mono{ font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:11px; }
 .tnum{ font-variant-numeric:tabular-nums; }
 
-/* ---------- header ---------- */
-header{ position:sticky; top:0; z-index:50; background:rgba(7,13,8,.9); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
-.nav{ display:flex; align-items:center; gap:14px; padding:12px 0; }
-.brand{ display:flex; align-items:center; gap:10px; font-family:'Saira Condensed'; font-weight:900; font-size:24px; letter-spacing:.5px; }
-.brand img{ height:38px; width:auto; max-width:190px; object-fit:contain; display:block; }
-.brand>span{ display:flex; flex-direction:column; line-height:1; }
-.brand .bn{ font-size:24px; }
-.brand .slogan{ font-family:'Schibsted Grotesk'; font-size:9.5px; font-weight:700; letter-spacing:2.2px; text-transform:uppercase; color:var(--muted); margin-top:3px; }
-.brand .slogan b{ color:var(--brand-2); }
-.brand b{ color:var(--brand); }
-.nav-links{ margin-left:auto; display:flex; gap:6px; align-items:center; }
-.nav-links a{ font-size:13.5px; font-weight:600; color:var(--muted); padding:7px 12px; border-radius:10px; }
-.nav-links a:hover{ color:var(--ink); background:var(--panel); }
-.nav-links a.cta{ color:#06120a; background:var(--brand); font-weight:800; }
-.nav-links a.wc{ color:#1d1602; background:linear-gradient(135deg,var(--gold),#f0d989); font-weight:800; }
-.tbtn{ border:1px solid var(--line); background:var(--panel); color:var(--ink); width:34px; height:34px; border-radius:10px; cursor:pointer; font-size:15px; }
-body.light{ --brand:#22954e; --brand-2:#1b7a3f; --pitch:#f2f6f1; --panel:#ffffff; --panel-2:#e9f1e7; --line:#d3e0d0; --ink:#152418; --muted:#5c6f5f; }
-body.light header{ background:rgba(242,246,241,.92); }
-body.light .mk{ background:#e4f5dc; }
-body.light .wm-card{ background:#e9f6e2; }
-body.light .day .bar{ background:#efdede; }
-body.light .band{ background:linear-gradient(120deg,#eaf4e6,#f2f6f1); }
-body.light .sc-cell{ background:rgba(0,0,0,.03); }
-@media(max-width:640px){ .nav-links a.hide-m{ display:none; } }
+.card{ background:var(--card); border:1px solid var(--line); border-radius:14px; }
+.panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; }
+.card-h{ transition:border-color .18s ease; }
+@media(hover:hover){ .card-h:hover{ border-color:var(--line-2); } }
 
-/* ---------- hero ---------- */
-.hero{ padding:56px 0 30px; display:grid; grid-template-columns:1.2fr .8fr; gap:36px; align-items:center; }
-@media(max-width:820px){ .hero{ grid-template-columns:1fr; padding-top:36px; } }
-.eyebrow{ display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:800; letter-spacing:2.5px; text-transform:uppercase; color:var(--brand-2); border:1px solid var(--line); padding:5px 12px; border-radius:999px; background:var(--panel); }
-.hero h1{ font-family:'Saira Condensed'; font-weight:900; font-size:clamp(44px,7vw,76px); line-height:.95; letter-spacing:.5px; text-transform:uppercase; margin:18px 0 14px; }
-.hero h1 em{ font-style:normal; color:var(--brand); }
-.hero p{ color:var(--muted); max-width:46ch; font-size:17px; }
-.hero-cta{ display:flex; gap:10px; margin-top:24px; flex-wrap:wrap; }
-.btn{ display:inline-flex; align-items:center; gap:8px; font-weight:800; font-size:14px; padding:13px 22px; border-radius:12px; border:1px solid var(--line); background:var(--panel); color:var(--ink); cursor:pointer; }
-.btn.primary{ background:var(--brand); color:#06120a; border-color:var(--brand); }
-.btn:hover{ transform:translateY(-1px); }
+/* engine pills — exact */
+.pill{ font-size:12px; font-weight:500; padding:8px 16px; border-radius:999px;
+  border:1px solid var(--line-2); color:var(--ink-2); background:transparent; white-space:nowrap;
+  transition:all .15s ease; }
+.pill:hover{ color:var(--ink); border-color:#3a3a3e; }
+.pill.on{ background:var(--em); color:#062e20; border-color:var(--em); font-weight:600; }
 
-/* scoreboard card */
-.score-card{ background:linear-gradient(160deg,var(--panel),var(--panel-2)); border:1px solid var(--line); border-radius:20px; padding:22px; position:relative; overflow:hidden; }
-.score-card::before{ content:""; position:absolute; inset:0 0 auto; height:4px; background:linear-gradient(90deg,var(--brand),transparent); }
-.sc-title{ font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
-.sc-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:14px; }
-.sc-cell{ background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:12px 10px; text-align:center; }
-.sc-cell .n{ font-family:'Saira Condensed'; font-weight:900; font-size:34px; line-height:1; }
-.sc-cell .l{ font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-top:4px; }
-.sc-note{ margin-top:12px; font-size:12px; color:var(--muted); }
+/* status tags — exact */
+.tag{ display:inline-flex; align-items:center; gap:5px; font-size:10.5px; font-weight:600;
+  padding:4px 9px; border-radius:6px; white-space:nowrap; }
+.tag-won{ background:var(--em-dim); color:var(--em); }
+.tag-lost{ background:rgba(244,99,110,.12); color:var(--loss); }
+.tag-void{ background:rgba(103,103,105,.15); color:var(--muted); }
+.tag-pend{ background:var(--amber-dim); color:var(--amber); }
+.tag-live{ background:var(--em-dim); color:var(--em); }
 
-/* ---------- today's winners marquee ---------- */
-.winners{ margin:4px 0 14px; display:none; }
-.winners.on{ display:block; }
-.winners .wm-label{ font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
-.wm{ overflow:hidden; border:1px solid var(--line); border-radius:14px; background:var(--panel); padding:10px 0; }
-.wm-track{ display:inline-flex; gap:10px; white-space:nowrap; will-change:transform; padding-left:12px; }
-.wm-card{ display:inline-flex; align-items:center; gap:8px; border:1px solid var(--brand); background:#0f1f0c; border-radius:999px; padding:7px 15px; font-size:13.5px; font-weight:700; }
-.wm-card .mkt{ color:var(--brand-2); font-family:'Saira Condensed'; letter-spacing:.5px; }
-.wm-card .tick{ color:var(--brand); font-weight:900; }
-.wm-card .cr{ width:18px; height:18px; object-fit:contain; }
+/* market chip + odds */
+.mkt{ font-size:12px; font-weight:600; padding:5px 12px; border-radius:7px;
+  background:var(--em-dim); color:var(--em); border:1px solid var(--em-line); }
+.odds{ font-size:14px; font-weight:600; color:var(--ink); font-variant-numeric:tabular-nums; }
 
-/* ---------- form strip (signature) ---------- */
-.strip{ margin:8px 0 12px; background:var(--panel); border:1px solid var(--line); border-radius:20px; padding:20px 22px; }
-.strip-head{ display:flex; justify-content:space-between; align-items:baseline; gap:10px; flex-wrap:wrap; }
-.strip-head h2{ font-family:'Saira Condensed'; font-weight:800; font-size:20px; letter-spacing:1.5px; text-transform:uppercase; }
-.strip-head span{ font-size:12px; color:var(--muted); }
-.strip-days{ display:grid; grid-template-columns:repeat(7,1fr); gap:8px; margin-top:14px; }
-@media(max-width:640px){ .strip-days{ grid-template-columns:repeat(4,1fr); } .strip-days .day:nth-child(n+5){ display:none; } }
-.day{ border:1px solid var(--line); border-radius:12px; padding:10px 8px; text-align:center; opacity:0; transform:translateY(6px); animation:dayIn .45s ease forwards; }
-.day:nth-child(2){animation-delay:.06s}.day:nth-child(3){animation-delay:.12s}.day:nth-child(4){animation-delay:.18s}
-.day:nth-child(5){animation-delay:.24s}.day:nth-child(6){animation-delay:.3s}.day:nth-child(7){animation-delay:.36s}
-@keyframes dayIn{ to{ opacity:1; transform:none; } }
-@media(prefers-reduced-motion:reduce){ .day{ animation:none; opacity:1; transform:none; } .btn:hover{ transform:none; } }
-.day .d{ font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); }
-.day .wl{ font-family:'Saira Condensed'; font-weight:900; font-size:19px; margin:5px 0 6px; line-height:1.15; display:flex; flex-direction:column; align-items:center; gap:1px; white-space:nowrap; }
-.day .wl b{ color:var(--brand-2); } .day .wl s{ color:var(--loss); text-decoration:none; font-size:16px; }
-.day .pct{ font-size:9.5px; color:var(--muted); letter-spacing:.5px; margin-bottom:4px; }
-.day .bar{ height:5px; border-radius:3px; background:#240f0f; overflow:hidden; }
-.day .bar i{ display:block; height:100%; background:var(--brand); }
-.day.quiet{ opacity:.55; } .day.quiet .wl{ color:var(--muted); font-size:13px; padding:4px 0; }
+/* AGREEMENT BAR — the design's CONF bar, driven by a real number.
+   The engines emit no probability, so this shows how many of the 13 agree.
+   Same geometry, same emerald fill, no invented percentage. */
+.agree-row{ display:flex; align-items:center; gap:10px; margin-top:12px; }
+.agree-lbl{ font-size:9.5px; font-weight:600; letter-spacing:.09em; color:var(--muted); flex:0 0 auto; }
+.agree-track{ flex:1; height:5px; border-radius:3px; background:#1d1d20; overflow:hidden; }
+.agree-fill{ height:100%; border-radius:3px; background:var(--em); }
+.agree-val{ font-size:12px; font-weight:600; color:var(--ink); flex:0 0 auto; font-variant-numeric:tabular-nums; }
 
-/* ===== narrow phones + fold cover screens ===== */
-@media(max-width:400px){
-  .wrap{ padding:0 12px; }
-  .hero{ padding:26px 0 18px; gap:22px; }
-  .hero h1{ font-size:clamp(32px,10vw,44px); }
-  .hero p{ font-size:15px; }
-  .btn{ padding:12px 16px; font-size:13px; }
-  .hero-cta .btn{ flex:1 1 100%; justify-content:center; }
-  .score-card{ padding:16px; }
-  .sc-cell{ padding:10px 6px; }
-  .sc-grid{ grid-template-columns:repeat(3,1fr); }
-  .sc-cell .l{ font-size:8.5px; letter-spacing:.8px; }
-  .sc-cell .n{ font-size:26px; }
-  .strip{ padding:16px 14px; }
-  .pick{ padding:12px; gap:10px; }
-  .pick .who{ min-width:130px; }
-  .brand img{ height:30px; max-width:140px; }
-  .brand .bn{ font-size:20px; }
-  .brand .slogan{ font-size:8.5px; letter-spacing:1.6px; }
-  .brand img{ width:32px; height:32px; }
-  .nav{ gap:8px; }
-  .nav-links a{ padding:6px 9px; font-size:12.5px; }
-  .band{ padding:18px; }
-  .engines{ grid-template-columns:1fr; }
-  .strip-days{ grid-template-columns:repeat(3,1fr); }
-  .strip-days .day:nth-child(n+4){ display:none; }
-}
-@media(max-width:320px){
-  .wrap{ padding:0 8px; }
-  .hero h1{ font-size:28px; }
-  .sc-grid{ grid-template-columns:1fr; }
-  .strip-days{ grid-template-columns:repeat(2,1fr); }
-  .strip-days .day:nth-child(n+3){ display:none; }
-  .pick{ flex-wrap:wrap; }
-  .pick .agree{ order:3; }
-  .brand img{ height:26px; max-width:110px; }
-  .nav-links a.wc{ padding:6px 8px; font-size:11px; }
-}
-@media(pointer:coarse){ .btn,.nav-links a,.tbtn{ min-height:40px; display:inline-flex; align-items:center; } }
-/* Z Fold open + tablets */
-@media(min-width:700px) and (max-width:900px){
-  .hero{ grid-template-columns:1fr; }
-  .engines{ grid-template-columns:repeat(2,1fr); }
-}
+/* engine name tags on cards */
+.etag{ font-size:9.5px; font-weight:500; padding:3px 8px; border-radius:5px;
+  background:#16161b; color:var(--muted); border:1px solid #1d1d20; }
 
-/* ---------- sections ---------- */
-section{ padding:34px 0; }
-.sec-head{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:18px; flex-wrap:wrap; }
-.sec-head h2{ font-family:'Saira Condensed'; font-weight:900; font-size:clamp(26px,4vw,36px); letter-spacing:1px; text-transform:uppercase; }
-.sec-head a{ font-size:13px; font-weight:700; color:var(--brand-2); }
+/* card buttons */
+.btn-det{ flex:1; font-size:11.5px; font-weight:600; letter-spacing:.06em; padding:10px; border-radius:999px;
+  border:1px solid var(--line-2); color:var(--ink-2); background:transparent; transition:all .15s; }
+.btn-det:hover{ color:var(--ink); border-color:#3a3a3e; }
+.slip-add{ flex:1; font-size:11.5px; font-weight:700; letter-spacing:.06em; padding:10px 16px; border-radius:999px;
+  background:var(--em); color:#062e20; border:none; transition:opacity .15s; }
+.slip-add:hover{ opacity:.86; }
 
-/* top bankers */
-.picks{ display:grid; gap:10px; }
-.pick{ display:flex; align-items:center; gap:14px; background:var(--panel); border:1px solid var(--line); border-left:4px solid var(--brand); border-radius:16px; padding:14px 16px; flex-wrap:wrap; }
-.pick .fl{ width:22px; height:15px; object-fit:cover; border-radius:2px; flex-shrink:0; }
-.pick .who{ flex:1; min-width:180px; }
-.pick .who .t{ font-weight:700; font-size:16.5px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-.pick .who .m{ font-size:13px; color:var(--muted); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-.pick .mk{ font-family:'Saira Condensed'; font-weight:800; font-size:15px; letter-spacing:.5px; color:var(--brand-2); background:#12240f; border:1px solid var(--brand); padding:6px 14px; border-radius:999px; white-space:nowrap; }
-.pick .agree{ font-size:10px; font-weight:800; letter-spacing:1px; color:var(--gold); text-transform:uppercase; white-space:nowrap; }
-.empty{ color:var(--muted); background:var(--panel); border:1px dashed var(--line); border-radius:16px; padding:26px; text-align:center; font-size:14px; }
+.dot{ width:8px; height:8px; border-radius:50%; display:inline-block; }
+.dot-on{ background:var(--em); } .dot-off{ background:var(--muted); }
 
-/* engine directory */
-.engines{ display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:10px; }
-.eng{ background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:16px; display:block; transition:border-color .15s; }
-.eng:hover{ border-color:var(--brand); }
-.eng .n{ font-family:'Saira Condensed'; font-weight:800; font-size:21px; letter-spacing:.5px; text-transform:uppercase; }
-.eng .d{ font-size:13.5px; color:var(--muted); margin-top:4px; }
-.eng .go{ font-size:11px; font-weight:800; color:var(--brand-2); margin-top:10px; display:inline-block; }
-.eng.new .n::after{ content:"NEW"; font-size:9px; color:#06120a; background:var(--gold); border-radius:6px; padding:1px 6px; margin-left:8px; vertical-align:middle; }
+/* performance bars — exact */
+.bar-col{ display:flex; flex-direction:column; align-items:center; }
+.bar-track{ width:24px; height:130px; display:flex; align-items:flex-end; }
+.bar-fill{ width:100%; background:var(--em); border-radius:4px; min-height:4px; }
+.bar-fill.low{ background:var(--loss); }
 
-/* channels band */
-.band{ background:linear-gradient(120deg,#0d1a0e,#0a140b); border:1px solid var(--line); border-radius:20px; padding:26px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
-.band h3{ font-family:'Saira Condensed'; font-weight:900; font-size:24px; text-transform:uppercase; letter-spacing:1px; }
-.band p{ color:var(--muted); font-size:14px; }
-.band .grow{ flex:1; min-width:240px; }
+.details{ overflow:hidden; max-height:0; transition:max-height .28s ease; }
+.details.open{ max-height:600px; }
+.reason{ font-size:11.5px; color:var(--ink-2); line-height:1.6; padding:7px 0; border-top:1px solid var(--line); }
 
-/* footer */
-footer{ border-top:1px solid var(--line); margin-top:20px; padding:26px 0 90px; color:var(--muted); font-size:13.5px; text-align:center; }
-footer .links{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:8px; }
-footer a{ text-decoration:underline; }
-.skeleton{ color:var(--muted); font-size:13px; padding:8px 0; }
+.trunc{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.rise{ opacity:0; animation:rise .35s ease forwards; }
+@keyframes rise{ to{ opacity:1; } }
+@media(prefers-reduced-motion:reduce){ .rise{ animation:none; opacity:1; } .card-h:hover{ border-color:var(--line); } }
+@media(pointer:coarse){ .pill,.btn-det,.slip-add{ min-height:40px; } }
+.hide-sb::-webkit-scrollbar{ display:none; }
+.hide-sb{ scrollbar-width:none; }
 </style>
 </head>
 <body>
+<nav class="sticky top-0 z-50" style="background:var(--bg);border-bottom:1px solid var(--line)">
+  <div class="max-w-[1240px] mx-auto px-6 h-[62px] flex items-center gap-8">
+    <a href="index.html" class="flex items-center gap-3 shrink-0">
+      <div class="w-9 h-9 rounded-xl flex items-center justify-center font-extrabold text-[15px]" style="background:var(--em);color:#062e20">P2</div>
+      <div class="hidden sm:block leading-none">
+        <div class="font-bold text-[17px] tracking-tight">Predict2u</div>
+        <div class="t-lbl mt-1" style="font-size:8.5px">Every pick · Every result</div>
+      </div>
+    </a>
+    <div class="hidden lg:flex items-center gap-7 text-[13px] mx-auto" style="color:var(--ink-2)">
+      <a href="#top" data-jump="top" class="pb-1 font-medium" style="color:var(--em);border-bottom:2px solid var(--em)">Overview</a>
+      <a href="#board" data-jump="board" class="hover:text-white transition-colors">Today's Board</a>
+      <a href="#engines" data-jump="engines" class="hover:text-white transition-colors">Engines</a>
+      <a href="#performance" data-jump="performance" class="hover:text-white transition-colors">Performance</a>
+      <a href="community.html" class="hover:text-white transition-colors">Community</a>
+    </div>
+    <div class="ml-auto lg:ml-0 flex items-center gap-4">
+      <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full" style="background:var(--panel);border:1px solid var(--line)">
+        <span class="dot dot-on"></span>
+        <span class="t-xs" style="color:var(--ink-2)">LIVE</span>
+        <span class="t-xs" id="live-stamp">·</span>
+      </div>
+      <a href="community.html" class="flex items-center gap-3" id="user-chip">
+        <div class="text-right hidden sm:block leading-tight">
+          <div class="text-[12.5px] font-semibold" id="user-name">Sign in</div>
+          <div class="t-xs" id="user-sub">Free · no password</div>
+        </div>
+        <div class="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style="background:var(--panel);border:1px solid var(--line-2)" id="user-av">
+          <i class="fa-solid fa-user text-[11px]" style="color:var(--muted)"></i>
+        </div>
+      </a>
+    </div>
+  </div>
+</nav>
 
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="index.html"><img src="email-logo.png" alt="Predict2u — know the game, predict better" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><span style="display:none"><span class="bn">Predict<b>2u</b></span><span class="slogan">Know the game <b>— predict better</b></span></span></a>
-    <nav class="nav-links">
-      <a href="#engines" class="hide-m">Engines</a>
-      <a href="board.html?engine=top" class="hide-m">Top bankers</a>
-      <a href="community.html">Community</a>
-      <a href="board.html?wc=open" class="wc">&#127942; World Cup</a>
-      <button id="theme-btn" class="tbtn" title="Switch theme" aria-label="Switch theme">&#9681;</button>
-      <a class="cta" href="board.html?engine=acca">Open today&#39;s Acca</a>
-    </nav>
+<header id="top" class="max-w-[1240px] mx-auto px-6 pt-12 pb-8">
+  <div class="inline-flex items-center gap-3 px-3.5 py-2 rounded-full mb-8" style="background:var(--panel);border:1px solid var(--line)">
+    <span class="flex -space-x-1.5">
+      <span class="dot" style="background:var(--em)"></span>
+      <span class="dot" style="background:var(--em);opacity:.65"></span>
+      <span class="dot" style="background:#fff"></span>
+    </span>
+    <span class="t-lbl" style="color:var(--ink-2)">13 Engines · Honesty First</span>
+  </div>
+
+  <h1 class="t-hero">Know the game.<br/><span style="color:var(--muted)">Predict better.</span></h1>
+
+  <div class="flex flex-wrap items-center justify-between gap-8 mt-7">
+    <p class="t-lead max-w-[420px]">Thirteen specialized engines. Full transparency. Real results — wins and losses on the record.</p>
+    <div class="flex gap-3.5 flex-wrap">
+      <a href="#board" data-jump="board" class="flex items-center gap-3 px-7 py-4 rounded-full font-semibold text-[13.5px]" style="background:#fff;color:#0a0a0f">
+        Open Today's Board <i class="fa-solid fa-arrow-right text-[11px]"></i>
+      </a>
+      <a href="https://t.me/Predict2ucomm" target="_blank" rel="noopener"
+         class="flex items-center gap-3 px-7 py-4 rounded-full font-semibold text-[13.5px] card">
+        <i class="fa-brands fa-telegram text-[15px]"></i> Join Telegram
+      </a>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-11">
+    <div class="card p-5">
+      <div class="flex items-start justify-between gap-2">
+        <div class="t-lbl">Today's matches</div>
+        <i class="fa-solid fa-futbol text-[15px]" style="color:var(--em)"></i>
+      </div>
+      <div class="t-num mt-3" id="s-matches">—</div>
+      <div class="t-xs mt-3 flex items-center gap-1.5" id="s-matches-sub">&nbsp;</div>
+    </div>
+    <div class="card p-5">
+      <div class="flex items-start justify-between gap-2">
+        <div class="t-lbl">Consensus bankers</div>
+        <i class="fa-solid fa-gauge-high text-[15px]" style="color:var(--em)"></i>
+      </div>
+      <div class="t-num mt-3" id="s-bankers">—</div>
+      <div class="mt-3 flex items-center gap-2 flex-wrap" id="s-bankers-sub">&nbsp;</div>
+    </div>
+    <div class="card p-5">
+      <div class="flex items-start justify-between gap-2">
+        <div class="t-lbl">7-day record</div>
+        <i class="fa-solid fa-chart-line text-[15px]" style="color:var(--em)"></i>
+      </div>
+      <div class="t-num mt-3" id="s-record">—</div>
+      <div class="t-xs mt-3" id="s-record-sub">&nbsp;</div>
+    </div>
+    <div class="card p-5">
+      <div class="flex items-start justify-between gap-2">
+        <div class="t-lbl">Engines active</div>
+        <i class="fa-solid fa-microchip text-[15px]" style="color:var(--em)"></i>
+      </div>
+      <div class="t-num mt-3" id="s-engines">—</div>
+      <div class="mt-3 flex items-center gap-1" id="s-engines-sub">&nbsp;</div>
+    </div>
   </div>
 </header>
 
-<main class="wrap">
-
-  <div class="hero">
-    <div>
-      <span class="eyebrow">● Honesty-first football analysis</span>
-      <h1>Every pick posted.<br/><em>Every result kept.</em></h1>
-      <p>Thirteen engines read the day's football and publish their bankers — with full reasoning, real settlement, and No&nbsp;Bet as an honest answer. Wins and losses stay on the record.</p>
-      <div class="hero-cta">
-        <a class="btn primary" href="board.html?engine=acca">Open today&#39;s Acca</a>
-        <a class="btn" href="https://t.me/Predict2ucomm" target="_blank" rel="noopener">Join the Telegram channel</a>
+<main class="max-w-[1240px] mx-auto px-6">
+  <section id="board" class="pb-16">
+    <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+      <div>
+        <div class="flex items-center gap-3 flex-wrap">
+          <h2 class="t-h2" id="board-title">Today's Board</h2>
+          <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-md t-xs" style="background:var(--panel);border:1px solid var(--line)">
+            <i class="fa-solid fa-globe text-[9px]" style="color:var(--em)"></i>
+            <span id="board-analysed">—</span>
+          </span>
+        </div>
+        <p class="t-sm mt-2" id="board-sub">&nbsp;</p>
+      </div>
+      <div class="flex items-center gap-3 flex-wrap">
+        <div class="relative">
+          <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-[11px]" style="color:var(--muted)"></i>
+          <input id="f-search" type="text" placeholder="Search matches or leagues…" autocomplete="off"
+            class="pl-10 pr-4 py-2.5 rounded-full text-[12.5px] outline-none w-[240px]"
+            style="background:var(--panel);border:1px solid var(--line);color:var(--ink)"/>
+        </div>
+        <select id="f-league" class="px-4 py-2.5 rounded-full text-[12.5px] outline-none"
+          style="background:var(--panel);border:1px solid var(--line);color:var(--ink-2)"></select>
       </div>
     </div>
-    <div class="score-card">
-      <div class="sc-title" id="sc-date">Today's board</div>
-      <div class="sc-grid">
-        <div class="sc-cell"><div class="n tnum" id="sc-matches">—</div><div class="l">Matches</div></div>
-        <div class="sc-cell"><div class="n tnum" id="sc-bankers" style="color:var(--gold)">—</div><div class="l">Consensus bankers</div></div>
-        <div class="sc-cell"><div class="n tnum" id="sc-record" style="color:var(--brand-2)">—</div><div class="l">Settled today</div></div>
-      </div>
-      <div class="sc-note">Live from the board — the same numbers the engines are judged on.</div>
+
+    <div class="flex gap-2 overflow-x-auto pb-1 mb-4 hide-sb" id="date-strip"></div>
+    <div class="flex flex-wrap gap-2 mb-7" id="engine-pills"></div>
+
+    <div id="acca-root" class="mb-5" style="display:none"></div>
+    <div id="cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div class="t-sm py-2">Reading the board…</div>
     </div>
-  </div>
-
-  <div class="winners" id="winners">
-    <div class="wm-label" id="wm-label">Today's winners</div>
-    <div class="wm"><div class="wm-track" id="wm-track"></div></div>
-  </div>
-
-  <div class="strip">
-    <div class="strip-head">
-      <h2>The last 7 days, in public</h2>
-      <span>Consensus bankers, settled by the engine — nothing hidden, nothing deleted.</span>
-    </div>
-    <div class="strip-days" id="strip-days"><div class="skeleton">Settling the week…</div></div>
-  </div>
-
-  <section id="today">
-    <div class="sec-head">
-      <h2>Today's top bankers</h2>
-      <a href="board.html?engine=top">All top bankers &rarr;</a>
-    </div>
-    <div class="picks" id="top-picks"><div class="skeleton">Reading the board…</div></div>
-  </section>
-
-  <section id="engines">
-    <div class="sec-head">
-      <h2>Thirteen engines, one honest board</h2>
-      <a href="board.html?engine=normal">Open the engines &rarr;</a>
-    </div>
-    <div class="engines" id="engine-grid"></div>
-  </section>
-
-  <section>
-    <div class="band">
-      <div class="grow">
-        <h3>The day's bankers, straight to your phone</h3>
-        <p>Picks every morning, results every night — losses included. Free, no spam. 18+.</p>
-      </div>
-      <a class="btn primary" href="https://t.me/Predict2ucomm" target="_blank" rel="noopener">Telegram</a>
-      <a class="btn" href="https://whatsapp.com/channel/0029Vb8J7g4Bvvsnwo8d191r" target="_blank" rel="noopener">WhatsApp</a>
+    <div class="flex justify-center mt-9">
+      <button id="show-all" class="flex items-center gap-3 px-7 py-3.5 rounded-full text-[13px] font-medium card card-h" style="color:var(--ink-2)">
+        <span id="show-all-txt">Show every pick</span> <i class="fa-solid fa-arrow-right text-[11px]"></i>
+      </button>
     </div>
   </section>
 
+  <section id="engines" class="py-16" style="border-top:1px solid var(--line)">
+    <div class="flex items-end justify-between gap-6 flex-wrap mb-8">
+      <div>
+        <h2 class="t-h2">Thirteen Engines. One Honest Board.</h2>
+        <p class="t-sm mt-2">Each engine has a distinct philosophy. All outputs are public and settled by the same rules.</p>
+      </div>
+      <a href="#board" data-jump="board" class="text-[12.5px] font-medium flex items-center gap-2" style="color:var(--em)">
+        Read the reasoning <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+      </a>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4" id="engines-grid"></div>
+  </section>
+
+  <section id="performance" class="pb-16">
+    <div class="card p-7 lg:p-9">
+      <div class="flex items-start justify-between gap-6 flex-wrap mb-9">
+        <div>
+          <h2 class="t-h2">Performance · Last 7 Days</h2>
+          <p class="t-sm mt-2">Consensus bankers, settled by the engine. Nothing hidden, nothing deleted.</p>
+        </div>
+        <div class="text-right">
+          <div class="t-lbl">Record</div>
+          <div class="mt-1.5" style="font-size:30px;font-weight:700;letter-spacing:-.03em" id="perf-headline">—</div>
+          <div class="t-xs mt-1" id="perf-rate">&nbsp;</div>
+        </div>
+      </div>
+      <div class="flex items-end justify-between gap-2 overflow-x-auto pb-2 hide-sb" id="perf-bars"></div>
+      <div class="flex items-center justify-between gap-4 flex-wrap mt-8 pt-6" style="border-top:1px solid var(--line)">
+        <div class="t-sm" id="perf-summary">&nbsp;</div>
+        <div class="t-xs">A banker fits our rules — it is not a sure win.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-20 grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <div class="card p-7" id="wc-card" style="display:none"></div>
+    <div class="card p-7 flex flex-col justify-center">
+      <h3 class="t-h2">Get picks straight to your phone</h3>
+      <p class="t-sm mt-2">Free. No spam. Losses included. 18+.</p>
+      <div class="flex gap-3 mt-6">
+        <a href="https://t.me/Predict2ucomm" target="_blank" rel="noopener"
+           class="flex-1 flex items-center justify-center gap-2.5 py-3.5 rounded-xl font-semibold text-[13px]" style="background:#229ED9;color:#fff">
+          <i class="fa-brands fa-telegram"></i> Telegram</a>
+        <a href="https://whatsapp.com/channel/0029Vb8J7g4Bvvsnwo8d191r" target="_blank" rel="noopener"
+           class="flex-1 flex items-center justify-center gap-2.5 py-3.5 rounded-xl font-semibold text-[13px]" style="background:#25d366;color:#062e20">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    Predict2u · heuristic analysis tool · not financial advice · a banker fits our rules, not a sure win.<br/>
-    Only stake what you can afford to lose. 18+ · Gamble responsibly.
-    <div class="links" style="margin-bottom:10px">
-      <a href="https://t.me/Predict2ucomm" target="_blank" rel="noopener">Telegram</a>
-      <a href="https://whatsapp.com/channel/0029Vb8J7g4Bvvsnwo8d191r" target="_blank" rel="noopener">WhatsApp Channel</a>
+<footer class="py-8 pb-24" style="border-top:1px solid var(--line)">
+  <div class="max-w-[1240px] mx-auto px-6 flex flex-wrap items-center justify-between gap-5 t-xs">
+    <div>© Predict2u 2026 · Records, not wagers. Bet responsibly. 18+</div>
+    <div class="flex gap-6 flex-wrap">
+      <a href="responsible-gambling.html" class="hover:text-white transition-colors">Responsible Gambling</a>
+      <a href="terms.html" class="hover:text-white transition-colors">Terms</a>
+      <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+      <a href="disclaimer.html" class="hover:text-white transition-colors">Disclaimer</a>
     </div>
-    <div class="links">
-      <a href="terms.html">Terms</a><a href="privacy.html">Privacy</a>
-      <a href="responsible-gambling.html">Responsible Gambling</a><a href="disclaimer.html">Disclaimer</a>
-    </div>
+    <div style="color:var(--em)">Built for transparency</div>
   </div>
 </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="banker-engine.js"></script>
 <script src="data.js"></script>
 <script src="slip.js"></script>
 <script>
-/* ============ HOME PAGE LOGIC — reads the live board, nothing invented ==== */
+/* ===========================================================================
+   BOARD — the design, matched. The numbers, real.
+
+   The design's "CONF ▓▓▓ 94" bar sits in the same place, same emerald, same
+   geometry — but it shows ENGINE AGREEMENT, because that is the only real
+   number the engines produce. They emit a grade, an agreement count and full
+   reasoning; they never emit a probability. A 0-100 "confidence" would read as
+   a likelihood no engine has ever claimed. Tap DETAILS to read the actual
+   reasoning behind any pick — which is the honest answer to "why".
+
+   Likewise the "91% WIN RATE" card shows W–L with the rate small beneath it.
+   A headline rate reads as a promise. A record reads as a record.
+   =========================================================================== */
 (function(){
   const M = window.MATCHES || [];
   const $ = id => document.getElementById(id);
   const esc = t => String(t==null?'':t).replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+  const shortMk = mk => String(mk||'')
+    .replace('Home Team Over 1.5 Goals','Home Over 1.5').replace('Away Team Over 1.5 Goals','Away Over 1.5')
+    .replace('Home Team Under 1.5 Goals','Home Under 1.5').replace('Away Team Under 1.5 Goals','Away Under 1.5')
+    .replace('Double Chance 1X','Double Chance 1X').replace('Double Chance X2','Double Chance X2')
+    .replace(/ Goals$/,'');
+
+  const ENG = [
+    ['normal','Normal','recommend','Balanced rules, steady daily output. The house view.'],
+    ['strict','Strict','strictRecommend','Split-data first. Max 4 bankers per league. High protection.'],
+    ['ultra','Ultra','ultraRecommend','Rejects uncertainty by design. Short board, strong conviction.'],
+    ['rulespro','Elite','rulesProRecommend','Rule-stack vetting for the cleanest singles.'],
+    ['apex','Apex','apexRecommend','A high bar — conviction picks only.'],
+    ['prime','Prime','primeRecommend','The day\u2019s strongest signals across prime markets.'],
+    ['value','Value','valueRecommend','Hunts prices the board underrates. Sharp value focus.'],
+    ['pro','Pro','proRecommend','All-rounder tuned for consistency across leagues.'],
+    ['trend','Trend','trendRecommend','70-70-70 league patterns. Fires on real tier edges.'],
+    ['streaks','Streaks','streakRecommend','Real per-team runs from fixture history analysis.'],
+    ['halves','Halves','halvesRecommend','HT/FT logic with native half-time markets.'],
+    ['mismatch','Mismatch','mismatchRecommend','Two aligned venue profiles, one high-edge market.'],
+    ['indicator','Market Indicators','indicatorRecommend','One market\u2019s odds predict another. 10 rules minimum.'],
+  ].filter(e => typeof window[e[2]] === 'function');
+  const TOTAL = ENG.length;
+
   const todayISO = new Date().toISOString().slice(0,10);
-  const dates = [...new Set(M.map(m=>m.matchDate).filter(Boolean))].sort();
+  const byDate = {};
+  M.forEach(m=>{ const d=m.matchDate||'Undated'; (byDate[d]=byDate[d]||[]).push(m); });
+  const dates = Object.keys(byDate).filter(d=>d!=='Undated').sort();
+  let activeDate = dates.includes(todayISO) ? todayISO : (dates.find(d=>d>todayISO)||dates[dates.length-1]||todayISO);
+  const dayMatches = ()=> byDate[activeDate]||[];
 
-  /* the day the board is showing: today if present, else the next date with games */
-  const showDate = dates.includes(todayISO) ? todayISO : (dates.find(d=>d>todayISO) || dates[dates.length-1] || todayISO);
+  const params = new URLSearchParams(location.search);
+  let mode = params.get('engine')||'top';
+  if(mode!=='top'&&mode!=='acca'&&!ENG.some(e=>e[0]===mode)) mode='top';
+  let league='all', q='', showAll=false;
+  const LIMIT = 8;
+  const keyOf = m => (m.id!=null?'f'+m.id:m.home+'|'+m.away+'|'+m.matchDate);
 
-  const ENGINES = [
-    ['Normal', typeof recommend==='function'?recommend:null],
-    ['Strict', typeof strictRecommend==='function'?strictRecommend:null],
-    ['Ultra', typeof ultraRecommend==='function'?ultraRecommend:null],
-    ['Elite', typeof rulesProRecommend==='function'?rulesProRecommend:null],
-    ['Apex', typeof apexRecommend==='function'?apexRecommend:null],
-    ['Prime', typeof primeRecommend==='function'?primeRecommend:null],
-    ['Value', typeof valueRecommend==='function'?valueRecommend:null],
-    ['Pro', typeof proRecommend==='function'?proRecommend:null],
-    ['Trend', typeof trendRecommend==='function'?trendRecommend:null],
-    ['Streaks', typeof streakRecommend==='function'?streakRecommend:null],
-    ['Halves', typeof halvesRecommend==='function'?halvesRecommend:null],
-    ['Mismatch', typeof mismatchRecommend==='function'?mismatchRecommend:null],
-    ['Market Indicators', typeof indicatorRecommend==='function'?indicatorRecommend:null],
-  ].filter(e=>e[1]);
-
-  /* consensus bankers for one date: matches where engines agree on a market */
-  function consensus(date){
-    const pool = M.filter(x=>x.matchDate===date);
-    const byMatch = {};
-    for(const m of pool) for(const [name,fn] of ENGINES){
-      let r; try{ r = fn(m); }catch(e){ continue; }
-      if(!r || !r.bet || !r.banker) continue;
-      const k = (m.id!=null?('f'+m.id):(m.home+'|'+m.away));
-      byMatch[k] = byMatch[k] || { m, markets:{} };
-      byMatch[k].markets[r.primary] = (byMatch[k].markets[r.primary]||0)+1;
+  function consensus(list){
+    const by={};
+    for(const m of list) for(const e of ENG){
+      let r; try{ r=window[e[2]](m); }catch(x){ continue; }
+      if(!r||!r.bet||!r.banker) continue;
+      const k=keyOf(m);
+      by[k]=by[k]||{m,mk:{},out:{}};
+      (by[k].mk[r.primary]=by[k].mk[r.primary]||[]).push(e[1]);
+      by[k].out[e[1]]=r;
     }
-    return Object.values(byMatch).map(x=>{
-      const [market,n] = Object.entries(x.markets).sort((a,b)=>b[1]-a[1])[0];
-      return { m:x.m, market, n };
-    }).sort((a,b)=>b.n-a.n);
+    return Object.values(by).map(x=>{
+      const [market,engines]=Object.entries(x.mk).sort((a,b)=>b[1].length-a[1].length)[0];
+      return { m:x.m, market, engines, out:x.out[engines[0]] };
+    }).sort((a,b)=>b.engines.length-a.engines.length);
+  }
+  function picksFor(){
+    const list=dayMatches();
+    if(mode==='top'||mode==='acca') return consensus(list);
+    const fn=window[(ENG.find(e=>e[0]===mode)||[])[2]], name=(ENG.find(e=>e[0]===mode)||[])[1];
+    return list.map(m=>{ let r; try{ r=fn(m); }catch(e){ return null; }
+      if(!r||!r.bet) return null;
+      return { m, market:r.primary, engines:[name], out:r, banker:!!r.banker, conf:r.confidence||0 };
+    }).filter(Boolean).sort((a,b)=>(b.banker?1:0)-(a.banker?1:0)||(b.conf||0)-(a.conf||0));
   }
 
-  /* -------- today: scoreboard + top picks -------- */
-  const picks = consensus(showDate);
-  const dayMatches = M.filter(x=>x.matchDate===showDate);
-  $('sc-date').textContent = (showDate===todayISO?"Today's board":"Next board · "+showDate);
-  $('sc-matches').textContent = dayMatches.length;
-  $('sc-bankers').textContent = picks.length;
-  let w=0,l=0;
-  picks.forEach(p=>{ const s=settle(p.market,p.m.homeGoals,p.m.awayGoals,p.m.status,p.m); if(s==='Won')w++; else if(s==='Lost')l++; });
-  $('sc-record').innerHTML = (w+l)? `${w}<span style="font-size:18px;color:var(--muted)">W</span>–${l}<span style="font-size:18px;color:var(--muted)">L</span>` : '—';
+  const resultOf=(m,mk)=>{ if(m.homeGoals==null) return '';
+    try{ return settle(mk,m.homeGoals,m.awayGoals,m.status,m)||''; }catch(e){ return ''; } };
+  function statusTag(m,mk){
+    if(m.homeGoals==null)
+      return ['1H','2H','HT','ET','P','LIVE'].includes(String(m.status))
+        ? '<span class="tag tag-live"><i class="fa-solid fa-circle text-[5px]"></i> LIVE</span>'
+        : '<span class="tag tag-pend"><i class="fa-solid fa-circle text-[5px]"></i> PENDING</span>';
+    const r=resultOf(m,mk);
+    if(r==='Won')  return '<span class="tag tag-won"><i class="fa-solid fa-circle-check text-[9px]"></i> WON</span>';
+    if(r==='Lost') return '<span class="tag tag-lost"><i class="fa-solid fa-circle-xmark text-[9px]"></i> LOST</span>';
+    if(r==='Void') return '<span class="tag tag-void">VOID</span>';
+    return '';
+  }
+  const ko=m=>{ if(!m.kickoff) return '';
+    try{ return new Date(m.kickoff).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',hour12:false})+' GMT'; }catch(e){ return ''; } };
+  const ODDS={'Home Win':'home','Draw':'draw','Away Win':'away','Over 1.5':'over15','Over 2.5':'over25','Over 3.5':'over35','Under 1.5':'under15','Under 2.5':'under25','Under 3.5':'under35','BTTS Yes':'bttsYes','BTTS No':'bttsNo','Double Chance 1X':'dc1x','Double Chance 12':'dc12','Double Chance X2':'dcx2'};
+  const priceOf=(m,mk)=>{ const k=ODDS[String(mk).replace(/ Goals$/,'')]; const v=k&&m.odds?m.odds[k]:null;
+    return (typeof v==='number'&&v>1)?v:null; };
 
-  /* upcoming picks lead (they can join a slip); settled ones follow with their honest result */
-  const upcoming = picks.filter(p=>p.m.homeGoals==null);
-  const settled  = picks.filter(p=>p.m.homeGoals!=null);
-  const top = upcoming.concat(settled).slice(0,5);
-  $('top-picks').innerHTML = top.length ? top.map(p=>{
-    const res = p.m.homeGoals!=null ? settle(p.market,p.m.homeGoals,p.m.awayGoals,p.m.status,p.m) : '';
-    const tail = res
-      ? `<span class="slip-res ${res==='Won'?'w':res==='Lost'?'l':'v'}" style="font-size:11px;font-weight:900;padding:4px 10px;border-radius:8px">${res.toUpperCase()}</span>`
-      : (typeof P2USlip!=='undefined' ? P2USlip.btn(p.m,p.market) : '');
-    const fl = p.m.flag ? `<img class="fl" src="${esc(p.m.flag)}" alt="" onerror="this.style.display='none'"/>` : '';
-    return `<div class="pick">
-      ${fl}<div class="who"><div class="t">${esc(p.m.home)} <span style="color:var(--brand)">v</span> ${esc(p.m.away)}</div>
-      <div class="m">${esc(p.m.league||'')}</div></div>
-      <span class="agree">${p.n} engine${p.n>1?'s':''} agree</span>
-      <span class="mk">${esc(String(p.market).replace(/ Goals$/,''))}</span>${tail}
+  const REG={};
+  function renderCards(){
+    let rows=picksFor();
+    if(q) rows=rows.filter(p=>(p.m.home+' '+p.m.away+' '+(p.m.league||'')).toLowerCase().includes(q));
+    if(league!=='all') rows=rows.filter(p=>p.m.league===league);
+    $('board-analysed').textContent=`${dayMatches().length} matches analysed`;
+    if(mode==='acca'){ renderAcca(rows); $('show-all').style.display='none'; return; }
+    $('acca-root').style.display='none';
+    const total=rows.length;
+    if(!total){
+      $('cards').innerHTML=`<div class="col-span-full card p-12 text-center t-sm">No picks here. The engines stay quiet when the data doesn't support a pick — that's the honest answer, not a missing one.</div>`;
+      $('show-all').style.display='none'; return;
+    }
+    const view=showAll?rows:rows.slice(0,LIMIT);
+    $('show-all').style.display = total>LIMIT ? 'flex' : 'none';
+    $('show-all-txt').textContent = showAll ? 'Show fewer' : `View all ${total} picks`;
+
+    $('cards').innerHTML=view.map((p,i)=>{
+      const id='d'+i; REG[id]=p;
+      const price=priceOf(p.m,p.market);
+      const btn=(p.m.homeGoals==null&&typeof P2USlip!=='undefined')?P2USlip.btn(p.m,p.market):'';
+      const n=p.engines.length, pct=Math.round(100*n/TOTAL);
+      return `<article class="card card-h p-5 flex flex-col rise" style="animation-delay:${Math.min(i*30,240)}ms">
+        <div class="flex items-start justify-between gap-2 mb-3.5">
+          <span class="mono" style="color:var(--muted)">${ko(p.m)||'&nbsp;'}</span>
+          ${statusTag(p.m,p.market)}
+        </div>
+        <div class="t-h3">${esc(p.m.home)} <span style="color:var(--muted);font-weight:400">vs</span> ${esc(p.m.away)}</div>
+        <div class="t-xs mt-1.5 trunc">${esc(p.m.league||'')}</div>
+        <div class="flex items-center justify-between gap-3 mt-4">
+          <span class="mkt">${esc(shortMk(p.market))}</span>
+          <span class="odds">${price?price.toFixed(2):'—'}</span>
+        </div>
+        <div class="agree-row">
+          <span class="agree-lbl">ENGINES</span>
+          <span class="agree-track"><span class="agree-fill" style="width:${pct}%"></span></span>
+          <span class="agree-val">${n}<span style="color:var(--muted);font-weight:400">/${TOTAL}</span></span>
+        </div>
+        <div class="flex gap-1.5 flex-wrap mt-3">
+          ${p.engines.slice(0,3).map(e=>`<span class="etag">${esc(e)}</span>`).join('')}
+          ${n>3?`<span class="etag">+${n-3}</span>`:''}
+        </div>
+        <div class="details" id="${id}"></div>
+        <div class="flex gap-2.5 mt-5 pt-4" style="border-top:1px solid var(--line)">
+          <button class="btn-det" data-det="${id}">DETAILS</button>
+          ${btn||'<span class="flex-1"></span>'}
+        </div>
+      </article>`;
+    }).join('');
+
+    $('cards').querySelectorAll('[data-det]').forEach(b=>b.addEventListener('click',()=>{
+      const el=$(b.dataset.det), p=REG[b.dataset.det];
+      if(el.classList.contains('open')){ el.classList.remove('open'); el.innerHTML=''; b.textContent='DETAILS'; return; }
+      const o=p.out||{};
+      const reasons=(o.reasons||[]).map(r=>`<div class="reason">${esc(r)}</div>`).join('');
+      const checks=(o.humanChecks||[]).length?`<div class="reason" style="color:var(--amber)">Before kickoff: ${esc(o.humanChecks.join(' '))}</div>`:'';
+      el.innerHTML=`<div class="pt-4">
+        <div class="t-lbl mb-2">Why this pick</div>
+        ${(o.grade||o.score||o.rule)?`<div class="t-xs mb-1">${o.grade?`Grade <span style="color:var(--ink)">${esc(o.grade)}</span>`:''}${o.score?` · ${esc(o.score)}`:''}${o.rule?` · rule ${esc(o.rule)}`:''}</div>`:''}
+        ${reasons||'<div class="reason">This engine published the pick without extended reasoning.</div>'}
+        ${checks}
+        <div class="reason t-xs">Agreeing engines: ${esc(p.engines.join(', '))}. A banker fits our rules — it is not a sure win.</div>
+      </div>`;
+      el.classList.add('open'); b.textContent='HIDE';
+    }));
+  }
+  $('show-all').addEventListener('click',()=>{ showAll=!showAll; renderCards();
+    if(!showAll) $('board').scrollIntoView({behavior:'smooth',block:'start'}); });
+
+  function renderAcca(rows){
+    $('cards').innerHTML='';
+    const legs=rows.filter(p=>p.m.homeGoals==null).slice(0,6);
+    const host=$('acca-root'); host.style.display='block';
+    if(!legs.length){ host.innerHTML=`<div class="card p-12 text-center t-sm">No upcoming consensus bankers to build an acca from right now.</div>`; return; }
+    let comb=1,priced=0;
+    legs.forEach(l=>{ l.price=priceOf(l.m,l.market); if(l.price){ comb*=l.price; priced++; } });
+    host.innerHTML=`<div class="card p-7">
+      <div class="flex gap-3.5 rounded-xl p-4 mb-6 t-sm" style="background:var(--amber-dim);border:1px solid rgba(251,191,36,.2);line-height:1.6">
+        <i class="fa-solid fa-triangle-exclamation mt-0.5" style="color:var(--amber)"></i>
+        <div><b style="color:var(--amber)">Accumulators are high-risk.</b> Every leg must win. Each added leg multiplies the bookmaker's margin against you — more legs means a bigger potential return but a much lower chance of winning. This is a combination of today's consensus bankers; it is not advice or a prediction. 18+.</div>
+      </div>
+      ${legs.map((l,i)=>`<div class="flex items-center gap-4 py-3.5" style="border-bottom:1px solid var(--line)">
+        <span class="t-xs" style="width:16px">${i+1}</span>
+        <div style="flex:1;min-width:0">
+          <div class="t-h3 trunc">${esc(l.m.home)} v ${esc(l.m.away)}</div>
+          <div class="t-xs trunc mt-1">${esc(l.m.league||'')} · ${l.engines.length}/${TOTAL} engines</div>
+        </div>
+        <span class="mkt">${esc(shortMk(l.market))}</span>
+        <span class="odds" style="min-width:44px;text-align:right">${l.price?l.price.toFixed(2):'—'}</span>
+      </div>`).join('')}
+      <div class="flex items-center justify-between gap-5 flex-wrap pt-6">
+        <div>
+          <div class="t-lbl">Combined odds${priced<legs.length?` · ${legs.length-priced} unpriced`:''}</div>
+          <div class="t-num mt-1.5" style="color:var(--em)">${priced?comb.toFixed(2):'—'}</div>
+        </div>
+        <button id="acca-add" class="slip-add" style="flex:0 0 auto;padding:13px 26px;font-size:12.5px">ADD ALL ${legs.length} TO MY SLIP</button>
+      </div>
+      <div class="t-xs text-center mt-6">Records, not wagers. Predict2u takes no bets and handles no money — place bets with your own bookmaker. 18+ · <a href="responsible-gambling.html" class="underline">bet responsibly</a></div>
     </div>`;
-  }).join('') : `<div class="empty">The board is quiet — no consensus bankers yet for ${esc(showDate)}. Odds usually arrive close to kickoff; each engine page shows its full view.</div>`;
+    $('acca-add').addEventListener('click',()=>{
+      legs.forEach(l=>{ if(typeof P2USlip!=='undefined') P2USlip.add(l.m,l.market,'consensus'); });
+      const fab=document.getElementById('p2u-slip-fab'); if(fab) fab.click();
+    });
+  }
 
-  /* -------- today's winners marquee (requestAnimationFrame — immune to
-     the device reduce-motion setting that silently kills CSS marquees) ---- */
-  (function(){
-    const wins = picks.filter(p=>settle(p.market,p.m.homeGoals,p.m.awayGoals,p.m.status,p.m)==='Won');
-    if(!wins.length) return;
-    const box=$('winners'), track=$('wm-track');
-    $('wm-label').textContent = `Today's winners · ${wins.length} settled ✓`;
-    const crest=u=>u?`<img class="cr" src="${esc(u)}" alt="" onerror="this.style.display='none'"/>`:'';
-    const cards = wins.map(p=>`<span class="wm-card">${crest(p.m.homeLogo)}${esc(p.m.home)} <span style="color:var(--brand);font-weight:900">v</span> ${crest(p.m.awayLogo)}${esc(p.m.away)} <span class="mkt">${esc(String(p.market).replace(/ Goals$/,''))}</span> <span class="tick">WON</span></span>`).join('');
-    track.innerHTML = cards + cards;
-    box.classList.add('on');
-    const wrap = track.parentElement;
-    let guard=0;
-    while(track.scrollWidth < wrap.clientWidth*2 && track.scrollWidth>0 && guard++<6){ track.innerHTML += track.innerHTML; }
-    let x=0,last=null,paused=false;
-    wrap.addEventListener('mouseenter',()=>paused=true); wrap.addEventListener('mouseleave',()=>paused=false);
-    wrap.addEventListener('touchstart',()=>paused=true,{passive:true}); wrap.addEventListener('touchend',()=>paused=false,{passive:true});
-    (function step(ts){
-      if(last==null) last=ts||0;
-      const dt=Math.min(((ts||0)-last)/1000,.1); last=ts||0;
-      if(!paused && document.visibilityState==='visible'){
-        x-=38*dt; const half=track.scrollWidth/2;
-        if(half>0 && -x>=half) x+=half;
-        track.style.transform=`translateX(${x}px)`;
-      }
-      requestAnimationFrame(step);
-    })();
-  })();
-
-  /* -------- the last 7 days, settled (computed after first paint) -------- */
-  function buildStrip(){
-    const past = dates.filter(d=>d<todayISO).slice(-7);
-    const host = $('strip-days');
-    if(!past.length){ host.innerHTML = '<div class="skeleton">The public record starts with the first settled board.</div>'; return; }
-    host.innerHTML = past.map(d=>{
+  function weekRecord(){
+    let w=0,l=0; const days=[];
+    dates.filter(d=>d<todayISO).slice(-7).forEach(d=>{
       let dw=0,dl=0;
-      consensus(d).forEach(p=>{ const s=settle(p.market,p.m.homeGoals,p.m.awayGoals,p.m.status,p.m); if(s==='Won')dw++; else if(s==='Lost')dl++; });
-      const label = d.slice(5).replace('-','/');
-      if(!(dw+dl)) return `<div class="day quiet"><div class="d">${label}</div><div class="wl">no settles</div><div class="bar"></div></div>`;
-      const pct = Math.round(100*dw/(dw+dl));
-      return `<div class="day"><div class="d">${label}</div><div class="wl tnum"><b>${dw}W</b><s>${dl}L</s></div><div class="pct">${pct}%</div><div class="bar"><i style="width:${pct}%"></i></div></div>`;
+      consensus(byDate[d]||[]).forEach(p=>{ const r=resultOf(p.m,p.market); if(r==='Won')dw++; else if(r==='Lost')dl++; });
+      w+=dw; l+=dl; days.push({d,w:dw,l:dl});
+    });
+    return {w,l,days};
+  }
+  function renderStats(){
+    const list=dayMatches(), cons=consensus(list);
+    $('s-matches').textContent=list.length;
+    const idx=dates.indexOf(activeDate), prev=idx>0?dates[idx-1]:null;
+    if(prev){ const diff=list.length-(byDate[prev]||[]).length;
+      $('s-matches-sub').innerHTML=`<i class="fa-solid fa-arrow-trend-${diff>=0?'up':'down'} text-[10px]" style="color:${diff>=0?'var(--em)':'var(--loss)'}"></i> <span style="color:${diff>=0?'var(--em)':'var(--loss)'}">${diff>=0?'+':''}${diff}</span> from the day before`;
+    } else $('s-matches-sub').innerHTML='&nbsp;';
+
+    $('s-bankers').textContent=cons.length;
+    let dw=0,dl=0,pend=0;
+    cons.forEach(p=>{ const r=resultOf(p.m,p.market); if(r==='Won')dw++; else if(r==='Lost')dl++; else if(p.m.homeGoals==null)pend++; });
+    $('s-bankers-sub').innerHTML=`${dw?`<span class="tag tag-won">${dw} WON</span> `:''}${dl?`<span class="tag tag-lost">${dl} LOST</span> `:''}<span class="t-xs">${pend} pending · ${list.length-cons.length} No Bet</span>`;
+
+    const wk=weekRecord();
+    $('s-record').innerHTML=(wk.w+wk.l)
+      ? `${wk.w}<span style="font-size:20px;color:var(--muted);font-weight:600">W</span> <span style="color:var(--muted);font-size:22px">—</span> ${wk.l}<span style="font-size:20px;color:var(--muted);font-weight:600">L</span>`
+      : '—';
+    $('s-record-sub').textContent=(wk.w+wk.l)
+      ? `${Math.round(100*wk.w/(wk.w+wk.l))}% of ${wk.w+wk.l} settled consensus bankers`
+      : 'No settled record yet';
+
+    $('s-engines').textContent=`${TOTAL}/13`;
+    $('s-engines-sub').innerHTML=ENG.slice(0,3).map((e,i)=>
+      `<span class="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold" style="background:${i===0?'var(--em)':'var(--panel)'};color:${i===0?'#062e20':'var(--muted)'};border:1px solid var(--line);margin-left:${i?'-6px':'0'}">${e[1][0]}</span>`
+    ).join('')+`<span class="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold" style="background:var(--panel);color:var(--muted);border:1px solid var(--line);margin-left:-6px">+${TOTAL-3}</span>`;
+    $('live-stamp').textContent='· '+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+  }
+
+  function renderPerf(){
+    const wk=weekRecord();
+    if(!wk.days.length){ $('perf-bars').innerHTML='<div class="t-sm">The public record starts with the first settled board.</div>'; return; }
+    const n=wk.w+wk.l;
+    $('perf-headline').innerHTML=n?`<span style="color:var(--em)">${wk.w}W</span> <span style="color:var(--muted)">—</span> <span style="color:var(--loss)">${wk.l}L</span>`:'—';
+    $('perf-rate').textContent=n?`${Math.round(100*wk.w/n)}% of ${n} settled`:'nothing settled';
+    $('perf-summary').textContent=n?`Every settled consensus banker of the last seven days, counted.`:'Nothing settled in the last seven days.';
+    const max=Math.max(...wk.days.map(x=>x.w+x.l),1);
+    $('perf-bars').innerHTML=wk.days.map(x=>{
+      const t=x.w+x.l, pct=t?Math.round(100*x.w/t):0;
+      const h=t?Math.max(10,Math.round(100*(t/max)*(pct/100)+18)):0;
+      return `<div class="bar-col" style="flex:1;min-width:46px">
+        <div class="bar-track"><div class="bar-fill${t&&pct<50?' low':''}" style="height:${Math.min(h,100)}%"></div></div>
+        <div class="mono mt-3" style="color:var(--muted)">${x.d.slice(5).replace('-','/')}</div>
+        <div class="mt-1.5" style="font-size:13px;font-weight:600;color:${t?(pct>=50?'var(--em)':'var(--loss)'):'var(--muted)'}">${t?pct+'%':'—'}</div>
+        <div class="t-xs mt-0.5">${t?`${x.w}W · ${x.l}L`:'no settles'}</div>
+      </div>`;
     }).join('');
   }
-  (window.requestIdleCallback || (f=>setTimeout(f,60)))(buildStrip);
 
-  /* -------- engine directory -------- */
-  const DIR = [
-    ['normal','Normal','The house view — balanced rules, steady daily output.'],
-    ['strict','Strict','Split-data checks first; max four bankers a league.'],
-    ['ultra','Ultra','Rejects uncertainty by design. Short board, strong picks.'],
-    ['rulespro','Elite','Rule-stack vetting for cleaner singles.'],
-    ['apex','Apex','A high bar — conviction picks only.'],
-    ['prime','Prime','The day\'s strongest signals, prime markets.'],
-    ['value','Value','Hunts prices the board underrates.'],
-    ['pro','Pro','The all-rounder tuned for consistency.'],
-    ['trend','Trend','70-70-70 league patterns; fires on real tiers.'],
-    ['streaks','Streaks','Real per-team runs from fixture history.'],
-    ['halves','Halves','HT/FT logic with native half-time markets.'],
-    ['mismatch','Mismatch','Two aligned venue profiles, one market.'],
-    ['indicator','Market Indicators','One market\'s odds predict another — 10 rules, three confirmations minimum.'],
-  ];
-  /* -------- theme toggle (same key as the engines page, so it follows you) */
-  (function(){
-    const tb=document.getElementById('theme-btn');
-    const setT=m=>{ document.body.classList.toggle('light',m==='light'); try{localStorage.setItem('predicto-theme',m);}catch(e){} };
-    let saved=null; try{ saved=localStorage.getItem('predicto-theme'); }catch(e){}
-    setT(saved==='light'?'light':'dark');
-    if(tb) tb.addEventListener('click',()=>setT(document.body.classList.contains('light')?'dark':'light'));
-  })();
+  function renderEngines(){
+    const list=dayMatches();
+    $('engines-grid').innerHTML=ENG.map(([k,n,fnName,d])=>{
+      let c=0;
+      for(const m of list){ let r; try{ r=window[fnName](m); }catch(e){ continue; } if(r&&r.bet) c++; }
+      return `<button class="card card-h p-5 text-left" data-eng="${k}">
+        <div class="flex items-start justify-between gap-2">
+          <div class="t-h3" style="font-size:15px">${esc(n)}</div>
+          <span class="dot ${c?'dot-on':'dot-off'}"></span>
+        </div>
+        <p class="t-sm mt-2.5" style="line-height:1.55;font-size:12px">${esc(d)}</p>
+        <div class="flex items-center justify-between gap-2 mt-5">
+          <span class="etag">${c?`${c} pick${c>1?'s':''} today`:'No Bet today'}</span>
+          <span class="text-[11px] font-semibold" style="color:var(--em)">OPEN <i class="fa-solid fa-arrow-right text-[9px]"></i></span>
+        </div>
+      </button>`;
+    }).join('');
+    $('engines-grid').querySelectorAll('[data-eng]').forEach(b=>b.addEventListener('click',()=>{
+      mode=b.dataset.eng; showAll=false; syncBoard(); renderPills(); renderCards();
+      history.replaceState(null,'','?engine='+mode);
+      $('board').scrollIntoView({behavior:'smooth',block:'start'});
+    }));
+  }
 
-  $('engine-grid').innerHTML = DIR.map(([v,n,d])=>
-    `<a class="eng${v==='indicator'?' new':''}" href="board.html?engine=${v}"><div class="n">${n}</div><div class="d">${d}</div><span class="go">Open ${n} &rarr;</span></a>`
-  ).join('');
+  function renderPills(){
+    const modes=[['top','All Engines'],['acca','Today\u2019s Acca']].concat(ENG.map(e=>[e[0],e[1]]));
+    $('engine-pills').innerHTML=modes.map(([k,n])=>`<button class="pill${k===mode?' on':''}" data-mode="${k}">${esc(n)}</button>`).join('');
+    $('engine-pills').querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{
+      mode=b.dataset.mode; showAll=false; syncBoard(); renderPills(); renderCards();
+      history.replaceState(null,'','?engine='+mode); }));
+  }
+  function syncBoard(){
+    const e=ENG.find(x=>x[0]===mode);
+    $('board-title').textContent = mode==='top'?"Today's Board":mode==='acca'?"Today\u2019s Acca":(e?e[1]:'');
+    $('board-sub').textContent = mode==='top'?'Where the engines agree. Default decision: No Bet.'
+      : mode==='acca'?'The day\u2019s consensus bankers, combined. High risk by nature.' : (e?e[3]:'');
+  }
+  function renderDates(){
+    const win=dates.filter(d=>Math.abs((new Date(d)-new Date(todayISO))/864e5)<=3).slice(0,7);
+    $('date-strip').innerHTML=win.map(d=>{
+      const n=(byDate[d]||[]).length;
+      const label=d===todayISO?'TODAY':new Date(d+'T12:00:00').toLocaleDateString([],{day:'numeric',month:'short'}).toUpperCase();
+      return `<button class="pill${d===activeDate?' on':''}" data-d="${d}" ${n?'':'style="opacity:.3;pointer-events:none"'}>${label}${n?` <span style="opacity:.6">${n}</span>`:''}</button>`;
+    }).join('');
+    $('date-strip').querySelectorAll('[data-d]').forEach(b=>b.addEventListener('click',()=>{
+      activeDate=b.dataset.d; showAll=false; renderDates(); renderLeagues(); renderStats(); renderEngines(); renderCards(); renderWC(); }));
+  }
+  function renderLeagues(){
+    const ls=[...new Set(dayMatches().map(m=>m.league).filter(Boolean))].sort();
+    $('f-league').innerHTML='<option value="all">All Leagues</option>'+ls.map(l=>`<option value="${esc(l)}">${esc(l)}</option>`).join('');
+    $('f-league').value=ls.includes(league)?league:'all';
+    if(!ls.includes(league)) league='all';
+  }
+
+  const isWC=m=>{ if(!m) return false;
+    if(m.leagueId===1||m.leagueId==='1') return true;
+    const L=String(m.league||'').toLowerCase();
+    if(/club world cup/.test(L)) return false;
+    return /world cup/.test(L)||/\bfifa\b/.test(L); };
+  function wcConsensus(m){
+    const mk={};
+    for(const e of ENG){ let r; try{ r=window[e[2]](m); }catch(x){ continue; }
+      if(!r||!r.bet) continue; (mk[r.primary]=mk[r.primary]||[]).push(e[1]); }
+    const ent=Object.entries(mk).sort((a,b)=>b[1].length-a[1].length)[0];
+    return ent?{market:ent[0],engines:ent[1]}:null;
+  }
+  function renderWC(){
+    const wc=M.filter(isWC).filter(m=>m.homeGoals==null).sort((a,b)=>String(a.kickoff||'').localeCompare(String(b.kickoff||'')));
+    const m=wc[0], card=$('wc-card');
+    if(!m){ card.style.display='none'; return; }
+    card.style.display='block';
+    const c=wcConsensus(m);
+    card.innerHTML=`
+      <div class="flex items-center gap-2.5 mb-5">
+        <span class="tag" style="background:var(--amber);color:#1a1205;font-weight:700"><i class="fa-solid fa-trophy text-[9px]"></i> WORLD CUP</span>
+        ${m.round?`<span class="etag" style="font-size:10px">${esc(String(m.round).toUpperCase())}</span>`:''}
+      </div>
+      <div style="font-size:clamp(22px,3vw,30px);font-weight:700;letter-spacing:-.03em;line-height:1.15">
+        ${esc(m.home)} <span style="color:var(--muted);font-weight:500">vs</span> ${esc(m.away)}</div>
+      <div class="t-sm mt-2.5">${ko(m)} · one prediction per game</div>
+      <div class="flex items-center justify-between gap-4 flex-wrap mt-6">
+        ${c ? `<div class="flex items-center gap-3 flex-wrap">
+                 <span class="mkt">${esc(shortMk(c.market))}</span>
+                 <span class="t-xs">${c.engines.length}/${TOTAL} engines agree · ${esc(c.engines.slice(0,2).join(', '))}</span>
+               </div>
+               ${typeof P2USlip!=='undefined'?P2USlip.btn(m,c.market):''}`
+            : `<span class="mkt" style="background:rgba(103,103,105,.15);color:var(--ink-2);border-color:var(--line-2)">NO BET</span>
+               <span class="t-xs">No engine found an edge — an honest pick too.</span>`}
+      </div>`;
+  }
+
+  async function renderUser(){
+    if(!window.supabase||!window.supabase.createClient) return;
+    let sb; try{ sb=window.supabase.createClient('https://tjbkkhirnwfensqzuvzn.supabase.co','sb_publishable_wjdYr-Px9FmMob7WfEswJQ_wj4cuNkd'); }catch(e){ return; }
+    try{
+      const {data}=await sb.auth.getSession();
+      const s=data&&data.session; if(!s) return;
+      const {data:p}=await sb.from('profiles').select('handle,avatar_url').eq('id',s.user.id).maybeSingle();
+      if(!p){ $('user-name').textContent='Claim handle'; $('user-sub').textContent='One step left'; return; }
+      const {data:r}=await sb.from('user_ranks').select('rank_tier,verified,slips_won,slips_lost,hit_pct').eq('user_id',s.user.id).maybeSingle();
+      const tick=r&&r.verified?' <span title="20+ settled slip wins — granted by results" style="display:inline-flex;align-items:center;justify-content:center;width:13px;height:13px;border-radius:50%;background:var(--em);color:#062e20;font-size:8px;font-weight:800;vertical-align:middle">\u2713</span>':'';
+      $('user-name').innerHTML='@'+esc(p.handle)+tick;
+      const settled=r?(r.slips_won||0)+(r.slips_lost||0):0;
+      $('user-sub').textContent=!r||!settled?'No settled slips yet':`${r.rank_tier} · ${r.hit_pct}% of ${settled}`;
+      $('user-av').innerHTML=p.avatar_url
+        ? `<img src="${esc(p.avatar_url)}" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover"/>`
+        : `<span style="font-weight:700;font-size:12px;color:var(--em)">${esc(p.handle[0].toUpperCase())}</span>`;
+    }catch(e){}
+  }
+
+  $('f-search').addEventListener('input',e=>{ q=e.target.value.toLowerCase().trim(); showAll=false; renderCards(); });
+  $('f-league').addEventListener('change',e=>{ league=e.target.value; showAll=false; renderCards(); });
+  document.querySelectorAll('[data-jump]').forEach(a=>a.addEventListener('click',e=>{
+    e.preventDefault(); const t=document.getElementById(a.dataset.jump);
+    if(t) t.scrollIntoView({behavior:'smooth',block:'start'}); }));
+
+  renderDates(); renderLeagues(); renderPills(); syncBoard(); renderStats(); renderCards(); renderWC();
+  (window.requestIdleCallback||(f=>setTimeout(f,60)))(()=>{ renderEngines(); renderPerf(); renderUser(); });
 })();
+</script>
+<script>
+if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 </script>
 </body>
 </html>
