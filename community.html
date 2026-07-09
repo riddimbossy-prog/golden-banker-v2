@@ -41,6 +41,16 @@ button.ghost{ background:transparent; color:var(--muted); border:1px solid var(-
 .follow.on{ background:var(--brand); color:#06120a; }
 .mini{ font-size:12px; padding:7px 14px; border-radius:8px; cursor:pointer; }
 .mini.ghost{ background:transparent; border:1px solid var(--line); color:var(--muted); }
+.members{ display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; }
+.member{ background:rgba(127,127,127,.06); border:1px solid var(--line); border-radius:14px; padding:14px 12px; text-align:center; }
+.member .av{ margin-bottom:8px; }
+.member .mh{ font-weight:800; font-size:14px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.member .mb{ font-size:11.5px; color:var(--muted); min-height:16px; margin:2px 0 6px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.member .mstats{ font-size:10.5px; color:var(--muted); margin-bottom:10px; }
+.member .follow{ width:100%; padding:7px 0; }
+.member .you{ font-size:11px; color:var(--brand-2); font-weight:700; }
+.credit{ font-size:10.5px; color:var(--muted); background:rgba(127,127,127,.1); border-radius:6px; padding:2px 7px; }
+.credit b{ color:var(--brand-2); }
 .pill.gold{ background:rgba(232,193,90,.15); color:var(--gold); }
 .rank{ font-family:'Saira Condensed'; font-weight:900; font-size:20px; color:var(--gold); width:22px; text-align:center; }
 #top-picks .pick{ border-left-color:var(--gold); }
@@ -113,7 +123,7 @@ footer{ text-align:center; color:var(--muted); font-size:12.5px; padding:30px 0 
     </div>
     <div class="stats" id="dash-stats"></div>
     <div class="note" id="dash-note"></div>
-    <details style="margin-top:12px">
+    <details id="edit-profile" style="margin-top:12px">
       <summary style="cursor:pointer;font-size:13px;color:var(--brand-2);font-weight:700">Edit profile</summary>
       <div style="margin-top:10px">
         <label style="font-size:12px;color:var(--muted)">Profile picture (PNG/JPG/WebP, max 2MB)</label>
@@ -134,7 +144,7 @@ footer{ text-align:center; color:var(--muted); font-size:12.5px; padding:30px 0 
 
   <div class="card">
     <h2>Most popular slip</h2>
-    <p style="font-size:13.5px;color:var(--muted)">The most-tailed public slip of the last 7 days.</p>
+    <p style="font-size:13.5px;color:var(--muted)">The most-copied public slip of the last 7 days.</p>
     <div id="popular" style="margin-top:12px"><div class="empty">Loading…</div></div>
   </div>
 
@@ -155,13 +165,9 @@ footer{ text-align:center; color:var(--muted); font-size:12.5px; padding:30px 0 
   </div>
 
   <div class="card">
-    <h2>Save your slip</h2>
-    <p style="font-size:14px;color:var(--muted)">Public slips join the community record — everyone sees how they settle. Private slips are yours alone. Either way, legs freeze on save and losses are never deleted.</p>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
-      <button id="save-public">Save &amp; post publicly</button>
-      <button class="ghost" id="save-private">Save privately</button>
-    </div>
-    <div class="msg" id="save-msg"></div>
+    <h2>Members</h2>
+    <p style="font-size:13.5px;color:var(--muted)">Everyone building a public record here. Follow someone and their slips show up in your feed.</p>
+    <div id="members" class="members" style="margin-top:14px"><div class="empty">Loading…</div></div>
   </div>
 
   <div class="card">
