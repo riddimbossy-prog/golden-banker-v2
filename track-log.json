@@ -49418,7 +49418,7 @@
       "market": "Over 1.5",
       "confidence": 8,
       "leagueClass": "Balanced",
-      "recordedAt": "2026-07-10T08:14:18.705Z",
+      "recordedAt": "2026-07-10T08:15:31.762Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -49432,7 +49432,7 @@
       "market": "Over 1.5",
       "confidence": 8,
       "leagueClass": "Balanced",
-      "recordedAt": "2026-07-10T08:14:18.705Z",
+      "recordedAt": "2026-07-10T08:15:31.762Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -49446,7 +49446,7 @@
       "market": "Home Team Over 0.5 Goals",
       "confidence": 10,
       "leagueClass": "Balanced",
-      "recordedAt": "2026-07-10T08:14:18.705Z",
+      "recordedAt": "2026-07-10T08:15:31.762Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -49460,7 +49460,7 @@
       "market": "Over 1.5 Goals",
       "confidence": 10,
       "leagueClass": "High-Scoring",
-      "recordedAt": "2026-07-10T08:14:18.722Z",
+      "recordedAt": "2026-07-10T08:15:31.779Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -49468,6 +49468,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-10T08:14:18.762Z"
+    "updated": "2026-07-10T08:15:31.815Z"
   }
 }
