@@ -45163,8 +45163,8 @@
       "confidence": 10,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-09T01:54:59.839Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -45177,8 +45177,8 @@
       "confidence": 9,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-09T01:54:59.839Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -45191,8 +45191,8 @@
       "confidence": 9,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-09T01:54:59.839Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -45205,8 +45205,8 @@
       "confidence": 10,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-09T01:54:59.839Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -45303,8 +45303,8 @@
       "confidence": 9,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-09T01:54:59.839Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -45317,8 +45317,8 @@
       "confidence": 9,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-09T01:54:59.839Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -45331,8 +45331,8 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-09T01:54:59.839Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -50434,6 +50434,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-10T19:15:40.892Z"
+    "updated": "2026-07-10T19:16:58.707Z"
   }
 }
