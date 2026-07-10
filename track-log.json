@@ -50496,7 +50496,7 @@
       "market": "Away Team Over 0.5 Goals",
       "confidence": 9,
       "leagueClass": "Balanced",
-      "recordedAt": "2026-07-10T20:10:49.336Z",
+      "recordedAt": "2026-07-10T20:12:01.820Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -50504,6 +50504,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-10T20:10:49.434Z"
+    "updated": "2026-07-10T20:12:01.930Z"
   }
 }
