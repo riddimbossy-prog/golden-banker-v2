@@ -23,22 +23,22 @@
 *{ box-sizing:border-box; min-width:0; }
 html,body{ overflow-x:hidden; max-width:100%; }
 body{ background:var(--bg); color:var(--ink); font-family:Inter,system-ui,-apple-system,sans-serif;
-  font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased;
+  font-size:16px; font-weight:500; line-height:1.55; -webkit-font-smoothing:antialiased;
   padding-left:env(safe-area-inset-left); padding-right:env(safe-area-inset-right); }
 img{ max-width:100%; } button{ font:inherit; cursor:pointer; } input,select{ font:inherit; }
 :focus-visible{ outline:2px solid var(--em); outline-offset:2px; border-radius:8px; }
 a{ color:inherit; text-decoration:none; }
 
 /* type scale — sized to the design mock */
-.t-hero{ font-size:clamp(46px,7.6vw,78px); font-weight:800; line-height:.96; letter-spacing:-.04em; }
-.t-lead{ font-size:17px; color:var(--ink-2); line-height:1.6; }
-.t-h2{ font-size:24px; font-weight:700; letter-spacing:-.022em; }
-.t-h3{ font-size:16.5px; font-weight:600; letter-spacing:-.01em; line-height:1.35; }
-.t-num{ font-size:48px; font-weight:700; letter-spacing:-.035em; line-height:1; font-variant-numeric:tabular-nums; }
-.t-sm{ font-size:13.5px; color:var(--ink-2); }
-.t-xs{ font-size:12px; color:var(--muted); }
-.t-lbl{ font-size:11px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
-.mono{ font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:12px; }
+.t-hero{ font-size:clamp(54px,8.8vw,94px); font-weight:800; line-height:.96; letter-spacing:-.04em; }
+.t-lead{ font-size:19px; font-weight:500; color:var(--ink-2); line-height:1.6; }
+.t-h2{ font-size:29px; font-weight:800; letter-spacing:-.022em; }
+.t-h3{ font-size:19px; font-weight:700; letter-spacing:-.01em; line-height:1.35; }
+.t-num{ font-size:58px; font-weight:800; letter-spacing:-.035em; line-height:1; font-variant-numeric:tabular-nums; }
+.t-sm{ font-size:15px; font-weight:500; color:var(--ink-2); }
+.t-xs{ font-size:13.5px; font-weight:500; color:var(--muted); }
+.t-lbl{ font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+.mono{ font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:13.5px; font-weight:600; }
 .tnum{ font-variant-numeric:tabular-nums; }
 
 .card{ background:var(--card); border:1px solid var(--line); border-radius:14px; }
@@ -47,14 +47,14 @@ a{ color:inherit; text-decoration:none; }
 @media(hover:hover){ .card-h:hover{ border-color:var(--line-2); } }
 
 /* engine pills — exact */
-.pill{ font-size:13px; font-weight:500; padding:9px 18px; border-radius:999px;
+.pill{ font-size:15px; font-weight:600; padding:11px 20px; border-radius:999px;
   border:1px solid var(--line-2); color:var(--ink-2); background:transparent; white-space:nowrap;
   transition:all .15s ease; }
 .pill:hover{ color:var(--ink); border-color:#3a3a3e; }
 .pill.on{ background:var(--em); color:#062e20; border-color:var(--em); font-weight:600; }
 
 /* status tags — exact */
-.tag{ display:inline-flex; align-items:center; gap:5px; font-size:11px; font-weight:600;
+.tag{ display:inline-flex; align-items:center; gap:5px; font-size:12.5px; font-weight:700;
   padding:4px 9px; border-radius:6px; white-space:nowrap; }
 .tag-won{ background:var(--em-dim); color:var(--em); }
 .tag-lost{ background:rgba(244,99,110,.12); color:var(--loss); }
@@ -63,9 +63,9 @@ a{ color:inherit; text-decoration:none; }
 .tag-live{ background:var(--em-dim); color:var(--em); }
 
 /* market chip + odds */
-.mkt{ font-size:13px; font-weight:600; padding:6px 14px; border-radius:7px;
+.mkt{ font-size:15px; font-weight:700; padding:7px 16px; border-radius:7px;
   background:var(--em-dim); color:var(--em); border:1px solid var(--em-line); }
-.odds{ font-size:16px; font-weight:600; color:var(--ink); font-variant-numeric:tabular-nums; }
+.odds{ font-size:18px; font-weight:700; color:var(--ink); font-variant-numeric:tabular-nums; }
 
 /* AGREEMENT BAR — the design's CONF bar, driven by a real number.
    The engines emit no probability, so this shows how many of the 13 agree.
@@ -74,17 +74,17 @@ a{ color:inherit; text-decoration:none; }
 .agree-lbl{ font-size:10px; font-weight:600; letter-spacing:.09em; color:var(--muted); flex:0 0 auto; }
 .agree-track{ flex:1; height:5px; border-radius:3px; background:#1d1d20; overflow:hidden; }
 .agree-fill{ height:100%; border-radius:3px; background:var(--em); }
-.agree-val{ font-size:13.5px; font-weight:600; color:var(--ink); flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.agree-val{ font-size:15px; font-weight:700; color:var(--ink); flex:0 0 auto; font-variant-numeric:tabular-nums; }
 
 /* engine name tags on cards */
-.etag{ font-size:10.5px; font-weight:500; padding:3px 8px; border-radius:5px;
+.etag{ font-size:12px; font-weight:600; padding:3px 8px; border-radius:5px;
   background:#16161b; color:var(--muted); border:1px solid #1d1d20; }
 
 /* card buttons */
-.btn-det{ flex:1; font-size:12.5px; font-weight:600; letter-spacing:.06em; padding:10px; border-radius:999px;
+.btn-det{ flex:1; font-size:14px; font-weight:700; letter-spacing:.06em; padding:10px; border-radius:999px;
   border:1px solid var(--line-2); color:var(--ink-2); background:transparent; transition:all .15s; }
 .btn-det:hover{ color:var(--ink); border-color:#3a3a3e; }
-.slip-add{ flex:1; font-size:12.5px; font-weight:700; letter-spacing:.06em; padding:10px 16px; border-radius:999px;
+.slip-add{ flex:1; font-size:14px; font-weight:800; letter-spacing:.06em; padding:10px 16px; border-radius:999px;
   background:var(--em); color:#062e20; border:none; transition:opacity .15s; }
 .slip-add:hover{ opacity:.86; }
 
@@ -99,13 +99,20 @@ a{ color:inherit; text-decoration:none; }
 
 .details{ overflow:hidden; max-height:0; transition:max-height .28s ease; }
 .details.open{ max-height:600px; }
-.reason{ font-size:13px; color:var(--ink-2); line-height:1.6; padding:7px 0; border-top:1px solid var(--line); }
+.reason{ font-size:14.5px; font-weight:500; color:var(--ink-2); line-height:1.6; padding:7px 0; border-top:1px solid var(--line); }
 
 .trunc{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .rise{ opacity:0; animation:rise .35s ease forwards; }
 @keyframes rise{ to{ opacity:1; } }
 @media(prefers-reduced-motion:reduce){ .rise{ animation:none; opacity:1; } .card-h:hover{ border-color:var(--line); } }
 @media(pointer:coarse){ .pill,.btn-det,.slip-add{ min-height:40px; } }
+.cara{ display:flex; width:max-content; animation:cara 40s linear infinite; }
+.cara:hover{ animation-play-state:paused; }
+@keyframes cara{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+@media(prefers-reduced-motion:reduce){ .cara{ animation:none; overflow-x:auto; width:100%; } }
+.cara-item{ display:flex; align-items:center; gap:11px; padding:15px 22px; border-right:1px solid var(--line); white-space:nowrap; }
+.crest-sm{ width:22px; height:22px; object-fit:contain; }
+.lflag{ width:20px; height:14px; object-fit:cover; border-radius:2px; }
 .hide-sb::-webkit-scrollbar{ display:none; }
 .hide-sb{ scrollbar-width:none; }
 </style>
@@ -113,13 +120,7 @@ a{ color:inherit; text-decoration:none; }
 <body>
 <nav class="sticky top-0 z-50" style="background:var(--bg);border-bottom:1px solid var(--line)">
   <div class="max-w-[1240px] mx-auto px-6 h-[62px] flex items-center gap-8">
-    <a href="index.html" class="flex items-center gap-3 shrink-0">
-      <div class="w-9 h-9 rounded-xl flex items-center justify-center font-extrabold text-[15px]" style="background:var(--em);color:#062e20">P2</div>
-      <div class="hidden sm:block leading-none">
-        <div class="font-bold text-[19px] tracking-tight">Predict2u</div>
-        <div class="t-lbl mt-1" style="font-size:8.5px">Every pick · Every result</div>
-      </div>
-    </a>
+    <a href="index.html" class="flex items-center shrink-0"><img src="email-logo.png" alt="Predict2u — every pick, every result" style="height:44px;width:auto;max-width:210px;object-fit:contain"/></a>
     <div class="hidden lg:flex items-center gap-7 text-[14px] mx-auto" style="color:var(--ink-2)">
       <a href="#top" data-jump="top" class="pb-1 font-medium" style="color:var(--em);border-bottom:2px solid var(--em)">Overview</a>
       <a href="#board" data-jump="board" class="hover:text-white transition-colors">Today's Board</a>
@@ -204,6 +205,15 @@ a{ color:inherit; text-decoration:none; }
       </div>
       <div class="t-num mt-3" id="s-engines">—</div>
       <div class="mt-3 flex items-center gap-1" id="s-engines-sub">&nbsp;</div>
+    </div>
+  </div>
+  <div id="carousel-wrap" class="mt-7" style="display:none">
+    <div class="flex items-center gap-3 mb-3">
+      <span class="t-lbl" style="color:var(--em)">TODAY'S RESULTS</span>
+      <span class="t-xs" id="carousel-count"></span>
+    </div>
+    <div class="card" style="overflow:hidden;padding:0">
+      <div class="cara" id="carousel"></div>
     </div>
   </div>
 </header>
@@ -440,8 +450,8 @@ a{ color:inherit; text-decoration:none; }
           <span class="mono" style="color:var(--muted)">${ko(p.m)||'&nbsp;'}</span>
           ${statusTag(p.m,p.market)}
         </div>
-        <div class="t-h3">${esc(p.m.home)} <span style="color:var(--muted);font-weight:400">vs</span> ${esc(p.m.away)}</div>
-        <div class="t-xs mt-1.5 trunc">${esc(p.m.league||'')}</div>
+        <div class="t-h3" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">${crest(p.m.homeLogo)}<span>${esc(p.m.home)}</span><span style="color:var(--muted);font-weight:500">vs</span>${crest(p.m.awayLogo)}<span>${esc(p.m.away)}</span></div>
+        <div class="t-xs mt-1.5 trunc" style="display:flex;align-items:center;gap:7px">${crest(p.m.flag,'lflag')}<span class="trunc">${esc(p.m.league||'')}</span></div>
         <div class="flex items-center justify-between gap-3 mt-4">
           <span class="mkt">${esc(shortMk(p.market))}</span>
           <span class="odds">${price?price.toFixed(2):'—'}</span>
@@ -529,6 +539,22 @@ a{ color:inherit; text-decoration:none; }
     });
     return {w,l,days};
   }
+  const crest=(u,cls)=>u?`<img class="${cls||'crest-sm'}" src="${esc(u)}" alt="" loading="lazy" onerror="this.style.display='none'"/>`:'';
+  function renderCarousel(){
+    const settled=consensus(dayMatches()).map(p=>({p,r:resultOf(p.m,p.market)})).filter(x=>x.r==='Won'||x.r==='Lost');
+    const wrap=$('carousel-wrap');
+    if(!settled.length){ wrap.style.display='none'; return; }
+    wrap.style.display='block';
+    const w=settled.filter(x=>x.r==='Won').length;
+    $('carousel-count').textContent=`${settled.length} settled · ${w} won · ${settled.length-w} lost — both on the record`;
+    const item=x=>`<div class="cara-item">
+      ${crest(x.p.m.homeLogo)}<span style="font-weight:700;font-size:15px">${esc(x.p.m.home)} <span style="color:var(--muted)">v</span> ${esc(x.p.m.away)}</span>${crest(x.p.m.awayLogo)}
+      <span class="t-xs">${esc(shortMk(x.p.market))}</span>
+      <span class="tag ${x.r==='Won'?'tag-won':'tag-lost'}">${x.r.toUpperCase()}</span>
+    </div>`;
+    const row=settled.map(item).join('');
+    $('carousel').innerHTML=row+row;
+  }
   function renderStats(){
     const list=dayMatches(), cons=consensus(list);
     $('s-matches').textContent=list.length;
@@ -614,14 +640,17 @@ a{ color:inherit; text-decoration:none; }
       : mode==='acca'?'The day\u2019s consensus bankers, combined. High risk by nature.' : (e?e[3]:'');
   }
   function renderDates(){
-    const win=dates.filter(d=>Math.abs((new Date(d)-new Date(todayISO))/864e5)<=3).slice(0,7);
+    const plus=n=>{ const t=new Date(todayISO); t.setDate(t.getDate()+n); return t.toISOString().slice(0,10); };
+    let win=dates.filter(d=>Math.abs((new Date(d)-new Date(todayISO))/864e5)<=3).slice(0,7);
+    for(const f of [plus(1),plus(2)]) if(!win.includes(f)) win.push(f);
+    win=[...new Set(win)].sort();
     $('date-strip').innerHTML=win.map(d=>{
       const n=(byDate[d]||[]).length;
       const label=d===todayISO?'TODAY':new Date(d+'T12:00:00').toLocaleDateString([],{day:'numeric',month:'short'}).toUpperCase();
       return `<button class="pill${d===activeDate?' on':''}" data-d="${d}" ${n?'':'style="opacity:.3;pointer-events:none"'}>${label}${n?` <span style="opacity:.6">${n}</span>`:''}</button>`;
     }).join('');
     $('date-strip').querySelectorAll('[data-d]').forEach(b=>b.addEventListener('click',()=>{
-      activeDate=b.dataset.d; showAll=false; renderDates(); renderLeagues(); renderStats(); renderEngines(); renderCards(); renderWC(); }));
+      activeDate=b.dataset.d; showAll=false; renderDates(); renderLeagues(); renderStats(); renderCarousel(); renderEngines(); renderCards(); renderWC(); }));
   }
   function renderLeagues(){
     const ls=[...new Set(dayMatches().map(m=>m.league).filter(Boolean))].sort();
@@ -692,7 +721,7 @@ a{ color:inherit; text-decoration:none; }
     e.preventDefault(); const t=document.getElementById(a.dataset.jump);
     if(t) t.scrollIntoView({behavior:'smooth',block:'start'}); }));
 
-  renderDates(); renderLeagues(); renderPills(); syncBoard(); renderStats(); renderCards(); renderWC();
+  renderDates(); renderLeagues(); renderPills(); syncBoard(); renderStats(); renderCarousel(); renderCards(); renderWC();
   (window.requestIdleCallback||(f=>setTimeout(f,60)))(()=>{ renderEngines(); renderPerf(); renderUser(); });
 })();
 </script>
