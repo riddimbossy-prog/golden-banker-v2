@@ -146,7 +146,7 @@
     const w=(slips||[]).filter(s=>s.status==='won').length, l=(slips||[]).filter(s=>s.status==='lost').length;
     const open=(slips||[]).filter(s=>s.status==='open').length;
     const pct=(w+l)?Math.round(100*w/(w+l)):null;
-    $('dash-av').innerHTML=avatar(profile.avatar_url,profile.handle,64);
+    $('dash-av').innerHTML=avatar(profile.avatar_url,profile.handle,190);
     $('dash-handle').textContent='@'+profile.handle;
     $('dash-bio').textContent=profile.bio||'No bio yet.';
     $('dash-stats').innerHTML=`
@@ -256,7 +256,7 @@
       const btn=isMe?'<span class="you">You</span>'
         :(!profile?'<span class="you" style="color:var(--muted)">Sign in to follow</span>'
         :`<button class="follow ${following?'on':''}" data-follow="${u.id}">${following?'Following':'Follow'}</button>`);
-      return `<div class="member">${avatar(u.avatar_url,u.handle,52)}
+      return `<div class="member">${avatar(u.avatar_url,u.handle,110)}
         <div class="mh">@${esc(u.handle)}${verifiedBadge(u.verified)}</div>
         <div class="mr">${rankChip(u.rank_tier)}${u.hit_pct?` <span style="font-size:10.5px;color:var(--muted)">${u.hit_pct}%</span>`:''}</div>
         <div class="mb">${esc(u.bio||'')}</div>
@@ -282,7 +282,7 @@
       const followBtn=(!profile||isMe)?'':`<button class="follow ${following?'on':''}" data-follow="${s.user_id}">${following?'Following':'Follow'}</button>`;
       const credit=s.tailed_from_handle?`<span class="credit">copied from <b>@${esc(s.tailed_from_handle)}</b></span>`:'';
       return `<div class="slip-card"><div class="slip-top">
-          ${avatar(s.avatar_url,s.handle,32)}
+          ${avatar(s.avatar_url,s.handle,44)}
           <span style="font-weight:700">@${esc(s.handle)}</span>${credit}${followBtn}
           <span style="margin-left:auto;font-size:11px;color:var(--muted)">${ago(s.created_at)} ago</span></div>
         <div class="slip-top" style="margin-bottom:6px">${statusPill(s.status)}
@@ -325,7 +325,7 @@
     const s=data&&data[0];
     if(!s||!s.tail_count){ host.innerHTML='<div class="empty">No slip has been copied yet this week. The most-copied slip shows up here.</div>'; return; }
     host.innerHTML=`<div class="slip-card" style="border-color:var(--gold)">
-      <div class="slip-top">${avatar(s.avatar_url,s.handle,32)}<span style="font-weight:700">@${esc(s.handle)}</span>
+      <div class="slip-top">${avatar(s.avatar_url,s.handle,44)}<span style="font-weight:700">@${esc(s.handle)}</span>
         <span class="pill gold">COPIED ${s.tail_count}×</span>
         <span style="margin-left:auto;font-size:11px;color:var(--muted)">${ago(s.created_at)} ago</span></div>
       <div class="slip-top" style="margin-bottom:6px">${statusPill(s.status)}
