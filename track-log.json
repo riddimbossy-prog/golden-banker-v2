@@ -44225,8 +44225,8 @@
       "confidence": 8,
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-07-09T01:54:59.799Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -46668,6 +46668,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-09T23:55:27.395Z"
+    "updated": "2026-07-10T00:06:34.416Z"
   }
 }
