@@ -3979,11 +3979,29 @@ function overlayApply(m, res){
   if(m && m.homePos!=null && m.awayPos!=null && m.sameGroup!==false && overlayIsTeamMarket(mk)){
     const gap=Math.abs(m.homePos-m.awayPos);
     if(gap<3){
+      // Bossman's fix: a CONFIRMED Double Chance price in a high-scoring league
+      // shouldn't be tossed for a BTTS reversion just because the table gap is
+      // tight. DC already covers two of three outcomes — in an environment
+      // that produces goals anyway, that's the safer honest pick. Keep it.
+      const isDC=/double chance/i.test(mk);
+      if(isDC && gateOk(mk)){
+        const lg=classifyLeague(m);
+        if(lg && (lg.type==="High-Scoring" || lg.type==="Very High-Scoring")){
+          return { ...res,
+            reasons:[...(res.reasons||[]), `Overlay: table gap only ${gap}, but ${mk} odds are confirmed in a ${lg.type.toLowerCase()} league (${lg.gpg?.toFixed?.(2)||'?'} gpg) — kept over a BTTS reversion.`],
+            overlay:{rule:"gap-dc-kept",gap,leagueType:lg.type} };
+        }
+      }
       let fb=null;
       if(hA!=null&&hD!=null&&aA!=null&&aD!=null){
         const att=hA+aA, def=hD+aD, cands=[];
         if(att>=3.00&&hA>=1.3&&aA>=1.1) cands.push("Over 2.5 Goals");
-        if(hA>=1.2&&aA>=1.0&&hD>=0.9&&aD>=0.9) cands.push("BTTS Yes");
+        // BTTS Yes now needs ELITE scoring from BOTH sides (not just decent) and a
+        // MEDIUM-TO-LEAKY defense band on both sides — a floor so it isn't a lockdown
+        // defense, and a ceiling so we're not reading a blowout's leakiness as a
+        // genuine both-teams-score shape. Elite defenses and one-sided routs both
+        // undermine the honest case for GG.
+        if(hA>=1.5&&aA>=1.3&&hD>=0.9&&hD<=2.2&&aD>=0.9&&aD<=2.2) cands.push("BTTS Yes");
         if(att>=2.40) cands.push("Over 1.5 Goals");
         if(hD<=0.80&&aA<=0.80) cands.push("BTTS No");
         if(att<=2.00&&def<=2.00) cands.push("Under 2.5 Goals");
