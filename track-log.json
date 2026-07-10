@@ -45961,8 +45961,8 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-09T09:50:54.194Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -45975,8 +45975,8 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-09T09:50:54.194Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -45989,8 +45989,8 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-09T09:50:54.194Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -46003,8 +46003,8 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-09T09:50:54.194Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -46017,8 +46017,8 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-09T09:50:54.194Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -46031,8 +46031,8 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-09T09:50:54.194Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -46045,8 +46045,8 @@
       "confidence": 8,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-09T09:50:54.194Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -50427,8 +50427,8 @@
       "confidence": 10,
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-10T18:11:09.582Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -50686,6 +50686,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-10T23:09:11.216Z"
+    "updated": "2026-07-10T23:10:22.285Z"
   }
 }
