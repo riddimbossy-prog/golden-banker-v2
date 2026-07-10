@@ -50430,10 +50430,66 @@
       "status": "pending",
       "result": null,
       "score": null
+    },
+    {
+      "matchDate": "2026-07-11",
+      "home": "Chengdu Better City",
+      "away": "Chongqing Tongliang Long",
+      "league": "Super League",
+      "engine": "Prime",
+      "market": "Double Chance 1X",
+      "confidence": 9,
+      "leagueClass": "High-Scoring",
+      "recordedAt": "2026-07-10T19:35:18.780Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-11",
+      "home": "Chengdu Better City",
+      "away": "Chongqing Tongliang Long",
+      "league": "Super League",
+      "engine": "Value",
+      "market": "Double Chance 1X",
+      "confidence": 9,
+      "leagueClass": "High-Scoring",
+      "recordedAt": "2026-07-10T19:35:18.780Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-11",
+      "home": "Chengdu Better City",
+      "away": "Chongqing Tongliang Long",
+      "league": "Super League",
+      "engine": "Pro",
+      "market": "Double Chance 1X",
+      "confidence": 9,
+      "leagueClass": "High-Scoring",
+      "recordedAt": "2026-07-10T19:35:18.780Z",
+      "status": "pending",
+      "result": null,
+      "score": null
+    },
+    {
+      "matchDate": "2026-07-11",
+      "home": "Chengdu Better City",
+      "away": "Chongqing Tongliang Long",
+      "league": "Super League",
+      "engine": "Trend",
+      "market": "Double Chance 1X",
+      "confidence": 8,
+      "leagueClass": "High-Scoring",
+      "recordedAt": "2026-07-10T19:35:18.780Z",
+      "status": "pending",
+      "result": null,
+      "score": null
     }
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-10T19:34:13.554Z"
+    "updated": "2026-07-10T19:35:18.843Z"
   }
 }
