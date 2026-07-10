@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Predict2u • The Full Board</title>
+<meta name="description" content="Every engine, every pick, every reason. The full Predict2u board with filters."/>
+<link rel="manifest" href="manifest.webmanifest"/>
+<link rel="icon" href="icon-192.png"/>
+<meta name="theme-color" content="#0a0a0f"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+/* palette: identical to the overview board */
+:root{
+  --bg:#0a0a0f; --card:#0f0f13; --panel:#111114; --line:#16161b; --line-2:#28282b;
+  --ink:#ffffff; --ink-2:#b8b8b9; --muted:#676769;
+  --em:#34d399; --em-dim:rgba(52,211,153,.12); --em-line:rgba(52,211,153,.25);
+  --amber:#fbbf24; --amber-dim:rgba(251,191,36,.12); --loss:#f4636e;
+}
+*{ box-sizing:border-box; min-width:0; }
+html,body{ overflow-x:hidden; max-width:100%; }
+body{ background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif;
+  font-size:16px; font-weight:500; line-height:1.55; -webkit-font-smoothing:antialiased;
+  padding-left:env(safe-area-inset-left); padding-right:env(safe-area-inset-right); }
+img{ max-width:100%; } button{ font:inherit; cursor:pointer; } input,select{ font:inherit; }
+a{ color:inherit; text-decoration:none; }
+:focus-visible{ outline:2px solid var(--em); outline-offset:2px; border-radius:8px; }
+.font-display{ font-family:Inter,system-ui,sans-serif; font-weight:800; letter-spacing:-.03em; }
+.mono{ font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:13.5px; font-weight:600; }
+.tnum{ font-variant-numeric:tabular-nums; }
+.glass{ background:var(--card); border:1px solid var(--line); }
+.card-h{ transition:border-color .18s ease, transform .18s ease; }
+@media(hover:hover){ .card-h:hover{ border-color:var(--line-2); transform:translateY(-2px); } }
+.stat-number{ letter-spacing:-.035em; line-height:1; font-variant-numeric:tabular-nums; }
+.fchip{ font-size:14px; font-weight:600; padding:9px 16px; border-radius:999px;
+  border:1px solid var(--line-2); color:var(--ink-2); background:transparent; white-space:nowrap; transition:all .15s; }
+.fchip:hover{ color:var(--ink); border-color:#3a3a3e; }
+.fchip.on{ background:var(--em); color:#062e20; border-color:var(--em); font-weight:600; }
+.tag{ display:inline-flex; align-items:center; gap:5px; font-size:12.5px; font-weight:700;
+  letter-spacing:.04em; padding:4px 11px; border-radius:999px; white-space:nowrap; }
+.tag-won{ background:var(--em); color:#062e20; }
+.tag-lost{ background:var(--loss); color:#fff; }
+.tag-void{ background:rgba(103,103,105,.2); color:var(--ink-2); }
+.tag-pend{ background:var(--amber-dim); color:var(--amber); }
+.tag-live{ background:var(--em-dim); color:var(--em); }
+.ebadge{ font-size:12.5px; font-weight:700; padding:2px 8px; border-radius:5px;
+  background:rgba(52,211,153,.09); color:var(--em); }
+.slip-add{ font-size:13.5px; font-weight:800; padding:9px 15px; border-radius:14px;
+  background:var(--em); color:#062e20; border:none; display:inline-flex; align-items:center; gap:6px; transition:opacity .15s; }
+.slip-add:hover{ opacity:.86; }
+.btn-info{ font-size:13.5px; font-weight:600; padding:9px 12px; border-radius:14px; border:1px solid var(--line-2);
+  color:var(--ink-2); background:transparent; transition:all .15s; }
+.btn-info:hover{ color:var(--ink); background:var(--panel); }
+.details{ overflow:hidden; max-height:0; transition:max-height .28s ease; }
+.details.open{ max-height:600px; }
+.reason{ font-size:14.5px; font-weight:500; color:var(--ink-2); line-height:1.6; padding:7px 0; border-top:1px solid var(--line); }
+.crest-sm{ width:22px; height:22px; object-fit:contain; }
+.lflag{ width:20px; height:14px; object-fit:cover; border-radius:2px; }
+.trunc{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.hide-sb::-webkit-scrollbar{ display:none; } .hide-sb{ scrollbar-width:none; }
+.rise{ opacity:0; animation:rise .35s ease forwards; }
+@keyframes rise{ to{ opacity:1; } }
+@media(prefers-reduced-motion:reduce){ .rise{ animation:none; opacity:1; } .card-h:hover{ transform:none; } }
+@media(pointer:coarse){ .fchip,.slip-add,.btn-info{ min-height:40px; } }
+</style>
+</head>
+<body>
+
+<nav class="sticky top-0 z-50" style="background:rgba(10,10,15,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)">
+  <div class="max-w-screen-2xl mx-auto px-5 lg:px-8 h-[62px] flex items-center gap-6">
+    <a href="index.html" class="flex items-center shrink-0"><img src="email-logo.png" alt="Predict2u" style="height:44px;width:auto;max-width:210px;object-fit:contain"/></a>
+    <div class="hidden lg:flex items-center gap-7 text-[14px] mx-auto" style="color:var(--ink-2)">
+      <a href="board.html" class="hover:text-white transition-colors">Overview</a>
+      <a href="#board" class="pb-1 font-medium" style="color:var(--em);border-bottom:2px solid var(--em)">Full Board</a>
+      <a href="board.html#engines" class="hover:text-white transition-colors">Engines</a>
+      <a href="community.html" class="hover:text-white transition-colors">Community</a>
+    </div>
+    <div class="ml-auto lg:ml-0 flex items-center gap-4">
+      <a href="board.html" class="text-[13px] px-4 py-2 rounded-full" style="border:1px solid var(--line-2);color:var(--ink-2)">← Overview</a>
+    </div>
+  </div>
+</nav>
+
+<div id="snapshot" class="max-w-screen-2xl mx-auto px-5 lg:px-8 py-10">
+  <div class="uppercase tracking-[2px] text-xs font-semibold" style="color:var(--em)" id="page-tag">THE FULL BOARD</div>
+  <h1 class="font-display text-5xl lg:text-6xl tracking-tight mt-2" id="page-title">Every pick, every reason</h1>
+  <p class="mt-3 text-[18px] font-medium max-w-2xl" style="color:var(--ink-2)" id="page-sub">All thirteen engines on one board. Filter by engine or market — or read why each pick was made.</p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 max-w-2xl">
+    <div class="glass rounded-3xl p-5">
+      <div class="text-[10.5px] uppercase tracking-[.1em] font-medium" style="color:var(--muted)">Matches</div>
+      <div class="text-6xl font-display stat-number mt-2" id="matches-count">—</div>
+    </div>
+    <div class="glass rounded-3xl p-5">
+      <div class="text-[10.5px] uppercase tracking-[.1em] font-medium" style="color:var(--muted)">Consensus</div>
+      <div class="text-6xl font-display stat-number mt-2" style="color:var(--em)" id="consensus-count">—</div>
+    </div>
+    <div class="glass rounded-3xl p-5">
+      <div class="text-[10.5px] uppercase tracking-[.1em] font-medium" style="color:var(--muted)">Settled</div>
+      <div class="text-6xl font-display stat-number mt-2" id="settled-count">—</div>
+    </div>
+  </div>
+</div>
+
+<div id="bankers" class="max-w-screen-2xl mx-auto px-5 lg:px-8 pb-12">
+  <div class="flex items-end justify-between mb-6 gap-4 flex-wrap">
+    <div>
+      <div class="uppercase tracking-[2px] text-xs font-semibold" style="color:var(--em)">TODAY'S ELITE</div>
+      <div class="font-display text-4xl lg:text-5xl tracking-tight">Top Consensus Bankers</div>
+    </div>
+    <button data-jump="board" class="hidden md:flex items-center text-sm px-4 py-2 transition-colors" style="color:var(--em)">
+      See all <span id="see-all-n" class="mx-1">—</span> <i class="fa-solid fa-arrow-right ml-1 text-[11px]"></i>
+    </button>
+  </div>
+  <div id="top-bankers-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4"></div>
+</div>
+
+<div id="board" class="max-w-screen-2xl mx-auto px-5 lg:px-8 pb-20">
+  <div class="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-5 items-start">
+
+    <aside class="glass rounded-3xl p-6 lg:sticky lg:top-[80px]">
+      <div class="relative mb-5">
+        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-[11px]" style="color:var(--muted)"></i>
+        <input id="search-input" type="text" placeholder="Search teams or leagues…" autocomplete="off"
+          class="w-full pl-10 pr-4 py-3 rounded-2xl text-[13px] outline-none"
+          style="background:var(--panel);border:1px solid var(--line);color:var(--ink)"/>
+      </div>
+      <div class="text-[10.5px] uppercase tracking-[.12em] font-medium mb-2.5" style="color:var(--muted)">Engine</div>
+      <div class="flex flex-wrap gap-1.5 mb-6" id="engine-filters"></div>
+      <div class="text-[10.5px] uppercase tracking-[.12em] font-medium mb-2.5" style="color:var(--muted)">Market</div>
+      <div class="flex flex-wrap gap-1.5 mb-6" id="market-filters"></div>
+      <div class="text-[10.5px] uppercase tracking-[.12em] font-medium mb-2.5" style="color:var(--muted)">Date</div>
+      <div class="flex flex-wrap gap-1.5" id="date-filters"></div>
+      <div class="mt-6 pt-5 text-[12.5px]" style="border-top:1px solid var(--line);color:var(--ink-2)">
+        Showing <span id="visible-count" class="font-semibold" style="color:var(--em)">—</span> of <span id="total-count">—</span> picks
+      </div>
+    </aside>
+
+    <div>
+      <div id="acca-note" class="glass rounded-3xl p-5 mb-4" style="display:none"></div>
+      <div id="matches-grid" class="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-3.5">
+        <div class="text-sm py-2" style="color:var(--muted)">Reading the board…</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="py-8 pb-24" style="border-top:1px solid var(--line)">
+  <div class="max-w-screen-2xl mx-auto px-5 lg:px-8 flex flex-wrap items-center justify-between gap-5 text-[12px]" style="color:var(--muted)">
+    <div>© Predict2u 2026 · Records, not wagers. Bet responsibly. 18+</div>
+    <div class="flex gap-6 flex-wrap">
+      <a href="responsible-gambling.html" class="hover:text-white transition-colors">Responsible Gambling</a>
+      <a href="terms.html" class="hover:text-white transition-colors">Terms</a>
+      <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+    </div>
+    <div style="color:var(--em)">Built for transparency</div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="banker-engine.js"></script>
+<script src="data.js"></script>
+<script src="slip.js"></script>
+<script>
+/* ===========================================================================
+   FULL BOARD — the design's engines page. Real engines, real data.
+   The mock's own slip panel + "BUILD ACCUMULATOR" button are replaced by the
+   site's real slip system (P2USlip): the same drawer used everywhere, with
+   Post publicly / Save private, self-settling legs, and localStorage carry.
+   No second slip state, no betting-language button.
+   =========================================================================== */
+(function(){
+  const M = window.MATCHES || [];
+  const $ = id => document.getElementById(id);
+  const esc = t => String(t==null?'':t).replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+  const shortMk = mk => String(mk||'')
+    .replace('Home Team Over 1.5 Goals','Home Over 1.5').replace('Away Team Over 1.5 Goals','Away Over 1.5')
+    .replace('Home Team Under 1.5 Goals','Home Under 1.5').replace('Away Team Under 1.5 Goals','Away Under 1.5')
+    .replace(/ Goals$/,'');
+
+  const ENG = [
+    ['normal','Normal','recommend'],['strict','Strict','strictRecommend'],['ultra','Ultra','ultraRecommend'],
+    ['rulespro','Elite','rulesProRecommend'],['apex','Apex','apexRecommend'],['prime','Prime','primeRecommend'],
+    ['value','Value','valueRecommend'],['pro','Pro','proRecommend'],['trend','Trend','trendRecommend'],
+    ['streaks','Streaks','streakRecommend'],['halves','Halves','halvesRecommend'],
+    ['mismatch','Mismatch','mismatchRecommend'],['indicator','Market Indicators','indicatorRecommend'],
+  ].filter(e=>typeof window[e[2]]==='function');
+  const TOTAL=ENG.length;
+
+  const todayISO=new Date().toISOString().slice(0,10);
+  const byDate={};
+  M.forEach(m=>{ const d=m.matchDate||'Undated'; (byDate[d]=byDate[d]||[]).push(m); });
+  const dates=Object.keys(byDate).filter(d=>d!=='Undated').sort();
+  let activeDate=dates.includes(todayISO)?todayISO:(dates.find(d=>d>todayISO)||dates[dates.length-1]||todayISO);
+  const dayMatches=()=>byDate[activeDate]||[];
+
+  const params=new URLSearchParams(location.search);
+  let engineF=params.get('engine')||'all';
+  if(engineF!=='all'&&engineF!=='top'&&!ENG.some(e=>e[0]===engineF)) engineF='all';
+  if(engineF==='top') engineF='all';
+  let marketF='all', q='';
+  const keyOf=m=>(m.id!=null?'f'+m.id:m.home+'|'+m.away+'|'+m.matchDate);
+
+  /* every engine's opinion on the day's matches, kept whole */
+  function allPicks(){
+    const rows=[];
+    const by={};
+    for(const m of dayMatches()){
+      for(const e of ENG){
+        let r; try{ r=window[e[2]](m); }catch(x){ continue; }
+        if(!r||!r.bet) continue;
+        const k=keyOf(m)+'|'+r.primary;
+        by[k]=by[k]||{m,market:r.primary,engines:[],out:r,banker:false};
+        by[k].engines.push(e[1]);
+        if(r.banker) by[k].banker=true;
+      }
+    }
+    return Object.values(by).sort((a,b)=>b.engines.length-a.engines.length);
+  }
+
+  const crest=(u,cls)=>u?`<img class="${cls||'crest-sm'}" src="${esc(u)}" alt="" loading="lazy" onerror="this.style.display='none'"/>`:'';
+  const resultOf=(m,mk)=>{ if(m.homeGoals==null) return '';
+    try{ return settle(mk,m.homeGoals,m.awayGoals,m.status,m)||''; }catch(e){ return ''; } };
+  function statusTag(m,mk){
+    if(m.homeGoals==null)
+      return ['1H','2H','HT','ET','P','LIVE'].includes(String(m.status))
+        ? '<span class="tag tag-live">LIVE</span>':'<span class="tag tag-pend">PENDING</span>';
+    const r=resultOf(m,mk);
+    if(r==='Won') return '<span class="tag tag-won">WON</span>';
+    if(r==='Lost') return '<span class="tag tag-lost">LOST</span>';
+    if(r==='Void') return '<span class="tag tag-void">VOID</span>';
+    return '';
+  }
+  const ko=m=>{ if(!m.kickoff) return '';
+    try{ return new Date(m.kickoff).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',hour12:false}); }catch(e){ return ''; } };
+  const ODDS={'Home Win':'home','Draw':'draw','Away Win':'away','Over 1.5':'over15','Over 2.5':'over25','Over 3.5':'over35','Under 1.5':'under15','Under 2.5':'under25','Under 3.5':'under35','BTTS Yes':'bttsYes','BTTS No':'bttsNo','Double Chance 1X':'dc1x','Double Chance 12':'dc12','Double Chance X2':'dcx2'};
+  const priceOf=(m,mk)=>{ const k=ODDS[String(mk).replace(/ Goals$/,'')]; const v=k&&m.odds?m.odds[k]:null;
+    return (typeof v==='number'&&v>1)?v:null; };
+  const marketTag=mk=>{ const s=String(mk||'').toLowerCase();
+    if(s.includes('btts')) return 'btts';
+    if(s.includes('over')||s.includes('under')) return 'ou';
+    if(s.includes('dnb')) return 'dnb';
+    if(s.includes('double chance')) return 'dc';
+    if(s.includes('win')||s.includes('draw')) return 'win';
+    return 'other'; };
+
+  function filtered(){
+    let rows=allPicks();
+    if(engineF!=='all'){ const name=(ENG.find(e=>e[0]===engineF)||[])[1];
+      rows=rows.filter(p=>p.engines.includes(name)); }
+    if(marketF!=='all') rows=rows.filter(p=>marketTag(p.market)===marketF);
+    if(q) rows=rows.filter(p=>(p.m.home+' '+p.m.away+' '+(p.m.league||'')).toLowerCase().includes(q));
+    return rows;
+  }
+
+  /* ---------- top consensus bankers (5 across, like the mock) ---------- */
+  function renderTop(){
+    const cons=allPicks().filter(p=>p.banker&&p.engines.length>1).slice(0,5);
+    $('top-bankers-grid').innerHTML=cons.length?cons.map((p,i)=>{
+      const price=priceOf(p.m,p.market);
+      const btn=(p.m.homeGoals==null&&typeof P2USlip!=='undefined')?P2USlip.btn(p.m,p.market):'';
+      return `<div class="glass card-h rounded-3xl p-5 rise" style="animation-delay:${i*45}ms;border-color:var(--em-line)">
+        <div class="flex items-center justify-between gap-2 mb-3">
+          <span class="ebadge">${p.engines.length}/${TOTAL} engines</span>
+          ${statusTag(p.m,p.market)}
+        </div>
+        <div class="font-bold text-[18px] leading-snug" style="display:flex;flex-direction:column;gap:4px"><span style="display:flex;align-items:center;gap:7px">${crest(p.m.homeLogo)}${esc(p.m.home)}</span><span style="display:flex;align-items:center;gap:7px"><span style="color:var(--em)">vs</span> ${crest(p.m.awayLogo)}${esc(p.m.away)}</span></div>
+        <div class="text-[13.5px] font-medium mt-1.5 trunc" style="color:var(--muted)">${esc(p.m.league||'')}</div>
+        <div class="flex items-center justify-between gap-2 mt-4">
+          <span class="font-semibold text-[14px]" style="color:var(--em)">${esc(shortMk(p.market))}</span>
+          <span class="mono">${price?price.toFixed(2):'—'}</span>
+        </div>
+        <div class="mt-3">${btn}</div>
+      </div>`;
+    }).join(''):'<div class="col-span-full glass rounded-3xl p-8 text-center text-sm" style="color:var(--ink-2)">No multi-engine consensus bankers on this date yet.</div>';
+  }
+
+  /* ---------- the full grid ---------- */
+  const REG={};
+  function renderMatches(){
+    const rows=filtered();
+    $('visible-count').textContent=rows.length;
+    $('total-count').textContent=allPicks().length;
+    if(!rows.length){
+      $('matches-grid').innerHTML=`<div class="col-span-full glass rounded-3xl p-12 text-center text-sm" style="color:var(--ink-2)">No picks match those filters. The engines stay quiet when the data doesn't support a pick — that's the honest answer.</div>`;
+      return;
+    }
+    $('matches-grid').innerHTML=rows.map((p,i)=>{
+      const id='m'+i; REG[id]=p;
+      const price=priceOf(p.m,p.market);
+      const btn=(p.m.homeGoals==null&&typeof P2USlip!=='undefined')?P2USlip.btn(p.m,p.market):'';
+      return `<div class="glass card-h rounded-3xl p-5 flex flex-col rise" style="animation-delay:${Math.min(i*25,250)}ms">
+        <div class="flex justify-between items-start mb-4 gap-2">
+          <div style="min-width:0">
+            <div class="flex items-center gap-2 text-[12px]">
+              <span class="mono" style="color:var(--em)">${ko(p.m)||''}</span>
+              ${ko(p.m)?'<span style="color:var(--muted)">•</span>':''}
+              ${crest(p.m.flag,'lflag')}<span class="trunc" style="color:var(--ink-2)">${esc(p.m.league||'')}</span>
+            </div>
+            <div class="font-bold text-[20px] leading-tight mt-1.5" style="display:flex;flex-direction:column;gap:4px"><span style="display:flex;align-items:center;gap:8px">${crest(p.m.homeLogo)}${esc(p.m.home)}</span><span style="display:flex;align-items:center;gap:8px"><span style="color:var(--em)">vs</span> ${crest(p.m.awayLogo)}${esc(p.m.away)}</span></div>
+          </div>
+          ${statusTag(p.m,p.market)}
+        </div>
+        <div class="mt-auto">
+          <div class="flex justify-between items-end gap-3">
+            <div style="min-width:0">
+              <div class="font-semibold" style="color:var(--em)">${esc(shortMk(p.market))}</div>
+              <div class="flex items-center gap-1.5 text-[12px] mt-1.5 flex-wrap">
+                <span class="ebadge">${p.engines.length}/${TOTAL} engine${p.engines.length>1?'s':''}</span>
+                <span style="color:var(--muted)">•</span>
+                <span class="mono">${price?price.toFixed(2):'—'}</span>
+              </div>
+            </div>
+            <div class="flex gap-1.5 shrink-0">
+              ${btn}
+              <button class="btn-info" data-det="${id}" title="Why this pick"><i class="fa-solid fa-info text-[11px]"></i></button>
+            </div>
+          </div>
+          <div class="details" id="${id}"></div>
+        </div>
+      </div>`;
+    }).join('');
+
+    $('matches-grid').querySelectorAll('[data-det]').forEach(b=>b.addEventListener('click',()=>{
+      const el=$(b.dataset.det), p=REG[b.dataset.det];
+      if(el.classList.contains('open')){ el.classList.remove('open'); el.innerHTML=''; return; }
+      const o=p.out||{};
+      const reasons=(o.reasons||[]).map(r=>`<div class="reason">${esc(r)}</div>`).join('');
+      const checks=(o.humanChecks||[]).length?`<div class="reason" style="color:var(--amber)">Before kickoff: ${esc(o.humanChecks.join(' '))}</div>`:'';
+      el.innerHTML=`<div class="pt-4 mt-3" style="border-top:1px solid var(--line)">
+        <div class="text-[10.5px] uppercase tracking-[.12em] font-medium mb-2" style="color:var(--muted)">Why this pick</div>
+        ${(o.grade||o.score||o.rule)?`<div class="text-[12px] mb-1" style="color:var(--muted)">${o.grade?`Grade <span style="color:var(--ink)">${esc(o.grade)}</span>`:''}${o.score?` · ${esc(o.score)}`:''}${o.rule?` · rule ${esc(o.rule)}`:''}</div>`:''}
+        ${reasons||'<div class="reason">Published without extended reasoning.</div>'}
+        ${checks}
+        <div class="reason" style="font-size:11.5px;color:var(--muted)">Engines: ${esc(p.engines.join(', '))}. A banker fits our rules — it is not a sure win.</div>
+      </div>`;
+      el.classList.add('open');
+    }));
+  }
+
+  /* ---------- stats ---------- */
+  function renderStats(){
+    const list=dayMatches();
+    const cons=allPicks().filter(p=>p.banker&&p.engines.length>1);
+    $('matches-count').textContent=list.length;
+    $('consensus-count').textContent=cons.length;
+    let w=0,l=0;
+    cons.forEach(p=>{ const r=resultOf(p.m,p.market); if(r==='Won')w++; else if(r==='Lost')l++; });
+    $('settled-count').innerHTML=(w+l)?`${w}<span class="text-2xl" style="color:var(--muted)">W</span>·${l}<span class="text-2xl" style="color:var(--muted)">L</span>`:'—';
+    $('see-all-n').textContent=allPicks().length;
+    const HERO={
+      normal:['THE HOUSE VIEW','Normal','Balanced rules, steady output — the baseline every other engine is judged against.'],
+      strict:['MAXIMUM PROTECTION','Strict','Split-data checks first. Never more than four bankers a league.'],
+      ultra:['CONVICTION ONLY','Ultra','Rejects uncertainty by design. A short board, on purpose.'],
+      rulespro:['THE CLEANEST SINGLES','Elite','A stack of rules every pick must clear before it appears here.'],
+      apex:['THE HIGH BAR','Apex','Few picks. Each one has to earn its place.'],
+      prime:['THE STRONGEST SIGNALS','Prime','The day\u2019s clearest edges across prime markets.'],
+      value:['PRICE HUNTER','Value','Finds the odds the board underrates — value over volume.'],
+      pro:['THE ALL-ROUNDER','Pro','Tuned for consistency across every league on the card.'],
+      trend:['70·70·70 PATTERNS','Trend','League-tier patterns that only fire on real edges.'],
+      streaks:['REAL RUNS','Streaks','Per-team streaks read from actual fixture history.'],
+      halves:['HT/FT LOGIC','Halves','Half-time markets read natively, not derived.'],
+      mismatch:['VENUE PROFILES','Mismatch','Two aligned venue profiles pointing at one market.'],
+      indicator:['CROSS-MARKET READS','Market Indicators','One market\u2019s odds predicting another. Ten rules, three confirmations minimum.'],
+    };
+    const e=ENG.find(x=>x[0]===engineF);
+    if(e){ const hero=HERO[e[0]]||[e[1].toUpperCase()+' ENGINE',e[1],''];
+      $('page-tag').textContent=hero[0]; $('page-title').textContent=hero[1];
+      $('page-sub').textContent=hero[2]+' Every pick below carries its reasoning — tap the info button.'; }
+    else { $('page-tag').textContent='THE FULL BOARD'; $('page-title').textContent='Every pick, every reason';
+      $('page-sub').textContent='All thirteen engines on one board. Filter by engine or market — or read why each pick was made.'; }
+  }
+
+  /* ---------- filters ---------- */
+  function renderFilters(){
+    const efs=[['all','All engines']].concat(ENG.map(e=>[e[0],e[1]]));
+    $('engine-filters').innerHTML=efs.map(([k,n])=>`<button class="fchip${k===engineF?' on':''}" data-ef="${k}">${esc(n)}</button>`).join('');
+    $('engine-filters').querySelectorAll('[data-ef]').forEach(b=>b.addEventListener('click',()=>{
+      engineF=b.dataset.ef; renderFilters(); renderStats(); renderMatches();
+      history.replaceState(null,'','?engine='+engineF); }));
+    const mfs=[['all','All'],['win','Win'],['dnb','DNB'],['dc','Double Chance'],['ou','Over/Under'],['btts','BTTS']];
+    $('market-filters').innerHTML=mfs.map(([k,n])=>`<button class="fchip${k===marketF?' on':''}" data-mf="${k}">${esc(n)}</button>`).join('');
+    $('market-filters').querySelectorAll('[data-mf]').forEach(b=>b.addEventListener('click',()=>{
+      marketF=b.dataset.mf; renderFilters(); renderMatches(); }));
+    const plus=n=>{ const t=new Date(todayISO); t.setDate(t.getDate()+n); return t.toISOString().slice(0,10); };
+    let win=dates.filter(d=>Math.abs((new Date(d)-new Date(todayISO))/864e5)<=3).slice(0,7);
+    for(const f of [plus(1),plus(2)]) if(!win.includes(f)) win.push(f);
+    win=[...new Set(win)].sort();
+    $('date-filters').innerHTML=win.map(d=>{
+      const n=(byDate[d]||[]).length;
+      const label=d===todayISO?'TODAY':new Date(d+'T12:00:00').toLocaleDateString([],{day:'numeric',month:'short'}).toUpperCase();
+      return `<button class="fchip${d===activeDate?' on':''}" data-df="${d}" ${n?'':'style="opacity:.3;pointer-events:none"'}>${label}</button>`;
+    }).join('');
+    $('date-filters').querySelectorAll('[data-df]').forEach(b=>b.addEventListener('click',()=>{
+      activeDate=b.dataset.df; renderFilters(); renderStats(); renderTop(); renderMatches(); }));
+  }
+
+  $('search-input').addEventListener('input',e=>{ q=e.target.value.toLowerCase().trim(); renderMatches(); });
+  document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>{
+    const t=document.getElementById(b.dataset.jump); if(t) t.scrollIntoView({behavior:'smooth'}); }));
+
+  renderFilters(); renderStats(); renderTop(); renderMatches();
+})();
+</script>
+<script>
+if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+</script>
+</body>
+</html>
