@@ -44491,8 +44491,8 @@
       "confidence": 9,
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-07-09T01:54:59.816Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -44505,8 +44505,8 @@
       "confidence": 9,
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-07-09T01:54:59.816Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -44519,8 +44519,8 @@
       "confidence": 9,
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-07-09T01:54:59.816Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -44533,8 +44533,8 @@
       "confidence": 9,
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-07-09T01:54:59.816Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -44547,8 +44547,8 @@
       "confidence": 8,
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-07-09T01:54:59.816Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -44561,8 +44561,8 @@
       "confidence": 8,
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-07-09T01:54:59.816Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -44575,8 +44575,8 @@
       "confidence": 10,
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-07-09T01:54:59.816Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -49636,6 +49636,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-10T11:36:38.875Z"
+    "updated": "2026-07-10T11:37:54.055Z"
   }
 }
