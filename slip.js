@@ -71,6 +71,43 @@ const P2USlip=(()=>{
     return `<button class="slip-add" data-slipreg="${id}">+ Slip</button>`;
   }
   let onSave=null;
+  /* Built-in save: the drawer posts slips from ANY page (board, engines, home),
+     not only community. Uses the same Supabase publishable key + RLS; the
+     slips_guard trigger enforces the honesty rules regardless of which page
+     the insert comes from. community.js overrides this with its richer handler. */
+  const SUPA_URL='https://tjbkkhirnwfensqzuvzn.supabase.co';
+  const SUPA_KEY='sb_publishable_wjdYr-Px9FmMob7WfEswJQ_wj4cuNkd';
+  let _sb=null;
+  function sbc(){ if(_sb) return _sb;
+    if(!window.supabase||!window.supabase.createClient) return null;
+    try{ _sb=window.supabase.createClient(SUPA_URL,SUPA_KEY); }catch(e){ return null; }
+    return _sb; }
+  async function builtinSave(isPublic, msgEl){
+    const say=(t,bad)=>{ if(msgEl){ msgEl.style.color=bad?'#f4636e':'var(--brand,#34d399)'; msgEl.innerHTML=t; } };
+    const sb=sbc();
+    if(!sb){ say('Saving slips needs an account — <a href="community.html" style="text-decoration:underline;color:inherit">join the community</a>.'); return; }
+    say('Saving…');
+    try{
+      const {data}=await sb.auth.getSession();
+      const sess=data&&data.session;
+      if(!sess){ say('Sign in first — <a href="community.html" style="text-decoration:underline;color:inherit">one-tap email link</a>.',1); return; }
+      const {data:prof}=await sb.from('profiles').select('handle').eq('id',sess.user.id).maybeSingle();
+      if(!prof){ say('Claim your handle first — <a href="community.html" style="text-decoration:underline;color:inherit">one step on the community page</a>.',1); return; }
+      if(!legs.length){ say('Your slip is empty — add picks from the board.',1); return; }
+      const payload=legs.map(l=>({k:l.k,home:l.home,away:l.away,league:l.league,market:l.market,
+        oddsAtAdd:l.odds||null,kickoff:l.kickoff||null,source:l.source||'engine',engine:l.engine||null}));
+      const st=slipState();
+      const md=(window.MATCHES||[]).find(m=>((m.id!=null&&('f'+m.id)===legs[0].k)||((m.home+'|'+m.away+'|'+m.matchDate)===legs[0].k)));
+      const {error}=await sb.from('slips').insert({user_id:sess.user.id,legs:payload,stake,
+        combined_odds:st.priced?Math.round(st.odds*100)/100:null,is_public:!!isPublic,
+        tailed_from:tailedFrom||null,match_date:md?md.matchDate:null});
+      if(error){ say('Could not save: '+error.message,1); return; }
+      legs=[]; tailedFrom=null; tailedHandle=null; save(); render();
+      const m2=document.getElementById('p2u-save-msg');
+      if(m2){ m2.style.color='var(--brand,#34d399)'; m2.style.display='block';
+        m2.textContent=isPublic?'Posted publicly ✓ — it settles itself, win or lose.':'Saved to your account ✓'; }
+    }catch(e){ say('Could not save — check your connection.',1); }
+  }
   let toastT=null;
   function toast(msg){
     let el=document.getElementById('p2u-toast');
@@ -138,8 +175,8 @@ const P2USlip=(()=>{
     const sp=document.getElementById('p2u-save-public'), sv=document.getElementById('p2u-save-private');
     const doSave=isPublic=>{
       const msgEl=document.getElementById('p2u-save-msg');
-      if(typeof onSave!=='function'){ if(msgEl){ msgEl.style.color='var(--muted)'; msgEl.innerHTML='Saving slips needs an account — <a href="community.html" style="text-decoration:underline;color:inherit">join the community</a>.'; } return; }
-      onSave(isPublic,{legs:legs.slice(),stake,tailedFrom});
+      if(typeof onSave==='function'){ onSave(isPublic,{legs:legs.slice(),stake,tailedFrom}); return; }
+      builtinSave(isPublic, msgEl);
     };
     if(sp) sp.addEventListener('click',()=>doSave(true));
     if(sv) sv.addEventListener('click',()=>doSave(false));
