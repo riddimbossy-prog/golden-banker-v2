@@ -50440,7 +50440,7 @@
       "market": "Double Chance 1X",
       "confidence": 9,
       "leagueClass": "High-Scoring",
-      "recordedAt": "2026-07-10T19:35:18.780Z",
+      "recordedAt": "2026-07-10T19:36:25.746Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -50454,7 +50454,7 @@
       "market": "Double Chance 1X",
       "confidence": 9,
       "leagueClass": "High-Scoring",
-      "recordedAt": "2026-07-10T19:35:18.780Z",
+      "recordedAt": "2026-07-10T19:36:25.746Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -50468,7 +50468,7 @@
       "market": "Double Chance 1X",
       "confidence": 9,
       "leagueClass": "High-Scoring",
-      "recordedAt": "2026-07-10T19:35:18.780Z",
+      "recordedAt": "2026-07-10T19:36:25.746Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -50482,7 +50482,7 @@
       "market": "Double Chance 1X",
       "confidence": 8,
       "leagueClass": "High-Scoring",
-      "recordedAt": "2026-07-10T19:35:18.780Z",
+      "recordedAt": "2026-07-10T19:36:25.746Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -50490,6 +50490,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-10T19:35:18.843Z"
+    "updated": "2026-07-10T19:36:25.816Z"
   }
 }
