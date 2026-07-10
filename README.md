@@ -1,75 +1,61 @@
-# GOLDEN BANKER — Complete Guide
+# Predict2U New Engine Family v147
 
-A football "banker" dashboard. Pulls real match data, scores each match
-with the Golden Banker rules, picks the safest bets, and shows results
-(Won / Lost / Void) once games finish.
+This package replaces the previous engine implementations with the two supplied engine families.
 
-============================================================
-THE FILES (keep them ALL in ONE folder)
-============================================================
-  index.html ........ the website
-  banker-engine.js .. scoring + result rules
-  fetch-data.js ..... pulls real matches (runs on your PC)
-  write-config.js ... helper used by set-key.bat
-  data.js ........... your matches (starts empty; the fetcher fills it)
-  config.txt ........ your settings (token + leagues)
-  set-key.bat ....... double-click to set your token the easy way
-  run-fetch.bat ..... double-click to pull matches
-  README.md / SETUP-LIVE-DATA.md ... guides
+## Deployment files
 
-============================================================
-SETUP (do this once)
-============================================================
-1. Install Node.js if you haven't: https://nodejs.org (click "LTS").
+Replace these files in the repository root:
 
-2. Use your API-Football Pro key:
-   - Log in at https://dashboard.api-football.com
-   - Open "My Access" and copy your API key.
-   - Your FOOTBALL plan must show "Pro" and "Active" (Pro unlocks the
-     current season; the free plan only allows 2022-2024).
+- `banker-engine.js`
+- `board.html`
+- `engines.html`
+- `sw.js`
 
-3. Double-click  set-key.bat
-   - Paste your key when it asks (right-click to paste), press Enter.
-   - It writes a clean config.txt for you. No manual editing needed.
+`backfill-odds.js` is included unchanged as the historical-odds calibration tool.
 
-============================================================
-DAILY ROUTINE (2 steps)
-============================================================
-1. Double-click  run-fetch.bat
-2. Drag the whole folder to  app.netlify.com/drop
+## Active engine list
 
-============================================================
-OFF-SEASON NOTE
-============================================================
-The big European leagues rest in June/July. If you see "0 matches",
-that's why. The World Cup (league ID 1) is in your config and active
-in summer 2026, so you should still get games.
+### PurePPG ladder
 
-============================================================
-HONEST NOTE
-============================================================
-A hobby dashboard built on rules of thumb. It does NOT predict results
-and does NOT beat the bookmaker's margin. The results history is for
-honest record-keeping, not a reason to bet more. Only stake what you
-can comfortably lose. 18+. Free tier is for non-commercial use.
+1. Normal v1.0
+2. Strict v2.0
+3. Ultra v3.0
+4. Elite v4.0
+5. Apex v5.0
+6. Prime v6.0
+7. Expert v7.0
+8. Pro v8.0
 
-============================================================
-FINDING LEAGUE IDs (any country, including African leagues)
-============================================================
-Not sure of a league's ID? Look it up directly from the API:
+### Specialist family
 
-1. Open the banker-app folder.
-2. Click the address bar at the top of the folder window, type:  cmd
-   and press Enter (a black window opens in this folder).
-3. Type one of these and press Enter:
-     node find-leagues.js Nigeria
-     node find-leagues.js "South Africa"
-     node find-leagues.js Egypt
-     node find-leagues.js Morocco
-4. It lists every league/cup for that country with its ID number.
-5. Put the IDs you want into the LEAGUES line of config.txt
-   (double-click set-key.bat again is NOT needed — just edit and save).
+9. Trend v1.0
+10. Streaks v1.0
+11. Mismatch v1.0
+12. Halves v1.0
+13. League Bias v1.0
+14. Momentum v1.0
+15. Odds Intelligence v1.0
+16. Value v1.0
 
-This way you never have to guess an ID. Use the exact English country
-name. If a league you added shows "no fixtures", it may be off-season
-(most African leagues run Aug->May) or the ID needs checking this way.
+The Pro Consensus Integration is exposed as `proConsensusRecommend()` but is not counted as a seventeenth engine because the supplied architecture defines it as an integration layer.
+
+## Compatibility
+
+Old page function names remain available:
+
+- `rulesProRecommend` now points to PurePPG Elite v4.0.
+- `indicatorRecommend` now points to Odds Intelligence v1.0.
+- All existing `recommend`, `strictRecommend`, `settle`, and slip/page contracts remain available.
+
+## Important data rule
+
+The new specifications explicitly forbid inventing mandatory data. Therefore Ultra and stronger engines, Momentum, Odds Intelligence and Value may correctly return `No Bet` until their required fields are added. See `DATA_READINESS.md`.
+
+## Cache
+
+The service worker is bumped to `predict2u-v147` so existing phones do not keep the old engine file.
+
+
+## v148 repository integration
+
+See `ENGINE_INTEGRATION_v148.md` for the updated automation and tracking scripts.

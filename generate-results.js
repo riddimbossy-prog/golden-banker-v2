@@ -18,16 +18,38 @@ function loadMatches(){
   return JSON.parse(m[1]);
 }
 function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+function engineEntries(){
+  const reg = Array.isArray(eng.P2U_ENGINE_REGISTRY) && eng.P2U_ENGINE_REGISTRY.length
+    ? eng.P2U_ENGINE_REGISTRY
+    : [
+        {name:"Normal",fn:"recommend"},{name:"Strict",fn:"strictRecommend"},
+        {name:"Ultra",fn:"ultraRecommend"},{name:"Elite",fn:"eliteRecommend"},
+        {name:"Apex",fn:"apexRecommend"},{name:"Prime",fn:"primeRecommend"},
+        {name:"Expert",fn:"expertRecommend"},{name:"Pro",fn:"proRecommend"},
+        {name:"Trend",fn:"trendRecommend"},{name:"Streaks",fn:"streakRecommend"},
+        {name:"Mismatch",fn:"mismatchRecommend"},{name:"Halves",fn:"halvesRecommend"},
+        {name:"League Bias",fn:"leagueBiasRecommend"},{name:"Momentum",fn:"momentumRecommend"},
+        {name:"Odds Intelligence",fn:"oddsIntelligenceRecommend"},{name:"Value",fn:"valueRecommend"}
+      ];
+  return reg
+    .map(e=>({ name:e.name, key:e.key||null, family:e.family||null, version:e.version||null, fn:eng[e.fn] }))
+    .filter(e=>typeof e.fn==="function");
+}
+
 function trunc(s,n){ s=String(s||""); return s.length>n? s.slice(0,n-1)+"…":s; }
 
-// gather every engine's banker pick for a match
+// gather every registered engine's banker pick for a match
 function bankersFor(m){
   const out=[];
-  try{ const a=eng.analyseAll([m]).results.filter(r=>r.banker); a.forEach(r=>out.push({engine:"Normal",market:r.primary})); }catch(e){}
-  try{ const s=eng.analyseStrict([m]).results.filter(r=>r.bet); s.forEach(r=>out.push({engine:"Strict",market:r.market})); }catch(e){}
-  [["Ultra",eng.ultraRecommend],["Elite",eng.rulesProRecommend],["Apex",eng.apexRecommend],["Prime",eng.primeRecommend],["Value",eng.valueRecommend],["Pro",eng.proRecommend]].forEach(([name,fn])=>{
-    try{ const r=fn(m); if(r.banker) out.push({engine:name,market:r.primary}); }catch(e){}
-  });
+  for(const e of engineEntries()){
+    try{
+      const r=e.fn(m);
+      if(r&&r.banker&&r.primary&&r.primary!=="No Bet"){
+        out.push({engine:e.name,market:r.primary,confidence:r.confidence});
+      }
+    }catch(_){}
+  }
   return out;
 }
 
@@ -49,7 +71,7 @@ function bankersFor(m){
     const tally={};
     bankers.forEach(b=>{ tally[b.market]=(tally[b.market]||0); tally[b.market]++; });
     const market=Object.keys(tally).sort((a,b)=>tally[b]-tally[a])[0];
-    const result=eng.settle(market, m.homeGoals, m.awayGoals);
+    const result=eng.settle(market,m.homeGoals,m.awayGoals,m.status,m);
     if(!result||result==="Void") continue;
     rows.push({ home:m.home, away:m.away, league:m.league, country:m.country,
       score:`${m.homeGoals}-${m.awayGoals}`, market, result, nEng:tally[market] });

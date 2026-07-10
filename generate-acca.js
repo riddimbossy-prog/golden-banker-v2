@@ -7,7 +7,7 @@
       * league country FLAG on every leg (downloaded once per
         country, rasterized, embedded; falls back to a country
         chip if the flag can't be fetched — never breaks)
-      * consults ALL engines incl. Trend, Streaks, Halves
+      * consults all 16 registered engines
       * refreshed modern card design
    ============================================================ */
 const fs = require("fs");
@@ -24,7 +24,29 @@ function loadMatches(){
 }
 function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
 function trunc(s,n){ s=String(s||""); return s.length>n? s.slice(0,n-1)+"…":s; }
-function confNum(c){ return c==='High'?8:c==='Medium'?7:c==='Low'?5:(typeof c==='number'?c:0); }
+
+function engineEntries(){
+  const reg = Array.isArray(eng.P2U_ENGINE_REGISTRY) && eng.P2U_ENGINE_REGISTRY.length
+    ? eng.P2U_ENGINE_REGISTRY
+    : [
+        {name:"Normal",fn:"recommend"},{name:"Strict",fn:"strictRecommend"},
+        {name:"Ultra",fn:"ultraRecommend"},{name:"Elite",fn:"eliteRecommend"},
+        {name:"Apex",fn:"apexRecommend"},{name:"Prime",fn:"primeRecommend"},
+        {name:"Expert",fn:"expertRecommend"},{name:"Pro",fn:"proRecommend"},
+        {name:"Trend",fn:"trendRecommend"},{name:"Streaks",fn:"streakRecommend"},
+        {name:"Mismatch",fn:"mismatchRecommend"},{name:"Halves",fn:"halvesRecommend"},
+        {name:"League Bias",fn:"leagueBiasRecommend"},{name:"Momentum",fn:"momentumRecommend"},
+        {name:"Odds Intelligence",fn:"oddsIntelligenceRecommend"},{name:"Value",fn:"valueRecommend"}
+      ];
+  return reg
+    .map(e=>({ name:e.name, key:e.key||null, family:e.family||null, version:e.version||null, fn:eng[e.fn] }))
+    .filter(e=>typeof e.fn==="function");
+}
+
+function confNum(c){
+  if(typeof c==="number") return c>10 ? c/10 : c;
+  return c==="High"?9:c==="Medium"?7:c==="Low"?5:0;
+}
 
 // ---- flag fetch + embed (base64 PNG data URIs, cached per URL) ----
 function fetchBuf(url, timeoutMs){
@@ -59,13 +81,26 @@ async function buildFlagCache(urls){
 }
 
 function estOdd(market, m){
-  const o=m.odds;
-  if(o){
-    const realMap={'Home Win':o.home,'Away Win':o.away,'Over 1.5':o.over15,'Over 2.5':o.over25,'Over 3.5':o.over35,'Under 1.5':o.under15,'Under 2.5':o.under25,'Under 3.5':o.under35,'BTTS Yes':o.bttsYes,'BTTS No':o.bttsNo,'Double Chance 1X':o.dc1x,'Double Chance X2':o.dcx2};
-    if(realMap[market]) return {odd:realMap[market], est:false};
-  }
-  const map={"Over 1.5":1.30,"Under 3.5":1.35,"Over 2.5":1.90,"Under 2.5":1.85,"BTTS Yes":1.85,"BTTS No":1.80,"Double Chance 1X":1.30,"Double Chance X2":1.45,"Home DNB":1.55,"Away DNB":1.95};
-  return {odd:map[market]||1.50, est:true};
+  const o=m.odds||{};
+  const mk=String(market||"").replace(/ Goals$/,"");
+  const realMap={
+    "Home Win":o.home,"Away Win":o.away,"Draw":o.draw,
+    "Over 1.5":o.over15,"Over 2.5":o.over25,"Over 3.5":o.over35,
+    "Under 1.5":o.under15,"Under 2.5":o.under25,"Under 3.5":o.under35,
+    "BTTS Yes":o.bttsYes,"BTTS No":o.bttsNo,
+    "Double Chance 1X":o.dc1x,"Double Chance 12":o.dc12,"Double Chance X2":o.dcx2,
+    "First Half Over 0.5":o.fhOver05,"First Half Under 1.5":o.fhUnder15
+  };
+  const real=realMap[mk];
+  if(typeof real==="number"&&real>1) return {odd:real,est:false};
+  const fallback={
+    "Over 1.5":1.30,"Under 3.5":1.35,"Over 2.5":1.90,"Under 2.5":1.85,
+    "BTTS Yes":1.85,"BTTS No":1.80,"Double Chance 1X":1.30,
+    "Double Chance X2":1.45,"Home DNB":1.55,"Away DNB":1.95,
+    "Home Team Over 0.5":1.30,"Away Team Over 0.5":1.35,
+    "Home Team Under 1.5":1.55,"Away Team Under 1.5":1.55
+  };
+  return {odd:fallback[mk]||1.50,est:true};
 }
 function noStandings(m){ const np=(m.homePos==null&&m.awayPos==null); const l=String(m.league||'').toLowerCase(); return np||l.includes('friendl'); }
 
@@ -78,20 +113,33 @@ function accaLegs(matches){
     per[k].picks.push({market,conf:conf||7}); per[k].engines.add(enginez);
   }
   matches.forEach(m=>{
-    try{ eng.analyseAll([m]).results.filter(r=>r.banker).forEach(r=>add(m,r.primary,'Normal',confNum(r.confidence))); }catch(e){}
-    try{ eng.analyseStrict([m]).results.filter(r=>r.bet).forEach(r=>add(m,r.market,'Strict',r.confidence)); }catch(e){}
-    [["Ultra",eng.ultraRecommend],["Elite",eng.rulesProRecommend],["Apex",eng.apexRecommend],["Prime",eng.primeRecommend],["Value",eng.valueRecommend],["Pro",eng.proRecommend],
-     ["Trend",eng.trendRecommend],["Streaks",eng.streakRecommend],["Halves",eng.halvesRecommend],["Mismatch",eng.mismatchRecommend]].forEach(([n,fn])=>{
-      try{ if(typeof fn!=='function')return; const r=fn(m); if(r&&r.banker) add(m,r.primary,n,typeof r.confidence==='number'?r.confidence:confNum(r.confidence)); }catch(e){}
-    });
+    for(const e of engineEntries()){
+      try{
+        const r=e.fn(m);
+        if(r&&r.banker&&r.primary&&r.primary!=="No Bet"){
+          add(m,r.primary,e.name,confNum(r.confidence));
+        }
+      }catch(_){}
+    }
   });
   return Object.values(per).map(g=>{
-    const best=g.picks.slice().sort((a,b)=>b.conf-a.conf)[0];
-    const avg=g.picks.reduce((s,p)=>s+p.conf,0)/g.picks.length;
-    const nEng=g.engines.size;
-    const rating=Math.min(10, Math.round((avg+(nEng-1)*0.6)*10)/10);
+    const byMarket={};
+    for(const p of g.picks){
+      const x=byMarket[p.market]||(byMarket[p.market]={market:p.market,confs:[],engines:new Set()});
+      x.confs.push(p.conf);
+      x.engines.add(p.engine);
+    }
+    const best=Object.values(byMarket).sort((a,b)=>{
+      const ac=a.engines.size, bc=b.engines.size;
+      const aa=a.confs.reduce((x,y)=>x+y,0)/a.confs.length;
+      const ba=b.confs.reduce((x,y)=>x+y,0)/b.confs.length;
+      return bc-ac || ba-aa;
+    })[0];
+    const avg=best.confs.reduce((x,y)=>x+y,0)/best.confs.length;
+    const nEng=best.engines.size;
+    const rating=Math.min(10,Math.round((avg+(nEng-1)*0.30)*10)/10);
     const eo=estOdd(best.market,g.m);
-    return { m:g.m, market:best.market, rating, nEng, odd:eo.odd, est:eo.est };
+    return {m:g.m,market:best.market,rating,nEng,odd:eo.odd,est:eo.est};
   }).filter(l=>l.rating>=8 && !noStandings(l.m));
 }
 function isUpcoming(mt){

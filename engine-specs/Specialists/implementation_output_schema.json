@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Predict2U Specialist Engine Output",
+  "type": "object",
+  "required": [
+    "engine",
+    "version",
+    "fixture",
+    "candidate_market",
+    "market_family",
+    "direction",
+    "specialist_score",
+    "data_quality",
+    "signal_strength",
+    "exact_triggers",
+    "warnings",
+    "veto",
+    "veto_scope",
+    "compatible_safer_markets",
+    "final_status"
+  ],
+  "properties": {
+    "engine": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "fixture": {
+      "type": "string"
+    },
+    "candidate_market": {
+      "type": "string"
+    },
+    "market_family": {
+      "type": "string"
+    },
+    "direction": {
+      "type": "string"
+    },
+    "specialist_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 92
+    },
+    "data_quality": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "signal_strength": {
+      "enum": [
+        "PRIME",
+        "ELITE",
+        "STRONG",
+        "QUALIFIED",
+        "WATCHLIST",
+        "NONE"
+      ]
+    },
+    "exact_triggers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "veto": {
+      "enum": [
+        "NONE",
+        "SOFT",
+        "HARD"
+      ]
+    },
+    "veto_scope": {
+      "type": "string"
+    },
+    "compatible_safer_markets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "final_status": {
+      "enum": [
+        "QUALIFIED",
+        "WATCHLIST",
+        "NO BET"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

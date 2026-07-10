@@ -53,15 +53,30 @@ function frame(title, sub, bodySvg, footerLine) {
 </svg>`;
 }
 
+
+function engineEntries(){
+  const reg = Array.isArray(eng.P2U_ENGINE_REGISTRY) && eng.P2U_ENGINE_REGISTRY.length
+    ? eng.P2U_ENGINE_REGISTRY
+    : [
+        {name:"Normal",fn:"recommend"},{name:"Strict",fn:"strictRecommend"},
+        {name:"Ultra",fn:"ultraRecommend"},{name:"Elite",fn:"eliteRecommend"},
+        {name:"Apex",fn:"apexRecommend"},{name:"Prime",fn:"primeRecommend"},
+        {name:"Expert",fn:"expertRecommend"},{name:"Pro",fn:"proRecommend"},
+        {name:"Trend",fn:"trendRecommend"},{name:"Streaks",fn:"streakRecommend"},
+        {name:"Mismatch",fn:"mismatchRecommend"},{name:"Halves",fn:"halvesRecommend"},
+        {name:"League Bias",fn:"leagueBiasRecommend"},{name:"Momentum",fn:"momentumRecommend"},
+        {name:"Odds Intelligence",fn:"oddsIntelligenceRecommend"},{name:"Value",fn:"valueRecommend"}
+      ];
+  return reg
+    .map(e=>({ name:e.name, key:e.key||null, family:e.family||null, version:e.version||null, fn:eng[e.fn] }))
+    .filter(e=>typeof e.fn==="function");
+}
+
 /* ---------- TODAY: consensus-first top 5 ---------- */
 function todayCard() {
   const pool = MATCHES.filter(x => (x.matchDate || "").slice(0, 10) === TODAY);
   if (!pool.length) return null;
-  const engines = [["Normal", eng.recommend], ["Strict", eng.strictRecommend], ["Ultra", eng.ultraRecommend],
-    ["Elite", eng.rulesProRecommend], ["Apex", eng.apexRecommend], ["Prime", eng.primeRecommend],
-    ["Value", eng.valueRecommend], ["Pro", eng.proRecommend], ["Trend", eng.trendRecommend],
-    ["Streaks", eng.streakRecommend], ["Halves", eng.halvesRecommend], ["Mismatch", eng.mismatchRecommend],
-    ["Market Indicators", eng.indicatorRecommend]].filter(e => typeof e[1] === "function");
+  const engines=engineEntries().map(e=>[e.name,e.fn]);
   const byMatch = {};
   for (const m of pool) for (const [name, fn] of engines) {
     let r; try { r = fn(m); } catch (e) { continue; }

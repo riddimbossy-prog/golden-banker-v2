@@ -1,6 +1,5 @@
 /* Predict2u — Daily branded image generator (SVG -> PNG).
-   v2: * TOP 2 bankers from EACH engine (all 11 — Normal, Strict, Ultra,
-        Elite, Apex, Prime, Value, Pro, Trend, Streaks, Halves)
+   v3: * TOP 2 bankers from EACH of the 16 registered engines
       * matches never repeat — engines backing the same game merge into
         one card listing every engine + market
       * league country flags embedded (downloaded once, base64; country
@@ -50,33 +49,38 @@ async function buildFlagCache(urls){
   return cache;
 }
 
-// ---- TOP 2 per engine ----
-function top2Normal(){
-  const res = eng.analyseAll(pool).results.filter(r=>r.banker);
-  res.sort((a,b)=>(b.rankWeight||0)-(a.rankWeight||0));
-  return res.slice(0,2).map(r=>({ m:r.match, market:r.primary, conf:confNum(r.confidence) }));
+
+function engineEntries(){
+  const reg = Array.isArray(eng.P2U_ENGINE_REGISTRY) && eng.P2U_ENGINE_REGISTRY.length
+    ? eng.P2U_ENGINE_REGISTRY
+    : [
+        {name:"Normal",fn:"recommend"},{name:"Strict",fn:"strictRecommend"},
+        {name:"Ultra",fn:"ultraRecommend"},{name:"Elite",fn:"eliteRecommend"},
+        {name:"Apex",fn:"apexRecommend"},{name:"Prime",fn:"primeRecommend"},
+        {name:"Expert",fn:"expertRecommend"},{name:"Pro",fn:"proRecommend"},
+        {name:"Trend",fn:"trendRecommend"},{name:"Streaks",fn:"streakRecommend"},
+        {name:"Mismatch",fn:"mismatchRecommend"},{name:"Halves",fn:"halvesRecommend"},
+        {name:"League Bias",fn:"leagueBiasRecommend"},{name:"Momentum",fn:"momentumRecommend"},
+        {name:"Odds Intelligence",fn:"oddsIntelligenceRecommend"},{name:"Value",fn:"valueRecommend"}
+      ];
+  return reg
+    .map(e=>({ name:e.name, key:e.key||null, family:e.family||null, version:e.version||null, fn:eng[e.fn] }))
+    .filter(e=>typeof e.fn==="function");
 }
-function top2Strict(){
-  const {results}=eng.analyseStrict(pool);
-  return results.filter(s=>s.bet).sort((a,b)=>b.confidence-a.confidence).slice(0,2)
-    .map(s=>({ m:s.match, market:s.market, conf:s.confidence }));
-}
+
+// ---- TOP 2 per registered engine ----
 function top2Fn(fn){
   const picks=[];
-  for(const mt of pool){ let r; try{ r=fn(mt); }catch(e){ continue; }
-    if(!r||!r.bet||!r.banker) continue;
-    const c=typeof r.confidence==="number"? r.confidence : confNum(r.confidence);
-    picks.push({ m:mt, market:(r.primary||r.market), conf:c }); }
+  for(const mt of pool){
+    let r;
+    try{ r=fn(mt); }catch(_){ continue; }
+    if(!r||!r.bet||!r.banker||!r.primary||r.primary==="No Bet") continue;
+    const c=typeof r.confidence==="number"?r.confidence:confNum(r.confidence);
+    picks.push({m:mt,market:r.primary,conf:c});
+  }
   return picks.sort((a,b)=>b.conf-a.conf).slice(0,2);
 }
-const ENGINES=[
-  ["Normal", top2Normal], ["Strict", top2Strict],
-  ["Ultra", ()=>top2Fn(eng.ultraRecommend)], ["Elite", ()=>top2Fn(eng.rulesProRecommend)],
-  ["Apex", ()=>top2Fn(eng.apexRecommend)], ["Prime", ()=>top2Fn(eng.primeRecommend)],
-  ["Value", ()=>top2Fn(eng.valueRecommend)], ["Pro", ()=>top2Fn(eng.proRecommend)],
-  ["Trend", ()=>top2Fn(eng.trendRecommend)], ["Streaks", ()=>top2Fn(eng.streakRecommend)],
-  ["Halves", ()=>top2Fn(eng.halvesRecommend)], ["Mismatch", ()=>top2Fn(eng.mismatchRecommend)],
-];
+const ENGINES=engineEntries().map(e=>[e.name,()=>top2Fn(e.fn)]);
 
 (async ()=>{
   const rawPicks=[];
@@ -156,7 +160,7 @@ const ENGINES=[
   <text x="${logoDataUri?pad+106:pad}" y="112" font-family="${FONT}" font-weight="bold" font-size="58" fill="#ffffff">Predict<tspan fill="#6fd44a">2u</tspan></text>
   <text x="${logoDataUri?pad+108:pad+2}" y="146" font-family="${FONT}" font-weight="600" font-size="20" fill="#8a93a6" letter-spacing="2">KNOW THE GAME — PREDICT BETTER</text>
   <text x="${pad}" y="226" font-family="${FONT}" font-weight="bold" font-size="38" fill="#6fd44a">TODAY'S TOP BANKERS</text>
-  <text x="${pad}" y="268" font-family="${FONT}" font-size="24" fill="#c7cedb">${esc(dstr)} · top 2 picks from every engine${pages>1?` · card ${pageNo} of ${pages}`:''}</text>
+  <text x="${pad}" y="268" font-family="${FONT}" font-size="24" fill="#c7cedb">${esc(dstr)} · top 2 picks from all registered engines${pages>1?` · card ${pageNo} of ${pages}`:''}</text>
   ${cards}
   <rect x="${pad}" y="${y+8}" width="${cw}" height="66" rx="18" fill="rgba(110,212,74,.14)" stroke="rgba(110,212,74,.45)" stroke-width="1.5"/>
   <text x="${W/2}" y="${y+50}" text-anchor="middle" font-family="${FONT}" font-weight="bold" font-size="28" fill="#9be07a">Want more banker tips? Visit predict2u.com</text>

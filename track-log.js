@@ -6,7 +6,7 @@
    then settles each once the match finishes — building an append-only,
    per-engine win/loss history in track-log.json.
 
-   Why per-engine: the daily results image collapses all 12 engines into one
+   Why per-engine: the daily results image collapses all 16 engines into one
    "consensus" number. That hides which engine is carrying the others. This log
    keeps each engine's own record so you can see, after a few weeks, that (say)
    Strict hits 71% while Apex hits 52% — and retire or trust accordingly.
@@ -49,16 +49,43 @@ function saveLog(log){
 // stable key so a fixture+engine+market is logged once only
 function keyOf(p){ return `${p.matchDate}|${p.home}|${p.away}|${p.engine}|${p.market}`; }
 
-// every engine's banker pick for one match → [{engine, market, confidence}]
+
+function engineEntries(){
+  const reg = Array.isArray(eng.P2U_ENGINE_REGISTRY) && eng.P2U_ENGINE_REGISTRY.length
+    ? eng.P2U_ENGINE_REGISTRY
+    : [
+        {name:"Normal",fn:"recommend"},{name:"Strict",fn:"strictRecommend"},
+        {name:"Ultra",fn:"ultraRecommend"},{name:"Elite",fn:"eliteRecommend"},
+        {name:"Apex",fn:"apexRecommend"},{name:"Prime",fn:"primeRecommend"},
+        {name:"Expert",fn:"expertRecommend"},{name:"Pro",fn:"proRecommend"},
+        {name:"Trend",fn:"trendRecommend"},{name:"Streaks",fn:"streakRecommend"},
+        {name:"Mismatch",fn:"mismatchRecommend"},{name:"Halves",fn:"halvesRecommend"},
+        {name:"League Bias",fn:"leagueBiasRecommend"},{name:"Momentum",fn:"momentumRecommend"},
+        {name:"Odds Intelligence",fn:"oddsIntelligenceRecommend"},{name:"Value",fn:"valueRecommend"}
+      ];
+  return reg
+    .map(e=>({ name:e.name, key:e.key||null, family:e.family||null, version:e.version||null, fn:eng[e.fn] }))
+    .filter(e=>typeof e.fn==="function");
+}
+
+// every registered engine's banker pick for one match
 function bankersFor(m){
   const out=[];
-  const push=(engine,market,confidence)=>{ if(market && market!=="No Bet") out.push({engine,market,confidence:confidence??null}); };
-  try{ const r=eng.recommend(m);        if(r.banker) push("Normal", r.primary, r.confidence); }catch(e){}
-  try{ const r=eng.strictRecommend(m);  if(r.bet)    push("Strict", r.market,  r.confidence); }catch(e){}
-  [["Ultra",eng.ultraRecommend],["Elite",eng.rulesProRecommend],["Apex",eng.apexRecommend],
-   ["Prime",eng.primeRecommend],["Value",eng.valueRecommend],["Pro",eng.proRecommend],
-   ["Trend",eng.trendRecommend],["Streaks",eng.streakRecommend],["Halves",eng.halvesRecommend],["Mismatch",eng.mismatchRecommend]
-  ].forEach(([name,fn])=>{ try{ const r=fn(m); if(r.banker) push(name, r.primary, r.confidence); }catch(e){} });
+  for(const e of engineEntries()){
+    try{
+      const r=e.fn(m);
+      if(r&&r.banker&&r.primary&&r.primary!=="No Bet"){
+        out.push({
+          engine:e.name,
+          engineKey:e.key,
+          engineFamily:e.family,
+          engineVersion:e.version,
+          market:r.primary,
+          confidence:r.confidence
+        });
+      }
+    }catch(_){}
+  }
   return out;
 }
 
@@ -76,8 +103,9 @@ function record(log, matches){
       try { lcType = (m.leagueClass && m.leagueClass.type) || (eng.classifyLeague ? eng.classifyLeague(m).type : null); } catch(e){}
       const p = {
         matchDate: m.matchDate, home: m.home, away: m.away, league: m.league||null,
-        engine: b.engine, market: b.market, confidence: b.confidence,
-        leagueClass: lcType,
+        engine:b.engine,engineKey:b.engineKey||null,engineFamily:b.engineFamily||null,
+        engineVersion:b.engineVersion||null,market:b.market,confidence:b.confidence,
+        suiteVersion:eng.ENGINE_SUITE_VERSION||null,leagueClass:lcType,
         recordedAt: new Date().toISOString(),
         status: "pending", result: null, score: null
       };
@@ -103,7 +131,7 @@ function settle(log, matches){
     if(p.status!=="pending") continue;
     const m = fin[`${p.matchDate}|${p.home}|${p.away}`];
     if(!m) continue;
-    const res = eng.settle(p.market, m.homeGoals, m.awayGoals, m.status);
+    const res=eng.settle(p.market,m.homeGoals,m.awayGoals,m.status,m);
     if(!res || res==="Void") { p.status="void"; p.result="Void"; continue; }
     p.status="settled"; p.result=res; p.score=`${m.homeGoals}-${m.awayGoals}`;
     p.settledAt=new Date().toISOString();

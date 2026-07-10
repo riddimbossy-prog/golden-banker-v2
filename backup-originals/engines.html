@@ -62,15 +62,6 @@ a{ color:inherit; text-decoration:none; }
 @keyframes rise{ to{ opacity:1; } }
 @media(prefers-reduced-motion:reduce){ .rise{ animation:none; opacity:1; } .card-h:hover{ transform:none; } }
 @media(pointer:coarse){ .fchip,.slip-add,.btn-info{ min-height:40px; } }
-
-/* New-engine family phone controls v147 */
-@media(max-width:639px){
-  #engine-filters,#date-filters,#market-filters{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;overflow-y:hidden!important;gap:8px!important;padding-bottom:8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-  #engine-filters::-webkit-scrollbar,#date-filters::-webkit-scrollbar,#market-filters::-webkit-scrollbar{display:none}
-  #engine-filters .fchip,#date-filters .fchip,#market-filters .fchip{flex:0 0 auto!important;min-width:max-content!important;white-space:nowrap!important}
-  #matches-grid{grid-template-columns:minmax(0,1fr)!important}
-  #snapshot{padding-left:14px!important;padding-right:14px!important;padding-top:26px!important}
-}
 </style>
 </head>
 <body>
@@ -99,7 +90,7 @@ a{ color:inherit; text-decoration:none; }
 <div id="snapshot" class="max-w-screen-2xl mx-auto px-5 lg:px-8 py-10">
   <div class="uppercase tracking-[2px] text-xs font-semibold" style="color:var(--em)" id="page-tag">THE FULL BOARD</div>
   <h1 class="font-display text-4xl lg:text-5xl font-semibold tracking-tight mt-2" id="page-title">Every pick, every reason</h1>
-  <p class="mt-3 text-[15px] max-w-2xl" style="color:var(--ink-2)" id="page-sub">All sixteen new engines on one board. Filter by engine or market — or read why each pick was made.</p>
+  <p class="mt-3 text-[15px] max-w-2xl" style="color:var(--ink-2)" id="page-sub">All thirteen engines on one board. Filter by engine or market — or read why each pick was made.</p>
 
   <div class="grid grid-cols-3 gap-4 mt-8 max-w-2xl">
     <div class="glass rounded-3xl p-5">
@@ -189,11 +180,15 @@ a{ color:inherit; text-decoration:none; }
   const shortMk = mk => String(mk||'')
     .replace('Home Team Over 1.5 Goals','Home Over 1.5').replace('Away Team Over 1.5 Goals','Away Over 1.5')
     .replace('Home Team Under 1.5 Goals','Home Under 1.5').replace('Away Team Under 1.5 Goals','Away Under 1.5')
-    .replace('Home Team Over 0.5 Goals','Home Over 0.5').replace('Away Team Over 0.5 Goals','Away Over 0.5')
     .replace(/ Goals$/,'');
 
-  const ENG = (window.P2U_ENGINE_REGISTRY || []).map(e => [e.key, e.name, e.fn])
-    .filter(e => typeof window[e[2]] === 'function');
+  const ENG = [
+    ['normal','Normal','recommend'],['strict','Strict','strictRecommend'],['ultra','Ultra','ultraRecommend'],
+    ['rulespro','Elite','rulesProRecommend'],['apex','Apex','apexRecommend'],['prime','Prime','primeRecommend'],
+    ['value','Value','valueRecommend'],['pro','Pro','proRecommend'],['trend','Trend','trendRecommend'],
+    ['streaks','Streaks','streakRecommend'],['halves','Halves','halvesRecommend'],
+    ['mismatch','Mismatch','mismatchRecommend'],['indicator','Market Indicators','indicatorRecommend'],
+  ].filter(e=>typeof window[e[2]]==='function');
   const TOTAL=ENG.length;
 
   const todayISO=new Date().toISOString().slice(0,10);
@@ -241,12 +236,10 @@ a{ color:inherit; text-decoration:none; }
   }
   const ko=m=>{ if(!m.kickoff) return '';
     try{ return new Date(m.kickoff).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',hour12:false}); }catch(e){ return ''; } };
-  const ODDS={'Home Win':'home','Draw':'draw','Away Win':'away','Over 1.5':'over15','Over 2.5':'over25','Over 3.5':'over35','Under 1.5':'under15','Under 2.5':'under25','Under 3.5':'under35','BTTS Yes':'bttsYes','BTTS No':'bttsNo','Double Chance 1X':'dc1x','Double Chance 12':'dc12','Double Chance X2':'dcx2','First Half Over 0.5':'fhOver05','First Half Under 1.5':'fhUnder15'};
+  const ODDS={'Home Win':'home','Draw':'draw','Away Win':'away','Over 1.5':'over15','Over 2.5':'over25','Over 3.5':'over35','Under 1.5':'under15','Under 2.5':'under25','Under 3.5':'under35','BTTS Yes':'bttsYes','BTTS No':'bttsNo','Double Chance 1X':'dc1x','Double Chance 12':'dc12','Double Chance X2':'dcx2'};
   const priceOf=(m,mk)=>{ const k=ODDS[String(mk).replace(/ Goals$/,'')]; const v=k&&m.odds?m.odds[k]:null;
     return (typeof v==='number'&&v>1)?v:null; };
   const marketTag=mk=>{ const s=String(mk||'').toLowerCase();
-    if(s.includes('first half')||s.includes('second half')||s.includes('either half')) return 'half';
-    if(s.includes('team over')||s.includes('team under')) return 'team';
     if(s.includes('btts')) return 'btts';
     if(s.includes('over')||s.includes('under')) return 'ou';
     if(s.includes('dnb')) return 'dnb';
@@ -370,7 +363,7 @@ a{ color:inherit; text-decoration:none; }
     $('engine-filters').querySelectorAll('[data-ef]').forEach(b=>b.addEventListener('click',()=>{
       engineF=b.dataset.ef; renderFilters(); renderStats(); renderMatches();
       history.replaceState(null,'','?engine='+engineF); }));
-    const mfs=[['all','All'],['win','Win'],['dnb','DNB'],['dc','Double Chance'],['team','Team Goals'],['ou','Over/Under'],['btts','BTTS'],['half','Halves']];
+    const mfs=[['all','All'],['win','Win'],['dnb','DNB'],['dc','Double Chance'],['ou','Over/Under'],['btts','BTTS']];
     $('market-filters').innerHTML=mfs.map(([k,n])=>`<button class="fchip${k===marketF?' on':''}" data-mf="${k}">${esc(n)}</button>`).join('');
     $('market-filters').querySelectorAll('[data-mf]').forEach(b=>b.addEventListener('click',()=>{
       marketF=b.dataset.mf; renderFilters(); renderMatches(); }));

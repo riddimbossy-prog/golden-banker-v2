@@ -5,7 +5,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>Predict2u • Know the game. Predict better.</title>
-<meta name="description" content="Sixteen specialized engines. Full transparency. Real results — wins and losses on the record."/>
+<meta name="description" content="Thirteen specialized engines. Full transparency. Real results — wins and losses on the record."/>
 <link rel="manifest" href="manifest.webmanifest"/>
 <link rel="icon" href="icon-192.png"/>
 <meta name="theme-color" content="#0a0a0f"/>
@@ -156,13 +156,13 @@ a{ color:inherit; text-decoration:none; }
       <span class="dot" style="background:var(--em);opacity:.65"></span>
       <span class="dot" style="background:#fff"></span>
     </span>
-    <span class="t-lbl" style="color:var(--ink-2)">16 Engines · Honesty First</span>
+    <span class="t-lbl" style="color:var(--ink-2)">13 Engines · Honesty First</span>
   </div>
 
   <h1 class="t-hero">Know the game.<br/><span style="color:var(--muted)">Predict better.</span></h1>
 
   <div class="flex flex-wrap items-center justify-between gap-8 mt-7">
-    <p class="t-lead max-w-[420px]">Sixteen specialized engines. Full transparency. Real results — wins and losses on the record.</p>
+    <p class="t-lead max-w-[420px]">Thirteen specialized engines. Full transparency. Real results — wins and losses on the record.</p>
     <div class="flex gap-3.5 flex-wrap">
       <a href="#board" data-jump="board" class="flex items-center gap-3 px-7 py-4 rounded-full font-semibold text-[14.5px]" style="background:#fff;color:#0a0a0f">
         Open Today's Board <i class="fa-solid fa-arrow-right text-[11px]"></i>
@@ -261,7 +261,7 @@ a{ color:inherit; text-decoration:none; }
   <section id="engines" class="py-16" style="border-top:1px solid var(--line)">
     <div class="flex items-end justify-between gap-6 flex-wrap mb-8">
       <div>
-        <h2 class="t-h2">Sixteen Engines. One Honest Board.</h2>
+        <h2 class="t-h2">Thirteen Engines. One Honest Board.</h2>
         <p class="t-sm mt-2">Each engine has a distinct philosophy. All outputs are public and settled by the same rules.</p>
       </div>
       <a href="#board" data-jump="board" class="text-[12.5px] font-medium flex items-center gap-2" style="color:var(--em)">
@@ -346,12 +346,24 @@ a{ color:inherit; text-decoration:none; }
   const shortMk = mk => String(mk||'')
     .replace('Home Team Over 1.5 Goals','Home Over 1.5').replace('Away Team Over 1.5 Goals','Away Over 1.5')
     .replace('Home Team Under 1.5 Goals','Home Under 1.5').replace('Away Team Under 1.5 Goals','Away Under 1.5')
-    .replace('Home Team Over 0.5 Goals','Home Over 0.5').replace('Away Team Over 0.5 Goals','Away Over 0.5')
     .replace('Double Chance 1X','Double Chance 1X').replace('Double Chance X2','Double Chance X2')
     .replace(/ Goals$/,'');
 
-  const ENG = (window.P2U_ENGINE_REGISTRY || []).map(e => [e.key, e.name, e.fn, e.description])
-    .filter(e => typeof window[e[2]] === 'function');
+  const ENG = [
+    ['normal','Normal','recommend','Balanced rules, steady daily output. The house view.'],
+    ['strict','Strict','strictRecommend','Split-data first. Max 4 bankers per league. High protection.'],
+    ['ultra','Ultra','ultraRecommend','Rejects uncertainty by design. Short board, strong conviction.'],
+    ['rulespro','Elite','rulesProRecommend','Rule-stack vetting for the cleanest singles.'],
+    ['apex','Apex','apexRecommend','A high bar — conviction picks only.'],
+    ['prime','Prime','primeRecommend','The day\u2019s strongest signals across prime markets.'],
+    ['value','Value','valueRecommend','Hunts prices the board underrates. Sharp value focus.'],
+    ['pro','Pro','proRecommend','All-rounder tuned for consistency across leagues.'],
+    ['trend','Trend','trendRecommend','70-70-70 league patterns. Fires on real tier edges.'],
+    ['streaks','Streaks','streakRecommend','Real per-team runs from fixture history analysis.'],
+    ['halves','Halves','halvesRecommend','HT/FT logic with native half-time markets.'],
+    ['mismatch','Mismatch','mismatchRecommend','Two aligned venue profiles, one high-edge market.'],
+    ['indicator','Market Indicators','indicatorRecommend','One market\u2019s odds predict another. 10 rules minimum.'],
+  ].filter(e => typeof window[e[2]] === 'function');
   const TOTAL = ENG.length;
 
   const todayISO = new Date().toISOString().slice(0,10);
@@ -408,7 +420,7 @@ a{ color:inherit; text-decoration:none; }
   }
   const ko=m=>{ if(!m.kickoff) return '';
     try{ return new Date(m.kickoff).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',hour12:false})+' GMT'; }catch(e){ return ''; } };
-  const ODDS={'Home Win':'home','Draw':'draw','Away Win':'away','Over 1.5':'over15','Over 2.5':'over25','Over 3.5':'over35','Under 1.5':'under15','Under 2.5':'under25','Under 3.5':'under35','BTTS Yes':'bttsYes','BTTS No':'bttsNo','Double Chance 1X':'dc1x','Double Chance 12':'dc12','Double Chance X2':'dcx2','First Half Over 0.5':'fhOver05','First Half Under 1.5':'fhUnder15'};
+  const ODDS={'Home Win':'home','Draw':'draw','Away Win':'away','Over 1.5':'over15','Over 2.5':'over25','Over 3.5':'over35','Under 1.5':'under15','Under 2.5':'under25','Under 3.5':'under35','BTTS Yes':'bttsYes','BTTS No':'bttsNo','Double Chance 1X':'dc1x','Double Chance 12':'dc12','Double Chance X2':'dcx2'};
   const priceOf=(m,mk)=>{ const k=ODDS[String(mk).replace(/ Goals$/,'')]; const v=k&&m.odds?m.odds[k]:null;
     return (typeof v==='number'&&v>1)?v:null; };
 
@@ -565,7 +577,7 @@ a{ color:inherit; text-decoration:none; }
       ? `${Math.round(100*wk.w/(wk.w+wk.l))}% of ${wk.w+wk.l} settled consensus bankers`
       : 'No settled record yet';
 
-    $('s-engines').textContent=`${TOTAL}/16`;
+    $('s-engines').textContent=`${TOTAL}/13`;
     $('s-engines-sub').innerHTML=ENG.slice(0,3).map((e,i)=>
       `<span class="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold" style="background:${i===0?'var(--em)':'var(--panel)'};color:${i===0?'#062e20':'var(--muted)'};border:1px solid var(--line);margin-left:${i?'-6px':'0'}">${e[1][0]}</span>`
     ).join('')+`<span class="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold" style="background:var(--panel);color:var(--muted);border:1px solid var(--line);margin-left:-6px">+${TOTAL-3}</span>`;
