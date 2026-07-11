@@ -49545,8 +49545,8 @@
       "confidence": 8,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T10:08:34.972Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -49559,8 +49559,8 @@
       "confidence": 8,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T10:08:34.972Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -53623,8 +53623,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T23:50:04.419Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -53641,8 +53641,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T23:50:04.419Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -61115,6 +61115,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-11T17:45:53.012Z"
+    "updated": "2026-07-11T17:47:20.332Z"
   }
 }
