@@ -51887,9 +51887,10 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Very Low-Scoring",
       "recordedAt": "2026-07-10T23:50:04.357Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "1-1",
+      "settledAt": "2026-07-11T15:44:34.977Z"
     },
     {
       "matchDate": "2026-07-11",
@@ -61092,6 +61093,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-11T15:43:13.576Z"
+    "updated": "2026-07-11T15:44:35.411Z"
   }
 }
