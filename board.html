@@ -144,6 +144,7 @@ a{ color:inherit; text-decoration:none; }
 }
 
 </style>
+<link rel="stylesheet" href="site-health.css"/>
 </head>
 <body>
 <nav class="sticky top-0 z-50" style="background:var(--bg);border-bottom:1px solid var(--line)">
@@ -370,12 +371,17 @@ a{ color:inherit; text-decoration:none; }
       <div class="text-[12px] font-semibold mt-5" style="color:var(--em)">Open full board →</div>
     </a>
   </div>
+  <a href="trust.html" class="card card-h mt-4 p-6 flex items-center justify-between gap-5 flex-wrap" style="border-color:rgba(52,211,153,.28);background:linear-gradient(135deg,rgba(52,211,153,.08),rgba(52,211,153,.02))">
+    <div><div class="t-lbl" style="color:var(--em)">TRUST CENTER</div><div class="font-display font-semibold text-xl mt-2">How the engines, data and public record work</div><p class="text-[13px] mt-2 max-w-[720px]" style="color:var(--ink-2)">Read the prediction rules, settlement process, data limitations, update delays and responsible-use policy.</p></div>
+    <span class="text-[13px] font-semibold" style="color:var(--em)">Open Trust Center →</span>
+  </a>
 </section>
 
 <footer class="py-8 pb-24" style="border-top:1px solid var(--line)">
   <div class="max-w-[1240px] mx-auto px-6 flex flex-wrap items-center justify-between gap-5 t-xs">
     <div>© Predict2u 2026 · Records, not wagers. Bet responsibly. 18+</div>
     <div class="flex gap-6 flex-wrap">
+      <a href="trust.html" class="hover:text-white transition-colors">Trust Center</a>
       <a href="responsible-gambling.html" class="hover:text-white transition-colors">Responsible Gambling</a>
       <a href="terms.html" class="hover:text-white transition-colors">Terms</a>
       <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
@@ -793,5 +799,6 @@ a{ color:inherit; text-decoration:none; }
 <script>
 if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 </script>
+<script src="site-health-widget.js"></script>
 </body>
 </html>

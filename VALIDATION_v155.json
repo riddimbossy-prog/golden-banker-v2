@@ -1,0 +1,48 @@
+{
+  "javascript_syntax": {
+    "site-health-widget.js": {
+      "ok": true,
+      "error": ""
+    },
+    "generate-site-health.js": {
+      "ok": true,
+      "error": ""
+    },
+    "audit-site.js": {
+      "ok": true,
+      "error": ""
+    },
+    "playwright.config.js": {
+      "ok": true,
+      "error": ""
+    },
+    "tests/mobile-layout.spec.js": {
+      "ok": true,
+      "error": ""
+    },
+    "sw.js": {
+      "ok": true,
+      "error": ""
+    }
+  },
+  "inline_scripts_checked": 14,
+  "site_audit": {
+    "critical": 0,
+    "warnings": 0,
+    "passedCount": 22
+  },
+  "checks": {
+    "trust_page": true,
+    "health_widget": true,
+    "health_css": true,
+    "quality_workflow": true,
+    "mobile_tests": true,
+    "audit_zero_critical": true,
+    "sw_v155": true,
+    "trust_link_on_pages": true,
+    "legal_pages": true,
+    "manifest": true,
+    "icons": true
+  },
+  "cache_version": "predict2u-v155"
+}

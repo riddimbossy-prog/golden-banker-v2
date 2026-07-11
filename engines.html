@@ -126,12 +126,13 @@ a{ color:inherit; text-decoration:none; }
 }
 
 </style>
+<link rel="stylesheet" href="site-health.css"/>
 </head>
 <body>
 
 <nav class="sticky top-0 z-50" style="background:rgba(10,10,15,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)">
   <div class="max-w-screen-2xl mx-auto px-5 lg:px-8 h-[62px] flex items-center gap-6">
-    <a href="index.html" class="flex items-center gap-3 shrink-0">
+    <a href="board.html" class="flex items-center gap-3 shrink-0">
       <img src="predict2u-logo.png" alt="Predict2u — every pick, every result" class="nav-logo"/>
     </a>
     <div class="hidden lg:flex items-center gap-7 text-[14px] mx-auto" style="color:var(--ink-2)">
@@ -219,6 +220,7 @@ a{ color:inherit; text-decoration:none; }
   <div class="max-w-screen-2xl mx-auto px-5 lg:px-8 flex flex-wrap items-center justify-between gap-5 text-[12px]" style="color:var(--muted)">
     <div>© Predict2u 2026 · Records, not wagers. Bet responsibly. 18+</div>
     <div class="flex gap-6 flex-wrap">
+      <a href="trust.html" class="hover:text-white transition-colors">Trust Center</a>
       <a href="responsible-gambling.html" class="hover:text-white transition-colors">Responsible Gambling</a>
       <a href="terms.html" class="hover:text-white transition-colors">Terms</a>
       <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
@@ -486,5 +488,6 @@ a{ color:inherit; text-decoration:none; }
 <script>
 if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 </script>
+<script src="site-health-widget.js"></script>
 </body>
 </html>

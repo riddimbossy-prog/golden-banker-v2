@@ -1,29 +1,22 @@
 {
-  "name": "Predict2u — Know the Game, Predict Better",
+  "name": "Predict2u.com",
   "short_name": "Predict2u",
-  "description": "Football match analysis: rules-based safety picks across leagues worldwide. Heuristic tool, not betting advice. 18+.",
   "start_url": "./board.html",
-  "scope": "./",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#0a0e17",
-  "theme_color": "#0a0e17",
-  "categories": ["sports"],
+  "background_color": "#08090d",
+  "theme_color": "#08090d",
   "icons": [
-    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "icon-192-maskable.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
-    { "src": "icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
-  ],
-  "shortcuts": [
     {
-      "name": "Today's Top Bankers",
-      "short_name": "Top Bankers",
-      "description": "Jump straight to today's strongest picks",
-      "url": "./board.html?engine=top",
-      "icons": [
-        { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" }
-      ]
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

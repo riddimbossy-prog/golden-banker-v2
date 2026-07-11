@@ -544,6 +544,7 @@ details summary{ cursor:pointer; font-size:14.5px; color:var(--brand); font-weig
 /* v153 polish */
 @media(max-width:640px){.topbar{padding-left:12px!important;padding-right:12px!important}.logo{max-width:165px!important;height:auto!important}}
 .footer-green a{color:var(--em)!important}.footer-green a:hover{opacity:.85}.wl-w{color:var(--em)!important}.wl-l{color:var(--loss)!important}</style>
+<link rel="stylesheet" href="site-health.css"/>
 </head>
 <body>
 <header class="top">
@@ -670,7 +671,8 @@ details summary{ cursor:pointer; font-size:14.5px; color:var(--brand); font-weig
   </div>
 </main>
 
-<footer>Predict2u · 18+ · <a href="responsible-gambling.html" style="text-decoration:underline">Gamble responsibly</a></footer>
+<footer>Predict2u · 18+ · <a href="trust.html" class="hover:text-white transition-colors">Trust Center</a>
+      <a href="responsible-gambling.html" style="text-decoration:underline">Gamble responsibly</a></footer>
 
 <nav class="community-mobile-nav" aria-label="Mobile navigation">
   <div class="community-mobile-nav-inner">
@@ -706,5 +708,6 @@ if('serviceWorker' in navigator){
   window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 }
 </script>
+<script src="site-health-widget.js"></script>
 </body>
 </html>

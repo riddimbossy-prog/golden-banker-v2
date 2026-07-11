@@ -83,6 +83,7 @@ h1{font-family:"Space Grotesk";font-size:clamp(36px,6vw,68px);line-height:1.02;l
 @media(max-width:420px){.checks{grid-template-columns:1fr}.grid4{grid-template-columns:1fr}.card{padding:14px}.section h2{font-size:23px}}
 </style>
 
+<link rel="stylesheet" href="site-health.css"/>
 </head>
 <body>
 <nav class="nav"><div class="wrap navin">
@@ -90,7 +91,7 @@ h1{font-family:"Space Grotesk";font-size:clamp(36px,6vw,68px);line-height:1.02;l
   <div class="links">
     <a href="board.html">Overview</a><a href="engines.html">Full Board</a>
     <a class="active" href="proof.html">Proof Mode</a><a href="scorecards.html">Scorecards</a>
-    <a href="league-dna.html">League DNA</a><a href="community.html">Community</a>
+    <a href="league-dna.html">League DNA</a><a href="trust.html">Trust</a><a href="community.html">Community</a>
   </div>
 </div></nav>
 
@@ -113,7 +114,7 @@ h1{font-family:"Space Grotesk";font-size:clamp(36px,6vw,68px);line-height:1.02;l
 <footer class="footer"><div class="wrap row between wraprow">
   <span>© Predict2U 2026 · Records, not wagers · 18+</span>
   <span>Proof is generated from the data and engine outputs available on the page.</span>
-</div></footer>
+</div><div style="text-align:center;padding:10px"><a href="trust.html" style="color:var(--em)">Trust Center</a></div></footer>
 
 <script src="banker-engine.js"></script>
 <script src="data.js"></script>
@@ -215,6 +216,7 @@ h1{font-family:"Space Grotesk";font-size:clamp(36px,6vw,68px);line-height:1.02;l
   render();
 })();
 </script>
+<script src="site-health-widget.js"></script>
 <script src="live-refresh.js"></script>
 <script>if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));</script>
 </body>

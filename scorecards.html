@@ -59,11 +59,12 @@ h1{font-family:"Space Grotesk";font-size:clamp(36px,6vw,68px);line-height:1.02;l
 }
 </style>
 
+<link rel="stylesheet" href="site-health.css"/>
 </head>
 <body>
 <nav class="nav"><div class="wrap navin">
   <a class="brand" href="board.html"><img src="predict2u-logo.png" alt="Predict2u — every pick, every result" class="brand-img"/></a>
-  <div class="links"><a href="board.html">Overview</a><a href="engines.html">Full Board</a><a href="proof.html">Proof Mode</a><a class="active" href="scorecards.html">Scorecards</a><a href="league-dna.html">League DNA</a><a href="community.html">Community</a></div>
+  <div class="links"><a href="board.html">Overview</a><a href="engines.html">Full Board</a><a href="proof.html">Proof Mode</a><a class="active" href="scorecards.html">Scorecards</a><a href="league-dna.html">League DNA</a><a href="trust.html">Trust</a><a href="community.html">Community</a></div>
 </div></nav>
 <header class="wrap hero"><div class="eyebrow">Public Engine Scorecards</div><h1>Wins and losses stay visible.</h1><p class="lead">Only forward-tracked, settled predictions count. Small samples remain labeled as learning data.</p></header>
 <main class="wrap">
@@ -71,7 +72,7 @@ h1{font-family:"Space Grotesk";font-size:clamp(36px,6vw,68px);line-height:1.02;l
   <div class="stickybar"><div class="grid grid2"><input id="search" class="input" placeholder="Search engines, markets or leagues…"/><select id="family" class="input"><option value="all">All engine families</option><option value="PurePPG">PurePPG</option><option value="Specialist">Specialists</option></select></div></div>
   <section class="section"><div id="cards" class="grid grid3"></div></section>
 </main>
-<footer class="footer"><div class="wrap row between wraprow footer-green"><span>© Predict2U 2026 · Public forward records</span><span>No hidden losses. No retroactive edits.</span></div></footer>
+<footer class="footer"><div class="wrap row between wraprow footer-green"><span>© Predict2U 2026 · Public forward records</span><span>No hidden losses. No retroactive edits.</span></div><div style="text-align:center;padding:10px"><a href="trust.html" style="color:var(--em)">Trust Center</a></div></footer>
 <script src="banker-engine.js"></script><script src="data.js"></script><script src="p2u-intelligence.js"></script>
 <script>
 (async function(){
@@ -114,5 +115,6 @@ h1{font-family:"Space Grotesk";font-size:clamp(36px,6vw,68px);line-height:1.02;l
   search.addEventListener("input",render);family.addEventListener("change",render);render();
 })();
 </script>
+<script src="site-health-widget.js"></script>
 <script>if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));</script>
 </body></html>

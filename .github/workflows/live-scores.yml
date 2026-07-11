@@ -50,12 +50,18 @@ jobs:
         run: node track-log.js settle
         continue-on-error: true
 
+      - name: Generate public system health
+        run: node generate-site-health.js
+
+      - name: Run consistency audit
+        run: node audit-site.js
+
       - name: Commit score snapshot
         shell: bash
         run: |
           git config user.name "Predict2U Live Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data.js track-log.json model-calibration.json team-profiles.json odds-calib.json 2>/dev/null || true
+          git add data.js track-log.json model-calibration.json team-profiles.json odds-calib.json site-health.json site-audit.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No live-score changes."
             exit 0

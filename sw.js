@@ -5,7 +5,7 @@
    - Static assets: cache-first with background refresh.
    - Cache entries are versioned. Bump CACHE_VERSION when releasing changes. */
 
-const CACHE_VERSION = "predict2u-v154";
+const CACHE_VERSION = "predict2u-v155";
 const OFFLINE_PAGE = "./board.html";
 
 const SHELL = [
@@ -15,6 +15,14 @@ const SHELL = [
   "./proof.html",
   "./scorecards.html",
   "./league-dna.html",
+  "./responsible-gambling.html",
+  "./terms.html",
+  "./privacy.html",
+  "./disclaimer.html",
+  "./trust.html",
+  "./site-health-widget.js",
+  "./site-health.css",
+  "./site-health.json",
   "./p2u-intelligence.js",
   "./live-refresh.js",
   "./intelligence.css",

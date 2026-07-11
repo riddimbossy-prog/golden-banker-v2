@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>Predict2U Trust Center</title>
+<meta name="description" content="How Predict2U predictions, data, public records, settlements and system health work."/>
+<link rel="icon" href="predict2u-logo.png"/>
+<link rel="stylesheet" href="intelligence.css"/>
+<link rel="stylesheet" href="site-health.css"/>
+<meta name="theme-color" content="#08090d"/>
+<style>
+.trust-hero{padding:64px 0 34px}.trust-nav{position:sticky;top:0;z-index:50;background:rgba(8,9,13,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.trust-navin{height:64px;display:flex;align-items:center;gap:20px}.trust-logo{height:46px;width:auto;max-width:220px;object-fit:contain}.trust-links{display:flex;gap:18px;margin-left:auto;color:var(--ink2);font-size:13px}.trust-links a:hover,.trust-links a.active{color:var(--em)}
+.trust-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.trust-card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:22px}.trust-card h2{font-family:"Space Grotesk";font-size:24px;letter-spacing:-.025em;margin:0 0 10px}.trust-card p,.trust-card li{color:var(--ink2);font-size:14px}.trust-card ul{padding-left:18px;margin:10px 0 0}.trust-card li+li{margin-top:6px}.trust-number{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;background:rgba(52,211,153,.12);color:var(--em);font-weight:800;margin-bottom:14px}.trust-callout{border:1px solid rgba(52,211,153,.30);background:linear-gradient(135deg,rgba(52,211,153,.10),rgba(52,211,153,.03));border-radius:24px;padding:22px}.status-box{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px}.status-cell{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:12px}.status-cell .k{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}.status-cell .v{font-size:13px;font-weight:700;margin-top:6px}.faq details{border-top:1px solid var(--line);padding:14px 0}.faq summary{cursor:pointer;font-weight:700}.faq p{margin:9px 0 0;color:var(--ink2)}
+@media(max-width:800px){.trust-links{display:none}.trust-grid{grid-template-columns:1fr}.status-box{grid-template-columns:repeat(2,minmax(0,1fr))}.trust-hero{padding-top:38px}.trust-logo{height:40px}}
+</style>
+</head>
+<body>
+<nav class="trust-nav"><div class="wrap trust-navin"><a href="board.html"><img class="trust-logo" src="predict2u-logo.png" alt="Predict2u.com"/></a><div class="trust-links"><a href="board.html">Overview</a><a href="engines.html">Full Board</a><a href="proof.html">Proof</a><a href="scorecards.html">Scorecards</a><a href="league-dna.html">League DNA</a><a class="active" href="trust.html">Trust Center</a></div></div></nav>
+<header class="wrap trust-hero"><div class="eyebrow">Predict2U Trust Center</div><h1>How every verdict is built—and checked.</h1><p class="lead">The rules, data, settlement process, limitations and public records behind Predict2U. No hidden certainty claims and no erased losses.</p></header>
+<main class="wrap">
+<section class="trust-callout"><div class="row between wraprow"><div><div class="label">Core promise</div><h2 class="display" style="font-size:30px;margin:6px 0 0">Every pick has proof.</h2></div><a class="btn primary" href="proof.html">Open Proof Mode</a></div><p class="ink2" style="margin-bottom:0">A prediction should be inspectable: which engines supported it, which engines abstained, what data was present, where conflict existed, and how the result settled.</p></section>
+<section class="section"><div class="trust-grid">
+<article class="trust-card"><div class="trust-number">1</div><h2>How predictions are generated</h2><p>Sixteen engines analyse the same fixture from different perspectives, including PPG strength, league tendencies, streaks, mismatch structure, halves, momentum, odds intelligence and value.</p><ul><li>One qualified market per engine</li><li>Strict thresholds and explicit No Bet outcomes</li><li>Exact-market agreement counted separately from fixture agreement</li></ul></article>
+<article class="trust-card"><div class="trust-number">2</div><h2>What confidence means</h2><p>Confidence is a rule-strength score produced by an engine. It is not a guarantee and should not be read as a promised probability unless a forward-calibrated probability interval is explicitly shown.</p><ul><li>Data quality is displayed separately</li><li>Small samples remain labelled</li><li>Calibration requires forward-settled evidence</li></ul></article>
+<article class="trust-card"><div class="trust-number">3</div><h2>Why matches receive No Bet</h2><p>No Bet is a successful filter decision, not a missing prediction. Common reasons include weak samples, engine conflict, insufficient opponent strength, unavailable line movement or a market failing the engine threshold.</p></article>
+<article class="trust-card"><div class="trust-number">4</div><h2>How results are settled</h2><p>Predictions are settled from final fixture scores using the same shared settlement function across engines, result graphics, tracking logs and public slips. Live matches remain open until the provider marks them finished.</p></article>
+<article class="trust-card"><div class="trust-number">5</div><h2>Public records</h2><p>Forward tracking records the engine, market, confidence and timestamp before kickoff. Settled wins and losses remain in the public record and feed the Engine Scorecards.</p></article>
+<article class="trust-card"><div class="trust-number">6</div><h2>Data and update delays</h2><p>Core fixtures, standings and score snapshots come through the configured football-data pipeline. xG, multi-book odds and SOT depend on provider coverage. Static-site deployment can create a short delay between the provider update and the public page.</p></article>
+</div></section>
+<section id="system-status" class="section"><div class="row between wraprow"><div><div class="eyebrow">System status</div><h2 style="margin-top:7px">Public freshness snapshot</h2></div><button class="btn" id="status-refresh" type="button">Refresh status</button></div><div class="status-box" id="trust-status"><div class="status-cell"><div class="k">Status</div><div class="v">Checking…</div></div></div></section>
+<section class="section faq"><h2>Frequently asked questions</h2>
+<details><summary>Does Predict2U guarantee outcomes?</summary><p>No. Football outcomes remain uncertain. The platform explains statistical and rule-based selections and keeps the public record visible.</p></details>
+<details><summary>Why do two engines choose different markets?</summary><p>Each engine has a different specialty and threshold. The Conflict Detector exposes that disagreement instead of hiding it.</p></details>
+<details><summary>Why is some data missing?</summary><p>Provider coverage varies by competition. Predict2U leaves unsupported fields missing rather than inventing values.</p></details>
+<details><summary>Can a settled public result be changed?</summary><p>The intended workflow records picks before kickoff and settles them from match data. The audit and tracking layers are designed to make retroactive changes visible.</p></details>
+</section>
+<section class="trust-callout" style="margin-bottom:40px"><div class="label">Responsible use</div><h2 class="display" style="font-size:27px;margin:7px 0">Records, not guarantees.</h2><p class="ink2">Predict2U is for adults 18+. Never treat a model score as certainty, never chase losses, and never risk money needed for essentials.</p></section>
+</main>
+<footer class="footer"><div class="wrap row between wraprow"><span>© Predict2U 2026 · Trust Center</span><span><a class="em" href="responsible-gambling.html">Responsible Gambling</a> · <a class="em" href="terms.html">Terms</a> · <a class="em" href="privacy.html">Privacy</a> · <a class="em" href="disclaimer.html">Disclaimer</a></span></div></footer>
+<script src="banker-engine.js"></script><script src="data.js"></script><script src="site-health-widget.js"></script>
+<script>
+(function(){
+  const box=document.getElementById('trust-status'),btn=document.getElementById('status-refresh');
+  const age=v=>{const t=Date.parse(v||'');if(!Number.isFinite(t))return'Not available';const m=Math.max(0,Math.round((Date.now()-t)/60000));return m<1?'Just now':m<60?`${m} min ago`:m<2880?`${Math.round(m/60)} hr ago`:`${Math.round(m/1440)} days ago`;};
+  async function load(){
+    box.innerHTML='<div class="status-cell"><div class="k">Status</div><div class="v">Checking…</div></div>';
+    let h={};try{const r=await fetch(`site-health.json?t=${Date.now()}`,{cache:'no-store'});if(r.ok)h=await r.json();}catch(_){}
+    const rows=[['Status',h.label||'Checking browser data'],['Core data',age(h.dataUpdated||window.DATA_UPDATED)],['Live scores',age(h.scoresUpdated||window.SCORES_UPDATED)],['Engine registry',`${h.engineCount||(window.P2U_ENGINE_REGISTRY||[]).length||16}/16`],['Fixtures',String(h.matchCount||(window.MATCHES||[]).length||0)],['Live fixtures',String(h.liveMatches||0)],['Build',h.version||'v155'],['Health generated',age(h.generatedAt)]];
+    box.innerHTML=rows.map(([k,v])=>`<div class="status-cell"><div class="k">${k}</div><div class="v">${v}</div></div>`).join('');
+  }
+  btn.addEventListener('click',load);load();
+})();
+</script>
+<script>if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));</script>
+</body></html>

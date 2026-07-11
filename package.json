@@ -1,0 +1,15 @@
+{
+  "name": "predict2u-site-quality",
+  "private": true,
+  "version": "1.55.0",
+  "scripts": {
+    "health": "node generate-site-health.js",
+    "audit": "node audit-site.js",
+    "test:mobile": "playwright test",
+    "quality": "npm run health && npm run audit && npm run test:mobile"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.53.0",
+    "http-server": "^14.1.1"
+  }
+}
