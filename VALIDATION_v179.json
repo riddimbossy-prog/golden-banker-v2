@@ -1,0 +1,12 @@
+{
+  "version": "v179",
+  "build": "Community Picks Mobile Polish",
+  "static_validation": {
+    "community_page_class": "passed",
+    "mobile_stylesheet_link": "passed",
+    "service_worker_cache": "predict2u-v179",
+    "javascript_syntax": "passed",
+    "browser_matrix": "configured for GitHub Actions; not executed in this sandbox"
+  },
+  "protected_runtime_files": ["data.js", "community.js", "config.txt"]
+}

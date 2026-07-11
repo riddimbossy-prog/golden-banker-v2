@@ -1,0 +1,182 @@
+/* Predict2U v179 — Community Picks Mobile Polish */
+@media (max-width: 639px) {
+  .p2u-community-page main.wrap {
+    padding-bottom: calc(118px + env(safe-area-inset-bottom));
+  }
+
+  .p2u-community-page .card:has(#board) {
+    padding: 16px 14px;
+  }
+
+  .p2u-community-page #board {
+    display: grid;
+    gap: 10px;
+  }
+
+  .p2u-community-page #board .pick {
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 14px 13px;
+    display: grid;
+    grid-template-columns: 30px minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: 11px;
+    row-gap: 10px;
+    border-radius: 15px;
+    border-left-width: 3px;
+    overflow: hidden;
+  }
+
+  .p2u-community-page #board .pick .fl {
+    grid-column: 1;
+    grid-row: 1;
+    width: 26px;
+    height: 18px;
+    align-self: start;
+    margin-top: 3px;
+    border-radius: 3px;
+  }
+
+  .p2u-community-page #board .pick .who {
+    grid-column: 2 / 4;
+    grid-row: 1;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .p2u-community-page #board .pick .t {
+    font-size: 17px;
+    line-height: 1.28;
+    letter-spacing: -0.015em;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .p2u-community-page #board .pick .m {
+    display: -webkit-box;
+    margin-top: 5px;
+    font-size: 12.5px;
+    line-height: 1.35;
+    color: #85858a;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  .p2u-community-page #board .pick .mk {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: start;
+    align-self: center;
+    min-height: 40px;
+    max-width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border-radius: 11px;
+    font-size: 13.5px;
+    line-height: 1.15;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .p2u-community-page #board .pick > button,
+  .p2u-community-page #board .pick > .mini,
+  .p2u-community-page #board .pick > [data-add-slip] {
+    grid-column: 3;
+    grid-row: 2;
+    align-self: stretch;
+    justify-self: end;
+    width: auto;
+    min-width: 76px;
+    min-height: 40px;
+    margin: 0;
+    padding: 8px 12px;
+    border-radius: 11px;
+    white-space: nowrap;
+    font-size: 13px;
+    line-height: 1;
+  }
+
+  .p2u-community-page #board .pick > button:not(.ghost) {
+    background: rgba(52, 211, 153, .06);
+    color: var(--brand);
+    border: 1px solid rgba(52, 211, 153, .75);
+  }
+
+  .p2u-community-page #board .pick:not(:has(.fl)) .who {
+    grid-column: 1 / 4;
+  }
+
+  .p2u-community-page #board .pick:not(:has(.fl)) .mk {
+    grid-column: 1 / 3;
+  }
+
+  .p2u-community-page #board-count {
+    margin: 8px 0 11px !important;
+    font-size: 12px !important;
+  }
+
+  /* Keep the PWA prompt from covering Community cards. */
+  .p2u-community-page .p2u-install-chip {
+    right: 12px;
+    bottom: calc(86px + env(safe-area-inset-bottom));
+    max-width: 104px;
+    min-height: 42px;
+    padding: 8px 11px;
+    font-size: 11px;
+    line-height: 1.1;
+    text-align: center;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 360px) {
+  .p2u-community-page .card:has(#board) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .p2u-community-page #board .pick {
+    grid-template-columns: 25px minmax(0, 1fr) auto;
+    padding: 12px 10px;
+    column-gap: 9px;
+  }
+
+  .p2u-community-page #board .pick .fl {
+    width: 23px;
+    height: 16px;
+  }
+
+  .p2u-community-page #board .pick .t {
+    font-size: 15.5px;
+  }
+
+  .p2u-community-page #board .pick .m {
+    font-size: 11.5px;
+  }
+
+  .p2u-community-page #board .pick .mk {
+    min-height: 38px;
+    padding: 7px 9px;
+    font-size: 12.5px;
+  }
+
+  .p2u-community-page #board .pick > button,
+  .p2u-community-page #board .pick > .mini,
+  .p2u-community-page #board .pick > [data-add-slip] {
+    min-width: 68px;
+    min-height: 38px;
+    padding: 7px 9px;
+    font-size: 12px;
+  }
+
+  .p2u-community-page .p2u-install-chip {
+    max-width: 88px;
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+}
