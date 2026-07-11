@@ -52553,8 +52553,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-10T23:50:04.391Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -52571,8 +52571,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-10T23:50:04.391Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -61086,6 +61086,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-11T14:32:30.142Z"
+    "updated": "2026-07-11T14:33:50.494Z"
   }
 }
