@@ -1,0 +1,14 @@
+{
+  "version": "v171",
+  "status": "static validation passed",
+  "checks": {
+    "repository_preflight": "passed (48 required public files)",
+    "performance_budget": "passed (0 errors, 0 warnings, 18 checks)",
+    "javascript_syntax": "passed",
+    "service_worker_cache": "predict2u-v171",
+    "growth_files_present": true,
+    "browser_tests": "configured for GitHub Actions"
+  },
+  "audit_note": "The local audit reports missing data.js and community.js because those live/runtime files are intentionally excluded from the package. The repository audit should validate them after installation into the live repository.",
+  "browser_execution": "Not run in this sandbox."
+}

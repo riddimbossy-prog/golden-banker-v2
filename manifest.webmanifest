@@ -1,5 +1,5 @@
 {
-  "name": "Predict2u.com \u2014 Know the Game. Predict Better.",
+  "name": "Predict2u.com — Know the Game. Predict Better.",
   "short_name": "Predict2u",
   "description": "Sixteen transparent prediction engines with Proof Mode and public results.",
   "id": "./",
@@ -43,7 +43,7 @@
   ],
   "shortcuts": [
     {
-      "name": "Today\u2019s Board",
+      "name": "Today’s Board",
       "url": "./engines.html",
       "icons": [
         {
@@ -61,6 +61,26 @@
           "sizes": "192x192"
         }
       ]
+    },
+    {
+      "name": "Community",
+      "url": "./community.html",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
-  ]
+  ],
+  "share_target": {
+    "action": "./share.html",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
 }
