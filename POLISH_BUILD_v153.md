@@ -26,3 +26,12 @@
 - `sw.js`
 
 No full API update is required. Deploy the files and refresh the site once.
+
+## Official logo update
+
+- Replaced the temporary generated wordmark with the user-supplied official Predict2u.com logo.
+- Added transparent optimized assets:
+  - `predict2u-logo.png`
+  - `predict2u-logo.webp`
+- Applied the official logo to Overview, Full Board, Proof, Scorecards, League DNA, and Community.
+- Cache version changed to `predict2u-v153-logo1` so browsers do not keep the old logo.

@@ -1,25 +1,11 @@
 {
-  "javascript_syntax": {
-    "live-refresh.js": {
-      "ok": true,
-      "error": ""
-    },
-    "p2u-intelligence.js": {
-      "ok": true,
-      "error": ""
-    }
-  },
   "inline_scripts_checked": 12,
-  "inline_failures": 0,
   "checks": {
-    "logo_asset": true,
-    "all_pages_use_svg": true,
-    "top_card_balance": true,
-    "proof_mobile_cards": true,
-    "proof_clean_ledger": true,
-    "strong_live_red": true,
-    "mobile_tightening": true,
-    "sw_v153": true
+    "official_logo_png": true,
+    "official_logo_webp": true,
+    "all_pages_use_png": true,
+    "old_svg_not_referenced": true,
+    "cache_bumped": true
   },
-  "cache_version": "predict2u-v153"
+  "cache_version": "predict2u-v153-logo1"
 }
