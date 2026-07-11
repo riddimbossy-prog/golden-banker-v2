@@ -53297,9 +53297,10 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Very Low-Scoring",
       "recordedAt": "2026-07-10T23:50:04.410Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "3-0",
+      "settledAt": "2026-07-11T16:17:57.569Z"
     },
     {
       "matchDate": "2026-07-11",
@@ -53315,8 +53316,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Very Low-Scoring",
       "recordedAt": "2026-07-10T23:50:04.410Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -53333,9 +53334,10 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Very Low-Scoring",
       "recordedAt": "2026-07-10T23:50:04.410Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "3-0",
+      "settledAt": "2026-07-11T16:17:57.569Z"
     },
     {
       "matchDate": "2026-07-11",
@@ -61089,10 +61091,30 @@
       "status": "pending",
       "result": null,
       "score": null
+    },
+    {
+      "matchDate": "2026-07-12",
+      "home": "IF Brommapojkarna",
+      "away": "Sirius",
+      "league": "Allsvenskan",
+      "engine": "Trend",
+      "engineKey": "trend",
+      "engineFamily": "Specialist",
+      "engineVersion": "1.0",
+      "market": "Double Chance X2",
+      "confidence": 85.2,
+      "suiteVersion": "2026.07-new-family",
+      "leagueClass": "Very High-Scoring",
+      "oddsAtPick": 1.18,
+      "fairMarketProbabilityAtPick": 0.8474576271186441,
+      "recordedAt": "2026-07-11T16:17:57.673Z",
+      "status": "pending",
+      "result": null,
+      "score": null
     }
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-11T16:16:37.772Z"
+    "updated": "2026-07-11T16:17:57.976Z"
   }
 }
