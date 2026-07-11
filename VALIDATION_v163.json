@@ -1,0 +1,18 @@
+{
+  "build": "v163",
+  "source": "v162",
+  "required_files_checked": 36,
+  "javascript_files_checked": 10,
+  "preflight": "Repository preflight passed: 30 required public files found.",
+  "audit": "Audit: 0 critical, 0 warning(s), 55 checks passed.",
+  "excluded": [
+    "node_modules",
+    "test-results",
+    "playwright-report",
+    "backup-originals",
+    "config.txt",
+    "API keys",
+    "stale data.js"
+  ],
+  "file_count": 130
+}

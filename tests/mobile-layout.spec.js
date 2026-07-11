@@ -31,10 +31,24 @@ for (const size of sizes) {
       await page.goto('/' + path, { waitUntil: 'domcontentloaded' });
       await page.waitForTimeout(400);
 
-      const overflow = await page.evaluate(() =>
-        Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - window.innerWidth
-      );
-      expect(overflow).toBeLessThanOrEqual(3);
+      const overflowReport = await page.evaluate(() => {
+        const overflow = Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - window.innerWidth;
+        const offenders = [...document.querySelectorAll('body *')]
+          .map(el => {
+            const r = el.getBoundingClientRect();
+            return {
+              tag: el.tagName.toLowerCase(),
+              id: el.id || '',
+              className: typeof el.className === 'string' ? el.className.slice(0, 100) : '',
+              left: Math.round(r.left), right: Math.round(r.right), width: Math.round(r.width),
+              scrollWidth: el.scrollWidth, clientWidth: el.clientWidth
+            };
+          })
+          .filter(x => x.right > window.innerWidth + 3 || x.left < -3 || x.scrollWidth > x.clientWidth + 3)
+          .slice(0, 12);
+        return { overflow, offenders };
+      });
+      expect(overflowReport.overflow, JSON.stringify(overflowReport.offenders, null, 2)).toBeLessThanOrEqual(3);
 
       const title = await page.title();
       expect(title.length).toBeGreaterThan(2);
@@ -66,9 +80,9 @@ test('brand experience features are present', async ({ page }) => {
   await page.goto('/board.html');
   const onboarding = page.locator('.p2u-onboard-backdrop');
   if (await onboarding.isVisible()) await page.locator('[data-close]').click();
-  await expect(page.locator('#board-rank-reason')).toBeAttached();
+  await expect(page.locator('#board-rank-reason'), 'Overview ranking explanation host is missing').toBeAttached();
   await page.goto('/engines.html');
-  await expect(page.locator('#ranked-explainer')).toBeAttached();
+  await expect(page.locator('#ranked-explainer'), 'Full Board ranking explanation host is missing').toBeAttached();
 });
 
 test('favicon and social metadata are present', async ({ page }) => {

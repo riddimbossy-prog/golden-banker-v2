@@ -1,0 +1,22 @@
+{
+  "javascript_syntax": {
+    "live-refresh.js": {
+      "ok": true,
+      "error": ""
+    }
+  },
+  "inline_scripts_checked": 10,
+  "checks": {
+    "engines_logo": true,
+    "proof_embeds_css": true,
+    "scorecards_embeds_css": true,
+    "league_embeds_css": true,
+    "settled_ui_fix": true,
+    "live_red_board": true,
+    "live_red_engines": true,
+    "sw_v152": true,
+    "dot_on_red": true,
+    "tag_live_red": true
+  },
+  "cache_version": "predict2u-v152"
+}

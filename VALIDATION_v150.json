@@ -1,0 +1,21 @@
+{
+  "javascript_syntax": {
+    "p2u-intelligence.js": {
+      "ok": true,
+      "error": ""
+    }
+  },
+  "inline_script_checks": 8,
+  "inline_script_failures": 0,
+  "feature_checks": {
+    "proof_page": true,
+    "scorecards_page": true,
+    "league_dna_page": true,
+    "shared_intelligence": true,
+    "engines_conflict_filter": true,
+    "engines_proof_links": true,
+    "board_feature_section": true,
+    "sw_v150": true
+  },
+  "cache_version": "predict2u-v150"
+}

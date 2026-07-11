@@ -1,0 +1,14 @@
+{
+  "checks": {
+    "board_rank_host": true,
+    "index_rank_host": true,
+    "engines_rank_host": true,
+    "narrow_stats_single_column": true,
+    "fold_logo_cap": true,
+    "diagnostic_overflow_report": true,
+    "cache_v162": true,
+    "no_generated_data": true
+  },
+  "cache_version": "predict2u-v162",
+  "note": "Static and syntax validation completed. Full Chromium matrix runs in GitHub Actions."
+}

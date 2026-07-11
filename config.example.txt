@@ -1,52 +1,22 @@
-# ============================================================
-# GOLDEN BANKER — CONFIG  (API-Football / api-sports.io)
-# Easiest way to set your key: double-click set-key.bat
-# ============================================================
+# Predict2U local configuration template
+# Copy this file to config.txt and add your own keys.
+# Never commit config.txt.
 
-API_KEY=PASTE_YOUR_KEY_HERE
-
-# SEASON = the year the season started. World Cup 2026 uses 2026.
-# NOTE: domestic leagues that run Aug->May use the START year.
-#       For the 2025/26 season that means SEASON=2025.
-#       The World Cup 2026 uses 2026. You can only set ONE season
-#       here, so if you mix the World Cup with domestic leagues,
-#       see the note at the bottom.
+API_KEY=PASTE_NEW_API_FOOTBALL_KEY_HERE
+STATS_API_KEY=PASTE_THE_STATS_API_KEY_HERE
 SEASON=2026
+SLEEP_MS=1500
+H2H=false
+ODDS=true
+STATS=true
+DAYS_BACK=1
+DAYS_FWD=1
+MAX_LEAGUES=120
+MAX_PROBES=400
+REQUEST_BUDGET=60000
+SOT_LOOKBACK=8
+SOT_CALL_BUDGET=120
+SOT_SLEEP_MS=250
 
-# LEAGUES = comma-separated NUMERIC IDs. Pro unlocks all of them.
-# ---- Internationals / current ----
-#   1   = FIFA World Cup
-#   4   = Euro Championship        5   = UEFA Nations League
-#   9   = Copa America
-# ---- Top European leagues ----
-#   39  = Premier League (Eng)     140 = La Liga (Spain)
-#   135 = Serie A (Italy)          78  = Bundesliga (Ger)
-#   61  = Ligue 1 (France)         88  = Eredivisie (Ned)
-#   94  = Primeira Liga (Por)      144 = Jupiler Pro (Belgium)
-#   203 = Super Lig (Turkey)       179 = Premiership (Scotland)
-#   218 = Bundesliga (Austria)     207 = Super League (Switz)
-# ---- Second tiers ----
-#   40  = Championship (Eng)       141 = La Liga 2 (Spain)
-#   136 = Serie B (Italy)          79  = Bundesliga 2 (Ger)
-# ---- European cups ----
-#   2   = Champions League         3   = Europa League
-#   848 = Conference League
-# ---- Rest of world ----
-#   71  = Serie A (Brazil)         128 = Liga Profesional (Argentina)
-#   253 = MLS (USA)                262 = Liga MX (Mexico)
-#   307 = Pro League (Saudi)       98  = J1 League (Japan)
-#   292 = K League 1 (S.Korea)     233 = Egyptian Premier
-# ---- African leagues ----
-#   (IDs commonly used by API-Football; VERIFY any that return nothing
-#    using the lookup trick in the README. Most African domestic
-#    seasons run Aug->May, so they're OFF right now in June/July.)
-#   233 = Egyptian Premier League        288 = South Africa PSL
-#   200 = Morocco Botola Pro             202 = Tunisia Ligue 1
-#   186 = Algeria Ligue 1                399 = Nigeria NPFL (verify)
-#   232 = Ghana Premier League (verify)
-#   12  = CAF Champions League           20  = CAF Confederation Cup
-#   6   = Africa Cup of Nations (AFCON)
-#
-# Tip: each league = 2 requests per run. Pro allows 7,500/day, so
-# you have plenty of room. Trim this list to what you actually follow.
-LEAGUES=1,2,3,39,140,135,78,61,88,94,144,203,71,128,253,307,233,288,200,202,186,12,20
+# Keep your current LEAGUES list here.
+LEAGUES=

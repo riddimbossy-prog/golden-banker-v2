@@ -48,3 +48,36 @@
   .p2u-steps{margin:14px 0}
   .p2u-step{padding:11px}
 }
+
+
+/* Predict2U v162 — narrow-screen overflow hardening */
+html,body{width:100%;max-width:100%;overflow-x:clip}
+img,svg,video,canvas{max-width:100%;height:auto}
+select,input,button,a{min-width:0}
+
+/* The Overview stats were still two columns on 280–360px screens. The long
+   7-day W/L line could become wider than its card and enlarge the document. */
+@media(max-width:360px){
+  #top > .grid.grid-cols-2{grid-template-columns:minmax(0,1fr)!important}
+  #top .t-num{font-size:46px!important;overflow-wrap:anywhere;word-break:normal}
+  #s-record{display:flex!important;align-items:baseline;flex-wrap:wrap;gap:3px 5px}
+
+  /* Keep the header within a Fold cover screen after safe-area padding. */
+  nav img[src*="predict2u-logo"]{height:38px!important;max-width:145px!important}
+  nav>div{width:100%!important;max-width:100%!important}
+  nav #user-chip{flex:0 0 auto}
+
+  /* Filters and hero actions may not preserve desktop intrinsic widths. */
+  #board .relative,#f-search,#f-league{width:100%!important;max-width:100%!important}
+  #top a[href="#board"],#top a[href*="t.me/"]{width:100%;justify-content:center;text-align:center}
+
+  /* Modal children must never contribute to document width. */
+  .p2u-onboard-backdrop,.p2u-onboard,.p2u-onboard *{max-width:100%}
+}
+
+@media(min-width:361px) and (max-width:420px){
+  #top .t-num{font-size:48px!important}
+  #s-record{display:flex!important;align-items:baseline;flex-wrap:wrap;gap:3px 5px}
+  nav img[src*="predict2u-logo"]{max-width:175px!important}
+  #board .relative,#f-search,#f-league{max-width:100%!important}
+}
