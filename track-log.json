@@ -47067,8 +47067,8 @@
       "confidence": 9,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T02:16:39.272Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -47081,8 +47081,8 @@
       "confidence": 9,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T02:16:39.272Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -47095,8 +47095,8 @@
       "confidence": 10,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T02:16:39.272Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -47109,8 +47109,8 @@
       "confidence": 8,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T02:16:39.272Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -47123,8 +47123,8 @@
       "confidence": 10,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T02:16:39.273Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -47137,8 +47137,8 @@
       "confidence": 10,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T02:16:39.273Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -47151,8 +47151,8 @@
       "confidence": 10,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T02:16:39.273Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -47165,8 +47165,8 @@
       "confidence": 8,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T02:16:39.273Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -51273,8 +51273,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T23:50:04.327Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -60457,8 +60457,8 @@
       "oddsAtPick": null,
       "fairMarketProbabilityAtPick": null,
       "recordedAt": "2026-07-11T02:29:42.788Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -61024,6 +61024,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-11T10:01:14.737Z"
+    "updated": "2026-07-11T10:02:16.430Z"
   }
 }
