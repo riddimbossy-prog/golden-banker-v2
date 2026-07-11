@@ -51545,8 +51545,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T23:50:04.338Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -51599,8 +51599,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T23:50:04.339Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -61026,6 +61026,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-11T11:01:09.917Z"
+    "updated": "2026-07-11T11:02:30.810Z"
   }
 }
