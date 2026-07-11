@@ -50343,8 +50343,8 @@
       "confidence": 8,
       "leagueClass": "Very Low-Scoring",
       "recordedAt": "2026-07-10T18:11:09.554Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -50357,8 +50357,8 @@
       "confidence": 8,
       "leagueClass": "Very Low-Scoring",
       "recordedAt": "2026-07-10T18:11:09.554Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -50371,8 +50371,8 @@
       "confidence": 8,
       "leagueClass": "Very Low-Scoring",
       "recordedAt": "2026-07-10T18:11:09.554Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -50385,8 +50385,8 @@
       "confidence": 8,
       "leagueClass": "Very Low-Scoring",
       "recordedAt": "2026-07-10T18:11:09.554Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -53965,8 +53965,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Very Low-Scoring",
       "recordedAt": "2026-07-10T23:50:04.425Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -53983,8 +53983,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Very Low-Scoring",
       "recordedAt": "2026-07-10T23:50:04.425Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -54001,8 +54001,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Very Low-Scoring",
       "recordedAt": "2026-07-10T23:50:04.425Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -61115,6 +61115,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-11T18:10:39.400Z"
+    "updated": "2026-07-11T18:11:58.571Z"
   }
 }
