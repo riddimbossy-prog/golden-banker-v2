@@ -570,6 +570,14 @@ details summary{ cursor:pointer; font-size:14.5px; color:var(--brand); font-weig
 <link rel="stylesheet" href="site-controls.css"/>
 <link rel="stylesheet" href="mobile-app-nav.css"/>
 <link rel="stylesheet" href="growth-sharing.css"/>
+
+<style>
+#p2u-community-freshness{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:10px 0 12px;color:var(--muted);font-size:12px;font-weight:600}
+#p2u-community-freshness strong{color:var(--brand-2);font-size:12.5px}
+.p2u-community-fresh-dot{width:8px;height:8px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px rgba(52,211,153,.12)}
+.p2u-community-empty{display:flex;flex-direction:column;gap:8px}.p2u-community-empty strong{color:var(--ink);font-size:16px}.p2u-community-empty span{color:var(--muted)}.p2u-community-empty a{color:var(--brand);font-weight:800;text-decoration:none}
+#top-picks>.pick[hidden]{display:none!important}
+</style>
 </head>
 <body>
 <header class="top">
@@ -726,6 +734,7 @@ details summary{ cursor:pointer; font-size:14.5px; color:var(--brand); font-weig
 <script src="slip.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="community.js"></script>
+<script src="community-freshness.js" defer></script>
 <script>/* theme follows the rest of the site */
 (function(){ try{ if(localStorage.getItem('predicto-theme')==='light') document.body.classList.add('light'); }catch(e){} })();</script>
 <script>
