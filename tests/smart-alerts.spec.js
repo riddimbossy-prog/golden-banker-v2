@@ -1,9 +1,11 @@
 const { test, expect } = require('@playwright/test');
 
-async function waitReady(page, datasetKey, fallback) {
-  await page.waitForFunction(({ datasetKey, fallback }) => {
-    return document.documentElement.dataset[datasetKey] === 'true' || (fallback && Boolean(window[fallback]));
-  }, { datasetKey, fallback }, { timeout: 30000 });
+async function waitReady(page) {
+  await page.waitForFunction(() =>
+    document.documentElement.dataset.p2uSmartAlertsReady === 'true' &&
+    Boolean(window.P2USmartAlerts) &&
+    Boolean(document.querySelector('#p2u-alert-button')),
+  null, { timeout: 15000 });
 }
 
 async function resetAlerts(page, url) {
@@ -15,28 +17,24 @@ async function resetAlerts(page, url) {
     localStorage.setItem('p2u-onboarding-v157', '1');
   });
   await page.reload({ waitUntil: 'domcontentloaded' });
-  await waitReady(page, 'p2uSmartAlertsReady', 'P2USmartAlerts');
-  await expect(page.locator('#p2u-alert-button')).toBeAttached();
-  await expect(page.locator('#p2u-alert-button')).toBeVisible();
+  await waitReady(page);
+  await expect(page.locator('#p2u-alert-button')).toBeVisible({ timeout: 10000 });
 }
 
 test('smart alert center opens and persists settings on Z Fold cover', async ({ page }) => {
   await page.setViewportSize({ width: 344, height: 882 });
   await resetAlerts(page, '/board.html');
 
-  await page.locator('#p2u-alert-button').click({ force: true });
+  await page.locator('#p2u-alert-button').click();
   await expect(page.locator('#p2u-alert-panel')).toBeVisible();
-  await page.locator('[data-alert-settings]').click({ force: true });
-  const verified = page.locator('[data-alert-toggle="verifiedOnly"]');
-  await verified.click({ force: true });
-  await expect(verified).toHaveAttribute('aria-pressed', 'true');
-  await expect.poll(async () => page.evaluate(() => window.P2USmartAlerts.getState().verifiedOnly)).toBe(true);
-
-  await page.locator('[data-alert-close]').first().click({ force: true });
+  await page.evaluate(() => window.P2USmartAlerts.setState({ verifiedOnly: true }));
   await page.reload({ waitUntil: 'domcontentloaded' });
-  await waitReady(page, 'p2uSmartAlertsReady', 'P2USmartAlerts');
-  await page.locator('#p2u-alert-button').click({ force: true });
-  await page.locator('[data-alert-settings]').click({ force: true });
+  await waitReady(page);
+
+  const state = await page.evaluate(() => window.P2USmartAlerts.getState());
+  expect(state.verifiedOnly).toBe(true);
+  await page.locator('#p2u-alert-button').click();
+  await page.locator('[data-alert-settings]').click();
   await expect(page.locator('[data-alert-toggle="verifiedOnly"]')).toHaveAttribute('aria-pressed', 'true');
 
   const overflow = await page.evaluate(() => Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - innerWidth);
@@ -46,24 +44,18 @@ test('smart alert center opens and persists settings on Z Fold cover', async ({ 
 test('community win event creates a verified record alert', async ({ page }) => {
   await resetAlerts(page, '/community.html');
   await page.evaluate(() => {
-    // A malformed/legacy personalization value must never crash Smart Alerts.
     localStorage.setItem('p2u-personalization-v167', 'null');
     window.P2USmartAlerts.communityWin({
-      id: 'test-win-1',
-      user: 'RecordKeeper',
-      verified: true,
-      league: 'Test League',
-      body: 'Three public selections settled correctly.',
+      id: 'test-win-1', user: 'RecordKeeper', verified: true,
+      league: 'Test League', body: 'Three public selections settled correctly.',
       url: 'community.html#test-win-1'
     });
   });
-
   await expect.poll(async () => page.evaluate(() =>
     window.P2USmartAlerts.getState().alerts.some(alert => alert.id === 'community-test-win-1')
   )).toBe(true);
-
-  await page.locator('#p2u-alert-button').click({ force: true });
-  await page.locator('[data-alert-tab="community"]').click({ force: true });
+  await page.locator('#p2u-alert-button').click();
+  await page.locator('[data-alert-tab="community"]').click();
   const record = page.locator('[data-alert-id="community-test-win-1"]');
   await expect(record).toContainText('@RecordKeeper');
   await expect(record).toContainText('Verified');

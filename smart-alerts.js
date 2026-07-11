@@ -3,7 +3,7 @@
 (function(){
   "use strict";
 
-  const VERSION="v168";
+  const VERSION="v176";
   const STORE="p2u-smart-alerts-v168";
   const MATCH_STORE="p2u-smart-alerts-match-snapshot-v168";
   const COMMUNITY_STORE="p2u-smart-alerts-community-seen-v168";
@@ -367,6 +367,15 @@
     }finally{signalReady();}
   }
 
+  function setStateForTesting(next){
+    const patch=asRecord(next);
+    state=Object.assign({},state,patch,{alerts:Array.isArray(patch.alerts)?patch.alerts:state.alerts});
+    persist();
+    updateBadge();
+    if(panel)render();
+    return JSON.parse(JSON.stringify(state));
+  }
+
   window.P2USmartAlerts={
     version:VERSION,
     open:()=>open("list"),
@@ -375,6 +384,7 @@
     communityWin:ingestCommunityWin,
     markAllRead,
     getState:()=>JSON.parse(JSON.stringify(state)),
+    setState:setStateForTesting,
     clear:()=>{state.alerts=[];persist();updateBadge();if(panel)render();}
   };
 

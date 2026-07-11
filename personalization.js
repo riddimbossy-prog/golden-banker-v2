@@ -3,6 +3,7 @@
 (function () {
   'use strict';
 
+  const VERSION = 'v176';
   const STORAGE_KEY = 'p2u-personalization-v167';
   const MAX_RECENT = 8;
   const DEFAULTS = {
@@ -471,6 +472,14 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', scheduleFallbackMount, { once: true });
   else scheduleFallbackMount();
 
+  function setPrefsForTesting(next) {
+    prefs = sanitize(Object.assign({}, prefs, next && typeof next === 'object' ? next : {}));
+    persist();
+    renderDrawer();
+    if (context && typeof context.refresh === 'function') context.refresh();
+    return clone(prefs);
+  }
+
   window.P2UPersonalization = {
     configureEngines,
     getInitialBoardState,
@@ -482,6 +491,7 @@
     mountBoard,
     getPrefs: () => clone(prefs),
     isMounted: () => mounted,
-    refreshUI: () => { updateBar(); renderDrawer(); applyView(); }
+    refreshUI: () => { updateBar(); renderDrawer(); applyView(); },
+    setPrefs: setPrefsForTesting
   };
 })();
