@@ -54307,8 +54307,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Unknown",
       "recordedAt": "2026-07-10T23:50:04.434Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -54325,8 +54325,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Unknown",
       "recordedAt": "2026-07-10T23:50:04.434Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -54343,8 +54343,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Unknown",
       "recordedAt": "2026-07-10T23:50:04.434Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -54361,8 +54361,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Unknown",
       "recordedAt": "2026-07-10T23:50:04.434Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -61115,6 +61115,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-11T19:04:09.607Z"
+    "updated": "2026-07-11T19:05:35.841Z"
   }
 }
