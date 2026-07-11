@@ -1,0 +1,22 @@
+{
+  "version": "v175",
+  "name": "Feature Stability and Narrow Mobile Fix",
+  "static_validation": {
+    "repository_preflight": "passed",
+    "required_public_files": 48,
+    "performance_budget": "passed",
+    "performance_errors": 0,
+    "performance_warnings": 0,
+    "javascript_syntax": "passed"
+  },
+  "fixes": [
+    "Admin publishing and moderation test actions are deterministic",
+    "Personalization has a safe delayed-data fallback mount",
+    "Smart Alerts signals readiness only after trigger and panel mount",
+    "Mobile navigation tests wait on the real readiness signal",
+    "Overview and Board are hardened for 280px and 320px widths"
+  ],
+  "browser_execution": "Not executed in this sandbox because Chromium navigation to localhost is blocked by administrator policy. GitHub Actions will run the full Playwright matrix.",
+  "isolated_audit_note": "The packaged snapshot intentionally omits live data.js and community.js, so isolated audit reports those runtime files as missing. The changed-files package does not delete or overwrite them in the live repository.",
+  "service_worker_cache": "predict2u-v175"
+}

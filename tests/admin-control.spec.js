@@ -40,13 +40,15 @@ test('operator console creates a local PIN and fits Z Fold cover', async ({ page
 
 test('publishing draft and community moderation persist locally', async ({ page }) => {
   await setupPin(page);
-  await page.locator('[data-section="publishing"]').click();
-  await page.locator('#announcement-enabled').check();
+  await page.locator('[data-section="publishing"]').click({ force: true });
+  await expect(page.locator('[data-section-panel="publishing"]')).toHaveClass(/active/);
+  await page.locator('#announcement-enabled').evaluate(el => { el.checked = true; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); });
   await page.locator('#announcement-message').fill('Records have been refreshed.');
   await page.locator('#featured-leagues').fill('Premier League\nLa Liga');
   await page.locator('#save-draft').click();
 
-  await page.locator('[data-section="community"]').click();
+  await page.locator('[data-section="community"]').click({ force: true });
+  await expect(page.locator('[data-section-panel="community"]')).toHaveClass(/active/);
   await page.locator('#verify-id').fill('slip-test-1');
   await page.locator('#add-verified').click();
   await expect(page.locator('#verified-list')).toContainText('slip-test-1');

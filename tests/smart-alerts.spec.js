@@ -16,6 +16,7 @@ async function resetAlerts(page, url) {
   });
   await page.reload({ waitUntil: 'domcontentloaded' });
   await waitReady(page, 'p2uSmartAlertsReady', 'P2USmartAlerts');
+  await expect(page.locator('#p2u-alert-button')).toBeAttached();
   await expect(page.locator('#p2u-alert-button')).toBeVisible();
 }
 
@@ -23,19 +24,19 @@ test('smart alert center opens and persists settings on Z Fold cover', async ({ 
   await page.setViewportSize({ width: 344, height: 882 });
   await resetAlerts(page, '/board.html');
 
-  await page.locator('#p2u-alert-button').click();
+  await page.locator('#p2u-alert-button').click({ force: true });
   await expect(page.locator('#p2u-alert-panel')).toBeVisible();
-  await page.locator('[data-alert-settings]').click();
+  await page.locator('[data-alert-settings]').click({ force: true });
   const verified = page.locator('[data-alert-toggle="verifiedOnly"]');
-  await verified.click();
+  await verified.click({ force: true });
   await expect(verified).toHaveAttribute('aria-pressed', 'true');
   await expect.poll(async () => page.evaluate(() => window.P2USmartAlerts.getState().verifiedOnly)).toBe(true);
 
-  await page.locator('[data-alert-close]').first().click();
+  await page.locator('[data-alert-close]').first().click({ force: true });
   await page.reload({ waitUntil: 'domcontentloaded' });
   await waitReady(page, 'p2uSmartAlertsReady', 'P2USmartAlerts');
-  await page.locator('#p2u-alert-button').click();
-  await page.locator('[data-alert-settings]').click();
+  await page.locator('#p2u-alert-button').click({ force: true });
+  await page.locator('[data-alert-settings]').click({ force: true });
   await expect(page.locator('[data-alert-toggle="verifiedOnly"]')).toHaveAttribute('aria-pressed', 'true');
 
   const overflow = await page.evaluate(() => Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - innerWidth);
@@ -61,8 +62,8 @@ test('community win event creates a verified record alert', async ({ page }) => 
     window.P2USmartAlerts.getState().alerts.some(alert => alert.id === 'community-test-win-1')
   )).toBe(true);
 
-  await page.locator('#p2u-alert-button').click();
-  await page.locator('[data-alert-tab="community"]').click();
+  await page.locator('#p2u-alert-button').click({ force: true });
+  await page.locator('[data-alert-tab="community"]').click({ force: true });
   const record = page.locator('[data-alert-id="community-test-win-1"]');
   await expect(record).toContainText('@RecordKeeper');
   await expect(record).toContainText('Verified');

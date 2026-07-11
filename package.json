@@ -1,7 +1,7 @@
 {
   "name": "predict2u-site-quality",
   "private": true,
-  "version": "1.74.0",
+  "version": "1.75.0",
   "scripts": {
     "health": "node generate-site-health.js",
     "audit": "node audit-site.js",

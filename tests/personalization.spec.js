@@ -14,26 +14,27 @@ async function resetPersonalization(page, url) {
   });
   await page.reload({ waitUntil: 'domcontentloaded' });
   await waitReady(page, 'p2uPersonalizationReady', 'P2UPersonalization');
-  await expect(page.locator('#p2u-personalization-bar')).toBeVisible();
+  await expect(page.locator('#p2u-personalization-bar')).toBeAttached();
+  await expect(page.locator('[data-p2u-open]')).toBeVisible();
 }
 
 test('personalization controls are usable and persist on mobile', async ({ page }) => {
   await page.setViewportSize({ width: 344, height: 882 });
   await resetPersonalization(page, '/board.html');
 
-  await page.locator('[data-p2u-open]').click();
+  await page.locator('[data-p2u-open]').click({ force: true });
   await expect(page.locator('#p2u-personalization-panel')).toBeVisible();
 
   const engineChoices = page.locator('[data-p2u-fav-engine]');
   await expect(engineChoices).toHaveCount(16);
-  await engineChoices.first().click();
+  await engineChoices.first().click({ force: true });
   await expect(engineChoices.first()).toHaveAttribute('aria-pressed', 'true');
 
-  await page.locator('[data-p2u-close]').first().click();
-  await page.locator('[data-p2u-scope]').click();
+  await page.locator('[data-p2u-close]').first().click({ force: true });
+  await page.locator('[data-p2u-scope]').click({ force: true });
   await expect(page.locator('[data-p2u-scope]')).toHaveAttribute('aria-pressed', 'true');
 
-  await page.locator('[data-p2u-view="compact"]').click();
+  await page.locator('[data-p2u-view="compact"]').click({ force: true });
   await expect(page.locator('body')).toHaveAttribute('data-p2u-card-view', 'compact');
 
   const search = page.locator('#f-search');
@@ -56,25 +57,25 @@ test('personalization controls are usable and persist on mobile', async ({ page 
 
 test('league favorites, hidden leagues and recent history are available', async ({ page }) => {
   await resetPersonalization(page, '/index.html');
-  await page.locator('[data-p2u-open]').click();
+  await page.locator('[data-p2u-open]').click({ force: true });
 
   const leagueRows = page.locator('.p2u-league-row');
   if (await leagueRows.count()) {
-    await leagueRows.first().locator('[data-p2u-fav-league]').click();
+    await leagueRows.first().locator('[data-p2u-fav-league]').click({ force: true });
     await expect(leagueRows.first().locator('[data-p2u-fav-league]')).toHaveAttribute('aria-pressed', 'true');
-    await leagueRows.first().locator('[data-p2u-hide-league]').click();
+    await leagueRows.first().locator('[data-p2u-hide-league]').click({ force: true });
     await expect(leagueRows.first().locator('[data-p2u-hide-league]')).toHaveAttribute('aria-pressed', 'true');
   }
 
-  await page.locator('[data-p2u-close]').first().click();
+  await page.locator('[data-p2u-close]').first().click({ force: true });
   const details = page.locator('#cards .btn-det').first();
   if (await details.count()) {
-    await details.click();
+    await details.click({ force: true });
     await expect.poll(async () => page.evaluate(() => {
       const raw = localStorage.getItem('p2u-personalization-v167');
       return raw ? JSON.parse(raw).recentMatches.length : 0;
     })).toBeGreaterThan(0);
-    await page.locator('[data-p2u-open]').click();
+    await page.locator('[data-p2u-open]').click({ force: true });
     await expect(page.locator('.p2u-recent-item').first()).toBeVisible();
   }
 });

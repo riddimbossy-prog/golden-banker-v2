@@ -167,8 +167,6 @@
     else {trigger.classList.add("p2u-alert-trigger-floating");document.body.appendChild(trigger);}
     trigger.addEventListener("click",()=>open("list"));
     updateBadge();
-    document.documentElement.dataset.p2uSmartAlertsReady='true';
-    window.dispatchEvent(new CustomEvent('p2u:smart-alerts-ready',{detail:{version:VERSION}}));
   }
   function mountPanel(){
     if(backdrop)return;
@@ -351,14 +349,22 @@
     if(!Object.keys(detail).length)return;
     addAlert({id:`community-${detail.id||hash(JSON.stringify(detail))}`,kind:"community",category:"community",title:detail.title||(detail.user?`@${String(detail.user).replace(/^@/,"")} recorded a winning slip`:"Community slip settled as won"),body:detail.body||detail.summary||"The public record was settled by the results system.",user:detail.user,verified:detail.verified,trending:detail.trending,following:detail.following,league:detail.league,engine:detail.engine,url:detail.url||"community.html",createdAt:detail.createdAt});
   }
+  function signalReady(){
+    const ready=Boolean(trigger&&panel);
+    document.documentElement.dataset.p2uSmartAlertsReady=ready?'true':'degraded';
+    window.dispatchEvent(new CustomEvent('p2u:smart-alerts-ready',{detail:{version:VERSION,ready}}));
+  }
   function init(){
-    if(mounted)return;mounted=true;
-    mountTrigger();mountPanel();mountCommunityCard();bindEvents();
-    processMatchChanges();
-    window.addEventListener("p2u:data-updated",onDataUpdated);
-    window.addEventListener("p2u:community-win",event=>ingestCommunityWin(event.detail));
-    setTimeout(observeCommunity,450);
-    updateBadge();
+    if(mounted){signalReady();return;}
+    mounted=true;
+    try{
+      mountTrigger();mountPanel();mountCommunityCard();bindEvents();
+      processMatchChanges();
+      window.addEventListener("p2u:data-updated",onDataUpdated);
+      window.addEventListener("p2u:community-win",event=>ingestCommunityWin(event.detail));
+      setTimeout(observeCommunity,450);
+      updateBadge();
+    }finally{signalReady();}
   }
 
   window.P2USmartAlerts={

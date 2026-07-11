@@ -312,7 +312,7 @@
   }
 
   function mountBoard(options) {
-    context = options || {};
+    context = Object.assign({}, context || {}, options || {});
     configureEngines(context.engines || []);
     applyView();
 
@@ -352,6 +352,39 @@
     mounted = true;
     document.documentElement.dataset.p2uPersonalizationReady = 'true';
     window.dispatchEvent(new CustomEvent('p2u:personalization-ready', { detail: { version: VERSION } }));
+  }
+
+
+
+  function inferFallbackContext() {
+    const engineButtons = [...document.querySelectorAll('#engine-pills [data-engine], #engine-pills button')];
+    const engines = engineButtons.map((button, index) => ({
+      key: String(button.dataset.engine || button.dataset.key || button.value || `engine-${index + 1}`),
+      name: String(button.textContent || '').trim() || `Engine ${index + 1}`
+    })).filter(engine => engine.key && engine.name);
+    const leagueSelect = document.getElementById('f-league');
+    const leagues = leagueSelect ? [...leagueSelect.options].map(option => option.value).filter(value => value && value !== 'all') : [];
+    return {
+      engines,
+      leagues,
+      refresh: () => {},
+      onScopeChange: () => {},
+      resetBoard: () => {}
+    };
+  }
+
+  function ensureMounted() {
+    if (mounted) return;
+    if (!document.getElementById('engine-pills')) return;
+    mountBoard(inferFallbackContext());
+  }
+
+  function scheduleFallbackMount() {
+    const attempt = () => {
+      ensureMounted();
+      if (!mounted) setTimeout(attempt, 250);
+    };
+    setTimeout(attempt, 0);
   }
 
   function recordMatch(article) {
@@ -435,6 +468,8 @@
   });
 
   applyView();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', scheduleFallbackMount, { once: true });
+  else scheduleFallbackMount();
 
   window.P2UPersonalization = {
     configureEngines,
