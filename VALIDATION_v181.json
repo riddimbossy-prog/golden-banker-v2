@@ -1,0 +1,33 @@
+{
+  "version": "v181",
+  "build": "Real Backend Admin",
+  "generated_at": "2026-07-11T18:04:41.179027+00:00",
+  "static_validation": {
+    "repository_preflight": "passed",
+    "required_public_files": 57,
+    "performance_budget_errors": 0,
+    "performance_budget_warnings": 0,
+    "audit_critical": 0,
+    "audit_warnings": 0,
+    "audit_checks_passed": 160,
+    "javascript_syntax": "passed",
+    "engine_registry": "16/16"
+  },
+  "browser_execution": "Configured for GitHub Actions; not executed in this sandbox because @playwright/test is not installed in the local artifact directory.",
+  "service_worker_cache": "predict2u-v181",
+  "backend_security": [
+    "Supabase Auth session required",
+    "RLS enabled on backend admin tables",
+    "Protected RPC functions enforce roles server-side",
+    "No service-role key in browser code",
+    "Permanent audit log for protected changes",
+    "Last active owner cannot be removed through the browser RPC"
+  ],
+  "new_files": [
+    "backend-admin.js",
+    "backend-admin.css",
+    "SUPABASE_BACKEND_ADMIN_v181.sql",
+    "BACKEND_ADMIN_v181.md",
+    "VALIDATION_v181.json"
+  ]
+}

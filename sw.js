@@ -1,18 +1,18 @@
-/* Predict2U service worker v171 — fast shell, bounded network waits and fresh data.
+/* Predict2U service worker v181 — fast shell, bounded network waits and fresh data.
    Strategy:
    - Navigation/HTML: network-first with a short timeout, then cached fallback.
    - data.js/site-health.json: network-first, canonical cache key, stale fallback.
    - Static assets: cache-first with background refresh.
    - Optional PREFETCH_URLS message warms likely next pages. */
 
-const CACHE_VERSION = "predict2u-v180";
+const CACHE_VERSION = "predict2u-v181";
 const OFFLINE_PAGE = "./board.html";
 const NETWORK_TIMEOUT_MS = 4500;
 
 const SHELL = [
   "./admin.html",
-  "./admin-control.js",
-  "./admin-control.css",
+  "./backend-admin.js",
+  "./backend-admin.css",
   "./admin-config.js",
   "./site-controls.js",
   "./site-controls.css",
@@ -28,6 +28,7 @@ const SHELL = [
   "./cloud-config.js",
   "./account-cloud.js",
   "./account-cloud.css",
+  "./SUPABASE_BACKEND_ADMIN_v181.sql",
   "./trust.html",
   "./responsible-gambling.html",
   "./terms.html",

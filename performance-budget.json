@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-11T17:12:59.817Z",
-  "version": "v180",
+  "generatedAt": "2026-07-11T18:05:33.503Z",
+  "version": "v181",
   "errors": [],
   "warnings": [],
   "passedCount": 22,
@@ -54,27 +54,27 @@
       "limit": 22000
     },
     "admin.html": {
-      "bytes": 14434,
+      "bytes": 13518,
       "limit": 30000
     },
-    "admin-control.js": {
-      "bytes": 21869,
-      "limit": 50000
+    "backend-admin.js": {
+      "bytes": 17503,
+      "limit": 42000
     },
-    "admin-control.css": {
-      "bytes": 9661,
-      "limit": 30000
+    "backend-admin.css": {
+      "bytes": 9915,
+      "limit": 32000
     },
     "site-controls.js": {
-      "bytes": 4963,
-      "limit": 15000
+      "bytes": 10144,
+      "limit": 22000
     },
     "site-controls.css": {
       "bytes": 2278,
       "limit": 8000
     },
     "account-cloud.js": {
-      "bytes": 29668,
+      "bytes": 29678,
       "limit": 65000
     },
     "account-cloud.css": {

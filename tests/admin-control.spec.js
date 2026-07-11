@@ -1,73 +1,71 @@
 const { test, expect } = require('@playwright/test');
 
-async function waitReady(page, datasetKey, fallback) {
-  await page.waitForFunction(({ datasetKey, fallback }) => {
-    return document.documentElement.dataset[datasetKey] === 'true' || (fallback && Boolean(window[fallback]));
-  }, { datasetKey, fallback }, { timeout: 30000 });
+async function installAdminMock(page,{role='owner'}={}){
+  await page.addInitScript(({role})=>{
+    const settings={id:'global',board_published:true,board_message:'Preparing today’s board.',announcement_enabled:false,announcement_tone:'info',announcement_message:'',announcement_link_label:'',announcement_link_url:'',announcement_expires_at:null,featured_engines:[],featured_leagues:[],release_version:'v181',updated_at:new Date().toISOString()};
+    window.__P2U_ADMIN_MOCK__={
+      session:{user:{id:'00000000-0000-0000-0000-000000000001',email:'owner@example.com'}},
+      roleRow:role?{user_id:'00000000-0000-0000-0000-000000000001',role,active:true}:null,
+      calls:[],settings,moderation:[],audit:[],deletions:[],roles:[{user_id:'00000000-0000-0000-0000-000000000001',role:'owner',active:true,updated_at:new Date().toISOString()}],
+      async select(table,query){
+        if(table==='p2u_site_settings')return this.settings;
+        if(table==='p2u_community_moderation')return this.moderation;
+        if(table==='p2u_admin_audit_log')return this.audit;
+        if(table==='p2u_account_deletion_requests')return this.deletions;
+        if(table==='p2u_admin_roles')return query&&query.maybeSingle?this.roleRow:this.roles;
+        return query&&query.maybeSingle?null:[];
+      },
+      async rpc(name,args){
+        this.calls.push({name,args});
+        if(name==='p2u_admin_save_site_settings'){
+          this.settings={...this.settings,...args.p_payload,updated_at:new Date().toISOString()};
+          return this.settings;
+        }
+        if(name==='p2u_admin_moderate_community'){
+          if(args.p_status==='clear')this.moderation=this.moderation.filter(x=>x.slip_id!==args.p_slip_id);
+          else this.moderation=[{slip_id:args.p_slip_id,status:args.p_status,reason:args.p_reason,updated_at:new Date().toISOString()}];
+          return this.moderation[0]||{slip_id:args.p_slip_id,status:'clear'};
+        }
+        return {};
+      }
+    };
+  },{role});
 }
 
-async function clearStorageOnce(page, url, localKeys = [], sessionKeys = []) {
-  await page.goto(url, { waitUntil: 'domcontentloaded' });
-  await page.evaluate(({ localKeys, sessionKeys }) => {
-    localKeys.forEach(key => localStorage.removeItem(key));
-    sessionKeys.forEach(key => sessionStorage.removeItem(key));
-  }, { localKeys, sessionKeys });
-  await page.reload({ waitUntil: 'domcontentloaded' });
+async function waitAdmin(page){
+  await page.waitForFunction(()=>document.documentElement.dataset.p2uBackendAdminReady==='true' && window.P2UBackendAdmin?.isReady?.(),null,{timeout:15000});
 }
 
-async function setupPin(page, pin = '2468') {
-  await clearStorageOnce(
-    page,
-    '/admin.html',
-    ['p2u-admin-pin-v169', 'p2u-admin-draft-v169', 'p2u-admin-log-v169'],
-    ['p2u-admin-session-v169']
-  );
-  await waitReady(page, 'p2uAdminReady');
-  await expect(page.locator('#gate-title')).toContainText('Create local operator PIN');
-  await page.locator('#admin-pin').fill(pin);
-  await page.locator('#admin-pin-confirm').fill(pin);
-  await page.locator('#gate-submit').click();
+test('backend admin loads for an authorized owner and fits Z Fold cover', async ({page})=>{
+  await installAdminMock(page);
+  await page.setViewportSize({width:344,height:882});
+  await page.goto('/admin.html',{waitUntil:'domcontentloaded'});
+  await waitAdmin(page);
   await expect(page.locator('#admin-app')).toBeVisible();
-}
-
-test('operator console creates a local PIN and fits Z Fold cover', async ({ page }) => {
-  await page.setViewportSize({ width: 344, height: 882 });
-  await setupPin(page);
-  await expect(page.locator('#kpi-engines')).toContainText('16/16');
-  const overflow = await page.evaluate(() => Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - innerWidth);
+  await expect(page.locator('#admin-role')).toHaveText('owner');
+  await expect(page.locator('#metric-board')).toHaveText('Published');
+  const overflow=await page.evaluate(()=>Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-innerWidth);
   expect(overflow).toBeLessThanOrEqual(3);
 });
 
-test('publishing draft and community moderation persist locally', async ({ page }) => {
-  await setupPin(page);
-  await page.locator('[data-section="publishing"]').click({ force: true });
-  await expect(page.locator('[data-section-panel="publishing"]')).toHaveClass(/active/);
-  await page.locator('#announcement-enabled').evaluate(el => { el.checked = true; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); });
-  await page.locator('#announcement-message').fill('Records have been refreshed.');
-  await page.locator('#featured-leagues').fill('Premier League\nLa Liga');
-  await page.locator('#save-draft').click();
-
-  await page.locator('[data-section="community"]').click({ force: true });
-  await expect(page.locator('[data-section-panel="community"]')).toHaveClass(/active/);
-  await page.locator('#verify-id').fill('slip-test-1');
-  await page.locator('#add-verified').click();
-  await expect(page.locator('#verified-list')).toContainText('slip-test-1');
-
-  await expect.poll(async () => page.evaluate(() => {
-    const raw = localStorage.getItem('p2u-admin-draft-v169');
-    return raw ? JSON.parse(raw) : null;
-  })).toMatchObject({
-    announcement: { enabled: true },
-    community: { verifiedIds: expect.arrayContaining(['slip-test-1']) }
-  });
+test('publishing and moderation actions call protected backend RPCs', async ({page})=>{
+  await installAdminMock(page);
+  await page.goto('/admin.html',{waitUntil:'domcontentloaded'});
+  await waitAdmin(page);
+  await page.locator('[data-admin-tab="publishing"]').click();
+  await page.locator('#announcement-enabled').check();
+  await page.locator('#announcement-message').fill('Records refreshed.');
+  await page.locator('#save-settings').click();
+  await expect.poll(()=>page.evaluate(()=>window.__P2U_ADMIN_MOCK__.calls.some(x=>x.name==='p2u_admin_save_site_settings'))).toBeTruthy();
+  await page.locator('[data-admin-tab="community"]').click();
+  await page.locator('#moderation-slip-id').fill('slip-test-181');
+  await page.locator('#moderate-verified').click();
+  await expect.poll(()=>page.evaluate(()=>window.__P2U_ADMIN_MOCK__.calls.some(x=>x.name==='p2u_admin_moderate_community'&&x.args.p_status==='verified'))).toBeTruthy();
 });
 
-test('public controls apply committed board and moderation configuration', async ({ page }) => {
-  await page.route('**/admin-config.js', route => route.fulfill({
-    contentType: 'text/javascript',
-    body: `window.P2U_ADMIN_CONFIG={version:'test',board:{published:false,message:'Preparing records.'},announcement:{enabled:true,tone:'info',message:'Quiet update',linkLabel:'',linkUrl:'',expiresAt:''},featured:{engines:[],leagues:[]},community:{hiddenIds:[],verifiedIds:[]}};`
-  }));
-  await page.goto('/board.html', { waitUntil: 'domcontentloaded' });
-  await expect(page.locator('.p2u-board-unpublished')).toContainText('Preparing records.');
-  await expect(page.locator('#p2u-operator-note')).toContainText('Quiet update');
+test('signed-in users without a role are denied', async ({page})=>{
+  await installAdminMock(page,{role:null});
+  await page.goto('/admin.html',{waitUntil:'domcontentloaded'});
+  await expect(page.locator('#gate-title')).toHaveText('Admin role required');
+  await expect(page.locator('#admin-app')).toBeHidden();
 });

@@ -3,7 +3,7 @@
    protects each user's cloud state. Never place a service-role key in browser code. */
 (function(){
   'use strict';
-  const VERSION='v180';
+  const VERSION='v181';
   const CONFIG=window.P2U_CLOUD_CONFIG||{};
   const META_KEY='p2u-cloud-local-meta-v180';
   const LOCAL_FOLLOWS_KEY='p2u-local-follows-v180';
@@ -270,6 +270,6 @@
     window.dispatchEvent(new CustomEvent('p2u:account-ready',{detail:{version:VERSION,cloud:cloudEnabled(),signedIn:Boolean(session)}}));
   }
 
-  window.P2UAccounts={version:VERSION,open,close,signIn,signOut,syncNow,getSession:()=>session,getProfile:()=>clone(profile),getLocalSnapshot:()=>clone(localSnapshot()),getFollows:()=>[...follows.values()].map(clone),toggleFollow,setFollow,isFollowing,loadPublicProfile,requestDeletion,exportData,isReady:()=>mounted};
+  window.P2UAccounts={version:VERSION,open,close,signIn,signOut,syncNow,getClient,getSession:()=>session,getProfile:()=>clone(profile),getLocalSnapshot:()=>clone(localSnapshot()),getFollows:()=>[...follows.values()].map(clone),toggleFollow,setFollow,isFollowing,loadPublicProfile,requestDeletion,exportData,isReady:()=>mounted};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
