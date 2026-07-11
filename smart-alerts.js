@@ -38,10 +38,11 @@
   let observer=null;
 
   function safeParse(value,fallback){ try{return JSON.parse(value);}catch(_){return fallback;} }
+  function asRecord(value){ return value&&typeof value==="object"&&!Array.isArray(value)?value:{}; }
   function readList(key){ try{const value=safeParse(localStorage.getItem(key),[]);return Array.isArray(value)?value:[];}catch(_){return[];} }
   function load(){
     try{
-      const saved=safeParse(localStorage.getItem(STORE),{});
+      const saved=asRecord(safeParse(localStorage.getItem(STORE),{}));
       const alerts=Array.isArray(saved.alerts)?saved.alerts.slice(0,MAX_ALERTS):[];
       return Object.assign({},defaults,saved,{alerts});
     }catch(_){ return Object.assign({},defaults); }
@@ -80,9 +81,10 @@
     const days=Math.floor(hrs/24); return`${days} day${days===1?"":"s"} ago`;
   }
   function prefsPersonalization(){
-    try{return safeParse(localStorage.getItem("p2u-personalization-v167"),{});}catch(_){return{};}
+    try{return asRecord(safeParse(localStorage.getItem("p2u-personalization-v167"),{}));}catch(_){return{};}
   }
   function relevantToFavorites(payload){
+    payload=asRecord(payload);
     const prefs=prefsPersonalization();
     const leagues=new Set(Array.isArray(prefs.favoriteLeagues)?prefs.favoriteLeagues:[]);
     const engines=new Set(Array.isArray(prefs.favoriteEngines)?prefs.favoriteEngines:[]);
@@ -104,6 +106,8 @@
     }
   }
   function addAlert(payload,options={}){
+    payload=asRecord(payload);
+    options=asRecord(options);
     const category=payload.category||payload.kind||"system";
     if(!options.force&&(!categoryEnabled(category)||nowMuted()))return null;
     if(payload.kind==="community"){
@@ -341,7 +345,8 @@
     sub.insertAdjacentElement("afterend",card);
   }
   function ingestCommunityWin(detail){
-    if(!detail||typeof detail!=="object")return;
+    detail=asRecord(detail);
+    if(!Object.keys(detail).length)return;
     addAlert({id:`community-${detail.id||hash(JSON.stringify(detail))}`,kind:"community",category:"community",title:detail.title||(detail.user?`@${String(detail.user).replace(/^@/,"")} recorded a winning slip`:"Community slip settled as won"),body:detail.body||detail.summary||"The public record was settled by the results system.",user:detail.user,verified:detail.verified,trending:detail.trending,following:detail.following,league:detail.league,engine:detail.engine,url:detail.url||"community.html",createdAt:detail.createdAt});
   }
   function init(){

@@ -1,0 +1,16 @@
+{
+  "version": "v173",
+  "purpose": "Fix Smart Alerts null-safety and mobile navigation test flakiness",
+  "syntax_checks": {
+    "smart-alerts.js": "passed",
+    "mobile-app-nav.js": "passed",
+    "tests/smart-alerts.spec.js": "passed",
+    "tests/mobile-app-nav.spec.js": "passed",
+    "sw.js": "passed"
+  },
+  "repository_preflight": "passed: 48 required public files found",
+  "performance_budget": "passed: 0 errors, 0 warnings, 18 checks",
+  "static_audit": "not clean in isolated package because live data.js and community.js are intentionally excluded; these remain in the user repository",
+  "browser_execution": "not executed in this sandbox",
+  "cache_version": "predict2u-v173"
+}

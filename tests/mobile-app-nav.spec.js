@@ -3,7 +3,8 @@ const pages=['index.html','board.html','engines.html','proof.html','scorecards.h
 for(const page of pages){
   test(`${page} has global mobile app navigation`,async({page:browserPage})=>{
     await browserPage.setViewportSize({width:344,height:882});
-    await browserPage.goto(`/${page}`);
+    await browserPage.goto(`/${page}`, {waitUntil:'domcontentloaded'});
+    await browserPage.waitForFunction(() => document.documentElement.dataset.p2uMobileNavReady === 'true');
     const nav=browserPage.locator('.p2u-mobile-app-nav');
     await expect(nav).toBeVisible();
     await expect(nav.locator('a')).toHaveCount(4);

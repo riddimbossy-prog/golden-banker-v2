@@ -39,6 +39,8 @@ test('smart alert center opens and persists settings on Z Fold cover', async ({ 
 test('community win event creates a verified record alert', async ({ page }) => {
   await resetAlerts(page, '/community.html');
   await page.evaluate(() => {
+    // A malformed/legacy personalization value must never crash Smart Alerts.
+    localStorage.setItem('p2u-personalization-v167', 'null');
     window.P2USmartAlerts.communityWin({
       id: 'test-win-1',
       user: 'RecordKeeper',

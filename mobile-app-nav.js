@@ -1,7 +1,7 @@
 /* Predict2U v170 — global mobile app navigation */
 (function(){
   "use strict";
-  const VERSION="v170";
+  const VERSION="v173";
   const icons={
     board:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="m3.5 6 1.2 1.2L7 4.8M3.5 12l1.2 1.2L7 10.8M3.5 18l1.2 1.2L7 16.8"/></svg>',
     games:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg>',
@@ -22,6 +22,8 @@
     nav.className='p2u-mobile-app-nav';nav.setAttribute('aria-label','Primary mobile navigation');nav.dataset.version=VERSION;
     nav.innerHTML='<div class="p2u-mobile-app-nav__inner">'+items.map(item=>`<a href="${item.href}" class="${item.id===active?'is-active':''}"${item.id===active?' aria-current="page"':''} data-p2u-mobile-nav="${item.id}">${icons[item.id]}<span>${item.label}</span></a>`).join('')+'</div>';
     document.body.appendChild(nav);
+    document.documentElement.dataset.p2uMobileNavReady="true";
+    window.dispatchEvent(new CustomEvent("p2u:mobile-nav-ready",{detail:{version:VERSION,active}}));
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();
 })();
