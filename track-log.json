@@ -50787,8 +50787,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-10T23:50:04.296Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -50805,8 +50805,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-10T23:50:04.296Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -55744,6 +55744,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-11T00:08:12.165Z"
+    "updated": "2026-07-11T00:09:19.202Z"
   }
 }
