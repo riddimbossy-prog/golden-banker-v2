@@ -61127,7 +61127,7 @@
       "leagueClass": "Balanced",
       "oddsAtPick": 1.36,
       "fairMarketProbabilityAtPick": 0.7352941176470588,
-      "recordedAt": "2026-07-11T20:17:05.740Z",
+      "recordedAt": "2026-07-11T20:18:26.103Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -61135,6 +61135,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-11T20:17:05.953Z"
+    "updated": "2026-07-11T20:18:26.337Z"
   }
 }
