@@ -46997,8 +46997,8 @@
       "confidence": 10,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T02:16:39.270Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -47011,8 +47011,8 @@
       "confidence": 8,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T02:16:39.270Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -47025,8 +47025,8 @@
       "confidence": 8,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T02:16:39.270Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -47039,8 +47039,8 @@
       "confidence": 8,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T02:16:39.270Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -50539,8 +50539,8 @@
       "confidence": 8,
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T22:08:01.068Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -51201,8 +51201,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Balanced",
       "recordedAt": "2026-07-10T23:50:04.323Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -60437,8 +60437,8 @@
       "oddsAtPick": null,
       "fairMarketProbabilityAtPick": null,
       "recordedAt": "2026-07-11T02:29:42.785Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -61024,6 +61024,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-11T08:01:12.957Z"
+    "updated": "2026-07-11T08:02:27.029Z"
   }
 }
