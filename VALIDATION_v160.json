@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "dynamic_cache_rule": true,
+    "no_old_cache_error": true,
+    "intelligence_required": true,
+    "workflow_node24": true,
+    "workflow_checks_css": true,
+    "intelligence_css_present": true,
+    "site_health_css_present": true
+  },
+  "package_audit": {
+    "critical": 0,
+    "warnings": 0,
+    "passed": 55,
+    "cacheVersion": "predict2u-v158",
+    "auditVersion": "v160"
+  }
+}

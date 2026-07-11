@@ -15,3 +15,6 @@
 .p2u-build-footer{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;color:var(--p2u-health-muted);font:600 10px/1.4 Inter,system-ui,sans-serif;padding:10px 14px 18px;text-align:center}.p2u-build-footer .ok{color:var(--p2u-health-green)}.p2u-build-footer .warn{color:var(--p2u-health-amber)}.p2u-build-footer .bad{color:var(--p2u-health-red)}
 @media(max-width:640px){#p2u-health-button{left:10px;bottom:calc(76px + env(safe-area-inset-bottom));padding:8px 10px}#p2u-health-panel{left:10px;bottom:calc(122px + env(safe-area-inset-bottom));width:calc(100vw - 20px)}.p2u-health-grid{grid-template-columns:1fr 1fr}}
 @media(prefers-reduced-motion:reduce){#p2u-health-button .p2u-health-dot{animation:none}}
+
+/* v157 top-warning support */
+.p2u-build-footer{border-top:1px solid rgba(37,41,54,.45);margin-top:8px}

@@ -15,7 +15,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
 
       - name: Verify quality-test files
         shell: bash
@@ -23,7 +23,11 @@ jobs:
           test -f package.json
           test -f playwright.config.js
           test -f tests/mobile-layout.spec.js
-          echo "Quality-test files found. npm cache is intentionally disabled because this repository has no lock file."
+          test -f audit-site.js
+          test -f intelligence.css
+          test -f site-health.css
+          test -f trust.html
+          echo "Quality-test and shared UI files found. npm cache is intentionally disabled because this repository has no lock file."
 
       - name: Install quality tools
         run: npm install --no-audit --no-fund --package-lock=false
