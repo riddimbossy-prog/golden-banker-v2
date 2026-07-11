@@ -59,3 +59,8 @@ The service worker is bumped to `predict2u-v147` so existing phones do not keep 
 ## v148 repository integration
 
 See `ENGINE_INTEGRATION_v148.md` for the updated automation and tracking scripts.
+
+
+## v149 advanced data
+
+See `ADVANCED_DATA_SETUP_v149.md`.

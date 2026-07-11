@@ -13,6 +13,7 @@ const path = require("path");
 const https = require("https");
 const { buildOddsCalib } = require("./calib");
 const { updateTeamProfiles, attachProfiles } = require("./team-profiles");
+const { attachModelCalibration } = require("./model-calibration");
 const HERE = __dirname;
 
 function readConfig() {

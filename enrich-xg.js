@@ -110,7 +110,7 @@ function loadMatches(){
   const tsaByDate = {};
   const teamFormCache = {};      // rolling xG form per TSA team id (cached per run)
   const XG_LOOKBACK = 10;        // recent finished matches to average for form
-  let calls = 0, enriched = 0, matchedGames = 0;
+  let calls = 0, enriched = 0, matchedGames = 0, multiBookMatches = 0;
   for(const date of dateList){
     try{
       // page through matches for the date
@@ -144,11 +144,42 @@ function loadMatches(){
     try{
       if(tsa.odds_available){
         const o = await api(`/football/matches/${tsa.id}/odds`, cfg.STATS_API_KEY); calls++;
-        const bm = o && o.data && o.data.bookmakers && o.data.bookmakers[0];
-        const mo = bm && bm.markets && bm.markets.match_odds;
-        if(mo){
-          m.oddsOpen = { home:+(mo.home&&mo.home.opening)||null, draw:+(mo.draw&&mo.draw.opening)||null, away:+(mo.away&&mo.away.opening)||null };
-          m.oddsLast = { home:+(mo.home&&mo.home.last_seen)||null, draw:+(mo.draw&&mo.draw.last_seen)||null, away:+(mo.away&&mo.away.last_seen)||null };
+        const books=(o&&o.data&&o.data.bookmakers)||[];
+        const price=x=>{
+          if(x==null)return null;
+          if(typeof x==="number"||typeof x==="string"){const n=Number(x);return Number.isFinite(n)?n:null;}
+          const n=Number(x.last_seen??x.closing??x.current??x.price??x.opening);
+          return Number.isFinite(n)?n:null;
+        };
+        const opening=x=>{const n=Number(x&&x.opening);return Number.isFinite(n)?n:null;};
+        const fetchedAt=new Date().toISOString();
+        const snapshots=[];
+        for(const bm of books){
+          const mo=bm&&bm.markets&&(bm.markets.match_odds||bm.markets["1x2"]||bm.markets.match_result);
+          if(!mo)continue;
+          const open={home:opening(mo.home),draw:opening(mo.draw),away:opening(mo.away)};
+          const current={home:price(mo.home),draw:price(mo.draw),away:price(mo.away)};
+          if(![open.home,open.draw,open.away,current.home,current.draw,current.away].every(Number.isFinite))continue;
+          const vendorTs=bm.updated_at||bm.last_updated||bm.timestamp||(o.data&&o.data.updated_at)||null;
+          snapshots.push({
+            bookmaker:bm.bookmaker||bm.name||bm.slug||`Book ${snapshots.length+1}`,
+            timestamp:vendorTs||fetchedAt,
+            timestampSource:vendorTs?"vendor":"retrieved",
+            opening:open,
+            current
+          });
+        }
+        if(snapshots.length){
+          const pref=["Pinnacle","Betfair Exchange","Bet365","Kambi"];
+          snapshots.sort((a,b)=>{
+            const ai=pref.indexOf(a.bookmaker),bi=pref.indexOf(b.bookmaker);
+            return (ai<0?99:ai)-(bi<0?99:bi);
+          });
+          m.oddsBooks=snapshots;
+          const bm=snapshots[0];
+          m.oddsOpen={...bm.opening};
+          m.oddsLast={...bm.current};
+          if(snapshots.length>=4)multiBookMatches++;
         }
         await sleep(250);
       }
@@ -231,5 +262,5 @@ function loadMatches(){
     `window.ENRICHED_AT = "${new Date().toISOString()}";\n` +
     `window.MATCHES = ${JSON.stringify(matches, null, 2)};\n`;
   fs.writeFileSync(path.join(HERE,"data.js"), out, "utf8");
-  console.log(`Enrichment done: ${matchedGames} games matched to TheStatsAPI, ${enriched} got real xG, in ${calls} calls.`);
+  console.log(`Enrichment done: ${matchedGames} games matched, ${enriched} got real xG, ${multiBookMatches} got 4+ timestamped books, in ${calls} calls.`);
 })();

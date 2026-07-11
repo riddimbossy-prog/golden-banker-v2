@@ -27,6 +27,7 @@
 const fs = require("fs");
 const path = require("path");
 const eng = require("./banker-engine.js");
+const { marketOdds, fairProbability, buildCalibrationLedger, saveLedger, attachToDataFile } = require("./model-calibration");
 const HERE = __dirname;
 const LOG = path.join(HERE, "track-log.json");
 
@@ -106,8 +107,10 @@ function record(log, matches){
         engine:b.engine,engineKey:b.engineKey||null,engineFamily:b.engineFamily||null,
         engineVersion:b.engineVersion||null,market:b.market,confidence:b.confidence,
         suiteVersion:eng.ENGINE_SUITE_VERSION||null,leagueClass:lcType,
-        recordedAt: new Date().toISOString(),
-        status: "pending", result: null, score: null
+        oddsAtPick:marketOdds(m,b.market),
+        fairMarketProbabilityAtPick:fairProbability(m,b.market),
+        recordedAt:new Date().toISOString(),
+        status:"pending",result:null,score:null
       };
       const k = keyOf(p);
       if(!have.has(k)){ log.picks.push(p); have.add(k); added++; }
@@ -213,6 +216,19 @@ function report(log, toFile){
   return out.join("\n");
 }
 
+function refreshCalibration(log){
+  try{
+    const ledger=buildCalibrationLedger(log);
+    saveLedger(ledger);
+    const validated=Object.values(ledger.groups||{}).filter(g=>g.validated).length;
+    console.log(`calibration: ${validated} validated group(s) written.`);
+    try{
+      const r=attachToDataFile(path.join(HERE,"data.js"),{log,ledger,writeLedger:false});
+      console.log(`calibration: attached ${r.attached} interval(s) across ${r.matches} match(es).`);
+    }catch(e){ console.log("calibration attach skipped:",e.message); }
+  }catch(e){ console.log("calibration refresh skipped:",e.message); }
+}
+
 (function main(){
   const mode = (process.argv[2]||"all").toLowerCase();
   let matches;
@@ -220,13 +236,14 @@ function report(log, toFile){
   catch(e){ console.log("track-log: no data.js —", e.message); process.exit(0); }
   const log = loadLog();
 
-  if(mode==="record"){ record(log, matches); saveLog(log); }
-  else if(mode==="settle"){ settle(log, matches); saveLog(log); }
+  if(mode==="record"){ record(log,matches); saveLog(log); refreshCalibration(log); }
+  else if(mode==="settle"){ settle(log,matches); saveLog(log); refreshCalibration(log); }
   else if(mode==="report"){ report(log, true); }
   else { // daily default: settle finished, record new, then report
     settle(log, matches);
     record(log, matches);
     saveLog(log);
-    report(log, true);
+    refreshCalibration(log);
+    report(log,true);
   }
 })();

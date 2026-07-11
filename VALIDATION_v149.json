@@ -1,0 +1,25 @@
+{
+  "javascript_files_checked": 24,
+  "syntax_failures": 0,
+  "advanced_test": {
+    "recent10PPG": 1.1,
+    "restDays": 3,
+    "momentum_present": true,
+    "split_stability": null
+  },
+  "calibration_test": {
+    "validated": 4,
+    "first": {
+      "sample": 320,
+      "wins": 260,
+      "losses": 60,
+      "lower": 0.7661,
+      "mid": 0.8125,
+      "upper": 0.8515,
+      "grade": "Provisional",
+      "leagueReliability": 69.1,
+      "validated": true
+    }
+  },
+  "service_worker": "predict2u-v149"
+}

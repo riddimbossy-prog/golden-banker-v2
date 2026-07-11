@@ -71,7 +71,7 @@ function pushGame(team, row){
 function updateTeamProfiles(matches){
   const ledger = loadLedger();
   const T = ledger.teams;
-  let rows = 0, xgRows = 0, seeded = 0;
+  let rows = 0, xgRows = 0, sotRows = 0, seeded = 0;
   for (const m of matches){
     const hk = keyOf(m.home, m.leagueId), ak = keyOf(m.away, m.leagueId);
     const H = T[hk] = T[hk] || { name:m.home, leagueId:m.leagueId, league:m.league, games:[] };
@@ -95,13 +95,16 @@ function updateTeamProfiles(matches){
     if (!d) continue;
     const hxg = m.xgHomeReal!=null ? Number(m.xgHomeReal) : null;
     const axg = m.xgAwayReal!=null ? Number(m.xgAwayReal) : null;
-    pushGame(H, { d, venue:"H", gf:m.homeGoals, ga:m.awayGoals, xg:hxg, xga:axg, sot:null, sotc:null });
-    pushGame(A, { d, venue:"A", gf:m.awayGoals, ga:m.homeGoals, xg:axg, xga:hxg, sot:null, sotc:null });
+    const hsot = m.homeSOTActual!=null ? Number(m.homeSOTActual) : null;
+    const asot = m.awaySOTActual!=null ? Number(m.awaySOTActual) : null;
+    pushGame(H, { d, venue:"H", gf:m.homeGoals, ga:m.awayGoals, xg:hxg, xga:axg, sot:hsot, sotc:asot });
+    pushGame(A, { d, venue:"A", gf:m.awayGoals, ga:m.homeGoals, xg:axg, xga:hxg, sot:asot, sotc:hsot });
     rows += 2;
     if (hxg!=null || axg!=null) xgRows++;
+    if (hsot!=null || asot!=null) sotRows++;
   }
   saveLedger(ledger);
-  return { teams:Object.keys(T).length, rowsAdded:rows, settledWithXg:xgRows, seeded };
+  return { teams:Object.keys(T).length, rowsAdded:rows, settledWithXg:xgRows, settledWithSot:sotRows, seeded };
 }
 
 /* Read a team's profile for prediction. venue "H"/"A" narrows to the relevant

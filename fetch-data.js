@@ -21,6 +21,8 @@ const path = require("path");
 const https = require("https");
 const { buildOddsCalib } = require("./calib");
 const { updateTeamProfiles, attachProfiles } = require("./team-profiles");
+const { buildTeamAdvanced } = require("./advanced-data");
+const { attachModelCalibration } = require("./model-calibration");
 const HERE = __dirname;
 
 function readConfig() {
@@ -556,15 +558,18 @@ const FINISHED = new Set(["FT","AET","PEN"]);
   // /fixtures call per team — the biggest per-team cost, so it's cached hard and
   // only requested for upcoming games (same as team stats).
   const teamStreakCache = {};
-  async function getTeamStreaks(teamId, season){
+  async function getTeamStreaks(teamId, leagueId, season, table, cutoff, targetOpponentPPG, venueSide, gamesPlayed, tableSize){
     if(!teamId) return null;
-    const ck=`${teamId}|${season}`;
+    const ck=`${teamId}|${leagueId||"?"}|${season}|${String(cutoff||"").slice(0,10)}|${targetOpponentPPG==null?"?":Math.round(targetOpponentPPG*10)/10}|${venueSide||"?"}`;
     if(teamStreakCache[ck]!==undefined) return teamStreakCache[ck];
     let streaks=null;
     try{
-      const res=await apiGet(`/fixtures?team=${teamId}&season=${season}&status=FT-AET-PEN`, cfg.API_KEY); requests++;
+      const leaguePart=leagueId?`&league=${leagueId}`:"";
+      const res=await apiGet(`/fixtures?team=${teamId}${leaguePart}&season=${season}&status=FT-AET-PEN`, cfg.API_KEY); requests++;
+      const cutoffMs=Date.parse(cutoff||"");
       const games=(res.response||[])
         .filter(g=>g&&g.fixture&&g.goals&&g.goals.home!=null&&g.goals.away!=null&&FINISHED.has(String(g.fixture.status.short||"").toUpperCase()))
+        .filter(g=>!Number.isFinite(cutoffMs)||Date.parse(g.fixture.date)<cutoffMs)
         .sort((a,b)=>new Date(b.fixture.date)-new Date(a.fixture.date)); // most recent first
       if(games.length){
         // build a per-game result from THIS team's perspective, most-recent first
@@ -582,7 +587,22 @@ const FINISHED = new Set(["FT","AET","PEN"]);
           // HT goals for/against from this team's perspective (null if no HT data)
           let hf=null, ha=null;
           if(ht&&ht.home!=null&&ht.away!=null){ hf=isHome?ht.home:ht.away; ha=isHome?ht.away:ht.home; }
-          return { res: gf>ga?"W":gf<ga?"L":"D", ftRes: gf>ga?"W":gf<ga?"L":"D", htRes, tot:gf+ga, gf, ga, hf, ha };
+          const oppId=isHome?g.teams.away.id:g.teams.home.id;
+          const oppRow=table&&table[oppId]||null;
+          const oppPlayed=oppRow&&oppRow.all&&Number(oppRow.all.played);
+          const oppPoints=oppRow&&Number(oppRow.points);
+          const opponentPPG=Number.isFinite(oppPlayed)&&oppPlayed>0&&Number.isFinite(oppPoints)?oppPoints/oppPlayed:null;
+          const resCode=gf>ga?"W":gf<ga?"L":"D";
+          return {
+            res:resCode, ftRes:resCode, htRes, tot:gf+ga, gf, ga, gd:gf-ga, hf, ha,
+            points:resCode==="W"?3:resCode==="D"?1:0,
+            date:g.fixture.date,
+            venue:isHome?"H":"A",
+            opponentId:oppId,
+            opponentName:isHome?g.teams.away.name:g.teams.home.name,
+            opponentPos:oppRow&&oppRow.rank!=null?oppRow.rank:null,
+            opponentPPG
+          };
         });
         const run=pred=>{ let n=0; for(const s of seq){ if(pred(s))n++; else break; } return n; };
 
@@ -673,7 +693,14 @@ const FINISHED = new Set(["FT","AET","PEN"]);
           concededEvery: run(s=>s.ga>0),
           teamOver15:    run(s=>s.gf>=2),          // scored 2+ streak
           sample:   seq.length,
-          htft
+          htft,
+          advanced: buildTeamAdvanced(seq,{
+            cutoff,
+            targetOpponentPPG,
+            venue:venueSide,
+            gamesPlayed,
+            tableSize
+          })
         };
       }
       await sleep(SLEEP);
@@ -929,14 +956,19 @@ const FINISHED = new Set(["FT","AET","PEN"]);
         const hid = fx.teams.home.id, aid = fx.teams.away.id;
         homeStats = await getTeamStats(hid, leagueId, seasonForStandings);
         awayStats = await getTeamStats(aid, leagueId, seasonForStandings);
-        homeStreaks = await getTeamStreaks(hid, seasonForStandings);
-        awayStreaks = await getTeamStreaks(aid, seasonForStandings);
+        const hPlayed=H&&H.all&&Number(H.all.played), aPlayed=A&&A.all&&Number(A.all.played);
+        const hPPG=Number.isFinite(hPlayed)&&hPlayed>0?Number(H.points||0)/hPlayed:null;
+        const aPPG=Number.isFinite(aPlayed)&&aPlayed>0?Number(A.points||0)/aPlayed:null;
+        homeStreaks = await getTeamStreaks(hid,leagueId,seasonForStandings,table,fx.fixture.date,aPPG,"H",hPlayed,tableSize);
+        awayStreaks = await getTeamStreaks(aid,leagueId,seasonForStandings,table,fx.fixture.date,hPPG,"A",aPlayed,tableSize);
       }
 
       const __ht = fx.score && fx.score.halftime;
       out.push({
         id: (fx.fixture && fx.fixture.id) || null, // stable fixture id — slips/community reference matches by this
         home: fx.teams.home.name, away: fx.teams.away.name, league: leagueName, leagueId: leagueId,
+        season: seasonForStandings,
+        homeTeamId: fx.teams.home.id, awayTeamId: fx.teams.away.id,
         htHome: (__ht && __ht.home!=null) ? __ht.home : null,  // half-time score —
         htAway: (__ht && __ht.away!=null) ? __ht.away : null,  // settles HT markets
         homeLogo: (fx.teams.home && fx.teams.home.logo) || null,
@@ -987,6 +1019,58 @@ const FINISHED = new Set(["FT","AET","PEN"]);
         statsReal: !!(homeStats || awayStats),
         // real streaks of any length (from full season fixture history)
         homeStreaks, awayStreaks,
+
+        // ---- ADVANCED DERIVED DATA (real chronological league fixtures) ----
+        homeRecent10PPG: homeStreaks&&homeStreaks.advanced?homeStreaks.advanced.recent10PPG:null,
+        awayRecent10PPG: awayStreaks&&awayStreaks.advanced?awayStreaks.advanced.recent10PPG:null,
+        homeRecent10Form: homeStreaks&&homeStreaks.advanced?homeStreaks.advanced.recent10Form:null,
+        awayRecent10Form: awayStreaks&&awayStreaks.advanced?awayStreaks.advanced.recent10Form:null,
+        homeOpponentAvgPPG: homeStreaks&&homeStreaks.advanced?homeStreaks.advanced.opponentAvgPPG:null,
+        awayOpponentAvgPPG: awayStreaks&&awayStreaks.advanced?awayStreaks.advanced.opponentAvgPPG:null,
+        homeScheduleStrengthPPG: homeStreaks&&homeStreaks.advanced?homeStreaks.advanced.opponentAvgPPG:null,
+        awayScheduleStrengthPPG: awayStreaks&&awayStreaks.advanced?awayStreaks.advanced.opponentAvgPPG:null,
+        homeSimilarOpponentPPG: homeStreaks&&homeStreaks.advanced?homeStreaks.advanced.similarOpponentPPG:null,
+        awaySimilarOpponentPPG: awayStreaks&&awayStreaks.advanced?awayStreaks.advanced.similarOpponentPPG:null,
+        homeRestDays: homeStreaks&&homeStreaks.advanced?homeStreaks.advanced.restDays:null,
+        awayRestDays: awayStreaks&&awayStreaks.advanced?awayStreaks.advanced.restDays:null,
+        homeSplitBlockDifference: homeStreaks&&homeStreaks.advanced?homeStreaks.advanced.splitBlockDifference:null,
+        awaySplitBlockDifference: awayStreaks&&awayStreaks.advanced?awayStreaks.advanced.splitBlockDifference:null,
+        recent10:{
+          home:homeStreaks&&homeStreaks.advanced?{ppg:homeStreaks.advanced.recent10PPG,form:homeStreaks.advanced.recent10Form,sample:homeStreaks.advanced.samples.recent10}:null,
+          away:awayStreaks&&awayStreaks.advanced?{ppg:awayStreaks.advanced.recent10PPG,form:awayStreaks.advanced.recent10Form,sample:awayStreaks.advanced.samples.recent10}:null
+        },
+        opponentStrength:{
+          home:homeStreaks&&homeStreaks.advanced?{avgPPG:homeStreaks.advanced.opponentAvgPPG,sample:homeStreaks.advanced.samples.opponentStrength}:null,
+          away:awayStreaks&&awayStreaks.advanced?{avgPPG:awayStreaks.advanced.opponentAvgPPG,sample:awayStreaks.advanced.samples.opponentStrength}:null
+        },
+        similarOpponents:{
+          home:homeStreaks&&homeStreaks.advanced?{ppg:homeStreaks.advanced.similarOpponentPPG,sample:homeStreaks.advanced.similarOpponentSample,band:homeStreaks.advanced.similarOpponentBand}:null,
+          away:awayStreaks&&awayStreaks.advanced?{ppg:awayStreaks.advanced.similarOpponentPPG,sample:awayStreaks.advanced.similarOpponentSample,band:awayStreaks.advanced.similarOpponentBand}:null
+        },
+        rest:{
+          home:homeStreaks&&homeStreaks.advanced?{days:homeStreaks.advanced.restDays}:null,
+          away:awayStreaks&&awayStreaks.advanced?{days:awayStreaks.advanced.restDays}:null
+        },
+        fixtureDensity:{
+          home:homeStreaks&&homeStreaks.advanced?homeStreaks.advanced.fixtureDensity:null,
+          away:awayStreaks&&awayStreaks.advanced?awayStreaks.advanced.fixtureDensity:null
+        },
+        splitStability:{
+          home:homeStreaks&&homeStreaks.advanced?{difference:homeStreaks.advanced.splitBlockDifference}:null,
+          away:awayStreaks&&awayStreaks.advanced?{difference:awayStreaks.advanced.splitBlockDifference}:null
+        },
+        momentum:{
+          home:homeStreaks&&homeStreaks.advanced?homeStreaks.advanced.momentum:null,
+          away:awayStreaks&&awayStreaks.advanced?awayStreaks.advanced.momentum:null
+        },
+        seasonPhase:(homeStreaks&&homeStreaks.advanced&&homeStreaks.advanced.seasonPhase)||
+                    (awayStreaks&&awayStreaks.advanced&&awayStreaks.advanced.seasonPhase)||null,
+        advancedDataMeta:{
+          source:"API-Football chronological league fixtures + current table strength",
+          home:homeStreaks&&homeStreaks.advanced?homeStreaks.advanced.samples:null,
+          away:awayStreaks&&awayStreaks.advanced?awayStreaks.advanced.samples:null
+        },
+
         sameGroup, isKnockout,
         isTournament: multiGroup || isKnockout,
         round: roundName || null,
@@ -1042,6 +1126,8 @@ const FINISHED = new Set(["FT","AET","PEN"]);
     const tp = updateTeamProfiles(merged);
     const ta = attachProfiles(merged);
     console.log(`Team profiles: ${tp.teams} teams in ledger (+${tp.rowsAdded} rows, ${tp.settledWithXg} with xG); attached to ${ta.attached} match-sides.`);
+    const mc = attachModelCalibration(merged,{writeLedger:true});
+    console.log(`Model calibration: ${mc.groups} validated groups; attached ${mc.attached} market intervals to ${mc.matches} matches.`);
   }
 
   fs.writeFileSync(path.join(HERE, "data.js"),
