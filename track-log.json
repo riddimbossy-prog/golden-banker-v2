@@ -49167,8 +49167,8 @@
       "confidence": 9,
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-07-10T02:16:39.324Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -49181,8 +49181,8 @@
       "confidence": 8,
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-07-10T02:16:39.324Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -49195,8 +49195,8 @@
       "confidence": 8,
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-07-10T02:16:39.324Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -54847,8 +54847,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-07-10T23:50:04.445Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -55153,8 +55153,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-10T23:50:04.453Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -55171,8 +55171,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Very High-Scoring",
       "recordedAt": "2026-07-10T23:50:04.453Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -61135,6 +61135,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-11T23:00:19.178Z"
+    "updated": "2026-07-11T23:02:39.656Z"
   }
 }
