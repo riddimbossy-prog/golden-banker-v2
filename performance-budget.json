@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-07-11T06:35:46.257Z",
-  "version": "v165",
+  "generatedAt": "2026-07-11T07:59:08.579Z",
+  "version": "v166",
   "errors": [],
   "warnings": [],
-  "passedCount": 8,
+  "passedCount": 9,
   "budgets": {
     "index.html": {
-      "bytes": 55642,
+      "bytes": 58481,
       "limit": 70000
     },
     "board.html": {
-      "bytes": 55642,
+      "bytes": 58481,
       "limit": 70000
     },
     "engines.html": {

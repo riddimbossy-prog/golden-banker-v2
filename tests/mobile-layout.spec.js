@@ -96,3 +96,46 @@ test('404 page is branded', async ({ page }) => {
   await expect(page.getByText('This page could not be found.')).toBeVisible();
   await expect(page.locator('img[src="predict2u-logo.png"]')).toBeVisible();
 });
+
+test('mobile date rail is compact, readable and touch-scrollable', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 700 });
+  await page.goto('/board.html', { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(500);
+
+  const rail = page.locator('#date-strip');
+  await expect(rail).toBeVisible();
+  const chips = rail.locator('.date-chip');
+  expect(await chips.count()).toBeGreaterThan(0);
+
+  const layout = await page.evaluate(() => {
+    const rail = document.querySelector('#date-strip');
+    const chip = rail && rail.querySelector('.date-chip');
+    const day = chip && chip.querySelector('.date-chip-day');
+    const date = chip && chip.querySelector('.date-chip-date');
+    const count = chip && chip.querySelector('.date-chip-count');
+    if (!rail || !chip || !day || !date || !count) return null;
+    const rr = rail.getBoundingClientRect();
+    const cr = chip.getBoundingClientRect();
+    return {
+      railWidth: Math.round(rr.width),
+      chipWidth: Math.round(cr.width),
+      chipRight: Math.round(cr.right),
+      viewport: window.innerWidth,
+      overflowX: getComputedStyle(rail).overflowX,
+      dayWhiteSpace: getComputedStyle(day).whiteSpace,
+      dateWhiteSpace: getComputedStyle(date).whiteSpace,
+      countWhiteSpace: getComputedStyle(count).whiteSpace,
+      dayText: day.textContent.trim(),
+      dateText: date.textContent.trim()
+    };
+  });
+
+  expect(layout).not.toBeNull();
+  expect(layout.chipWidth).toBeLessThanOrEqual(82);
+  expect(['auto', 'scroll']).toContain(layout.overflowX);
+  expect(layout.dayWhiteSpace).toBe('nowrap');
+  expect(layout.dateWhiteSpace).toBe('nowrap');
+  expect(layout.countWhiteSpace).toBe('nowrap');
+  expect(layout.dayText.length).toBeGreaterThan(2);
+  expect(layout.dateText).toMatch(/^\d{2} [A-Z]{3}$/);
+});

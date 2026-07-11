@@ -1,0 +1,60 @@
+{
+  "version": "v166",
+  "build": "Mobile Date Rail Fix",
+  "cacheVersion": "predict2u-v166",
+  "packageVersion": "1.66.0",
+  "checks": {
+    "repositoryPreflight": "passed: 33 required public files found",
+    "performanceBudget": "passed: 0 errors, 0 warnings, 9 checks",
+    "packageAudit": "passed: 0 critical, 0 warnings, 57 checks",
+    "javascriptSyntax": "passed for modified scripts and inline page scripts",
+    "mobileDateRailPresent": [
+      "index.html",
+      "board.html"
+    ],
+    "phoneWidthsCovered": [
+      280,
+      320,
+      344,
+      360,
+      375,
+      390,
+      412
+    ],
+    "browserExecution": "not executed in this sandbox; GitHub Actions remains configured to run Playwright"
+  },
+  "features": [
+    "fixed-width compact date cards",
+    "TODAY or weekday on first line",
+    "DD MON date on second line",
+    "compact fixture count on third line",
+    "large counts abbreviated to K",
+    "horizontal touch scrolling with snap alignment",
+    "selected date automatically centered",
+    "non-wrapping labels for narrow phones and Z Fold cover",
+    "accessible pressed and disabled states"
+  ],
+  "changedFiles": [
+    "index.html",
+    "board.html",
+    "tests/mobile-layout.spec.js",
+    "package.json",
+    "sw.js",
+    "BUILD_VERSION.txt",
+    "performance-budget.js",
+    "performance-budget.json",
+    "site-health-widget.js",
+    "site-health.json",
+    "generate-site-health.js",
+    "audit-site.js",
+    "site-audit.json",
+    "brand-experience.js",
+    "performance-freshness.css",
+    "performance-freshness.js",
+    "MOBILE_DATE_FIX_v166.md"
+  ],
+  "generatedReports": {
+    "performanceBudget": "performance-budget.json",
+    "siteAudit": "site-audit.json"
+  }
+}

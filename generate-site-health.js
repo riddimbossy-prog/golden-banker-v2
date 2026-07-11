@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 "use strict";
 const fs=require("fs"),path=require("path");
-const HERE=__dirname,VERSION="v165";
+const HERE=__dirname,VERSION="v166";
 const read=f=>{try{return fs.readFileSync(path.join(HERE,f),"utf8");}catch(_){return"";}};
 const mtime=f=>{try{return fs.statSync(path.join(HERE,f)).mtime.toISOString();}catch(_){return null;}};
 const capture=(text,re)=>{const m=text.match(re);return m?m[1]:null;};

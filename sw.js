@@ -1,11 +1,11 @@
-/* Predict2U service worker v165 — fast shell, bounded network waits and fresh data.
+/* Predict2U service worker v166 — fast shell, bounded network waits and fresh data.
    Strategy:
    - Navigation/HTML: network-first with a short timeout, then cached fallback.
    - data.js/site-health.json: network-first, canonical cache key, stale fallback.
    - Static assets: cache-first with background refresh.
    - Optional PREFETCH_URLS message warms likely next pages. */
 
-const CACHE_VERSION = "predict2u-v165";
+const CACHE_VERSION = "predict2u-v166";
 const OFFLINE_PAGE = "./board.html";
 const NETWORK_TIMEOUT_MS = 4500;
 

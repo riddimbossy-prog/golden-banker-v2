@@ -77,6 +77,39 @@ a{ color:inherit; text-decoration:none; }
 .pill:hover{ color:var(--ink); border-color:#3a3a3e; }
 .pill.on{ background:var(--em); color:#062e20; border-color:var(--em); font-weight:600; }
 
+/* v166 mobile date rail — fixed-size, readable cards instead of long inline pills */
+.date-strip{
+  display:flex; gap:8px; overflow-x:auto; overflow-y:hidden;
+  padding:2px 1px 9px; margin-bottom:16px;
+  scroll-snap-type:x proximity; scroll-padding-inline:1px;
+  overscroll-behavior-inline:contain; -webkit-overflow-scrolling:touch;
+  touch-action:pan-x;
+}
+.date-chip{
+  position:relative; flex:0 0 92px; min-width:0; min-height:67px;
+  display:grid; grid-template-rows:auto auto auto; align-content:center; justify-items:center; gap:2px;
+  padding:8px 9px; border-radius:13px; border:1px solid var(--line-2);
+  background:var(--panel); color:var(--ink-2); scroll-snap-align:start;
+  font-variant-numeric:tabular-nums; transition:border-color .15s ease,background .15s ease,color .15s ease;
+}
+.date-chip:hover{ color:var(--ink); border-color:#3a3a3e; }
+.date-chip.on{ background:var(--em); color:#062e20; border-color:var(--em); }
+.date-chip:focus-visible{ outline:2px solid var(--em); outline-offset:2px; }
+.date-chip:disabled{ opacity:.38; cursor:not-allowed; }
+.date-chip-day{
+  max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  font-size:10px; font-weight:800; letter-spacing:.1em; line-height:1.1;
+}
+.date-chip-date{
+  max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  font-size:14px; font-weight:800; letter-spacing:.01em; line-height:1.15;
+}
+.date-chip-count{
+  max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  font-size:10px; font-weight:700; line-height:1.1; opacity:.66;
+}
+.date-chip.on .date-chip-count{ opacity:.74; }
+
 /* status tags — exact */
 .tag{ display:inline-flex; align-items:center; gap:5px; font-size:12.5px; font-weight:700;
   padding:4px 9px; border-radius:6px; white-space:nowrap; }
@@ -164,6 +197,18 @@ a{ color:inherit; text-decoration:none; }
   #cards article{padding:16px!important;border-radius:20px!important}
   .live-score-board{font-size:23px}
   .cara-item{padding:12px 16px}
+  .date-strip{
+    margin-left:-14px; margin-right:-14px; padding-left:14px; padding-right:14px;
+    gap:7px; scroll-padding-inline:14px;
+  }
+  .date-chip{ flex-basis:78px; min-height:64px; padding:7px 7px; border-radius:12px; }
+  .date-chip-day{ font-size:9.5px; }
+  .date-chip-date{ font-size:13px; }
+  .date-chip-count{ font-size:9.5px; }
+}
+@media(max-width:359px){
+  .date-chip{ flex-basis:72px; min-height:61px; padding:6px; }
+  .date-chip-date{ font-size:12.5px; }
 }
 
 </style>
@@ -299,7 +344,7 @@ a{ color:inherit; text-decoration:none; }
       </div>
     </div>
 
-    <div class="flex gap-2 overflow-x-auto pb-1 mb-4 hide-sb" id="date-strip"></div>
+    <div class="date-strip hide-sb" id="date-strip" aria-label="Match dates"></div>
     <div class="flex flex-wrap gap-2 mb-7" id="engine-pills"></div>
 
     <div id="acca-root" class="mb-5" style="display:none"></div>
@@ -764,17 +809,29 @@ a{ color:inherit; text-decoration:none; }
       : mode==='acca'?'The day\u2019s consensus bankers, combined. High risk by nature.' : (e?e[3]:'');
   }
   function renderDates(){
-    const plus=n=>{ const t=new Date(todayISO); t.setDate(t.getDate()+n); return t.toISOString().slice(0,10); };
-    let win=dates.filter(d=>Math.abs((new Date(d)-new Date(todayISO))/864e5)<=3).slice(0,7);
+    const plus=n=>{ const t=new Date(todayISO+'T12:00:00'); t.setDate(t.getDate()+n); return t.toISOString().slice(0,10); };
+    const compactCount=n=>n>=1000?`${(n/1000).toFixed(n>=10000?0:1).replace(/\.0$/,'')}K`:String(n);
+    let win=dates.filter(d=>Math.abs((new Date(d+'T12:00:00')-new Date(todayISO+'T12:00:00'))/864e5)<=3).slice(0,7);
     for(const f of [plus(1),plus(2)]) if(!win.includes(f)) win.push(f);
     win=[...new Set(win)].sort();
     $('date-strip').innerHTML=win.map(d=>{
       const n=(byDate[d]||[]).length;
-      const label=d===todayISO?'TODAY':new Date(d+'T12:00:00').toLocaleDateString([],{day:'numeric',month:'short'}).toUpperCase();
-      return `<button class="pill${d===activeDate?' on':''}" data-d="${d}" ${n?'':'style="opacity:.3;pointer-events:none"'}>${label}${n?` <span style="opacity:.6">${n}</span>`:''}</button>`;
+      const dt=new Date(d+'T12:00:00');
+      const day=d===todayISO?'TODAY':dt.toLocaleDateString('en-GB',{weekday:'short'}).toUpperCase();
+      const date=dt.toLocaleDateString('en-GB',{day:'2-digit',month:'short'}).toUpperCase();
+      const count=n?`${compactCount(n)} game${n===1?'':'s'}`:'No games';
+      const selected=d===activeDate;
+      return `<button class="date-chip${selected?' on':''}" data-d="${d}" aria-pressed="${selected}" aria-label="${day}, ${date}, ${n} game${n===1?'':'s'}" title="${n} game${n===1?'':'s'}" ${n?'':'disabled'}>`+
+        `<span class="date-chip-day">${day}</span>`+
+        `<span class="date-chip-date">${date}</span>`+
+        `<span class="date-chip-count">${count}</span></button>`;
     }).join('');
     $('date-strip').querySelectorAll('[data-d]').forEach(b=>b.addEventListener('click',()=>{
       activeDate=b.dataset.d; showAll=false; renderDates(); renderLeagues(); renderStats(); renderCarousel(); renderEngines(); renderCards(); renderBoardRankReason(); renderWC(); }));
+    requestAnimationFrame(()=>{
+      const current=$('date-strip').querySelector('.date-chip.on');
+      if(current) current.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});
+    });
   }
   function renderLeagues(){
     const ls=[...new Set(dayMatches().map(m=>m.league).filter(Boolean))].sort();

@@ -1,8 +1,8 @@
-/* Predict2U v165 — quiet freshness display, in-place board updates and fallbacks. */
+/* Predict2U v166 — quiet freshness display, in-place board updates and fallbacks. */
 (function(){
   "use strict";
 
-  const VERSION="v165";
+  const VERSION="v166";
   const DATA_FILE="data.js";
   const LIVE=new Set(["1H","HT","2H","ET","BT","P","LIVE"]);
   const DATA_PAGE=/(?:^|\/)(?:index|board|engines|proof|scorecards|league-dna|trust)\.html$/i.test(location.pathname)||location.pathname==="/"||location.pathname==="";

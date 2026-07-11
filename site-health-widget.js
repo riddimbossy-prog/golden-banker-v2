@@ -1,7 +1,7 @@
 /* Predict2U site-health-widget.js — read-only public freshness/status display. */
 (function(){
   "use strict";
-  const VERSION="v165";
+  const VERSION="v166";
   const LIVE=new Set(["1H","HT","2H","ET","BT","P","LIVE"]);
   const num=v=>Number.isFinite(Number(v))?Number(v):null;
   const parse=v=>{const n=Date.parse(v||"");return Number.isFinite(n)?n:null;};

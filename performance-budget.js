@@ -37,8 +37,17 @@ for(const page of ["index.html","board.html"]){
 }
 
 const sw=read("sw.js");
-for(const token of ["predict2u-v165","NETWORK_TIMEOUT_MS","canonicalRequest","performance-freshness.js","performance-freshness.css"]){
+const cacheMatch=sw.match(/CACHE_VERSION\s*=\s*["'](predict2u-v\d+)["']/);
+if(!cacheMatch)errors.push("sw.js is missing a valid predict2u-vN cache version.");
+else passed.push(`sw.js cache: ${cacheMatch[1]}`);
+for(const token of ["NETWORK_TIMEOUT_MS","canonicalRequest","performance-freshness.js","performance-freshness.css"]){
   if(!sw.includes(token))errors.push(`sw.js missing ${token}`);
+}
+for(const page of ["index.html","board.html"]){
+  const html=read(page);
+  for(const token of ["date-strip","date-chip","date-chip-day","date-chip-date","date-chip-count"]){
+    if(!html.includes(token))errors.push(`${page}: mobile date rail missing ${token}`);
+  }
 }
 if(!/content-visibility\s*:\s*auto/.test(read("performance-freshness.css")))
   errors.push("Lower-page content visibility optimization is missing.");
@@ -47,9 +56,10 @@ if(!/P2UBoardRefresh/.test(read("index.html"))||!/P2UBoardRefresh/.test(read("bo
 if(/p2u-system-alert|Core match data is more than 36 hours old/.test(read("brand-experience.js")))
   errors.push("Removed full-width status banner returned.");
 
+const buildVersion=exists("BUILD_VERSION.txt")?read("BUILD_VERSION.txt").trim():"unknown";
 const report={
   generatedAt:new Date().toISOString(),
-  version:"v165",
+  version:buildVersion,
   errors,
   warnings,
   passedCount:passed.length,
