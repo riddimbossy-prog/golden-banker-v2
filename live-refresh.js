@@ -21,10 +21,10 @@
   const style=document.createElement("style");
   style.textContent=`
     #p2u-live-sync{position:fixed;left:14px;bottom:14px;z-index:80;display:flex;align-items:center;gap:7px;
-      background:rgba(8,9,13,.94);color:#b9bec9;border:1px solid #252936;border-radius:999px;
-      padding:7px 10px;font:700 10px/1 Inter,system-ui,sans-serif;box-shadow:0 8px 28px rgba(0,0,0,.35)}
-    #p2u-live-sync .dot{width:7px;height:7px;border-radius:50%;background:#34d399;box-shadow:0 0 0 0 rgba(52,211,153,.5);animation:p2uLivePulse 1.5s infinite}
-    @keyframes p2uLivePulse{70%{box-shadow:0 0 0 7px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+      background:rgba(28,8,12,.96);color:#ffd8dc;border:1px solid rgba(255,92,103,.32);border-radius:999px;
+      padding:7px 10px;font:700 10px/1 Inter,system-ui,sans-serif;box-shadow:0 8px 28px rgba(0,0,0,.35),0 0 24px rgba(255,92,103,.10)}
+    #p2u-live-sync .dot{width:7px;height:7px;border-radius:50%;background:#ff5c67;box-shadow:0 0 0 0 rgba(255,92,103,.5);animation:p2uLivePulse 1.5s infinite}
+    @keyframes p2uLivePulse{70%{box-shadow:0 0 0 7px rgba(255,92,103,0)}100%{box-shadow:0 0 0 0 rgba(255,92,103,0)}}
     @media(max-width:640px){#p2u-live-sync{bottom:calc(76px + env(safe-area-inset-bottom));left:10px}}
   `;
   document.head.appendChild(style);
