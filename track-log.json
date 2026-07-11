@@ -49657,8 +49657,8 @@
       "confidence": 8,
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-07-10T12:28:00.678Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -54541,8 +54541,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-07-10T23:50:04.438Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -54559,8 +54559,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "High-Scoring",
       "recordedAt": "2026-07-10T23:50:04.438Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -54577,8 +54577,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-07-10T23:50:04.439Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -54595,8 +54595,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Very Low-Scoring",
       "recordedAt": "2026-07-10T23:50:04.439Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -54613,8 +54613,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Very Low-Scoring",
       "recordedAt": "2026-07-10T23:50:04.439Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -54649,8 +54649,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-07-10T23:50:04.440Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -54667,8 +54667,8 @@
       "suiteVersion": "2026.07-new-family",
       "leagueClass": "Low-Scoring",
       "recordedAt": "2026-07-10T23:50:04.440Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -61135,6 +61135,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-11T21:02:06.698Z"
+    "updated": "2026-07-11T21:03:24.310Z"
   }
 }
