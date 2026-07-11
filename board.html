@@ -34,7 +34,6 @@
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-<link rel="stylesheet" href="personalization.css"/>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 /* palette sampled directly from the design */
@@ -216,6 +215,8 @@ a{ color:inherit; text-decoration:none; }
 <link rel="stylesheet" href="site-health.css"/>
 <link rel="stylesheet" href="brand-experience.css"/>
 <link rel="stylesheet" href="performance-freshness.css"/>
+<link rel="stylesheet" href="personalization.css"/>
+<link rel="stylesheet" href="smart-alerts.css"/>
 </head>
 <body>
 <nav class="sticky top-0 z-50" style="background:var(--bg);border-bottom:1px solid var(--line)">
@@ -466,8 +467,8 @@ a{ color:inherit; text-decoration:none; }
 <script src="banker-engine.js"></script>
 <script src="data.js"></script>
 <script src="slip.js"></script>
-<script src="p2u-intelligence.js"></script>
 <script src="personalization.js"></script>
+<script src="p2u-intelligence.js"></script>
 <script>
 /* ===========================================================================
    BOARD — the design, matched. The numbers, real.
@@ -495,8 +496,6 @@ a{ color:inherit; text-decoration:none; }
 
   const ENG = (window.P2U_ENGINE_REGISTRY || []).map(e => [e.key, e.name, e.fn, e.description])
     .filter(e => typeof window[e[2]] === 'function');
-  const PERS = window.P2UPersonalization || null;
-  if(PERS) PERS.configureEngines(ENG.map(e=>({key:e[0],name:e[1]})));
   const TOTAL = ENG.length;
   const INTEL_CACHE={};
   const intelFor=m=>INTEL_CACHE[keyOf(m)]||(INTEL_CACHE[keyOf(m)]=window.P2UIntelligence?P2UIntelligence.analyseMatch(m):null);
@@ -518,11 +517,9 @@ a{ color:inherit; text-decoration:none; }
   const dayMatches = ()=> byDate[activeDate]||[];
 
   const params = new URLSearchParams(location.search);
-  const personalInitial = PERS ? PERS.getInitialBoardState(ENG.map(e=>e[0])) : {engine:'top',league:'all',search:''};
-  let mode = params.get('engine')||personalInitial.engine||'top';
+  let mode = params.get('engine')||'top';
   if(mode!=='top'&&mode!=='acca'&&!ENG.some(e=>e[0]===mode)) mode='top';
-  let league=personalInitial.league||'all', q=personalInitial.search||'', showAll=false;
-  const savePersonalState=()=>{ if(PERS) PERS.saveBoardState({engine:mode,league,search:q}); };
+  let league='all', q='', showAll=false;
   const LIMIT = 8;
   const keyOf = m => (m.id!=null?'f'+m.id:m.home+'|'+m.away+'|'+m.matchDate);
 
@@ -586,7 +583,6 @@ a{ color:inherit; text-decoration:none; }
     let rows=picksFor();
     if(q) rows=rows.filter(p=>(p.m.home+' '+p.m.away+' '+(p.m.league||'')).toLowerCase().includes(q));
     if(league!=='all') rows=rows.filter(p=>p.m.league===league);
-    if(PERS) rows=PERS.filterRows(rows);
     $('board-analysed').textContent=`${dayMatches().length} matches analysed`;
     if(!M.length){
       $('cards').innerHTML='<div class="p2u-data-fallback"><strong>Board data is temporarily unavailable</strong><span>The interface is ready, but the latest fixture file could not be loaded.</span><br><button type="button" id="p2u-data-retry">Try again</button></div>';
@@ -612,7 +608,7 @@ a{ color:inherit; text-decoration:none; }
       const n=p.engines.length, pct=Math.round(100*n/TOTAL);
       const intel=intelFor(p.m); const conflict=intel&&intel.conflict; const coverage=intel&&intel.coverage;
       const proof=window.P2UIntelligence?P2UIntelligence.proofHref(p.m):`proof.html?match=${encodeURIComponent(keyOf(p.m))}`;
-      return `<article class="card card-h p-5 rise p2u-standard-card" style="animation-delay:${Math.min(i*30,240)}ms" data-p2u-match-key="${esc(keyOf(p.m))}" data-p2u-home="${esc(p.m.home)}" data-p2u-away="${esc(p.m.away)}" data-p2u-league="${esc(p.m.league||'')}" data-p2u-market="${esc(p.market)}" data-p2u-proof="${esc(proof)}">
+      return `<article class="card card-h p-5 rise p2u-standard-card" style="animation-delay:${Math.min(i*30,240)}ms" data-p2u-match-key="${esc(keyOf(p.m))}" data-p2u-home="${esc(p.m.home)}" data-p2u-away="${esc(p.m.away)}" data-p2u-league="${esc(p.m.league||'')}" data-p2u-market="${esc(p.market)}" data-p2u-engines="${esc(p.engines.join('|'))}" data-p2u-proof="${proof}">
         <div class="p2u-card-meta">
           <span>${crest(p.m.flag,'lflag')}</span><span class="trunc">${esc(p.m.league||'League')}</span><span>·</span><span class="mono">${ko(p.m)||'TBD'}</span><span class="p2u-card-status">${statusTag(p.m,p.market)}</span>
         </div>
@@ -625,7 +621,6 @@ a{ color:inherit; text-decoration:none; }
           ${conflict?`<span class="p2u-signal ${/CONFLICT/.test(conflict.code)?'conflict':'coverage'}">${esc(conflict.label)}</span>`:''}
           ${coverage?`<span class="p2u-signal coverage">Data ${coverage.score}%</span>`:''}
         </div>
-        <div class="p2u-personal-detail"><b style="color:var(--ink)">Engine support:</b> ${esc(p.engines.join(', '))}<br/><b style="color:var(--ink)">League:</b> ${esc(p.m.league||'League')}${coverage?` · <b style="color:var(--ink)">Data coverage:</b> ${coverage.score}%`:''}${conflict?` · <b style="color:var(--ink)">Conflict:</b> ${esc(conflict.label)}`:''}</div>
         <div class="details" id="${id}"></div>
         <div class="p2u-card-actions">
           <button class="btn-det" data-det="${id}">DETAILS</button>
@@ -806,9 +801,8 @@ a{ color:inherit; text-decoration:none; }
   function renderPills(){
     const modes=[['top','All Engines'],['acca','Today\u2019s Acca']].concat(ENG.map(e=>[e[0],e[1]]));
     $('engine-pills').innerHTML=modes.map(([k,n])=>`<button class="pill${k===mode?' on':''}" data-mode="${k}">${esc(n)}</button>`).join('');
-    if(PERS) PERS.decorateEnginePills($('engine-pills'));
     $('engine-pills').querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{
-      mode=b.dataset.mode; showAll=false; syncBoard(); renderPills(); renderCards(); savePersonalState();
+      mode=b.dataset.mode; showAll=false; syncBoard(); renderPills(); renderCards();
       history.replaceState(null,'','?engine='+mode); }));
   }
   function syncBoard(){
@@ -843,12 +837,10 @@ a{ color:inherit; text-decoration:none; }
     });
   }
   function renderLeagues(){
-    let ls=[...new Set(dayMatches().map(m=>m.league).filter(Boolean))].sort();
-    if(PERS) ls=PERS.visibleLeagues(ls);
+    const ls=[...new Set(dayMatches().map(m=>m.league).filter(Boolean))].sort();
     $('f-league').innerHTML='<option value="all">All Leagues</option>'+ls.map(l=>`<option value="${esc(l)}">${esc(l)}</option>`).join('');
     $('f-league').value=ls.includes(league)?league:'all';
     if(!ls.includes(league)) league='all';
-    if(PERS) PERS.decorateLeagueSelect($('f-league'));
   }
 
   const isWC=m=>{ if(!m) return false;
@@ -921,22 +913,82 @@ a{ color:inherit; text-decoration:none; }
   }
   window.P2UBoardRefresh=refreshBoardData;
 
-  $('f-search').value=q;
-  $('f-search').addEventListener('input',e=>{ q=e.target.value.toLowerCase().trim(); showAll=false; renderCards(); savePersonalState(); });
-  $('f-league').addEventListener('change',e=>{ league=e.target.value; showAll=false; renderCards(); savePersonalState(); });
+  $('f-search').addEventListener('input',e=>{ q=e.target.value.toLowerCase().trim(); showAll=false; renderCards(); });
+  $('f-league').addEventListener('change',e=>{ league=e.target.value; showAll=false; renderCards(); });
   document.querySelectorAll('[data-jump]').forEach(a=>a.addEventListener('click',e=>{
     e.preventDefault(); const t=document.getElementById(a.dataset.jump);
     if(t) t.scrollIntoView({behavior:'smooth',block:'start'}); }));
 
-  if(PERS) PERS.mountBoard({
-    engines:ENG.map(e=>({key:e[0],name:e[1]})),
-    getLeagues:()=>M.map(m=>m.league).filter(Boolean),
-    refresh:()=>{ renderLeagues(); renderPills(); syncBoard(); renderCards(); renderBoardRankReason(); },
-    resetBoard:()=>{ mode='top'; league='all'; q=''; showAll=false; $('f-search').value=''; renderLeagues(); renderPills(); syncBoard(); renderCards(); renderBoardRankReason(); history.replaceState(null,'','?engine=top'); }
-  });
-
   renderDates(); renderLeagues(); renderPills(); syncBoard(); renderStats(); renderCarousel(); renderCards(); renderWC();
   (window.requestIdleCallback||(f=>setTimeout(f,60)))(()=>{ renderEngines(); renderPerf(); renderUser(); });
+})();
+</script>
+<script>
+(function(){
+  function initPersonalization(){
+    if(!window.P2UPersonalization)return;
+    const engines=(window.P2U_ENGINE_REGISTRY||[]).map(e=>({key:e.key,name:e.name}));
+    const keyToName=new Map(engines.map(e=>[e.key,e.name]));
+    const cardsHost=document.getElementById('cards');
+    const search=document.getElementById('f-search');
+    const league=document.getElementById('f-league');
+    const pills=document.getElementById('engine-pills');
+
+    function leagues(){
+      if(!league)return[];
+      return [...league.options].map(o=>o.value).filter(v=>v&&v!=='all');
+    }
+    function applyPersonalization(){
+      const prefs=P2UPersonalization.getPrefs();
+      const favoriteEngineNames=new Set((prefs.favoriteEngines||[]).map(k=>keyToName.get(k)).filter(Boolean));
+      const favoriteLeagues=new Set(prefs.favoriteLeagues||[]);
+      const hiddenLeagues=new Set(prefs.hiddenLeagues||[]);
+      document.querySelectorAll('#cards article[data-p2u-match-key]').forEach(card=>{
+        const cardLeague=card.dataset.p2uLeague||'';
+        const cardEngines=new Set((card.dataset.p2uEngines||'').split('|').filter(Boolean));
+        const isFavorite=favoriteLeagues.has(cardLeague)||[...cardEngines].some(name=>favoriteEngineNames.has(name));
+        card.hidden=hiddenLeagues.has(cardLeague)||(prefs.boardScope==='mine'&&(favoriteLeagues.size||favoriteEngineNames.size)&&!isFavorite);
+      });
+      P2UPersonalization.decorateLeagueSelect(league);
+      P2UPersonalization.decorateEnginePills(pills);
+    }
+    function savePersonalState(){
+      const active=pills&&pills.querySelector('[data-mode].on');
+      P2UPersonalization.saveBoardState({
+        engine:active?active.dataset.mode:'top',
+        league:league?league.value:'all',
+        search:search?search.value:'',
+        scope:P2UPersonalization.getPrefs().boardScope
+      });
+    }
+    window.savePersonalState=savePersonalState;
+
+    P2UPersonalization.mountBoard({
+      engines,
+      getLeagues:leagues,
+      refresh:applyPersonalization,
+      onScopeChange:applyPersonalization,
+      resetBoard:()=>{
+        if(search){search.value='';search.dispatchEvent(new Event('input',{bubbles:true}));}
+        if(league){league.value='all';league.dispatchEvent(new Event('change',{bubbles:true}));}
+        const all=pills&&pills.querySelector('[data-mode="top"]');if(all)all.click();
+        applyPersonalization();
+      }
+    });
+
+    const initial=P2UPersonalization.getInitialBoardState(engines.map(e=>e.key));
+    if(search&&initial.search){search.value=initial.search;search.dispatchEvent(new Event('input',{bubbles:true}));}
+    if(league&&initial.league&&[...league.options].some(o=>o.value===initial.league)){league.value=initial.league;league.dispatchEvent(new Event('change',{bubbles:true}));}
+    if(initial.engine&&pills){const button=[...pills.querySelectorAll('[data-mode]')].find(item=>item.dataset.mode===initial.engine);if(button)button.click();}
+
+    ['input','change','click'].forEach(type=>document.addEventListener(type,event=>{
+      if(event.target.closest&&event.target.closest('#f-search,#f-league,#engine-pills [data-mode]'))setTimeout(savePersonalState,0);
+    }));
+    if(cardsHost)new MutationObserver(()=>applyPersonalization()).observe(cardsHost,{childList:true,subtree:false});
+    if(pills)new MutationObserver(()=>P2UPersonalization.decorateEnginePills(pills)).observe(pills,{childList:true});
+    applyPersonalization();
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initPersonalization,{once:true});else initPersonalization();
 })();
 </script>
 <script>
@@ -945,5 +997,6 @@ if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.se
 <script src="brand-experience.js" defer></script>
 <script src="site-health-widget.js" defer></script>
 <script src="performance-freshness.js" defer></script>
+<script src="smart-alerts.js" defer></script>
 </body>
 </html>

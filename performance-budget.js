@@ -17,7 +17,9 @@ const budgets={
   "performance-freshness.js":18000,
   "performance-freshness.css":14000,
   "personalization.js":30000,
-  "personalization.css":18000
+  "personalization.css":18000,
+  "smart-alerts.js":42000,
+  "smart-alerts.css":22000
 };
 for(const [file,limit] of Object.entries(budgets)){
   if(!exists(file)){errors.push(`Missing budgeted file: ${file}`);continue;}
@@ -42,7 +44,7 @@ const sw=read("sw.js");
 const cacheMatch=sw.match(/CACHE_VERSION\s*=\s*["'](predict2u-v\d+)["']/);
 if(!cacheMatch)errors.push("sw.js is missing a valid predict2u-vN cache version.");
 else passed.push(`sw.js cache: ${cacheMatch[1]}`);
-for(const token of ["NETWORK_TIMEOUT_MS","canonicalRequest","performance-freshness.js","performance-freshness.css","personalization.js","personalization.css"]){
+for(const token of ["NETWORK_TIMEOUT_MS","canonicalRequest","performance-freshness.js","performance-freshness.css","personalization.js","personalization.css","smart-alerts.js","smart-alerts.css"]){
   if(!sw.includes(token))errors.push(`sw.js missing ${token}`);
 }
 for(const page of ["index.html","board.html"]){
@@ -65,6 +67,15 @@ for(const page of ["index.html","board.html"]){
 }
 for(const token of ["favoriteEngines","favoriteLeagues","hiddenLeagues","recentMatches","cardView"]){
   if(!read("personalization.js").includes(token))errors.push(`personalization.js missing ${token}`);
+}
+
+
+for(const page of ["index.html","board.html","community.html"]){
+  const html=read(page);
+  if(!/smart-alerts\.css/.test(html)||!/smart-alerts\.js[^>]+defer/.test(html))errors.push(`${page}: Smart Alerts layer is not loaded correctly.`);
+}
+for(const token of ["communityWin","verifiedOnly","followedUsers","trendingWins","p2u:community-win"]){
+  if(!read("smart-alerts.js").includes(token))errors.push(`smart-alerts.js missing ${token}`);
 }
 
 const buildVersion=exists("BUILD_VERSION.txt")?read("BUILD_VERSION.txt").trim():"unknown";

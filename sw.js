@@ -1,11 +1,11 @@
-/* Predict2U service worker v167 — fast shell, bounded network waits and fresh data.
+/* Predict2U service worker v168 — fast shell, bounded network waits and fresh data.
    Strategy:
    - Navigation/HTML: network-first with a short timeout, then cached fallback.
    - data.js/site-health.json: network-first, canonical cache key, stale fallback.
    - Static assets: cache-first with background refresh.
    - Optional PREFETCH_URLS message warms likely next pages. */
 
-const CACHE_VERSION = "predict2u-v167";
+const CACHE_VERSION = "predict2u-v168";
 const OFFLINE_PAGE = "./board.html";
 const NETWORK_TIMEOUT_MS = 4500;
 
@@ -32,6 +32,8 @@ const SHELL = [
   "./performance-freshness.css",
   "./personalization.js",
   "./personalization.css",
+  "./smart-alerts.js",
+  "./smart-alerts.css",
   "./p2u-intelligence.js",
   "./live-refresh.js",
   "./intelligence.css",
@@ -190,4 +192,19 @@ self.addEventListener("message", event => {
       }));
     })());
   }
+});
+
+self.addEventListener("notificationclick", event => {
+  event.notification.close();
+  const target = event.notification.data && event.notification.data.url ? event.notification.data.url : "./community.html";
+  event.waitUntil((async () => {
+    const windows = await self.clients.matchAll({ type: "window", includeUncontrolled: true });
+    for (const client of windows) {
+      if ("focus" in client) {
+        if ("navigate" in client) await client.navigate(target);
+        return client.focus();
+      }
+    }
+    if (self.clients.openWindow) return self.clients.openWindow(target);
+  })());
 });

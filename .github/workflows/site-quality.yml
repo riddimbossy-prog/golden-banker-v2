@@ -31,6 +31,9 @@ jobs:
           test -f personalization.css
           test -f personalization.js
           test -f tests/personalization.spec.js
+          test -f smart-alerts.css
+          test -f smart-alerts.js
+          test -f tests/smart-alerts.spec.js
           test -f performance-budget.js
           test -f tests/performance-freshness.spec.js
           test -f trust.html

@@ -1,0 +1,51 @@
+{
+  "version": "v168",
+  "release": "Smart Alerts & Community Win Records",
+  "generatedAt": "2026-07-11T08:26:56.673481Z",
+  "staticValidation": {
+    "repositoryPreflight": {
+      "status": "passed",
+      "requiredPublicFiles": 37
+    },
+    "performanceBudget": {
+      "errors": 0,
+      "warnings": 0,
+      "checksPassed": 13
+    },
+    "repositoryAudit": {
+      "critical": 0,
+      "warnings": 0,
+      "checksPassed": 82
+    },
+    "javascriptSyntax": {
+      "filesChecked": 40,
+      "failures": 0
+    },
+    "inlineScriptSyntax": {
+      "pagesChecked": [
+        "index.html",
+        "board.html"
+      ],
+      "failures": 0
+    },
+    "personalizationBridge": {
+      "index": "present",
+      "board": "present"
+    },
+    "engineRegistry": "16/16"
+  },
+  "features": [
+    "quiet notification center and unread badge",
+    "optional browser notification permission flow",
+    "fresh-board alerts",
+    "match status and score-change alerts",
+    "favorite league and favorite engine emphasis",
+    "Community winning-slip record alerts",
+    "verified, followed-user and trending controls",
+    "mute for today and pause-all controls",
+    "privacy filter hiding stake and payout details",
+    "mobile, tablet and Galaxy Z Fold layouts"
+  ],
+  "serviceWorkerCache": "predict2u-v168",
+  "browserExecution": "Playwright coverage is included for GitHub Actions. It was not executed in this sandbox."
+}
