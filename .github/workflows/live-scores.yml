@@ -1,0 +1,65 @@
+name: Predict2U Live Scores
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: predict2u-live-scores
+  cancel-in-progress: true
+
+jobs:
+  update-live-scores:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Create score-update config
+        shell: bash
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+        run: |
+          if [ -z "$API_FOOTBALL_KEY" ]; then
+            echo "Missing API_FOOTBALL_KEY repository secret."
+            exit 1
+          fi
+          cat > config.txt <<EOF
+          API_KEY=$API_FOOTBALL_KEY
+          SEASON=2026
+          DAYS_BACK=1
+          EOF
+
+      - name: Fetch current scores and match minutes
+        run: node fetch-scores.js
+
+      - name: Settle tracked engine records
+        run: node track-log.js settle
+        continue-on-error: true
+
+      - name: Commit score snapshot
+        shell: bash
+        run: |
+          git config user.name "Predict2U Live Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data.js track-log.json model-calibration.json team-profiles.json odds-calib.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No live-score changes."
+            exit 0
+          fi
+          git commit -m "Update live scores and match clock"
+          git pull --rebase
+          git push

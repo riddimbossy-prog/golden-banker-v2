@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>Predict2U Proof Mode</title>
+<meta name="description" content="Every engine vote, every data check, every disagreement and every result."/>
+<link rel="stylesheet" href="intelligence.css"/>
+<link rel="icon" href="icon-192.png"/>
+<meta name="theme-color" content="#08090d"/>
+<style>
+.live-proof{display:inline-flex;align-items:center;gap:7px;color:var(--em);border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.10)}
+.live-proof::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--em);animation:proofPulse 1.5s infinite}
+@keyframes proofPulse{70%{box-shadow:0 0 0 8px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+.proof-live-score{font-family:"Space Grotesk";font-size:42px;line-height:1;font-weight:800;font-variant-numeric:tabular-nums;margin-top:10px}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap navin">
+  <a class="brand" href="board.html"><span class="brandmark">P2</span><span>Predict2U</span></a>
+  <div class="links">
+    <a href="board.html">Overview</a><a href="engines.html">Full Board</a>
+    <a class="active" href="proof.html">Proof Mode</a><a href="scorecards.html">Scorecards</a>
+    <a href="league-dna.html">League DNA</a><a href="community.html">Community</a>
+  </div>
+</div></nav>
+
+<header class="wrap hero">
+  <div class="eyebrow">Predict2U Proof Mode</div>
+  <h1>Every pick has proof.</h1>
+  <p class="lead">See the exact engine votes, available data, disagreements, warnings and final settlement. Missing evidence stays visible.</p>
+</header>
+
+<main class="wrap">
+  <div class="stickybar">
+    <select id="match-select" class="input" aria-label="Select match"></select>
+  </div>
+
+  <section id="proof-root" class="section">
+    <div class="card empty">Reading the engine ledger…</div>
+  </section>
+</main>
+
+<footer class="footer"><div class="wrap row between wraprow">
+  <span>© Predict2U 2026 · Records, not wagers · 18+</span>
+  <span>Proof is generated from the data and engine outputs available on the page.</span>
+</div></footer>
+
+<script src="banker-engine.js"></script>
+<script src="data.js"></script>
+<script src="p2u-intelligence.js"></script>
+<script>
+(function(){
+  const I=window.P2UIntelligence,M=window.MATCHES||[],root=document.getElementById("proof-root"),sel=document.getElementById("match-select");
+  const params=new URLSearchParams(location.search);
+  const wanted=params.get("match");
+  const sorted=M.slice().sort((a,b)=>String(b.matchDate||"").localeCompare(String(a.matchDate||""))||String(a.kickoff||"").localeCompare(String(b.kickoff||"")));
+  sel.innerHTML=sorted.map(m=>`<option value="${I.esc(I.keyOf(m))}">${I.esc(m.matchDate||"")} · ${I.esc(m.home)} vs ${I.esc(m.away)} · ${I.esc(m.league||"")}</option>`).join("");
+  let current=I.findMatch(M,wanted)||sorted[0]||null;
+  if(current)sel.value=I.keyOf(current);
+
+  const rateFor=(m,mk)=>{
+    const rates=m.leagueTrends&&m.leagueTrends.rates||{};
+    return rates[mk]??rates[String(mk||"").replace(/ Goals$/,"")]??null;
+  };
+  const fmt=v=>v==null?"—":typeof v==="number"?v.toFixed(2):String(v);
+  const resultTag=r=>r?`<span class="pill ${r==="Won"?"strong":r==="Lost"?"danger":"quiet"}">${I.esc(r.toUpperCase())}</span>`:`<span class="pill quiet">PENDING</span>`;
+  function render(){
+    if(!current){root.innerHTML='<div class="card empty">No match data is available.</div>';return;}
+    const a=I.analyseMatch(current),c=a.conflict,cov=a.coverage,top=c.top;
+    const live=I.isLive(current);
+    const result=top&&!live?I.resultOf(current,top.market):"";
+    const liveBadge=live?`<span class="pill live-proof">LIVE · ${I.esc(I.liveClock(current))}</span>`:resultTag(result);
+    const liveScore=live&&current.homeGoals!=null?`<div class="proof-live-score">${current.homeGoals}<span class="muted">–</span>${current.awayGoals}</div>`:"";
+    const settlementText=live
+      ? `${I.esc(current.statusLong||"Match in progress")} · ${I.esc(I.liveClock(current))}`
+      : current.homeGoals==null?"Awaiting final score":`${current.homeGoals}–${current.awayGoals}`;
+    const leagueRate=top?rateFor(current,top.market):null;
+    const dataStamp=window.DATA_UPDATED||window.SCORES_UPDATED||"";
+    const oddsMove=(current.oddsOpen&&current.oddsLast)?["home","draw","away"].map(k=>{
+      const o=Number(current.oddsOpen[k]),n=Number(current.oddsLast[k]);
+      if(!Number.isFinite(o)||!Number.isFinite(n))return"";
+      const d=((n-o)/o)*100;
+      return `<div class="marketgroup"><div class="label">${k}</div><div class="row between" style="margin-top:8px"><b>${o.toFixed(2)} → ${n.toFixed(2)}</b><span class="${d<0?"em":d>0?"red":"muted"}">${d>0?"+":""}${d.toFixed(1)}%</span></div></div>`;
+    }).join(""):"<div class='card empty'>No opening/current line pair was supplied for this fixture.</div>";
+
+    const groups=c.groups.map((g,i)=>`<div class="marketgroup ${i===0?"top":""}">
+      <div class="row between wraprow"><div><div class="label">${i===0?"Leading exact market":"Alternative market"}</div><div style="font-size:19px;font-weight:800;margin-top:5px">${I.esc(I.shortMarket(g.market))}</div></div>
+      <span class="pill ${i===0?"strong":"quiet"}">${g.count} engine${g.count===1?"":"s"}</span></div>
+      <div class="ink2" style="font-size:12px;margin-top:10px">${I.esc(g.supporters.map(v=>v.name).join(", "))}</div>
+      <div class="muted" style="font-size:11px;margin-top:5px">Average engine score: ${g.avgConfidence==null?"—":Math.round(g.avgConfidence)}</div>
+    </div>`).join("")||'<div class="card empty">No engine published a qualified market.</div>';
+
+    const checks=cov.checks.map(x=>`<div class="check ${x.ok?"ok":""}">
+      <div class="row"><span class="dot"></span><b style="font-size:12px">${I.esc(x.label)}</b></div>
+      <div class="muted" style="font-size:11px;margin-top:6px">${I.esc(x.detail)}</div>
+      <div class="${x.ok?"em":"muted"}" style="font-size:10px;font-weight:800;margin-top:6px">${x.ok?"AVAILABLE":"MISSING / INSUFFICIENT"}</div>
+    </div>`).join("");
+
+    const rows=a.votes.map(v=>{
+      const why=(v.reasons[0]||v.warnings[0]||v.error||"No extended reason supplied.");
+      return `<tr>
+        <td><b>${I.esc(v.name)}</b><div class="muted" style="font-size:10px">${I.esc(v.family)} v${I.esc(v.version||"")}</div></td>
+        <td>${v.bet?`<span class="pill ${top&&v.market===top.market?"strong":"quiet"}">${I.esc(I.shortMarket(v.market))}</span>`:'<span class="pill quiet">NO BET</span>'}</td>
+        <td>${v.confidence==null?"—":Math.round(v.confidence)}</td>
+        <td>${v.dataQuality==null?"—":Math.round(v.dataQuality)}</td>
+        <td class="ink2">${I.esc(why)}</td>
+      </tr>`;
+    }).join("");
+
+    root.innerHTML=`
+      <div class="grid grid4">
+        <div class="card"><div class="label">Exact-market support</div><div class="kpi em" style="margin-top:10px">${top?top.count:0}<span class="muted" style="font-size:20px">/${a.votes.length}</span></div><div class="ink2" style="margin-top:8px">${top?I.esc(I.shortMarket(top.market)):"No qualified market"}</div></div>
+        <div class="card"><div class="label">Conflict status</div><div style="margin-top:13px"><span class="pill ${c.level}">${I.esc(c.label)}</span></div><div class="ink2" style="font-size:12px;margin-top:11px">${I.esc(c.reason)}</div></div>
+        <div class="card"><div class="label">Data reliability</div><div class="kpi" style="margin-top:10px">${cov.score}<span class="muted" style="font-size:20px">%</span></div><div class="progress" style="margin-top:12px"><span style="width:${cov.score}%"></span></div><div class="ink2" style="font-size:12px;margin-top:8px">${I.esc(cov.label)}</div></div>
+        <div class="card"><div class="label">${live?"Live match":"Settlement"}</div><div style="margin-top:13px">${liveBadge}</div>${liveScore}<div class="ink2" style="font-size:12px;margin-top:11px">${settlementText}</div></div>
+      </div>
+
+      <div class="card" style="margin-top:14px">
+        <div class="row between wraprow"><div><div class="label">${I.esc(current.league||"")}</div><h2 style="margin:5px 0 0;font-family:'Space Grotesk';font-size:30px">${I.esc(current.home)} <span class="em">vs</span> ${I.esc(current.away)}</h2></div>
+        <div class="row wraprow">${top?`<span class="pill strong">${I.esc(I.shortMarket(top.market))}</span>`:""}${liveBadge}</div></div>
+        <div class="grid grid4" style="margin-top:18px">
+          <div><div class="label">${live?"Match clock":"Kickoff"}</div><div style="margin-top:6px">${live?I.esc(I.liveClock(current)):I.isoTime(current.kickoff)}</div></div>
+          <div><div class="label">League rate</div><div style="margin-top:6px">${I.pct(leagueRate)}</div></div>
+          <div><div class="label">Current odds</div><div style="margin-top:6px">${top&&I.oddsFor(current,top.market)?I.oddsFor(current,top.market).toFixed(2):"—"}</div></div>
+          <div><div class="label">Data updated</div><div style="margin-top:6px">${dataStamp?I.isoTime(dataStamp):"Not supplied"}</div></div>
+        </div>
+      </div>
+
+      <div class="section"><h2>Exact-market agreement</h2><div class="grid grid3">${groups}</div></div>
+
+      <div class="section"><div class="row between wraprow"><h2 style="margin-bottom:0">Data reliability</h2><span class="pill ${cov.score>=70?"strong":cov.score>=50?"warn":"danger"}">${cov.available}/${cov.total} evidence blocks</span></div>
+        <div class="checks" style="margin-top:16px">${checks}</div>
+      </div>
+
+      <div class="section"><h2>Engine ledger</h2><div class="tablewrap"><table class="table"><thead><tr><th>Engine</th><th>Verdict</th><th>Score</th><th>Data quality</th><th>Primary reason</th></tr></thead><tbody>${rows}</tbody></table></div></div>
+
+      <div class="section"><h2>Odds movement</h2><div class="grid grid3">${oddsMove}</div></div>
+
+      <div class="card" style="margin-bottom:32px"><div class="label">Proof note</div><p class="ink2" style="margin-bottom:0">This page exposes the current engine outputs and source fields. Scores describe rule strength, not certainty. A missing field remains missing, and an engine abstention remains on the record.</p></div>
+    `;
+    document.title=`Proof · ${current.home} vs ${current.away} · Predict2U`;
+    history.replaceState(null,"",`?match=${encodeURIComponent(I.keyOf(current))}`);
+  }
+  sel.addEventListener("change",()=>{current=I.findMatch(M,sel.value);render();});
+  render();
+})();
+</script>
+<script src="live-refresh.js"></script>
+<script>if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));</script>
+</body>
+</html>

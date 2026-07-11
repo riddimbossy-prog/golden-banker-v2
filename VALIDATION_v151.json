@@ -1,0 +1,57 @@
+{
+  "javascript_syntax": {
+    "fetch-scores.js": {
+      "ok": true,
+      "error": ""
+    },
+    "p2u-intelligence.js": {
+      "ok": true,
+      "error": ""
+    },
+    "live-refresh.js": {
+      "ok": true,
+      "error": ""
+    }
+  },
+  "inline_scripts_checked": 6,
+  "inline_failures": 0,
+  "live_clock_runtime_test": [
+    {
+      "live": true,
+      "clock": "34'",
+      "score": "1\u20130"
+    },
+    {
+      "live": true,
+      "clock": "45+2'",
+      "score": "1\u20131"
+    },
+    {
+      "live": true,
+      "clock": "HT",
+      "score": "1\u20131"
+    },
+    {
+      "live": true,
+      "clock": "90+5'",
+      "score": "2\u20131"
+    },
+    {
+      "live": false,
+      "clock": "0'",
+      "score": "2\u20131"
+    }
+  ],
+  "feature_checks": {
+    "workflow_exists": true,
+    "fetch_stores_status_long": true,
+    "fetch_stores_extra": true,
+    "fetch_stores_live_timestamp": true,
+    "board_live_score": true,
+    "engines_live_score": true,
+    "proof_live_score": true,
+    "auto_refresh": true,
+    "sw_v151": true
+  },
+  "cache_version": "predict2u-v151"
+}

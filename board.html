@@ -116,18 +116,29 @@ a{ color:inherit; text-decoration:none; }
 .lflag{ width:20px; height:14px; object-fit:cover; border-radius:2px; }
 .hide-sb::-webkit-scrollbar{ display:none; }
 .hide-sb{ scrollbar-width:none; }
+
+/* Live scores v151 */
+.tag-live{position:relative;font-variant-numeric:tabular-nums}
+.tag-live i{display:none}
+.tag-live::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 0 0 rgba(52,211,153,.55);animation:livePulse 1.5s infinite}
+@keyframes livePulse{70%{box-shadow:0 0 0 7px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+.live-score-board{display:flex;align-items:baseline;gap:9px;margin-top:10px;font-family:'Space Grotesk',Inter,sans-serif;font-size:27px;font-weight:800;font-variant-numeric:tabular-nums}
+.live-score-board small{font-family:Inter,sans-serif;font-size:11px;letter-spacing:.08em;color:var(--em)}
+
 </style>
 </head>
 <body>
 <nav class="sticky top-0 z-50" style="background:var(--bg);border-bottom:1px solid var(--line)">
   <div class="max-w-[1240px] mx-auto px-6 h-[62px] flex items-center gap-8">
     <a href="board.html" class="flex items-center shrink-0"><img src="email-logo.png" alt="Predict2u — every pick, every result" style="height:44px;width:auto;max-width:210px;object-fit:contain"/></a>
-    <div class="hidden lg:flex items-center gap-7 text-[14px] mx-auto" style="color:var(--ink-2)">
+    <div class="hidden lg:flex items-center gap-5 text-[14px] mx-auto" style="color:var(--ink-2)">
       <a href="#top" data-jump="top" class="pb-1 font-medium" style="color:var(--em);border-bottom:2px solid var(--em)">Overview</a>
       <a href="#board" data-jump="board" class="hover:text-white transition-colors">Today's Board</a>
       <a href="engines.html" class="hover:text-white transition-colors">Full Board</a>
       <a href="#engines" data-jump="engines" class="hover:text-white transition-colors">Engines</a>
-      <a href="#performance" data-jump="performance" class="hover:text-white transition-colors">Performance</a>
+      <a href="proof.html" class="hover:text-white transition-colors">Proof</a>
+      <a href="scorecards.html" class="hover:text-white transition-colors">Scorecards</a>
+      <a href="league-dna.html" class="hover:text-white transition-colors">League DNA</a>
       <a href="community.html" class="hover:text-white transition-colors">Community</a>
     </div>
     <div class="ml-auto lg:ml-0 flex items-center gap-4">
@@ -309,6 +320,40 @@ a{ color:inherit; text-decoration:none; }
   </section>
 </main>
 
+
+<section id="transparency" class="max-w-[1240px] mx-auto px-6 pb-20">
+  <div class="flex items-end justify-between gap-4 flex-wrap mb-7">
+    <div><div class="t-lbl" style="color:var(--em)">TRANSPARENCY LAYER</div><h2 class="t-sec mt-2">More than a list of picks</h2></div>
+    <div class="t-body max-w-[430px]" style="color:var(--ink-2)">Every prediction can now be audited, compared and understood before and after settlement.</div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+    <a href="proof.html" class="glass card-h rounded-3xl p-6">
+      <div class="w-11 h-11 rounded-2xl flex items-center justify-center" style="background:var(--em-dim);color:var(--em)"><i class="fa-solid fa-shield-halved"></i></div>
+      <div class="font-display font-semibold text-xl mt-5">Proof Mode</div>
+      <p class="text-[13px] mt-2" style="color:var(--ink-2)">Exact engine votes, data coverage, warnings, odds movement and settlement.</p>
+      <div class="text-[12px] font-semibold mt-5" style="color:var(--em)">Open proof →</div>
+    </a>
+    <a href="scorecards.html" class="glass card-h rounded-3xl p-6">
+      <div class="w-11 h-11 rounded-2xl flex items-center justify-center" style="background:rgba(96,165,250,.11);color:#60a5fa"><i class="fa-solid fa-chart-line"></i></div>
+      <div class="font-display font-semibold text-xl mt-5">Engine Scorecards</div>
+      <p class="text-[13px] mt-2" style="color:var(--ink-2)">Forward-tracked wins, losses, sample size, best markets and calibration status.</p>
+      <div class="text-[12px] font-semibold mt-5" style="color:var(--em)">View records →</div>
+    </a>
+    <a href="league-dna.html" class="glass card-h rounded-3xl p-6">
+      <div class="w-11 h-11 rounded-2xl flex items-center justify-center" style="background:rgba(167,139,250,.11);color:#a78bfa"><i class="fa-solid fa-dna"></i></div>
+      <div class="font-display font-semibold text-xl mt-5">League DNA</div>
+      <p class="text-[13px] mt-2" style="color:var(--ink-2)">League identity, strongest recurring markets, volatility and real sample depth.</p>
+      <div class="text-[12px] font-semibold mt-5" style="color:var(--em)">Explore leagues →</div>
+    </a>
+    <a href="engines.html" class="glass card-h rounded-3xl p-6">
+      <div class="w-11 h-11 rounded-2xl flex items-center justify-center" style="background:rgba(251,191,36,.11);color:var(--amber)"><i class="fa-solid fa-code-branch"></i></div>
+      <div class="font-display font-semibold text-xl mt-5">Conflict Detector</div>
+      <p class="text-[13px] mt-2" style="color:var(--ink-2)">Full agreement, split decisions, market conflicts and data conflicts shown openly.</p>
+      <div class="text-[12px] font-semibold mt-5" style="color:var(--em)">Open full board →</div>
+    </a>
+  </div>
+</section>
+
 <footer class="py-8 pb-24" style="border-top:1px solid var(--line)">
   <div class="max-w-[1240px] mx-auto px-6 flex flex-wrap items-center justify-between gap-5 t-xs">
     <div>© Predict2u 2026 · Records, not wagers. Bet responsibly. 18+</div>
@@ -325,6 +370,7 @@ a{ color:inherit; text-decoration:none; }
 <script src="banker-engine.js"></script>
 <script src="data.js"></script>
 <script src="slip.js"></script>
+<script src="p2u-intelligence.js"></script>
 <script>
 /* ===========================================================================
    BOARD — the design, matched. The numbers, real.
@@ -393,19 +439,30 @@ a{ color:inherit; text-decoration:none; }
     }).filter(Boolean).sort((a,b)=>(b.banker?1:0)-(a.banker?1:0)||(b.conf||0)-(a.conf||0));
   }
 
-  const resultOf=(m,mk)=>{ if(m.homeGoals==null) return '';
+  const LIVE_CODES=new Set(['1H','HT','2H','ET','BT','P','LIVE']);
+  const isLive=m=>LIVE_CODES.has(String(m&&m.status||'').toUpperCase());
+  const liveClock=m=>{
+    const st=String(m&&m.status||'').toUpperCase();
+    if(st==='HT')return'HT';
+    if(st==='BT')return'BREAK';
+    if(st==='P')return'PENALTIES';
+    const el=Number(m&&m.elapsed),ex=Number(m&&m.elapsedExtra);
+    return Number.isFinite(el)?`${el}${Number.isFinite(ex)&&ex>0?`+${ex}`:''}'`:(m.statusLong||st||'LIVE');
+  };
+  const resultOf=(m,mk)=>{ if(m.homeGoals==null||isLive(m)) return '';
     try{ return settle(mk,m.homeGoals,m.awayGoals,m.status,m)||''; }catch(e){ return ''; } };
   function statusTag(m,mk){
-    if(m.homeGoals==null)
-      return ['1H','2H','HT','ET','P','LIVE'].includes(String(m.status))
-        ? '<span class="tag tag-live"><i class="fa-solid fa-circle text-[5px]"></i> LIVE</span>'
-        : '<span class="tag tag-pend"><i class="fa-solid fa-circle text-[5px]"></i> PENDING</span>';
+    if(isLive(m))return `<span class="tag tag-live">LIVE · ${esc(liveClock(m))}</span>`;
+    if(m.homeGoals==null)return '<span class="tag tag-pend"><i class="fa-solid fa-circle text-[5px]"></i> PENDING</span>';
     const r=resultOf(m,mk);
     if(r==='Won')  return '<span class="tag tag-won"><i class="fa-solid fa-circle-check text-[9px]"></i> WON</span>';
     if(r==='Lost') return '<span class="tag tag-lost"><i class="fa-solid fa-circle-xmark text-[9px]"></i> LOST</span>';
     if(r==='Void') return '<span class="tag tag-void">VOID</span>';
     return '';
   }
+  const liveScoreHtml=m=>isLive(m)&&m.homeGoals!=null&&m.awayGoals!=null
+    ? `<div class="live-score-board"><span>${m.homeGoals}</span><span style="color:var(--muted)">–</span><span>${m.awayGoals}</span><small>${esc(liveClock(m))}</small></div>`
+    : '';
   const ko=m=>{ if(!m.kickoff) return '';
     try{ return new Date(m.kickoff).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',hour12:false})+' GMT'; }catch(e){ return ''; } };
   const ODDS={'Home Win':'home','Draw':'draw','Away Win':'away','Over 1.5':'over15','Over 2.5':'over25','Over 3.5':'over35','Under 1.5':'under15','Under 2.5':'under25','Under 3.5':'under35','BTTS Yes':'bttsYes','BTTS No':'bttsNo','Double Chance 1X':'dc1x','Double Chance 12':'dc12','Double Chance X2':'dcx2','First Half Over 0.5':'fhOver05','First Half Under 1.5':'fhUnder15'};
@@ -440,6 +497,7 @@ a{ color:inherit; text-decoration:none; }
           ${statusTag(p.m,p.market)}
         </div>
         <div class="t-h3" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">${crest(p.m.homeLogo)}<span>${esc(p.m.home)}</span><span style="color:var(--muted);font-weight:500">vs</span>${crest(p.m.awayLogo)}<span>${esc(p.m.away)}</span></div>
+        ${liveScoreHtml(p.m)}
         <div class="t-xs mt-1.5 trunc" style="display:flex;align-items:center;gap:7px">${crest(p.m.flag,'lflag')}<span class="trunc">${esc(p.m.league||'')}</span></div>
         <div class="flex items-center justify-between gap-3 mt-4">
           <span class="mkt">${esc(shortMk(p.market))}</span>

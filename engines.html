@@ -71,6 +71,25 @@ a{ color:inherit; text-decoration:none; }
   #matches-grid{grid-template-columns:minmax(0,1fr)!important}
   #snapshot{padding-left:14px!important;padding-right:14px!important;padding-top:26px!important}
 }
+
+/* Transparency v150 */
+.conflict-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 9px;border-radius:999px;border:1px solid var(--line-2);font-size:10px;font-weight:800;white-space:nowrap}
+.conflict-pill.strong,.conflict-pill.good{color:var(--em);border-color:var(--em-line);background:var(--em-dim)}
+.conflict-pill.warn{color:var(--amber);border-color:rgba(251,191,36,.28);background:var(--amber-dim)}
+.conflict-pill.danger{color:var(--loss);border-color:rgba(244,99,110,.30);background:rgba(244,99,110,.10)}
+.conflict-pill.quiet{color:var(--muted)}
+.proof-link{font-size:12px;padding:9px 12px;border-radius:14px;border:1px solid var(--em-line);color:var(--em);background:var(--em-dim);display:inline-flex;align-items:center;gap:6px}
+.coverage-line{height:5px;border-radius:99px;background:#19191f;overflow:hidden;margin-top:8px}.coverage-line span{display:block;height:100%;background:var(--em);border-radius:99px}
+
+
+/* Live scores v151 */
+.tag-live{position:relative;font-variant-numeric:tabular-nums}
+.tag-live::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 0 0 rgba(52,211,153,.55);animation:livePulse 1.5s infinite}
+@keyframes livePulse{70%{box-shadow:0 0 0 7px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+.live-score{display:flex;align-items:baseline;gap:8px;margin-top:9px;font-family:'Space Grotesk',Inter,sans-serif;font-size:25px;font-weight:800;font-variant-numeric:tabular-nums;color:var(--ink)}
+.live-score small{font-family:Inter,sans-serif;font-size:11px;letter-spacing:.08em;color:var(--em)}
+.live-updated{font-size:10px;color:var(--muted);margin-top:3px}
+
 </style>
 </head>
 <body>
@@ -88,6 +107,9 @@ a{ color:inherit; text-decoration:none; }
       <a href="board.html" class="hover:text-white transition-colors">Overview</a>
       <a href="#board" class="pb-1 font-medium" style="color:var(--em);border-bottom:2px solid var(--em)">Full Board</a>
       <a href="board.html#engines" class="hover:text-white transition-colors">Engines</a>
+      <a href="proof.html" class="hover:text-white transition-colors">Proof</a>
+      <a href="scorecards.html" class="hover:text-white transition-colors">Scorecards</a>
+      <a href="league-dna.html" class="hover:text-white transition-colors">League DNA</a>
       <a href="community.html" class="hover:text-white transition-colors">Community</a>
     </div>
     <div class="ml-auto lg:ml-0 flex items-center gap-4">
@@ -144,6 +166,8 @@ a{ color:inherit; text-decoration:none; }
       <div class="flex flex-wrap gap-1.5 mb-6" id="engine-filters"></div>
       <div class="text-[10.5px] uppercase tracking-[.12em] font-medium mb-2.5" style="color:var(--muted)">Market</div>
       <div class="flex flex-wrap gap-1.5 mb-6" id="market-filters"></div>
+      <div class="text-[10.5px] uppercase tracking-[.12em] font-medium mb-2.5" style="color:var(--muted)">Conflict</div>
+      <div class="flex flex-wrap gap-1.5 mb-6" id="conflict-filters"></div>
       <div class="text-[10.5px] uppercase tracking-[.12em] font-medium mb-2.5" style="color:var(--muted)">Date</div>
       <div class="flex flex-wrap gap-1.5" id="date-filters"></div>
       <div class="mt-6 pt-5 text-[12.5px]" style="border-top:1px solid var(--line);color:var(--ink-2)">
@@ -174,6 +198,7 @@ a{ color:inherit; text-decoration:none; }
 <script src="banker-engine.js"></script>
 <script src="data.js"></script>
 <script src="slip.js"></script>
+<script src="p2u-intelligence.js"></script>
 <script>
 /* ===========================================================================
    FULL BOARD — the design's engines page. Real engines, real data.
@@ -195,6 +220,8 @@ a{ color:inherit; text-decoration:none; }
   const ENG = (window.P2U_ENGINE_REGISTRY || []).map(e => [e.key, e.name, e.fn])
     .filter(e => typeof window[e[2]] === 'function');
   const TOTAL=ENG.length;
+  const INTEL_CACHE={};
+  const intelOf=m=>INTEL_CACHE[keyOf(m)]||(INTEL_CACHE[keyOf(m)]=P2UIntelligence.analyseMatch(m));
 
   const todayISO=new Date().toISOString().slice(0,10);
   const byDate={};
@@ -207,38 +234,51 @@ a{ color:inherit; text-decoration:none; }
   let engineF=params.get('engine')||'all';
   if(engineF!=='all'&&engineF!=='top'&&!ENG.some(e=>e[0]===engineF)) engineF='all';
   if(engineF==='top') engineF='all';
-  let marketF='all', q='';
+  let marketF='all', conflictF='all', q='';
+  const leagueQ=params.get('league')||'';
   const keyOf=m=>(m.id!=null?'f'+m.id:m.home+'|'+m.away+'|'+m.matchDate);
 
-  /* every engine's opinion on the day's matches, kept whole */
+  /* every engine's opinion, grouped by exact market */
   function allPicks(){
-    const rows=[];
     const by={};
     for(const m of dayMatches()){
-      for(const e of ENG){
-        let r; try{ r=window[e[2]](m); }catch(x){ continue; }
-        if(!r||!r.bet) continue;
-        const k=keyOf(m)+'|'+r.primary;
-        by[k]=by[k]||{m,market:r.primary,engines:[],out:r,banker:false};
-        by[k].engines.push(e[1]);
-        if(r.banker) by[k].banker=true;
+      if(leagueQ&&m.league!==leagueQ) continue;
+      const intel=intelOf(m);
+      for(const v of intel.votes.filter(x=>x.bet)){
+        const k=keyOf(m)+'|'+v.market;
+        by[k]=by[k]||{m,market:v.market,engines:[],engineKeys:[],outputs:[],out:v.out,banker:false,intel};
+        by[k].engines.push(v.name);
+        by[k].engineKeys.push(v.key);
+        by[k].outputs.push(v);
+        if(v.out&&v.out.banker)by[k].banker=true;
       }
     }
     return Object.values(by).sort((a,b)=>b.engines.length-a.engines.length);
   }
 
-  const resultOf=(m,mk)=>{ if(m.homeGoals==null) return '';
+  const LIVE_CODES=new Set(['1H','HT','2H','ET','BT','P','LIVE']);
+  const isLive=m=>LIVE_CODES.has(String(m&&m.status||'').toUpperCase());
+  const liveClock=m=>{
+    if(window.P2UIntelligence&&P2UIntelligence.liveClock)return P2UIntelligence.liveClock(m);
+    const st=String(m&&m.status||'').toUpperCase();
+    if(st==='HT')return'HT';
+    const el=Number(m&&m.elapsed),ex=Number(m&&m.elapsedExtra);
+    return Number.isFinite(el)?`${el}${Number.isFinite(ex)&&ex>0?`+${ex}`:''}'`:st||'LIVE';
+  };
+  const resultOf=(m,mk)=>{ if(m.homeGoals==null||isLive(m)) return '';
     try{ return settle(mk,m.homeGoals,m.awayGoals,m.status,m)||''; }catch(e){ return ''; } };
   function statusTag(m,mk){
-    if(m.homeGoals==null)
-      return ['1H','2H','HT','ET','P','LIVE'].includes(String(m.status))
-        ? '<span class="tag tag-live">LIVE</span>':'<span class="tag tag-pend">PENDING</span>';
+    if(isLive(m))return `<span class="tag tag-live">LIVE · ${esc(liveClock(m))}</span>`;
+    if(m.homeGoals==null)return '<span class="tag tag-pend">PENDING</span>';
     const r=resultOf(m,mk);
     if(r==='Won') return '<span class="tag tag-won">WON</span>';
     if(r==='Lost') return '<span class="tag tag-lost">LOST</span>';
     if(r==='Void') return '<span class="tag tag-void">VOID</span>';
     return '';
   }
+  const liveScoreHtml=m=>isLive(m)&&m.homeGoals!=null&&m.awayGoals!=null
+    ? `<div class="live-score"><span>${m.homeGoals}</span><span style="color:var(--muted)">–</span><span>${m.awayGoals}</span><small>${esc(liveClock(m))}</small></div><div class="live-updated">Current API snapshot</div>`
+    : '';
   const ko=m=>{ if(!m.kickoff) return '';
     try{ return new Date(m.kickoff).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',hour12:false}); }catch(e){ return ''; } };
   const ODDS={'Home Win':'home','Draw':'draw','Away Win':'away','Over 1.5':'over15','Over 2.5':'over25','Over 3.5':'over35','Under 1.5':'under15','Under 2.5':'under25','Under 3.5':'under35','BTTS Yes':'bttsYes','BTTS No':'bttsNo','Double Chance 1X':'dc1x','Double Chance 12':'dc12','Double Chance X2':'dcx2','First Half Over 0.5':'fhOver05','First Half Under 1.5':'fhUnder15'};
@@ -259,6 +299,14 @@ a{ color:inherit; text-decoration:none; }
     if(engineF!=='all'){ const name=(ENG.find(e=>e[0]===engineF)||[])[1];
       rows=rows.filter(p=>p.engines.includes(name)); }
     if(marketF!=='all') rows=rows.filter(p=>marketTag(p.market)===marketF);
+    if(conflictF!=='all') rows=rows.filter(p=>{
+      const code=p.intel.conflict.code;
+      if(conflictF==='agree')return /AGREEMENT/.test(code);
+      if(conflictF==='split')return code==='SPLIT_DECISION';
+      if(conflictF==='danger')return code==='MARKET_CONFLICT'||code==='DATA_CONFLICT';
+      if(conflictF==='quiet')return code==='NO_BET';
+      return true;
+    });
     if(q) rows=rows.filter(p=>(p.m.home+' '+p.m.away+' '+(p.m.league||'')).toLowerCase().includes(q));
     return rows;
   }
@@ -271,16 +319,17 @@ a{ color:inherit; text-decoration:none; }
       const btn=(p.m.homeGoals==null&&typeof P2USlip!=='undefined')?P2USlip.btn(p.m,p.market):'';
       return `<div class="glass card-h rounded-3xl p-5 rise" style="animation-delay:${i*45}ms;border-color:var(--em-line)">
         <div class="flex items-center justify-between gap-2 mb-3">
-          <span class="ebadge">${p.engines.length}/${TOTAL} engines</span>
+          <div class="flex items-center gap-1.5 flex-wrap"><span class="ebadge">${p.engines.length}/${TOTAL} engines</span><span class="conflict-pill ${p.intel.conflict.level}">${esc(p.intel.conflict.label)}</span></div>
           ${statusTag(p.m,p.market)}
         </div>
         <div class="font-semibold text-[15.5px] leading-snug">${esc(p.m.home)}<br/><span style="color:var(--em)">vs</span> ${esc(p.m.away)}</div>
+        ${liveScoreHtml(p.m)}
         <div class="text-[12px] mt-1.5 trunc" style="color:var(--muted)">${esc(p.m.league||'')}</div>
         <div class="flex items-center justify-between gap-2 mt-4">
           <span class="font-semibold text-[14px]" style="color:var(--em)">${esc(shortMk(p.market))}</span>
           <span class="mono">${price?price.toFixed(2):'—'}</span>
         </div>
-        <div class="mt-3">${btn}</div>
+        <div class="mt-3 flex items-center gap-2 flex-wrap">${btn}<a class="proof-link" href="${P2UIntelligence.proofHref(p.m)}"><i class="fa-solid fa-shield-halved"></i> Proof</a></div>
       </div>`;
     }).join(''):'<div class="col-span-full glass rounded-3xl p-8 text-center text-sm" style="color:var(--ink-2)">No multi-engine consensus bankers on this date yet.</div>';
   }
@@ -308,6 +357,7 @@ a{ color:inherit; text-decoration:none; }
               <span class="trunc" style="color:var(--ink-2)">${esc(p.m.league||'')}</span>
             </div>
             <div class="font-semibold text-[17px] leading-tight mt-1.5">${esc(p.m.home)}<br/><span style="color:var(--em)">vs</span> ${esc(p.m.away)}</div>
+            ${liveScoreHtml(p.m)}
           </div>
           ${statusTag(p.m,p.market)}
         </div>
@@ -317,15 +367,19 @@ a{ color:inherit; text-decoration:none; }
               <div class="font-semibold" style="color:var(--em)">${esc(shortMk(p.market))}</div>
               <div class="flex items-center gap-1.5 text-[12px] mt-1.5 flex-wrap">
                 <span class="ebadge">${p.engines.length}/${TOTAL} engine${p.engines.length>1?'s':''}</span>
+                <span class="conflict-pill ${p.intel.conflict.level}">${esc(p.intel.conflict.label)}</span>
                 <span style="color:var(--muted)">•</span>
                 <span class="mono">${price?price.toFixed(2):'—'}</span>
               </div>
             </div>
             <div class="flex gap-1.5 shrink-0">
               ${btn}
+              <a class="proof-link" href="${P2UIntelligence.proofHref(p.m)}" title="Open Proof Mode"><i class="fa-solid fa-shield-halved"></i><span class="hidden sm:inline">Proof</span></a>
               <button class="btn-info" data-det="${id}" title="Why this pick"><i class="fa-solid fa-info text-[11px]"></i></button>
             </div>
           </div>
+          <div class="coverage-line" title="Data reliability ${p.intel.coverage.score}%"><span style="width:${p.intel.coverage.score}%"></span></div>
+          <div class="flex justify-between text-[10.5px] mt-1.5" style="color:var(--muted)"><span>${esc(p.intel.coverage.label)}</span><span>${p.intel.coverage.score}%</span></div>
           <div class="details" id="${id}"></div>
         </div>
       </div>`;
@@ -342,7 +396,10 @@ a{ color:inherit; text-decoration:none; }
         ${(o.grade||o.score||o.rule)?`<div class="text-[12px] mb-1" style="color:var(--muted)">${o.grade?`Grade <span style="color:var(--ink)">${esc(o.grade)}</span>`:''}${o.score?` · ${esc(o.score)}`:''}${o.rule?` · rule ${esc(o.rule)}`:''}</div>`:''}
         ${reasons||'<div class="reason">Published without extended reasoning.</div>'}
         ${checks}
-        <div class="reason" style="font-size:11.5px;color:var(--muted)">Engines: ${esc(p.engines.join(', '))}. A banker fits our rules — it is not a sure win.</div>
+        <div class="reason"><b style="color:var(--ink)">Conflict detector:</b> ${esc(p.intel.conflict.label)} — ${esc(p.intel.conflict.reason)}</div>
+        <div class="reason"><b style="color:var(--ink)">Alternative exact markets:</b> ${esc(p.intel.conflict.groups.filter(g=>g.market!==p.market).map(g=>`${g.market} (${g.count})`).join(', ')||'None')}</div>
+        <div class="reason"><b style="color:var(--ink)">Data reliability:</b> ${p.intel.coverage.score}% · ${esc(p.intel.coverage.label)}</div>
+        <div class="reason" style="font-size:11.5px;color:var(--muted)">Engines: ${esc(p.engines.join(', '))}. A qualified pick is not a guaranteed result. <a href="${P2UIntelligence.proofHref(p.m)}" style="color:var(--em)">Open full proof →</a></div>
       </div>`;
       el.classList.add('open');
     }));
@@ -374,6 +431,10 @@ a{ color:inherit; text-decoration:none; }
     $('market-filters').innerHTML=mfs.map(([k,n])=>`<button class="fchip${k===marketF?' on':''}" data-mf="${k}">${esc(n)}</button>`).join('');
     $('market-filters').querySelectorAll('[data-mf]').forEach(b=>b.addEventListener('click',()=>{
       marketF=b.dataset.mf; renderFilters(); renderMatches(); }));
+    const cfs=[['all','All'],['agree','Agreement'],['split','Split'],['danger','Conflict']];
+    $('conflict-filters').innerHTML=cfs.map(([k,n])=>`<button class="fchip${k===conflictF?' on':''}" data-cf="${k}">${n}</button>`).join('');
+    $('conflict-filters').querySelectorAll('[data-cf]').forEach(b=>b.addEventListener('click',()=>{
+      conflictF=b.dataset.cf; renderFilters(); renderMatches(); }));
     const win=dates.filter(d=>Math.abs((new Date(d)-new Date(todayISO))/864e5)<=3).slice(0,7);
     $('date-filters').innerHTML=win.map(d=>{
       const n=(byDate[d]||[]).length;
