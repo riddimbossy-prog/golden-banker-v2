@@ -1,0 +1,36 @@
+{
+  "version": "v189",
+  "build": "Global Football News, Transfers, Discussion and Slip Visibility",
+  "generatedAt": "2026-07-12T07:47:28.674782+00:00",
+  "static_validation": {
+    "repository_preflight": "passed \u2014 79 required public files",
+    "performance_budget": "passed \u2014 0 errors, 0 warnings, 28 checks",
+    "repository_audit": "passed \u2014 0 critical, 0 warnings, 257 checks",
+    "javascript_syntax": "passed for all repository JavaScript files",
+    "service_worker_cache": "predict2u-v189"
+  },
+  "features": [
+    "fifth global News tab",
+    "global football and transfer feed",
+    "source-attributed story cards",
+    "signed-in article comments",
+    "in-app news alerts",
+    "background transfer and breaking-news push",
+    "separate football and transfer notification preferences",
+    "scheduled RSS/Atom Edge Function sync",
+    "high-contrast Add to Slip action"
+  ],
+  "not_executed_here": [
+    "live RSS feed fetches",
+    "Supabase SQL execution",
+    "Supabase Edge Function deployment",
+    "real push delivery",
+    "Playwright browser matrix"
+  ],
+  "security": {
+    "service_role_key_in_browser": false,
+    "news_sync_secret_in_browser": false,
+    "comments_protected_by_rls": true,
+    "source_links_open_with_noopener_noreferrer_nofollow": true
+  }
+}

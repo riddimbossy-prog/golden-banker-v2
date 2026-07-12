@@ -3,7 +3,7 @@
    protects each user's cloud state. Never place a service-role key in browser code. */
 (function(){
   'use strict';
-  const VERSION='v186';
+  const VERSION='v189';
   const CONFIG=window.P2U_CLOUD_CONFIG||{};
   const META_KEY='p2u-cloud-local-meta-v180';
   const LOCAL_FOLLOWS_KEY='p2u-local-follows-v180';
@@ -12,7 +12,7 @@
   const SLIP_KEY='p2u_slip_v1';
   const STAKE_KEY='p2u_stake_v1';
   const TAIL_KEY='p2u_tail_v1';
-  const SETTINGS_KEYS=['enabled','browser','boardUpdates','matchStatus','favoriteLeagues','favoriteEngines','communityWins','followedUsers','verifiedOnly','trendingWins','paused','mutedUntil'];
+  const SETTINGS_KEYS=['enabled','browser','boardUpdates','matchStatus','favoriteLeagues','favoriteEngines','communityWins','footballNews','transferNews','followedUsers','verifiedOnly','trendingWins','paused','mutedUntil'];
   let client=null,session=null,profile=null,mounted=false,panel=null,backdrop=null,launcher=null;
   let follows=new Map(),savedSlips=[],syncTimer=null,restoring=false,syncState='local',lastError='';
 

@@ -3,7 +3,7 @@
    The VAPID private key never appears in browser code. */
 (function(){
   'use strict';
-  const VERSION='v187';
+  const VERSION='v189';
   const CONFIG=window.P2U_CLOUD_CONFIG||{};
   const LOCAL_KEY='p2u-push-local-v183';
   const PREF_KEY='p2u-personalization-v167';
@@ -13,7 +13,7 @@
   const record=v=>v&&typeof v==='object'&&!Array.isArray(v)?v:{};
   const esc=v=>String(v==null?'':v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const supports=()=>Boolean('serviceWorker'in navigator&&'PushManager'in window&&'Notification'in window);
-  const local=()=>Object.assign({board_updates:true,match_status:true,favorite_leagues:true,favorite_engines:true,community_wins:true,followed_users:false,announcements:true,verified_only:false,quiet_enabled:false,quiet_start:'22:00',quiet_end:'07:00'},record(safeParse(localStorage.getItem(LOCAL_KEY),{})));
+  const local=()=>Object.assign({board_updates:true,match_status:true,favorite_leagues:true,favorite_engines:true,community_wins:true,followed_users:false,announcements:true,football_news:true,transfer_news:true,verified_only:false,quiet_enabled:false,quiet_start:'22:00',quiet_end:'07:00'},record(safeParse(localStorage.getItem(LOCAL_KEY),{})));
   const saveLocal=v=>{try{localStorage.setItem(LOCAL_KEY,JSON.stringify(v))}catch(_){}};
   const b64ToBytes=value=>{const pad='='.repeat((4-value.length%4)%4);const raw=atob((value+pad).replace(/-/g,'+').replace(/_/g,'/'));return Uint8Array.from([...raw].map(c=>c.charCodeAt(0)))};
   const deviceLabel=()=>{const ua=navigator.userAgent||'';if(/android/i.test(ua))return'Android device';if(/iphone|ipad/i.test(ua))return'Apple device';if(/windows/i.test(ua))return'Windows browser';if(/macintosh/i.test(ua))return'Mac browser';return'Web browser'};
@@ -56,6 +56,8 @@
       community_wins:prefs.community_wins!==false,
       followed_users:Boolean(prefs.followed_users),
       announcements:prefs.announcements!==false,
+      football_news:prefs.football_news!==false,
+      transfer_news:prefs.transfer_news!==false,
       verified_only:Boolean(prefs.verified_only),
       quiet_enabled:Boolean(prefs.quiet_enabled),
       quiet_start:prefs.quiet_start||'22:00',quiet_end:prefs.quiet_end||'07:00',
@@ -112,7 +114,7 @@
     const devices=subscriptions.filter(x=>x.enabled).slice(0,6);
     const setupCopy=!session?'Sign in to sync notification settings and devices.':!publicConfig?.enabled?'The owner still needs to add the VAPID public key and deploy the Edge Function.':'Receive selected updates even when Predict2U is closed.';
     return `<section id="p2u-push-account-card" class="p2u-account-page-card full p2u-push-card"><div class="p2u-push-head"><div class="p2u-push-title"><span class="p2u-push-title-icon">🔔</span><div><h2>Push notifications</h2><p>${esc(setupCopy)}</p></div></div><span class="p2u-push-state ${cls}">${esc(label)}</span></div>`+
-      `<div class="p2u-push-grid">${option('board_updates','Board published','Get notified when a new daily board goes live.')}${option('match_status','Match status','Postponed, cancelled, live and final updates for favorites.')}${option('favorite_leagues','Favorite leagues','Use your saved leagues for match-status delivery.')}${option('favorite_engines','Favorite engines','Use your saved engines for match-status delivery.')}${option('community_wins','Community records','Verified Community record updates.')}${option('announcements','Announcements','Important compact updates from Predict2U.')}${option('followed_users','Followed users','Updates from Community members you follow.')}${option('verified_only','Verified only','Limit Community pushes to verified records.')}</div>`+
+      `<div class="p2u-push-grid">${option('board_updates','Board published','Get notified when a new daily board goes live.')}${option('match_status','Match status','Postponed, cancelled, live and final updates for favorites.')}${option('favorite_leagues','Favorite leagues','Use your saved leagues for match-status delivery.')}${option('favorite_engines','Favorite engines','Use your saved engines for match-status delivery.')}${option('community_wins','Community records','Verified Community record updates.')}${option('football_news','Football news','Breaking football stories and major issues.')}${option('transfer_news','Transfer news','Confirmed moves, deals and major transfer updates.')}${option('announcements','Announcements','Important compact updates from Predict2U.')}${option('followed_users','Followed users','Updates from Community members you follow.')}${option('verified_only','Verified only','Limit Community pushes to verified records.')}</div>`+
       `<div class="p2u-push-quiet">${option('quiet_enabled','Quiet hours','Pause delivery during your selected local hours.')}<div class="p2u-push-field"><label>From</label><input type="time" data-push-pref="quiet_start" value="${esc(prefs.quiet_start||'22:00')}"></div><div class="p2u-push-field"><label>Until</label><input type="time" data-push-pref="quiet_end" value="${esc(prefs.quiet_end||'07:00')}"></div></div>`+
       `<div class="p2u-push-actions"><button class="p2u-push-btn" data-push-enable ${!session||!publicConfig?.enabled?'disabled':''}>${subscribed?'Refresh this device':'Enable on this device'}</button>${subscribed?'<button class="p2u-push-btn danger" data-push-disable>Disable this device</button>':''}<button class="p2u-push-btn secondary" data-push-save ${!session?'disabled':''}>Save preferences</button></div>`+
       `<div class="p2u-push-message" data-push-message></div>`+

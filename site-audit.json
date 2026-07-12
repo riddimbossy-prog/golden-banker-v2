@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-12T07:19:33.829Z",
-  "auditVersion": "v188",
-  "cacheVersion": "predict2u-v188",
+  "generatedAt": "2026-07-12T07:48:06.888Z",
+  "auditVersion": "v189",
+  "cacheVersion": "predict2u-v189",
   "engineCount": 16,
   "critical": [],
   "warnings": [],
-  "passedCount": 226
+  "passedCount": 257
 }

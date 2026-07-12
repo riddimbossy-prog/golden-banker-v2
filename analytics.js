@@ -188,6 +188,8 @@
       const href=el.getAttribute&&el.getAttribute('href')||'';
       if(/share|copy link|whatsapp|telegram|facebook|\bx\b/.test(text))track('share_opened',Object.assign(entityFrom(el),{action:text.slice(0,60)}));
       else if(/\+\s*slip|add.*slip/.test(text))track('slip_added',entityFrom(el));
+      else if(el.closest('[data-news-discuss]'))track('news_discussion_opened',entityFrom(el));
+      else if(el.closest('[data-news-share]'))track('news_shared',entityFrom(el));
       else if(/personal|my board/.test(text))track('personalization_opened',{action:text.slice(0,60)});
       else if(/alert|notification/.test(text))track('alert_center_opened',{action:text.slice(0,60)});
       else if(/install/.test(text))track('install_prompt_shown',{action:text.slice(0,60)});

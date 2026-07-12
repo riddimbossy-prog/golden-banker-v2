@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <meta name="theme-color" content="#07090d"/>
+  <meta name="description" content="Global football news, transfer updates and community discussion on Predict2U."/>
+  <meta property="og:title" content="Predict2U Football News & Transfers"/>
+  <meta property="og:description" content="Global football headlines, transfer updates and community discussion."/>
+  <meta property="og:image" content="https://predict2u.com/social-preview.png"/>
+  <meta property="og:url" content="https://predict2u.com/news.html"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Predict2U Football News & Transfers"/>
+  <meta name="twitter:description" content="Global football headlines, transfer updates and community discussion."/>
+  <link rel="canonical" href="https://predict2u.com/news.html"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <title>Predict2U • Football News & Transfers</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin/>
+  <link rel="stylesheet" href="brand-experience.css"/>
+  <link rel="stylesheet" href="site-health.css"/>
+  <link rel="stylesheet" href="performance-freshness.css"/>
+  <link rel="stylesheet" href="smart-alerts.css"/>
+  <link rel="stylesheet" href="mobile-app-nav.css"/>
+  <link rel="stylesheet" href="account-cloud.css"/>
+  <link rel="stylesheet" href="growth-sharing.css"/>
+  <link rel="stylesheet" href="site-controls.css"/>
+  <link rel="stylesheet" href="brand-performance.css"/>
+  <link rel="stylesheet" href="analytics.css"/>
+  <link rel="stylesheet" href="news.css"/>
+  <script src="https://kit.fontawesome.com/a2e0e9f1b8.js" crossorigin="anonymous"></script>
+</head>
+<body class="p2u-news-page">
+<header class="p2u-news-top">
+  <div class="p2u-news-top-inner">
+    <a href="index.html" class="p2u-news-brand"><img src="predict2u-logo.png" alt="Predict2U"/></a>
+    <nav class="top-nav" aria-label="Desktop navigation">
+      <a href="index.html">Board</a>
+      <a href="engines.html">Games</a>
+      <a href="scorecards.html">Results</a>
+      <a href="community.html">Community</a>
+      <a href="news.html" aria-current="page">News</a>
+    </nav>
+    <a id="user-chip" class="p2u-news-account" href="account.html"><span id="user-name">Sign in</span><span id="user-av"><i class="fa-solid fa-user"></i></span></a>
+  </div>
+</header>
+
+<main class="p2u-news-wrap">
+  <section class="p2u-news-hero">
+    <div><div class="p2u-news-kicker">GLOBAL FOOTBALL DESK</div><h1>News, transfers and the conversation.</h1><p>Short, attributed updates from football publishers around the world. Open the original source for full reporting, then discuss it with the Predict2U community.</p></div>
+    <div class="p2u-news-live"><span></span><strong>Auto-updated</strong><small id="news-updated">Connecting…</small></div>
+  </section>
+
+  <section class="p2u-news-controls" aria-label="News filters">
+    <div class="p2u-news-tabs" role="tablist">
+      <button class="is-active" data-news-filter="all" role="tab">Latest</button>
+      <button data-news-filter="transfer" role="tab">Transfers</button>
+      <button data-news-filter="news" role="tab">Football</button>
+      <button data-news-filter="breaking" role="tab">Breaking</button>
+    </div>
+    <label class="p2u-news-search"><i class="fa-solid fa-magnifying-glass"></i><input id="news-search" type="search" placeholder="Search clubs, leagues or players…" autocomplete="off"/></label>
+  </section>
+
+  <section id="news-featured" class="p2u-news-featured" aria-live="polite"></section>
+  <section>
+    <div class="p2u-news-section-head"><div><div class="p2u-news-kicker">LIVE FEED</div><h2 id="news-list-title">Latest football stories</h2></div><button id="news-refresh" class="p2u-news-ghost"><i class="fa-solid fa-rotate"></i> Refresh</button></div>
+    <div id="news-list" class="p2u-news-grid"><div class="p2u-news-empty">Loading the football desk…</div></div>
+    <div class="p2u-news-load-wrap"><button id="news-load-more" class="p2u-news-button" hidden>Load more</button></div>
+  </section>
+</main>
+
+<div id="news-discussion-backdrop" class="p2u-news-discussion-backdrop" aria-hidden="true">
+  <aside id="news-discussion-panel" class="p2u-news-discussion" role="dialog" aria-modal="true" aria-label="News discussion"></aside>
+</div>
+
+<footer class="p2u-news-footer"><span>Predict2U Football News</span><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="trust.html">Trust Center</a></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="cloud-config.js"></script>
+<script src="admin-config.js"></script>
+<script src="site-controls.js" defer></script>
+<script src="account-cloud.js" defer></script>
+<script src="news.js" defer></script>
+<script src="brand-experience.js" defer></script>
+<script src="site-health-widget.js" defer></script>
+<script src="performance-freshness.js" defer></script>
+<script src="smart-alerts.js" defer></script>
+<script src="mobile-app-nav.js" defer></script>
+<script src="growth-sharing.js" defer></script>
+<script src="analytics.js" defer></script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));}</script>
+</body>
+</html>

@@ -107,3 +107,15 @@ table .p2u-team-pair-prefix,
 .p2u-community-page #top-picks .p2u-team-pair-prefix,
 .p2u-community-page #popular .p2u-team-pair-prefix{display:inline-flex!important}
 @media(max-width:639px){:root{--p2u-crest-size:20px;--p2u-crest-pair-size:17px}.p2u-card-teams{line-height:1.35}}
+
+
+/* Predict2U v189 — high-contrast slip action. */
+.slip-add,[data-add-slip],#acca-add{
+  background:#77C41C!important;color:#071000!important;border:2px solid #77C41C!important;
+  font-weight:900!important;text-shadow:none!important;box-shadow:0 0 0 1px rgba(119,196,28,.18),0 6px 18px rgba(0,0,0,.26)!important;
+  opacity:1!important;min-height:40px;line-height:1.15;
+}
+.slip-add:hover,[data-add-slip]:hover,#acca-add:hover{background:#8bd32e!important;border-color:#8bd32e!important;color:#071000!important;filter:none!important}
+.slip-add:focus-visible,[data-add-slip]:focus-visible,#acca-add:focus-visible{outline:3px solid rgba(255,255,255,.92)!important;outline-offset:2px!important}
+.slip-add[disabled],[data-add-slip][disabled],#acca-add[disabled]{opacity:.48!important;cursor:not-allowed!important}
+@media(max-width:360px){.slip-add,[data-add-slip],#acca-add{font-size:12px!important;padding:8px 10px!important}}

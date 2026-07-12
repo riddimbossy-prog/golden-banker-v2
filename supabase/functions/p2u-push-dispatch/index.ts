@@ -1,4 +1,4 @@
-// Predict2U v183 — Supabase Edge Function: p2u-push-dispatch
+// Predict2U v189 — Supabase Edge Function: p2u-push-dispatch
 // Required secrets:
 //   VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY, VAPID_SUBJECT,
 //   SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, PUSH_DISPATCH_SECRET
@@ -49,6 +49,8 @@ type Preference = {
   community_wins?: boolean;
   followed_users?: boolean;
   announcements?: boolean;
+  football_news?: boolean;
+  transfer_news?: boolean;
   verified_only?: boolean;
   quiet_enabled?: boolean;
   quiet_start?: string;
@@ -95,6 +97,7 @@ function categoryEnabled(category: string, pref: Preference) {
   if (category === "match") return pref.match_status !== false;
   if (category === "community") return pref.community_wins !== false;
   if (category === "announcement") return pref.announcements !== false;
+  if (category === "news") return true;
   return true;
 }
 
@@ -162,7 +165,7 @@ async function deliverJob(job: PushJob) {
   const logRows: JsonRecord[] = [];
 
   const payload = JSON.stringify({
-    version: "v183",
+    version: "v189",
     id: `push-job-${job.id}`,
     category: job.category,
     title: job.title,
@@ -176,7 +179,10 @@ async function deliverJob(job: PushJob) {
 
   for (const sub of subscriptions) {
     const pref = prefMap.get(sub.user_id) || { user_id: sub.user_id };
+    const newsType = normalize((job.payload || {}).news_type || "news");
+    const newsAllowed = job.category !== "news" || (newsType === "transfer" ? pref.transfer_news !== false : pref.football_news !== false);
     const allowed = categoryEnabled(job.category, pref)
+      && newsAllowed
       && !isQuiet(pref)
       && audienceAllows(job, pref, sub.user_id)
       && !(job.category === "community" && pref.verified_only && !(job.payload as JsonRecord)?.verified);
@@ -191,7 +197,7 @@ async function deliverJob(job: PushJob) {
       await webpush.sendNotification({
         endpoint: sub.endpoint,
         keys: { p256dh: sub.p256dh, auth: sub.auth },
-      }, payload, { TTL: 60 * 60 * 12, urgency: job.category === "match" ? "high" : "normal" });
+      }, payload, { TTL: 60 * 60 * 12, urgency: (job.category === "match" || job.category === "news") ? "high" : "normal" });
       sent++;
       logRows.push({ job_id: job.id, subscription_id: sub.id, user_id: sub.user_id, status: "sent" });
       await admin.from("p2u_push_subscriptions").update({ failure_count: 0, last_error: "", last_seen_at: new Date().toISOString() }).eq("id", sub.id);
@@ -244,7 +250,7 @@ Deno.serve(async (req) => {
     if (error) throw error;
     const results = [];
     for (const job of (jobs || []) as PushJob[]) results.push(await deliverJob(job));
-    return jsonResponse({ ok: true, version: "v183", claimed: results.length, results });
+    return jsonResponse({ ok: true, version: "v189", claimed: results.length, results });
   } catch (error) {
     return jsonResponse({ error: String((error as Error)?.message || error) }, 500);
   }

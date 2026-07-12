@@ -2,7 +2,7 @@
    The publishable key is intentionally public and protected by Supabase RLS.
    Never place a service-role key in browser code. */
 window.P2U_CLOUD_CONFIG = Object.freeze({
-  version: "v186",
+  version: "v189",
   enabled: !/^(localhost|127\.0\.0\.1)$/i.test(location.hostname),
   url: "https://tjbkkhirnwfensqzuvzn.supabase.co",
   publishableKey: "sb_publishable_wjdYr-Px9FmMob7WfEswJQ_wj4cuNkd",
@@ -21,5 +21,9 @@ window.P2U_CLOUD_CONFIG = Object.freeze({
   pushFunction: "p2u-push-dispatch",
   analyticsEventsTable: "p2u_analytics_events",
   analyticsIngestFunction: "p2u_ingest_analytics_events",
-  analyticsOverviewFunction: "p2u_admin_analytics_overview"
+  analyticsOverviewFunction: "p2u_admin_analytics_overview",
+  newsArticlesTable: "p2u_news_articles",
+  newsCommentsTable: "p2u_news_comments",
+  newsSourcesTable: "p2u_news_sources",
+  newsSyncFunction: "p2u-news-sync",
 });

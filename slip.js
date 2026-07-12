@@ -7,7 +7,7 @@
   if(!document.getElementById('p2u-slip-css')){
     const st=document.createElement('style'); st.id='p2u-slip-css';
     st.textContent=`
-  .slip-add{ margin-top:2px; font-size:10px; font-weight:800; letter-spacing:.4px; padding:2px 8px; border-radius:8px; border:1px solid var(--brand,#3ecf6e); color:var(--brand,#3ecf6e); background:transparent; cursor:pointer; }
+  .slip-add{ margin-top:2px; font-size:10px; font-weight:900; letter-spacing:.4px; padding:5px 10px; border-radius:8px; border:2px solid #77C41C; color:#071000; background:#77C41C; cursor:pointer; }
   .slip-add:active{ transform:scale(.95); }
   #p2u-slip-fab{ position:fixed; right:16px; bottom:16px; z-index:60; width:58px; height:58px; border-radius:50%; background:var(--brand,#3ecf6e); color:#06120a; font-weight:900; border:none; box-shadow:0 6px 18px rgba(0,0,0,.45); cursor:pointer; display:none; font-size:20px; }
   #p2u-slip-fab .cnt{ position:absolute; top:-4px; right:-4px; background:#fff; color:#0a3; font-size:11px; font-weight:900; border-radius:10px; min-width:20px; height:20px; line-height:20px; }

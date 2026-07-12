@@ -1,7 +1,7 @@
 {
-  "name": "Predict2u.com \u2014 Know the Game. Predict Better.",
+  "name": "Predict2u.com — Know the Game. Predict Better.",
   "short_name": "Predict2u",
-  "description": "Sixteen transparent prediction engines with Proof Mode and public results.",
+  "description": "Sixteen transparent prediction engines, global football news, transfers, Community discussion and public results.",
   "id": "./",
   "start_url": "./",
   "scope": "./",
@@ -43,7 +43,7 @@
   ],
   "shortcuts": [
     {
-      "name": "Today\u2019s Board",
+      "name": "Today’s Board",
       "url": "./engines.html",
       "icons": [
         {
@@ -65,6 +65,16 @@
     {
       "name": "Community",
       "url": "./community.html",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Football News",
+      "url": "./news.html",
       "icons": [
         {
           "src": "icon-192.png",

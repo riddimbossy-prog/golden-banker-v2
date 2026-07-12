@@ -1,0 +1,37 @@
+name: Predict2U Football News Sync
+
+on:
+  schedule:
+    - cron: "7,27,47 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: predict2u-news-sync
+  cancel-in-progress: false
+
+jobs:
+  sync-news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Sync football news feeds
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          NEWS_SYNC_SECRET: ${{ secrets.NEWS_SYNC_SECRET }}
+        run: |
+          set -euo pipefail
+          test -n "$SUPABASE_URL"
+          test -n "$SUPABASE_SERVICE_ROLE_KEY"
+          test -n "$NEWS_SYNC_SECRET"
+          curl --fail-with-body --silent --show-error \
+            --retry 2 --retry-delay 3 \
+            -X POST "$SUPABASE_URL/functions/v1/p2u-news-sync" \
+            -H "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
+            -H "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
+            -H "Content-Type: application/json" \
+            -H "x-p2u-news-secret: $NEWS_SYNC_SECRET" \
+            --data '{"sourceLimit":20}'

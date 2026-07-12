@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-const pages = ['index.html','board.html','engines.html','proof.html','scorecards.html','league-dna.html','community.html','trust.html','responsible-gambling.html','terms.html','privacy.html','disclaimer.html','404.html'];
+const pages = ['index.html','board.html','engines.html','proof.html','scorecards.html','league-dna.html','community.html','news.html','trust.html','responsible-gambling.html','terms.html','privacy.html','disclaimer.html','404.html'];
 
 test('all public pages have global mobile app navigation', async ({ page }) => {
   await page.setViewportSize({ width: 344, height: 882 });
@@ -8,11 +8,11 @@ test('all public pages have global mobile app navigation', async ({ page }) => {
     await page.goto(`/${file}`, { waitUntil: 'domcontentloaded' });
     await page.waitForFunction(() =>
       document.documentElement.dataset.p2uMobileNavReady === 'true' &&
-      document.querySelectorAll('.p2u-mobile-app-nav a').length === 4,
+      document.querySelectorAll('.p2u-mobile-app-nav a').length === 5,
     null, { timeout: 15000 });
     const nav = page.locator('.p2u-mobile-app-nav');
     await expect(nav, `${file} mobile navigation`).toBeVisible();
-    await expect(nav.locator('span')).toHaveText(['Board','Games','Results','Community']);
+    await expect(nav.locator('span')).toHaveText(['Board','Games','Results','Community','News']);
   }
 });
 

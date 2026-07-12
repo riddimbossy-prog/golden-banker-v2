@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 const pages = [
   'index.html', 'board.html', 'engines.html', 'proof.html', 'scorecards.html',
-  'league-dna.html', 'community.html', 'trust.html',
+  'league-dna.html', 'community.html', 'news.html', 'trust.html',
   'responsible-gambling.html', 'terms.html', 'privacy.html',
   'disclaimer.html', '404.html'
 ];

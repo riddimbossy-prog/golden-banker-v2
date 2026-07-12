@@ -3,7 +3,7 @@
 (function(){
   "use strict";
 
-  const VERSION="v180";
+  const VERSION="v189";
   const STORE="p2u-smart-alerts-v168";
   const MATCH_STORE="p2u-smart-alerts-match-snapshot-v168";
   const COMMUNITY_STORE="p2u-smart-alerts-community-seen-v168";
@@ -18,6 +18,8 @@
     favoriteLeagues:true,
     favoriteEngines:true,
     communityWins:true,
+    footballNews:true,
+    transferNews:true,
     followedUsers:false,
     verifiedOnly:false,
     trendingWins:true,
@@ -61,13 +63,15 @@
     return (h>>>0).toString(36);
   }
   function nowMuted(){ return state.paused || (Number(state.mutedUntil)||0)>Date.now(); }
-  function categoryEnabled(category){
+  function categoryEnabled(category,payload={}){
+    if(category==="news")return state.enabled!==false && (payload.newsType==="transfer"?state.transferNews!==false:state.footballNews!==false);
     const map={board:"boardUpdates",match:"matchStatus",community:"communityWins",favoriteLeague:"favoriteLeagues",favoriteEngine:"favoriteEngines"};
     const key=map[category]||category;
     return state.enabled!==false && state[key]!==false;
   }
   function iconFor(kind){
     if(kind==="community")return"fa-trophy";
+    if(kind==="news")return"fa-newspaper";
     if(kind==="match")return"fa-futbol";
     if(kind==="favorite")return"fa-star";
     if(kind==="board")return"fa-list-check";
@@ -109,7 +113,7 @@
     payload=asRecord(payload);
     options=asRecord(options);
     const category=payload.category||payload.kind||"system";
-    if(!options.force&&(!categoryEnabled(category)||nowMuted()))return null;
+    if(!options.force&&(!categoryEnabled(category,payload)||nowMuted()))return null;
     if(payload.kind==="community"){
       if(state.verifiedOnly&&!payload.verified)return null;
       if(state.followedUsers&&payload.following===false)return null;
@@ -131,7 +135,9 @@
       favorite,
       league:clean(payload.league,70),
       engine:clean(payload.engine,45),
-      user:clean(payload.user,45)
+      user:clean(payload.user,45),
+      newsType:clean(payload.newsType,20),
+      source:clean(payload.source,80)
     };
     state.alerts=[alert].concat(state.alerts).slice(0,MAX_ALERTS);
     persist();
@@ -196,7 +202,8 @@
   }
   function filteredAlerts(){
     if(state.tab==="community")return state.alerts.filter(a=>a.kind==="community");
-    if(state.tab==="system")return state.alerts.filter(a=>a.kind!=="community");
+    if(state.tab==="news")return state.alerts.filter(a=>a.kind==="news");
+    if(state.tab==="system")return state.alerts.filter(a=>a.kind!=="community"&&a.kind!=="news");
     return state.alerts;
   }
   function alertHtml(alert){
@@ -215,8 +222,8 @@
     if(!panel)return;
     const list=filteredAlerts();
     panel.innerHTML=`<div class="p2u-alert-head"><div class="p2u-alert-head-copy"><div class="p2u-alert-kicker">SMART ALERTS · ${VERSION.toUpperCase()}</div><h2>Notifications</h2><p>Quiet updates for records, favorites and match status.</p></div><button class="p2u-alert-icon-button" type="button" data-alert-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button></div>`+
-      `<div class="p2u-alert-tabs"><button class="p2u-alert-tab${state.tab==="all"?" is-active":""}" data-alert-tab="all">All</button><button class="p2u-alert-tab${state.tab==="community"?" is-active":""}" data-alert-tab="community">Community wins</button><button class="p2u-alert-tab${state.tab==="system"?" is-active":""}" data-alert-tab="system">Board</button><span class="p2u-alert-tab-spacer"></span>${unreadCount()?'<button class="p2u-alert-text-button" data-alert-read-all>Mark all read</button>':""}</div>`+
-      `<div class="p2u-alert-list">${list.length?list.map(alertHtml).join(""):'<div class="p2u-alert-empty"><i class="fa-regular fa-bell"></i><b>No alerts yet</b><span>New board updates, match changes and verified Community win records will appear here.</span></div>'}</div>`+
+      `<div class="p2u-alert-tabs"><button class="p2u-alert-tab${state.tab==="all"?" is-active":""}" data-alert-tab="all">All</button><button class="p2u-alert-tab${state.tab==="community"?" is-active":""}" data-alert-tab="community">Community</button><button class="p2u-alert-tab${state.tab==="news"?" is-active":""}" data-alert-tab="news">News</button><button class="p2u-alert-tab${state.tab==="system"?" is-active":""}" data-alert-tab="system">Board</button><span class="p2u-alert-tab-spacer"></span>${unreadCount()?'<button class="p2u-alert-text-button" data-alert-read-all>Mark all read</button>':""}</div>`+
+      `<div class="p2u-alert-list">${list.length?list.map(alertHtml).join(""):'<div class="p2u-alert-empty"><i class="fa-regular fa-bell"></i><b>No alerts yet</b><span>Board updates, match changes, football news and Community records will appear here.</span></div>'}</div>`+
       `<div class="p2u-alert-foot"><button class="p2u-alert-secondary" type="button" data-alert-clear>Clear read</button><button class="p2u-alert-primary" type="button" data-alert-settings><i class="fa-solid fa-sliders"></i> Alert settings</button></div>`;
   }
   function switchRow(key,title,description){
@@ -235,6 +242,7 @@
       `<div class="p2u-alert-settings">`+
       `<section class="p2u-alert-settings-section"><h3>Delivery</h3><p>In-site alerts are always quiet. Browser notifications are optional.</p>${switchRow("enabled","Smart alerts","Show alerts in the Predict2U notification center.")}${switchRow("browser","Browser notifications","Notify only after you grant browser permission.")}<div class="p2u-alert-setting-actions"><button class="p2u-alert-primary" type="button" data-alert-permission>Enable browser alerts</button></div><div class="p2u-alert-status">${esc(notificationStatus())}</div></section>`+
       `<section class="p2u-alert-settings-section"><h3>Board and matches</h3><p>Choose which operational changes deserve an alert.</p>${switchRow("boardUpdates","New board published","Alert when a fresher board is applied.")}${switchRow("matchStatus","Match status changes","Kickoff, live, postponed, cancelled and final status changes.")}${switchRow("favoriteLeagues","Favorite leagues","Prioritize leagues saved in Personalization.")}${switchRow("favoriteEngines","Favorite engines","Prioritize engines saved in Personalization.")}</section>`+
+      `<section class="p2u-alert-settings-section"><h3>Football news</h3><p>Choose which global football updates appear in your notification center.</p>${switchRow("footballNews","Football news","Breaking stories and major football issues.")}${switchRow("transferNews","Transfer news","Confirmed moves, deals and major transfer updates.")}</section>`+
       `<section class="p2u-alert-settings-section"><h3>Community win records</h3><p>Settled records only. Stake and payout information stay hidden in alerts.</p>${switchRow("communityWins","Community wins","Alert when a Community slip is settled as won.")}${switchRow("followedUsers","Users I follow only","Limit Community win alerts to followed users when follow data is available.")}${switchRow("verifiedOnly","Verified records only","Require the Community record to show a verification marker.")}${switchRow("trendingWins","Trending wins","Highlight widely followed or copied winning records.")}</section>`+
       `<section class="p2u-alert-settings-section"><h3>Quiet controls</h3><p>No aggressive popups. Pause everything whenever you need.</p><div class="p2u-alert-setting-actions"><button class="p2u-alert-secondary" type="button" data-alert-mute>${muted?"Unmute now":"Mute for today"}</button><button class="p2u-alert-secondary" type="button" data-alert-pause>${state.paused?"Resume alerts":"Pause all alerts"}</button></div><div class="p2u-alert-status">18+ only. Community slips are public records, not wagers. No money changes hands on Predict2U.</div></section>`+
       `</div><div class="p2u-alert-foot"><button class="p2u-alert-secondary" type="button" data-alert-back><i class="fa-solid fa-arrow-left"></i> Notifications</button><button class="p2u-alert-primary" type="button" data-alert-close>Done</button></div>`;
@@ -349,6 +357,10 @@
     if(!Object.keys(detail).length)return;
     addAlert({id:`community-${detail.id||hash(JSON.stringify(detail))}`,kind:"community",category:"community",title:detail.title||(detail.user?`@${String(detail.user).replace(/^@/,"")} recorded a winning slip`:"Community slip settled as won"),body:detail.body||detail.summary||"The public record was settled by the results system.",user:detail.user,verified:detail.verified,trending:detail.trending,following:detail.following,league:detail.league,engine:detail.engine,url:detail.url||"community.html",createdAt:detail.createdAt});
   }
+  function ingestNews(detail){
+    detail=asRecord(detail);if(!Object.keys(detail).length)return;
+    addAlert({id:`news-${detail.id||hash(JSON.stringify(detail))}`,kind:"news",category:"news",title:detail.title||"Football news",body:detail.body||detail.summary||"A new football story is available.",newsType:detail.newsType||"football",source:detail.source||"",url:detail.url||"news.html",createdAt:detail.createdAt});
+  }
   function signalReady(){
     const ready=Boolean(trigger&&panel);
     document.documentElement.dataset.p2uSmartAlertsReady=ready?'true':'degraded';
@@ -362,6 +374,7 @@
       processMatchChanges();
       window.addEventListener("p2u:data-updated",onDataUpdated);
       window.addEventListener("p2u:community-win",event=>ingestCommunityWin(event.detail));
+      window.addEventListener("p2u:news-alert",event=>ingestNews(event.detail));
       setTimeout(observeCommunity,450);
       updateBadge();
     }finally{signalReady();}
@@ -382,6 +395,7 @@
     settings:()=>open("settings"),
     add:addAlert,
     communityWin:ingestCommunityWin,
+    news:ingestNews,
     markAllRead,
     getState:()=>JSON.parse(JSON.stringify(state)),
     setState:setStateForTesting,
