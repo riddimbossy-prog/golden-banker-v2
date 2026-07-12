@@ -1,0 +1,53 @@
+{
+  "build": "v182",
+  "name": "Backend Admin UI Upgrade",
+  "generated_at": "2026-07-11",
+  "checks": {
+    "repository_preflight": {
+      "status": "passed",
+      "required_public_files": 57
+    },
+    "performance_budget": {
+      "status": "passed",
+      "errors": 0,
+      "warnings": 0,
+      "checks_passed": 22
+    },
+    "javascript_syntax": {
+      "status": "passed",
+      "files": [
+        "backend-admin.js",
+        "tests/admin-control.spec.js",
+        "sw.js"
+      ]
+    },
+    "html_structure": {
+      "status": "passed",
+      "duplicate_ids": 0
+    },
+    "css_parse": {
+      "status": "passed",
+      "parse_errors": 0
+    },
+    "isolated_repository_audit": {
+      "status": "incomplete_in_artifact",
+      "checks_passed": 160,
+      "reason": "The artifact intentionally omits live runtime files data.js and community.js. The changed-files package preserves those files in the deployed repository."
+    },
+    "browser_matrix": {
+      "status": "configured_for_github_actions",
+      "executed_here": false
+    }
+  },
+  "responsive_targets": [
+    "280px phone",
+    "320px phone",
+    "344px Z Fold cover",
+    "360px Android",
+    "tablet",
+    "desktop"
+  ],
+  "database_changes_required": false,
+  "supabase_sql_changes_required": false,
+  "service_worker_cache": "predict2u-v182"
+}

@@ -1,0 +1,1810 @@
+{
+  "method": "static setContent with all local styles inlined; scripts and images disabled",
+  "generatedAt": "2026-07-12T21:34:35.896Z",
+  "checks": 200,
+  "passed": 200,
+  "failed": 0,
+  "failures": [],
+  "results": [
+    {
+      "viewport": "fold-cover-280",
+      "page": "index.html",
+      "overflow": -15,
+      "scrollWidth": 265,
+      "innerWidth": 280,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-cover-280",
+      "page": "board.html",
+      "overflow": -15,
+      "scrollWidth": 265,
+      "innerWidth": 280,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-cover-280",
+      "page": "engines.html",
+      "overflow": -15,
+      "scrollWidth": 265,
+      "innerWidth": 280,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-cover-280",
+      "page": "community.html",
+      "overflow": -15,
+      "scrollWidth": 265,
+      "innerWidth": 280,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-cover-280",
+      "page": "news.html",
+      "overflow": -15,
+      "scrollWidth": 265,
+      "innerWidth": 280,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-cover-280",
+      "page": "proof.html",
+      "overflow": -15,
+      "scrollWidth": 265,
+      "innerWidth": 280,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-cover-280",
+      "page": "scorecards.html",
+      "overflow": -15,
+      "scrollWidth": 265,
+      "innerWidth": 280,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-cover-280",
+      "page": "league-dna.html",
+      "overflow": -15,
+      "scrollWidth": 265,
+      "innerWidth": 280,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-cover-280",
+      "page": "trust.html",
+      "overflow": -15,
+      "scrollWidth": 265,
+      "innerWidth": 280,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-cover-280",
+      "page": "account.html",
+      "overflow": -15,
+      "scrollWidth": 265,
+      "innerWidth": 280,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-cover-280",
+      "page": "profile.html",
+      "overflow": -15,
+      "scrollWidth": 265,
+      "innerWidth": 280,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-cover-280",
+      "page": "admin.html",
+      "overflow": -15,
+      "scrollWidth": 265,
+      "innerWidth": 280,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-cover-280",
+      "page": "terms.html",
+      "overflow": -15,
+      "scrollWidth": 265,
+      "innerWidth": 280,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-cover-280",
+      "page": "privacy.html",
+      "overflow": -15,
+      "scrollWidth": 265,
+      "innerWidth": 280,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-cover-280",
+      "page": "disclaimer.html",
+      "overflow": -15,
+      "scrollWidth": 265,
+      "innerWidth": 280,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-cover-280",
+      "page": "responsible-gambling.html",
+      "overflow": -15,
+      "scrollWidth": 265,
+      "innerWidth": 280,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-cover-280",
+      "page": "share.html",
+      "overflow": -15,
+      "scrollWidth": 265,
+      "innerWidth": 280,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-cover-280",
+      "page": "offline.html",
+      "overflow": -15,
+      "scrollWidth": 265,
+      "innerWidth": 280,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-cover-280",
+      "page": "404.html",
+      "overflow": -15,
+      "scrollWidth": 265,
+      "innerWidth": 280,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-cover-280",
+      "page": "VAPID_KEY_GENERATOR_v183.html",
+      "overflow": -15,
+      "scrollWidth": 265,
+      "innerWidth": 280,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "android-320",
+      "page": "index.html",
+      "overflow": -15,
+      "scrollWidth": 305,
+      "innerWidth": 320,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "android-320",
+      "page": "board.html",
+      "overflow": -15,
+      "scrollWidth": 305,
+      "innerWidth": 320,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "android-320",
+      "page": "engines.html",
+      "overflow": -15,
+      "scrollWidth": 305,
+      "innerWidth": 320,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "android-320",
+      "page": "community.html",
+      "overflow": -15,
+      "scrollWidth": 305,
+      "innerWidth": 320,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "android-320",
+      "page": "news.html",
+      "overflow": -15,
+      "scrollWidth": 305,
+      "innerWidth": 320,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "android-320",
+      "page": "proof.html",
+      "overflow": -15,
+      "scrollWidth": 305,
+      "innerWidth": 320,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "android-320",
+      "page": "scorecards.html",
+      "overflow": -15,
+      "scrollWidth": 305,
+      "innerWidth": 320,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "android-320",
+      "page": "league-dna.html",
+      "overflow": -15,
+      "scrollWidth": 305,
+      "innerWidth": 320,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "android-320",
+      "page": "trust.html",
+      "overflow": -15,
+      "scrollWidth": 305,
+      "innerWidth": 320,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "android-320",
+      "page": "account.html",
+      "overflow": -15,
+      "scrollWidth": 305,
+      "innerWidth": 320,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "android-320",
+      "page": "profile.html",
+      "overflow": -15,
+      "scrollWidth": 305,
+      "innerWidth": 320,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "android-320",
+      "page": "admin.html",
+      "overflow": -15,
+      "scrollWidth": 305,
+      "innerWidth": 320,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "android-320",
+      "page": "terms.html",
+      "overflow": -15,
+      "scrollWidth": 305,
+      "innerWidth": 320,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "android-320",
+      "page": "privacy.html",
+      "overflow": -15,
+      "scrollWidth": 305,
+      "innerWidth": 320,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "android-320",
+      "page": "disclaimer.html",
+      "overflow": -15,
+      "scrollWidth": 305,
+      "innerWidth": 320,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "android-320",
+      "page": "responsible-gambling.html",
+      "overflow": -15,
+      "scrollWidth": 305,
+      "innerWidth": 320,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "android-320",
+      "page": "share.html",
+      "overflow": -15,
+      "scrollWidth": 305,
+      "innerWidth": 320,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "android-320",
+      "page": "offline.html",
+      "overflow": -15,
+      "scrollWidth": 305,
+      "innerWidth": 320,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "android-320",
+      "page": "404.html",
+      "overflow": -15,
+      "scrollWidth": 305,
+      "innerWidth": 320,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "android-320",
+      "page": "VAPID_KEY_GENERATOR_v183.html",
+      "overflow": -15,
+      "scrollWidth": 305,
+      "innerWidth": 320,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "iphone-se-375",
+      "page": "index.html",
+      "overflow": -15,
+      "scrollWidth": 360,
+      "innerWidth": 375,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "iphone-se-375",
+      "page": "board.html",
+      "overflow": -15,
+      "scrollWidth": 360,
+      "innerWidth": 375,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "iphone-se-375",
+      "page": "engines.html",
+      "overflow": -15,
+      "scrollWidth": 360,
+      "innerWidth": 375,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "iphone-se-375",
+      "page": "community.html",
+      "overflow": -15,
+      "scrollWidth": 360,
+      "innerWidth": 375,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "iphone-se-375",
+      "page": "news.html",
+      "overflow": -15,
+      "scrollWidth": 360,
+      "innerWidth": 375,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "iphone-se-375",
+      "page": "proof.html",
+      "overflow": -15,
+      "scrollWidth": 360,
+      "innerWidth": 375,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "iphone-se-375",
+      "page": "scorecards.html",
+      "overflow": -15,
+      "scrollWidth": 360,
+      "innerWidth": 375,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "iphone-se-375",
+      "page": "league-dna.html",
+      "overflow": -15,
+      "scrollWidth": 360,
+      "innerWidth": 375,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "iphone-se-375",
+      "page": "trust.html",
+      "overflow": -15,
+      "scrollWidth": 360,
+      "innerWidth": 375,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "iphone-se-375",
+      "page": "account.html",
+      "overflow": -15,
+      "scrollWidth": 360,
+      "innerWidth": 375,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "iphone-se-375",
+      "page": "profile.html",
+      "overflow": -15,
+      "scrollWidth": 360,
+      "innerWidth": 375,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "iphone-se-375",
+      "page": "admin.html",
+      "overflow": -15,
+      "scrollWidth": 360,
+      "innerWidth": 375,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "iphone-se-375",
+      "page": "terms.html",
+      "overflow": -15,
+      "scrollWidth": 360,
+      "innerWidth": 375,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "iphone-se-375",
+      "page": "privacy.html",
+      "overflow": -15,
+      "scrollWidth": 360,
+      "innerWidth": 375,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "iphone-se-375",
+      "page": "disclaimer.html",
+      "overflow": -15,
+      "scrollWidth": 360,
+      "innerWidth": 375,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "iphone-se-375",
+      "page": "responsible-gambling.html",
+      "overflow": -15,
+      "scrollWidth": 360,
+      "innerWidth": 375,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "iphone-se-375",
+      "page": "share.html",
+      "overflow": -15,
+      "scrollWidth": 360,
+      "innerWidth": 375,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "iphone-se-375",
+      "page": "offline.html",
+      "overflow": -15,
+      "scrollWidth": 360,
+      "innerWidth": 375,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "iphone-se-375",
+      "page": "404.html",
+      "overflow": -15,
+      "scrollWidth": 360,
+      "innerWidth": 375,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "iphone-se-375",
+      "page": "VAPID_KEY_GENERATOR_v183.html",
+      "overflow": -15,
+      "scrollWidth": 360,
+      "innerWidth": 375,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "phone-412",
+      "page": "index.html",
+      "overflow": -15,
+      "scrollWidth": 397,
+      "innerWidth": 412,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "phone-412",
+      "page": "board.html",
+      "overflow": -15,
+      "scrollWidth": 397,
+      "innerWidth": 412,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "phone-412",
+      "page": "engines.html",
+      "overflow": -15,
+      "scrollWidth": 397,
+      "innerWidth": 412,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "phone-412",
+      "page": "community.html",
+      "overflow": -15,
+      "scrollWidth": 397,
+      "innerWidth": 412,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "phone-412",
+      "page": "news.html",
+      "overflow": -15,
+      "scrollWidth": 397,
+      "innerWidth": 412,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "phone-412",
+      "page": "proof.html",
+      "overflow": -15,
+      "scrollWidth": 397,
+      "innerWidth": 412,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "phone-412",
+      "page": "scorecards.html",
+      "overflow": -15,
+      "scrollWidth": 397,
+      "innerWidth": 412,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "phone-412",
+      "page": "league-dna.html",
+      "overflow": -15,
+      "scrollWidth": 397,
+      "innerWidth": 412,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "phone-412",
+      "page": "trust.html",
+      "overflow": -15,
+      "scrollWidth": 397,
+      "innerWidth": 412,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "phone-412",
+      "page": "account.html",
+      "overflow": -15,
+      "scrollWidth": 397,
+      "innerWidth": 412,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "phone-412",
+      "page": "profile.html",
+      "overflow": -15,
+      "scrollWidth": 397,
+      "innerWidth": 412,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "phone-412",
+      "page": "admin.html",
+      "overflow": -15,
+      "scrollWidth": 397,
+      "innerWidth": 412,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "phone-412",
+      "page": "terms.html",
+      "overflow": -15,
+      "scrollWidth": 397,
+      "innerWidth": 412,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "phone-412",
+      "page": "privacy.html",
+      "overflow": -15,
+      "scrollWidth": 397,
+      "innerWidth": 412,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "phone-412",
+      "page": "disclaimer.html",
+      "overflow": -15,
+      "scrollWidth": 397,
+      "innerWidth": 412,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "phone-412",
+      "page": "responsible-gambling.html",
+      "overflow": -15,
+      "scrollWidth": 397,
+      "innerWidth": 412,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "phone-412",
+      "page": "share.html",
+      "overflow": -15,
+      "scrollWidth": 397,
+      "innerWidth": 412,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "phone-412",
+      "page": "offline.html",
+      "overflow": -15,
+      "scrollWidth": 397,
+      "innerWidth": 412,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "phone-412",
+      "page": "404.html",
+      "overflow": -15,
+      "scrollWidth": 397,
+      "innerWidth": 412,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "phone-412",
+      "page": "VAPID_KEY_GENERATOR_v183.html",
+      "overflow": -15,
+      "scrollWidth": 397,
+      "innerWidth": 412,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-open-540",
+      "page": "index.html",
+      "overflow": -15,
+      "scrollWidth": 525,
+      "innerWidth": 540,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-open-540",
+      "page": "board.html",
+      "overflow": -15,
+      "scrollWidth": 525,
+      "innerWidth": 540,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-open-540",
+      "page": "engines.html",
+      "overflow": -15,
+      "scrollWidth": 525,
+      "innerWidth": 540,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-open-540",
+      "page": "community.html",
+      "overflow": -15,
+      "scrollWidth": 525,
+      "innerWidth": 540,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-open-540",
+      "page": "news.html",
+      "overflow": -15,
+      "scrollWidth": 525,
+      "innerWidth": 540,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-open-540",
+      "page": "proof.html",
+      "overflow": -15,
+      "scrollWidth": 525,
+      "innerWidth": 540,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-open-540",
+      "page": "scorecards.html",
+      "overflow": -15,
+      "scrollWidth": 525,
+      "innerWidth": 540,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-open-540",
+      "page": "league-dna.html",
+      "overflow": -15,
+      "scrollWidth": 525,
+      "innerWidth": 540,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-open-540",
+      "page": "trust.html",
+      "overflow": -15,
+      "scrollWidth": 525,
+      "innerWidth": 540,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-open-540",
+      "page": "account.html",
+      "overflow": -15,
+      "scrollWidth": 525,
+      "innerWidth": 540,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-open-540",
+      "page": "profile.html",
+      "overflow": -15,
+      "scrollWidth": 525,
+      "innerWidth": 540,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-open-540",
+      "page": "admin.html",
+      "overflow": -15,
+      "scrollWidth": 525,
+      "innerWidth": 540,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-open-540",
+      "page": "terms.html",
+      "overflow": -15,
+      "scrollWidth": 525,
+      "innerWidth": 540,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-open-540",
+      "page": "privacy.html",
+      "overflow": -15,
+      "scrollWidth": 525,
+      "innerWidth": 540,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-open-540",
+      "page": "disclaimer.html",
+      "overflow": -15,
+      "scrollWidth": 525,
+      "innerWidth": 540,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-open-540",
+      "page": "responsible-gambling.html",
+      "overflow": -15,
+      "scrollWidth": 525,
+      "innerWidth": 540,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-open-540",
+      "page": "share.html",
+      "overflow": -15,
+      "scrollWidth": 525,
+      "innerWidth": 540,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-open-540",
+      "page": "offline.html",
+      "overflow": -15,
+      "scrollWidth": 525,
+      "innerWidth": 540,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-open-540",
+      "page": "404.html",
+      "overflow": -15,
+      "scrollWidth": 525,
+      "innerWidth": 540,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-open-540",
+      "page": "VAPID_KEY_GENERATOR_v183.html",
+      "overflow": -15,
+      "scrollWidth": 525,
+      "innerWidth": 540,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-landscape-717",
+      "page": "index.html",
+      "overflow": -15,
+      "scrollWidth": 702,
+      "innerWidth": 717,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-landscape-717",
+      "page": "board.html",
+      "overflow": -15,
+      "scrollWidth": 702,
+      "innerWidth": 717,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-landscape-717",
+      "page": "engines.html",
+      "overflow": -15,
+      "scrollWidth": 702,
+      "innerWidth": 717,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-landscape-717",
+      "page": "community.html",
+      "overflow": -15,
+      "scrollWidth": 702,
+      "innerWidth": 717,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-landscape-717",
+      "page": "news.html",
+      "overflow": -15,
+      "scrollWidth": 702,
+      "innerWidth": 717,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-landscape-717",
+      "page": "proof.html",
+      "overflow": -15,
+      "scrollWidth": 702,
+      "innerWidth": 717,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-landscape-717",
+      "page": "scorecards.html",
+      "overflow": -15,
+      "scrollWidth": 702,
+      "innerWidth": 717,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-landscape-717",
+      "page": "league-dna.html",
+      "overflow": -15,
+      "scrollWidth": 702,
+      "innerWidth": 717,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-landscape-717",
+      "page": "trust.html",
+      "overflow": -15,
+      "scrollWidth": 702,
+      "innerWidth": 717,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-landscape-717",
+      "page": "account.html",
+      "overflow": -15,
+      "scrollWidth": 702,
+      "innerWidth": 717,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-landscape-717",
+      "page": "profile.html",
+      "overflow": -15,
+      "scrollWidth": 702,
+      "innerWidth": 717,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-landscape-717",
+      "page": "admin.html",
+      "overflow": -15,
+      "scrollWidth": 702,
+      "innerWidth": 717,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-landscape-717",
+      "page": "terms.html",
+      "overflow": -15,
+      "scrollWidth": 702,
+      "innerWidth": 717,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-landscape-717",
+      "page": "privacy.html",
+      "overflow": -15,
+      "scrollWidth": 702,
+      "innerWidth": 717,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-landscape-717",
+      "page": "disclaimer.html",
+      "overflow": -15,
+      "scrollWidth": 702,
+      "innerWidth": 717,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-landscape-717",
+      "page": "responsible-gambling.html",
+      "overflow": -15,
+      "scrollWidth": 702,
+      "innerWidth": 717,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-landscape-717",
+      "page": "share.html",
+      "overflow": -15,
+      "scrollWidth": 702,
+      "innerWidth": 717,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-landscape-717",
+      "page": "offline.html",
+      "overflow": -15,
+      "scrollWidth": 702,
+      "innerWidth": 717,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-landscape-717",
+      "page": "404.html",
+      "overflow": -15,
+      "scrollWidth": 702,
+      "innerWidth": 717,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "fold-landscape-717",
+      "page": "VAPID_KEY_GENERATOR_v183.html",
+      "overflow": -15,
+      "scrollWidth": 702,
+      "innerWidth": 717,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-768",
+      "page": "index.html",
+      "overflow": -15,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-768",
+      "page": "board.html",
+      "overflow": -15,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-768",
+      "page": "engines.html",
+      "overflow": -15,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-768",
+      "page": "community.html",
+      "overflow": -15,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-768",
+      "page": "news.html",
+      "overflow": -15,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-768",
+      "page": "proof.html",
+      "overflow": -15,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-768",
+      "page": "scorecards.html",
+      "overflow": -15,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-768",
+      "page": "league-dna.html",
+      "overflow": -15,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-768",
+      "page": "trust.html",
+      "overflow": -15,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-768",
+      "page": "account.html",
+      "overflow": -15,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-768",
+      "page": "profile.html",
+      "overflow": -15,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-768",
+      "page": "admin.html",
+      "overflow": -15,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-768",
+      "page": "terms.html",
+      "overflow": -15,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-768",
+      "page": "privacy.html",
+      "overflow": -15,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-768",
+      "page": "disclaimer.html",
+      "overflow": -15,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-768",
+      "page": "responsible-gambling.html",
+      "overflow": -15,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-768",
+      "page": "share.html",
+      "overflow": -15,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-768",
+      "page": "offline.html",
+      "overflow": -15,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-768",
+      "page": "404.html",
+      "overflow": -15,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-768",
+      "page": "VAPID_KEY_GENERATOR_v183.html",
+      "overflow": -15,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-landscape-1024",
+      "page": "index.html",
+      "overflow": -15,
+      "scrollWidth": 1009,
+      "innerWidth": 1024,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-landscape-1024",
+      "page": "board.html",
+      "overflow": -15,
+      "scrollWidth": 1009,
+      "innerWidth": 1024,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-landscape-1024",
+      "page": "engines.html",
+      "overflow": -15,
+      "scrollWidth": 1009,
+      "innerWidth": 1024,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-landscape-1024",
+      "page": "community.html",
+      "overflow": -15,
+      "scrollWidth": 1009,
+      "innerWidth": 1024,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-landscape-1024",
+      "page": "news.html",
+      "overflow": -15,
+      "scrollWidth": 1009,
+      "innerWidth": 1024,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-landscape-1024",
+      "page": "proof.html",
+      "overflow": -15,
+      "scrollWidth": 1009,
+      "innerWidth": 1024,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-landscape-1024",
+      "page": "scorecards.html",
+      "overflow": -15,
+      "scrollWidth": 1009,
+      "innerWidth": 1024,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-landscape-1024",
+      "page": "league-dna.html",
+      "overflow": -15,
+      "scrollWidth": 1009,
+      "innerWidth": 1024,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-landscape-1024",
+      "page": "trust.html",
+      "overflow": -15,
+      "scrollWidth": 1009,
+      "innerWidth": 1024,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-landscape-1024",
+      "page": "account.html",
+      "overflow": -15,
+      "scrollWidth": 1009,
+      "innerWidth": 1024,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-landscape-1024",
+      "page": "profile.html",
+      "overflow": -15,
+      "scrollWidth": 1009,
+      "innerWidth": 1024,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-landscape-1024",
+      "page": "admin.html",
+      "overflow": -15,
+      "scrollWidth": 1009,
+      "innerWidth": 1024,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-landscape-1024",
+      "page": "terms.html",
+      "overflow": -15,
+      "scrollWidth": 1009,
+      "innerWidth": 1024,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-landscape-1024",
+      "page": "privacy.html",
+      "overflow": -15,
+      "scrollWidth": 1009,
+      "innerWidth": 1024,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-landscape-1024",
+      "page": "disclaimer.html",
+      "overflow": -15,
+      "scrollWidth": 1009,
+      "innerWidth": 1024,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-landscape-1024",
+      "page": "responsible-gambling.html",
+      "overflow": -15,
+      "scrollWidth": 1009,
+      "innerWidth": 1024,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-landscape-1024",
+      "page": "share.html",
+      "overflow": -15,
+      "scrollWidth": 1009,
+      "innerWidth": 1024,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-landscape-1024",
+      "page": "offline.html",
+      "overflow": -15,
+      "scrollWidth": 1009,
+      "innerWidth": 1024,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-landscape-1024",
+      "page": "404.html",
+      "overflow": -15,
+      "scrollWidth": 1009,
+      "innerWidth": 1024,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "tablet-landscape-1024",
+      "page": "VAPID_KEY_GENERATOR_v183.html",
+      "overflow": -15,
+      "scrollWidth": 1009,
+      "innerWidth": 1024,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "laptop-1366",
+      "page": "index.html",
+      "overflow": -15,
+      "scrollWidth": 1351,
+      "innerWidth": 1366,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "laptop-1366",
+      "page": "board.html",
+      "overflow": -15,
+      "scrollWidth": 1351,
+      "innerWidth": 1366,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "laptop-1366",
+      "page": "engines.html",
+      "overflow": -15,
+      "scrollWidth": 1351,
+      "innerWidth": 1366,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "laptop-1366",
+      "page": "community.html",
+      "overflow": -15,
+      "scrollWidth": 1351,
+      "innerWidth": 1366,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "laptop-1366",
+      "page": "news.html",
+      "overflow": -15,
+      "scrollWidth": 1351,
+      "innerWidth": 1366,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "laptop-1366",
+      "page": "proof.html",
+      "overflow": -15,
+      "scrollWidth": 1351,
+      "innerWidth": 1366,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "laptop-1366",
+      "page": "scorecards.html",
+      "overflow": -15,
+      "scrollWidth": 1351,
+      "innerWidth": 1366,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "laptop-1366",
+      "page": "league-dna.html",
+      "overflow": -15,
+      "scrollWidth": 1351,
+      "innerWidth": 1366,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "laptop-1366",
+      "page": "trust.html",
+      "overflow": -15,
+      "scrollWidth": 1351,
+      "innerWidth": 1366,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "laptop-1366",
+      "page": "account.html",
+      "overflow": -15,
+      "scrollWidth": 1351,
+      "innerWidth": 1366,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "laptop-1366",
+      "page": "profile.html",
+      "overflow": -15,
+      "scrollWidth": 1351,
+      "innerWidth": 1366,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "laptop-1366",
+      "page": "admin.html",
+      "overflow": -15,
+      "scrollWidth": 1351,
+      "innerWidth": 1366,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "laptop-1366",
+      "page": "terms.html",
+      "overflow": -15,
+      "scrollWidth": 1351,
+      "innerWidth": 1366,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "laptop-1366",
+      "page": "privacy.html",
+      "overflow": -15,
+      "scrollWidth": 1351,
+      "innerWidth": 1366,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "laptop-1366",
+      "page": "disclaimer.html",
+      "overflow": -15,
+      "scrollWidth": 1351,
+      "innerWidth": 1366,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "laptop-1366",
+      "page": "responsible-gambling.html",
+      "overflow": -15,
+      "scrollWidth": 1351,
+      "innerWidth": 1366,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "laptop-1366",
+      "page": "share.html",
+      "overflow": -15,
+      "scrollWidth": 1351,
+      "innerWidth": 1366,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "laptop-1366",
+      "page": "offline.html",
+      "overflow": -15,
+      "scrollWidth": 1351,
+      "innerWidth": 1366,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "laptop-1366",
+      "page": "404.html",
+      "overflow": -15,
+      "scrollWidth": 1351,
+      "innerWidth": 1366,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "laptop-1366",
+      "page": "VAPID_KEY_GENERATOR_v183.html",
+      "overflow": -15,
+      "scrollWidth": 1351,
+      "innerWidth": 1366,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "desktop-1920",
+      "page": "index.html",
+      "overflow": -15,
+      "scrollWidth": 1905,
+      "innerWidth": 1920,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "desktop-1920",
+      "page": "board.html",
+      "overflow": -15,
+      "scrollWidth": 1905,
+      "innerWidth": 1920,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "desktop-1920",
+      "page": "engines.html",
+      "overflow": -15,
+      "scrollWidth": 1905,
+      "innerWidth": 1920,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "desktop-1920",
+      "page": "community.html",
+      "overflow": -15,
+      "scrollWidth": 1905,
+      "innerWidth": 1920,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "desktop-1920",
+      "page": "news.html",
+      "overflow": -15,
+      "scrollWidth": 1905,
+      "innerWidth": 1920,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "desktop-1920",
+      "page": "proof.html",
+      "overflow": -15,
+      "scrollWidth": 1905,
+      "innerWidth": 1920,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "desktop-1920",
+      "page": "scorecards.html",
+      "overflow": -15,
+      "scrollWidth": 1905,
+      "innerWidth": 1920,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "desktop-1920",
+      "page": "league-dna.html",
+      "overflow": -15,
+      "scrollWidth": 1905,
+      "innerWidth": 1920,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "desktop-1920",
+      "page": "trust.html",
+      "overflow": -15,
+      "scrollWidth": 1905,
+      "innerWidth": 1920,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "desktop-1920",
+      "page": "account.html",
+      "overflow": -15,
+      "scrollWidth": 1905,
+      "innerWidth": 1920,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "desktop-1920",
+      "page": "profile.html",
+      "overflow": -15,
+      "scrollWidth": 1905,
+      "innerWidth": 1920,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "desktop-1920",
+      "page": "admin.html",
+      "overflow": -15,
+      "scrollWidth": 1905,
+      "innerWidth": 1920,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "desktop-1920",
+      "page": "terms.html",
+      "overflow": -15,
+      "scrollWidth": 1905,
+      "innerWidth": 1920,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "desktop-1920",
+      "page": "privacy.html",
+      "overflow": -15,
+      "scrollWidth": 1905,
+      "innerWidth": 1920,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "desktop-1920",
+      "page": "disclaimer.html",
+      "overflow": -15,
+      "scrollWidth": 1905,
+      "innerWidth": 1920,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "desktop-1920",
+      "page": "responsible-gambling.html",
+      "overflow": -15,
+      "scrollWidth": 1905,
+      "innerWidth": 1920,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "desktop-1920",
+      "page": "share.html",
+      "overflow": -15,
+      "scrollWidth": 1905,
+      "innerWidth": 1920,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "desktop-1920",
+      "page": "offline.html",
+      "overflow": -15,
+      "scrollWidth": 1905,
+      "innerWidth": 1920,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "desktop-1920",
+      "page": "404.html",
+      "overflow": -15,
+      "scrollWidth": 1905,
+      "innerWidth": 1920,
+      "hasResponsive": true,
+      "ok": true
+    },
+    {
+      "viewport": "desktop-1920",
+      "page": "VAPID_KEY_GENERATOR_v183.html",
+      "overflow": -15,
+      "scrollWidth": 1905,
+      "innerWidth": 1920,
+      "hasResponsive": true,
+      "ok": true
+    }
+  ]
+}

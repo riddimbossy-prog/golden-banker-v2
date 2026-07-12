@@ -61,6 +61,8 @@ jobs:
           test -f engine-learning-ui.css
           test -f tests/engine-learning.spec.js
           test -f performance-budget.js
+          test -f responsive-core.css
+          test -f responsive-ui-selftest.js
           test -f tests/performance-freshness.spec.js
           test -f trust.html
           test -f pwa-launch.js
@@ -80,6 +82,9 @@ jobs:
 
       - name: Run deterministic performance budget
         run: node performance-budget.js
+
+      - name: Run responsive UI self-test
+        run: node responsive-ui-selftest.js
 
       - name: Run engine learning self-test
         run: node engine-learning-selftest.js

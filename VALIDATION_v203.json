@@ -1,0 +1,42 @@
+{
+  "version": "v203",
+  "scope": "all-device responsive UI",
+  "responsive_static_checks": {
+    "passed": 56,
+    "failed": 0,
+    "pages": 20
+  },
+  "browser_layout_matrix": {
+    "passed": 200,
+    "failed": 0,
+    "pages": 20,
+    "viewports": [
+      "280x653",
+      "320x720",
+      "375x667",
+      "412x915",
+      "540x720",
+      "717x512",
+      "768x1024",
+      "1024x768",
+      "1366x768",
+      "1920x1080"
+    ],
+    "method": "Chromium static layout rendering with all local styles inlined; scripts and images disabled"
+  },
+  "css_syntax_errors": 0,
+  "repository_preflight": {
+    "required_files_found": 118,
+    "passed": true
+  },
+  "performance_budget": {
+    "errors": 0,
+    "warnings": 0,
+    "checks_passed": 34
+  },
+  "pwa_readiness": {
+    "checks_passed": 47,
+    "failed": 0
+  },
+  "known_repository_snapshot_limitation": "data.js and community.js are live-generated files and are not included in the source snapshot. Preserve live copies during deployment."
+}

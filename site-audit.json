@@ -1,9 +1,31 @@
 {
-  "generatedAt": "2026-07-12T07:48:06.888Z",
-  "auditVersion": "v189",
-  "cacheVersion": "predict2u-v189",
+  "generatedAt": "2026-07-12T18:46:23.355Z",
+  "auditVersion": "v191",
+  "cacheVersion": "predict2u-v202",
   "engineCount": 16,
-  "critical": [],
-  "warnings": [],
-  "passedCount": 257
+  "critical": [
+    "index.html: required local asset not found: data.js",
+    "board.html: required local asset not found: data.js",
+    "engines.html: required local asset not found: data.js",
+    "proof.html: required local asset not found: data.js",
+    "scorecards.html: required local asset not found: data.js",
+    "league-dna.html: required local asset not found: data.js",
+    "community.html: required local asset not found: data.js",
+    "community.html: required local asset not found: community.js",
+    "trust.html: required local asset not found: data.js"
+  ],
+  "warnings": [
+    "sw.js does not precache news.html.",
+    "sw.js does not precache news.js.",
+    "sw.js does not precache news.css.",
+    "sw.js does not precache football-assets.js.",
+    "sw.js does not precache community-consistency.js.",
+    "sw.js does not precache brand-performance.css.",
+    "sw.js does not precache trust.html.",
+    "sw.js does not precache intelligence.css.",
+    "sw.js does not precache site-health-widget.js.",
+    "sw.js does not precache site-health.css.",
+    "data.js is not present; live repository audit cannot validate fixtures."
+  ],
+  "passedCount": 261
 }

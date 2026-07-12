@@ -1,6 +1,7 @@
 {
-  "version": "v200",
-  "generated_at": "2026-07-12T14:05:41.366Z",
+  "version": "v203",
+  "expected_cache": "predict2u-v203",
+  "generated_at": "2026-07-12T21:35:16.940Z",
   "checks": [
     {
       "name": "required file manifest.webmanifest",
@@ -58,6 +59,11 @@
       "detail": ""
     },
     {
+      "name": "build version available",
+      "ok": true,
+      "detail": "v203"
+    },
+    {
       "name": "standalone display",
       "ok": true,
       "detail": "standalone"
@@ -78,9 +84,14 @@
       "detail": ""
     },
     {
-      "name": "v200 worker cache",
+      "name": "v203 worker cache",
       "ok": true,
-      "detail": ""
+      "detail": "expected predict2u-v203"
+    },
+    {
+      "name": "worker version matches build",
+      "ok": true,
+      "detail": "expected v203"
     },
     {
       "name": "offline navigation fallback",
@@ -208,7 +219,7 @@
       "detail": ""
     },
     {
-      "name": "admin v200 label",
+      "name": "admin operations console label",
       "ok": true,
       "detail": ""
     },
@@ -228,6 +239,6 @@
       "detail": ""
     }
   ],
-  "passed": 45,
+  "passed": 47,
   "failed": 0
 }

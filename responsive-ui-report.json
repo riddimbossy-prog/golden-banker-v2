@@ -1,0 +1,289 @@
+{
+  "version": "v203",
+  "generatedAt": "2026-07-12T21:35:16.742Z",
+  "pages": 20,
+  "passed": 56,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "all root HTML pages discovered",
+      "ok": true,
+      "detail": "20"
+    },
+    {
+      "name": "404.html loads responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "404.html uses safe viewport",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "VAPID_KEY_GENERATOR_v183.html loads responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "VAPID_KEY_GENERATOR_v183.html uses safe viewport",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "account.html loads responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "account.html uses safe viewport",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "admin.html loads responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "admin.html uses safe viewport",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "board.html loads responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "board.html uses safe viewport",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "community.html loads responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "community.html uses safe viewport",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "disclaimer.html loads responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "disclaimer.html uses safe viewport",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "engines.html loads responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "engines.html uses safe viewport",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html loads responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html uses safe viewport",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "league-dna.html loads responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "league-dna.html uses safe viewport",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "news.html loads responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "news.html uses safe viewport",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "offline.html loads responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "offline.html uses safe viewport",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "privacy.html loads responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "privacy.html uses safe viewport",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "profile.html loads responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "profile.html uses safe viewport",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "proof.html loads responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "proof.html uses safe viewport",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "responsible-gambling.html loads responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "responsible-gambling.html uses safe viewport",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "scorecards.html loads responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "scorecards.html uses safe viewport",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "share.html loads responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "share.html uses safe viewport",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "terms.html loads responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "terms.html uses safe viewport",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "trust.html loads responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "trust.html uses safe viewport",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "responsive token @media (max-width:1024px)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "responsive token @media (max-width:820px)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "responsive token @media (max-width:599px)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "responsive token @media (max-width:380px)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "responsive token @media (max-height:540px) and (orientation:landscape)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "responsive token @media (pointer:coarse)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "responsive token 100dvh",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "responsive token safe-area-inset-bottom",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "responsive token overflow-x:clip",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "responsive token prefers-reduced-motion",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "responsive token prefers-contrast:more",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "responsive token horizontal-viewport-segments:2",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "responsive CSS remains lightweight",
+      "ok": true,
+      "detail": "11246 bytes"
+    },
+    {
+      "name": "service worker precaches responsive core",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "v203 cache active",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

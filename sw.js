@@ -1,10 +1,10 @@
-/* Predict2U service worker v202 — fast core install, bounded caches,
+/* Predict2U service worker v203 — fast core install, bounded caches,
    native-install support, exact push deep links and recoverable offline navigation. */
-const VERSION='v202.2';
-const CACHE_VERSION='predict2u-v202.2';
+const VERSION='v203';
+const CACHE_VERSION='predict2u-v203';
 const APP_CACHE=CACHE_VERSION;
-const RUNTIME_CACHE='predict2u-runtime-v202';
-const IMAGE_CACHE='predict2u-images-v202';
+const RUNTIME_CACHE='predict2u-runtime-v203';
+const IMAGE_CACHE='predict2u-images-v203';
 const IMAGE_LIMIT=90;
 const RUNTIME_LIMIT=90;
 const NETWORK_TIMEOUT=2800;
@@ -15,6 +15,7 @@ const OFFLINE_URL='./offline.html';
 const CORE_SHELL=[
   './','./index.html','./offline.html','./manifest.webmanifest',
   './pwa-launch.js','./pwa-launch.css','./mobile-app-nav.js','./mobile-app-nav.css',
+  './responsive-core.css',
   './predict2u-logo.png','./predict2u-mark.png','./favicon.ico',
   './icon-192.png','./icon-512.png','./maskable-icon.png'
 ];

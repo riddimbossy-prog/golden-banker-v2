@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <meta name="robots" content="noindex,nofollow,noarchive">
 <title>Predict2U VAPID Key Generator v183</title>
 <style>
 body{margin:0;background:#08090d;color:#f8fafc;font:15px/1.5 system-ui,sans-serif}.wrap{max-width:760px;margin:auto;padding:40px 18px}.card{background:#11141b;border:1px solid #2a303b;border-radius:18px;padding:22px}h1{margin:0 0 8px;font-size:30px}p{color:#aab2c0}button{border:0;border-radius:12px;padding:12px 16px;background:#34d399;color:#04100b;font-weight:900;cursor:pointer}label{display:block;margin-top:18px;font-size:12px;font-weight:800;color:#9ca3af;text-transform:uppercase}textarea,input{box-sizing:border-box;width:100%;margin-top:7px;padding:12px;border-radius:12px;border:1px solid #303745;background:#080b10;color:#fff;font:12px/1.45 ui-monospace,monospace;word-break:break-all}.warn{margin-top:18px;padding:12px 14px;border-left:3px solid #fbbf24;background:#2b2412;color:#f8d979;border-radius:10px}.ok{color:#34d399}.row{display:flex;gap:10px;flex-wrap:wrap}.row button{margin-top:10px;background:transparent;color:#34d399;border:1px solid #2f8d70}</style>
+  <link rel="stylesheet" href="responsive-core.css"/>
 </head>
 <body><main class="wrap"><section class="card"><h1>VAPID key generator</h1><p>This runs entirely in your browser using Web Crypto. Keys are not uploaded or saved automatically.</p><button id="generate">Generate new keys</button><div id="fields" hidden><label>Public key</label><textarea id="public" rows="4" readonly></textarea><div class="row"><button data-copy="public">Copy public key</button></div><label>Private key</label><textarea id="private" rows="4" readonly></textarea><div class="row"><button data-copy="private">Copy private key</button></div><label>Dispatch secret</label><input id="dispatch" readonly><div class="row"><button data-copy="dispatch">Copy dispatch secret</button></div><div class="warn"><strong>Keep the private key and dispatch secret private.</strong> Add them only to Supabase Edge Function secrets. Never commit them to GitHub or paste them into public website code.</div><p id="status" class="ok"></p></div></section></main>
 <script>
