@@ -23,8 +23,7 @@
     "test:health": "node system-health-selftest.js",
     "quality:reliability": "npm run test:news-comments && npm run test:health",
     "test:pwa": "node pwa-selftest.js",
-    "quality:launch": "npm run preflight && npm run budget && npm run test:pwa && npm run audit",
-    "test:responsive": "node responsive-ui-selftest.js"
+    "quality:launch": "npm run preflight && npm run budget && npm run test:pwa && npm run audit"
   },
   "devDependencies": {
     "@playwright/test": "^1.53.0",

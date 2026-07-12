@@ -13,7 +13,6 @@ const budgets={
   "engines.html":50000,
   "banker-engine.js":110000,
   "p2u-intelligence.js":35000,
-  "responsive-core.css":14000,
   "brand-experience.css":22000,
   "performance-freshness.js":18000,
   "performance-freshness.css":14000,
@@ -38,7 +37,7 @@ const budgets={
   "profile.html":12000,
   "news.html":18000,
   "news.js":28000,
-  "news.css":32000,
+  "news.css":26000,
   "predict2u-transfers.webp":180000,
   "predict2u-transfers-thumb.webp":30000
 };
@@ -61,22 +60,11 @@ for(const page of ["index.html","board.html"]){
     errors.push(`${page}: CSS loading state is not armed in the head.`);
 }
 
-
-const responsivePages=["index.html","board.html","engines.html","proof.html","scorecards.html","league-dna.html","community.html","news.html","trust.html","responsible-gambling.html","terms.html","privacy.html","disclaimer.html","404.html","account.html","profile.html","share.html","offline.html","admin.html","VAPID_KEY_GENERATOR_v183.html"];
-for(const page of responsivePages){
-  const html=read(page);
-  if(!/name=["']viewport["'][^>]+viewport-fit=cover/i.test(html))errors.push(`${page}: viewport-fit=cover is missing.`);
-  if(!/responsive-core\.css/.test(html))errors.push(`${page}: responsive-core.css is not loaded.`);
-}
-for(const token of ["max-width:820px","max-width:599px","max-width:380px","orientation:landscape","pointer:coarse","prefers-reduced-motion","safe-area-inset-bottom","100dvh"]){
-  if(!read("responsive-core.css").includes(token))errors.push(`responsive-core.css missing ${token}`);
-}
-
 const sw=read("sw.js");
-const cacheMatch=sw.match(/CACHE_VERSION\s*=\s*["'](predict2u-v\d+(?:\.\d+)?)["']/);
+const cacheMatch=sw.match(/CACHE_VERSION\s*=\s*["'](predict2u-v\d+)["']/);
 if(!cacheMatch)errors.push("sw.js is missing a valid predict2u-vN cache version.");
 else passed.push(`sw.js cache: ${cacheMatch[1]}`);
-for(const token of ["responsive-core.css","NETWORK_TIMEOUT_MS","canonicalRequest","performance-freshness.js","performance-freshness.css","personalization.js","personalization.css","smart-alerts.js","smart-alerts.css","admin.html","backend-admin.js","backend-admin.css","admin-config.js","site-controls.js","site-controls.css","account.html","profile.html","cloud-config.js","account-cloud.js","account-cloud.css","push-notifications.js","push-notifications.css","analytics.js","analytics.css","product-analytics.js","product-analytics.css"]){
+for(const token of ["NETWORK_TIMEOUT_MS","canonicalRequest","performance-freshness.js","performance-freshness.css","personalization.js","personalization.css","smart-alerts.js","smart-alerts.css","admin.html","backend-admin.js","backend-admin.css","admin-config.js","site-controls.js","site-controls.css","account.html","profile.html","cloud-config.js","account-cloud.js","account-cloud.css","push-notifications.js","push-notifications.css","analytics.js","analytics.css","product-analytics.js","product-analytics.css"]){
   if(!sw.includes(token))errors.push(`sw.js missing ${token}`);
 }
 for(const page of ["index.html","board.html"]){

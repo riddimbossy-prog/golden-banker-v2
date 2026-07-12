@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-07-12T21:35:16.877Z",
-  "version": "v203",
+  "generatedAt": "2026-07-12T18:48:17.992Z",
+  "version": "v202",
   "errors": [],
   "warnings": [],
-  "passedCount": 34,
+  "passedCount": 33,
   "budgets": {
     "index.html": {
-      "bytes": 64464,
+      "bytes": 64410,
       "limit": 70000
     },
     "board.html": {
-      "bytes": 65105,
+      "bytes": 65051,
       "limit": 70000
     },
     "engines.html": {
-      "bytes": 38691,
+      "bytes": 38637,
       "limit": 50000
     },
     "banker-engine.js": {
@@ -24,10 +24,6 @@
     "p2u-intelligence.js": {
       "bytes": 17164,
       "limit": 35000
-    },
-    "responsive-core.css": {
-      "bytes": 11246,
-      "limit": 14000
     },
     "brand-experience.css": {
       "bytes": 11204,
@@ -58,7 +54,7 @@
       "limit": 22000
     },
     "admin.html": {
-      "bytes": 29147,
+      "bytes": 29093,
       "limit": 30000
     },
     "backend-admin.js": {
@@ -110,15 +106,15 @@
       "limit": 14000
     },
     "account.html": {
-      "bytes": 2805,
+      "bytes": 2750,
       "limit": 18000
     },
     "profile.html": {
-      "bytes": 2101,
+      "bytes": 2046,
       "limit": 12000
     },
     "news.html": {
-      "bytes": 9513,
+      "bytes": 9459,
       "limit": 18000
     },
     "news.js": {
@@ -126,8 +122,8 @@
       "limit": 28000
     },
     "news.css": {
-      "bytes": 30543,
-      "limit": 32000
+      "bytes": 24528,
+      "limit": 26000
     },
     "predict2u-transfers.webp": {
       "bytes": 145272,

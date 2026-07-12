@@ -1,22 +1,17 @@
 name: Predict2U Site Quality
-
 on:
   push:
     branches: [ main, master ]
   pull_request:
   workflow_dispatch:
-
 permissions:
   contents: read
-
 jobs:
   audit-and-mobile:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-
     steps:
       - uses: actions/checkout@v4
-
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
@@ -61,8 +56,6 @@ jobs:
           test -f engine-learning-ui.css
           test -f tests/engine-learning.spec.js
           test -f performance-budget.js
-          test -f responsive-core.css
-          test -f responsive-ui-selftest.js
           test -f tests/performance-freshness.spec.js
           test -f trust.html
           test -f pwa-launch.js
@@ -76,15 +69,11 @@ jobs:
 
       - name: Install quality tools
         run: npm install --no-audit --no-fund --package-lock=false
-
       - name: Run repository completeness preflight
         run: node repository-preflight.js
 
       - name: Run deterministic performance budget
         run: node performance-budget.js
-
-      - name: Run responsive UI self-test
-        run: node responsive-ui-selftest.js
 
       - name: Run engine learning self-test
         run: node engine-learning-selftest.js
@@ -94,17 +83,21 @@ jobs:
 
       - name: Generate public health snapshot
         run: node generate-site-health.js
-
       - name: Run repository consistency audit
         run: node audit-site.js
-
-      - name: Upload quality report on failure
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run mobile and desktop regression tests
+        run: npx playwright test
+      - name: Upload test report on failure
         if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: predict2u-quality-report
           if-no-files-found: ignore
           path: |
+            playwright-report
+            test-results
             site-audit.json
             site-health.json
             performance-budget.json
