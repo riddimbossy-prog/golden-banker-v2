@@ -1,0 +1,16 @@
+PREDICT2U SITE QUALITY v202.3 REAPPLY
+
+Replace these files in the ROOT of the golden-banker-v2 repository:
+- performance-budget.js
+- sw.js
+- BUILD_VERSION.txt
+
+Important:
+- Choose Replace/Overwrite for the existing files.
+- BUILD_VERSION.txt must remain v202.2; this is intentional.
+- performance-budget.js sets the news.css budget to 32000 bytes.
+- sw.js declares CACHE_VERSION='predict2u-v202.2'.
+
+Then commit to main and run Predict2U Site Quality again.
+Expected deterministic performance result:
+Performance budget: 0 error(s), 0 warning(s), 33 checks passed.

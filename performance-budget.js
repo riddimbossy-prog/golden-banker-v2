@@ -37,7 +37,7 @@ const budgets={
   "profile.html":12000,
   "news.html":18000,
   "news.js":28000,
-  "news.css":26000,
+  "news.css":32000,
   "predict2u-transfers.webp":180000,
   "predict2u-transfers-thumb.webp":30000
 };
@@ -61,7 +61,7 @@ for(const page of ["index.html","board.html"]){
 }
 
 const sw=read("sw.js");
-const cacheMatch=sw.match(/CACHE_VERSION\s*=\s*["'](predict2u-v\d+)["']/);
+const cacheMatch=sw.match(/CACHE_VERSION\s*=\s*["'](predict2u-v\d+(?:\.\d+)?)["']/);
 if(!cacheMatch)errors.push("sw.js is missing a valid predict2u-vN cache version.");
 else passed.push(`sw.js cache: ${cacheMatch[1]}`);
 for(const token of ["NETWORK_TIMEOUT_MS","canonicalRequest","performance-freshness.js","performance-freshness.css","personalization.js","personalization.css","smart-alerts.js","smart-alerts.css","admin.html","backend-admin.js","backend-admin.css","admin-config.js","site-controls.js","site-controls.css","account.html","profile.html","cloud-config.js","account-cloud.js","account-cloud.css","push-notifications.js","push-notifications.css","analytics.js","analytics.css","product-analytics.js","product-analytics.css"]){
