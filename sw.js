@@ -5,7 +5,7 @@
    - Static assets: cache-first with background refresh.
    - Optional PREFETCH_URLS message warms likely next pages. */
 
-const CACHE_VERSION = "predict2u-v198";
+const CACHE_VERSION = "predict2u-v199";
 const NEWS_IMAGE_CACHE = "predict2u-news-images-v192";
 const NEWS_IMAGE_CACHE_LIMIT = 180;
 const OFFLINE_PAGE = "./board.html";

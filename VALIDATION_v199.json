@@ -1,0 +1,17 @@
+{
+  "version": "v199",
+  "release": "Proof Mode UI Refresh",
+  "checks": {
+    "proof_page_exists": true,
+    "brand_green": true,
+    "hero_present": true,
+    "selector_visible": true,
+    "proof_root_present": true,
+    "engine_logic_preserved": true,
+    "service_worker_version": true
+  },
+  "passed": true,
+  "notes": [
+    "Static validation only; live fixture rendering depends on the repository's generated data.js."
+  ]
+}
