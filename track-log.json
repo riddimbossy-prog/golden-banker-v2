@@ -55811,7 +55811,7 @@
       "status": "settled",
       "result": "Won",
       "score": "4-2",
-      "settledAt": "2026-07-12T07:48:33.041Z"
+      "settledAt": "2026-07-12T07:49:53.135Z"
     },
     {
       "matchDate": "2026-07-12",
@@ -55892,9 +55892,10 @@
       "oddsAtPick": null,
       "fairMarketProbabilityAtPick": null,
       "recordedAt": "2026-07-11T02:29:42.566Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "3-0",
+      "settledAt": "2026-07-12T07:49:53.135Z"
     },
     {
       "matchDate": "2026-07-12",
@@ -55912,9 +55913,10 @@
       "oddsAtPick": null,
       "fairMarketProbabilityAtPick": null,
       "recordedAt": "2026-07-11T02:29:42.566Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Lost",
+      "score": "3-0",
+      "settledAt": "2026-07-12T07:49:53.135Z"
     },
     {
       "matchDate": "2026-07-12",
@@ -62089,7 +62091,7 @@
       "status": "settled",
       "result": "Won",
       "score": "4-2",
-      "settledAt": "2026-07-12T07:48:33.041Z"
+      "settledAt": "2026-07-12T07:49:53.136Z"
     },
     {
       "matchDate": "2026-07-12",
@@ -62110,7 +62112,7 @@
       "status": "settled",
       "result": "Won",
       "score": "4-2",
-      "settledAt": "2026-07-12T07:48:33.041Z"
+      "settledAt": "2026-07-12T07:49:53.136Z"
     },
     {
       "matchDate": "2026-07-12",
@@ -62156,6 +62158,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-12T07:48:33.421Z"
+    "updated": "2026-07-12T07:49:53.482Z"
   }
 }
