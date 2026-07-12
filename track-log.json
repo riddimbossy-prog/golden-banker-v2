@@ -55828,9 +55828,10 @@
       "oddsAtPick": null,
       "fairMarketProbabilityAtPick": null,
       "recordedAt": "2026-07-11T02:29:42.561Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "3-3",
+      "settledAt": "2026-07-12T06:20:34.806Z"
     },
     {
       "matchDate": "2026-07-12",
@@ -62152,6 +62153,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-12T06:18:14.721Z"
+    "updated": "2026-07-12T06:20:35.190Z"
   }
 }
