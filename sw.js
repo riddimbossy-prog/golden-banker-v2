@@ -1,11 +1,11 @@
-/* Predict2U service worker v183 — fast shell, bounded network waits and fresh data.
+/* Predict2U service worker v184 — fast shell, bounded network waits and fresh data.
    Strategy:
    - Navigation/HTML: network-first with a short timeout, then cached fallback.
    - data.js/site-health.json: network-first, canonical cache key, stale fallback.
    - Static assets: cache-first with background refresh.
    - Optional PREFETCH_URLS message warms likely next pages. */
 
-const CACHE_VERSION = "predict2u-v183";
+const CACHE_VERSION = "predict2u-v184";
 const OFFLINE_PAGE = "./board.html";
 const NETWORK_TIMEOUT_MS = 4500;
 
@@ -30,6 +30,8 @@ const SHELL = [
   "./account-cloud.css",
   "./push-notifications.js",
   "./push-notifications.css",
+  "./football-assets.js",
+  "./brand-performance.css",
   "./SUPABASE_PUSH_SETUP_v183.sql",
   "./PUSH_NOTIFICATIONS_v183.md",
   "./SUPABASE_BACKEND_ADMIN_v181.sql",
@@ -175,7 +177,18 @@ async function cacheFirstWithRefresh(request) {
 self.addEventListener("fetch", event => {
   const request = event.request;
   const url = new URL(request.url);
-  if (request.method !== "GET" || url.origin !== self.location.origin) return;
+  if (request.method !== "GET") return;
+
+  // v184: club crests and country flags are immutable-style media. Cache them
+  // after first use so repeat visits are fast even on slow mobile connections.
+  if (request.destination === "image" && url.origin !== self.location.origin) {
+    if (url.hostname === "media.api-sports.io" || url.hostname.endsWith(".api-sports.io")) {
+      event.respondWith(cacheFirstWithRefresh(request));
+    }
+    return;
+  }
+
+  if (url.origin !== self.location.origin) return;
 
   if (url.pathname.endsWith("/data.js") || url.pathname.endsWith("data.js")) {
     event.respondWith(networkFirst(request, { canonical: true }));

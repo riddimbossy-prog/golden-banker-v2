@@ -1,0 +1,27 @@
+{
+  "version": "v184",
+  "name": "Visual Identity, Football Assets & Speed",
+  "brand_green": "#77C41C",
+  "carousel_minimum_seconds": 96,
+  "static_validation": {
+    "repository_preflight": "passed: 67 required public files",
+    "performance_budget": "passed: 0 errors, 0 warnings, 24 checks",
+    "package_audit": "passed: 0 critical, 0 warnings",
+    "javascript_syntax": "passed: football-assets.js, sw.js, visual-performance.spec.js",
+    "service_worker_cache": "predict2u-v184"
+  },
+  "assets": {
+    "actual_crests": "uses homeLogo/awayLogo from live fixture data",
+    "country_flags": "uses fixture league flag with country fallback",
+    "missing_asset_behavior": "branded crest shield or country/globe fallback",
+    "performance": "lazy loading, async decoding, API-Sports image runtime cache"
+  },
+  "browser_execution": "Playwright tests are included for GitHub Actions; not executed in this sandbox.",
+  "runtime_files_excluded": [
+    "data.js",
+    "community.js",
+    "API keys",
+    "Supabase secrets",
+    "generated records"
+  ]
+}

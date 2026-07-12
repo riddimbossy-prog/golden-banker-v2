@@ -163,7 +163,7 @@ a{ color:inherit; text-decoration:none; }
 @keyframes rise{ to{ opacity:1; } }
 @media(prefers-reduced-motion:reduce){ .rise{ animation:none; opacity:1; } .card-h:hover{ border-color:var(--line); } }
 @media(pointer:coarse){ .pill,.btn-det,.slip-add{ min-height:40px; } }
-.cara{ display:flex; width:max-content; animation:cara 40s linear infinite; }
+.cara{ display:flex; width:max-content; animation:cara var(--p2u-carousel-duration,96s) linear infinite; }
 .cara:hover{ animation-play-state:paused; }
 @keyframes cara{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 @media(prefers-reduced-motion:reduce){ .cara{ animation:none; overflow-x:auto; width:100%; } }
@@ -221,6 +221,10 @@ a{ color:inherit; text-decoration:none; }
 <link rel="stylesheet" href="mobile-app-nav.css"/>
 <link rel="stylesheet" href="growth-sharing.css"/>
 <link rel="stylesheet" href="account-cloud.css"/>
+
+<link rel="preconnect" href="https://media.api-sports.io" crossorigin>
+<link rel="dns-prefetch" href="https://media.api-sports.io">
+<link rel="stylesheet" href="brand-performance.css">
 </head>
 <body>
 <nav class="sticky top-0 z-50" style="background:var(--bg);border-bottom:1px solid var(--line)">
@@ -729,7 +733,12 @@ a{ color:inherit; text-decoration:none; }
       <span class="tag ${x.r==='Won'?'tag-won':'tag-lost'}">${x.r.toUpperCase()}</span>
     </div>`;
     const row=settled.map(item).join('');
-    $('carousel').innerHTML=row+row;
+    const carousel=$('carousel');
+    carousel.innerHTML=row+row;
+    // v184: keep the win rail calm and readable regardless of item count.
+    const seconds=Math.max(96,Math.min(210,settled.length*18));
+    carousel.style.setProperty('--p2u-carousel-duration',`${seconds}s`);
+    carousel.setAttribute('aria-label','Settled picks — swipe or hover to pause');
   }
   function renderStats(){
     const list=dayMatches(), cons=consensus(list);
@@ -1008,5 +1017,6 @@ if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.se
 <script src="growth-sharing.js" defer></script>
 <script src="cloud-config.js"></script>
 <script src="account-cloud.js" defer></script>
+<script src="football-assets.js" defer></script>
 </body>
 </html>

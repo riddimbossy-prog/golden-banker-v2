@@ -1,0 +1,32 @@
+{
+  "version": "v184",
+  "files": [
+    "404.html",
+    "BUILD_VERSION.txt",
+    "VALIDATION_v184.json",
+    "VISUAL_PERFORMANCE_v184.md",
+    "account.html",
+    "admin.html",
+    "audit-site.js",
+    "board.html",
+    "brand-performance.css",
+    "community.html",
+    "disclaimer.html",
+    "engines.html",
+    "football-assets.js",
+    "index.html",
+    "league-dna.html",
+    "package.json",
+    "privacy.html",
+    "profile.html",
+    "proof.html",
+    "repository-preflight.js",
+    "responsible-gambling.html",
+    "scorecards.html",
+    "share.html",
+    "sw.js",
+    "terms.html",
+    "tests/visual-performance.spec.js",
+    "trust.html"
+  ]
+}
