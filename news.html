@@ -76,13 +76,46 @@
       <button data-news-filter="transfer" role="tab"><img class="p2u-news-tab-mark" src="predict2u-transfers-thumb.webp" alt="" width="22" height="22" loading="lazy" decoding="async"> Transfers</button>
       <button data-news-filter="news" role="tab">Football</button>
       <button data-news-filter="breaking" role="tab">Breaking</button>
+      <button data-news-filter="foryou" role="tab"><i class="fa-solid fa-wand-magic-sparkles"></i> For You</button>
+      <button data-news-filter="discussed" role="tab"><i class="fa-regular fa-comments"></i> Most Discussed</button>
+      <button data-news-filter="saved" role="tab"><i class="fa-regular fa-bookmark"></i> Read Later</button>
     </div>
     <label class="p2u-news-search"><i class="fa-solid fa-magnifying-glass"></i><input id="news-search" type="search" placeholder="Search clubs, leagues or players…" autocomplete="off"/></label>
   </section>
 
+  <section class="p2u-news-personalize" aria-labelledby="news-personalize-title">
+    <div class="p2u-news-personalize-head">
+      <div>
+        <div class="p2u-news-kicker">YOUR FOOTBALL WORLD</div>
+        <h2 id="news-personalize-title">Follow what matters</h2>
+        <p>Clubs, leagues, countries, players, sources and topics shape your For You feed and personalized news alerts.</p>
+      </div>
+      <span class="p2u-news-follow-counter"><strong id="news-follow-count">0</strong> followed</span>
+    </div>
+    <div class="p2u-news-follow-form">
+      <label>
+        <span>Type</span>
+        <select id="news-follow-type">
+          <option value="club">Club</option>
+          <option value="league">League</option>
+          <option value="country">Country</option>
+          <option value="player">Player</option>
+          <option value="source">Publisher</option>
+          <option value="topic">Topic</option>
+        </select>
+      </label>
+      <label class="grow">
+        <span>Name</span>
+        <input id="news-follow-input" maxlength="100" placeholder="Arsenal, Ghana, Champions League, Mbappé…" autocomplete="off"/>
+      </label>
+      <button id="news-follow-add" class="p2u-news-button" type="button"><i class="fa-solid fa-plus"></i> Follow</button>
+    </div>
+    <div id="news-followed-topics" class="p2u-news-followed-topics" aria-live="polite"></div>
+  </section>
+
   <section id="news-featured" class="p2u-news-featured" aria-live="polite"></section>
   <section id="news-feed">
-    <div class="p2u-news-section-head"><div><div class="p2u-news-kicker">LIVE FEED</div><h2 id="news-list-title">Latest football stories</h2></div><button id="news-refresh" class="p2u-news-ghost"><i class="fa-solid fa-rotate"></i> Refresh</button></div>
+    <div class="p2u-news-section-head"><div><div class="p2u-news-kicker">LIVE FEED</div><h2 id="news-list-title">Latest football stories</h2><span id="news-result-count" class="p2u-news-result-count">0 stories</span></div><button id="news-refresh" class="p2u-news-ghost"><i class="fa-solid fa-rotate"></i> Refresh</button></div>
     <div id="news-list" class="p2u-news-grid"><div class="p2u-news-empty">Loading the football desk…</div></div>
     <div class="p2u-news-load-wrap"><button id="news-load-more" class="p2u-news-button" hidden>Load more</button></div>
   </section>

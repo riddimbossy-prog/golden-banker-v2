@@ -1,4 +1,4 @@
-// Predict2U v191 — Supabase Edge Function: p2u-news-sync
+// Predict2U v192 — Supabase Edge Function: p2u-news-sync
 // Pulls short, attributed football headlines from enabled RSS/Atom sources.
 // It prefers publisher-provided RSS media and, when missing, safely reads the
 // article's Open Graph/Twitter image metadata so the News page can show the
@@ -18,7 +18,7 @@ const corsHeaders = {
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "";
 const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
 const SYNC_SECRET = Deno.env.get("NEWS_SYNC_SECRET") || "";
-const VERSION = "v191";
+const VERSION = "v192";
 const MAX_SOURCES = 20;
 const MAX_PER_SOURCE = 35;
 const MAX_OG_LOOKUPS_PER_SOURCE = 14;
@@ -48,12 +48,15 @@ type Source = {
   homepage_url?: string;
   region?: string;
   priority?: number;
+  verified?: boolean;
 };
 
 type ArticleRow = JsonRecord & {
   external_id: string;
   url: string;
   image_url: string;
+  canonical_key: string;
+  source_verified: boolean;
 };
 
 function jsonResponse(body: unknown, status = 200) {
@@ -342,6 +345,18 @@ function classify(title: string, summary: string) {
   return { category: transfer ? "transfer" : "news", breaking, push_eligible: transfer || breaking };
 }
 
+function canonicalKey(title: string) {
+  return title.toLowerCase()
+    .replace(/\b(the|a|an|to|for|of|in|on|at|with|and|or|from|after|before|latest|breaking|official|confirmed|report)\b/g, " ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .split(" ")
+    .slice(0, 14)
+    .join(" ")
+    .slice(0, 180);
+}
+
 async function digest(value: string) {
   const data = new TextEncoder().encode(value);
   const hash = new Uint8Array(await crypto.subtle.digest("SHA-256", data));
@@ -392,6 +407,8 @@ async function syncSource(source: Source) {
         source_id: source.id,
         source_name: text(source.name, 120),
         source_domain: domain,
+        source_verified: Boolean(source.verified),
+        canonical_key: canonicalKey(title),
         title,
         summary,
         url,
@@ -496,7 +513,7 @@ Deno.serve(async (req) => {
     const sourceLimit = Math.max(1, Math.min(Number(body?.sourceLimit || MAX_SOURCES), MAX_SOURCES));
     const { data: sources, error } = await admin
       .from("p2u_news_sources")
-      .select("id,name,feed_url,homepage_url,region,priority")
+      .select("id,name,feed_url,homepage_url,region,priority,verified")
       .eq("enabled", true)
       .order("priority", { ascending: true })
       .limit(sourceLimit);

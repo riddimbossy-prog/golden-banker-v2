@@ -1,4 +1,4 @@
-// Predict2U v189 — Supabase Edge Function: p2u-push-dispatch
+// Predict2U v192 — Supabase Edge Function: p2u-push-dispatch
 // Required secrets:
 //   VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY, VAPID_SUBJECT,
 //   SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, PUSH_DISPATCH_SECRET
@@ -51,6 +51,9 @@ type Preference = {
   announcements?: boolean;
   football_news?: boolean;
   transfer_news?: boolean;
+  breaking_news?: boolean;
+  personalized_news?: boolean;
+  news_topics?: string[];
   verified_only?: boolean;
   quiet_enabled?: boolean;
   quiet_start?: string;
@@ -99,6 +102,27 @@ function categoryEnabled(category: string, pref: Preference) {
   if (category === "announcement") return pref.announcements !== false;
   if (category === "news") return true;
   return true;
+}
+
+function newsPreference(job: PushJob, pref: Preference) {
+  if (job.category !== "news") return { allowed: true, reason: "Predict2U update enabled" };
+  const payload = (job.payload || {}) as JsonRecord;
+  const newsType = normalize(payload.news_type || "news");
+  const breaking = Boolean(payload.breaking);
+  if (newsType === "transfer" && pref.transfer_news === false) return { allowed: false, reason: "Transfer news disabled" };
+  if (newsType !== "transfer" && pref.football_news === false) return { allowed: false, reason: "Football news disabled" };
+  if (breaking && pref.breaking_news === false) return { allowed: false, reason: "Breaking news disabled" };
+
+  const topics = (pref.news_topics || []).map(normalize).filter(Boolean);
+  const searchText = normalize(payload.search_text || [payload.source, payload.region, payload.league, payload.club, payload.player].join(" "));
+  const matched = topics.find((topic) => searchText.includes(topic));
+  if (pref.personalized_news && topics.length && !matched && !breaking) {
+    return { allowed: false, reason: "No followed-topic match" };
+  }
+  if (matched) return { allowed: true, reason: `Matches followed topic: ${matched}` };
+  if (breaking) return { allowed: true, reason: "Breaking news enabled" };
+  if (newsType === "transfer") return { allowed: true, reason: "Transfer news enabled" };
+  return { allowed: true, reason: "Football news enabled" };
 }
 
 function audienceAllows(job: PushJob, pref: Preference, userId: string) {
@@ -164,25 +188,11 @@ async function deliverJob(job: PushJob) {
   let sent = 0, failed = 0, skipped = 0;
   const logRows: JsonRecord[] = [];
 
-  const payload = JSON.stringify({
-    version: "v189",
-    id: `push-job-${job.id}`,
-    category: job.category,
-    title: job.title,
-    body: job.body,
-    url: job.url || "index.html",
-    icon: "icon-192.png",
-    badge: "favicon-48x48.png",
-    createdAt: Date.now(),
-    data: job.payload || {},
-  });
-
   for (const sub of subscriptions) {
     const pref = prefMap.get(sub.user_id) || { user_id: sub.user_id };
-    const newsType = normalize((job.payload || {}).news_type || "news");
-    const newsAllowed = job.category !== "news" || (newsType === "transfer" ? pref.transfer_news !== false : pref.football_news !== false);
+    const newsDecision = newsPreference(job, pref);
     const allowed = categoryEnabled(job.category, pref)
-      && newsAllowed
+      && newsDecision.allowed
       && !isQuiet(pref)
       && audienceAllows(job, pref, sub.user_id)
       && !(job.category === "community" && pref.verified_only && !(job.payload as JsonRecord)?.verified);
@@ -194,6 +204,18 @@ async function deliverJob(job: PushJob) {
     }
 
     try {
+      const payload = JSON.stringify({
+        version: "v192",
+        id: `push-job-${job.id}`,
+        category: job.category,
+        title: job.title,
+        body: job.body,
+        url: job.url || "index.html",
+        icon: "icon-192.png",
+        badge: "favicon-48x48.png",
+        createdAt: Date.now(),
+        data: { ...(job.payload || {}), reason: newsDecision.reason },
+      });
       await webpush.sendNotification({
         endpoint: sub.endpoint,
         keys: { p256dh: sub.p256dh, auth: sub.auth },
@@ -250,7 +272,7 @@ Deno.serve(async (req) => {
     if (error) throw error;
     const results = [];
     for (const job of (jobs || []) as PushJob[]) results.push(await deliverJob(job));
-    return jsonResponse({ ok: true, version: "v189", claimed: results.length, results });
+    return jsonResponse({ ok: true, version: "v192", claimed: results.length, results });
   } catch (error) {
     return jsonResponse({ error: String((error as Error)?.message || error) }, 500);
   }

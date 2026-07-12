@@ -6,7 +6,7 @@ test('global football news page exposes filters and discussion', async ({ page }
   await page.setViewportSize({ width: 344, height: 882 });
   await page.goto('/news.html', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { name: /Football news.*Transfer intelligence/i })).toBeVisible();
-  await expect(page.locator('[data-news-filter]')).toHaveCount(4);
+  await expect(page.locator('[data-news-filter]')).toHaveCount(7);
   await expect(page.locator('.p2u-news-hero-art img')).toHaveAttribute('src', /predict2u-transfers\.webp/);
   await expect(page.locator('[data-news-hero-filter="transfer"]')).toBeVisible();
   await expect(page.locator('#news-discussion-panel')).toBeAttached();
@@ -43,4 +43,6 @@ test('news sync can enrich real publisher images', async () => {
   expect(code).toContain('twitter:image');
   expect(code).toContain('imageFromArticlePage');
   expect(code).toContain('ignoreDuplicates: false');
+  expect(code).toContain('canonicalKey');
+  expect(code).toContain('source_verified');
 });

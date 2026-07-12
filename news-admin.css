@@ -1,0 +1,3 @@
+/* Predict2U v192 — Backend News Editorial panel */
+.news-admin-card{margin-top:16px}.news-admin-table{min-width:980px}.news-admin-title{display:block;max-width:420px;line-height:1.35}.news-admin-title+small{display:block;margin-top:5px;color:var(--muted);font-size:10px}.news-admin-actions{display:flex;gap:6px;flex-wrap:wrap;min-width:300px}.news-admin-actions .admin-button{width:auto;min-height:34px;padding:7px 10px}.news-admin-verified{color:#7acfff}.state-badge.hidden{background:rgba(255,77,77,.12);color:#ff9b9b}.state-badge.review{background:rgba(255,193,7,.12);color:#f5c75c}
+@media(max-width:720px){.news-admin-card{padding:12px}.news-admin-actions{min-width:250px}.news-admin-actions .admin-button{font-size:10px}}

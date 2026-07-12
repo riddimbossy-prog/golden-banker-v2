@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-07-12T10:33:54.529258+00:00",
+  "version": "v192",
+  "release": "News Personalization, Trust & Moderation",
+  "status": "pass-with-known-inherited-audit-findings",
+  "checks": [
+    {
+      "name": "v192 required files",
+      "status": "pass",
+      "detail": "12/12 present"
+    },
+    {
+      "name": "JavaScript syntax",
+      "status": "pass",
+      "detail": "8 files checked"
+    },
+    {
+      "name": "Repository preflight",
+      "status": "pass",
+      "detail": "Repository preflight passed: 81 required public files found."
+    },
+    {
+      "name": "Performance budget",
+      "status": "pass",
+      "detail": "Performance budget: 0 error(s), 0 warning(s), 33 checks passed."
+    },
+    {
+      "name": "Repository audit",
+      "status": "partial",
+      "detail": "261 checks passed; 9 inherited missing generated-asset findings; 1 warning"
+    },
+    {
+      "name": "SQL lexical validation",
+      "status": "pass",
+      "detail": "Migration structure and required objects present"
+    },
+    {
+      "name": "Edge Function feature checks",
+      "status": "pass",
+      "detail": "News sync and push dispatcher v192 tokens present"
+    },
+    {
+      "name": "News UI structure",
+      "status": "pass",
+      "detail": "Personalization, discussion and Read Later controls present"
+    },
+    {
+      "name": "Playwright browser matrix",
+      "status": "not-run",
+      "detail": "@playwright/test is not installed in this sandbox; tests are included for GitHub Actions"
+    }
+  ],
+  "knownInheritedFindings": [
+    "The supplied v191 snapshot does not contain generated data.js or community.js, so the broad repository audit reports those missing assets. v192 does not create or replace live fixture data."
+  ],
+  "securityNotes": [
+    "No service-role key or private VAPID key is added to browser files.",
+    "All user writes use RLS-protected tables or security-definer RPCs with auth checks.",
+    "News moderation RPCs require an active owner, admin or moderator role."
+  ]
+}

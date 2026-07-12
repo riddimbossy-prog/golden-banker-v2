@@ -2,7 +2,7 @@
    Uses Supabase Auth + RLS/RPC. No service-role key is present in browser code. */
 (function(){
   'use strict';
-  const VERSION='v187';
+  const VERSION='v192';
   const CONFIG=window.P2U_CLOUD_CONFIG||{};
   const ROLE_RANK={moderator:1,admin:2,owner:3};
   let client=null,session=null,roleRow=null,settings=null,moderation=[],audit=[],deletions=[],roles=[],pushConfig=null,pushJobs=[],pushError='',pushMetrics={active_devices:0,pending_jobs:0,sent_total:0,failed_total:0,last_dispatch:null};

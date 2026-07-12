@@ -1,11 +1,13 @@
-/* Predict2U service worker v191 — fast shell, bounded network waits and fresh data.
+/* Predict2U service worker v192 — fast shell, bounded network waits and fresh data.
    Strategy:
    - Navigation/HTML: network-first with a short timeout, then cached fallback.
    - data.js/site-health.json: network-first, canonical cache key, stale fallback.
    - Static assets: cache-first with background refresh.
    - Optional PREFETCH_URLS message warms likely next pages. */
 
-const CACHE_VERSION = "predict2u-v191";
+const CACHE_VERSION = "predict2u-v192";
+const NEWS_IMAGE_CACHE = "predict2u-news-images-v192";
+const NEWS_IMAGE_CACHE_LIMIT = 180;
 const OFFLINE_PAGE = "./board.html";
 const NETWORK_TIMEOUT_MS = 4500;
 
@@ -29,7 +31,11 @@ const SHELL = [
   "./community.html",
   "./news.html",
   "./news.js",
+  "./news-app-v192.js",
   "./news.css",
+  "./news-admin.js",
+  "./news-admin.css",
+  "./SUPABASE_NEWS_PERSONALIZATION_v192.sql",
   "./predict2u-transfers.webp",
   "./predict2u-transfers-thumb.webp",
   "./SUPABASE_FOOTBALL_NEWS_v189.sql",
@@ -133,7 +139,7 @@ self.addEventListener("activate", event => {
   event.waitUntil((async () => {
     const keys = await caches.keys();
     await Promise.all(keys
-      .filter(key => key.startsWith("predict2u-") && key !== CACHE_VERSION)
+      .filter(key => key.startsWith("predict2u-") && key !== CACHE_VERSION && key !== NEWS_IMAGE_CACHE)
       .map(key => caches.delete(key)));
     if (self.registration.navigationPreload) await self.registration.navigationPreload.enable();
     await self.clients.claim();
@@ -185,17 +191,44 @@ async function cacheFirstWithRefresh(request) {
   });
 }
 
+async function trimNewsImageCache(cache) {
+  const keys = await cache.keys();
+  if (keys.length <= NEWS_IMAGE_CACHE_LIMIT) return;
+  await Promise.all(keys.slice(0, keys.length - NEWS_IMAGE_CACHE_LIMIT).map(key => cache.delete(key)));
+}
+
+async function newsImageCache(request) {
+  const cache = await caches.open(NEWS_IMAGE_CACHE);
+  const cached = await cache.match(request, { ignoreSearch: true });
+  const refresh = fetch(request, { mode: "no-cors", credentials: "omit" })
+    .then(async response => {
+      if (isSuccessful(response)) {
+        await cache.put(request, response.clone());
+        await trimNewsImageCache(cache);
+      }
+      return response;
+    })
+    .catch(() => null);
+  if (cached) {
+    refresh.catch(() => {});
+    return cached;
+  }
+  return (await refresh) || new Response("", { status: 504, statusText: "Image unavailable" });
+}
+
 self.addEventListener("fetch", event => {
   const request = event.request;
   const url = new URL(request.url);
   if (request.method !== "GET") return;
 
-  // v184: club crests and country flags are immutable-style media. Cache them
-  // after first use so repeat visits are fast even on slow mobile connections.
+  // Club crests, country flags and publisher story images are cached after
+  // first use. The separate bounded news-image cache prevents unbounded growth.
   if (request.destination === "image" && url.origin !== self.location.origin) {
     if (url.hostname === "media.api-sports.io" || url.hostname.endsWith(".api-sports.io")) {
       event.respondWith(cacheFirstWithRefresh(request));
+      return;
     }
+    event.respondWith(newsImageCache(request));
     return;
   }
 
@@ -249,7 +282,8 @@ self.addEventListener("push", event => {
       try { payload = { body: event.data ? event.data.text() : "" }; } catch (_) {}
     }
     const title = String(payload.title || "Predict2U update").slice(0, 100);
-    const body = String(payload.body || "").slice(0, 240);
+    const reason = payload.data && payload.data.reason ? String(payload.data.reason) : "";
+    const body = `${String(payload.body || "")}${reason ? ` • ${reason}` : ""}`.slice(0, 240);
     const data = Object.assign({}, payload.data || {}, {
       url: payload.url || (payload.data && payload.data.url) || "./index.html",
       category: payload.category || "system",
