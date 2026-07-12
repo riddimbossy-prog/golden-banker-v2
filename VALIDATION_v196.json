@@ -1,0 +1,37 @@
+{
+  "version": "v196",
+  "generated_at": "2026-07-12",
+  "checks": {
+    "root_javascript_syntax": {
+      "status": "passed"
+    },
+    "model_selftests": {
+      "status": "passed",
+      "count": 4
+    },
+    "repository_preflight": {
+      "status": "passed",
+      "required_files": 110
+    },
+    "performance_budget": {
+      "status": "passed",
+      "errors": 0,
+      "warnings": 0,
+      "checks": 33
+    },
+    "service_worker_cache": "predict2u-v196",
+    "build_version": "v196",
+    "playwright": {
+      "status": "not_run",
+      "reason": "@playwright/test is not installed in the sandbox; specs are included for GitHub Actions."
+    },
+    "full_repository_audit": {
+      "status": "blocked_by_inherited_generated_assets",
+      "missing": [
+        "data.js",
+        "community.js"
+      ],
+      "note": "These generated live-data files were already absent from the supplied v193 source snapshot. The changed-files packages do not replace them."
+    }
+  }
+}

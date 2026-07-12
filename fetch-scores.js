@@ -14,6 +14,9 @@ const https = require("https");
 const { buildOddsCalib } = require("./calib");
 const { updateTeamProfiles, attachProfiles } = require("./team-profiles");
 const engineLearning = require("./engine-learning.js");
+const modelGovernance = require("./model-governance.js");
+const consensusReport = require("./consensus-report.js");
+const contextReport = require("./context-report.js");
 const { attachModelCalibration } = require("./model-calibration");
 const HERE = __dirname;
 
@@ -225,6 +228,9 @@ function loadExistingMatches() {
     const lr = engineLearning.runBuild();
     console.log(`Engine learning refreshed: ${lr.ledger.summary.reviewedLosses} reviewed losses; ${lr.attached} upcoming contexts.`);
   } catch(e) { console.log("Engine learning refresh skipped:", e.message); }
+  try { const gr=modelGovernance.runBuild(); console.log(`Model governance refreshed: ${gr.report.summary.approved} approved, ${gr.report.summary.shadow} shadow.`); } catch(e) { console.log("Model governance refresh skipped:",e.message); }
+  try { consensusReport.runBuild(); } catch(e) { console.log("Consensus report skipped:",e.message); }
+  try { contextReport.runBuild(); } catch(e) { console.log("Context report skipped:",e.message); }
   const liveCount=matches.filter(m=>isLiveCode(m.status)).length;
   console.log(`Updated ${updated} match snapshot(s) in ${calls} calls; ${liveCount} currently live.`);
 })();

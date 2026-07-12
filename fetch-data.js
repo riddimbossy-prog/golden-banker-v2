@@ -22,6 +22,9 @@ const https = require("https");
 const { buildOddsCalib } = require("./calib");
 const { updateTeamProfiles, attachProfiles } = require("./team-profiles");
 const engineLearning = require("./engine-learning.js");
+const modelGovernance = require("./model-governance.js");
+const consensusReport = require("./consensus-report.js");
+const contextReport = require("./context-report.js");
 const { buildTeamAdvanced } = require("./advanced-data");
 const { attachModelCalibration } = require("./model-calibration");
 const HERE = __dirname;
@@ -1140,6 +1143,9 @@ const FINISHED = new Set(["FT","AET","PEN"]);
     const lr = engineLearning.runBuild();
     console.log(`Engine learning: ${lr.ledger.summary.reviewedLosses} reviewed losses; ${lr.attached} upcoming contexts attached.`);
   } catch(e) { console.log("Engine learning refresh skipped:", e.message); }
+  try { const gr=modelGovernance.runBuild(); console.log(`Model governance: ${gr.report.summary.approved} approved, ${gr.report.summary.shadow} shadow; ${gr.attached} contexts attached.`); } catch(e) { console.log("Model governance refresh skipped:",e.message); }
+  try { const cr=consensusReport.runBuild(); console.log(`Smart consensus: ${cr.summary.qualified}/${cr.summary.fixtures} fixtures qualified.`); } catch(e) { console.log("Consensus report skipped:",e.message); }
+  try { const xr=contextReport.runBuild(); console.log(`Match context: ${xr.summary.extreme} extreme and ${xr.summary.high} high-risk fixtures.`); } catch(e) { console.log("Context report skipped:",e.message); }
 
   const finishedCount = out.filter(x=>x.homeGoals!=null).length;
   const daysCovered = [...new Set(out.map(x=>x.matchDate))].sort();

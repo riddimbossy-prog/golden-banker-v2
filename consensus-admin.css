@@ -1,0 +1,1 @@
+#con-body small{display:block;color:var(--muted);font-size:10px;margin-top:3px}#con-body td:last-child{max-width:330px;white-space:normal}@media(max-width:700px){#con-body th:nth-child(3),#con-body td:nth-child(3),#con-body th:nth-child(6),#con-body td:nth-child(6){display:none}}

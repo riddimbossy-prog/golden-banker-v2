@@ -1,0 +1,23 @@
+{
+  "version": "v194",
+  "updated": null,
+  "summary": {
+    "settled": 0,
+    "engines": 0,
+    "approved": 0,
+    "shadow": 0,
+    "hold": 0,
+    "rollback": 0,
+    "dataQualityFailures": 0,
+    "duplicateDecisions": 0,
+    "noBetSample": 0
+  },
+  "enginePolicies": {},
+  "marketScorecards": [],
+  "leagueScorecards": [],
+  "dataQuality": [],
+  "duplicates": [],
+  "method": {
+    "defaultPolicy": "SHADOW"
+  }
+}

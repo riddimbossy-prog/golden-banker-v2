@@ -80,8 +80,10 @@
       <button data-news-filter="discussed" role="tab"><i class="fa-regular fa-comments"></i> Most Discussed</button>
       <button data-news-filter="saved" role="tab"><i class="fa-regular fa-bookmark"></i> Read Later</button>
     </div>
-    <label class="p2u-news-search"><i class="fa-solid fa-magnifying-glass"></i><input id="news-search" type="search" placeholder="Search clubs, leagues or players…" autocomplete="off"/></label>
+    <label class="p2u-news-search"><i class="fa-solid fa-magnifying-glass"></i><input id="news-search" type="search" placeholder="Search clubs, leagues or players…" autocomplete="off" spellcheck="true" aria-describedby="news-search-help"/></label>
   </section>
+  <div id="news-search-help" class="p2u-news-search-help" role="status" aria-live="polite" hidden></div>
+  <div id="news-service-status" class="p2u-news-service-status" role="status" aria-live="polite" hidden></div>
 
   <section class="p2u-news-personalize" aria-labelledby="news-personalize-title">
     <div class="p2u-news-personalize-head">
@@ -106,7 +108,7 @@
       </label>
       <label class="grow">
         <span>Name</span>
-        <input id="news-follow-input" maxlength="100" placeholder="Arsenal, Ghana, Champions League, Mbappé…" autocomplete="off"/>
+        <input id="news-follow-input" maxlength="100" placeholder="Arsenal, Ghana, Champions League, Mbappé…" autocomplete="off" spellcheck="true"/>
       </label>
       <button id="news-follow-add" class="p2u-news-button" type="button"><i class="fa-solid fa-plus"></i> Follow</button>
     </div>
@@ -125,7 +127,7 @@
   <aside id="news-discussion-panel" class="p2u-news-discussion" role="dialog" aria-modal="true" aria-label="News discussion"></aside>
 </div>
 
-<footer class="p2u-news-footer"><span>Predict2U Football News</span><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="trust.html">Trust Center</a></footer>
+<footer class="p2u-news-footer"><span>Predict2U Football News · v197</span><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="trust.html">Trust Center</a></footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="cloud-config.js"></script>

@@ -24,9 +24,17 @@
 
   const VERSION = "2026.07-new-family";
   let P2ULearningSupervisor=null;
+  let P2UGovernanceSupervisor=null;
+  let P2USmartConsensus=null;
+  let P2UContextSupervisor=null;
   try{
     P2ULearningSupervisor=(typeof module!=="undefined"&&module.exports)?require("./learning-supervisor.js"):(typeof globalThis!=="undefined"?globalThis.P2ULearningSupervisor:null);
   }catch(_){ P2ULearningSupervisor=null; }
+  try{
+    P2UGovernanceSupervisor=(typeof module!=="undefined"&&module.exports)?require("./governance-supervisor.js"):(typeof globalThis!=="undefined"?globalThis.P2UGovernanceSupervisor:null);
+  }catch(_){ P2UGovernanceSupervisor=null; }
+  try{ P2USmartConsensus=(typeof module!=="undefined"&&module.exports)?require("./engine-consensus.js"):(typeof globalThis!=="undefined"?globalThis.P2USmartConsensus:null); }catch(_){ P2USmartConsensus=null; }
+  try{ P2UContextSupervisor=(typeof module!=="undefined"&&module.exports)?require("./context-supervisor.js"):(typeof globalThis!=="undefined"?globalThis.P2UContextSupervisor:null); }catch(_){ P2UContextSupervisor=null; }
   const EPS = 1e-9;
   const clamp = (n, lo, hi) => Math.max(lo, Math.min(hi, Number(n)));
   const num = v => (v === null || v === undefined || v === "" || !Number.isFinite(Number(v))) ? null : Number(v);
@@ -200,6 +208,8 @@
     };
     if(!bet && out.reasons.length===0) out.reasons.push("No supported market reached the required threshold.");
     if(P2ULearningSupervisor&&typeof P2ULearningSupervisor.reviewDecision==="function") out=P2ULearningSupervisor.reviewDecision(out,m);
+    if(P2UGovernanceSupervisor&&typeof P2UGovernanceSupervisor.reviewDecision==="function") out=P2UGovernanceSupervisor.reviewDecision(out,m);
+    if(P2UContextSupervisor&&typeof P2UContextSupervisor.reviewDecision==="function") out=P2UContextSupervisor.reviewDecision(out,m);
     return out;
   }
   function noBet(m,engine,version,reason,{dq=0,warnings=[],veto="HARD",scope="FIXTURE",specialist=false,extra={}}={}){
@@ -762,6 +772,11 @@
     let odds=noBet(m,"Odds Intelligence","1.0","No statistical candidate.",{specialist:true}),value=noBet(m,"Value","1.0","No statistical candidate.",{specialist:true});
     if(candidate){m.statisticalCandidate=candidate;odds=oddsIntelligenceRecommend(m);value=valueRecommend(m);delete m.statisticalCandidate;}
     outputs.push(odds,value);
+    if(P2USmartConsensus&&typeof P2USmartConsensus.resolve==="function"){
+      const d=P2USmartConsensus.resolve({match:m,outputs});
+      if(d.bet)return makeOutput({m,engine,version:"2.0",market:d.market,score:d.score,dq:avg(outputs.map(r=>r.dataQuality))||0,reasons:[d.reason,`Independent groups: ${d.independence}; conflict ${Math.round(d.conflictIndex*100)}%.`,`Supporters: ${d.supporters.join(", ")}.`],warnings:outputs.flatMap(r=>r.warnings||[]).slice(0,5),specialist:true,bankerFloor:88,extra:{smart_consensus:d,component_outputs:outputs.map(r=>({engine:r.engine,market:r.primary,status:r.final_status}))}});
+      return noBet(m,engine,"2.0",d.reason,{dq:avg(outputs.map(r=>r.dataQuality))||0,specialist:true,scope:"CONSENSUS",extra:{smart_consensus:d}});
+    }
     const hard=outputs.filter(r=>r.veto==="HARD"&&r.veto_scope==="FIXTURE");if(hard.length)return noBet(m,engine,version,"Fixture-level hard veto from a component engine.",{dq:avg(outputs.map(r=>r.dataQuality))||0,scope:"CONSENSUS"});
     const exact={};outputs.filter(r=>r.bet&&r.dataQuality>=72).forEach(r=>{exact[r.primary]=exact[r.primary]||[];exact[r.primary].push(r);});
     const weights={"PurePPG Pro":1.2,"Mismatch":1.1,"Trend":1,"Halves":1,"League Bias":.9,"Streaks":.85,"Momentum":.85,"Odds Intelligence":1,"Value":1.15};

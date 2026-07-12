@@ -1,0 +1,78 @@
+{
+  "version": "v197",
+  "name": "News Resilience, Typo-Tolerant Discovery & Share Visibility",
+  "created_at": "2026-07-12",
+  "checks": {
+    "javascript_syntax": {
+      "status": "passed",
+      "files": [
+        "news-app-v197.js",
+        "news.js",
+        "sw.js"
+      ]
+    },
+    "repository_preflight": {
+      "status": "passed",
+      "required_public_files": 110
+    },
+    "performance_budget": {
+      "status": "passed",
+      "errors": 0,
+      "warnings": 0,
+      "checks_passed": 33
+    },
+    "fuzzy_search_selftest": {
+      "status": "passed",
+      "cases": [
+        "arsnal \u2192 Arsenal",
+        "mancester united \u2192 Manchester United",
+        "PSG \u2192 Paris Saint-Germain",
+        "Barca \u2192 Barcelona"
+      ]
+    },
+    "adaptive_schema_levels": {
+      "status": "passed",
+      "levels": [
+        "modern v192",
+        "base v189",
+        "minimal core"
+      ]
+    },
+    "share_visibility": {
+      "status": "passed",
+      "label_visible": true,
+      "brand_green_border": true,
+      "native_share_fallback": true
+    },
+    "playwright": {
+      "status": "not_run",
+      "reason": "@playwright/test is not installed in this sandbox; spec included for GitHub Actions"
+    },
+    "repository_audit": {
+      "status": "inherited_issues_only",
+      "checks_passed": 261,
+      "critical": 9,
+      "warnings": 1,
+      "details": "The supplied snapshot does not include generated data.js and community.js. The changed-files patch does not replace or delete live repository copies."
+    }
+  },
+  "database": {
+    "required_sql": false,
+    "optional_sql": "SUPABASE_NEWS_COMPATIBILITY_v197.sql",
+    "behavior_without_sql": "The feed automatically falls back to the original v189 schema and keeps stories, images, filters, comments and sharing active."
+  },
+  "service_worker_cache": "predict2u-v197",
+  "changed_files": [
+    "news.html",
+    "news.css",
+    "news.js",
+    "news-app-v197.js",
+    "sw.js",
+    "BUILD_VERSION.txt",
+    "package.json",
+    "tests/news-resilience.spec.js",
+    "SUPABASE_NEWS_COMPATIBILITY_v197.sql",
+    "NEWS_RESILIENCE_v197.md",
+    "VALIDATION_v197.json"
+  ]
+}
