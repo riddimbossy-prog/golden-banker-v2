@@ -161,6 +161,7 @@ a{ color:inherit; text-decoration:none; }
 <link rel="dns-prefetch" href="https://media.api-sports.io">
 <link rel="stylesheet" href="brand-performance.css">
 <link rel="stylesheet" href="analytics.css">
+<link rel="stylesheet" href="engine-learning-ui.css">
 </head>
 <body>
 
@@ -263,6 +264,7 @@ a{ color:inherit; text-decoration:none; }
     <div style="color:var(--em)">Built for transparency</div>
   </div>
 </footer>
+<script src="learning-supervisor.js"></script>
 <script src="banker-engine.js"></script>
 <script src="data.js"></script>
 <script src="slip.js"></script>
@@ -352,6 +354,14 @@ a{ color:inherit; text-decoration:none; }
   const ODDS={'Home Win':'home','Draw':'draw','Away Win':'away','Over 1.5':'over15','Over 2.5':'over25','Over 3.5':'over35','Under 1.5':'under15','Under 2.5':'under25','Under 3.5':'under35','BTTS Yes':'bttsYes','BTTS No':'bttsNo','Double Chance 1X':'dc1x','Double Chance 12':'dc12','Double Chance X2':'dcx2','First Half Over 0.5':'fhOver05','First Half Under 1.5':'fhUnder15'};
   const priceOf=(m,mk)=>{ const k=ODDS[String(mk).replace(/ Goals$/,'')]; const v=k&&m.odds?m.odds[k]:null;
     return (typeof v==='number'&&v>1)?v:null; };
+  const learningSignal=m=>{
+    const c=m&&m.learningContext;if(!c)return'';
+    const f=c.flags||[];
+    if(c.riskLevel==='high'||f.includes('FAVORITE_TRAP')||f.includes('PATTERN_BREAKER'))return `<span class="p2u-learning-flag high"><i class="fa-solid fa-triangle-exclamation"></i> Favourite trap</span>`;
+    if(c.stabilityScore>=72&&c.riskScore<=30)return `<span class="p2u-learning-flag stable"><i class="fa-solid fa-shield"></i> Upset resistant</span>`;
+    if(c.riskLevel==='elevated')return `<span class="p2u-learning-flag"><i class="fa-solid fa-brain"></i> Pattern watch</span>`;
+    return'';
+  };
   const marketTag=mk=>{ const s=String(mk||'').toLowerCase();
     if(s.includes('first half')||s.includes('second half')||s.includes('either half')) return 'half';
     if(s.includes('team over')||s.includes('team under')) return 'team';
@@ -387,7 +397,7 @@ a{ color:inherit; text-decoration:none; }
       const btn=(p.m.homeGoals==null&&typeof P2USlip!=='undefined')?P2USlip.btn(p.m,p.market):'';
       return `<div class="glass card-h rounded-3xl p-5 rise top-banker-card" style="animation-delay:${i*45}ms;border-color:var(--em-line)">
         <div class="flex items-start justify-between gap-2 mb-3 tb-head">
-          <div class="flex items-center gap-1.5 flex-wrap"><span class="ebadge">${p.engines.length}/${TOTAL} engines</span><span class="conflict-pill ${p.intel.conflict.level}">${esc(p.intel.conflict.label)}</span></div>
+          <div class="flex items-center gap-1.5 flex-wrap"><span class="ebadge">${p.engines.length}/${TOTAL} engines</span><span class="conflict-pill ${p.intel.conflict.level}">${esc(p.intel.conflict.label)}</span>${learningSignal(p.m)}</div>
           ${statusTag(p.m,p.market)}
         </div>
         <div class="font-semibold text-[16px] leading-snug tb-teams">${esc(p.m.home)}<br/><span style="color:var(--em)">vs</span> ${esc(p.m.away)}</div>
@@ -447,6 +457,7 @@ a{ color:inherit; text-decoration:none; }
               <div class="flex items-center gap-1.5 text-[12px] mt-1.5 flex-wrap">
                 <span class="ebadge">${p.engines.length}/${TOTAL} engine${p.engines.length>1?'s':''}</span>
                 <span class="conflict-pill ${p.intel.conflict.level}">${esc(p.intel.conflict.label)}</span>
+                ${learningSignal(p.m)}
                 <span style="color:var(--muted)">•</span>
                 <span class="mono">${price?price.toFixed(2):'—'}</span>
               </div>

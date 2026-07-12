@@ -1,0 +1,17 @@
+/* Predict2U v193 Engine Learning dashboard */
+.learning-status{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+.learning-status i{width:9px;height:9px;border-radius:50%;background:#77c41c;box-shadow:0 0 0 5px rgba(119,196,28,.12)}
+.learning-metric .metric-value{font-variant-numeric:tabular-nums}
+.learning-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}
+.learning-table td small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+.learning-flag{display:inline-flex;max-width:260px;padding:5px 8px;border-radius:999px;background:rgba(119,196,28,.12);border:1px solid rgba(119,196,28,.25);color:#a8e45b;font-size:10px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;white-space:normal}
+.learning-flag.danger{background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.25);color:#fca5a5}
+.learning-flag.amber{background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.25);color:#fcd34d}
+.learning-cause{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:12px;text-transform:capitalize}
+.learning-cause strong{color:#77c41c;font-variant-numeric:tabular-nums}
+.learning-empty{padding:22px!important;text-align:center;color:var(--muted)!important}
+.learning-method{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px}
+.learning-method div{padding:12px;border-radius:14px;background:rgba(255,255,255,.025);border:1px solid var(--line)}
+.learning-method strong{display:block;color:#fff;font-size:13px}.learning-method span{display:block;color:var(--muted);font-size:11px;line-height:1.5;margin-top:4px}
+@media(max-width:980px){.learning-grid{grid-template-columns:1fr}.learning-method{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.learning-method{grid-template-columns:1fr}.learning-flag{max-width:180px;font-size:9px}.learning-table th:nth-child(3),.learning-table td:nth-child(3){display:none}}

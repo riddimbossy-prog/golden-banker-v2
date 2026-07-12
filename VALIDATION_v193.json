@@ -1,0 +1,58 @@
+{
+  "product": "Predict2U",
+  "version": "v193",
+  "release": "Engine Learning & Pattern Integrity",
+  "generatedAt": "2026-07-12",
+  "checks": [
+    {
+      "name": "Repository preflight",
+      "status": "passed",
+      "detail": "89 required public and learning files found"
+    },
+    {
+      "name": "Performance budget",
+      "status": "passed",
+      "detail": "33 checks passed, 0 errors, 0 warnings"
+    },
+    {
+      "name": "Engine learning self-test",
+      "status": "passed",
+      "detail": "Pattern breaker, upset resistance, future-risk attachment and supervisor adjustment verified"
+    },
+    {
+      "name": "Changed JavaScript syntax",
+      "status": "passed",
+      "detail": "10 changed JavaScript files passed node --check"
+    },
+    {
+      "name": "Repository audit",
+      "status": "inherited generated-data gap",
+      "detail": "261 checks passed; 9 critical references and 1 warning are caused by data.js and community.js not being present in the supplied snapshot. v193 intentionally does not replace live generated fixture or Community data."
+    },
+    {
+      "name": "Playwright learning tests",
+      "status": "included, not executed in sandbox",
+      "detail": "tests/engine-learning.spec.js verifies hard favourite-trap abstention and prevents positive learning from manufacturing a pick"
+    }
+  ],
+  "security": {
+    "newSecretsRequired": false,
+    "newSqlRequired": false,
+    "newEdgeFunctionsRequired": false,
+    "serviceWorkerCache": "predict2u-v193"
+  },
+  "methodology": {
+    "forwardOnly": true,
+    "minimumSamples": {
+      "teamFavorite": 5,
+      "teamUnderdog": 5,
+      "league": 12,
+      "matchup": 2,
+      "context": 6,
+      "hardVeto": 8
+    },
+    "evidenceHalfLifeDays": 120,
+    "positiveAdjustmentCap": 2,
+    "marketSwitchingAllowed": false
+  }
+}

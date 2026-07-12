@@ -13,6 +13,7 @@ const path = require("path");
 const https = require("https");
 const { buildOddsCalib } = require("./calib");
 const { updateTeamProfiles, attachProfiles } = require("./team-profiles");
+const engineLearning = require("./engine-learning.js");
 const { attachModelCalibration } = require("./model-calibration");
 const HERE = __dirname;
 
@@ -220,6 +221,10 @@ function loadExistingMatches() {
     `window.SCORES_UPDATED = "${new Date().toISOString()}";\n` +
     `window.MATCHES = ${JSON.stringify(matches, null, 2)};\n`;
   fs.writeFileSync(path.join(HERE, "data.js"), out, "utf8");
+  try {
+    const lr = engineLearning.runBuild();
+    console.log(`Engine learning refreshed: ${lr.ledger.summary.reviewedLosses} reviewed losses; ${lr.attached} upcoming contexts.`);
+  } catch(e) { console.log("Engine learning refresh skipped:", e.message); }
   const liveCount=matches.filter(m=>isLiveCode(m.status)).length;
   console.log(`Updated ${updated} match snapshot(s) in ${calls} calls; ${liveCount} currently live.`);
 })();

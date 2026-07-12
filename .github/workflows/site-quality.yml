@@ -48,6 +48,13 @@ jobs:
           test -f account-cloud.js
           test -f SUPABASE_CLOUD_SETUP_v180.sql
           test -f tests/account-cloud.spec.js
+          test -f learning-supervisor.js
+          test -f engine-learning.js
+          test -f engine-learning-selftest.js
+          test -f engine-learning-admin.js
+          test -f engine-learning-admin.css
+          test -f engine-learning-ui.css
+          test -f tests/engine-learning.spec.js
           test -f performance-budget.js
           test -f tests/performance-freshness.spec.js
           test -f trust.html
@@ -60,6 +67,9 @@ jobs:
 
       - name: Run deterministic performance budget
         run: node performance-budget.js
+
+      - name: Run engine learning self-test
+        run: node engine-learning-selftest.js
 
       - name: Generate public health snapshot
         run: node generate-site-health.js

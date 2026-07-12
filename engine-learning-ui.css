@@ -1,0 +1,7 @@
+/* Predict2U v193 — compact learning-context flags */
+.p2u-learning-flag{display:inline-flex;align-items:center;gap:5px;min-height:24px;padding:3px 8px;border-radius:999px;border:1px solid rgba(245,158,11,.28);background:rgba(245,158,11,.09);color:#fcd34d;font-size:10px;font-weight:800;letter-spacing:.035em;text-transform:uppercase;white-space:nowrap}
+.p2u-learning-flag i{font-size:9px}
+.p2u-learning-flag.high{border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.1);color:#fca5a5}
+.p2u-learning-flag.stable{border-color:rgba(119,196,28,.3);background:rgba(119,196,28,.1);color:#a8e45b}
+.p2u-learning-flag.low{border-color:rgba(148,163,184,.25);background:rgba(148,163,184,.08);color:#cbd5e1}
+@media(max-width:520px){.p2u-learning-flag{font-size:9px;min-height:22px;padding:2px 7px}}

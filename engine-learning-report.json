@@ -1,0 +1,13 @@
+{
+  "version": "v193",
+  "updated": null,
+  "summary": {"settledFixtures":0,"settledDecisions":0,"reviewedLosses":0,"teamProfiles":0,"leagueProfiles":0,"matchupProfiles":0,"activePatternBreakers":0,"upsetResistantTeams":0},
+  "patternBreakers": [],
+  "upsetResistant": [],
+  "dangerousUnderdogs": [],
+  "volatileLeagues": [],
+  "stableLeagues": [],
+  "commonMissCauses": [],
+  "recentLossReviews": [],
+  "methodology": {"forwardOnly":true,"decayHalfLifeDays":120,"positiveAdjustmentCap":2,"oneMarketOnly":true}
+}

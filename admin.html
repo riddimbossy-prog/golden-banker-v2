@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="account-cloud.css"/>
   <link rel="stylesheet" href="product-analytics.css"/>
   <link rel="stylesheet" href="news-admin.css"/>
+  <link rel="stylesheet" href="engine-learning-admin.css"/>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin/>
   <script src="https://kit.fontawesome.com/a2e0e9f1b8.js" crossorigin="anonymous"></script>
 
@@ -25,7 +26,7 @@
     <div class="admin-topbar-inner">
       <a class="admin-brand" href="index.html" aria-label="Predict2U home">
         <img src="predict2u-logo.png" alt="Predict2U"/>
-        <span class="admin-brand-copy"><strong>Backend Admin</strong><span>Operations console · v192</span></span>
+        <span class="admin-brand-copy"><strong>Backend Admin</strong><span>Operations console · v193</span></span>
       </a>
       <div class="admin-top-actions">
         <span class="admin-chip" aria-label="Current admin role"><i class="fa-solid fa-shield-halved"></i><span id="top-role">CHECKING</span></span>
@@ -57,6 +58,7 @@
       <button data-admin-tab="publishing" data-min-role="admin"><i class="fa-solid fa-tower-broadcast"></i> Publishing</button>
       <button data-admin-tab="push" data-min-role="admin"><i class="fa-regular fa-bell"></i> Push</button>
       <button data-admin-tab="analytics"><i class="fa-solid fa-chart-line"></i> Analytics</button>
+      <button data-admin-tab="learning"><i class="fa-solid fa-brain"></i> Engine Learning</button>
       <button data-admin-tab="community"><i class="fa-solid fa-people-group"></i> Community</button>
       <button data-admin-tab="accounts" data-min-role="admin"><i class="fa-solid fa-user-shield"></i> Accounts</button>
       <button data-admin-tab="roles" data-min-role="owner"><i class="fa-solid fa-key"></i> Roles</button>
@@ -161,6 +163,36 @@
         <article class="card" style="margin-top:16px"><div class="analytics-privacy-note"><strong>Privacy design:</strong> events require user consent and contain no raw IP address, email, payment information, bookmaker credentials, full user agent or advertising identifier. Browser Global Privacy Control and Do Not Track are respected.</div><div class="actions" style="margin-top:14px"><button class="admin-button danger" id="purge-analytics" data-analytics-admin-action data-min-role="admin"><i class="fa-solid fa-trash-can"></i> Delete data older than 13 months</button></div></article>
       </section>
 
+
+      <section class="admin-panel" data-admin-panel="learning">
+        <div class="panel-head">
+          <div><div class="eyebrow">Forward review system</div><h1>Engine learning</h1><p>Settled losses are classified and used to reduce repeated mistakes.</p></div>
+          <button class="admin-button secondary" id="refresh-learning"><i class="fa-solid fa-rotate"></i> Refresh</button>
+        </div>
+        <div class="learning-status"><i></i><span id="learning-state">Open this tab to load the latest learning ledger.</span><span>·</span><span>Updated <strong id="learning-updated">—</strong></span></div>
+        <div class="grid four metric-grid" style="margin-top:16px">
+          <article class="card metric-card learning-metric"><div class="metric-label">Settled decisions</div><div id="learning-settled" class="metric-value">0</div></article>
+          <article class="card metric-card learning-metric"><div class="metric-label">Losses reviewed</div><div id="learning-losses" class="metric-value">0</div></article>
+          <article class="card metric-card learning-metric"><div class="metric-label">Pattern breakers</div><div id="learning-breakers" class="metric-value">0</div></article>
+          <article class="card metric-card learning-metric"><div class="metric-label">Upset resistant</div><div id="learning-stable" class="metric-value">0</div></article>
+        </div>
+        <div class="learning-method">
+          <div><strong>Forward only</strong><span>Only pre-kickoff records teach the engines.</span></div>
+          <div><strong>Sample gated</strong><span>Small samples cannot trigger strong action.</span></div>
+          <div><strong>Decay weighted</strong><span>Recent evidence matters more.</span></div>
+          <div><strong>One market only</strong><span>The supervisor never swaps markets.</span></div>
+        </div>
+        <div class="learning-grid">
+          <article class="card"><h2>Favourite pattern breakers</h2><div class="table-wrap"><table class="admin-table learning-table"><thead><tr><th>Team</th><th>Sample</th><th>Win</th><th>Upset</th><th>Flag</th></tr></thead><tbody id="learning-breaker-body"></tbody></table></div></article>
+          <article class="card"><h2>Upset-resistant favourites</h2><div class="table-wrap"><table class="admin-table learning-table"><thead><tr><th>Team</th><th>Sample</th><th>Win</th><th>Upset</th><th>Flag</th></tr></thead><tbody id="learning-resistant-body"></tbody></table></div></article>
+          <article class="card"><h2>Dangerous underdogs</h2><div class="table-wrap"><table class="admin-table learning-table"><thead><tr><th>Team</th><th>Sample</th><th>Upsets</th><th>Non-loss</th><th>Flag</th></tr></thead><tbody id="learning-underdog-body"></tbody></table></div></article>
+          <article class="card"><h2>League stability</h2><div class="table-wrap"><table class="admin-table learning-table"><thead><tr><th>League</th><th>Sample</th><th>Fav win</th><th>Upset</th><th>Flag</th></tr></thead><tbody id="learning-league-body"></tbody></table></div></article>
+          <article class="card"><h2>Most common miss causes</h2><div id="learning-causes"></div></article>
+          <article class="card"><h2>What the supervisor changes</h2><p class="card-copy">High-risk contexts lose confidence or are rejected. Stable contexts receive at most +2. No history can create a rejected pick.</p><div class="inline-note">Fewer repeated errors, clearer abstention.</div></article>
+        </div>
+        <article class="card" style="margin-top:16px"><h2>Recent post-match reviews</h2><div class="table-wrap"><table class="admin-table"><thead><tr><th>Date</th><th>Fixture</th><th>Engine</th><th>Market</th><th>Root causes</th></tr></thead><tbody id="learning-reviews-body"></tbody></table></div></article>
+      </section>
+
       <section class="admin-panel" data-admin-panel="community">
         <div class="panel-head"><div><div class="eyebrow">Community moderation</div><h1>Public record controls</h1><p>Verify, hide, review or clear Community records by public slip ID.</p></div></div>
         <div class="grid two">
@@ -197,6 +229,7 @@
 <script src="backend-admin.js" defer></script>
 <script src="product-analytics.js" defer></script>
 <script src="news-admin.js" defer></script>
+<script src="engine-learning-admin.js" defer></script>
 <script src="football-assets.js" defer></script>
 </body>
 </html>

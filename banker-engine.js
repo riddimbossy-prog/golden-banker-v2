@@ -23,6 +23,10 @@
   "use strict";
 
   const VERSION = "2026.07-new-family";
+  let P2ULearningSupervisor=null;
+  try{
+    P2ULearningSupervisor=(typeof module!=="undefined"&&module.exports)?require("./learning-supervisor.js"):(typeof globalThis!=="undefined"?globalThis.P2ULearningSupervisor:null);
+  }catch(_){ P2ULearningSupervisor=null; }
   const EPS = 1e-9;
   const clamp = (n, lo, hi) => Math.max(lo, Math.min(hi, Number(n)));
   const num = v => (v === null || v === undefined || v === "" || !Number.isFinite(Number(v))) ? null : Number(v);
@@ -183,7 +187,7 @@
     const finalStatus=status || (qualified?"QUALIFIED":score>=74&&market!=="No Bet"?"WATCHLIST":"NO BET");
     const bet=qualified && market!=="No Bet";
     const primary=bet?market:"No Bet";
-    const out={
+    let out={
       match:m, engine, version, primary, candidate_market:primary, market:primary,
       market_family:marketFamily(primary), direction:marketDirection(primary),
       score, specialist_score:specialist?score:undefined, confidence:score, dataQuality:dq, data_quality:dq,
@@ -195,6 +199,7 @@
       ...extra
     };
     if(!bet && out.reasons.length===0) out.reasons.push("No supported market reached the required threshold.");
+    if(P2ULearningSupervisor&&typeof P2ULearningSupervisor.reviewDecision==="function") out=P2ULearningSupervisor.reviewDecision(out,m);
     return out;
   }
   function noBet(m,engine,version,reason,{dq=0,warnings=[],veto="HARD",scope="FIXTURE",specialist=false,extra={}}={}){

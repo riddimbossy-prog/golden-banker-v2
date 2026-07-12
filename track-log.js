@@ -28,6 +28,7 @@ const fs = require("fs");
 const path = require("path");
 const eng = require("./banker-engine.js");
 const { marketOdds, fairProbability, buildCalibrationLedger, saveLedger, attachToDataFile } = require("./model-calibration");
+const learning = require("./engine-learning.js");
 const HERE = __dirname;
 const LOG = path.join(HERE, "track-log.json");
 
@@ -109,6 +110,7 @@ function record(log, matches){
         suiteVersion:eng.ENGINE_SUITE_VERSION||null,leagueClass:lcType,
         oddsAtPick:marketOdds(m,b.market),
         fairMarketProbabilityAtPick:fairProbability(m,b.market),
+        snapshot:learning.snapshotForMatch(m),
         recordedAt:new Date().toISOString(),
         status:"pending",result:null,score:null
       };
@@ -137,6 +139,8 @@ function settle(log, matches){
     const res=eng.settle(p.market,m.homeGoals,m.awayGoals,m.status,m);
     if(!res || res==="Void") { p.status="void"; p.result="Void"; continue; }
     p.status="settled"; p.result=res; p.score=`${m.homeGoals}-${m.awayGoals}`;
+    p.finalHomeGoals=Number(m.homeGoals); p.finalAwayGoals=Number(m.awayGoals);
+    p.actualResult=Number(m.homeGoals)>Number(m.awayGoals)?"home":Number(m.awayGoals)>Number(m.homeGoals)?"away":"draw";
     p.settledAt=new Date().toISOString();
     settled++;
   }
@@ -229,6 +233,13 @@ function refreshCalibration(log){
   }catch(e){ console.log("calibration refresh skipped:",e.message); }
 }
 
+function refreshLearning(){
+  try{
+    const r=learning.runBuild();
+    console.log(`learning: ${r.ledger.summary.reviewedLosses} loss review(s), ${r.attached} upcoming context(s), ${r.highRisk} high-risk flag(s).`);
+  }catch(e){ console.log("learning refresh skipped:",e.message); }
+}
+
 (function main(){
   const mode = (process.argv[2]||"all").toLowerCase();
   let matches;
@@ -236,14 +247,15 @@ function refreshCalibration(log){
   catch(e){ console.log("track-log: no data.js —", e.message); process.exit(0); }
   const log = loadLog();
 
-  if(mode==="record"){ record(log,matches); saveLog(log); refreshCalibration(log); }
-  else if(mode==="settle"){ settle(log,matches); saveLog(log); refreshCalibration(log); }
+  if(mode==="record"){ record(log,matches); saveLog(log); refreshCalibration(log); refreshLearning(); }
+  else if(mode==="settle"){ settle(log,matches); saveLog(log); refreshCalibration(log); refreshLearning(); }
   else if(mode==="report"){ report(log, true); }
   else { // daily default: settle finished, record new, then report
     settle(log, matches);
     record(log, matches);
     saveLog(log);
     refreshCalibration(log);
+    refreshLearning();
     report(log,true);
   }
 })();

@@ -1,7 +1,7 @@
 {
   "name": "predict2u-site-quality",
   "private": true,
-  "version": "1.92.0",
+  "version": "1.93.0",
   "scripts": {
     "health": "node generate-site-health.js",
     "audit": "node audit-site.js",
@@ -12,7 +12,8 @@
     "test:push": "playwright test tests/push-notifications.spec.js",
     "test:visual": "playwright test tests/visual-performance.spec.js",
     "test:analytics": "playwright test tests/analytics.spec.js",
-    "test:news": "playwright test tests/news.spec.js"
+    "test:news": "playwright test tests/news.spec.js",
+    "test:learning": "node engine-learning-selftest.js"
   },
   "devDependencies": {
     "@playwright/test": "^1.53.0",
