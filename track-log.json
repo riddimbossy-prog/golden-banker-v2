@@ -62038,7 +62038,7 @@
       "leagueClass": "Very High-Scoring",
       "oddsAtPick": null,
       "fairMarketProbabilityAtPick": null,
-      "recordedAt": "2026-07-12T02:19:15.489Z",
+      "recordedAt": "2026-07-12T02:20:38.080Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -62058,7 +62058,7 @@
       "leagueClass": "Very High-Scoring",
       "oddsAtPick": null,
       "fairMarketProbabilityAtPick": null,
-      "recordedAt": "2026-07-12T02:19:15.500Z",
+      "recordedAt": "2026-07-12T02:20:38.089Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -62078,7 +62078,7 @@
       "leagueClass": "Very High-Scoring",
       "oddsAtPick": null,
       "fairMarketProbabilityAtPick": null,
-      "recordedAt": "2026-07-12T02:19:15.500Z",
+      "recordedAt": "2026-07-12T02:20:38.089Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -62098,7 +62098,7 @@
       "leagueClass": "Very High-Scoring",
       "oddsAtPick": null,
       "fairMarketProbabilityAtPick": null,
-      "recordedAt": "2026-07-12T02:19:15.505Z",
+      "recordedAt": "2026-07-12T02:20:38.096Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -62118,7 +62118,7 @@
       "leagueClass": "Very High-Scoring",
       "oddsAtPick": null,
       "fairMarketProbabilityAtPick": null,
-      "recordedAt": "2026-07-12T02:19:15.507Z",
+      "recordedAt": "2026-07-12T02:20:38.098Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -62126,6 +62126,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-12T02:19:15.763Z"
+    "updated": "2026-07-12T02:20:38.359Z"
   }
 }
