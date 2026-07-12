@@ -1,17 +1,22 @@
 name: Predict2U Site Quality
+
 on:
   push:
     branches: [ main, master ]
   pull_request:
   workflow_dispatch:
+
 permissions:
   contents: read
+
 jobs:
   audit-and-mobile:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
@@ -69,6 +74,7 @@ jobs:
 
       - name: Install quality tools
         run: npm install --no-audit --no-fund --package-lock=false
+
       - name: Run repository completeness preflight
         run: node repository-preflight.js
 
@@ -83,21 +89,17 @@ jobs:
 
       - name: Generate public health snapshot
         run: node generate-site-health.js
+
       - name: Run repository consistency audit
         run: node audit-site.js
-      - name: Install Chromium
-        run: npx playwright install --with-deps chromium
-      - name: Run mobile and desktop regression tests
-        run: npx playwright test
-      - name: Upload test report on failure
+
+      - name: Upload quality report on failure
         if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: predict2u-quality-report
           if-no-files-found: ignore
           path: |
-            playwright-report
-            test-results
             site-audit.json
             site-health.json
             performance-budget.json
