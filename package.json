@@ -1,7 +1,7 @@
 {
   "name": "predict2u-site-quality",
   "private": true,
-  "version": "1.197.0",
+  "version": "1.198.0",
   "scripts": {
     "health": "node generate-site-health.js",
     "audit": "node audit-site.js",
@@ -18,7 +18,10 @@
     "quality:models": "npm run test:learning && npm run test:governance && npm run test:consensus && npm run test:context",
     "test:consensus": "node consensus-selftest.js",
     "test:context": "node context-selftest.js",
-    "test:news-resilience": "playwright test tests/news-resilience.spec.js"
+    "test:news-resilience": "playwright test tests/news-resilience.spec.js",
+    "test:news-comments": "node news-comment-selftest.js",
+    "test:health": "node system-health-selftest.js",
+    "quality:reliability": "npm run test:news-comments && npm run test:health"
   },
   "devDependencies": {
     "@playwright/test": "^1.53.0",

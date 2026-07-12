@@ -108,3 +108,8 @@ html:not([data-p2u-news-ready="true"]) #news-list{min-height:420px;background:li
   .p2u-news-card .p2u-news-actions .p2u-news-share-action{min-width:0}
 }
 .p2u-news-toast.warn{border-color:rgba(246,185,36,.45);color:#ffe2a0}
+
+/* v198 discussion reliability */
+.p2u-news-comment-message{min-height:20px;margin-top:10px;font-size:12px;font-weight:800;color:var(--news-muted)}
+.p2u-news-comment-message[data-state="loading"]{color:#f2c94c}.p2u-news-comment-message[data-state="success"]{color:var(--news-green)}.p2u-news-comment-message[data-state="error"]{color:#ff667a}
+.p2u-news-comment-form button[disabled]{opacity:.62;cursor:wait;transform:none!important}.p2u-news-comment-form textarea:focus{border-color:var(--news-green);box-shadow:0 0 0 3px rgba(119,196,28,.14)}

@@ -3,7 +3,7 @@
    and Community moderation from Supabase using the public publishable key + RLS. */
 (function(){
   'use strict';
-  const VERSION='v181';
+  const VERSION='v198';
   const CONFIG=window.P2U_CLOUD_CONFIG||{};
   const FALLBACK=window.P2U_ADMIN_CONFIG||{};
   let activeConfig=normalizeFallback(FALLBACK),client=null,observer=null,pollTimer=null;
@@ -129,6 +129,11 @@
     clearInterval(pollTimer);pollTimer=setInterval(()=>{if(document.visibilityState==='visible')refresh()},60000);
     document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')refresh()});
   }
-  function init(){applyConfig(activeConfig);refresh();schedule();document.documentElement.dataset.p2uSiteControlsReady='true';window.dispatchEvent(new CustomEvent('p2u:site-controls-ready',{detail:{version:VERSION}}))}
+
+  function loadReliabilityGuard(){
+    if(window.P2UReliability||document.querySelector('script[data-p2u-reliability]'))return;
+    const script=document.createElement('script');script.src='reliability-guard.js';script.defer=true;script.dataset.p2uReliability='v198';document.head.appendChild(script);
+  }
+  function init(){loadReliabilityGuard();applyConfig(activeConfig);refresh();schedule();document.documentElement.dataset.p2uSiteControlsReady='true';window.dispatchEvent(new CustomEvent('p2u:site-controls-ready',{detail:{version:VERSION}}))}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();

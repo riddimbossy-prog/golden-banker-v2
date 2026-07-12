@@ -1,11 +1,11 @@
-/* Predict2U service worker v196 — fast shell, bounded network waits and fresh data.
+/* Predict2U service worker v198 — fast shell, bounded network waits and fresh data.
    Strategy:
    - Navigation/HTML: network-first with a short timeout, then cached fallback.
    - data.js/site-health.json: network-first, canonical cache key, stale fallback.
    - Static assets: cache-first with background refresh.
    - Optional PREFETCH_URLS message warms likely next pages. */
 
-const CACHE_VERSION = "predict2u-v197";
+const CACHE_VERSION = "predict2u-v198";
 const NEWS_IMAGE_CACHE = "predict2u-news-images-v192";
 const NEWS_IMAGE_CACHE_LIMIT = 180;
 const OFFLINE_PAGE = "./board.html";
@@ -31,10 +31,14 @@ const SHELL = [
   "./community.html",
   "./news.html",
   "./news.js",
-  "./news-app-v197.js",
+  "./news-app-v198.js",
   "./news.css",
   "./news-admin.js",
   "./news-admin.css",
+  "./system-health-admin.js",
+  "./system-health-admin.css",
+  "./reliability-guard.js",
+  "./SUPABASE_RELIABILITY_COMMENTS_v198.sql",
   "./SUPABASE_NEWS_PERSONALIZATION_v192.sql",
   "./predict2u-transfers.webp",
   "./predict2u-transfers-thumb.webp",

@@ -1,0 +1,42 @@
+{
+  "version": "v198",
+  "name": "Reliability, System Health & News Discussion Repair",
+  "generated_at": "2026-07-12T00:00:00Z",
+  "checks": {
+    "javascript_syntax": "passed",
+    "repository_preflight": {
+      "status": "passed",
+      "required_public_files": 110
+    },
+    "performance_budget": {
+      "status": "passed",
+      "errors": 0,
+      "warnings": 0,
+      "checks": 33
+    },
+    "news_comment_selftest": {
+      "status": "passed",
+      "checks": 9
+    },
+    "system_health_selftest": {
+      "status": "passed",
+      "checks": 7
+    },
+    "repository_audit": {
+      "status": "inherited_generated_files_missing",
+      "passed_checks": 261,
+      "critical": 9,
+      "warning": 1,
+      "note": "The supplied source snapshot omits generated data.js and community.js. The v198 changed-files patch does not replace or delete live generated files."
+    },
+    "playwright": "not_run_in_sandbox"
+  },
+  "required_setup": [
+    "Deploy changed files",
+    "Run SUPABASE_RELIABILITY_COMMENTS_v198.sql",
+    "Hard-refresh News",
+    "Post a signed-in test comment"
+  ],
+  "new_secrets": [],
+  "edge_function_changes": []
+}
