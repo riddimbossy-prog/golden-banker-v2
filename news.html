@@ -7,7 +7,7 @@
   <meta name="description" content="Global football news, transfer updates and community discussion on Predict2U."/>
   <meta property="og:title" content="Predict2U Football News & Transfers"/>
   <meta property="og:description" content="Global football headlines, transfer updates and community discussion."/>
-  <meta property="og:image" content="https://predict2u.com/social-preview.png"/>
+  <meta property="og:image" content="https://predict2u.com/predict2u-transfers.webp"/>
   <meta property="og:url" content="https://predict2u.com/news.html"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Predict2U Football News & Transfers"/>
@@ -46,15 +46,34 @@
 </header>
 
 <main class="p2u-news-wrap">
-  <section class="p2u-news-hero">
-    <div><div class="p2u-news-kicker">GLOBAL FOOTBALL DESK</div><h1>News, transfers and the conversation.</h1><p>Short, attributed updates from football publishers around the world. Open the original source for full reporting, then discuss it with the Predict2U community.</p></div>
-    <div class="p2u-news-live"><span></span><strong>Auto-updated</strong><small id="news-updated">Connecting…</small></div>
+  <section class="p2u-news-hero" aria-labelledby="news-hero-title">
+    <div class="p2u-news-hero-copy">
+      <div class="p2u-news-hero-topline">
+        <div class="p2u-news-kicker">GLOBAL FOOTBALL DESK</div>
+        <div class="p2u-news-live p2u-news-live--hero"><span></span><strong>Auto-updated</strong><small id="news-updated">Connecting…</small></div>
+      </div>
+      <h1 id="news-hero-title">Football news.<br><em>Transfer intelligence.</em></h1>
+      <p>Fresh, source-attributed football headlines from around the world—plus a respectful place for the Predict2U community to discuss every story.</p>
+      <div class="p2u-news-hero-actions">
+        <button class="p2u-news-hero-action primary" type="button" data-news-jump="#news-feed"><i class="fa-regular fa-newspaper"></i> Latest stories</button>
+        <button class="p2u-news-hero-action" type="button" data-news-hero-filter="transfer"><img src="predict2u-transfers-thumb.webp" alt="" width="24" height="24" decoding="async"> Transfer desk</button>
+      </div>
+      <div class="p2u-news-hero-proof" aria-label="News desk features">
+        <span><i class="fa-solid fa-earth-africa"></i> Worldwide</span>
+        <span><i class="fa-solid fa-link"></i> Original sources</span>
+        <span><i class="fa-regular fa-comments"></i> Community discussion</span>
+      </div>
+    </div>
+    <figure class="p2u-news-hero-art">
+      <img src="predict2u-transfers.webp" alt="Predict2U Transfers" width="960" height="640" fetchpriority="high" decoding="async">
+      <figcaption><span>Predict2U Transfer Desk</span><strong>Rumours separated from confirmed moves</strong></figcaption>
+    </figure>
   </section>
 
   <section class="p2u-news-controls" aria-label="News filters">
     <div class="p2u-news-tabs" role="tablist">
       <button class="is-active" data-news-filter="all" role="tab">Latest</button>
-      <button data-news-filter="transfer" role="tab">Transfers</button>
+      <button data-news-filter="transfer" role="tab"><img class="p2u-news-tab-mark" src="predict2u-transfers-thumb.webp" alt="" width="22" height="22" loading="lazy" decoding="async"> Transfers</button>
       <button data-news-filter="news" role="tab">Football</button>
       <button data-news-filter="breaking" role="tab">Breaking</button>
     </div>
@@ -62,7 +81,7 @@
   </section>
 
   <section id="news-featured" class="p2u-news-featured" aria-live="polite"></section>
-  <section>
+  <section id="news-feed">
     <div class="p2u-news-section-head"><div><div class="p2u-news-kicker">LIVE FEED</div><h2 id="news-list-title">Latest football stories</h2></div><button id="news-refresh" class="p2u-news-ghost"><i class="fa-solid fa-rotate"></i> Refresh</button></div>
     <div id="news-list" class="p2u-news-grid"><div class="p2u-news-empty">Loading the football desk…</div></div>
     <div class="p2u-news-load-wrap"><button id="news-load-more" class="p2u-news-button" hidden>Load more</button></div>

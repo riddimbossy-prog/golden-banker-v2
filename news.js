@@ -1,10 +1,10 @@
-/* Predict2U v189 — Global Football News, transfers and community discussion.
+/* Predict2U v190 — Global Football News, transfers and community discussion.
    Browser code uses only the public Supabase key and RLS-protected tables.
    Full stories remain on the original publisher's site; Predict2U displays
    short attributed summaries and user comments. */
 (function(){
   'use strict';
-  const VERSION='v189';
+  const VERSION='v190';
   const CONFIG=window.P2U_CLOUD_CONFIG||{};
   const TABLE=CONFIG.newsArticlesTable||'p2u_news_articles';
   const COMMENTS=CONFIG.newsCommentsTable||'p2u_news_comments';
@@ -51,7 +51,11 @@
   function mediaHtml(a,feature=false){
     const src=image(a.image_url);
     if(src)return `<img src="${esc(src)}" alt="" loading="${feature?'eager':'lazy'}" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">`;
-    return `<div class="p2u-news-media-fallback"><span>${regionFlag(a.region)}</span><b>${a.category==='transfer'?'TRANSFER':'FOOTBALL'}</b></div>`;
+    if(a.category==='transfer'){
+      const asset=feature?'predict2u-transfers.webp':'predict2u-transfers-thumb.webp';
+      return `<img class="p2u-news-transfer-fallback" src="${asset}" alt="Predict2U Transfers" loading="${feature?'eager':'lazy'}" decoding="async">`;
+    }
+    return `<div class="p2u-news-media-fallback"><span>${regionFlag(a.region)}</span><b>FOOTBALL</b></div>`;
   }
   function metaHtml(a){
     return `<span>${esc(a.source_name||'Football source')}</span><span>•</span><time datetime="${esc(a.published_at||'')}">${when(a.published_at)}</time>${Number(a.comment_count||0)?`<span>•</span><span><i class="fa-regular fa-comment"></i> ${Number(a.comment_count||0)}</span>`:''}`;
@@ -151,6 +155,8 @@
   function bind(){
     document.addEventListener('click',e=>{
       const filter=e.target.closest('[data-news-filter]');if(filter){document.querySelectorAll('[data-news-filter]').forEach(b=>b.classList.toggle('is-active',b===filter));activeFilter=filter.dataset.newsFilter||'all';visible=PAGE_SIZE;applyFilter();return;}
+      const heroFilter=e.target.closest('[data-news-hero-filter]');if(heroFilter){const target=heroFilter.dataset.newsHeroFilter||'all';const tab=document.querySelector(`[data-news-filter="${target}"]`);document.querySelectorAll('[data-news-filter]').forEach(b=>b.classList.toggle('is-active',b===tab));activeFilter=target;visible=PAGE_SIZE;applyFilter();document.querySelector('.p2u-news-controls')?.scrollIntoView({behavior:'smooth',block:'start'});return;}
+      const jump=e.target.closest('[data-news-jump]');if(jump){document.querySelector(jump.dataset.newsJump||'#news-feed')?.scrollIntoView({behavior:'smooth',block:'start'});return;}
       const discuss=e.target.closest('[data-news-discuss]');if(discuss){openDiscussion(discuss.dataset.newsDiscuss);return;}
       const share=e.target.closest('[data-news-share]');if(share){shareArticle(share.dataset.newsShare);return;}
       if(e.target.closest('[data-news-close]')||e.target.id==='news-discussion-backdrop'){closeDiscussion();return;}

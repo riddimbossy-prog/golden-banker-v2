@@ -3,8 +3,10 @@ const { test, expect } = require('@playwright/test');
 test('global football news page exposes filters and discussion', async ({ page }) => {
   await page.setViewportSize({ width: 344, height: 882 });
   await page.goto('/news.html', { waitUntil: 'domcontentloaded' });
-  await expect(page.getByRole('heading', { name: /News, transfers and the conversation/i })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Football news.*Transfer intelligence/i })).toBeVisible();
   await expect(page.locator('[data-news-filter]')).toHaveCount(4);
+  await expect(page.locator('.p2u-news-hero-art img')).toHaveAttribute('src', /predict2u-transfers\.webp/);
+  await expect(page.locator('[data-news-hero-filter="transfer"]')).toBeVisible();
   await expect(page.locator('#news-discussion-panel')).toBeAttached();
   await expect(page.locator('.p2u-mobile-app-nav [data-p2u-mobile-nav="news"]')).toBeVisible();
   await expect(page.locator('.p2u-mobile-app-nav [data-p2u-mobile-nav="news"]')).toHaveClass(/is-active/);

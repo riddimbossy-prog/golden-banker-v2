@@ -1,0 +1,42 @@
+{
+  "version": "v190",
+  "release": "News Banner & Transfer Brand",
+  "checks": {
+    "hero_banner_present": true,
+    "custom_transfer_hero_image": true,
+    "transfer_filter_custom_mark": true,
+    "latest_stories_action": true,
+    "transfer_desk_action": true,
+    "discussion_panel_preserved": true,
+    "mobile_breakpoint_620": true,
+    "narrow_breakpoint_360": true,
+    "official_green_preserved": true,
+    "transfer_fallback_logic": true,
+    "service_worker_v190": true,
+    "predict2u-transfers.webp_exists": true,
+    "predict2u-transfers-thumb.webp_exists": true
+  },
+  "all_release_checks_passed": true,
+  "static_validation": {
+    "javascript_syntax": "passed",
+    "repository_preflight": "passed \u2014 81 required files",
+    "performance_budget": "passed \u2014 0 errors, 0 warnings",
+    "html_structure": "passed",
+    "image_assets": {
+      "predict2u-transfers.webp": 45304,
+      "predict2u-transfers-thumb.webp": 10948
+    }
+  },
+  "repository_audit": {
+    "status": "blocked by inherited runtime-generated files absent from the supplied v189 snapshot",
+    "missing": [
+      "data.js",
+      "community.js"
+    ],
+    "critical_references": 9,
+    "note": "The v190 News changes did not introduce these missing references."
+  },
+  "supabase_changes_required": false,
+  "edge_function_changes_required": false,
+  "secret_changes_required": false
+}

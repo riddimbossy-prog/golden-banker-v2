@@ -34,7 +34,12 @@ const budgets={
   "product-analytics.js":26000,
   "product-analytics.css":14000,
   "account.html":18000,
-  "profile.html":12000
+  "profile.html":12000,
+  "news.html":18000,
+  "news.js":28000,
+  "news.css":26000,
+  "predict2u-transfers.webp":180000,
+  "predict2u-transfers-thumb.webp":30000
 };
 for(const [file,limit] of Object.entries(budgets)){
   if(!exists(file)){errors.push(`Missing budgeted file: ${file}`);continue;}
