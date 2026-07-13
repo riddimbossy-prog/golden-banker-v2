@@ -29,6 +29,41 @@ const { buildTeamAdvanced } = require("./advanced-data");
 const { attachModelCalibration } = require("./model-calibration");
 const HERE = __dirname;
 
+
+// ------------------------------------------------------------
+// Persistent API response cache. Expensive historical endpoints do not
+// need to be downloaded again on every run. The cache is merged across
+// GitHub Action shards after each build.
+// ------------------------------------------------------------
+const API_CACHE_FILE = path.join(HERE, "api-cache.json");
+let API_RESPONSE_CACHE = {};
+try {
+  const parsed = JSON.parse(fs.readFileSync(API_CACHE_FILE, "utf8"));
+  if (parsed && typeof parsed === "object") API_RESPONSE_CACHE = parsed;
+} catch (_) {}
+
+function cacheTtlMs(endpoint) {
+  if (/\/fixtures\/headtohead\?/i.test(endpoint)) return 7 * 24 * 60 * 60 * 1000;
+  if (/\/standings\?/i.test(endpoint)) return 6 * 60 * 60 * 1000;
+  if (/\/teams\/statistics\?/i.test(endpoint)) return 6 * 60 * 60 * 1000;
+  if (/\/fixtures\?.*status=FT/i.test(endpoint)) return 24 * 60 * 60 * 1000;
+  return 0; // fixtures and odds stay live; do not cache them here.
+}
+
+function saveApiCache() {
+  try {
+    const now = Date.now();
+    const rows = Object.entries(API_RESPONSE_CACHE)
+      .filter(([, v]) => v && Number(v.expiresAt || 0) > now)
+      .sort((a, b) => Number(b[1].savedAt || 0) - Number(a[1].savedAt || 0))
+      .slice(0, 20000);
+    fs.writeFileSync(API_CACHE_FILE, JSON.stringify(Object.fromEntries(rows), null, 2) + "\n", "utf8");
+  } catch (e) {
+    console.log("API cache save skipped:", e.message);
+  }
+}
+process.on("exit", saveApiCache);
+
 function readConfig() {
   const raw = fs.readFileSync(path.join(HERE, "config.txt"), "utf8");
   const cfg = { API_KEY: "", SEASON: "", LEAGUES: [] };
@@ -59,6 +94,14 @@ function readConfig() {
 }
 
 function apiGet(endpoint, key) {
+  const ttl = cacheTtlMs(endpoint);
+  if (ttl > 0) {
+    const hit = API_RESPONSE_CACHE[endpoint];
+    if (hit && Number(hit.expiresAt || 0) > Date.now() && hit.payload) {
+      return Promise.resolve(hit.payload);
+    }
+  }
+
   return new Promise((resolve, reject) => {
     const opts = { method:"GET", hostname:"v3.football.api-sports.io", path:endpoint, headers:{ "x-apisports-key":key } };
     const req = https.request(opts, res => {
@@ -70,6 +113,10 @@ function apiGet(endpoint, key) {
           const json = JSON.parse(body);
           if (json.errors && !Array.isArray(json.errors) && Object.keys(json.errors).length) {
             reject(new Error("API_ERROR: " + Object.values(json.errors).join("; "))); return;
+          }
+          if (ttl > 0) {
+            const now = Date.now();
+            API_RESPONSE_CACHE[endpoint] = { savedAt: now, expiresAt: now + ttl, payload: json };
           }
           resolve(json);
         } catch (e) { reject(new Error("Bad JSON from " + endpoint)); }
@@ -320,6 +367,7 @@ const FINISHED = new Set(["FT","AET","PEN"]);
   const MAX_LEAGUES = cfg.MAX_LEAGUES || 0;
   const wantH2H = cfg.H2H !== false;   // full H2H on every day (per your choice)
   const wantOdds = cfg.ODDS !== false;
+  const FAST_SHARD_MODE = process.env.P2U_FAST_SHARD === "1";
 
   // -----------------------------------------------------------------
   // STEP 1: gather fixtures for EVERY date in the window, grouped by
@@ -397,11 +445,11 @@ const FINISHED = new Set(["FT","AET","PEN"]);
       // World Cup on a rest day between fixtures). Range-probing fixes that at
       // the same 1-call cost.
       const winFrom = DATE_WINDOW[0], winTo = DATE_WINDOW[DATE_WINDOW.length-1];
-      let resolvedSeason = null;
+      let resolvedSeason = null, resolvedFixtures = [];
       try {
         const probe = await apiGet(`/fixtures?league=${leagueId}&season=${season}&from=${winFrom}&to=${winTo}`, cfg.API_KEY);
         requests++;
-        if ((probe.response || []).length) resolvedSeason = season;
+        if ((probe.response || []).length) { resolvedSeason = season; resolvedFixtures = probe.response || []; }
       } catch (e) {
         if (e.message === "RATE_LIMIT") { console.log("RATE LIMIT — stopping early."); capped = true; break; }
         if (!firstError) firstError = e.message;
@@ -417,7 +465,7 @@ const FINISHED = new Set(["FT","AET","PEN"]);
           try {
             const probe = await apiGet(`/fixtures?league=${leagueId}&season=${s}&from=${winFrom}&to=${winTo}`, cfg.API_KEY);
             requests++;
-            if ((probe.response || []).length) { resolvedSeason = s; await sleep(SLEEP); break; }
+            if ((probe.response || []).length) { resolvedSeason = s; resolvedFixtures = probe.response || []; await sleep(SLEEP); break; }
           } catch (e) { if (!firstError) firstError = e.message; }
           await sleep(SLEEP);
         }
@@ -426,22 +474,21 @@ const FINISHED = new Set(["FT","AET","PEN"]);
       if (capped) break;
       if (!resolvedSeason) { console.log(`League ${leagueId}: inactive (no games in window) — skipped`); continue; }
 
-      // League is ACTIVE — now sweep the full date window on the resolved season.
-      for (const date of DATE_WINDOW) {
-        if (requests >= REQUEST_BUDGET) { capped = true; break; }
-        try {
-          const fxRes = await apiGet(`/fixtures?league=${leagueId}&season=${resolvedSeason}&date=${date}`, cfg.API_KEY);
-          requests++;
-          const arr = fxRes.response || [];
-          if (arr.length) {
-            leagueGroups.push({ id: leagueId, season: resolvedSeason, date, fixtures: arr });
-            leaguesWithFixtures.add(leagueId);
-          }
-        } catch (e) {
-          if (e.message === "RATE_LIMIT") { console.log("RATE LIMIT — stopping early."); capped = true; break; }
-          if (!firstError) firstError = e.message;
-        }
-        await sleep(SLEEP);
+      // League is ACTIVE. The range probe already returned every fixture in
+      // the requested window, so re-use it instead of making seven more date
+      // requests. This keeps complete coverage while cutting discovery calls
+      // from up to 8 per league to 1 (or at most 3 during season rollover).
+      const byDate = {};
+      for (const fx of resolvedFixtures) {
+        const rawDate = fx && fx.fixture && fx.fixture.date;
+        const date = rawDate ? String(rawDate).slice(0, 10) : "";
+        if (!DATE_WINDOW.includes(date)) continue;
+        (byDate[date] = byDate[date] || []).push(fx);
+      }
+      for (const [date, arr] of Object.entries(byDate)) {
+        if (!arr.length) continue;
+        leagueGroups.push({ id: leagueId, season: resolvedSeason, date, fixtures: arr });
+        leaguesWithFixtures.add(leagueId);
       }
     }
     console.log(`LIST mode: examined ${probes} league(s), ${leaguesWithFixtures.size} had fixtures (caps: ${MAX_LEAGUES||"∞"} active / ${MAX_PROBES} probed).`);
@@ -1121,17 +1168,21 @@ const FINISHED = new Set(["FT","AET","PEN"]);
   // can sanity-check a pick's price against this league's real hit rate.
   // Shared builder (calib.js) — same logic, now single-source so fetch-scores
   // rebuilds the SAME ledger and can never wipe it again.
-  {
-    const r = buildOddsCalib(merged);
-    console.log(`Odds calibration: ${r.leagues} league ledgers built, attached to ${r.attached} matches.`);
-    // Team-profile ledger: accumulate per-team evidence (season seed + settled
-    // rows + xG where measured), then attach each match's two profiles so the
-    // browser engine can read them from data.js (same pattern as oddsCalib).
-    const tp = updateTeamProfiles(merged);
-    const ta = attachProfiles(merged);
-    console.log(`Team profiles: ${tp.teams} teams in ledger (+${tp.rowsAdded} rows, ${tp.settledWithXg} with xG); attached to ${ta.attached} match-sides.`);
-    const mc = attachModelCalibration(merged,{writeLedger:true});
-    console.log(`Model calibration: ${mc.groups} validated groups; attached ${mc.attached} market intervals to ${mc.matches} matches.`);
+  if (!FAST_SHARD_MODE) {
+    {
+      const r = buildOddsCalib(merged);
+      console.log(`Odds calibration: ${r.leagues} league ledgers built, attached to ${r.attached} matches.`);
+      // Team-profile ledger: accumulate per-team evidence (season seed + settled
+      // rows + xG where measured), then attach each match's two profiles so the
+      // browser engine can read them from data.js (same pattern as oddsCalib).
+      const tp = updateTeamProfiles(merged);
+      const ta = attachProfiles(merged);
+      console.log(`Team profiles: ${tp.teams} teams in ledger (+${tp.rowsAdded} rows, ${tp.settledWithXg} with xG); attached to ${ta.attached} match-sides.`);
+      const mc = attachModelCalibration(merged,{writeLedger:true});
+      console.log(`Model calibration: ${mc.groups} validated groups; attached ${mc.attached} market intervals to ${mc.matches} matches.`);
+    }
+  } else {
+    console.log("Fast shard mode: deferred calibration and derived reports until merge.");
   }
 
   fs.writeFileSync(path.join(HERE, "data.js"),
@@ -1139,14 +1190,17 @@ const FINISHED = new Set(["FT","AET","PEN"]);
     "window.DATA_UPDATED = \"" + new Date().toISOString() + "\";\n" +
     "window.MATCHES = " + JSON.stringify(merged, null, 2) + ";\n", "utf8");
 
-  try {
-    const lr = engineLearning.runBuild();
-    console.log(`Engine learning: ${lr.ledger.summary.reviewedLosses} reviewed losses; ${lr.attached} upcoming contexts attached.`);
-  } catch(e) { console.log("Engine learning refresh skipped:", e.message); }
-  try { const gr=modelGovernance.runBuild(); console.log(`Model governance: ${gr.report.summary.approved} approved, ${gr.report.summary.shadow} shadow; ${gr.attached} contexts attached.`); } catch(e) { console.log("Model governance refresh skipped:",e.message); }
-  try { const cr=consensusReport.runBuild(); console.log(`Smart consensus: ${cr.summary.qualified}/${cr.summary.fixtures} fixtures qualified.`); } catch(e) { console.log("Consensus report skipped:",e.message); }
-  try { const xr=contextReport.runBuild(); console.log(`Match context: ${xr.summary.extreme} extreme and ${xr.summary.high} high-risk fixtures.`); } catch(e) { console.log("Context report skipped:",e.message); }
+  if (!FAST_SHARD_MODE) {
+    try {
+      const lr = engineLearning.runBuild();
+      console.log(`Engine learning: ${lr.ledger.summary.reviewedLosses} reviewed losses; ${lr.attached} upcoming contexts attached.`);
+    } catch(e) { console.log("Engine learning refresh skipped:", e.message); }
+    try { const gr=modelGovernance.runBuild(); console.log(`Model governance: ${gr.report.summary.approved} approved, ${gr.report.summary.shadow} shadow; ${gr.attached} contexts attached.`); } catch(e) { console.log("Model governance refresh skipped:",e.message); }
+    try { const cr=consensusReport.runBuild(); console.log(`Smart consensus: ${cr.summary.qualified}/${cr.summary.fixtures} fixtures qualified.`); } catch(e) { console.log("Consensus report skipped:",e.message); }
+    try { const xr=contextReport.runBuild(); console.log(`Match context: ${xr.summary.extreme} extreme and ${xr.summary.high} high-risk fixtures.`); } catch(e) { console.log("Context report skipped:",e.message); }
+  }
 
+  saveApiCache();
   const finishedCount = out.filter(x=>x.homeGoals!=null).length;
   const daysCovered = [...new Set(out.map(x=>x.matchDate))].sort();
   console.log(`\nDone. Window: ${out.length} match(es) across ${daysCovered.length} day(s) [${daysCovered.join(", ")}] (${finishedCount} finished). ${requests} requests used.`);

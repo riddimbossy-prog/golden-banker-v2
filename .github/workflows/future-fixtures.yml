@@ -1,8 +1,7 @@
-name: Predict2U Future Fixtures
+name: Predict2U Fast All Games
 
 on:
   schedule:
-    # Ghana/UTC: 02:15 and 14:15 every day.
     - cron: "15 2,14 * * *"
   workflow_dispatch:
 
@@ -10,14 +9,131 @@ permissions:
   contents: write
 
 concurrency:
-  # Shared with live-scores.yml so both jobs never write data.js together.
   group: predict2u-data-write
   cancel-in-progress: false
 
 jobs:
-  update-future-fixtures:
+  discover:
+    name: Discover every active league
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 20
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Discover all games and balance work
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          API_KEY: ${{ secrets.API_KEY }}
+          SEASON: ${{ secrets.SEASON }}
+          DAYS_BACK: ${{ secrets.DAYS_BACK }}
+          DAYS_FWD: ${{ secrets.DAYS_FWD }}
+          SHARD_COUNT: "6"
+          DISCOVERY_CONCURRENCY: "3"
+        run: node discover-all-games.js
+
+      - name: Export shard matrix
+        id: matrix
+        shell: bash
+        run: echo "matrix=$(cat all-games-matrix.json)" >> "$GITHUB_OUTPUT"
+
+      - name: Upload discovery manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: all-games-discovery
+          path: |
+            all-games-discovery.json
+            all-games-matrix.json
+          retention-days: 2
+
+  enrich:
+    name: Enrich shard ${{ matrix.index }}
+    needs: discover
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix: ${{ fromJSON(needs.discover.outputs.matrix) }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Build shard configuration
+        shell: bash
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          API_KEY: ${{ secrets.API_KEY }}
+          STATS_API_KEY: ${{ secrets.STATS_API_KEY }}
+          SEASON: ${{ secrets.SEASON }}
+          DAYS_BACK: ${{ secrets.DAYS_BACK }}
+          DAYS_FWD: ${{ secrets.DAYS_FWD }}
+          ODDS: ${{ secrets.ODDS }}
+          H2H: ${{ secrets.H2H }}
+          REQUEST_BUDGET: ${{ secrets.REQUEST_BUDGET }}
+          SLEEP_MS: ${{ secrets.SLEEP_MS }}
+          SHARD_LEAGUES: ${{ matrix.leagues }}
+        run: |
+          set -euo pipefail
+          football_key="${API_FOOTBALL_KEY:-${API_KEY:-}}"
+          if [[ -z "$football_key" ]]; then
+            echo "Missing API_FOOTBALL_KEY or API_KEY"
+            exit 1
+          fi
+          cat > config.txt <<EOF
+          API_KEY=${football_key}
+          STATS_API_KEY=${STATS_API_KEY:-}
+          SEASON=${SEASON:-$(date -u +%Y)}
+          LEAGUES=${SHARD_LEAGUES}
+          DAYS_BACK=${DAYS_BACK:-0}
+          DAYS_FWD=${DAYS_FWD:-6}
+          ODDS=${ODDS:-true}
+          H2H=${H2H:-true}
+          STATS=true
+          MAX_LEAGUES=0
+          MAX_PROBES=10000
+          REQUEST_BUDGET=${REQUEST_BUDGET:-12000}
+          SLEEP_MS=${SLEEP_MS:-1500}
+          EOF
+          echo "Shard ${{ matrix.index }}: ${{ matrix.expectedFixtures }} expected fixture(s) across ${SHARD_LEAGUES}"
+
+      - name: Pull and enrich shard
+        env:
+          P2U_FAST_SHARD: "1"
+        run: node fetch-data.js
+
+      - name: Upload shard data
+        uses: actions/upload-artifact@v4
+        with:
+          name: fixture-shard-${{ matrix.index }}
+          path: |
+            data.js
+            api-cache.json
+          if-no-files-found: error
+          retention-days: 2
+
+  merge:
+    name: Merge, verify and publish
+    needs: [discover, enrich]
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
 
     steps:
       - name: Checkout repository
@@ -30,72 +146,30 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Build fixture configuration from repository secrets
-        shell: bash
+      - name: Download all fixture shards
+        uses: actions/download-artifact@v4
+        with:
+          pattern: fixture-shard-*
+          path: shards
+          merge-multiple: false
+
+      - name: Download discovery manifest
+        uses: actions/download-artifact@v4
+        with:
+          name: all-games-discovery
+          path: discovery
+
+      - name: Merge every shard
+        run: node merge-fixture-shards.js shards discovery/all-games-discovery.json
+
+      - name: Enrich merged data with Stats API
         env:
-          # Exact secret names already present in your repository.
-          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
-          API_KEY: ${{ secrets.API_KEY }}
           STATS_API_KEY: ${{ secrets.STATS_API_KEY }}
-          SEASON: ${{ secrets.SEASON }}
-          LEAGUES: ${{ secrets.LEAGUES }}
-          DAYS_BACK: ${{ secrets.DAYS_BACK }}
-          DAYS_FWD: ${{ secrets.DAYS_FWD }}
-          ODDS: ${{ secrets.ODDS }}
-          H2H: ${{ secrets.H2H }}
-          MAX_LEAGUES: ${{ secrets.MAX_LEAGUES }}
-          MAX_PROBES: ${{ secrets.MAX_PROBES }}
-          REQUEST_BUDGET: ${{ secrets.REQUEST_BUDGET }}
-          SLEEP_MS: ${{ secrets.SLEEP_MS }}
-        run: |
-          set -euo pipefail
-
-          # API_FOOTBALL_KEY is preferred. API_KEY is kept as a safe fallback.
-          football_key="${API_FOOTBALL_KEY:-${API_KEY:-}}"
-          if [[ -z "$football_key" ]]; then
-            echo "Missing repository secret: API_FOOTBALL_KEY or API_KEY"
-            exit 1
-          fi
-
-          season="${SEASON:-$(date -u +%Y)}"
-          leagues="${LEAGUES:-1,2,3,39,140,135,78,61,88,94,144,203,71,128,253,307}"
-          days_back="${DAYS_BACK:-1}"
-          days_fwd="${DAYS_FWD:-6}"
-          odds="${ODDS:-true}"
-          h2h="${H2H:-true}"
-          max_leagues="${MAX_LEAGUES:-120}"
-          max_probes="${MAX_PROBES:-400}"
-          request_budget="${REQUEST_BUDGET:-6000}"
-          sleep_ms="${SLEEP_MS:-1500}"
-
-          cat > config.txt <<EOF
-          API_KEY=${football_key}
-          STATS_API_KEY=${STATS_API_KEY:-}
-          SEASON=${season}
-          LEAGUES=${leagues}
-          DAYS_BACK=${days_back}
-          DAYS_FWD=${days_fwd}
-          ODDS=${odds}
-          H2H=${h2h}
-          STATS=true
-          MAX_LEAGUES=${max_leagues}
-          MAX_PROBES=${max_probes}
-          REQUEST_BUDGET=${request_budget}
-          SLEEP_MS=${sleep_ms}
-          SOT_LOOKBACK=8
-          SOT_CALL_BUDGET=120
-          SOT_SLEEP_MS=250
-          EOF
-
-          echo "Configuration created successfully."
-          echo "Fixture window: ${days_back} day(s) back and ${days_fwd} day(s) forward."
-
-      - name: Pull future fixtures and rebuild predictions
-        run: node fetch-data.js
-
-      - name: Enrich fixtures with Stats API data
         run: node enrich-xg.js
         continue-on-error: true
+
+      - name: Rebuild calibration and model reports once
+        run: node rebuild-derived-data.js
 
       - name: Verify seven-day coverage
         run: node verify-week-data.js
@@ -108,15 +182,16 @@ jobs:
         run: node audit-site.js
         continue-on-error: true
 
-      - name: Commit updated fixture data
+      - name: Commit updated all-games data
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "Predict2U Fixture Bot"
           git config user.email "actions@users.noreply.github.com"
-
           git add \
             data.js \
+            api-cache.json \
+            all-games-discovery.json \
             week-fixture-report.json \
             team-profiles.json \
             odds-calib.json \
@@ -131,10 +206,9 @@ jobs:
             site-audit.json 2>/dev/null || true
 
           if git diff --cached --quiet; then
-            echo "No fixture changes to commit."
+            echo "No all-games changes to commit."
             exit 0
           fi
-
-          git commit -m "Update seven-day fixtures"
+          git commit -m "Fast update of all seven-day fixtures"
           git pull --rebase
           git push

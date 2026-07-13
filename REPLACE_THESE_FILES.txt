@@ -1,41 +1,17 @@
-PREDICT2U FINAL WEEK-FIXTURE REPLACEMENTS — v239
-================================================
+REPLACE:
+fetch-data.js
+.github/workflows/future-fixtures.yml
 
-Upload these files to the SAME paths in your GitHub repository and replace the old copies:
+ADD:
+discover-all-games.js
+merge-fixture-shards.js
+rebuild-derived-data.js
 
-1. fetch-data.js
-2. write-config.js
-3. verify-week-data.js
-4. package.json
-5. queue-push-events.js
-6. config.example.txt
-7. .github/workflows/future-fixtures.yml
-8. .github/workflows/live-scores.yml
+KEEP:
+data.js
+community.js
+config.txt
+all existing GitHub secrets
 
-DO NOT DELETE OR REPLACE:
-- data.js
-- community.js
-- config.txt
-
-GitHub repository secret values to confirm:
-- DAYS_FWD = 6
-- DAYS_BACK = 1
-- SEASON = 2026
-- ODDS = true
-- H2H = true
-
-The workflows use the secret names already shown in your repository:
-API_FOOTBALL_KEY, API_KEY, STATS_API_KEY, SEASON, LEAGUES,
-DAYS_BACK, DAYS_FWD, ODDS, H2H, MAX_LEAGUES, MAX_PROBES,
-REQUEST_BUDGET, SLEEP_MS, SUPABASE_URL, SUPABASE_SECRET_KEY,
-and PUSH_DISPATCH_SECRET.
-
-After uploading:
-1. Open GitHub Actions.
-2. Select "Predict2U Future Fixtures".
-3. Click "Run workflow".
-4. Wait for the green check.
-5. Confirm data.js and week-fixture-report.json were updated.
-
-GitHub Actions permission:
-Settings > Actions > General > Workflow permissions > Read and write permissions.
+IMPORTANT:
+Replace the old future-fixtures.yml. Do not keep both old and new future-fixture workflows enabled.
