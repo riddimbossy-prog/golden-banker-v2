@@ -1,0 +1,8 @@
+Predict2U v205 changed-files install
+
+1. Copy every file in this folder to the repository root.
+2. Replace files with the same names.
+3. Commit and deploy.
+4. Hard-refresh the browser or accept the PWA update prompt.
+
+The former device-responsive-v204.css may remain in the repository; v205 pages no longer reference it. It can be removed later as cleanup.
