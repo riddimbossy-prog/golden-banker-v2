@@ -1,0 +1,22 @@
+{
+  "build": "v212",
+  "generated_at": "2026-07-13T06:19:02.100755+00:00",
+  "feature": "Draggable persistent My Slip floating button",
+  "checks": {
+    "repository_preflight": 116,
+    "performance_budget": 33,
+    "pwa_readiness": 47,
+    "slip_fab_static": 15,
+    "interactive_viewports": [
+      320,
+      344,
+      393,
+      768,
+      884,
+      1180
+    ]
+  },
+  "known_repository_items": [
+    "data.js and community.js remain runtime-generated and are not replaced with dummy data"
+  ]
+}

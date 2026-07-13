@@ -9,12 +9,17 @@
     st.textContent=`
   .slip-add{ margin-top:2px; font-size:10px; font-weight:900; letter-spacing:.4px; padding:5px 10px; border-radius:8px; border:2px solid #77C41C; color:#071000; background:#77C41C; cursor:pointer; }
   .slip-add:active{ transform:scale(.95); }
-  #p2u-slip-fab{ position:fixed; right:16px; bottom:16px; z-index:60; width:58px; height:58px; border-radius:50%; background:var(--brand,#3ecf6e); color:#06120a; font-weight:900; border:none; box-shadow:0 6px 18px rgba(0,0,0,.45); cursor:pointer; display:none; font-size:20px; }
-  #p2u-slip-fab .cnt{ position:absolute; top:-4px; right:-4px; background:#fff; color:#0a3; font-size:11px; font-weight:900; border-radius:10px; min-width:20px; height:20px; line-height:20px; }
+  #p2u-slip-fab{ position:fixed; right:16px!important; bottom:16px!important; z-index:10020!important; width:58px; height:58px; min-width:58px; min-height:58px; border-radius:50%; background:var(--brand,#3ecf6e); color:#06120a; font-weight:900; border:1px solid rgba(255,255,255,.12); box-shadow:0 8px 24px rgba(0,0,0,.52),0 0 0 1px rgba(119,196,28,.18); cursor:grab; display:none; font-size:20px; touch-action:none; user-select:none; -webkit-user-select:none; -webkit-tap-highlight-color:transparent; will-change:left,top,transform; }
+  #p2u-slip-fab:active,#p2u-slip-fab.dragging{ cursor:grabbing; }
+  #p2u-slip-fab.dragging{ transform:scale(1.06); box-shadow:0 12px 30px rgba(0,0,0,.6),0 0 0 4px rgba(119,196,28,.18); }
+  #p2u-slip-fab .drag-dots{ position:absolute; left:50%; bottom:6px; transform:translateX(-50%); width:18px; height:3px; border-radius:999px; background:rgba(6,18,10,.38); pointer-events:none; }
+  #p2u-slip-fab[aria-expanded="true"]{ box-shadow:0 10px 30px rgba(0,0,0,.62),0 0 0 4px rgba(119,196,28,.22); }
+  #p2u-slip-fab .cnt{ position:absolute; top:-4px; right:-4px; background:#fff; color:#0a3; font-size:11px; font-weight:900; border-radius:10px; min-width:20px; height:20px; line-height:20px; padding:0 3px; box-shadow:0 2px 8px rgba(0,0,0,.35); pointer-events:none; }
+  #p2u-slip-fab .cnt[hidden]{ display:none!important; }
   #p2u-slip-fab.show{ display:block; }
   #p2u-slip-fab.pulse{ animation:slipPulse .5s ease; }
   @keyframes slipPulse{ 50%{ transform:scale(1.15);} }
-  #p2u-slip-drawer{ position:fixed; left:0; right:0; bottom:0; z-index:70; background:var(--panel,#0d150e); color:var(--ink,#f2f7f0); border-top:2px solid var(--brand,#3ecf6e); border-radius:18px 18px 0 0; max-height:74vh; display:none; flex-direction:column; box-shadow:0 -8px 30px rgba(0,0,0,.5); }
+  #p2u-slip-drawer{ position:fixed; left:0; right:0; bottom:0; z-index:10030; background:var(--panel,#0d150e); color:var(--ink,#f2f7f0); border-top:2px solid var(--brand,#3ecf6e); border-radius:18px 18px 0 0; max-height:74vh; display:none; flex-direction:column; box-shadow:0 -8px 30px rgba(0,0,0,.5); }
   #p2u-slip-drawer.open{ display:flex; }
   .slip-head{ display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-bottom:1px solid var(--line,#1b2a1c); }
   .slip-legs{ overflow-y:auto; padding:8px 16px; flex:1; }
@@ -27,7 +32,10 @@
   .truncate{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   /* drawer: safe on 280px cover screens, and clear of iOS home indicator */
   #p2u-slip-drawer{ padding-bottom:env(safe-area-inset-bottom); }
-  #p2u-slip-fab{ bottom:calc(16px + env(safe-area-inset-bottom)); right:calc(16px + env(safe-area-inset-right)); }
+  #p2u-slip-fab{ bottom:calc(16px + env(safe-area-inset-bottom,0px))!important; right:calc(16px + env(safe-area-inset-right,0px))!important; }
+  @media(max-width:1180px){
+    #p2u-slip-fab{ bottom:calc(var(--p2u-mobile-nav-height,86px) + env(safe-area-inset-bottom,0px) + 14px)!important; right:calc(14px + env(safe-area-inset-right,0px))!important; }
+  }
   @media(max-width:400px){
     .slip-head,.slip-legs,.slip-foot{ padding-left:12px; padding-right:12px; }
     #p2u-save-row button{ min-width:100% !important; flex:1 1 100% !important; }
@@ -138,7 +146,7 @@ const P2USlip=(()=>{
   }
   function render(){
     const fab=document.getElementById('p2u-slip-fab');
-    if(fab){ fab.classList.toggle('show', legs.length>0); const c=fab.querySelector('.cnt'); if(c) c.textContent=legs.length; }
+    if(fab){ fab.classList.add('show'); const c=fab.querySelector('.cnt'); if(c){ c.textContent=legs.length; c.hidden=legs.length===0; } fab.setAttribute('aria-label',legs.length?`Open my slip with ${legs.length} pick${legs.length===1?'':'s'}. Drag to move.`:'Open my empty slip. Drag to move.'); }
     const list=document.getElementById('p2u-slip-legs'), foot=document.getElementById('p2u-slip-summary');
     if(!list||!foot) return;
     const s=slipState();
@@ -184,12 +192,89 @@ const P2USlip=(()=>{
   }
   function init(){
     if(document.getElementById('p2u-slip-fab')) return;
-    const fab=document.createElement('button'); fab.id='p2u-slip-fab'; fab.innerHTML='<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:auto"><path d="M4 3v18l2.5-1.6L9 21l3-1.6L15 21l2.5-1.6L20 21V3l-2.5 1.6L15 3l-3 1.6L9 3 6.5 4.6 4 3z"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/></svg><span class="cnt">0</span>'; fab.title='My slip';
+    const fab=document.createElement('button'); fab.id='p2u-slip-fab'; fab.type='button'; fab.innerHTML='<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:auto;pointer-events:none"><path d="M4 3v18l2.5-1.6L9 21l3-1.6L15 21l2.5-1.6L20 21V3l-2.5 1.6L15 3l-3 1.6L9 3 6.5 4.6 4 3z"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/></svg><span class="drag-dots" aria-hidden="true"></span><span class="cnt" hidden>0</span>'; fab.title='My slip — drag to move'; fab.setAttribute('aria-label','Open my empty slip. Drag to move.'); fab.setAttribute('aria-expanded','false');
     const dr=document.createElement('div'); dr.id='p2u-slip-drawer';
     dr.innerHTML=`<div class="slip-head"><div style="font-weight:900">MY SLIP <span style="font-size:11px;color:var(--muted);font-weight:600">· built from the board</span></div><button id="p2u-slip-close" style="border:none;background:transparent;color:var(--muted);font-size:22px">&times;</button></div><div class="slip-legs" id="p2u-slip-legs"></div><div class="slip-foot" id="p2u-slip-summary"></div>`;
     document.body.appendChild(fab); document.body.appendChild(dr);
-    fab.addEventListener('click',()=>{ dr.classList.toggle('open'); render(); });
-    dr.querySelector('#p2u-slip-close').addEventListener('click',()=>dr.classList.remove('open'));
+
+    // The slip button is a persistent, draggable floating action button. Its
+    // position is stored as ratios so it remains usable after rotation, resize,
+    // switching between phone and Fold displays, or opening another page.
+    const FAB_POS_KEY='p2u_slip_fab_position_v1';
+    let drag=null, suppressClickUntil=0, resizeTimer=null;
+    const px=n=>Math.round(Number(n)||0)+'px';
+    const navReserve=()=>{
+      if(!window.matchMedia('(max-width:1180px)').matches) return 10;
+      const nav=document.querySelector('.p2u-mobile-app-nav');
+      const navHeight=nav&&getComputedStyle(nav).display!=='none'?nav.getBoundingClientRect().height:parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--p2u-mobile-nav-height'))||86;
+      return Math.max(74,navHeight)+12;
+    };
+    const bounds=()=>{
+      const w=Math.max(document.documentElement.clientWidth,window.innerWidth||0);
+      const h=Math.max(document.documentElement.clientHeight,window.innerHeight||0);
+      const fw=fab.offsetWidth||58, fh=fab.offsetHeight||58, gap=10;
+      return {minX:gap,maxX:Math.max(gap,w-fw-gap),minY:gap,maxY:Math.max(gap,h-fh-navReserve()),w,h,fw,fh};
+    };
+    const place=(left,top,persist)=>{
+      const b=bounds();
+      const x=Math.min(b.maxX,Math.max(b.minX,Number(left)||b.maxX));
+      const y=Math.min(b.maxY,Math.max(b.minY,Number(top)||b.maxY));
+      fab.style.setProperty('left',px(x),'important');
+      fab.style.setProperty('top',px(y),'important');
+      fab.style.setProperty('right','auto','important');
+      fab.style.setProperty('bottom','auto','important');
+      fab.dataset.userPosition='1';
+      if(persist){
+        const xr=b.maxX>b.minX?(x-b.minX)/(b.maxX-b.minX):1;
+        const yr=b.maxY>b.minY?(y-b.minY)/(b.maxY-b.minY):1;
+        try{ localStorage.setItem(FAB_POS_KEY,JSON.stringify({x:Math.max(0,Math.min(1,xr)),y:Math.max(0,Math.min(1,yr))})); }catch(_){ }
+      }
+    };
+    const restore=()=>{
+      if(drag) return;
+      let pos=null; try{ pos=JSON.parse(localStorage.getItem(FAB_POS_KEY)||'null'); }catch(_){ pos=null; }
+      if(!pos||!Number.isFinite(Number(pos.x))||!Number.isFinite(Number(pos.y))){ fab.removeAttribute('data-user-position'); return; }
+      const b=bounds();
+      place(b.minX+(b.maxX-b.minX)*Math.max(0,Math.min(1,Number(pos.x))),b.minY+(b.maxY-b.minY)*Math.max(0,Math.min(1,Number(pos.y))),false);
+    };
+    const endDrag=e=>{
+      if(!drag) return;
+      const finished=drag;
+      drag=null;
+      if(fab.hasPointerCapture&&fab.hasPointerCapture(finished.id)){ try{ fab.releasePointerCapture(finished.id); }catch(_){ } }
+      if(finished.moved){ suppressClickUntil=Date.now()+350; place(parseFloat(fab.style.left),parseFloat(fab.style.top),true); }
+      fab.classList.remove('dragging');
+      if(e&&e.preventDefault) e.preventDefault();
+    };
+    fab.addEventListener('pointerdown',e=>{
+      if(e.button!=null&&e.button!==0) return;
+      const r=fab.getBoundingClientRect();
+      drag={id:e.pointerId,startX:e.clientX,startY:e.clientY,offsetX:e.clientX-r.left,offsetY:e.clientY-r.top,moved:false};
+      try{ fab.setPointerCapture(e.pointerId); }catch(_){ }
+    });
+    fab.addEventListener('pointermove',e=>{
+      if(!drag||e.pointerId!==drag.id) return;
+      const dx=e.clientX-drag.startX,dy=e.clientY-drag.startY;
+      if(!drag.moved&&Math.hypot(dx,dy)<6) return;
+      drag.moved=true; fab.classList.add('dragging');
+      place(e.clientX-drag.offsetX,e.clientY-drag.offsetY,false);
+      e.preventDefault();
+    });
+    fab.addEventListener('pointerup',endDrag);
+    fab.addEventListener('pointercancel',endDrag);
+    fab.addEventListener('lostpointercapture',()=>{ if(drag) endDrag(); });
+    fab.addEventListener('click',e=>{
+      if(Date.now()<suppressClickUntil){ e.preventDefault(); e.stopPropagation(); return; }
+      dr.classList.toggle('open');
+      fab.setAttribute('aria-expanded',dr.classList.contains('open')?'true':'false');
+      render();
+    });
+    const closeDrawer=()=>{ dr.classList.remove('open'); fab.setAttribute('aria-expanded','false'); };
+    dr.querySelector('#p2u-slip-close').addEventListener('click',closeDrawer);
+    window.addEventListener('resize',()=>{ clearTimeout(resizeTimer); resizeTimer=setTimeout(()=>{ if(fab.dataset.userPosition==='1') restore(); },100); },{passive:true});
+    window.addEventListener('orientationchange',()=>setTimeout(()=>{ if(fab.dataset.userPosition==='1') restore(); },180),{passive:true});
+    if(window.visualViewport) window.visualViewport.addEventListener('resize',()=>{ if(fab.dataset.userPosition==='1') restore(); },{passive:true});
+    requestAnimationFrame(restore);
     document.addEventListener('click',e=>{
       const b=e.target.closest('.slip-add');
       if(b){ e.preventDefault(); e.stopPropagation(); const p=REG.map[b.dataset.slipreg]; if(p) add(p.m,p.market,(typeof engineMode!=='undefined')?engineMode:null); return; }

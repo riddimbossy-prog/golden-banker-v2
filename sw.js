@@ -1,10 +1,10 @@
-/* Predict2U service worker v211 — fast core install, bounded caches,
+/* Predict2U service worker v212 — fast core install, bounded caches,
    native-install support, exact push deep links and recoverable offline navigation. */
-const VERSION='v211';
-const CACHE_VERSION='predict2u-v211';
+const VERSION='v212';
+const CACHE_VERSION='predict2u-v212';
 const APP_CACHE=CACHE_VERSION;
-const RUNTIME_CACHE='predict2u-runtime-v211';
-const IMAGE_CACHE='predict2u-images-v211';
+const RUNTIME_CACHE='predict2u-runtime-v212';
+const IMAGE_CACHE='predict2u-images-v212';
 const IMAGE_LIMIT=90;
 const RUNTIME_LIMIT=90;
 const NETWORK_TIMEOUT=2800;
@@ -14,7 +14,7 @@ const OFFLINE_URL='./offline.html';
 // Keep install light. Other pages are cached only after they are opened or quietly prefetched.
 const CORE_SHELL=[
   './','./index.html','./board.html','./offline.html','./manifest.webmanifest',
-  './pwa-launch.js','./pwa-launch.css','./mobile-app-nav.js','./mobile-app-nav.css','./device-responsive-v207.css','./acca-mobile-v209.css','./mobile-polish-v211.css',
+  './pwa-launch.js','./pwa-launch.css','./mobile-app-nav.js','./mobile-app-nav.css','./device-responsive-v207.css','./acca-mobile-v209.css','./mobile-polish-v211.css','./slip.js',
   './predict2u-logo.png','./predict2u-mark.png','./favicon.ico',
   './icon-192.png','./icon-512.png','./maskable-icon.png'
 ];

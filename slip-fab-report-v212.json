@@ -1,0 +1,76 @@
+{
+  "build": "v212",
+  "generated_at": "2026-07-13T06:18:12.168Z",
+  "passed": 15,
+  "failed": 0,
+  "viewports": [
+    320,
+    344,
+    393,
+    768,
+    884,
+    1180
+  ],
+  "checks": [
+    {
+      "name": "build version v212",
+      "pass": true
+    },
+    {
+      "name": "service worker v212",
+      "pass": true
+    },
+    {
+      "name": "slip module is precached",
+      "pass": true
+    },
+    {
+      "name": "FAB is always rendered",
+      "pass": true
+    },
+    {
+      "name": "empty-count badge hides without hiding button",
+      "pass": true
+    },
+    {
+      "name": "pointer drag starts",
+      "pass": true
+    },
+    {
+      "name": "pointer drag moves",
+      "pass": true
+    },
+    {
+      "name": "drag click is suppressed",
+      "pass": true
+    },
+    {
+      "name": "position persists",
+      "pass": true
+    },
+    {
+      "name": "position restores",
+      "pass": true
+    },
+    {
+      "name": "button avoids mobile nav through tablet and Fold widths",
+      "pass": true
+    },
+    {
+      "name": "button sits above mobile nav",
+      "pass": true
+    },
+    {
+      "name": "drawer sits above mobile nav",
+      "pass": true
+    },
+    {
+      "name": "touch drag does not scroll page",
+      "pass": true
+    },
+    {
+      "name": "drag remains accessible",
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+Predict2U v212 deployment
+
+1. Upload the contents of Predict2U_Device_UI_Repair_v212 to the repository root.
+2. Replace matching files.
+3. Commit and deploy.
+4. Open the app online once so service worker v212 activates.
+5. Completely close and reopen the installed PWA.
+
+The My Slip round button is always visible. Drag it to a comfortable screen position; the position is saved on that device. Tap it normally to open the slip drawer.
