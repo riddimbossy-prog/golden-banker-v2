@@ -226,27 +226,20 @@ a{ color:inherit; text-decoration:none; }
   <div class="p2u-fullboard-filter-backdrop" id="fb-filter-backdrop"></div>
   <section class="p2u-fullboard-simple-filters" id="fb-simple-filters" aria-label="Full Board filters">
     <div class="p2u-fullboard-filter-head"><strong>Filter Full Board</strong><button type="button" class="p2u-fullboard-filter-close" id="fb-filter-close" aria-label="Close filters">×</button></div>
-    <label class="p2u-fullboard-filter-field"><i class="fa-solid fa-shield-halved"></i><select id="fb-league"><option value="all">All leagues</option></select></label>
+    <label class="p2u-fullboard-filter-field"><i class="fa-solid fa-people-group"></i><select id="fb-agreement"><option value="all">All agreement levels</option><option value="agree">Agreement</option><option value="split">Split decision</option><option value="danger">Conflict</option></select></label>
     <label class="p2u-fullboard-filter-field"><i class="fa-solid fa-chart-simple"></i><select id="fb-market"><option value="all">All markets</option><option value="win">Match result</option><option value="dnb">Draw no bet</option><option value="dc">Double chance</option><option value="team">Team goals</option><option value="ou">Over / Under</option><option value="btts">BTTS</option><option value="half">Halves</option></select></label>
     <label class="p2u-fullboard-filter-field"><i class="fa-solid fa-coins"></i><select id="fb-odds"><option value="all">All odds</option><option value="1.10-1.30">1.10–1.30</option><option value="1.31-1.50">1.31–1.50</option><option value="1.51-1.80">1.51–1.80</option><option value="1.81-2.20">1.81–2.20</option><option value="2.21-99">2.21+</option></select></label>
-    <label class="p2u-fullboard-filter-field"><i class="fa-solid fa-magnifying-glass"></i><input id="fb-search" type="search" placeholder="Search team or league…" autocomplete="off"/></label>
     <button type="button" class="p2u-fullboard-reset" id="fb-reset">Reset</button>
   </section>
-  <div class="p2u-fullboard-filter-status"><span>Showing <strong id="fb-visible">—</strong> of <span id="fb-total">—</span> picks</span><span id="fb-filter-summary">All markets · All odds</span></div>
+  <div class="p2u-fullboard-filter-status"><span>Showing <strong id="fb-visible">—</strong> of <span id="fb-total">—</span> picks</span><span id="fb-filter-summary">All agreement levels · All markets · All odds</span></div>
   <div class="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-5 items-start">
 
     <aside class="glass rounded-3xl p-6 lg:sticky lg:top-[80px]">
-      <div class="relative mb-5">
-        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-[11px]" style="color:var(--muted)"></i>
-        <input id="search-input" type="text" placeholder="Search teams or leagues…" autocomplete="off"
-          class="w-full pl-10 pr-4 py-3 rounded-2xl text-[13px] outline-none"
-          style="background:var(--panel);border:1px solid var(--line);color:var(--ink)"/>
-      </div>
       <div class="text-[10.5px] uppercase tracking-[.12em] font-medium mb-2.5" style="color:var(--muted)">Engine</div>
       <div class="flex flex-wrap gap-1.5 mb-6" id="engine-filters"></div>
       <div class="text-[10.5px] uppercase tracking-[.12em] font-medium mb-2.5" style="color:var(--muted)">Market</div>
       <div class="flex flex-wrap gap-1.5 mb-6" id="market-filters"></div>
-      <div class="text-[10.5px] uppercase tracking-[.12em] font-medium mb-2.5" style="color:var(--muted)">Conflict</div>
+      <div class="text-[10.5px] uppercase tracking-[.12em] font-medium mb-2.5" style="color:var(--muted)">Agreement</div>
       <div class="flex flex-wrap gap-1.5 mb-6" id="conflict-filters"></div>
       <div class="text-[10.5px] uppercase tracking-[.12em] font-medium mb-2.5" style="color:var(--muted)">Date</div>
       <div class="flex flex-wrap gap-1.5" id="date-filters"></div>
@@ -564,7 +557,7 @@ a{ color:inherit; text-decoration:none; }
     $('market-filters').innerHTML=mfs.map(([k,n])=>`<button class="fchip${k===marketF?' on':''}" data-mf="${k}">${esc(n)}</button>`).join('');
     $('market-filters').querySelectorAll('[data-mf]').forEach(b=>b.addEventListener('click',()=>{
       marketF=b.dataset.mf; renderFilters(); renderMatches(); }));
-    const cfs=[['all','All'],['agree','Agreement'],['split','Split'],['danger','Conflict']];
+    const cfs=[['all','All'],['agree','Agreement'],['split','Split Decision'],['danger','Conflict']];
     $('conflict-filters').innerHTML=cfs.map(([k,n])=>`<button class="fchip${k===conflictF?' on':''}" data-cf="${k}">${n}</button>`).join('');
     $('conflict-filters').querySelectorAll('[data-cf]').forEach(b=>b.addEventListener('click',()=>{
       conflictF=b.dataset.cf; renderFilters(); renderMatches(); }));
@@ -579,39 +572,31 @@ a{ color:inherit; text-decoration:none; }
   }
 
   function syncSimpleFullBoardFilters(){
-    const league=$('fb-league');
-    if(league){
-      const current=leagueF;
-      const leagues=[...new Set(allPicks().map(p=>p.m.league||'').filter(Boolean))].sort((a,b)=>a.localeCompare(b));
-      league.innerHTML='<option value="all">All leagues</option>'+leagues.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('');
-      league.value=leagues.includes(current)?current:'all';
-      if(league.value==='all')leagueF='all';
-    }
+    if($('fb-agreement'))$('fb-agreement').value=conflictF;
     if($('fb-market'))$('fb-market').value=marketF;
     if($('fb-odds'))$('fb-odds').value=oddsF;
-    const activeCount=[leagueF!=='all',marketF!=='all',oddsF!=='all',!!q].filter(Boolean).length;
+    const activeCount=[conflictF!=='all',marketF!=='all',oddsF!=='all'].filter(Boolean).length;
     if($('fb-filter-count'))$('fb-filter-count').textContent=activeCount?`${activeCount} active`:'No filters';
     if($('fb-filter-summary')){
+      const agreementLabel=$('fb-agreement')&&$('fb-agreement').selectedOptions[0]?$('fb-agreement').selectedOptions[0].textContent:'All agreement levels';
       const marketLabel=$('fb-market')&&$('fb-market').selectedOptions[0]?$('fb-market').selectedOptions[0].textContent:'All markets';
       const oddsLabel=$('fb-odds')&&$('fb-odds').selectedOptions[0]?$('fb-odds').selectedOptions[0].textContent:'All odds';
-      $('fb-filter-summary').textContent=`${marketLabel} · ${oddsLabel}`;
+      $('fb-filter-summary').textContent=`${agreementLabel} · ${marketLabel} · ${oddsLabel}`;
     }
   }
   function closeSimpleFullBoardFilters(){
     $('fb-simple-filters')&&$('fb-simple-filters').classList.remove('is-open');
     $('fb-filter-backdrop')&&$('fb-filter-backdrop').classList.remove('is-open');
   }
-  if($('fb-league'))$('fb-league').addEventListener('change',e=>{leagueF=e.target.value;syncSimpleFullBoardFilters();renderMatches();});
-  if($('fb-market'))$('fb-market').addEventListener('change',e=>{marketF=e.target.value;syncSimpleFullBoardFilters();renderMatches();});
+  if($('fb-agreement'))$('fb-agreement').addEventListener('change',e=>{conflictF=e.target.value;renderFilters();syncSimpleFullBoardFilters();renderMatches();});
+  if($('fb-market'))$('fb-market').addEventListener('change',e=>{marketF=e.target.value;renderFilters();syncSimpleFullBoardFilters();renderMatches();});
   if($('fb-odds'))$('fb-odds').addEventListener('change',e=>{oddsF=e.target.value;syncSimpleFullBoardFilters();renderMatches();});
-  if($('fb-search'))$('fb-search').addEventListener('input',e=>{q=e.target.value.toLowerCase().trim();syncSimpleFullBoardFilters();renderMatches();});
-  if($('fb-reset'))$('fb-reset').addEventListener('click',()=>{leagueF='all';marketF='all';oddsF='all';q='';if($('fb-search'))$('fb-search').value='';syncSimpleFullBoardFilters();renderMatches();});
+  if($('fb-reset'))$('fb-reset').addEventListener('click',()=>{conflictF='all';marketF='all';oddsF='all';leagueF='all';q='';renderFilters();syncSimpleFullBoardFilters();renderMatches();});
   if($('fb-filter-open'))$('fb-filter-open').addEventListener('click',()=>{$('fb-simple-filters').classList.add('is-open');$('fb-filter-backdrop').classList.add('is-open');});
   if($('fb-filter-close'))$('fb-filter-close').addEventListener('click',closeSimpleFullBoardFilters);
   if($('fb-filter-backdrop'))$('fb-filter-backdrop').addEventListener('click',closeSimpleFullBoardFilters);
   syncSimpleFullBoardFilters();
 
-  $('search-input').addEventListener('input',e=>{ q=e.target.value.toLowerCase().trim(); if($('fb-search'))$('fb-search').value=e.target.value; syncSimpleFullBoardFilters(); renderMatches(); });
   document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>{
     const t=document.getElementById(b.dataset.jump); if(t) t.scrollIntoView({behavior:'smooth'}); }));
 
