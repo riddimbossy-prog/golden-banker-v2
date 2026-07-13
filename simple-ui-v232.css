@@ -1,0 +1,133 @@
+
+/* Predict2U v232 — simple core UI: Picks, Bankers, News, Community */
+:root{
+  --p2u-simple-bg:#060a12;
+  --p2u-simple-panel:#0a121e;
+  --p2u-simple-panel-2:#0c1624;
+  --p2u-simple-line:rgba(255,255,255,.075);
+  --p2u-simple-text:#f7f9fc;
+  --p2u-simple-muted:#94a0b1;
+  --p2u-simple-accent:#b7ef31;
+}
+body.p2u-simple-ready{background:var(--p2u-simple-bg)!important;color:var(--p2u-simple-text)!important}
+.p2u-simple-nav .p2u-v227-shell{grid-template-columns:minmax(150px,220px) 1fr auto!important;max-width:1180px!important}
+.p2u-simple-nav .p2u-v227-rail{justify-content:center;gap:10px!important}
+.p2u-simple-nav .p2u-v227-link{min-width:118px;justify-content:center;padding:11px 16px!important}
+.p2u-simple-nav .p2u-v227-live{display:none!important}
+.p2u-simple-dock{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+
+/* Picks / Bankers: keep only the useful board experience. */
+body.p2u-v227-page-board #top,
+body.p2u-v227-page-bankers #top,
+body.p2u-v227-page-board #engines,
+body.p2u-v227-page-bankers #engines,
+body.p2u-v227-page-board #performance,
+body.p2u-v227-page-bankers #performance,
+body.p2u-v227-page-board #transparency,
+body.p2u-v227-page-bankers #transparency,
+body.p2u-v227-page-board main>section.p2u-promo-grid,
+body.p2u-v227-page-bankers main>section.p2u-promo-grid,
+body.p2u-v227-page-board footer,
+body.p2u-v227-page-bankers footer,
+body.p2u-v227-page-board #engine-pills,
+body.p2u-v227-page-bankers #engine-pills,
+body.p2u-v227-page-board #board-rank-reason,
+body.p2u-v227-page-bankers #board-rank-reason,
+body.p2u-v227-page-board .p2u-personalization-bar,
+body.p2u-v227-page-bankers .p2u-personalization-bar{display:none!important}
+body.p2u-v227-page-board main,
+body.p2u-v227-page-bankers main{max-width:1180px!important;padding:20px 18px 120px!important}
+body.p2u-v227-page-board #board,
+body.p2u-v227-page-bankers #board{margin:0!important;padding:22px!important;border-radius:24px!important;background:linear-gradient(180deg,rgba(10,18,30,.97),rgba(7,13,23,.99))!important;border:1px solid var(--p2u-simple-line)!important}
+body.p2u-v227-page-board .p2u-board-head,
+body.p2u-v227-page-bankers .p2u-board-head{margin-bottom:16px!important;align-items:center!important}
+body.p2u-v227-page-board .p2u-board-icon,
+body.p2u-v227-page-bankers .p2u-board-icon{width:46px!important;height:46px!important;flex-basis:46px!important;border-radius:14px!important}
+body.p2u-v227-page-board #board-title,
+body.p2u-v227-page-bankers #board-title{font-size:clamp(28px,4vw,38px)!important}
+body.p2u-v227-page-board #board-sub,
+body.p2u-v227-page-bankers #board-sub{font-size:13px!important;color:var(--p2u-simple-muted)!important}
+body.p2u-v227-page-board .p2u-board-toolbar,
+body.p2u-v227-page-bankers .p2u-board-toolbar,
+body.p2u-v227-page-board .p2u-mobile-board-controls,
+body.p2u-v227-page-bankers .p2u-mobile-board-controls,
+body.p2u-v227-page-board .p2u-board-search-panel,
+body.p2u-v227-page-bankers .p2u-board-search-panel{display:none!important}
+
+.p2u-simple-filterbar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(220px,1.25fr) auto;gap:10px;margin:14px 0 16px}
+.p2u-simple-filter{display:flex;align-items:center;gap:9px;min-height:46px;padding:0 13px;border-radius:14px;background:#081421;border:1px solid #203247;color:#dce3ed}
+.p2u-simple-filter i{color:var(--p2u-simple-accent);font-size:13px;flex:0 0 auto}
+.p2u-simple-filter select,.p2u-simple-filter input{width:100%!important;min-width:0!important;height:44px!important;min-height:44px!important;margin:0!important;padding:0!important;border:0!important;background:transparent!important;color:#eef3f8!important;outline:0!important;font-size:12.5px!important}
+.p2u-simple-filter option{background:#0a1420;color:#fff}
+.p2u-simple-reset{min-height:46px;padding:0 16px;border-radius:14px;border:1px solid #26394e;background:#0b1724;color:#c8d0dc;font-size:12px;font-weight:800}
+.p2u-simple-reset:hover{border-color:#4b6077;color:#fff}
+.p2u-simple-mobile-filter{display:none}
+.p2u-active-filters{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 14px}
+.p2u-active-filter{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:rgba(183,239,49,.08);border:1px solid rgba(183,239,49,.23);color:#dfff91;font-size:11px;font-weight:750}
+
+body.p2u-v227-page-board #date-strip,
+body.p2u-v227-page-bankers #date-strip{margin-bottom:16px!important}
+body.p2u-v227-page-board #cards,
+body.p2u-v227-page-bankers #cards{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important}
+body.p2u-v227-page-board #cards>.p2u-standard-card,
+body.p2u-v227-page-bankers #cards>.p2u-standard-card{min-height:0!important}
+
+.p2u-bankers-summary{display:none;margin:0 0 16px;padding:16px;border-radius:18px;background:linear-gradient(135deg,rgba(183,239,49,.10),rgba(9,19,30,.94));border:1px solid rgba(183,239,49,.22);align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+body.p2u-v227-page-bankers .p2u-bankers-summary{display:flex}
+.p2u-bankers-summary-copy{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.p2u-bankers-summary strong{font-size:18px}.p2u-bankers-summary small{display:block;color:var(--p2u-simple-muted);font-size:12px;margin-top:3px}
+.p2u-bankers-combined{padding:9px 12px;border-radius:12px;background:#07111c;border:1px solid rgba(255,255,255,.07);font-weight:800;color:var(--p2u-simple-accent)}
+.p2u-bankers-addall{min-height:44px;padding:0 16px;border-radius:13px;border:0;background:var(--p2u-simple-accent);color:#142000;font-size:12px;font-weight:900}
+
+/* News: compact hero, direct feed. */
+body.p2u-v227-page-news .p2u-news-top{display:none!important}
+body.p2u-v227-page-news .p2u-news-wrap{max-width:1180px!important;padding:20px 18px 120px!important}
+body.p2u-v227-page-news .p2u-news-hero{display:block!important;padding:22px!important;margin-bottom:14px!important;min-height:0!important}
+body.p2u-v227-page-news .p2u-news-hero-art{display:none!important}
+body.p2u-v227-page-news .p2u-news-hero h1{font-size:clamp(30px,5vw,48px)!important;line-height:1.02!important;margin:6px 0 10px!important}
+body.p2u-v227-page-news .p2u-news-hero h1 br{display:none}
+body.p2u-v227-page-news .p2u-news-hero p{display:none!important}
+body.p2u-v227-page-news .p2u-news-hero-proof{display:none!important}
+body.p2u-v227-page-news .p2u-news-hero-actions{margin-top:14px!important}
+body.p2u-v227-page-news .p2u-news-personalize{display:none!important}
+body.p2u-v227-page-news .p2u-news-controls{position:sticky;top:88px;z-index:30;padding:12px!important;margin-bottom:14px!important}
+body.p2u-v227-page-news #news-feed{padding:18px!important}
+
+/* Community: remove oversized intro and keep interaction surfaces. */
+body.p2u-v227-page-community header.top{display:none!important}
+body.p2u-v227-page-community main.wrap{max-width:1040px!important;padding:18px 16px 120px!important}
+body.p2u-v227-page-community main.wrap>h1{font-size:clamp(30px,6vw,48px)!important;margin:10px 0 4px!important}
+body.p2u-v227-page-community main.wrap>.sub{font-size:14px!important;margin-bottom:16px!important}
+body.p2u-v227-page-community .card{border-radius:18px!important;padding:18px!important}
+
+@media(max-width:980px){
+  .p2u-simple-nav .p2u-v227-link{min-width:105px}
+  .p2u-simple-filterbar{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .p2u-simple-reset{width:100%}
+  body.p2u-v227-page-board #cards,body.p2u-v227-page-bankers #cards{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:700px){
+  .p2u-simple-nav .p2u-v227-rail{display:none!important}
+  .p2u-simple-nav .p2u-v227-shell{grid-template-columns:1fr auto!important;grid-template-areas:'brand side'!important}
+  .p2u-simple-dock{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+  body.p2u-v227-page-board main,body.p2u-v227-page-bankers main{padding:12px 10px 104px!important}
+  body.p2u-v227-page-board #board,body.p2u-v227-page-bankers #board{padding:15px 12px 18px!important;border-radius:20px!important}
+  body.p2u-v227-page-board .p2u-board-head,body.p2u-v227-page-bankers .p2u-board-head{gap:12px!important;margin-bottom:12px!important}
+  body.p2u-v227-page-board .p2u-board-icon,body.p2u-v227-page-bankers .p2u-board-icon{width:42px!important;height:42px!important;flex-basis:42px!important}
+  body.p2u-v227-page-board #board-title,body.p2u-v227-page-bankers #board-title{font-size:28px!important}
+  body.p2u-v227-page-board .p2u-board-subline,body.p2u-v227-page-bankers .p2u-board-subline{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:5px!important}
+  .p2u-simple-filterbar{display:none!important}
+  .p2u-simple-mobile-filter{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:48px;margin:10px 0 13px;padding:0 14px;border-radius:14px;background:#081421;border:1px solid #22364b;color:#edf2f7;font-size:12px;font-weight:800}
+  .p2u-simple-mobile-filter span{display:flex;align-items:center;gap:9px}.p2u-simple-mobile-filter i{color:var(--p2u-simple-accent)}
+  body.p2u-v227-page-board #cards,body.p2u-v227-page-bankers #cards{grid-template-columns:1fr!important;gap:11px!important}
+  .p2u-bankers-summary{padding:13px;border-radius:16px}.p2u-bankers-summary-copy{gap:9px}.p2u-bankers-addall{width:100%}
+  body.p2u-v227-page-news .p2u-news-wrap{padding:12px 9px 104px!important}
+  body.p2u-v227-page-news .p2u-news-controls{top:74px}
+  body.p2u-v227-page-news .p2u-news-hero{padding:18px!important}
+  body.p2u-v227-page-news #news-feed{padding:13px!important}
+  body.p2u-v227-page-community main.wrap{padding:12px 10px 104px!important}
+}
+@media(max-width:390px){
+  body.p2u-v227-page-board #board-title,body.p2u-v227-page-bankers #board-title{font-size:25px!important}
+  .p2u-simple-dock a{font-size:9px!important}
+}
