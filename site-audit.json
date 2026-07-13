@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-12T22:34:23.835Z",
+  "generatedAt": "2026-07-13T04:42:21.061Z",
   "auditVersion": "v191",
-  "cacheVersion": "predict2u-v205",
+  "cacheVersion": "predict2u-v206",
   "engineCount": 16,
   "critical": [
     "index.html: required local asset not found: data.js",

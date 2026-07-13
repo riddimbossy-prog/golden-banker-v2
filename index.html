@@ -5,6 +5,22 @@
 <script>document.documentElement.classList.add('p2u-booting')</script>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<script>
+/* v207: existing phone/tablet installs may still retain the older index.html start URL.
+   Redirect those installed-app launches to the responsive Board before the landing page paints. */
+(function(){
+  try{
+    var q=new URLSearchParams(location.search);
+    var installed=(window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true;
+    var mobileLike=/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent||'')||
+      (navigator.maxTouchPoints>1&&Math.min(screen.width||9999,screen.height||9999)<=1180);
+    var oldPwaStart=q.get('source')==='pwa';
+    if((oldPwaStart||installed)&&mobileLike&&q.get('overview')!=='1'){
+      location.replace('./board.html?source=pwa');
+    }
+  }catch(_){/* Never block the page if launch detection is unavailable. */}
+})();
+</script>
 <title>Predict2u — Know the Game. Predict Better.</title>
 <meta name="description" content="Sixteen specialized engines. Full transparency. Real results — wins and losses on the record."/>
 <link rel="icon" href="favicon.ico" sizes="any"/>
@@ -234,7 +250,7 @@ a{ color:inherit; text-decoration:none; }
 <meta name="apple-mobile-web-app-title" content="Predict2U"/>
 <link rel="stylesheet" href="pwa-launch.css"/>
 <script src="pwa-launch.js" defer></script>
-<link rel="stylesheet" href="device-responsive-v205.css"/>
+<link rel="stylesheet" href="device-responsive-v207.css"/>
 </head>
 <body>
 <nav class="sticky top-0 z-50" style="background:var(--bg);border-bottom:1px solid var(--line)">
@@ -858,7 +874,7 @@ a{ color:inherit; text-decoration:none; }
       activeDate=b.dataset.d; showAll=false; renderDates(); renderLeagues(); renderStats(); renderCarousel(); renderEngines(); renderCards(); renderBoardRankReason(); renderWC(); }));
     requestAnimationFrame(()=>{
       const current=$('date-strip').querySelector('.date-chip.on');
-      if(current) current.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});
+      if(current) current.scrollIntoView({block:'nearest',inline:'nearest',behavior:'smooth'});
     });
   }
   function renderLeagues(){

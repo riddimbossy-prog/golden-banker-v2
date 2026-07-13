@@ -1,7 +1,7 @@
 {
-  "version": "v205",
-  "expected_cache": "predict2u-v205",
-  "generated_at": "2026-07-12T22:34:20.167Z",
+  "version": "v207",
+  "expected_cache": "predict2u-v207",
+  "generated_at": "2026-07-13T04:50:18.658Z",
   "checks": [
     {
       "name": "required file manifest.webmanifest",
@@ -61,7 +61,7 @@
     {
       "name": "build version available",
       "ok": true,
-      "detail": "v205"
+      "detail": "v207"
     },
     {
       "name": "standalone display",
@@ -84,14 +84,14 @@
       "detail": ""
     },
     {
-      "name": "v205 worker cache",
+      "name": "v207 worker cache",
       "ok": true,
-      "detail": "expected predict2u-v205"
+      "detail": "expected predict2u-v207"
     },
     {
       "name": "worker version matches build",
       "ok": true,
-      "detail": "expected v205"
+      "detail": "expected v207"
     },
     {
       "name": "offline navigation fallback",

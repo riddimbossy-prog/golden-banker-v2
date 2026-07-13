@@ -1,0 +1,56 @@
+{
+  "version": "v207",
+  "generated_at": "2026-07-13T04:50:32.733Z",
+  "passed": 12,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "engine rail cannot wrap",
+      "ok": true
+    },
+    {
+      "name": "engine pills cannot shrink",
+      "ok": true
+    },
+    {
+      "name": "engine labels keep intrinsic width",
+      "ok": true
+    },
+    {
+      "name": "engine rail scrolls horizontally",
+      "ok": true
+    },
+    {
+      "name": "date rail negative margins removed",
+      "ok": true
+    },
+    {
+      "name": "board clears sticky header",
+      "ok": true
+    },
+    {
+      "name": "board date uses nearest alignment",
+      "ok": true
+    },
+    {
+      "name": "index date uses nearest alignment",
+      "ok": true
+    },
+    {
+      "name": "all responsive pages use v207 CSS",
+      "ok": true
+    },
+    {
+      "name": "public pages reference v207 CSS",
+      "ok": true
+    },
+    {
+      "name": "service worker cache bumped",
+      "ok": true
+    },
+    {
+      "name": "service worker precaches v207 CSS",
+      "ok": true
+    }
+  ]
+}

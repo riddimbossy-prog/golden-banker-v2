@@ -234,7 +234,7 @@ a{ color:inherit; text-decoration:none; }
 <meta name="apple-mobile-web-app-title" content="Predict2U"/>
 <link rel="stylesheet" href="pwa-launch.css"/>
 <script src="pwa-launch.js" defer></script>
-<link rel="stylesheet" href="device-responsive-v205.css"/>
+<link rel="stylesheet" href="device-responsive-v207.css"/>
 </head>
 <body>
 <nav class="sticky top-0 z-50" style="background:var(--bg);border-bottom:1px solid var(--line)">
@@ -867,7 +867,7 @@ a{ color:inherit; text-decoration:none; }
       activeDate=b.dataset.d; showAll=false; renderDates(); renderLeagues(); renderStats(); renderCarousel(); renderEngines(); renderCards(); renderBoardRankReason(); renderWC(); }));
     requestAnimationFrame(()=>{
       const current=$('date-strip').querySelector('.date-chip.on');
-      if(current) current.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});
+      if(current) current.scrollIntoView({block:'nearest',inline:'nearest',behavior:'smooth'});
     });
   }
   function renderLeagues(){
