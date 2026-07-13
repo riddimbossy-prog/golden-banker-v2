@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-12T22:20:06.939Z",
-  "version": "v204",
+  "generatedAt": "2026-07-12T22:34:20.094Z",
+  "version": "v205",
   "errors": [],
   "warnings": [],
   "passedCount": 33,
@@ -46,7 +46,7 @@
       "limit": 18000
     },
     "smart-alerts.js": {
-      "bytes": 27361,
+      "bytes": 27433,
       "limit": 42000
     },
     "smart-alerts.css": {
@@ -74,7 +74,7 @@
       "limit": 8000
     },
     "account-cloud.js": {
-      "bytes": 31096,
+      "bytes": 31168,
       "limit": 65000
     },
     "account-cloud.css": {

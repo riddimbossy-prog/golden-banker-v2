@@ -1,0 +1,29 @@
+{
+  "version": "v205",
+  "generated_at": "2026-07-12T22:35:06.184434+00:00",
+  "scope": "Shared header collision, tablet breakpoint and foldable navigation repair",
+  "passed": {
+    "repository_preflight": 116,
+    "performance_budget": 33,
+    "pwa_readiness": 47,
+    "navigation_static_checks": 9,
+    "javascript_syntax_files": [
+      "account-cloud.js",
+      "smart-alerts.js",
+      "sw.js"
+    ],
+    "responsive_stylesheet_pages": 18
+  },
+  "fixed": [
+    "Notification and account controls mount inside Proof/Scorecards/League DNA headers",
+    "Notification and account controls mount inside Trust Center and legal headers",
+    "Desktop links no longer sit underneath floating utility controls",
+    "Tablet and foldable bottom navigation remains active through 1180px",
+    "PWA cache advanced to v205"
+  ],
+  "known_repository_generated_assets_not_in_archive": [
+    "data.js",
+    "community.js"
+  ],
+  "audit_note": "The repository audit reports the same missing live-generated data.js and community.js assets from the supplied base archive. No placeholder data was added."
+}

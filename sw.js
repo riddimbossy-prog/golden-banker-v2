@@ -1,10 +1,10 @@
-/* Predict2U service worker v204 — fast core install, bounded caches,
+/* Predict2U service worker v205 — fast core install, bounded caches,
    native-install support, exact push deep links and recoverable offline navigation. */
-const VERSION='v204';
-const CACHE_VERSION='predict2u-v204';
+const VERSION='v205';
+const CACHE_VERSION='predict2u-v205';
 const APP_CACHE=CACHE_VERSION;
-const RUNTIME_CACHE='predict2u-runtime-v204';
-const IMAGE_CACHE='predict2u-images-v204';
+const RUNTIME_CACHE='predict2u-runtime-v205';
+const IMAGE_CACHE='predict2u-images-v205';
 const IMAGE_LIMIT=90;
 const RUNTIME_LIMIT=90;
 const NETWORK_TIMEOUT=2800;
@@ -14,7 +14,7 @@ const OFFLINE_URL='./offline.html';
 // Keep install light. Other pages are cached only after they are opened or quietly prefetched.
 const CORE_SHELL=[
   './','./index.html','./offline.html','./manifest.webmanifest',
-  './pwa-launch.js','./pwa-launch.css','./mobile-app-nav.js','./mobile-app-nav.css','./device-responsive-v204.css',
+  './pwa-launch.js','./pwa-launch.css','./mobile-app-nav.js','./mobile-app-nav.css','./device-responsive-v205.css',
   './predict2u-logo.png','./predict2u-mark.png','./favicon.ico',
   './icon-192.png','./icon-512.png','./maskable-icon.png'
 ];

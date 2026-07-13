@@ -211,7 +211,7 @@
     if(chip){chip.href='account.html';launcher=chip;return updateLauncher()}
     if(document.getElementById('p2u-account-launcher')){launcher=document.getElementById('p2u-account-launcher');return updateLauncher()}
     const a=document.createElement('a');a.id='p2u-account-launcher';a.className='p2u-account-launcher';a.href='account.html';a.setAttribute('aria-label','Account and cloud sync');
-    const topInner=document.querySelector('header.top .top-inner');const nav=document.querySelector('nav.sticky>div');
+    const topInner=document.querySelector('header.top .top-inner');const nav=document.querySelector('nav.sticky>div, nav.nav .navin, nav.trust-nav .trust-navin, nav.legal-nav .legal-navin');
     if(topInner){const alert=document.getElementById('p2u-alert-button');topInner.insertBefore(a,alert?alert.nextSibling:topInner.querySelector('.mobile-page-chip')||null)}
     else if(nav)nav.appendChild(a);else{a.classList.add('p2u-account-launcher-floating');document.body.appendChild(a)}
     launcher=a;updateLauncher();

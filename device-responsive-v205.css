@@ -1,0 +1,247 @@
+/* Predict2U v205 — unified phone, tablet and foldable layout repair */
+:root{
+  --p2u-device-gutter:clamp(12px,3.2vw,24px);
+  --p2u-device-nav-height:82px;
+}
+html{
+  width:100%;max-width:100%;overflow-x:clip;
+  -webkit-text-size-adjust:100%;text-size-adjust:100%;
+}
+body{
+  width:100%;max-width:100%;min-height:100vh;min-height:100dvh;
+  overflow-x:clip;overscroll-behavior-x:none;
+}
+*,*::before,*::after{box-sizing:border-box}
+img,svg,video,canvas,iframe{max-width:100%}
+input,select,textarea,button{max-width:100%;min-width:0}
+main,header,footer,nav,section,article,aside,form,fieldset,.grid,.flex{min-width:0}
+.grid>*,.flex>*,main>*,section>*,article>*{min-width:0}
+.tablewrap,.table-wrap,[class*="table-wrap"]{max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}
+pre,code,.mono{overflow-wrap:anywhere}
+
+/* The desktop header is hidden by several pages before 1181px. Keep the app tabs present
+   through tablet, unfolded-landscape and compact-laptop widths so navigation never disappears. */
+@media (max-width:1180px){
+  :root{--p2u-mobile-nav-height:var(--p2u-device-nav-height)}
+  body{padding-bottom:calc(var(--p2u-device-nav-height) + env(safe-area-inset-bottom,0px))!important}
+  .p2u-mobile-app-nav{
+    display:block!important;left:0!important;right:0!important;bottom:0!important;
+    padding:7px max(8px,env(safe-area-inset-right,0px)) calc(7px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px))!important;
+  }
+  .p2u-mobile-app-nav__inner{width:100%;max-width:720px;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(3px,1vw,8px)}
+  .p2u-mobile-app-nav a{min-width:0;min-height:62px;padding:5px 2px;border-radius:15px;font-size:clamp(9px,1.8vw,12px);gap:4px;overflow:hidden}
+  .p2u-mobile-app-nav a span{display:block;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center}
+  .p2u-mobile-app-nav a svg{width:clamp(20px,3.2vw,25px);height:clamp(20px,3.2vw,25px);flex:0 0 auto}
+  .p2u-install-chip{bottom:calc(var(--p2u-device-nav-height) + 12px + env(safe-area-inset-bottom,0px))!important}
+  .p2u-app-banner{bottom:calc(var(--p2u-device-nav-height) + 10px + env(safe-area-inset-bottom,0px))!important}
+  #p2u-health-button{bottom:calc(var(--p2u-device-nav-height) + 12px + env(safe-area-inset-bottom,0px))!important}
+
+  .max-w-\[1240px\],.max-w-\[1200px\],.max-w-\[1180px\],.max-w-\[1120px\],
+  .max-w-7xl,.max-w-6xl,.max-w-5xl,.max-w-4xl,.wrap,
+  .p2u-news-wrap,.p2u-account-page,.p2u-profile-page,.p2u-share-hero{
+    width:100%;max-width:100%;min-width:0;
+  }
+  body>nav>div,body>header>div,.top-inner,.navin,.p2u-news-top-inner{
+    width:100%;max-width:100%;padding-left:var(--p2u-device-gutter)!important;padding-right:var(--p2u-device-gutter)!important;
+  }
+  body>nav img,.top img,.nav img,.p2u-news-brand img{max-width:min(46vw,190px);height:auto!important;max-height:46px;object-fit:contain}
+  .card,.panel,.glass,.slip-card,.p2u-news-card,.p2u-news-feature-card,.p2u-account-page-card{max-width:100%;min-width:0;overflow-wrap:anywhere}
+  .pill-row,.filters,.filter-row,#engine-pills,.engine-pills,#date-strip,.date-strip{
+    max-width:100%;min-width:0;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch;
+  }
+}
+@media (min-width:1181px){.p2u-mobile-app-nav{display:none!important}}
+
+/* Main board and engine pages */
+@media (max-width:1180px){
+  #top,body>main.max-w-\[1240px\],#transparency{padding-left:var(--p2u-device-gutter)!important;padding-right:var(--p2u-device-gutter)!important}
+  #top{padding-top:clamp(28px,6vw,48px)!important}
+  #top .t-hero{font-size:clamp(42px,9vw,72px);line-height:.98}
+  #top>.grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  #cards,#engines-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  #board .relative,#board input,#board select,.filters input,.filters select{max-width:100%}
+  #date-strip,.date-strip{display:flex!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none;touch-action:pan-x}
+  #date-strip::-webkit-scrollbar,.date-strip::-webkit-scrollbar{display:none}
+  #engine-pills,.engine-pills{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;padding-bottom:5px;scrollbar-width:none}
+}
+@media (max-width:639px){
+  #cards,#engines-grid{grid-template-columns:minmax(0,1fr)!important}
+  #top .t-hero{font-size:clamp(38px,12.5vw,54px)}
+  #top .t-lead{font-size:16px;line-height:1.55}
+  #top>.flex,#board>.flex{align-items:stretch!important}
+  #board .relative,#board input,#board select{width:100%!important}
+  .btn-det,.slip-add,[data-add-slip],#acca-add{min-height:44px}
+}
+@media (max-width:360px){
+  :root{--p2u-device-gutter:10px;--p2u-device-nav-height:74px}
+  #top>.grid{grid-template-columns:minmax(0,1fr)!important}
+  #top .card{padding:14px!important}
+  #top .t-num{font-size:42px!important}
+  .p2u-mobile-app-nav{padding-left:4px!important;padding-right:4px!important;padding-top:5px!important}
+  .p2u-mobile-app-nav__inner{gap:2px}
+  .p2u-mobile-app-nav a{min-height:56px;border-radius:12px;font-size:8.5px;padding-inline:1px}
+  .p2u-mobile-app-nav a svg{width:19px;height:19px}
+}
+
+/* News: one readable lane on phones, tablets and unfolded Fold screens. */
+.p2u-news-page,.p2u-news-page *{min-width:0}
+@media (max-width:1180px){
+  .p2u-news-wrap{padding:clamp(22px,4vw,38px) var(--p2u-device-gutter) calc(var(--p2u-device-nav-height) + 44px)!important}
+  .p2u-news-top-inner{height:64px;gap:12px}
+  .p2u-news-account{margin-left:auto;max-width:46%;padding:6px 8px}
+  .p2u-news-account #user-name{display:none}
+  .p2u-news-hero{grid-template-columns:minmax(0,1fr)!important;gap:18px;margin-bottom:20px}
+  .p2u-news-hero h1{font-size:clamp(38px,8vw,60px);max-width:14ch}
+  .p2u-news-hero-copy{padding:clamp(20px,4vw,30px)}
+  .p2u-news-hero-art{min-height:clamp(220px,42vw,330px)}
+  .p2u-news-controls{display:grid!important;grid-template-columns:minmax(0,1fr);align-items:stretch;gap:12px;position:static!important}
+  .p2u-news-tabs{width:100%;max-width:100%;display:flex;flex-wrap:nowrap;overflow-x:auto!important;overflow-y:hidden;scroll-snap-type:x proximity;touch-action:pan-x;padding:2px 1px 8px;scrollbar-width:none}
+  .p2u-news-tabs::-webkit-scrollbar{display:none}
+  .p2u-news-tabs button{flex:0 0 auto;min-height:42px;scroll-snap-align:start}
+  .p2u-news-search{width:100%!important;max-width:none;height:48px}
+  .p2u-news-personalize,.p2u-news-feature-card,.p2u-news-card{width:100%;max-width:100%}
+  .p2u-news-follow-form{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .p2u-news-follow-form .grow,.p2u-news-follow-form .p2u-news-button{grid-column:1/-1}
+  .p2u-news-feature-card{grid-template-columns:minmax(0,1fr)!important;min-height:0}
+  .p2u-news-feature-media{min-height:clamp(210px,42vw,320px)}
+  .p2u-news-feature-copy{padding:clamp(20px,4vw,30px)}
+  .p2u-news-grid{grid-template-columns:minmax(0,1fr)!important;gap:14px}
+  .p2u-news-card{min-height:0;display:grid!important;grid-template-columns:clamp(190px,31vw,250px) minmax(0,1fr);content-visibility:auto;contain-intrinsic-size:260px}
+  .p2u-news-card-media{height:100%!important;min-height:220px}
+  .p2u-news-card-body{padding:18px}
+  .p2u-news-card .p2u-news-actions{display:flex;flex-wrap:wrap;gap:8px;width:100%}
+  .p2u-news-card .p2u-news-actions>a,.p2u-news-card .p2u-news-actions>button{flex:1 1 118px;min-width:0;display:inline-flex;align-items:center;justify-content:center}
+  .p2u-news-actions .p2u-news-share-action{visibility:visible!important;opacity:1!important}
+  .p2u-news-discussion-backdrop{align-items:stretch;padding:0}
+  .p2u-news-discussion{width:min(100%,620px);max-width:100%;height:100dvh;padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) calc(var(--p2u-device-nav-height) + 18px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));border-left:0}
+  .p2u-news-comment-form textarea{max-width:100%}
+}
+@media (max-width:560px){
+  .p2u-news-top-inner{padding-inline:12px!important}
+  .p2u-news-brand img{max-width:158px;max-height:42px}
+  .p2u-news-wrap{padding-top:22px!important;padding-inline:12px!important}
+  .p2u-news-hero{border-radius:18px}
+  .p2u-news-hero-copy{padding:20px 16px}
+  .p2u-news-hero h1{font-size:clamp(36px,11vw,48px)}
+  .p2u-news-hero-actions{grid-template-columns:minmax(0,1fr)!important}
+  .p2u-news-hero-art{min-height:220px}
+  .p2u-news-personalize{padding:14px;border-radius:16px}
+  .p2u-news-follow-form{grid-template-columns:minmax(0,1fr)}
+  .p2u-news-follow-form .grow,.p2u-news-follow-form .p2u-news-button{grid-column:auto}
+  .p2u-news-feature-copy{padding:18px 16px}
+  .p2u-news-card{display:flex!important;flex-direction:column;grid-template-columns:none}
+  .p2u-news-card-media{height:auto!important;min-height:0;aspect-ratio:16/9}
+  .p2u-news-card-body{padding:15px}
+  .p2u-news-card h3{font-size:18px}
+  .p2u-news-card p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .p2u-news-card .p2u-news-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .p2u-news-card .p2u-news-actions>a,.p2u-news-card .p2u-news-actions>button{width:100%;min-height:42px;flex:none}
+  .p2u-news-comment-form-foot{display:grid;grid-template-columns:minmax(0,1fr);align-items:stretch}
+  .p2u-news-comment-form-foot .p2u-news-button{width:100%}
+}
+@media (max-width:340px){
+  .p2u-news-brand img{max-width:138px}
+  .p2u-news-account{padding:4px 6px}
+  .p2u-news-account #user-av{width:28px;height:28px}
+  .p2u-news-tabs button{padding:9px 11px;font-size:11px}
+  .p2u-news-card .p2u-news-actions{grid-template-columns:minmax(0,1fr)}
+}
+
+/* Community, account, profile and share surfaces */
+@media (max-width:1180px){
+  .p2u-community-page main.wrap{width:100%;max-width:100%;padding-left:var(--p2u-device-gutter)!important;padding-right:var(--p2u-device-gutter)!important}
+  .p2u-community-page .top-inner{gap:10px}
+  .p2u-community-page .top-nav{display:none!important}
+  .p2u-community-page .mobile-page-chip{display:inline-flex}
+  .p2u-community-page .p2u-community-feature-grid{grid-template-columns:minmax(0,1fr)!important}
+  .p2u-community-page .filters{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,.65fr);gap:8px}
+  .p2u-community-page .filters input,.p2u-community-page .filters select{width:100%!important;min-width:0!important}
+  .p2u-community-page .slip-card,.p2u-community-page .member{max-width:100%;overflow:hidden}
+  .p2u-account-page,.p2u-profile-page{padding:24px var(--p2u-device-gutter) calc(var(--p2u-device-nav-height) + 36px)!important}
+  .p2u-account-grid{grid-template-columns:minmax(0,1fr)!important}
+  .p2u-account-page-card.full{grid-column:auto!important}
+  .p2u-account-actions{display:flex;flex-wrap:wrap}
+  .p2u-share-hero{padding-left:var(--p2u-device-gutter)!important;padding-right:var(--p2u-device-gutter)!important}
+}
+@media (max-width:520px){
+  .p2u-community-page .filters{grid-template-columns:minmax(0,1fr)}
+  .p2u-community-page h1{font-size:clamp(38px,12vw,48px)}
+  .p2u-community-page .card{padding:15px 13px}
+  .p2u-account-actions .p2u-account-btn{width:100%}
+}
+
+/* Proof, scorecards, league DNA, trust and legal pages */
+@media (max-width:1180px){
+  .navin,.wrap{padding-left:var(--p2u-device-gutter);padding-right:var(--p2u-device-gutter)}
+  .links{display:none!important}
+  .proof-hero,.proof-guide,.trust-callout,.section,.legal-card{max-width:100%;min-width:0}
+  .proof-toolbar,.proof-toolbar-actions,.proof-loading{max-width:100%}
+  .proof-ledger .tablewrap,.tablewrap{width:100%;max-width:100%;overflow-x:auto!important}
+  .proof-ledger table,.table{width:max-content;min-width:720px;max-width:none}
+}
+@media (max-width:620px){
+  .proof-toolbar-actions,.proof-loading{grid-template-columns:minmax(0,1fr)!important}
+  .hero{padding-top:24px!important}
+  .section{padding-left:0;padding-right:0}
+}
+
+/* Fold/tablet landscape: compact vertical chrome without losing the bottom tabs. */
+@media (min-width:700px) and (max-width:1180px) and (orientation:landscape){
+  :root{--p2u-device-nav-height:70px}
+  .p2u-mobile-app-nav a{min-height:52px;flex-direction:row;font-size:10px;gap:5px}
+  .p2u-mobile-app-nav a span{width:auto;max-width:76px}
+  .p2u-news-wrap{padding-top:20px!important}
+  .p2u-news-hero{grid-template-columns:minmax(0,1.1fr) minmax(260px,.9fr)!important;align-items:stretch}
+  .p2u-news-hero-art{min-height:250px}
+  .p2u-news-card{grid-template-columns:210px minmax(0,1fr)}
+  .p2u-news-card-media{min-height:190px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{scroll-behavior:auto!important}
+}
+
+
+/* v205 — shared top-navigation collision repair.
+   Alerts and account controls now live inside every page header instead of floating over links. */
+.nav .navin,.trust-nav .trust-navin,.legal-nav .legal-navin{
+  display:flex;align-items:center;min-width:0;
+}
+.nav .navin>.links,.trust-nav .trust-navin>.trust-links{
+  flex:1 1 auto;min-width:0;max-width:100%;
+  overflow-x:auto;overflow-y:hidden;overscroll-behavior-inline:contain;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;
+}
+.nav .navin>.links::-webkit-scrollbar,.trust-nav .trust-navin>.trust-links::-webkit-scrollbar{display:none}
+.nav .navin>.p2u-alert-trigger,.nav .navin>.p2u-account-launcher,
+.trust-nav .trust-navin>.p2u-alert-trigger,.trust-nav .trust-navin>.p2u-account-launcher,
+.legal-nav .legal-navin>.p2u-alert-trigger,.legal-nav .legal-navin>.p2u-account-launcher{
+  position:relative!important;inset:auto!important;margin:0!important;
+  flex:0 0 auto;z-index:2;
+}
+.nav .navin>.p2u-alert-trigger,.trust-nav .trust-navin>.p2u-alert-trigger,.legal-nav .legal-navin>.p2u-alert-trigger{order:80}
+.nav .navin>.p2u-account-launcher,.trust-nav .trust-navin>.p2u-account-launcher,.legal-nav .legal-navin>.p2u-account-launcher{order:90}
+
+/* Compact desktop header: keep all controls inside the viewport at 1280/1366 widths. */
+@media (min-width:1181px) and (max-width:1420px){
+  .nav .navin,.trust-nav .trust-navin{gap:10px!important}
+  .nav .brand-img,.trust-nav .trust-logo{height:42px!important;max-width:156px!important}
+  .nav .links,.trust-nav .trust-links{gap:clamp(8px,1vw,13px)!important;font-size:11px!important;white-space:nowrap;padding-inline:2px}
+  .nav .links a,.trust-nav .trust-links a{flex:0 0 auto}
+  .nav .p2u-alert-trigger,.nav .p2u-account-launcher,
+  .trust-nav .p2u-alert-trigger,.trust-nav .p2u-account-launcher{width:36px;height:36px;min-width:36px}
+}
+
+/* Tablet and foldable headers use the five fixed bottom tabs; only logo and utilities remain above. */
+@media (max-width:1180px){
+  .nav .links,.trust-nav .trust-links{display:none!important}
+  .nav .navin,.trust-nav .trust-navin,.legal-nav .legal-navin{gap:9px!important}
+  .nav .brand,.trust-nav .trust-navin>a:first-child,.legal-nav .legal-navin>a:first-child{margin-right:auto;min-width:0}
+  .nav .brand-img,.trust-nav .trust-logo,.legal-nav .legal-logo{max-width:min(52vw,180px)!important;height:auto!important;max-height:46px!important}
+  .legal-nav .legal-back{margin-left:0!important;white-space:nowrap}
+}
+@media (max-width:480px){
+  .legal-nav .legal-back{display:none!important}
+  .nav .brand-img,.trust-nav .trust-logo,.legal-nav .legal-logo{max-width:min(48vw,158px)!important;max-height:42px!important}
+}

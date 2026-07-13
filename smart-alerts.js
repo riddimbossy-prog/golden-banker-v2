@@ -166,7 +166,7 @@
     trigger.innerHTML='<i class="fa-regular fa-bell" aria-hidden="true"></i><span class="p2u-alert-badge" aria-hidden="true">0</span>';
     const user=document.getElementById("user-chip");
     const topInner=document.querySelector("header.top .top-inner");
-    const desktopNav=document.querySelector("nav.sticky>div");
+    const desktopNav=document.querySelector("nav.sticky>div, nav.nav .navin, nav.trust-nav .trust-navin, nav.legal-nav .legal-navin");
     if(user&&user.parentElement)user.parentElement.insertBefore(trigger,user);
     else if(topInner){const chip=topInner.querySelector(".mobile-page-chip");topInner.insertBefore(trigger,chip||null);}
     else if(desktopNav)desktopNav.appendChild(trigger);
