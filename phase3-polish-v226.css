@@ -1,0 +1,129 @@
+
+/* Predict2U v226 — phase 3 device polish */
+body.p2u-phase2-ready{font-size:15px;line-height:1.55}
+body.p2u-phase2-ready h1{letter-spacing:-.04em}
+body.p2u-phase2-ready .card,
+body.p2u-phase2-ready .glass,
+body.p2u-phase2-ready .section,
+body.p2u-phase2-ready .stickybar,
+body.p2u-phase2-ready .proof-hero,
+body.p2u-phase2-ready .legal-hero,
+body.p2u-phase2-ready .trust-hero,
+body.p2u-phase2-ready .p2u-account-page-hero,
+body.p2u-phase2-ready .p2u-share-hero,
+body.p2u-phase2-ready #p2u-account-page-root,
+body.p2u-phase2-ready #p2u-profile-page-root,
+body.p2u-phase2-ready .p2u-404-card,
+body.p2u-phase2-ready .offline main.card,
+body.p2u-phase2-ready .p2u-news-controls,
+body.p2u-phase2-ready .p2u-news-personalize,
+body.p2u-phase2-ready .p2u-news-featured,
+body.p2u-phase2-ready #news-feed,
+body.p2u-phase2-ready .p2u-news-hero,
+body.p2u-phase2-ready #snapshot,
+body.p2u-phase2-ready #bankers,
+body.p2u-phase2-ready #board{
+  background:linear-gradient(180deg, rgba(10,16,27,.94), rgba(8,14,24,.985)) !important;
+  border:1px solid rgba(255,255,255,.06) !important;
+  box-shadow:0 18px 42px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.02) !important;
+}
+body.p2u-phase2-ready .trust-hero,
+body.p2u-phase2-ready .legal-hero,
+body.p2u-phase2-ready .p2u-account-page-hero,
+body.p2u-phase2-ready .p2u-share-hero,
+body.p2u-phase2-ready #p2u-account-page-root,
+body.p2u-phase2-ready #p2u-profile-page-root,
+body.p2u-phase2-ready .p2u-404-card{
+  border-radius:24px !important;
+  padding:24px !important;
+}
+body.p2u-phase2-ready .legal-grid,
+body.p2u-phase2-ready #cards,
+body.p2u-phase2-ready #summary,
+body.p2u-phase2-ready #league-grid,
+body.p2u-phase2-ready #top-bankers-grid,
+body.p2u-phase2-ready #matches-grid,
+body.p2u-phase2-ready #engines-grid,
+body.p2u-phase2-ready .members,
+body.p2u-phase2-ready .p2u-news-grid{gap:14px !important}
+body.p2u-phase2-ready .input,
+body.p2u-phase2-ready input,
+body.p2u-phase2-ready select,
+body.p2u-phase2-ready textarea{
+  min-height:48px;
+  border-radius:14px !important;
+}
+body.p2u-phase2-ready button,
+body.p2u-phase2-ready .btn,
+body.p2u-phase2-ready .p2u-news-button,
+body.p2u-phase2-ready .p2u-news-ghost,
+body.p2u-phase2-ready .p2u-share-action{
+  min-height:46px;
+  border-radius:14px !important;
+}
+body.p2u-phase2-ready .top-nav, body.p2u-phase2-ready .trust-links, body.p2u-phase2-ready .links{scrollbar-width:none}
+body.p2u-phase2-ready .top-nav::-webkit-scrollbar, body.p2u-phase2-ready .trust-links::-webkit-scrollbar, body.p2u-phase2-ready .links::-webkit-scrollbar{display:none}
+body.p2u-phase2-ready .empty{border-radius:16px !important}
+body.p2u-phase2-ready .footer, body.p2u-phase2-ready .p2u-news-footer{opacity:.96}
+body.p2u-phase2-ready .p2u-news-hero-art img{border-radius:20px}
+body.p2u-phase2-ready .p2u-news-follow-form{display:grid;grid-template-columns:180px 1fr auto;gap:12px;align-items:end}
+body.p2u-phase2-ready .p2u-news-controls{padding:18px}
+body.p2u-phase2-ready .p2u-news-tabs{display:flex;gap:8px;overflow:auto;padding-bottom:4px}
+body.p2u-phase2-ready .p2u-news-tabs button{flex:0 0 auto}
+body.p2u-phase2-ready #dashboard .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+body.p2u-phase2-ready #dashboard .note{margin-top:10px}
+body.p2u-phase2-ready .pick,.p2u-phase2-ready .slip-card,.p2u-phase2-ready .member,.p2u-phase2-ready .feed-item{border-radius:14px}
+body.p2u-phase2-ready .p2u-account-page,
+body.p2u-phase2-ready .p2u-profile-page{max-width:1100px;margin:0 auto;padding:20px 16px 110px}
+body.p2u-phase2-ready .p2u-share-hero{max-width:760px;margin:28px auto;padding:28px !important}
+body.p2u-phase2-ready .p2u-404{padding:24px 16px 110px !important}
+body.p2u-phase2-ready .offline main.card{max-width:720px;margin:24px auto;padding:24px}
+body.p2u-phase2-ready .legal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+body.p2u-phase2-ready .trust-grid{display:grid;gap:14px}
+body.p2u-phase2-ready .trust-grid.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+@media (max-width:1100px){
+  body.p2u-phase2-ready #dashboard .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  body.p2u-phase2-ready .trust-grid.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  body.p2u-phase2-ready{font-size:14px}
+  body.p2u-phase2-ready .trust-hero,
+  body.p2u-phase2-ready .legal-hero,
+  body.p2u-phase2-ready .p2u-account-page-hero,
+  body.p2u-phase2-ready .p2u-share-hero,
+  body.p2u-phase2-ready #p2u-account-page-root,
+  body.p2u-phase2-ready #p2u-profile-page-root,
+  body.p2u-phase2-ready .proof-hero,
+  body.p2u-phase2-ready header.wrap.hero,
+  body.p2u-phase2-ready #snapshot,
+  body.p2u-phase2-ready #bankers,
+  body.p2u-phase2-ready #board,
+  body.p2u-phase2-ready .p2u-news-controls,
+  body.p2u-phase2-ready .p2u-news-personalize,
+  body.p2u-phase2-ready .p2u-news-featured,
+  body.p2u-phase2-ready #news-feed,
+  body.p2u-phase2-ready .p2u-news-hero,
+  body.p2u-phase2-ready .p2u-404-card,
+  body.p2u-phase2-ready .offline main.card{padding:18px !important;border-radius:20px !important}
+  body.p2u-phase2-ready .p2u-news-follow-form{grid-template-columns:1fr}
+  body.p2u-phase2-ready #dashboard .stats,
+  body.p2u-phase2-ready .legal-grid,
+  body.p2u-phase2-ready .trust-grid.grid3{grid-template-columns:1fr}
+  body.p2u-phase2-ready .pick{align-items:flex-start;flex-wrap:wrap}
+  body.p2u-phase2-ready .pick .mk{width:100%;text-align:center}
+  body.p2u-phase2-ready .top-inner{height:auto;padding:10px 0}
+  body.p2u-phase2-ready .top-nav{display:none !important}
+  body.p2u-phase2-ready .p2u-news-hero{padding:18px}
+  body.p2u-phase2-ready .p2u-news-hero-actions{display:grid;grid-template-columns:1fr;gap:10px}
+  body.p2u-phase2-ready .p2u-news-hero-proof{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  body.p2u-phase2-ready .p2u-news-section-head{display:grid;gap:10px}
+  body.p2u-phase2-ready .p2u-news-load-wrap{padding-bottom:6px}
+}
+@media (max-width:480px){
+  body.p2u-phase2-ready .wrap, body.p2u-phase2-ready .p2u-news-wrap{width:min(1240px,calc(100% - 16px))}
+  body.p2u-phase2-ready .p2u-news-hero-proof{grid-template-columns:1fr}
+  body.p2u-phase2-ready .p2u-news-personalize-head{display:grid;gap:8px}
+  body.p2u-phase2-ready .p2u-news-follow-counter{justify-self:start}
+  body.p2u-phase2-ready .p2u-phase2-dock a span, body.p2u-phase2-ready .p2u-phase2-dock button span{font-size:10px}
+}

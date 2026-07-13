@@ -172,33 +172,31 @@ a{ color:inherit; text-decoration:none; }
 <link rel="stylesheet" href="device-responsive-v207.css"/>
 <link rel="stylesheet" href="p2u-utilities-v218.css"/>
 <link rel="stylesheet" href="engines-rescue-v218.css"/>
-<link rel="stylesheet" href="global-shell-v223.css"/>
-<script src="global-shell-v223.js" defer></script>
+<link rel="stylesheet" href="phase2-shell-v225.css"/>
+<link rel="stylesheet" href="phase3-polish-v226.css"/>
 </head>
-<body class="p2u-global-page">
+<body>
 
-<header class="p2u-global-header" data-p2u-global-header>
-  <div class="p2u-global-header__inner">
-    <div class="p2u-global-toprow">
-      <a class="p2u-global-brand" href="index.html" aria-label="Predict2U home">
-        <img src="predict2u-logo.png" alt="Predict2U — Know the game, predict better"/>
-      </a>
-      <div class="p2u-global-actions">
-        <div class="p2u-global-live" aria-label="Live platform time"><span class="p2u-global-live__dot"></span><span class="p2u-global-live__label">LIVE</span><span id="live-stamp" class="p2u-global-live__time">--:--</span></div>
-        <button class="p2u-global-pages-button" type="button" data-p2u-open-pages aria-label="Open all pages"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Pages</span></button>
-        <a id="user-chip" class="p2u-global-profile" href="account.html" aria-label="Account and cloud sync">
-          <span class="p2u-global-profile__copy"><strong id="user-name">Sign in</strong><span><span class="p2u-global-cloud-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a5 5 0 1 1 1.5-9.8A6 6 0 0 1 20 11a4 4 0 0 1 0 7H7Z"/><path d="m10 14 2-2 2 2M12 12v5"/></svg></span><span id="user-sub">Cloud sync</span><i aria-hidden="true"></i></span></span>
-          <span id="user-av" class="p2u-global-avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
-        </a>
-      </div>
+<nav class="sticky top-0 z-50 p2u-engines-nav" style="background:rgba(10,10,15,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)">
+  <div class="max-w-screen-2xl mx-auto px-5 lg:px-8 h-[62px] flex items-center gap-6 p2u-engines-nav-inner">
+    <a href="index.html" class="flex items-center gap-3 shrink-0 p2u-engines-brand">
+      <img src="predict2u-logo.png" alt="Predict2u — every pick, every result" class="nav-logo"/>
+    </a>
+    <div class="hidden lg:flex items-center gap-7 text-[14px] mx-auto p2u-engines-links" style="color:var(--ink-2)">
+      <a href="board.html" class="hover:text-white transition-colors">Overview</a>
+      <a href="#board" class="pb-1 font-medium" style="color:var(--em);border-bottom:2px solid var(--em)">Full Board</a>
+      <a href="board.html#engines" class="hover:text-white transition-colors">Engines</a>
+      <a href="proof.html" class="hover:text-white transition-colors">Proof</a>
+      <a href="scorecards.html" class="hover:text-white transition-colors">Scorecards</a>
+      <a href="league-dna.html" class="hover:text-white transition-colors">League DNA</a>
+      <a href="community.html" class="hover:text-white transition-colors">Community</a>
+      <a href="news.html" class="hover:text-white transition-colors">News</a>
     </div>
-    <div class="p2u-global-railrow">
-      <button class="p2u-global-scroll p2u-global-scroll--left" type="button" data-p2u-scroll-tabs="-1" aria-label="Scroll navigation left"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
-      <nav class="p2u-global-tabs" aria-label="Primary navigation" data-p2u-tab-rail><a class="p2u-global-tab" href="index.html" data-p2u-tab="overview"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4v3M20 12h-3M12 20v-3M4 12h3"/><path d="m12 12 4-4"/></svg><span>Overview</span></a><a class="p2u-global-tab" href="board.html" data-p2u-tab="board"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 9h18"/><path d="M8 13h3M13 13h3M8 17h3"/></svg><span>Today's Board</span></a><a class="p2u-global-tab is-active" href="engines.html" data-p2u-tab="full" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg><span>Full Board</span></a><a class="p2u-global-tab" href="index.html#engines" data-p2u-tab="engines"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21H9.6v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3V9.6h.1A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.1A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 9c.42.24.76.6 1 1 .2.34.34.72.4 1.1h.1v4h-.1a1.7 1.7 0 0 0-1.4 1.9Z"/></svg><span>Engines</span></a><a class="p2u-global-tab" href="proof.html" data-p2u-tab="proof"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v6c0 5-3.4 8-8 9-4.6-1-8-4-8-9V6l8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg><span>Proof</span></a><a class="p2u-global-tab" href="scorecards.html" data-p2u-tab="scorecards"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Scorecards</span></a><a class="p2u-global-tab" href="league-dna.html" data-p2u-tab="dna"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3c0 6 10 6 10 12 0 3-2 5-5 6"/><path d="M17 3c0 6-10 6-10 12 0 3 2 5 5 6"/><path d="M8 7h8M8 17h8M9 12h6"/></svg><span>League DNA</span></a><a class="p2u-global-tab" href="community.html" data-p2u-tab="community"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/><path d="M16 4.5a4 4 0 0 1 0 7M19 14a5 5 0 0 1 3 4.6V21"/></svg><span>Community</span></a><a class="p2u-global-tab" href="news.html" data-p2u-tab="news"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span>News</span></a></nav>
-      <button class="p2u-global-scroll p2u-global-scroll--right" type="button" data-p2u-scroll-tabs="1" aria-label="Scroll navigation right"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+    <div class="ml-auto lg:ml-0 flex items-center gap-4">
+      <a href="board.html" class="text-[13px] px-4 py-2 rounded-full p2u-engines-overview" style="border:1px solid var(--line-2);color:var(--ink-2)">← Overview</a>
     </div>
   </div>
-</header>
+</nav>
 
 <div id="snapshot" class="max-w-screen-2xl mx-auto px-5 lg:px-8 py-10">
   <div class="uppercase tracking-[2px] text-xs font-semibold" style="color:var(--em)" id="page-tag">THE FULL BOARD</div>
@@ -587,5 +585,6 @@ if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.se
 <script src="account-cloud.js" defer></script>
 <script src="football-assets.js" defer></script>
 <script src="analytics.js" defer></script>
+<script src="phase2-shell-v225.js" defer></script>
 </body>
 </html>

@@ -239,32 +239,45 @@ a{ color:inherit; text-decoration:none; }
 <link rel="stylesheet" href="mobile-polish-v211.css"/>
 <link rel="stylesheet" href="board-redesign-v220.css"/>
 <link rel="stylesheet" href="header-redesign-v221.css"/>
-<link rel="stylesheet" href="global-shell-v223.css"/>
-<script src="global-shell-v223.js" defer></script>
+<link rel="stylesheet" href="theme-refresh-v224.css"/>
+<link rel="stylesheet" href="phase3-polish-v226.css"/>
 </head>
-<body class="p2u-global-page">
-<header class="p2u-global-header" data-p2u-global-header>
-  <div class="p2u-global-header__inner">
-    <div class="p2u-global-toprow">
-      <a class="p2u-global-brand" href="index.html" aria-label="Predict2U home">
-        <img src="predict2u-logo.png" alt="Predict2U — Know the game, predict better"/>
+<body>
+<nav class="p2u-nav-wrap sticky top-0 z-50" style="background:rgba(6,8,14,.85)">
+  <div class="p2u-nav-shell">
+    <div class="p2u-nav-inner">
+      <a href="index.html" class="p2u-brand" aria-label="Predict2U home">
+        <img src="predict2u-logo.png" alt="Predict2u — every pick, every result"/>
       </a>
-      <div class="p2u-global-actions">
-        <div class="p2u-global-live" aria-label="Live platform time"><span class="p2u-global-live__dot"></span><span class="p2u-global-live__label">LIVE</span><span id="live-stamp" class="p2u-global-live__time">--:--</span></div>
-        <button class="p2u-global-pages-button" type="button" data-p2u-open-pages aria-label="Open all pages"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Pages</span></button>
-        <a id="user-chip" class="p2u-global-profile" href="account.html" aria-label="Account and cloud sync">
-          <span class="p2u-global-profile__copy"><strong id="user-name">Sign in</strong><span><span class="p2u-global-cloud-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a5 5 0 1 1 1.5-9.8A6 6 0 0 1 20 11a4 4 0 0 1 0 7H7Z"/><path d="m10 14 2-2 2 2M12 12v5"/></svg></span><span id="user-sub">Cloud sync</span><i aria-hidden="true"></i></span></span>
-          <span id="user-av" class="p2u-global-avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+      <div class="p2u-nav-main">
+        <div class="p2u-nav-links" aria-label="Primary navigation">
+          <a href="index.html#top" class="p2u-nav-link"><i class="fa-solid fa-compass"></i><span>Overview</span></a>
+          <a href="board.html" class="p2u-nav-link is-active"><i class="fa-regular fa-calendar-check"></i><span>Today's Board</span></a>
+          <a href="engines.html" class="p2u-nav-link"><i class="fa-solid fa-table-cells-large"></i><span>Full Board</span></a>
+          <a href="engines.html#engines-grid" class="p2u-nav-link"><i class="fa-solid fa-gear"></i><span>Engines</span></a>
+          <a href="proof.html" class="p2u-nav-link"><i class="fa-solid fa-shield-halved"></i><span>Proof</span></a>
+          <a href="scorecards.html" class="p2u-nav-link"><i class="fa-solid fa-chart-column"></i><span>Scorecards</span></a>
+          <a href="league-dna.html" class="p2u-nav-link"><i class="fa-solid fa-dna"></i><span>League DNA</span></a>
+          <a href="community.html" class="p2u-nav-link"><i class="fa-solid fa-users"></i><span>Community</span></a>
+          <a href="news.html" class="p2u-nav-link"><i class="fa-regular fa-newspaper"></i><span>News</span></a>
+        </div>
+      </div>
+      <div class="p2u-nav-side">
+        <div class="p2u-live-pill">
+          <span class="p2u-live-label"><span class="p2u-live-dot"></span>LIVE</span>
+          <span class="p2u-live-time" id="live-stamp">·</span>
+        </div>
+        <a href="community.html" class="p2u-profile-chip" id="user-chip">
+          <span class="p2u-profile-copy">
+            <strong class="p2u-profile-name" id="user-name">Sign in</strong>
+            <span class="p2u-profile-status"><i class="fa-solid fa-cloud-arrow-up"></i><span id="user-sub">Cloud sync</span><span class="p2u-sync-dot"></span></span>
+          </span>
+          <span class="p2u-profile-avatar" id="user-av"><i class="fa-solid fa-user text-[11px]"></i></span>
         </a>
       </div>
     </div>
-    <div class="p2u-global-railrow">
-      <button class="p2u-global-scroll p2u-global-scroll--left" type="button" data-p2u-scroll-tabs="-1" aria-label="Scroll navigation left"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
-      <nav class="p2u-global-tabs" aria-label="Primary navigation" data-p2u-tab-rail><a class="p2u-global-tab" href="index.html" data-p2u-tab="overview"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4v3M20 12h-3M12 20v-3M4 12h3"/><path d="m12 12 4-4"/></svg><span>Overview</span></a><a class="p2u-global-tab is-active" href="board.html" data-p2u-tab="board" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 9h18"/><path d="M8 13h3M13 13h3M8 17h3"/></svg><span>Today's Board</span></a><a class="p2u-global-tab" href="engines.html" data-p2u-tab="full"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg><span>Full Board</span></a><a class="p2u-global-tab" href="index.html#engines" data-p2u-tab="engines"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21H9.6v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3V9.6h.1A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.1A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 9c.42.24.76.6 1 1 .2.34.34.72.4 1.1h.1v4h-.1a1.7 1.7 0 0 0-1.4 1.9Z"/></svg><span>Engines</span></a><a class="p2u-global-tab" href="proof.html" data-p2u-tab="proof"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v6c0 5-3.4 8-8 9-4.6-1-8-4-8-9V6l8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg><span>Proof</span></a><a class="p2u-global-tab" href="scorecards.html" data-p2u-tab="scorecards"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Scorecards</span></a><a class="p2u-global-tab" href="league-dna.html" data-p2u-tab="dna"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3c0 6 10 6 10 12 0 3-2 5-5 6"/><path d="M17 3c0 6-10 6-10 12 0 3 2 5 5 6"/><path d="M8 7h8M8 17h8M9 12h6"/></svg><span>League DNA</span></a><a class="p2u-global-tab" href="community.html" data-p2u-tab="community"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/><path d="M16 4.5a4 4 0 0 1 0 7M19 14a5 5 0 0 1 3 4.6V21"/></svg><span>Community</span></a><a class="p2u-global-tab" href="news.html" data-p2u-tab="news"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span>News</span></a></nav>
-      <button class="p2u-global-scroll p2u-global-scroll--right" type="button" data-p2u-scroll-tabs="1" aria-label="Scroll navigation right"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
-    </div>
   </div>
-</header>
+</nav>
 
 <header id="top" class="max-w-[1240px] mx-auto px-6 pt-12 pb-8">
   <div class="inline-flex items-center gap-3 px-3.5 py-2 rounded-full mb-8" style="background:var(--panel);border:1px solid var(--line)">
@@ -394,7 +407,7 @@ a{ color:inherit; text-decoration:none; }
     </div>
   </section>
 
-  <section id="engines" class="py-16" style="border-top:1px solid var(--line)">
+  <section id="engines" class="p2u-section-shell p2u-engine-section py-16" style="border-top:1px solid var(--line)">
     <div class="flex items-end justify-between gap-6 flex-wrap mb-8">
       <div>
         <h2 class="t-h2" id="active-engines-title">Today's Active Engines</h2>
@@ -404,11 +417,11 @@ a{ color:inherit; text-decoration:none; }
         Learn how the engines work <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
       </a>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4" id="engines-grid"></div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 p2u-engine-grid" id="engines-grid"></div>
   </section>
 
-  <section id="performance" class="pb-16">
-    <div class="card p-7 lg:p-9">
+  <section id="performance" class="p2u-performance-section pb-16">
+    <div class="card p-7 lg:p-9 p2u-performance-card">
       <div class="flex items-start justify-between gap-6 flex-wrap mb-9">
         <div>
           <h2 class="t-h2">Performance · Last 7 Days</h2>
@@ -428,9 +441,9 @@ a{ color:inherit; text-decoration:none; }
     </div>
   </section>
 
-  <section class="pb-20 grid grid-cols-1 lg:grid-cols-2 gap-4">
-    <div class="card p-7" id="wc-card" style="display:none"></div>
-    <div class="card p-7 flex flex-col justify-center">
+  <section class="pb-20 grid grid-cols-1 lg:grid-cols-2 gap-4 p2u-promo-grid">
+    <div class="card p-7 p2u-promo-card" id="wc-card" style="display:none"></div>
+    <div class="card p-7 flex flex-col justify-center p2u-promo-card p2u-subscribe-card">
       <h3 class="t-h2">Get picks straight to your phone</h3>
       <p class="t-sm mt-2">Free. No spam. Losses included. 18+.</p>
       <div class="flex gap-3 mt-6">
@@ -446,38 +459,38 @@ a{ color:inherit; text-decoration:none; }
 </main>
 
 
-<section id="transparency" class="max-w-[1240px] mx-auto px-6 pb-20">
+<section id="transparency" class="p2u-section-shell p2u-transparency-shell max-w-[1240px] mx-auto px-6 pb-20">
   <div class="flex items-end justify-between gap-4 flex-wrap mb-7">
     <div><div class="t-lbl" style="color:var(--em)">TRANSPARENCY LAYER</div><h2 class="t-sec mt-2">More than a list of picks</h2></div>
     <div class="t-body max-w-[430px]" style="color:var(--ink-2)">Every prediction can now be audited, compared and understood before and after settlement.</div>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-    <a href="proof.html" class="glass card-h rounded-3xl p-6">
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 p2u-feature-grid">
+    <a href="proof.html" class="glass card-h rounded-3xl p-6 p2u-feature-card">
       <div class="w-11 h-11 rounded-2xl flex items-center justify-center" style="background:var(--em-dim);color:var(--em)"><i class="fa-solid fa-shield-halved"></i></div>
       <div class="font-display font-semibold text-xl mt-5">Proof Mode</div>
       <p class="text-[13px] mt-2" style="color:var(--ink-2)">Exact engine votes, data coverage, warnings, odds movement and settlement.</p>
       <div class="text-[12px] font-semibold mt-5" style="color:var(--em)">Open proof →</div>
     </a>
-    <a href="scorecards.html" class="glass card-h rounded-3xl p-6">
+    <a href="scorecards.html" class="glass card-h rounded-3xl p-6 p2u-feature-card">
       <div class="w-11 h-11 rounded-2xl flex items-center justify-center" style="background:rgba(96,165,250,.11);color:#60a5fa"><i class="fa-solid fa-chart-line"></i></div>
       <div class="font-display font-semibold text-xl mt-5">Engine Scorecards</div>
       <p class="text-[13px] mt-2" style="color:var(--ink-2)">Forward-tracked wins, losses, sample size, best markets and calibration status.</p>
       <div class="text-[12px] font-semibold mt-5" style="color:var(--em)">View records →</div>
     </a>
-    <a href="league-dna.html" class="glass card-h rounded-3xl p-6">
+    <a href="league-dna.html" class="glass card-h rounded-3xl p-6 p2u-feature-card">
       <div class="w-11 h-11 rounded-2xl flex items-center justify-center" style="background:rgba(167,139,250,.11);color:#a78bfa"><i class="fa-solid fa-dna"></i></div>
       <div class="font-display font-semibold text-xl mt-5">League DNA</div>
       <p class="text-[13px] mt-2" style="color:var(--ink-2)">League identity, strongest recurring markets, volatility and real sample depth.</p>
       <div class="text-[12px] font-semibold mt-5" style="color:var(--em)">Explore leagues →</div>
     </a>
-    <a href="engines.html" class="glass card-h rounded-3xl p-6">
+    <a href="engines.html" class="glass card-h rounded-3xl p-6 p2u-feature-card">
       <div class="w-11 h-11 rounded-2xl flex items-center justify-center" style="background:rgba(251,191,36,.11);color:var(--amber)"><i class="fa-solid fa-code-branch"></i></div>
       <div class="font-display font-semibold text-xl mt-5">Conflict Detector</div>
       <p class="text-[13px] mt-2" style="color:var(--ink-2)">Full agreement, split decisions, market conflicts and data conflicts shown openly.</p>
       <div class="text-[12px] font-semibold mt-5" style="color:var(--em)">Open full board →</div>
     </a>
   </div>
-  <a href="trust.html" class="card card-h mt-4 p-6 flex items-center justify-between gap-5 flex-wrap" style="border-color:rgba(52,211,153,.28);background:linear-gradient(135deg,rgba(52,211,153,.08),rgba(52,211,153,.02))">
+  <a href="trust.html" class="card card-h mt-4 p-6 flex items-center justify-between gap-5 flex-wrap p2u-trust-card" style="border-color:rgba(52,211,153,.28);background:linear-gradient(135deg,rgba(52,211,153,.08),rgba(52,211,153,.02))">
     <div><div class="t-lbl" style="color:var(--em)">TRUST CENTER</div><div class="font-display font-semibold text-xl mt-2">How the engines, data and public record work</div><p class="text-[13px] mt-2 max-w-[720px]" style="color:var(--ink-2)">Read the prediction rules, settlement process, data limitations, update delays and responsible-use policy.</p></div>
     <span class="text-[13px] font-semibold" style="color:var(--em)">Open Trust Center →</span>
   </a>
@@ -957,7 +970,7 @@ a{ color:inherit; text-decoration:none; }
       $('engines-grid').innerHTML='<div class="col-span-full card p-10 text-center t-sm">No engine has a qualified pick for this date.</div>';
       return;
     }
-    $('engines-grid').innerHTML=activity.active.map(({engine:[k,n,fnName,d],count:c})=>`<button class="card card-h p-6 text-left" data-eng="${k}">
+    $('engines-grid').innerHTML=activity.active.map(({engine:[k,n,fnName,d],count:c})=>`<button class="card card-h p-6 text-left p2u-engine-card" data-eng="${k}">
         <div class="flex items-start justify-between gap-3">
           <div style="font-size:18px;font-weight:700;letter-spacing:-.015em">${esc(n)}</div>
           <span class="dot dot-on" style="margin-top:6px"></span>

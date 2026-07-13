@@ -1,0 +1,40 @@
+
+/* Predict2U v224 — section redesign + theme consistency */
+:root{
+  --p2u-shell-bg: linear-gradient(180deg, rgba(8,17,29,.96), rgba(6,12,22,.98));
+  --p2u-shell-glow: radial-gradient(circle at top left, rgba(119,196,28,.09), transparent 26%), radial-gradient(circle at bottom right, rgba(59,130,246,.06), transparent 20%);
+  --p2u-shell-border: rgba(127,255,76,.10);
+  --p2u-soft-border: rgba(255,255,255,.055);
+}
+.p2u-section-shell{position:relative;margin:0 0 22px;padding:28px;border:1px solid var(--p2u-shell-border);border-radius:28px;background:var(--p2u-shell-glow),var(--p2u-shell-bg);box-shadow:0 24px 64px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.03);overflow:hidden}
+.p2u-section-shell::before{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg, rgba(255,255,255,.016), transparent 32%)}
+.p2u-section-shell > *{position:relative;z-index:1}
+.p2u-engine-section{border-top:0!important;padding-top:30px!important;padding-bottom:30px!important}
+.p2u-engine-section .t-h2,.p2u-performance-section .t-h2,#transparency .t-sec{letter-spacing:-.035em}
+.p2u-engine-grid{gap:16px!important}
+.p2u-engine-card{position:relative;min-height:220px;padding:24px!important;border-radius:22px!important;background:linear-gradient(180deg, rgba(10,16,27,.92), rgba(8,14,24,.98))!important;border:1px solid var(--p2u-soft-border)!important;box-shadow:0 18px 36px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.025);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.p2u-engine-card::after{content:'';position:absolute;top:16px;right:16px;width:8px;height:8px;border-radius:999px;background:#ff6574;box-shadow:0 0 0 4px rgba(255,101,116,.08)}
+@media(hover:hover){.p2u-engine-card:hover{transform:translateY(-3px);border-color:rgba(183,239,49,.28)!important;box-shadow:0 20px 42px rgba(0,0,0,.28)}}
+.p2u-engine-card .dot{display:none}.p2u-engine-card .t-sm{color:#c1cad5!important;font-size:15px!important;line-height:1.55!important}.p2u-engine-card .etag{background:rgba(255,255,255,.04)!important;border:1px solid rgba(255,255,255,.05)!important;color:#9aa7b8!important;border-radius:12px!important;padding:8px 12px!important;font-size:12px!important}
+.p2u-performance-section{padding:0!important;border:0!important;background:none!important;box-shadow:none!important;overflow:visible!important}
+.p2u-performance-card{position:relative;border-radius:28px!important;border:1px solid var(--p2u-shell-border)!important;background:var(--p2u-shell-glow),var(--p2u-shell-bg)!important;box-shadow:0 24px 64px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.03)!important;overflow:hidden}
+.p2u-performance-card::before{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(105deg, rgba(255,255,255,.018), transparent 34%)}
+.p2u-performance-card > *{position:relative;z-index:1}
+#perf-headline{font-size:56px!important;font-weight:800!important;line-height:.95}#perf-bars{gap:8px!important;align-items:flex-end!important}
+.bar-col{background:rgba(255,255,255,.018);border:1px solid rgba(255,255,255,.04);border-radius:18px;padding:18px 12px 16px;min-height:232px;justify-content:flex-end;min-width:72px!important}
+.bar-track{width:30px!important;height:132px!important;background:rgba(255,255,255,.03);border-radius:16px;justify-content:flex-end;padding:6px}
+.bar-fill{border-radius:12px!important;box-shadow:0 0 18px rgba(119,196,28,.15)}.bar-fill.low{box-shadow:0 0 18px rgba(255,90,103,.15)}
+.p2u-promo-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.p2u-promo-card{position:relative;border-radius:24px!important;border:1px solid var(--p2u-soft-border)!important;background:linear-gradient(180deg, rgba(10,16,27,.92), rgba(8,14,24,.98))!important;box-shadow:0 18px 36px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.025);overflow:hidden}
+.p2u-promo-card::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at top right, rgba(119,196,28,.08), transparent 22%)}
+.p2u-promo-card > *{position:relative;z-index:1}
+.p2u-subscribe-card .t-h2{font-size:clamp(28px,4vw,38px)}.p2u-subscribe-card a{min-height:52px;border-radius:16px!important;font-size:14px!important;font-weight:700!important;box-shadow:0 10px 22px rgba(0,0,0,.18)}
+#wc-card .tag{padding:7px 12px!important;border-radius:10px!important}#wc-card .mkt{padding:10px 14px!important;border-radius:12px!important}
+#transparency.p2u-transparency-shell{padding-top:30px;padding-bottom:24px}.p2u-feature-grid{gap:16px!important}
+.p2u-feature-card{position:relative;border-radius:24px!important;border:1px solid var(--p2u-soft-border)!important;background:linear-gradient(180deg, rgba(10,16,27,.92), rgba(8,14,24,.98))!important;box-shadow:0 18px 36px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.025)}
+.p2u-feature-card > div:first-child{width:48px!important;height:48px!important;border-radius:16px!important}.p2u-feature-card .font-display{font-size:20px!important;letter-spacing:-.025em}.p2u-feature-card p{font-size:14px!important;line-height:1.6!important}
+.p2u-trust-card{border-radius:24px!important;border:1px solid rgba(52,211,153,.26)!important;background:linear-gradient(135deg, rgba(10,28,28,.88), rgba(7,18,24,.98))!important;box-shadow:0 18px 42px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.03)!important}
+body footer{border-top-color:rgba(255,255,255,.06)!important}
+@media(max-width:1099px){.p2u-section-shell{padding:24px}.p2u-promo-grid{grid-template-columns:1fr}}
+@media(max-width:699px){.p2u-section-shell{padding:18px 16px;border-radius:22px}.p2u-engine-section{padding-top:20px!important;padding-bottom:20px!important}.p2u-engine-card{min-height:0;padding:20px!important;border-radius:18px!important}.p2u-engine-card .t-sm{font-size:14px!important}.p2u-performance-card{border-radius:22px!important;padding:22px 18px!important}#perf-headline{font-size:42px!important}.bar-col{min-width:64px!important;padding:16px 10px 14px;border-radius:16px;min-height:206px}.bar-track{height:116px!important;width:26px!important}.p2u-subscribe-card .t-h2{font-size:32px}.p2u-subscribe-card .flex.gap-3{flex-direction:column}.p2u-feature-card{border-radius:18px!important}.p2u-trust-card{border-radius:20px!important}}
+@media(max-width:479px){.p2u-section-shell{padding:16px 14px}.p2u-engine-grid,.p2u-feature-grid{gap:12px!important}#perf-bars{gap:6px!important}.bar-col{min-width:58px!important;padding:14px 8px 12px}}
