@@ -1,0 +1,35 @@
+{
+  "version": "v228",
+  "passed": 7,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "index.html: hotfix stylesheet loaded last",
+      "passed": true
+    },
+    {
+      "name": "board.html: hotfix stylesheet loaded last",
+      "passed": true
+    },
+    {
+      "name": "2-column mobile toolbar",
+      "passed": true
+    },
+    {
+      "name": "filter full-row",
+      "passed": true
+    },
+    {
+      "name": "no chip shrinking",
+      "passed": true
+    },
+    {
+      "name": "mobile date rail",
+      "passed": true
+    },
+    {
+      "name": "service worker v228",
+      "passed": true
+    }
+  ]
+}
