@@ -63484,10 +63484,53 @@
       "status": "pending",
       "result": null,
       "score": null
+    },
+    {
+      "matchDate": "2026-07-14",
+      "home": "Asheville City",
+      "away": "Virginia Beach City",
+      "league": "USL League Two",
+      "engine": "Halves",
+      "engineKey": "halves",
+      "engineFamily": "Specialist",
+      "engineVersion": "1.0",
+      "market": "Second Half Over 0.5",
+      "confidence": 87.5,
+      "suiteVersion": "2026.07-new-family",
+      "leagueClass": "Very High-Scoring",
+      "oddsAtPick": null,
+      "fairMarketProbabilityAtPick": null,
+      "snapshot": {
+        "fixtureId": 1586078,
+        "leagueId": 256,
+        "round": "Final Play-in",
+        "competitionType": "knockout",
+        "homeOdds": null,
+        "drawOdds": null,
+        "awayOdds": null,
+        "favoriteSide": null,
+        "favoriteOdds": null,
+        "favoriteGap": null,
+        "homeOverallPPG": null,
+        "awayOverallPPG": null,
+        "homeVenuePPG": null,
+        "awayVenuePPG": null,
+        "homeRecent5PPG": null,
+        "awayRecent5PPG": null,
+        "homeForm": "LDWDW",
+        "awayForm": "—",
+        "leagueGoalsPerGame": 3.49,
+        "leagueDrawRate": 0.18,
+        "dataFields": 0
+      },
+      "recordedAt": "2026-07-13T09:56:56.341Z",
+      "status": "pending",
+      "result": null,
+      "score": null
     }
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-13T09:55:22.259Z"
+    "updated": "2026-07-13T09:56:56.516Z"
   }
 }
