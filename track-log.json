@@ -61258,7 +61258,7 @@
       "finalHomeGoals": 2,
       "finalAwayGoals": 1,
       "actualResult": "home",
-      "settledAt": "2026-07-13T03:44:32.251Z"
+      "settledAt": "2026-07-13T03:45:54.590Z"
     },
     {
       "matchDate": "2026-07-13",
@@ -61282,7 +61282,7 @@
       "finalHomeGoals": 2,
       "finalAwayGoals": 1,
       "actualResult": "home",
-      "settledAt": "2026-07-13T03:44:32.251Z"
+      "settledAt": "2026-07-13T03:45:54.590Z"
     },
     {
       "matchDate": "2026-07-13",
@@ -61306,7 +61306,7 @@
       "finalHomeGoals": 2,
       "finalAwayGoals": 1,
       "actualResult": "home",
-      "settledAt": "2026-07-13T03:44:32.251Z"
+      "settledAt": "2026-07-13T03:45:54.590Z"
     },
     {
       "matchDate": "2026-07-13",
@@ -61330,7 +61330,7 @@
       "finalHomeGoals": 2,
       "finalAwayGoals": 1,
       "actualResult": "home",
-      "settledAt": "2026-07-13T03:44:32.251Z"
+      "settledAt": "2026-07-13T03:45:54.590Z"
     },
     {
       "matchDate": "2026-07-13",
@@ -63468,6 +63468,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-13T03:44:32.575Z"
+    "updated": "2026-07-13T03:45:54.817Z"
   }
 }
