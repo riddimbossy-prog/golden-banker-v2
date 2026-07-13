@@ -31,7 +31,7 @@ for(const [name,src] of [['board',board],['index',index]]){
 check('full board: active helper',full.includes('function activeEngines()'));
 check('full board: active filters only',full.includes("const efs=[['all','All active engines']].concat(active.map"));
 check('full board: inactive selected engine resets',full.includes("if(engineF!=='all'&&!active.some(e=>e[0]===engineF)) engineF='all';"));
-check('service worker v211',sw.includes("const VERSION='v211';")&&sw.includes("const CACHE_VERSION='predict2u-v211';"));
+check('service worker v217',sw.includes("const VERSION='v217';")&&sw.includes("const CACHE_VERSION='predict2u-v217';"));
 
 // Parse every inline script so release checks catch syntax errors.
 for(const file of ['board.html','index.html','engines.html']){
@@ -71,8 +71,8 @@ if(extracted){
 }
 
 const failed=checks.filter(x=>!x.ok);
-const report={build:'v211',generated_at:new Date().toISOString(),passed:checks.length-failed.length,failed:failed.length,checks};
-fs.writeFileSync(path.join(root,'active-engine-board-report-v211.json'),JSON.stringify(report,null,2));
+const report={build:'v217',generated_at:new Date().toISOString(),passed:checks.length-failed.length,failed:failed.length,checks};
+fs.writeFileSync(path.join(root,'active-engine-board-report-v217.json'),JSON.stringify(report,null,2));
 if(failed.length){
   console.error(`${failed.length} active-engine board checks failed.`);
   process.exit(1);

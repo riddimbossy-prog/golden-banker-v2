@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<script>document.documentElement.classList.add('p2u-ui-v217')</script>
 <title>Predict2U Engine Scorecards</title>
 <meta name="description" content="Public forward-tracked scorecards for every Predict2U engine."/>
 <link rel="icon" href="favicon.ico" sizes="any"/>
@@ -24,7 +25,6 @@
 <link rel="canonical" href="https://predict2u.com/scorecards.html"/>
 <meta name="theme-color" content="#08090d"/>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 :root{
   --bg:#08090d;--panel:#0e1016;--card:#11131a;--line:#20232d;--line2:#303541;
   --ink:#f7f8fa;--ink2:#b9bec9;--muted:#747b89;--em:#34d399;--em2:#a7f3d0;
@@ -99,6 +99,8 @@ h1{font-family:"Space Grotesk";font-size:clamp(36px,6vw,68px);line-height:1.02;l
 <link rel="stylesheet" href="pwa-launch.css"/>
 <script src="pwa-launch.js" defer></script>
 <link rel="stylesheet" href="device-responsive-v207.css"/>
+<link rel="stylesheet" href="p2u-utilities-v217.css"/>
+<link rel="stylesheet" href="ui-foundation-v217.css"/>
 </head>
 <body>
 <nav class="nav"><div class="wrap navin">
@@ -119,28 +121,37 @@ h1{font-family:"Space Grotesk";font-size:clamp(36px,6vw,68px);line-height:1.02;l
   const I=P2UIntelligence;
   const [log,cal]=await Promise.all([I.fetchJSON("track-log.json",{picks:[]}),I.fetchJSON("model-calibration.json",{groups:{}})]);
   const all=I.buildScorecards(log,cal),cards=document.getElementById("cards"),summary=document.getElementById("summary");
-  const settled=all.reduce((s,x)=>s+x.settled,0),won=all.reduce((s,x)=>s+x.won,0),validated=all.filter(x=>x.calibration.status!=="Learning").length;
-  summary.innerHTML=`
-    <div class="card"><div class="label">Engines</div><div class="kpi em" style="margin-top:10px">${all.length}</div><div class="ink2" style="margin-top:8px">Public scorecards</div></div>
-    <div class="card"><div class="label">Settled selections</div><div class="kpi" style="margin-top:10px">${settled}</div><div class="ink2" style="margin-top:8px">Across all engines</div></div>
-    <div class="card"><div class="label">Combined record</div><div class="kpi" style="margin-top:10px">${settled?Math.round(100*won/settled)+"%":"—"}</div><div class="ink2" style="margin-top:8px">${won}W · ${settled-won}L</div></div>
-    <div class="card"><div class="label">Calibrated engines</div><div class="kpi" style="margin-top:10px">${validated}</div><div class="ink2" style="margin-top:8px">${validated?"Validated groups found":"Still learning"}</div></div>`;
   const search=document.getElementById("search"),family=document.getElementById("family");
+  let period="all";
+  const labels={all:"All time",7:"Last 7 days",30:"Last 30 days",90:"Last 90 days"};
+  const metric=(x)=>{
+    if(period==="7")return{n:x.sevenN||0,w:x.sevenW||0,l:x.sevenL||0,p:x.sevenPct};
+    if(period==="30")return{n:x.thirtyN||0,w:x.thirtyW||0,l:x.thirtyL||0,p:x.thirtyPct};
+    if(period==="90")return{n:x.ninetyN||0,w:x.ninetyW||0,l:x.ninetyL||0,p:x.ninetyPct};
+    return{n:x.settled||0,w:x.won||0,l:x.lost||0,p:x.hitPct};
+  };
+  function renderSummary(){
+    const engines=all.length,rows=all.map(metric),settled=rows.reduce((s,x)=>s+x.n,0),won=rows.reduce((s,x)=>s+x.w,0),validated=all.filter(x=>x.calibration.status!=="Learning").length;
+    summary.innerHTML=`
+      <div class="card"><div class="label">Engines</div><div class="kpi em" style="margin-top:10px">${engines}</div><div class="ink2" style="margin-top:8px">Public scorecards</div></div>
+      <div class="card"><div class="label">${labels[period]} settled</div><div class="kpi" style="margin-top:10px">${settled}</div><div class="ink2" style="margin-top:8px">Across all engines</div></div>
+      <div class="card"><div class="label">${labels[period]} record</div><div class="kpi" style="margin-top:10px">${settled?Math.round(100*won/settled)+"%":"—"}</div><div class="ink2" style="margin-top:8px">${won}W · ${settled-won}L</div></div>
+      <div class="card"><div class="label">Calibrated engines</div><div class="kpi" style="margin-top:10px">${validated}</div><div class="ink2" style="margin-top:8px">${validated?"Validated groups found":"Still learning"}</div></div>`;
+  }
   const formHtml=f=>f==="—"?'<span class="muted">No settled form</span>':f.split("-").map(x=>`<span class="${x==="W"?"w":"l"}">${x}</span>`).join("");
   function render(){
     const q=search.value.toLowerCase().trim(),fam=family.value;
     const rows=all.filter(x=>(fam==="all"||x.family===fam)&&(!q||`${x.name} ${x.description} ${x.bestMarket&&x.bestMarket.name||""} ${x.bestLeague&&x.bestLeague.name||""}`.toLowerCase().includes(q)));
     cards.innerHTML=rows.map(x=>{
-      const hit=x.hitPct==null?"—":Math.round(x.hitPct*100)+"%";
-      const pct=x.hitPct==null?0:Math.round(x.hitPct*100);
+      const m=metric(x),hit=m.p==null?"—":Math.round(m.p*100)+"%",pct=m.p==null?0:Math.round(m.p*100);
       const state=x.settled>=100?"Established":x.settled>=30?"Building":x.settled>0?"Learning":"Awaiting results";
-      return `<article class="card">
-        <div class="row between wraprow"><div><div class="label">${I.esc(x.family)} · v${I.esc(x.version||"")}</div><h3 style="font-family:'Space Grotesk';font-size:24px;margin:5px 0 0">${I.esc(x.name)}</h3></div><span class="pill ${x.settled>=100?"strong":x.settled?"warn":"quiet"}">${state}</span></div>
+      return `<article class="card" data-scorecard-period="${period}">
+        <div class="row between wraprow"><div><div class="label">${I.esc(x.family)} · v${I.esc(x.version||"")}</div><h3 style="font-family:inherit;font-size:24px;margin:5px 0 0">${I.esc(x.name)}</h3></div><span class="pill ${x.settled>=100?"strong":x.settled?"warn":"quiet"}">${state}</span></div>
         <p class="ink2" style="min-height:44px">${I.esc(x.description||"")}</p>
         <div class="grid grid3">
-          <div><div class="label">All-time</div><div style="font-size:26px;font-weight:800;margin-top:5px">${hit}</div></div>
-          <div><div class="label">Record</div><div style="font-size:18px;font-weight:800;margin-top:8px"><span class='wl-w'>${x.won}W</span> · <span class='wl-l'>${x.lost}L</span></div></div>
-          <div><div class="label">Last 30d</div><div style="font-size:18px;font-weight:800;margin-top:8px">${x.thirtyPct==null?"—":Math.round(x.thirtyPct*100)+"%"}</div></div>
+          <div><div class="label">${labels[period]}</div><div style="font-size:26px;font-weight:800;margin-top:5px">${hit}</div></div>
+          <div><div class="label">Record</div><div style="font-size:18px;font-weight:800;margin-top:8px"><span class='wl-w'>${m.w}W</span> · <span class='wl-l'>${m.l}L</span></div></div>
+          <div><div class="label">Sample</div><div style="font-size:18px;font-weight:800;margin-top:8px">n=${m.n}</div></div>
         </div>
         <div class="progress" style="margin-top:14px"><span style="width:${pct}%"></span></div>
         <div class="form" style="margin-top:14px">${formHtml(x.form)}</div>
@@ -148,10 +159,12 @@ h1{font-family:"Space Grotesk";font-size:clamp(36px,6vw,68px);line-height:1.02;l
           <div class="marketgroup"><div class="label">Best market</div><div style="font-weight:800;margin-top:6px">${x.bestMarket?I.esc(I.shortMarket(x.bestMarket.name)):"Not enough data"}</div><div class="muted" style="font-size:11px;margin-top:4px">${x.bestMarket?`${Math.round(100*x.bestMarket.w/x.bestMarket.n)}% · n=${x.bestMarket.n}`:"Minimum 5 settled"}</div></div>
           <div class="marketgroup"><div class="label">Best league</div><div style="font-weight:800;margin-top:6px">${x.bestLeague?I.esc(x.bestLeague.name):"Not enough data"}</div><div class="muted" style="font-size:11px;margin-top:4px">${x.bestLeague?`${Math.round(100*x.bestLeague.w/x.bestLeague.n)}% · n=${x.bestLeague.n}`:"Minimum 5 settled"}</div></div>
         </div>
-        <div class="row between wraprow" style="margin-top:15px"><span class="pill ${x.calibration.status==="Learning"?"quiet":"strong"}">${I.esc(x.calibration.status)}</span><span class="muted" style="font-size:11px">${x.calibration.sample?`Calibration n=${x.calibration.sample}`:`Settled n=${x.settled}`}</span></div>
+        <div class="row between wraprow" style="margin-top:15px"><span class="pill ${x.calibration.status==="Learning"?"quiet":"strong"}">${I.esc(x.calibration.status)}</span><span class="muted" style="font-size:11px">${x.calibration.sample?`Calibration n=${x.calibration.sample}`:`All-time settled n=${x.settled}`}</span></div>
       </article>`;
     }).join("")||'<div class="card empty">No engines match this filter.</div>';
   }
+  document.addEventListener('p2u:scorecard-period',e=>{period=String(e.detail&&e.detail.period||'all');renderSummary();render();});
+  renderSummary();
   search.addEventListener("input",render);family.addEventListener("change",render);render();
 })();
 </script>
@@ -168,4 +181,5 @@ h1{font-family:"Space Grotesk";font-size:clamp(36px,6vw,68px);line-height:1.02;l
 <script src="account-cloud.js" defer></script>
 <script src="football-assets.js" defer></script>
 <script src="analytics.js" defer></script>
+<script src="ui-experience-v217.js" defer></script>
 </body></html>

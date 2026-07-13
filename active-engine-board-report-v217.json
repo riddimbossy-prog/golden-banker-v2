@@ -1,8 +1,8 @@
 {
-  "build": "v211",
-  "generated_at": "2026-07-13T06:50:47.673Z",
-  "passed": 31,
-  "failed": 1,
+  "build": "v217",
+  "generated_at": "2026-07-13T07:01:59.819Z",
+  "passed": 32,
+  "failed": 0,
   "checks": [
     {
       "name": "board: activity function",
@@ -120,8 +120,8 @@
       "detail": ""
     },
     {
-      "name": "service worker v211",
-      "ok": false,
+      "name": "service worker v217",
+      "ok": true,
       "detail": ""
     },
     {

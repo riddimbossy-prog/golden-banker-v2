@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-07-13T06:18:12.030Z",
-  "version": "v212",
+  "generatedAt": "2026-07-13T07:01:59.672Z",
+  "version": "v217",
   "errors": [],
   "warnings": [],
   "passedCount": 33,
   "budgets": {
     "index.html": {
-      "bytes": 68449,
+      "bytes": 69206,
       "limit": 70000
     },
     "board.html": {
-      "bytes": 68263,
+      "bytes": 69338,
       "limit": 70000
     },
     "engines.html": {
-      "bytes": 39311,
+      "bytes": 39405,
       "limit": 50000
     },
     "banker-engine.js": {
@@ -22,7 +22,7 @@
       "limit": 110000
     },
     "p2u-intelligence.js": {
-      "bytes": 17164,
+      "bytes": 17769,
       "limit": 35000
     },
     "brand-experience.css": {
@@ -106,15 +106,15 @@
       "limit": 14000
     },
     "account.html": {
-      "bytes": 2809,
+      "bytes": 3042,
       "limit": 18000
     },
     "profile.html": {
-      "bytes": 2105,
+      "bytes": 2338,
       "limit": 12000
     },
     "news.html": {
-      "bytes": 9572,
+      "bytes": 9805,
       "limit": 18000
     },
     "news.js": {

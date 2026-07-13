@@ -1,8 +1,8 @@
 {
-  "build": "v212",
-  "generated_at": "2026-07-13T06:50:47.732Z",
-  "passed": 13,
-  "failed": 2,
+  "build": "v217",
+  "generated_at": "2026-07-13T07:01:59.884Z",
+  "passed": 18,
+  "failed": 0,
   "viewports": [
     320,
     344,
@@ -13,12 +13,12 @@
   ],
   "checks": [
     {
-      "name": "build version v212",
-      "pass": false
+      "name": "build version v217",
+      "pass": true
     },
     {
-      "name": "service worker v212",
-      "pass": false
+      "name": "service worker v217",
+      "pass": true
     },
     {
       "name": "slip module is precached",
@@ -70,6 +70,18 @@
     },
     {
       "name": "drag remains accessible",
+      "pass": true
+    },
+    {
+      "name": "snap-to-edge drag",
+      "pass": true
+    },
+    {
+      "name": "reset button position",
+      "pass": true
+    },
+    {
+      "name": "scroll compact mode",
       "pass": true
     }
   ]

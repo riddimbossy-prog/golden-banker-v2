@@ -276,9 +276,13 @@
       const settled=all.filter(p=>p.result==="Won"||p.result==="Lost")
         .sort((a,b)=>Date.parse(b.recordedAt||b.matchDate||0)-Date.parse(a.recordedAt||a.matchDate||0));
       const won=settled.filter(p=>p.result==="Won").length,lost=settled.length-won;
-      const since30=Date.now()-30*86400000;
+      const now=Date.now(),since7=now-7*86400000,since30=now-30*86400000,since90=now-90*86400000;
+      const seven=settled.filter(p=>Date.parse(p.recordedAt||p.matchDate||0)>=since7);
       const thirty=settled.filter(p=>Date.parse(p.recordedAt||p.matchDate||0)>=since30);
+      const ninety=settled.filter(p=>Date.parse(p.recordedAt||p.matchDate||0)>=since90);
+      const w7=seven.filter(p=>p.result==="Won").length;
       const w30=thirty.filter(p=>p.result==="Won").length;
+      const w90=ninety.filter(p=>p.result==="Won").length;
       const by=(field)=>{
         const map={};
         for(const p of settled){
@@ -294,7 +298,9 @@
       return {
         ...e,total:all.length,settled:settled.length,won,lost,
         hitPct:settled.length?won/settled.length:null,
-        thirtyN:thirty.length,thirtyPct:thirty.length?w30/thirty.length:null,
+        sevenN:seven.length,sevenW:w7,sevenL:seven.length-w7,sevenPct:seven.length?w7/seven.length:null,
+        thirtyN:thirty.length,thirtyW:w30,thirtyL:thirty.length-w30,thirtyPct:thirty.length?w30/thirty.length:null,
+        ninetyN:ninety.length,ninetyW:w90,ninetyL:ninety.length-w90,ninetyPct:ninety.length?w90/ninety.length:null,
         form,bestMarket:by("market"),bestLeague:by("league"),
         calibration:bestCal?{status:bestCal[1].grade||"Validated",sample:bestCal[1].sample,key:bestCal[0]}:{status:"Learning",sample:0}
       };

@@ -126,14 +126,55 @@ const P2USlip=(()=>{
     el.textContent=msg; el.style.display='block';
     clearTimeout(toastT); toastT=setTimeout(()=>{ el.style.display='none'; }, 1800);
   }
-  function add(m, market, engine){
-    const k=mKey(m);
-    if(legs.some(l=>l.k===k)){ toast('One pick per match — already on your slip'); return; }
-    if(legs.length>=MAX){ toast('Slip is full ('+MAX+' legs max)'); return; }
-    legs.push({k, home:m.home, away:m.away, league:m.league||'', matchDate:m.matchDate||'', market:String(market), odds:marketOdds(m,market), source:'engine', engine:engine||null, added:Date.now()});
-    save(); render(); toast('Added to slip \u2713');
+  function pulseFab(){
     const fab=document.getElementById('p2u-slip-fab');
     if(fab){ fab.classList.remove('pulse'); void fab.offsetWidth; fab.classList.add('pulse'); }
+  }
+  function addOne(m,market,engine){
+    if(!m||!m.home||!m.away||!market) return {added:false,reason:'invalid'};
+    const k=mKey(m);
+    if(legs.some(l=>l.k===k)) return {added:false,reason:'duplicate'};
+    if(legs.length>=MAX) return {added:false,reason:'full'};
+    legs.push({k, home:m.home, away:m.away, league:m.league||'', matchDate:m.matchDate||'', market:String(market), odds:marketOdds(m,market), source:'engine', engine:engine||null, added:Date.now()});
+    return {added:true,key:k};
+  }
+  function add(m, market, engine){
+    const result=addOne(m,market,engine);
+    if(!result.added){
+      if(result.reason==='duplicate') toast('One pick per match — already on your slip');
+      else if(result.reason==='full') toast('Slip is full ('+MAX+' legs max)');
+      else toast('This pick could not be added');
+      return result;
+    }
+    save(); render(); toast('Added to slip ✓'); pulseFab();
+    return result;
+  }
+  function addMany(items,defaultEngine){
+    const entries=Array.isArray(items)?items:[];
+    const result={added:0,duplicates:0,full:0,invalid:0,total:legs.length};
+    for(const item of entries){
+      const m=item&&item.m?item.m:item;
+      const market=item&&item.market!=null?item.market:null;
+      const engine=item&&item.engine!=null?item.engine:defaultEngine;
+      const one=addOne(m,market,engine);
+      if(one.added) result.added++;
+      else if(one.reason==='duplicate') result.duplicates++;
+      else if(one.reason==='full'){ result.full++; break; }
+      else result.invalid++;
+    }
+    result.total=legs.length;
+    if(result.added){ save(); render(); pulseFab(); }
+    if(result.added&&result.duplicates) toast(`${result.added} added · ${result.duplicates} already on your slip`);
+    else if(result.added) toast(`${result.added} pick${result.added===1?'':'s'} added to My Slip ✓`);
+    else if(result.duplicates) toast('All of these matches are already on your slip');
+    else if(result.full) toast('Slip is full ('+MAX+' legs max)');
+    else toast('No Acca selections could be added');
+    return result;
+  }
+  function open(){
+    const drawer=document.getElementById('p2u-slip-drawer'),fab=document.getElementById('p2u-slip-fab');
+    if(!drawer||!fab) return false;
+    drawer.classList.add('open');fab.classList.remove('p2u-fab-compact');fab.setAttribute('aria-expanded','true');render();return true;
   }
   function legResult(leg){ const m=findMatch(leg); if(!m) return ''; try{ return settle(leg.market,m.homeGoals,m.awayGoals,m.status,m)||''; }catch(e){ return ''; } }
   function slipState(){
@@ -194,7 +235,7 @@ const P2USlip=(()=>{
     if(document.getElementById('p2u-slip-fab')) return;
     const fab=document.createElement('button'); fab.id='p2u-slip-fab'; fab.type='button'; fab.innerHTML='<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:auto;pointer-events:none"><path d="M4 3v18l2.5-1.6L9 21l3-1.6L15 21l2.5-1.6L20 21V3l-2.5 1.6L15 3l-3 1.6L9 3 6.5 4.6 4 3z"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/></svg><span class="drag-dots" aria-hidden="true"></span><span class="cnt" hidden>0</span>'; fab.title='My slip — drag to move'; fab.setAttribute('aria-label','Open my empty slip. Drag to move.'); fab.setAttribute('aria-expanded','false');
     const dr=document.createElement('div'); dr.id='p2u-slip-drawer';
-    dr.innerHTML=`<div class="slip-head"><div style="font-weight:900">MY SLIP <span style="font-size:11px;color:var(--muted);font-weight:600">· built from the board</span></div><button id="p2u-slip-close" style="border:none;background:transparent;color:var(--muted);font-size:22px">&times;</button></div><div class="slip-legs" id="p2u-slip-legs"></div><div class="slip-foot" id="p2u-slip-summary"></div>`;
+    dr.innerHTML=`<div class="slip-head"><div style="font-weight:900">MY SLIP <span style="font-size:11px;color:var(--muted);font-weight:600">· built from the board</span></div><div style="display:flex;align-items:center;gap:8px"><button id="p2u-slip-reset-position" type="button" title="Reset floating button position">Reset button</button><button id="p2u-slip-close" aria-label="Close My Slip" style="border:none;background:transparent;color:var(--muted);font-size:22px;min-width:42px;min-height:42px">&times;</button></div></div><div class="slip-legs" id="p2u-slip-legs"></div><div class="slip-foot" id="p2u-slip-summary"></div>`;
     document.body.appendChild(fab); document.body.appendChild(dr);
 
     // The slip button is a persistent, draggable floating action button. Its
@@ -230,6 +271,15 @@ const P2USlip=(()=>{
         try{ localStorage.setItem(FAB_POS_KEY,JSON.stringify({x:Math.max(0,Math.min(1,xr)),y:Math.max(0,Math.min(1,yr))})); }catch(_){ }
       }
     };
+    const snapToEdge=(left,top,persist=true)=>{
+      const b=bounds();
+      const rawX=Math.min(b.maxX,Math.max(b.minX,Number(left)||b.maxX));
+      const rawY=Math.min(b.maxY,Math.max(b.minY,Number(top)||b.maxY));
+      const x=(rawX+b.fw/2)<(b.w/2)?b.minX:b.maxX;
+      fab.classList.add('p2u-fab-snapping');
+      place(x,rawY,persist);
+      setTimeout(()=>fab.classList.remove('p2u-fab-snapping'),240);
+    };
     const restore=()=>{
       if(drag) return;
       let pos=null; try{ pos=JSON.parse(localStorage.getItem(FAB_POS_KEY)||'null'); }catch(_){ pos=null; }
@@ -242,7 +292,7 @@ const P2USlip=(()=>{
       const finished=drag;
       drag=null;
       if(fab.hasPointerCapture&&fab.hasPointerCapture(finished.id)){ try{ fab.releasePointerCapture(finished.id); }catch(_){ } }
-      if(finished.moved){ suppressClickUntil=Date.now()+350; place(parseFloat(fab.style.left),parseFloat(fab.style.top),true); }
+      if(finished.moved){ suppressClickUntil=Date.now()+350; snapToEdge(parseFloat(fab.style.left),parseFloat(fab.style.top),true); }
       fab.classList.remove('dragging');
       if(e&&e.preventDefault) e.preventDefault();
     };
@@ -266,24 +316,39 @@ const P2USlip=(()=>{
     fab.addEventListener('click',e=>{
       if(Date.now()<suppressClickUntil){ e.preventDefault(); e.stopPropagation(); return; }
       dr.classList.toggle('open');
+      fab.classList.remove('p2u-fab-compact');
       fab.setAttribute('aria-expanded',dr.classList.contains('open')?'true':'false');
       render();
     });
     const closeDrawer=()=>{ dr.classList.remove('open'); fab.setAttribute('aria-expanded','false'); };
     dr.querySelector('#p2u-slip-close').addEventListener('click',closeDrawer);
+    const resetButton=dr.querySelector('#p2u-slip-reset-position');
+    if(resetButton)resetButton.addEventListener('click',()=>{
+      try{localStorage.removeItem(FAB_POS_KEY);}catch(_){ }
+      fab.style.removeProperty('left');fab.style.removeProperty('top');fab.style.removeProperty('right');fab.style.removeProperty('bottom');fab.removeAttribute('data-user-position');
+      closeDrawer();
+      if(window.P2UToast)P2UToast('Slip button position reset.');
+    });
+    let scrollCompactTimer=null;
+    window.addEventListener('scroll',()=>{
+      clearTimeout(scrollCompactTimer);
+      if(!dr.classList.contains('open')&&!drag&&window.scrollY>180)fab.classList.add('p2u-fab-compact');
+      else fab.classList.remove('p2u-fab-compact');
+      scrollCompactTimer=setTimeout(()=>{if(window.scrollY<80)fab.classList.remove('p2u-fab-compact');},180);
+    },{passive:true});
     window.addEventListener('resize',()=>{ clearTimeout(resizeTimer); resizeTimer=setTimeout(()=>{ if(fab.dataset.userPosition==='1') restore(); },100); },{passive:true});
     window.addEventListener('orientationchange',()=>setTimeout(()=>{ if(fab.dataset.userPosition==='1') restore(); },180),{passive:true});
     if(window.visualViewport) window.visualViewport.addEventListener('resize',()=>{ if(fab.dataset.userPosition==='1') restore(); },{passive:true});
     requestAnimationFrame(restore);
     document.addEventListener('click',e=>{
-      const b=e.target.closest('.slip-add');
+      const b=e.target.closest('.slip-add[data-slipreg]');
       if(b){ e.preventDefault(); e.stopPropagation(); const p=REG.map[b.dataset.slipreg]; if(p) add(p.m,p.market,(typeof engineMode!=='undefined')?engineMode:null); return; }
       const x=e.target.closest('[data-slipdel]');
       if(x){ legs=legs.filter(l=>l.k!==x.dataset.slipdel); save(); render(); }
     }, true);
     render();
   }
-  return {btn, add, init, render,
+  return {btn, add, addMany, open, init, render,
     get legs(){ return legs.slice(); },
     get stake(){ return stake; },
     get tailedFrom(){ return tailedFrom; },

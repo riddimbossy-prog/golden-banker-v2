@@ -1,0 +1,53 @@
+{
+  "build": "v217",
+  "generated_at": "2026-07-13T07:02:00.082Z",
+  "passed": 9,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "bulk API is exported",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "single-pick delegate only captures registered buttons",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "board Acca uses addMany",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "landing Acca uses addMany",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Acca button is not a registered single-pick button",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "three Acca legs are added together",
+      "ok": true,
+      "detail": "3"
+    },
+    {
+      "name": "slip contains three legs",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "existing fixture is skipped",
+      "ok": true,
+      "detail": "{\"added\":0,\"duplicates\":1,\"full\":0,\"invalid\":0,\"total\":3}"
+    },
+    {
+      "name": "bulk add persists once to local storage",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}
