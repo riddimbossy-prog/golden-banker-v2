@@ -778,8 +778,16 @@ a{ color:inherit; text-decoration:none; }
       <div class="p2u-acca-disclaimer">Records, not wagers. Predict2u takes no bets and handles no money — place bets with your own bookmaker. 18+ · <a href="responsible-gambling.html">Bet responsibly</a></div>
     </div>`;
     $('acca-add').addEventListener('click',()=>{
-      legs.forEach(l=>{ if(typeof P2USlip!=='undefined') P2USlip.add(l.m,l.market,'consensus'); });
-      const fab=document.getElementById('p2u-slip-fab'); if(fab) fab.click();
+      const button=$('acca-add');
+      if(!button||typeof P2USlip==='undefined') return;
+      button.disabled=true;button.setAttribute('aria-busy','true');
+      const result=typeof P2USlip.addMany==='function'
+        ? P2USlip.addMany(legs.map(l=>({m:l.m,market:l.market,engine:'consensus'})),'consensus')
+        : (legs.forEach(l=>P2USlip.add(l.m,l.market,'consensus')),{added:legs.length,duplicates:0,total:legs.length});
+      button.textContent=result.added?`ADDED ${result.added} TO MY SLIP`:(result.duplicates?'ALREADY ON MY SLIP':'SLIP IS FULL');
+      if(typeof P2USlip.open==='function') P2USlip.open();
+      else { const fab=document.getElementById('p2u-slip-fab'); if(fab) fab.click(); }
+      setTimeout(()=>{if(document.body.contains(button)){button.disabled=false;button.removeAttribute('aria-busy');button.textContent=`ADD ALL ${legs.length} TO MY SLIP`; }},1400);
     });
   }
 

@@ -170,15 +170,17 @@ a{ color:inherit; text-decoration:none; }
 <link rel="stylesheet" href="pwa-launch.css"/>
 <script src="pwa-launch.js" defer></script>
 <link rel="stylesheet" href="device-responsive-v207.css"/>
+<link rel="stylesheet" href="p2u-utilities-v218.css"/>
+<link rel="stylesheet" href="engines-rescue-v218.css"/>
 </head>
 <body>
 
-<nav class="sticky top-0 z-50" style="background:rgba(10,10,15,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)">
-  <div class="max-w-screen-2xl mx-auto px-5 lg:px-8 h-[62px] flex items-center gap-6">
-    <a href="index.html" class="flex items-center gap-3 shrink-0">
+<nav class="sticky top-0 z-50 p2u-engines-nav" style="background:rgba(10,10,15,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)">
+  <div class="max-w-screen-2xl mx-auto px-5 lg:px-8 h-[62px] flex items-center gap-6 p2u-engines-nav-inner">
+    <a href="index.html" class="flex items-center gap-3 shrink-0 p2u-engines-brand">
       <img src="predict2u-logo.png" alt="Predict2u — every pick, every result" class="nav-logo"/>
     </a>
-    <div class="hidden lg:flex items-center gap-7 text-[14px] mx-auto" style="color:var(--ink-2)">
+    <div class="hidden lg:flex items-center gap-7 text-[14px] mx-auto p2u-engines-links" style="color:var(--ink-2)">
       <a href="board.html" class="hover:text-white transition-colors">Overview</a>
       <a href="#board" class="pb-1 font-medium" style="color:var(--em);border-bottom:2px solid var(--em)">Full Board</a>
       <a href="board.html#engines" class="hover:text-white transition-colors">Engines</a>
@@ -189,7 +191,7 @@ a{ color:inherit; text-decoration:none; }
       <a href="news.html" class="hover:text-white transition-colors">News</a>
     </div>
     <div class="ml-auto lg:ml-0 flex items-center gap-4">
-      <a href="board.html" class="text-[13px] px-4 py-2 rounded-full" style="border:1px solid var(--line-2);color:var(--ink-2)">← Overview</a>
+      <a href="board.html" class="text-[13px] px-4 py-2 rounded-full p2u-engines-overview" style="border:1px solid var(--line-2);color:var(--ink-2)">← Overview</a>
     </div>
   </div>
 </nav>

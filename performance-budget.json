@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-07-13T06:18:12.030Z",
-  "version": "v212",
+  "generatedAt": "2026-07-13T07:25:31.536Z",
+  "version": "v218",
   "errors": [],
   "warnings": [],
   "passedCount": 33,
   "budgets": {
     "index.html": {
-      "bytes": 68449,
+      "bytes": 69157,
       "limit": 70000
     },
     "board.html": {
-      "bytes": 68263,
+      "bytes": 68971,
       "limit": 70000
     },
     "engines.html": {
-      "bytes": 39311,
+      "bytes": 39517,
       "limit": 50000
     },
     "banker-engine.js": {

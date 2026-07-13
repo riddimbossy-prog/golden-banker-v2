@@ -126,14 +126,55 @@ const P2USlip=(()=>{
     el.textContent=msg; el.style.display='block';
     clearTimeout(toastT); toastT=setTimeout(()=>{ el.style.display='none'; }, 1800);
   }
-  function add(m, market, engine){
-    const k=mKey(m);
-    if(legs.some(l=>l.k===k)){ toast('One pick per match — already on your slip'); return; }
-    if(legs.length>=MAX){ toast('Slip is full ('+MAX+' legs max)'); return; }
-    legs.push({k, home:m.home, away:m.away, league:m.league||'', matchDate:m.matchDate||'', market:String(market), odds:marketOdds(m,market), source:'engine', engine:engine||null, added:Date.now()});
-    save(); render(); toast('Added to slip \u2713');
+  function pulseFab(){
     const fab=document.getElementById('p2u-slip-fab');
     if(fab){ fab.classList.remove('pulse'); void fab.offsetWidth; fab.classList.add('pulse'); }
+  }
+  function addOne(m,market,engine){
+    if(!m||!m.home||!m.away||!market) return {added:false,reason:'invalid'};
+    const k=mKey(m);
+    if(legs.some(l=>l.k===k)) return {added:false,reason:'duplicate'};
+    if(legs.length>=MAX) return {added:false,reason:'full'};
+    legs.push({k, home:m.home, away:m.away, league:m.league||'', matchDate:m.matchDate||'', market:String(market), odds:marketOdds(m,market), source:'engine', engine:engine||null, added:Date.now()});
+    return {added:true,key:k};
+  }
+  function add(m, market, engine){
+    const result=addOne(m,market,engine);
+    if(!result.added){
+      if(result.reason==='duplicate') toast('One pick per match — already on your slip');
+      else if(result.reason==='full') toast('Slip is full ('+MAX+' legs max)');
+      else toast('This pick could not be added');
+      return result;
+    }
+    save(); render(); toast('Added to slip ✓'); pulseFab();
+    return result;
+  }
+  function addMany(items,defaultEngine){
+    const entries=Array.isArray(items)?items:[];
+    const result={added:0,duplicates:0,full:0,invalid:0,total:legs.length};
+    for(const item of entries){
+      const m=item&&item.m?item.m:item;
+      const market=item&&item.market!=null?item.market:null;
+      const engine=item&&item.engine!=null?item.engine:defaultEngine;
+      const one=addOne(m,market,engine);
+      if(one.added) result.added++;
+      else if(one.reason==='duplicate') result.duplicates++;
+      else if(one.reason==='full'){ result.full++; break; }
+      else result.invalid++;
+    }
+    result.total=legs.length;
+    if(result.added){ save(); render(); pulseFab(); }
+    if(result.added&&result.duplicates) toast(`${result.added} added · ${result.duplicates} already on your slip`);
+    else if(result.added) toast(`${result.added} pick${result.added===1?'':'s'} added to My Slip ✓`);
+    else if(result.duplicates) toast('All of these matches are already on your slip');
+    else if(result.full) toast('Slip is full ('+MAX+' legs max)');
+    else toast('No Acca selections could be added');
+    return result;
+  }
+  function open(){
+    const drawer=document.getElementById('p2u-slip-drawer'),fab=document.getElementById('p2u-slip-fab');
+    if(!drawer||!fab) return false;
+    drawer.classList.add('open');fab.setAttribute('aria-expanded','true');render();return true;
   }
   function legResult(leg){ const m=findMatch(leg); if(!m) return ''; try{ return settle(leg.market,m.homeGoals,m.awayGoals,m.status,m)||''; }catch(e){ return ''; } }
   function slipState(){
@@ -276,14 +317,14 @@ const P2USlip=(()=>{
     if(window.visualViewport) window.visualViewport.addEventListener('resize',()=>{ if(fab.dataset.userPosition==='1') restore(); },{passive:true});
     requestAnimationFrame(restore);
     document.addEventListener('click',e=>{
-      const b=e.target.closest('.slip-add');
+      const b=e.target.closest('.slip-add[data-slipreg]');
       if(b){ e.preventDefault(); e.stopPropagation(); const p=REG.map[b.dataset.slipreg]; if(p) add(p.m,p.market,(typeof engineMode!=='undefined')?engineMode:null); return; }
       const x=e.target.closest('[data-slipdel]');
       if(x){ legs=legs.filter(l=>l.k!==x.dataset.slipdel); save(); render(); }
     }, true);
     render();
   }
-  return {btn, add, init, render,
+  return {btn, add, addMany, open, init, render,
     get legs(){ return legs.slice(); },
     get stake(){ return stake; },
     get tailedFrom(){ return tailedFrom; },
