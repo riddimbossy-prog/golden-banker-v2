@@ -400,8 +400,8 @@ a{ color:inherit; text-decoration:none; }
   <section id="engines" class="py-16" style="border-top:1px solid var(--line)">
     <div class="flex items-end justify-between gap-6 flex-wrap mb-8">
       <div>
-        <h2 class="t-h2">Sixteen Engines. One Honest Board.</h2>
-        <p class="t-sm mt-2">Each engine has a distinct philosophy. All outputs are public and settled by the same rules.</p>
+        <h2 class="t-h2" id="active-engines-title">Today's Active Engines</h2>
+        <p class="t-sm mt-2" id="active-engines-copy">Only engines with a qualified pick for the selected date are shown.</p>
       </div>
       <a href="#board" data-jump="board" class="text-[12.5px] font-medium flex items-center gap-2" style="color:var(--em)">
         Learn how the engines work <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
@@ -575,9 +575,50 @@ a{ color:inherit; text-decoration:none; }
       return { m:x.m, market, engines, out:x.out[engines[0]] };
     }).sort((a,b)=>b.engines.length-a.engines.length);
   }
+  /* v210: calculate the engines that actually publish for the selected date,
+     plus every exact-market pick produced by those engines. */
+  function activityFor(list){
+    const counts=new Map(ENG.map(e=>[e[0],0]));
+    const groups={};
+    for(const m of list){
+      let votes=[];
+      const intel=intelFor(m);
+      if(intel&&Array.isArray(intel.votes)) votes=intel.votes.filter(v=>v&&v.bet&&v.market);
+      if(!votes.length){
+        votes=ENG.map(e=>{
+          let out=null; try{ out=window[e[2]](m); }catch(_){ return null; }
+          return out&&out.bet&&out.primary?{key:e[0],name:e[1],market:out.primary,out,bet:true}:null;
+        }).filter(Boolean);
+      }
+      for(const v of votes){
+        if(!counts.has(v.key)) continue;
+        counts.set(v.key,counts.get(v.key)+1);
+        const k=keyOf(m)+'|'+v.market;
+        const g=groups[k]||(groups[k]={m,market:v.market,engines:[],engineKeys:[],out:v.out||null,banker:false,conf:0});
+        if(!g.engineKeys.includes(v.key)){
+          g.engineKeys.push(v.key);
+          g.engines.push(v.name||((ENG.find(e=>e[0]===v.key)||[])[1])||v.key);
+        }
+        if(v.out&&v.out.banker) g.banker=true;
+        const conf=Number(v.confidence!=null?v.confidence:(v.out&&v.out.confidence));
+        if(Number.isFinite(conf)) g.conf=Math.max(g.conf,conf);
+        if(!g.out&&v.out) g.out=v.out;
+      }
+    }
+    const active=ENG.map(engine=>({engine,count:counts.get(engine[0])||0})).filter(x=>x.count>0);
+    const picks=Object.values(groups).sort((a,b)=>
+      b.engines.length-a.engines.length ||
+      (b.banker?1:0)-(a.banker?1:0) ||
+      (b.conf||0)-(a.conf||0) ||
+      String(a.m.kickoff||'').localeCompare(String(b.m.kickoff||''))
+    );
+    return {active,picks,counts};
+  }
+
   function picksFor(){
     const list=dayMatches();
-    if(mode==='top'||mode==='acca') return consensus(list);
+    if(mode==='top') return activityFor(list).picks;
+    if(mode==='acca') return consensus(list);
     const fn=window[(ENG.find(e=>e[0]===mode)||[])[2]], name=(ENG.find(e=>e[0]===mode)||[])[1];
     return list.map(m=>{ let r; try{ r=fn(m); }catch(e){ return null; }
       if(!r||!r.bet) return null;
@@ -618,9 +659,13 @@ a{ color:inherit; text-decoration:none; }
   const REG={};
   function renderCards(){
     let rows=picksFor();
+    const unfilteredTotal=rows.length;
     if(q) rows=rows.filter(p=>(p.m.home+' '+p.m.away+' '+(p.m.league||'')).toLowerCase().includes(q));
     if(league!=='all') rows=rows.filter(p=>p.m.league===league);
-    $('board-analysed').textContent=`${dayMatches().length} matches analysed`;
+    const activity=activityFor(dayMatches());
+    $('board-analysed').textContent=mode==='top'
+      ? `${unfilteredTotal} pick${unfilteredTotal===1?'':'s'} · ${activity.active.length}/${TOTAL} engines active`
+      : `${dayMatches().length} matches analysed`;
     if(!M.length){
       $('cards').innerHTML='<div class="p2u-data-fallback"><strong>Board data is temporarily unavailable</strong><span>The interface is ready, but the latest fixture file could not be loaded.</span><br><button type="button" id="p2u-data-retry">Try again</button></div>';
       $('show-all').style.display='none';
@@ -634,8 +679,8 @@ a{ color:inherit; text-decoration:none; }
       $('cards').innerHTML=`<div class="col-span-full card p-12 text-center t-sm">No picks here. The engines stay quiet when the data doesn't support a pick — that's the honest answer, not a missing one.</div>`;
       $('show-all').style.display='none'; return;
     }
-    const view=showAll?rows:rows.slice(0,LIMIT);
-    $('show-all').style.display = total>LIMIT ? 'flex' : 'none';
+    const view=(mode==='top'||showAll)?rows:rows.slice(0,LIMIT);
+    $('show-all').style.display = mode!=='top'&&total>LIMIT ? 'flex' : 'none';
     $('show-all-txt').textContent = showAll ? 'Show fewer' : `View all ${total} picks`;
 
     $('cards').innerHTML=view.map((p,i)=>{
@@ -699,7 +744,6 @@ a{ color:inherit; text-decoration:none; }
     host.innerHTML=`<section class="p2u-rank-card"><div class="t-lbl" style="color:var(--em)">WHY THIS IS RANKED #1</div><h3>${esc(p.m.home)} vs ${esc(p.m.away)} · ${esc(shortMk(p.market))}</h3><div class="p2u-rank-grid">${reasons.map((r,i)=>`<div class="p2u-rank-reason"><b>0${i+1}</b><br>${r}</div>`).join('')}</div></section>`;
   }
   $('show-all').addEventListener('click',()=>{
-    if(mode==='top'&&!showAll){ location.href='engines.html'; return; }
     showAll=!showAll; renderCards();
     if(!showAll) $('board').scrollIntoView({behavior:'smooth',block:'start'}); });
 
@@ -796,10 +840,18 @@ a{ color:inherit; text-decoration:none; }
       ? `${Math.round(100*wk.w/(wk.w+wk.l))}% of ${wk.w+wk.l} settled consensus bankers`
       : 'No settled record yet';
 
-    $('s-engines').textContent=`${TOTAL}/16`;
-    $('s-engines-sub').innerHTML=ENG.slice(0,3).map((e,i)=>
-      `<span class="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold" style="background:${i===0?'var(--em)':'var(--panel)'};color:${i===0?'#062e20':'var(--muted)'};border:1px solid var(--line);margin-left:${i?'-6px':'0'}">${e[1][0]}</span>`
-    ).join('')+`<span class="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold" style="background:var(--panel);color:var(--muted);border:1px solid var(--line);margin-left:-6px">+${TOTAL-3}</span>`;
+    const activity=activityFor(list), active=activity.active;
+    $('s-engines').textContent=`${active.length}/${TOTAL}`;
+    if(active.length){
+      const avatars=active.slice(0,3).map((x,i)=>{
+        const name=x.engine[1];
+        return `<span title="${esc(name)} · ${x.count} pick${x.count===1?'':'s'}" class="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold" style="background:${i===0?'var(--em)':'var(--panel)'};color:${i===0?'#062e20':'var(--muted)'};border:1px solid var(--line);margin-left:${i?'-6px':'0'}">${esc(name[0])}</span>`;
+      }).join('');
+      const more=active.length>3?`<span class="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold" style="background:var(--panel);color:var(--muted);border:1px solid var(--line);margin-left:-6px">+${active.length-3}</span>`:'';
+      $('s-engines-sub').innerHTML=avatars+more+`<span class="t-xs" style="margin-left:6px">publishing today</span>`;
+    }else{
+      $('s-engines-sub').innerHTML='<span class="t-xs">No qualified engine picks today</span>';
+    }
     $('live-stamp').textContent='· '+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
   }
 
@@ -825,29 +877,35 @@ a{ color:inherit; text-decoration:none; }
   }
 
   function renderEngines(){
-    const list=dayMatches();
-    $('engines-grid').innerHTML=ENG.map(([k,n,fnName,d])=>{
-      let c=0;
-      for(const m of list){ let r; try{ r=window[fnName](m); }catch(e){ continue; } if(r&&r.bet) c++; }
-      return `<button class="card card-h p-6 text-left" data-eng="${k}">
+    const activity=activityFor(dayMatches());
+    const title=$('active-engines-title'), copy=$('active-engines-copy');
+    if(title) title.textContent="Today's Active Engines";
+    if(copy) copy.textContent=`Only engines with a qualified pick for this date are shown · ${activity.active.length}/${TOTAL} active.`;
+    if(!activity.active.length){
+      $('engines-grid').innerHTML='<div class="col-span-full card p-10 text-center t-sm">No engine has a qualified pick for this date.</div>';
+      return;
+    }
+    $('engines-grid').innerHTML=activity.active.map(({engine:[k,n,fnName,d],count:c})=>`<button class="card card-h p-6 text-left" data-eng="${k}">
         <div class="flex items-start justify-between gap-3">
           <div style="font-size:18px;font-weight:700;letter-spacing:-.015em">${esc(n)}</div>
-          <span class="dot ${c?'dot-on':'dot-off'}" style="margin-top:6px"></span>
+          <span class="dot dot-on" style="margin-top:6px"></span>
         </div>
         <p class="t-sm mt-3" style="line-height:1.55">${esc(d)}</p>
         <div class="flex items-center justify-between gap-2 mt-6">
-          <span class="etag" style="padding:5px 11px">${c?`Active today · ${c} pick${c>1?'s':''}`:'No Bet today'}</span>
+          <span class="etag" style="padding:5px 11px">Active today · ${c} pick${c===1?'':'s'}</span>
           <span class="text-[12px] font-semibold tracking-wide" style="color:var(--em)">OPEN <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
         </div>
-      </button>`;
-    }).join('');
+      </button>`).join('');
     $('engines-grid').querySelectorAll('[data-eng]').forEach(b=>b.addEventListener('click',()=>{
       location.href='engines.html?engine='+b.dataset.eng;
     }));
   }
 
   function renderPills(){
-    const modes=[['top','All Engines'],['acca','Today\u2019s Acca']].concat(ENG.map(e=>[e[0],e[1]]));
+    const activity=activityFor(dayMatches());
+    const activeKeys=new Set(activity.active.map(x=>x.engine[0]));
+    if(mode!=='top'&&mode!=='acca'&&!activeKeys.has(mode)) mode='top';
+    const modes=[['top','All Active Engines'],['acca','Today’s Acca']].concat(activity.active.map(x=>[x.engine[0],x.engine[1]]));
     $('engine-pills').innerHTML=modes.map(([k,n])=>`<button class="pill${k===mode?' on':''}" data-mode="${k}">${esc(n)}</button>`).join('');
     $('engine-pills').querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{
       mode=b.dataset.mode; showAll=false; syncBoard(); renderPills(); renderCards();
@@ -856,7 +914,7 @@ a{ color:inherit; text-decoration:none; }
   function syncBoard(){
     const e=ENG.find(x=>x[0]===mode);
     $('board-title').textContent = mode==='top'?"Today's Board":mode==='acca'?"Today\u2019s Acca":(e?e[1]:'');
-    $('board-sub').textContent = mode==='top'?'Where the engines agree. Default decision: No Bet.'
+    $('board-sub').textContent = mode==='top'?"Every qualified match from today's active engines. Engines with no picks are hidden."
       : mode==='acca'?'The day\u2019s consensus bankers, combined. High risk by nature.' : (e?e[3]:'');
   }
   function renderDates(){
@@ -878,7 +936,7 @@ a{ color:inherit; text-decoration:none; }
         `<span class="date-chip-count">${count}</span></button>`;
     }).join('');
     $('date-strip').querySelectorAll('[data-d]').forEach(b=>b.addEventListener('click',()=>{
-      activeDate=b.dataset.d; showAll=false; renderDates(); renderLeagues(); renderStats(); renderCarousel(); renderEngines(); renderCards(); renderBoardRankReason(); renderWC(); }));
+      activeDate=b.dataset.d; showAll=false; renderDates(); renderLeagues(); renderPills(); syncBoard(); renderStats(); renderCarousel(); renderEngines(); renderCards(); renderBoardRankReason(); renderWC(); }));
     requestAnimationFrame(()=>{
       const current=$('date-strip').querySelector('.date-chip.on');
       if(current) current.scrollIntoView({block:'nearest',inline:'nearest',behavior:'smooth'});

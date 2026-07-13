@@ -1,0 +1,168 @@
+{
+  "build": "v210",
+  "generated_at": "2026-07-13T05:29:18.239Z",
+  "passed": 32,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "board: activity function",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "board: top board uses all active picks",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "board: acca keeps consensus",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "board: active counter",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "board: inactive pills excluded",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "board: all-active label",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "board: top board untruncated",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "board: no full-board redirect",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "board: date recalculates pills",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "board: active engine cards only",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "index: activity function",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "index: top board uses all active picks",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "index: acca keeps consensus",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "index: active counter",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "index: inactive pills excluded",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "index: all-active label",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "index: top board untruncated",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "index: no full-board redirect",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "index: date recalculates pills",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "index: active engine cards only",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "full board: active helper",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "full board: active filters only",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "full board: inactive selected engine resets",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "service worker v210",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "board.html: inline scripts parse",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html: inline scripts parse",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "engines.html: inline scripts parse",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "activity function extractable",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "synthetic active count is 3/16",
+      "ok": true,
+      "detail": "3"
+    },
+    {
+      "name": "all exact-market picks included",
+      "ok": true,
+      "detail": "11"
+    },
+    {
+      "name": "matching exact markets merge supporters",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "inactive engines excluded",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

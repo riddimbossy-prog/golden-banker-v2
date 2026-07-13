@@ -1,10 +1,10 @@
-/* Predict2U service worker v209 — fast core install, bounded caches,
+/* Predict2U service worker v210 — fast core install, bounded caches,
    native-install support, exact push deep links and recoverable offline navigation. */
-const VERSION='v209';
-const CACHE_VERSION='predict2u-v209';
+const VERSION='v210';
+const CACHE_VERSION='predict2u-v210';
 const APP_CACHE=CACHE_VERSION;
-const RUNTIME_CACHE='predict2u-runtime-v209';
-const IMAGE_CACHE='predict2u-images-v209';
+const RUNTIME_CACHE='predict2u-runtime-v210';
+const IMAGE_CACHE='predict2u-images-v210';
 const IMAGE_LIMIT=90;
 const RUNTIME_LIMIT=90;
 const NETWORK_TIMEOUT=2800;

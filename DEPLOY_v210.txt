@@ -1,0 +1,16 @@
+PREDICT2U v210 DEPLOYMENT
+
+1. Upload the contents of this package to the repository root.
+2. Replace board.html, index.html, engines.html, sw.js and BUILD_VERSION.txt.
+3. Commit and deploy.
+4. Close and reopen the installed app, or accept the update prompt, so service worker v210 activates.
+
+v210 behavior:
+- Engines with no qualified pick for the selected date are hidden.
+- The Engines Active card shows the real daily count, for example 3/16.
+- Today’s Board shows every qualified pick from all active engines.
+- Identical fixture + market outputs merge into one card with all supporting engines.
+- Today’s Board is not limited to eight cards.
+- Today’s Acca still uses consensus banker logic.
+
+The repository intentionally does not include runtime-generated data.js or community.js.

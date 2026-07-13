@@ -1,0 +1,14 @@
+{
+  "build": "v210",
+  "feature": "active-engine-board",
+  "checks": {
+    "daily_active_counter": "active engines / total registry",
+    "inactive_pills_hidden": true,
+    "inactive_engine_cards_hidden": true,
+    "full_board_inactive_filters_hidden": true,
+    "todays_board_source": "all qualified exact-market picks from active engines",
+    "todays_board_untruncated": true,
+    "acca_consensus_logic_preserved": true,
+    "date_change_recalculates_activity": true
+  }
+}
