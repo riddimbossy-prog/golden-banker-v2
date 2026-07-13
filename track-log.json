@@ -60387,9 +60387,13 @@
       "oddsAtPick": null,
       "fairMarketProbabilityAtPick": null,
       "recordedAt": "2026-07-11T02:29:42.756Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "4-1",
+      "finalHomeGoals": 4,
+      "finalAwayGoals": 1,
+      "actualResult": "home",
+      "settledAt": "2026-07-13T07:33:36.957Z"
     },
     {
       "matchDate": "2026-07-12",
@@ -63484,6 +63488,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-13T07:18:47.700Z"
+    "updated": "2026-07-13T07:33:37.265Z"
   }
 }
