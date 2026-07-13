@@ -61888,8 +61888,8 @@
       "oddsAtPick": null,
       "fairMarketProbabilityAtPick": null,
       "recordedAt": "2026-07-12T01:15:40.523Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -61908,8 +61908,8 @@
       "oddsAtPick": null,
       "fairMarketProbabilityAtPick": null,
       "recordedAt": "2026-07-12T01:15:40.523Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -61928,8 +61928,8 @@
       "oddsAtPick": 1.73,
       "fairMarketProbabilityAtPick": 0.5151124914779184,
       "recordedAt": "2026-07-12T01:15:40.526Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -61948,8 +61948,8 @@
       "oddsAtPick": null,
       "fairMarketProbabilityAtPick": null,
       "recordedAt": "2026-07-12T01:15:40.526Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -63531,6 +63531,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-13T22:31:07.150Z"
+    "updated": "2026-07-13T22:32:41.338Z"
   }
 }
