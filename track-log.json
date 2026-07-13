@@ -59511,9 +59511,13 @@
       "oddsAtPick": null,
       "fairMarketProbabilityAtPick": null,
       "recordedAt": "2026-07-11T02:29:42.719Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "4-2",
+      "finalHomeGoals": 4,
+      "finalAwayGoals": 2,
+      "actualResult": "home",
+      "settledAt": "2026-07-13T04:33:32.230Z"
     },
     {
       "matchDate": "2026-07-12",
@@ -59531,9 +59535,13 @@
       "oddsAtPick": null,
       "fairMarketProbabilityAtPick": null,
       "recordedAt": "2026-07-11T02:29:42.719Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "4-2",
+      "finalHomeGoals": 4,
+      "finalAwayGoals": 2,
+      "actualResult": "home",
+      "settledAt": "2026-07-13T04:33:32.230Z"
     },
     {
       "matchDate": "2026-07-12",
@@ -59871,9 +59879,13 @@
       "oddsAtPick": null,
       "fairMarketProbabilityAtPick": null,
       "recordedAt": "2026-07-11T02:29:42.729Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Lost",
+      "score": "0-0",
+      "finalHomeGoals": 0,
+      "finalAwayGoals": 0,
+      "actualResult": "draw",
+      "settledAt": "2026-07-13T04:33:32.230Z"
     },
     {
       "matchDate": "2026-07-12",
@@ -59891,9 +59903,13 @@
       "oddsAtPick": null,
       "fairMarketProbabilityAtPick": null,
       "recordedAt": "2026-07-11T02:29:42.729Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Lost",
+      "score": "0-0",
+      "finalHomeGoals": 0,
+      "finalAwayGoals": 0,
+      "actualResult": "draw",
+      "settledAt": "2026-07-13T04:33:32.230Z"
     },
     {
       "matchDate": "2026-07-12",
@@ -63468,6 +63484,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-13T04:17:54.031Z"
+    "updated": "2026-07-13T04:33:32.536Z"
   }
 }
