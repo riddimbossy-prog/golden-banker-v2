@@ -61332,8 +61332,8 @@
       "oddsAtPick": null,
       "fairMarketProbabilityAtPick": null,
       "recordedAt": "2026-07-12T01:15:40.491Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -63452,6 +63452,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-13T02:08:36.246Z"
+    "updated": "2026-07-13T02:10:14.646Z"
   }
 }
