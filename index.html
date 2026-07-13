@@ -253,6 +253,7 @@ a{ color:inherit; text-decoration:none; }
 <link rel="stylesheet" href="device-responsive-v207.css"/>
 <link rel="stylesheet" href="acca-mobile-v209.css"/>
 <link rel="stylesheet" href="mobile-polish-v211.css"/>
+<link rel="stylesheet" href="board-redesign-v220.css"/>
 </head>
 <body>
 <nav class="sticky top-0 z-50" style="background:var(--bg);border-bottom:1px solid var(--line)">
@@ -359,32 +360,50 @@ a{ color:inherit; text-decoration:none; }
 </header>
 
 <main class="max-w-[1240px] mx-auto px-6">
-  <section id="board" class="pb-16">
-    <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
-      <div>
-        <div class="flex items-center gap-3 flex-wrap">
+  <section id="board" class="p2u-board-shell pb-16">
+    <div class="p2u-board-head">
+      <div class="p2u-board-heading">
+        <span class="p2u-board-icon" aria-hidden="true"><i class="fa-regular fa-calendar-days"></i></span>
+        <div class="p2u-board-heading-copy">
           <h2 class="t-h2" id="board-title">Today's Board</h2>
-          <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-md t-xs" style="background:var(--panel);border:1px solid var(--line)">
-            <i class="fa-solid fa-globe text-[9px]" style="color:var(--em)"></i>
-            <span id="board-analysed">—</span>
-          </span>
+          <div class="p2u-board-subline">
+            <span id="board-sub">High-value predictions from today's active engines.</span>
+            <span class="p2u-board-fresh-dot" aria-hidden="true"></span>
+            <span id="board-analysed">Reading the board…</span>
+          </div>
         </div>
-        <p class="t-sm mt-2" id="board-sub">&nbsp;</p>
       </div>
-      <div class="flex items-center gap-3 flex-wrap">
-        <div class="relative">
-          <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-[11px]" style="color:var(--muted)"></i>
-          <input id="f-search" type="text" placeholder="Search matches or leagues…" autocomplete="off"
-            class="pl-10 pr-4 py-2.5 rounded-full text-[12.5px] outline-none w-[240px]"
-            style="background:var(--panel);border:1px solid var(--line);color:var(--ink)"/>
-        </div>
-        <select id="f-league" class="px-4 py-2.5 rounded-full text-[12.5px] outline-none"
-          style="background:var(--panel);border:1px solid var(--line);color:var(--ink-2)"></select>
+
+      <div class="p2u-board-toolbar" aria-label="Board filters">
+        <button type="button" class="p2u-view-chip is-active" data-board-view="all" aria-pressed="true">
+          <i class="fa-regular fa-rectangle-list"></i><span>All Picks</span><span class="p2u-chip-count" id="board-count-all">0</span>
+        </button>
+        <button type="button" class="p2u-view-chip" data-board-view="value" aria-pressed="false">
+          <i class="fa-solid fa-chart-line"></i><span>Top Value</span><span class="p2u-chip-count" id="board-count-value">0</span>
+        </button>
+        <button type="button" class="p2u-view-chip" data-board-view="confidence" aria-pressed="false">
+          <i class="fa-regular fa-calendar-check"></i><span>High Confidence</span><span class="p2u-chip-count" id="board-count-confidence">0</span>
+        </button>
+        <label class="p2u-league-chip" title="Filter by league">
+          <i class="fa-solid fa-shield-halved"></i>
+          <select id="f-league" aria-label="Filter board by league"></select>
+        </label>
+        <button type="button" class="p2u-filter-toggle" id="board-filter-toggle" aria-label="Open match search" aria-expanded="false" aria-controls="board-filter-panel">
+          <i class="fa-solid fa-filter"></i>
+        </button>
       </div>
     </div>
 
+    <div class="p2u-board-search-panel" id="board-filter-panel">
+      <div class="p2u-search-wrap">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input id="f-search" type="search" placeholder="Search matches or leagues…" autocomplete="off"/>
+      </div>
+      <span class="p2u-filter-hint">Search updates the board instantly.</span>
+    </div>
+
     <div class="date-strip hide-sb" id="date-strip" aria-label="Match dates"></div>
-    <div class="flex flex-wrap gap-2 mb-7" id="engine-pills"></div>
+    <div class="flex flex-wrap gap-2 mb-7" id="engine-pills" aria-label="Active prediction engines"></div>
 
     <div id="acca-root" class="mb-5" style="display:none"></div>
     <div id="board-rank-reason"></div>
@@ -557,9 +576,17 @@ a{ color:inherit; text-decoration:none; }
   const params = new URLSearchParams(location.search);
   let mode = params.get('engine')||'top';
   if(mode!=='top'&&mode!=='acca'&&!ENG.some(e=>e[0]===mode)) mode='top';
-  let league='all', q='', showAll=false;
+  let league='all', q='', showAll=false, boardView='all';
   const LIMIT = 8;
   const keyOf = m => (m.id!=null?'f'+m.id:m.home+'|'+m.away+'|'+m.matchDate);
+  const learningSignal=m=>{
+    const c=m&&m.learningContext;if(!c)return'';
+    const f=c.flags||[];
+    if(c.riskLevel==='high'||f.includes('FAVORITE_TRAP')||f.includes('PATTERN_BREAKER'))return `<span class="p2u-signal p2u-learning-flag conflict"><i class="fa-solid fa-triangle-exclamation"></i>Favourite trap</span>`;
+    if(c.stabilityScore>=72&&c.riskScore<=30)return `<span class="p2u-signal p2u-learning-flag coverage"><i class="fa-solid fa-shield"></i>Upset resistant</span>`;
+    if(c.riskLevel==='elevated')return `<span class="p2u-signal p2u-learning-flag coverage"><i class="fa-solid fa-brain"></i>Pattern watch</span>`;
+    return'';
+  };
 
   function consensus(list){
     const by={};
@@ -656,16 +683,41 @@ a{ color:inherit; text-decoration:none; }
   const ODDS={'Home Win':'home','Draw':'draw','Away Win':'away','Over 1.5':'over15','Over 2.5':'over25','Over 3.5':'over35','Under 1.5':'under15','Under 2.5':'under25','Under 3.5':'under35','BTTS Yes':'bttsYes','BTTS No':'bttsNo','Double Chance 1X':'dc1x','Double Chance 12':'dc12','Double Chance X2':'dcx2','First Half Over 0.5':'fhOver05','First Half Under 1.5':'fhUnder15'};
   const priceOf=(m,mk)=>{ const k=ODDS[String(mk).replace(/ Goals$/,'')]; const v=k&&m.odds?m.odds[k]:null;
     return (typeof v==='number'&&v>1)?v:null; };
+  const isTopValuePick=p=>{
+    const price=priceOf(p.m,p.market),coverage=intelFor(p.m)&&intelFor(p.m).coverage;
+    return !!price&&price>=1.28&&p.engines.length>=2&&(!coverage||coverage.score>=70);
+  };
+  const isHighConfidencePick=p=>{
+    const coverage=intelFor(p.m)&&intelFor(p.m).coverage;
+    return p.engines.length>=3||((coverage&&coverage.score>=85)&&p.engines.length>=2);
+  };
 
   const REG={};
   function renderCards(){
     let rows=picksFor();
     const unfilteredTotal=rows.length;
+    const allRows=rows.slice();
+    const valueRows=allRows.filter(isTopValuePick);
+    const confidenceRows=allRows.filter(isHighConfidencePick);
+    const counts={all:allRows.length,value:valueRows.length,confidence:confidenceRows.length};
+    const cAll=$('board-count-all'),cValue=$('board-count-value'),cConfidence=$('board-count-confidence');
+    if(cAll)cAll.textContent=counts.all;
+    if(cValue)cValue.textContent=counts.value;
+    if(cConfidence)cConfidence.textContent=counts.confidence;
+    document.querySelectorAll('[data-board-view]').forEach(button=>{
+      const active=button.dataset.boardView===boardView;
+      button.classList.toggle('is-active',active);
+      button.setAttribute('aria-pressed',active?'true':'false');
+    });
+
+    if(boardView==='value') rows=valueRows;
+    else if(boardView==='confidence') rows=confidenceRows;
     if(q) rows=rows.filter(p=>(p.m.home+' '+p.m.away+' '+(p.m.league||'')).toLowerCase().includes(q));
     if(league!=='all') rows=rows.filter(p=>p.m.league===league);
+
     const activity=activityFor(dayMatches());
     $('board-analysed').textContent=mode==='top'
-      ? `${unfilteredTotal} pick${unfilteredTotal===1?'':'s'} · ${activity.active.length}/${TOTAL} engines active`
+      ? `${rows.length} shown · ${activity.active.length}/${TOTAL} engines active`
       : `${dayMatches().length} matches analysed`;
     if(!M.length){
       $('cards').innerHTML='<div class="p2u-data-fallback"><strong>Board data is temporarily unavailable</strong><span>The interface is ready, but the latest fixture file could not be loaded.</span><br><button type="button" id="p2u-data-retry">Try again</button></div>';
@@ -677,7 +729,10 @@ a{ color:inherit; text-decoration:none; }
     $('acca-root').style.display='none';
     const total=rows.length;
     if(!total){
-      $('cards').innerHTML=`<div class="col-span-full card p-12 text-center t-sm">No picks here. The engines stay quiet when the data doesn't support a pick — that's the honest answer, not a missing one.</div>`;
+      const reason=boardView==='value'?'No picks currently pass the Top Value filter.'
+        :boardView==='confidence'?'No picks currently pass the High Confidence filter.'
+        :'No picks here. The engines stay quiet when the data does not support a pick.';
+      $('cards').innerHTML=`<div class="col-span-full card p-12 text-center t-sm">${reason}</div>`;
       $('show-all').style.display='none'; return;
     }
     const view=(mode==='top'||showAll)?rows:rows.slice(0,LIMIT);
@@ -691,23 +746,35 @@ a{ color:inherit; text-decoration:none; }
       const n=p.engines.length, pct=Math.round(100*n/TOTAL);
       const intel=intelFor(p.m); const conflict=intel&&intel.conflict; const coverage=intel&&intel.coverage;
       const proof=window.P2UIntelligence?P2UIntelligence.proofHref(p.m):`proof.html?match=${encodeURIComponent(keyOf(p.m))}`;
-      return `<article class="card card-h p-5 rise p2u-standard-card" style="animation-delay:${Math.min(i*30,240)}ms" data-p2u-match-key="${esc(keyOf(p.m))}" data-p2u-home="${esc(p.m.home)}" data-p2u-away="${esc(p.m.away)}" data-p2u-league="${esc(p.m.league||'')}" data-p2u-market="${esc(p.market)}" data-p2u-engines="${esc(p.engines.join('|'))}" data-p2u-proof="${proof}">
-        <div class="p2u-card-meta">
-          <span>${crest(p.m.flag,'lflag')}</span><span class="trunc">${esc(p.m.league||'League')}</span><span>·</span><span class="mono">${ko(p.m)||'TBD'}</span><span class="p2u-card-status">${statusTag(p.m,p.market)}</span>
+      return `<article class="card card-h rise p2u-standard-card" style="animation-delay:${Math.min(i*30,240)}ms" data-p2u-match-key="${esc(keyOf(p.m))}" data-p2u-home="${esc(p.m.home)}" data-p2u-away="${esc(p.m.away)}" data-p2u-league="${esc(p.m.league||'')}" data-p2u-market="${esc(p.market)}" data-p2u-engines="${esc(p.engines.join('|'))}" data-p2u-proof="${proof}">
+        <div class="p2u-match-meta">
+          <div class="p2u-match-league">${crest(p.m.flag,'lflag')}<span>${esc(p.m.league||'League')}</span></div>
+          <div class="p2u-match-meta-right"><span class="p2u-kickoff">${ko(p.m)||'TBD'}</span><span class="p2u-card-status">${statusTag(p.m,p.market)}</span></div>
         </div>
-        <div class="p2u-card-teams">${crest(p.m.homeLogo)} ${esc(p.m.home)}<br/><span style="color:var(--em)">vs</span> ${crest(p.m.awayLogo)} ${esc(p.m.away)}</div>
+        <div class="p2u-matchup">
+          <div class="p2u-team p2u-team-home">${crest(p.m.homeLogo,'p2u-team-crest')}<span class="p2u-team-name">${esc(p.m.home)}</span></div>
+          <span class="p2u-vs">VS</span>
+          <div class="p2u-team p2u-team-away"><span class="p2u-team-name">${esc(p.m.away)}</span>${crest(p.m.awayLogo,'p2u-team-crest')}</div>
+        </div>
         ${liveScoreHtml(p.m)}
-        <div class="p2u-card-market">${esc(shortMk(p.market))} <span class="odds" style="float:right">${price?price.toFixed(2):'—'}</span></div>
-        <div class="agree-row"><span class="agree-lbl">EXACT SUPPORT</span><span class="agree-track"><span class="agree-fill" style="width:${pct}%"></span></span><span class="agree-val">${n}<span style="color:var(--muted);font-weight:400">/${TOTAL}</span></span></div>
+        <div class="p2u-prediction-panel">
+          <div class="p2u-prediction-main"><span class="p2u-prediction-label">Our prediction</span><strong class="p2u-prediction-market">${esc(shortMk(p.market))}</strong></div>
+          <div class="p2u-odds-block"><span class="p2u-prediction-label">Odds</span><strong class="p2u-odds-value">${price?price.toFixed(2):'—'}</strong></div>
+        </div>
+        <div class="p2u-support-wrap">
+          <div class="p2u-support-head"><span class="p2u-support-label">Exact Support <i class="fa-solid fa-circle-info"></i></span><span class="p2u-support-value">${n}<span>/${TOTAL}</span></span></div>
+          <div class="p2u-support-track"><div class="p2u-support-fill" style="width:${pct}%"></div></div>
+        </div>
         <div class="p2u-card-signals">
-          <span class="p2u-signal agree">${n} engine${n===1?'':'s'} agree</span>
-          ${conflict?`<span class="p2u-signal ${/CONFLICT/.test(conflict.code)?'conflict':'coverage'}">${esc(conflict.label)}</span>`:''}
-          ${coverage?`<span class="p2u-signal coverage">Data ${coverage.score}%</span>`:''}
+          <span class="p2u-signal agree"><i class="fa-solid fa-users"></i>${n} engine${n===1?'':'s'} agree</span>
+          ${conflict?`<span class="p2u-signal ${/CONFLICT/.test(conflict.code)?'conflict':'coverage'}"><i class="fa-solid ${/CONFLICT/.test(conflict.code)?'fa-triangle-exclamation':'fa-shield-halved'}"></i>${esc(conflict.label)}</span>`:'<span class="p2u-signal coverage"><i class="fa-solid fa-shield-halved"></i>Exact Agreement</span>'}
+          ${coverage?`<span class="p2u-signal coverage"><i class="fa-solid fa-signal"></i>Data ${coverage.score}%</span>`:'<span class="p2u-signal coverage"><i class="fa-solid fa-signal"></i>Data checked</span>'}
+          ${learningSignal(p.m)}
         </div>
         <div class="details" id="${id}"></div>
         <div class="p2u-card-actions">
-          <button class="btn-det" data-det="${id}">DETAILS</button>
-          <a class="p2u-proof-button" href="${proof}"><i class="fa-solid fa-shield-halved"></i> Proof</a>
+          <button class="btn-det" data-det="${id}"><i class="fa-solid fa-list-ul"></i><span>Details</span></button>
+          <a class="p2u-proof-button" href="${proof}"><i class="fa-regular fa-file-lines"></i><span>Proof</span></a>
           ${btn||''}
         </div>
       </article>`;
@@ -715,7 +782,12 @@ a{ color:inherit; text-decoration:none; }
 
     $('cards').querySelectorAll('[data-det]').forEach(b=>b.addEventListener('click',()=>{
       const el=$(b.dataset.det), p=REG[b.dataset.det];
-      if(el.classList.contains('open')){ el.classList.remove('open'); el.innerHTML=''; b.textContent='DETAILS'; return; }
+      if(el.classList.contains('open')){
+        el.classList.remove('open'); el.innerHTML='';
+        b.innerHTML='<i class="fa-solid fa-list-ul"></i><span>Details</span>';
+        b.setAttribute('aria-expanded','false');
+        return;
+      }
       const o=p.out||{};
       const reasons=(o.reasons||[]).map(r=>`<div class="reason">${esc(r)}</div>`).join('');
       const checks=(o.humanChecks||[]).length?`<div class="reason" style="color:var(--amber)">Before kickoff: ${esc(o.humanChecks.join(' '))}</div>`:'';
@@ -726,7 +798,9 @@ a{ color:inherit; text-decoration:none; }
         ${checks}
         <div class="reason t-xs">Agreeing engines: ${esc(p.engines.join(', '))}. A banker fits our rules — it is not a sure win.</div>
       </div>`;
-      el.classList.add('open'); b.textContent='HIDE';
+      el.classList.add('open');
+      b.innerHTML='<i class="fa-solid fa-chevron-up"></i><span>Hide</span>';
+      b.setAttribute('aria-expanded','true');
     }));
   }
 
@@ -747,6 +821,18 @@ a{ color:inherit; text-decoration:none; }
   $('show-all').addEventListener('click',()=>{
     showAll=!showAll; renderCards();
     if(!showAll) $('board').scrollIntoView({behavior:'smooth',block:'start'}); });
+
+  document.querySelectorAll('[data-board-view]').forEach(button=>button.addEventListener('click',()=>{
+    boardView=button.dataset.boardView||'all';showAll=false;renderCards();
+  }));
+  const filterToggle=$('board-filter-toggle'),filterPanel=$('board-filter-panel');
+  if(filterToggle&&filterPanel)filterToggle.addEventListener('click',()=>{
+    const open=!filterPanel.classList.contains('is-open');
+    filterPanel.classList.toggle('is-open',open);
+    filterToggle.setAttribute('aria-expanded',open?'true':'false');
+    filterToggle.setAttribute('aria-label',open?'Close match search':'Open match search');
+    if(open)setTimeout(()=>$('f-search')&&$('f-search').focus(),30);
+  });
 
   function renderAcca(rows){
     $('cards').innerHTML='';
