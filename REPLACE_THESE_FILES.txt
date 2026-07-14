@@ -1,36 +1,16 @@
-PREDICT2U MULTI-ENGINE v243 — FINAL REPLACEMENT LIST
+REPLACE:
+index.html
+unified-shell-v234.js
+unified-shell-v227.js
+unified-shell-v227.css
+sw.js
+manifest.webmanifest
 
 ADD:
-  multi-engine-suite.js
-  config/engine-weights.json
-  config/league-profile-example.json
-  config/no-bet-reasons.json
-  docs/*
-  schemas/*
-  pseudocode/*
-  tests/multi-engine-suite.test.js
-  tests/Test_Plan.md
+all-engines.html
+unified-shell-v245.js
+unified-shell-v245.css
+overview-engines-v245.css
 
-REPLACE:
-  board.html
-  bankers.html
-  engines.html
-  proof.html
-  scorecards.html
-  league-dna.html
-  community.html
-  trust.html
-  audit-site.js
-  generate-site-health.js
-
-KEEP — DO NOT DELETE OR REPLACE:
-  banker-engine.js
-  data.js
-  community.js
-  config.txt
-  .github/workflows/future-fixtures.yml
-  GitHub secrets
-
-RESULT:
-  16 existing engines + 4 new engines = 20 public engines.
-  Decision Core remains an orchestrator and is not counted as an engine.
+KEEP OR REPLACE:
+multi-engine-suite.js

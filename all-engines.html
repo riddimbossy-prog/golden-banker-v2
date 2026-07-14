@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>Predict2U • All Engines</title>
+<meta name="theme-color" content="#060a12"/>
+<link rel="manifest" href="manifest.webmanifest"/>
+<link rel="icon" href="favicon-32x32.png"/>
+<link rel="stylesheet" href="unified-shell-v227.css"/>
+<link rel="stylesheet" href="overview-engines-v245.css"/>
+</head>
+<body>
+<script src="unified-shell-v234.js"></script>
+<main class="p2u-page">
+  <section class="p2u-hero">
+    <span class="p2u-eyebrow">Engine Hub</span>
+    <h1>All prediction<br><span style="color:var(--ov-accent)">engines.</span></h1>
+    <p>Browse every active Predict2U model. Open an engine to view only the matches and markets it currently supports.</p>
+    <div class="p2u-stats">
+      <article class="p2u-stat"><small>Total engines</small><strong id="engine-total">—</strong><span>Complete registered suite</span></article>
+      <article class="p2u-stat"><small>PurePPG</small><strong id="engine-pure">—</strong><span>Progressive strength models</span></article>
+      <article class="p2u-stat"><small>Specialists</small><strong id="engine-specialists">—</strong><span>Market-focused analysis</span></article>
+      <article class="p2u-stat"><small>Multi-engine</small><strong id="engine-multi">—</strong><span>New orchestration suite</span></article>
+    </div>
+  </section>
+
+  <section class="p2u-section">
+    <div class="p2u-section-head"><div><h2>Engine directory</h2><p>Select an engine to open its current board.</p></div><a href="engines.html">Open Full Board →</a></div>
+    <div class="p2u-engine-toolbar">
+      <div class="p2u-engine-filters" role="group" aria-label="Engine family filter">
+        <button class="p2u-engine-filter is-active" data-family="all">All</button>
+        <button class="p2u-engine-filter" data-family="PurePPG">PurePPG</button>
+        <button class="p2u-engine-filter" data-family="Specialist">Specialists</button>
+        <button class="p2u-engine-filter" data-family="Multi-Engine">Multi-Engine</button>
+      </div>
+      <input class="p2u-engine-search" id="engine-search" type="search" placeholder="Search engines…" autocomplete="off"/>
+    </div>
+    <div class="p2u-engine-grid" id="engine-grid"><div class="p2u-engine-empty">Loading engine registry…</div></div>
+  </section>
+</main>
+<script src="banker-engine.js"></script>
+<script src="multi-engine-suite.js"></script>
+<script>
+(function(){
+  'use strict';
+  const esc=value=>String(value==null?'':value).replace(/[<>&"]/g,char=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[char]));
+  const registry=(window.P2U_ENGINE_REGISTRY||[]).slice();
+  const grid=document.getElementById('engine-grid');
+  const search=document.getElementById('engine-search');
+  let family='all',query='';
+  const familyCount=name=>registry.filter(engine=>engine.family===name).length;
+  document.getElementById('engine-total').textContent=registry.length;
+  document.getElementById('engine-pure').textContent=familyCount('PurePPG');
+  document.getElementById('engine-specialists').textContent=familyCount('Specialist');
+  document.getElementById('engine-multi').textContent=familyCount('Multi-Engine');
+  function render(){
+    const rows=registry.filter(engine=>(family==='all'||engine.family===family)&&(!query||(engine.name+' '+engine.description+' '+engine.family).toLowerCase().includes(query))).sort((a,b)=>{const order={'PurePPG':0,'Specialist':1,'Multi-Engine':2};return (order[a.family]??9)-(order[b.family]??9)||String(a.name).localeCompare(String(b.name));});
+    grid.innerHTML=rows.length?rows.map(engine=>`<article class="p2u-engine-card${engine.family==='Multi-Engine'?' is-new':''}"><div class="p2u-engine-card-head"><h3>${esc(engine.name)}</h3><span class="version">v${esc(engine.version||'1.0')}</span></div><span class="p2u-engine-family">${esc(engine.family||'Engine')}</span><p>${esc(engine.description||'Specialized football prediction engine.')}</p><div class="p2u-engine-meta"><span class="p2u-engine-status">Active</span><a class="p2u-engine-open" href="board.html?engine=${encodeURIComponent(engine.key)}">Open engine →</a></div></article>`).join(''):'<div class="p2u-engine-empty">No engines match this filter.</div>';
+  }
+  document.querySelectorAll('[data-family]').forEach(button=>button.addEventListener('click',()=>{family=button.dataset.family;document.querySelectorAll('[data-family]').forEach(item=>item.classList.toggle('is-active',item===button));render();}));
+  search.addEventListener('input',()=>{query=search.value.toLowerCase().trim();render();});
+  render();
+})();
+</script>
+<script>if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));</script>
+<script src="cloud-config.js"></script><script src="account-cloud.js" defer></script><script src="smart-alerts.js" defer></script>
+</body>
+</html>

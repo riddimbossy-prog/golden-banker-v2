@@ -1,9 +1,9 @@
 {
-  "name": "Predict2U — Know the Game. Predict Better.",
+  "name": "Predict2U \u2014 Know the Game. Predict Better.",
   "short_name": "Predict2U",
-  "description": "Sixteen transparent football analysis engines, public records, global football news and Community discussion.",
+  "description": "Twenty transparent football analysis engines, qualified picks, bankers, global football news and Community discussion.",
   "id": "./",
-  "start_url": "./board.html?source=pwa",
+  "start_url": "./index.html?source=pwa",
   "scope": "./",
   "lang": "en",
   "dir": "ltr",
@@ -61,9 +61,22 @@
   ],
   "shortcuts": [
     {
-      "name": "Today’s Board",
+      "name": "Overview",
+      "short_name": "Overview",
+      "description": "Open the Predict2U overview",
+      "url": "./index.html?source=shortcut",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Today\u2019s Board",
       "short_name": "Board",
-      "description": "Open today’s published Board",
+      "description": "Open today\u2019s published Board",
       "url": "./board.html?source=shortcut",
       "icons": [
         {
@@ -78,6 +91,19 @@
       "short_name": "News",
       "description": "Open football news and transfers",
       "url": "./news.html?source=shortcut",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "All Engines",
+      "short_name": "Engines",
+      "description": "Browse every Predict2U prediction engine",
+      "url": "./all-engines.html?source=shortcut",
       "icons": [
         {
           "src": "icon-192.png",
