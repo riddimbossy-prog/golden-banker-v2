@@ -62412,7 +62412,7 @@
       "finalHomeGoals": 3,
       "finalAwayGoals": 2,
       "actualResult": "home",
-      "settledAt": "2026-07-14T17:49:20.251Z"
+      "settledAt": "2026-07-14T17:50:48.546Z"
     },
     {
       "matchDate": "2026-07-14",
@@ -62459,7 +62459,7 @@
       "finalHomeGoals": 2,
       "finalAwayGoals": 3,
       "actualResult": "away",
-      "settledAt": "2026-07-14T17:49:20.251Z"
+      "settledAt": "2026-07-14T17:50:48.546Z"
     },
     {
       "matchDate": "2026-07-14",
@@ -64356,6 +64356,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-14T17:49:20.586Z"
+    "updated": "2026-07-14T17:50:48.759Z"
   }
 }
