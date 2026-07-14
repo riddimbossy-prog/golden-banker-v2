@@ -64391,7 +64391,7 @@
         "leagueDrawRate": 0.18,
         "dataFields": 0
       },
-      "recordedAt": "2026-07-14T19:11:04.494Z",
+      "recordedAt": "2026-07-14T19:12:38.550Z",
       "status": "pending",
       "result": null,
       "score": null
@@ -64399,6 +64399,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-14T19:11:04.675Z"
+    "updated": "2026-07-14T19:12:38.731Z"
   }
 }
