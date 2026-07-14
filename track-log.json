@@ -62406,9 +62406,13 @@
         "dataFields": 3
       },
       "recordedAt": "2026-07-13T01:57:40.646Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "3-2",
+      "finalHomeGoals": 3,
+      "finalAwayGoals": 2,
+      "actualResult": "home",
+      "settledAt": "2026-07-14T17:49:20.251Z"
     },
     {
       "matchDate": "2026-07-14",
@@ -62449,9 +62453,13 @@
         "dataFields": 3
       },
       "recordedAt": "2026-07-13T01:57:40.648Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "2-3",
+      "finalHomeGoals": 2,
+      "finalAwayGoals": 3,
+      "actualResult": "away",
+      "settledAt": "2026-07-14T17:49:20.251Z"
     },
     {
       "matchDate": "2026-07-14",
@@ -62492,8 +62500,8 @@
         "dataFields": 3
       },
       "recordedAt": "2026-07-13T01:57:40.650Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -62535,8 +62543,8 @@
         "dataFields": 3
       },
       "recordedAt": "2026-07-13T01:57:40.651Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -62578,8 +62586,8 @@
         "dataFields": 0
       },
       "recordedAt": "2026-07-13T01:57:40.654Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -62621,8 +62629,8 @@
         "dataFields": 3
       },
       "recordedAt": "2026-07-13T01:57:40.660Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -62664,8 +62672,8 @@
         "dataFields": 3
       },
       "recordedAt": "2026-07-13T01:57:40.660Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -62707,8 +62715,8 @@
         "dataFields": 3
       },
       "recordedAt": "2026-07-13T01:57:40.663Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -64348,6 +64356,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-14T08:15:08.411Z"
+    "updated": "2026-07-14T17:49:20.586Z"
   }
 }
