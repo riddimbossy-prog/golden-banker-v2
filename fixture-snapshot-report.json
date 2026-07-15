@@ -1,12 +1,703 @@
 {
-  "generatedAt": "2026-07-14T07:51:26.469262Z",
-  "windowStart": "2026-07-14",
-  "windowEnd": "2026-07-20",
-  "totalFixtures": 81,
+  "generatedAt": "2026-07-15T07:22:03.042Z",
+  "windowStart": "2026-07-15",
+  "windowEnd": "2026-07-21",
+  "totalFixtures": 1605,
   "daysRequested": 7,
   "dateCounts": {
-    "2026-07-14": 47,
-    "2026-07-15": 34
+    "2026-07-15": 166,
+    "2026-07-16": 109,
+    "2026-07-17": 244,
+    "2026-07-18": 701,
+    "2026-07-19": 196,
+    "2026-07-20": 43,
+    "2026-07-21": 146
   },
-  "starterFromExistingData": true
+  "leagues": [
+    {
+      "leagueId": 667,
+      "league": "Friendlies Clubs",
+      "games": 671
+    },
+    {
+      "leagueId": 185,
+      "league": "League Cup",
+      "games": 31
+    },
+    {
+      "leagueId": 848,
+      "league": "UEFA Europa Conference League",
+      "games": 25
+    },
+    {
+      "leagueId": 1086,
+      "league": "Paulista - U20",
+      "games": 20
+    },
+    {
+      "leagueId": 129,
+      "league": "Primera Nacional",
+      "games": 18
+    },
+    {
+      "leagueId": 134,
+      "league": "Torneo Federal A",
+      "games": 17
+    },
+    {
+      "leagueId": 294,
+      "league": "FA Cup",
+      "games": 16
+    },
+    {
+      "leagueId": 359,
+      "league": "FAI Cup",
+      "games": 16
+    },
+    {
+      "leagueId": 242,
+      "league": "Liga Pro",
+      "games": 16
+    },
+    {
+      "leagueId": 132,
+      "league": "Primera C",
+      "games": 14
+    },
+    {
+      "leagueId": 486,
+      "league": "Coppa",
+      "games": 13
+    },
+    {
+      "leagueId": 909,
+      "league": "MLS Next Pro",
+      "games": 13
+    },
+    {
+      "leagueId": 256,
+      "league": "USL League Two",
+      "games": 13
+    },
+    {
+      "leagueId": 929,
+      "league": "League Two",
+      "games": 12
+    },
+    {
+      "leagueId": 344,
+      "league": "Primera División",
+      "games": 12
+    },
+    {
+      "leagueId": 906,
+      "league": "Reserve League",
+      "games": 12
+    },
+    {
+      "leagueId": 72,
+      "league": "Serie B",
+      "games": 12
+    },
+    {
+      "leagueId": 255,
+      "league": "USL Championship",
+      "games": 12
+    },
+    {
+      "leagueId": 131,
+      "league": "Primera B Metropolitana",
+      "games": 11
+    },
+    {
+      "leagueId": 369,
+      "league": "Super League",
+      "games": 11
+    },
+    {
+      "leagueId": 489,
+      "league": "USL League One",
+      "games": 11
+    },
+    {
+      "leagueId": 936,
+      "league": "Catarinense - 2",
+      "games": 10
+    },
+    {
+      "leagueId": 254,
+      "league": "NWSL Women",
+      "games": 10
+    },
+    {
+      "leagueId": 401,
+      "league": "Premier Soccer League",
+      "games": 10
+    },
+    {
+      "leagueId": 291,
+      "league": "Azadegan League",
+      "games": 9
+    },
+    {
+      "leagueId": 1035,
+      "league": "Copa Rio",
+      "games": 9
+    },
+    {
+      "leagueId": 236,
+      "league": "First League",
+      "games": 9
+    },
+    {
+      "leagueId": 292,
+      "league": "K League 1",
+      "games": 9
+    },
+    {
+      "leagueId": 262,
+      "league": "Liga MX",
+      "games": 9
+    },
+    {
+      "leagueId": 938,
+      "league": "Oberliga - Bayern Nord",
+      "games": 9
+    },
+    {
+      "leagueId": 281,
+      "league": "Primera División",
+      "games": 9
+    },
+    {
+      "leagueId": 113,
+      "league": "Allsvenskan",
+      "games": 8
+    },
+    {
+      "leagueId": 1112,
+      "league": "Cearense U20",
+      "games": 8
+    },
+    {
+      "leagueId": 251,
+      "league": "Division Intermedia",
+      "games": 8
+    },
+    {
+      "leagueId": 103,
+      "league": "Eliteserien",
+      "games": 8
+    },
+    {
+      "leagueId": 171,
+      "league": "FA Cup",
+      "games": 8
+    },
+    {
+      "leagueId": 293,
+      "league": "K League 2",
+      "games": 8
+    },
+    {
+      "leagueId": 170,
+      "league": "League One",
+      "games": 8
+    },
+    {
+      "leagueId": 283,
+      "league": "Liga I",
+      "games": 8
+    },
+    {
+      "leagueId": 192,
+      "league": "New South Wales NPL",
+      "games": 8
+    },
+    {
+      "leagueId": 835,
+      "league": "New South Wales NPL 2",
+      "games": 8
+    },
+    {
+      "leagueId": 481,
+      "league": "Northern NSW NPL",
+      "games": 8
+    },
+    {
+      "leagueId": 1230,
+      "league": "Npl Nsw U20",
+      "games": 8
+    },
+    {
+      "leagueId": 939,
+      "league": "Oberliga - Bayern Süd",
+      "games": 8
+    },
+    {
+      "leagueId": 389,
+      "league": "Premier League",
+      "games": 8
+    },
+    {
+      "leagueId": 266,
+      "league": "Primera B",
+      "games": 8
+    },
+    {
+      "leagueId": 268,
+      "league": "Primera División - Apertura",
+      "games": 8
+    },
+    {
+      "leagueId": 76,
+      "league": "Serie D",
+      "games": 8
+    },
+    {
+      "leagueId": 169,
+      "league": "Super League",
+      "games": 8
+    },
+    {
+      "leagueId": 391,
+      "league": "Super League",
+      "games": 8
+    },
+    {
+      "leagueId": 114,
+      "league": "Superettan",
+      "games": 8
+    },
+    {
+      "leagueId": 2,
+      "league": "UEFA Champions League",
+      "games": 8
+    },
+    {
+      "leagueId": 238,
+      "league": "Youth Championship",
+      "games": 8
+    },
+    {
+      "leagueId": 388,
+      "league": "1. Division",
+      "games": 7
+    },
+    {
+      "leagueId": 364,
+      "league": "1. Liga",
+      "games": 7
+    },
+    {
+      "leagueId": 742,
+      "league": "Copa Paulista",
+      "games": 7
+    },
+    {
+      "leagueId": 172,
+      "league": "First League",
+      "games": 7
+    },
+    {
+      "leagueId": 1107,
+      "league": "Mineiro U20",
+      "games": 7
+    },
+    {
+      "leagueId": 269,
+      "league": "Segunda División",
+      "games": 7
+    },
+    {
+      "leagueId": 282,
+      "league": "Segunda División",
+      "games": 7
+    },
+    {
+      "leagueId": 286,
+      "league": "Super Liga",
+      "games": 7
+    },
+    {
+      "leagueId": 195,
+      "league": "Victoria NPL",
+      "games": 7
+    },
+    {
+      "leagueId": 836,
+      "league": "Victoria NPL 2",
+      "games": 7
+    },
+    {
+      "leagueId": 1226,
+      "league": "Victoria Premier League 2",
+      "games": 7
+    },
+    {
+      "leagueId": 361,
+      "league": "1 Lyga",
+      "games": 6
+    },
+    {
+      "leagueId": 165,
+      "league": "1. Deild",
+      "games": 6
+    },
+    {
+      "leagueId": 166,
+      "league": "2. Deild",
+      "games": 6
+    },
+    {
+      "leagueId": 874,
+      "league": "Australia Cup",
+      "games": 6
+    },
+    {
+      "leagueId": 1128,
+      "league": "Brasileiro U17",
+      "games": 6
+    },
+    {
+      "leagueId": 1076,
+      "league": "Catarinense U20",
+      "games": 6
+    },
+    {
+      "leagueId": 243,
+      "league": "Liga Pro Serie B",
+      "games": 6
+    },
+    {
+      "leagueId": 253,
+      "league": "Major League Soccer",
+      "games": 6
+    },
+    {
+      "leagueId": 482,
+      "league": "Queensland NPL",
+      "games": 6
+    },
+    {
+      "leagueId": 833,
+      "league": "Queensland Premier League",
+      "games": 6
+    },
+    {
+      "leagueId": 71,
+      "league": "Serie A",
+      "games": 6
+    },
+    {
+      "leagueId": 194,
+      "league": "South Australia NPL",
+      "games": 6
+    },
+    {
+      "leagueId": 834,
+      "league": "South Australia State League 1",
+      "games": 6
+    },
+    {
+      "leagueId": 649,
+      "league": "Supreme Division Women",
+      "games": 6
+    },
+    {
+      "leagueId": 3,
+      "league": "UEFA Europa League",
+      "games": 6
+    },
+    {
+      "leagueId": 164,
+      "league": "Úrvalsdeild",
+      "games": 6
+    },
+    {
+      "leagueId": 244,
+      "league": "Veikkausliiga",
+      "games": 6
+    },
+    {
+      "leagueId": 196,
+      "league": "Western Australia NPL",
+      "games": 6
+    },
+    {
+      "leagueId": 1094,
+      "league": "Western Australia State League 1",
+      "games": 6
+    },
+    {
+      "leagueId": 245,
+      "league": "Ykkönen",
+      "games": 6
+    },
+    {
+      "leagueId": 1087,
+      "league": "Ykkösliiga",
+      "games": 6
+    },
+    {
+      "leagueId": 373,
+      "league": "1. SNL",
+      "games": 5
+    },
+    {
+      "leagueId": 362,
+      "league": "A Lyga",
+      "games": 5
+    },
+    {
+      "leagueId": 1147,
+      "league": "Capixaba B",
+      "games": 5
+    },
+    {
+      "leagueId": 328,
+      "league": "Esiliiga A",
+      "games": 5
+    },
+    {
+      "leagueId": 247,
+      "league": "Kakkonen - Lohko A",
+      "games": 5
+    },
+    {
+      "leagueId": 248,
+      "league": "Kakkonen - Lohko B",
+      "games": 5
+    },
+    {
+      "leagueId": 249,
+      "league": "Kakkonen - Lohko C",
+      "games": 5
+    },
+    {
+      "leagueId": 329,
+      "league": "Meistriliiga",
+      "games": 5
+    },
+    {
+      "leagueId": 1090,
+      "league": "NNSW League 1",
+      "games": 5
+    },
+    {
+      "leagueId": 396,
+      "league": "Primera Division",
+      "games": 5
+    },
+    {
+      "leagueId": 1025,
+      "league": "Second League A - Division A Gold",
+      "games": 5
+    },
+    {
+      "leagueId": 648,
+      "league": "Tasmania NPL",
+      "games": 5
+    },
+    {
+      "leagueId": 1093,
+      "league": "Tasmania Southern Championship",
+      "games": 5
+    },
+    {
+      "leagueId": 365,
+      "league": "Virsliga",
+      "games": 5
+    },
+    {
+      "leagueId": 1100,
+      "league": "Brasiliense U20",
+      "games": 4
+    },
+    {
+      "leagueId": 479,
+      "league": "Canadian Premier League",
+      "games": 4
+    },
+    {
+      "leagueId": 130,
+      "league": "Copa Argentina",
+      "games": 4
+    },
+    {
+      "leagueId": 1126,
+      "league": "Esiliiga B",
+      "games": 4
+    },
+    {
+      "leagueId": 640,
+      "league": "Kansallinen Liiga",
+      "games": 4
+    },
+    {
+      "leagueId": 1148,
+      "league": "Maranhense - 2",
+      "games": 4
+    },
+    {
+      "leagueId": 1098,
+      "league": "Paulista Série B",
+      "games": 4
+    },
+    {
+      "leagueId": 1026,
+      "league": "Second League A - Division A Silver",
+      "games": 4
+    },
+    {
+      "leagueId": 394,
+      "league": "Super Liga",
+      "games": 4
+    },
+    {
+      "leagueId": 1091,
+      "league": "Tasmania Northern Championship",
+      "games": 4
+    },
+    {
+      "leagueId": 1067,
+      "league": "Torneo Promocional Amateur",
+      "games": 4
+    },
+    {
+      "leagueId": 660,
+      "league": "WK-League",
+      "games": 4
+    },
+    {
+      "leagueId": 740,
+      "league": "Brasileiro U20 A",
+      "games": 3
+    },
+    {
+      "leagueId": 1189,
+      "league": "Asean Championship Women",
+      "games": 2
+    },
+    {
+      "leagueId": 613,
+      "league": "Baiano - 2",
+      "games": 2
+    },
+    {
+      "leagueId": 1073,
+      "league": "Baiano U20",
+      "games": 2
+    },
+    {
+      "leagueId": 1106,
+      "league": "Carioca C",
+      "games": 2
+    },
+    {
+      "leagueId": 241,
+      "league": "Copa Colombia",
+      "games": 2
+    },
+    {
+      "leagueId": 657,
+      "league": "Cup",
+      "games": 2
+    },
+    {
+      "leagueId": 10,
+      "league": "Friendlies",
+      "games": 2
+    },
+    {
+      "leagueId": 666,
+      "league": "Friendlies Women",
+      "games": 2
+    },
+    {
+      "leagueId": 1182,
+      "league": "Northern Super League",
+      "games": 2
+    },
+    {
+      "leagueId": 1031,
+      "league": "Premier League",
+      "games": 2
+    },
+    {
+      "leagueId": 390,
+      "league": "Premier League",
+      "games": 2
+    },
+    {
+      "leagueId": 74,
+      "league": "Brasileiro Women",
+      "games": 1
+    },
+    {
+      "leagueId": 11,
+      "league": "CONMEBOL Sudamericana",
+      "games": 1
+    },
+    {
+      "leagueId": 1220,
+      "league": "Copa De La Liga",
+      "games": 1
+    },
+    {
+      "leagueId": 1158,
+      "league": "Copa Gaúcha",
+      "games": 1
+    },
+    {
+      "leagueId": 498,
+      "league": "Cup",
+      "games": 1
+    },
+    {
+      "leagueId": 167,
+      "league": "Cup",
+      "games": 1
+    },
+    {
+      "leagueId": 295,
+      "league": "K3 League",
+      "games": 1
+    },
+    {
+      "leagueId": 1229,
+      "league": "Liga Women",
+      "games": 1
+    },
+    {
+      "leagueId": 567,
+      "league": "Ligi kuu Bara",
+      "games": 1
+    },
+    {
+      "leagueId": 823,
+      "league": "Nasjonal U19 Champions League",
+      "games": 1
+    },
+    {
+      "leagueId": 1075,
+      "league": "Pro League A",
+      "games": 1
+    },
+    {
+      "leagueId": 659,
+      "league": "Super Cup",
+      "games": 1
+    },
+    {
+      "leagueId": 385,
+      "league": "Toto Cup Ligat Al",
+      "games": 1
+    },
+    {
+      "leagueId": 1,
+      "league": "World Cup",
+      "games": 1
+    }
+  ]
 }
