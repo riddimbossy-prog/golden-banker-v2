@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-07-15T07:35:03.884Z",
+  "generatedAt": "2026-07-15T15:12:52.717Z",
   "windowStart": "2026-07-15",
   "windowEnd": "2026-07-21",
-  "totalFixtures": 1619,
+  "totalFixtures": 1630,
   "daysRequested": 7,
   "dateCounts": {
-    "2026-07-15": 166,
+    "2026-07-15": 168,
     "2026-07-16": 109,
-    "2026-07-17": 248,
-    "2026-07-18": 704,
+    "2026-07-17": 254,
+    "2026-07-18": 703,
     "2026-07-19": 197,
     "2026-07-20": 43,
-    "2026-07-21": 152
+    "2026-07-21": 156
   },
   "leagues": [
     {
       "leagueId": 667,
       "league": "Friendlies Clubs",
-      "games": 671
+      "games": 672
     },
     {
       "leagueId": 185,
@@ -290,6 +290,11 @@
       "games": 7
     },
     {
+      "leagueId": 1076,
+      "league": "Catarinense U20",
+      "games": 7
+    },
+    {
       "leagueId": 742,
       "league": "Copa Paulista",
       "games": 7
@@ -357,11 +362,6 @@
     {
       "leagueId": 1128,
       "league": "Brasileiro U17",
-      "games": 6
-    },
-    {
-      "leagueId": 1076,
-      "league": "Catarinense U20",
       "games": 6
     },
     {
@@ -510,6 +510,11 @@
       "games": 5
     },
     {
+      "leagueId": 200,
+      "league": "Botola Pro",
+      "games": 4
+    },
+    {
       "leagueId": 1100,
       "league": "Brasiliense U20",
       "games": 4
@@ -580,6 +585,11 @@
       "games": 3
     },
     {
+      "leagueId": 657,
+      "league": "Cup",
+      "games": 3
+    },
+    {
       "leagueId": 1189,
       "league": "Asean Championship Women",
       "games": 2
@@ -595,6 +605,11 @@
       "games": 2
     },
     {
+      "leagueId": 201,
+      "league": "Botola 2",
+      "games": 2
+    },
+    {
       "leagueId": 1106,
       "league": "Carioca C",
       "games": 2
@@ -602,11 +617,6 @@
     {
       "leagueId": 241,
       "league": "Copa Colombia",
-      "games": 2
-    },
-    {
-      "leagueId": 657,
-      "league": "Cup",
       "games": 2
     },
     {
@@ -690,7 +700,17 @@
       "games": 1
     },
     {
+      "leagueId": 810,
+      "league": "Super Copa",
+      "games": 1
+    },
+    {
       "leagueId": 659,
+      "league": "Super Cup",
+      "games": 1
+    },
+    {
+      "leagueId": 727,
       "league": "Super Cup",
       "games": 1
     },
