@@ -1,0 +1,71 @@
+name: Predict2U Odds + HTFT Refresh
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: predict2u-data-write
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Restore Odds API cache outside Git
+        uses: actions/cache/restore@v4
+        with:
+          path: odds-api-cache.json
+          key: p2u-odds-api-cache-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            p2u-odds-api-cache-${{ runner.os }}-
+
+      - name: Enrich current board with Odds API
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          ODDS_API_REGIONS: "uk"
+          ODDS_API_MAX_EVENTS: "120"
+        run: node enrich-odds-api.js
+
+      - name: Validate odds and engine integration
+        run: node tests/odds-api-integration.test.js
+
+      - name: Compact generated match data
+        run: node compact-generated-data.js
+
+      - name: Save Odds API cache outside Git
+        if: ${{ hashFiles('odds-api-cache.json') != '' }}
+        uses: actions/cache/save@v4
+        with:
+          path: odds-api-cache.json
+          key: p2u-odds-api-cache-${{ runner.os }}-${{ github.run_id }}
+
+      - name: Commit refreshed odds
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Predict2U Odds Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git rm --cached -f --ignore-unmatch odds-api-cache.json 2>/dev/null || true
+          git add -f -- data.js odds-api-coverage.json
+          if git diff --cached --quiet; then
+            echo "Odds data already matches the repository."
+            exit 0
+          fi
+          git commit -m "Refresh multi-book odds and HTFT signals"
+          git pull --rebase -X theirs origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

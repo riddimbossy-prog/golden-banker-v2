@@ -1,10 +1,10 @@
 /* Predict2U service worker v235 — fast core install, bounded caches,
    native-install support, exact push deep links and recoverable offline navigation. */
-const VERSION='v249';
-const CACHE_VERSION='predict2u-v249';
+const VERSION='v251';
+const CACHE_VERSION='predict2u-v251';
 const APP_CACHE=CACHE_VERSION;
-const RUNTIME_CACHE='predict2u-runtime-v249';
-const IMAGE_CACHE='predict2u-images-v249';
+const RUNTIME_CACHE='predict2u-runtime-v251';
+const IMAGE_CACHE='predict2u-images-v251';
 const IMAGE_LIMIT=90;
 const RUNTIME_LIMIT=90;
 const NETWORK_TIMEOUT=2800;
@@ -15,7 +15,7 @@ const OFFLINE_URL='./offline.html';
 const CORE_SHELL=[
   './','./index.html','./board.html','./bankers.html','./engines.html','./all-engines.html','./engine.html','./news.html','./community.html','./offline.html','./manifest.webmanifest',
   './pwa-launch.js','./pwa-launch.css','./unified-shell-v227.css','./unified-shell-v227.js','./unified-shell-v245.css','./unified-shell-v245.js','./overview-engines-v245.css','./responsive-qa-v227.css','./mobile-board-v229.css','./mobile-card-compact-v230.css','./mobile-card-compact-v230.js','./fullboard-compact-v231.css','./fullboard-compact-v231.js','./simple-ui-v232.css','./simple-fullboard-v233.css','./mobile-picks-week-v235.css','./mobile-app-nav.js','./mobile-app-nav.css','./device-responsive-v207.css','./acca-mobile-v209.css','./mobile-polish-v211.css','./p2u-utilities-v218.css','./engines-rescue-v218.css','./slip.js',
-  './fixture-overlay.js','./fixture-feed-v247.css','./engine-experience-v249.js','./engine-page-v249.js','./engine-page-v249.css','./engine-bankers-v249.js','./engine-bankers-v249.css','./predict2u-logo.png','./predict2u-mark.png','./favicon.ico',
+  './fixture-overlay.js','./odds-engine-guard.js','./fixture-feed-v247.css','./engine-experience-v249.js','./engine-page-v249.js','./engine-page-v249.css','./engine-bankers-v249.js','./engine-bankers-v249.css','./predict2u-logo.png','./predict2u-mark.png','./favicon.ico',
   './icon-192.png','./icon-512.png','./maskable-icon.png'
 ];
 
@@ -203,7 +203,7 @@ self.addEventListener('fetch',event=>{
 
   if(!sameOrigin(url))return;
 
-  if(/(?:data\.js|fixtures\.js|fixture-snapshot-report\.json|site-health\.json|push-event-snapshot\.json|engine-learning-report\.json|model-governance-report\.json|engine-consensus-report\.json|match-context-report\.json)$/.test(url.pathname)){
+  if(/(?:data\.js|fixtures\.js|fixture-snapshot-report\.json|site-health\.json|push-event-snapshot\.json|engine-learning-report\.json|model-governance-report\.json|engine-consensus-report\.json|match-context-report\.json|odds-api-coverage\.json)$/.test(url.pathname)){
     event.respondWith(networkFirst(request));
     return;
   }

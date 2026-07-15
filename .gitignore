@@ -12,3 +12,6 @@ api-cache.json
 api-cache-*.json
 shards/
 discovery/
+# Predict2U v251 paid Odds API runtime cache — never publish or merge
+odds-api-cache.json
+odds-api-cache-*.json

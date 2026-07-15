@@ -27,6 +27,7 @@
   let P2UGovernanceSupervisor=null;
   let P2USmartConsensus=null;
   let P2UContextSupervisor=null;
+  let P2UOddsSupervisor=null;
   try{
     P2ULearningSupervisor=(typeof module!=="undefined"&&module.exports)?require("./learning-supervisor.js"):(typeof globalThis!=="undefined"?globalThis.P2ULearningSupervisor:null);
   }catch(_){ P2ULearningSupervisor=null; }
@@ -35,6 +36,7 @@
   }catch(_){ P2UGovernanceSupervisor=null; }
   try{ P2USmartConsensus=(typeof module!=="undefined"&&module.exports)?require("./engine-consensus.js"):(typeof globalThis!=="undefined"?globalThis.P2USmartConsensus:null); }catch(_){ P2USmartConsensus=null; }
   try{ P2UContextSupervisor=(typeof module!=="undefined"&&module.exports)?require("./context-supervisor.js"):(typeof globalThis!=="undefined"?globalThis.P2UContextSupervisor:null); }catch(_){ P2UContextSupervisor=null; }
+  try{ P2UOddsSupervisor=(typeof module!=="undefined"&&module.exports)?require("./odds-engine-guard.js"):(typeof globalThis!=="undefined"?globalThis.P2UOddsGuard:null); }catch(_){ P2UOddsSupervisor=null; }
   const EPS = 1e-9;
   const clamp = (n, lo, hi) => Math.max(lo, Math.min(hi, Number(n)));
   const num = v => (v === null || v === undefined || v === "" || !Number.isFinite(Number(v))) ? null : Number(v);
@@ -210,6 +212,7 @@
     if(P2ULearningSupervisor&&typeof P2ULearningSupervisor.reviewDecision==="function") out=P2ULearningSupervisor.reviewDecision(out,m);
     if(P2UGovernanceSupervisor&&typeof P2UGovernanceSupervisor.reviewDecision==="function") out=P2UGovernanceSupervisor.reviewDecision(out,m);
     if(P2UContextSupervisor&&typeof P2UContextSupervisor.reviewDecision==="function") out=P2UContextSupervisor.reviewDecision(out,m);
+    if(P2UOddsSupervisor&&typeof P2UOddsSupervisor.reviewDecision==="function") out=P2UOddsSupervisor.reviewDecision(out,m);
     return out;
   }
   function noBet(m,engine,version,reason,{dq=0,warnings=[],veto="HARD",scope="FIXTURE",specialist=false,extra={}}={}){
@@ -726,20 +729,43 @@
 
   function normalized1X2(o){const h=1/o.home,d=1/o.draw,a=1/o.away,s=h+d+a;return{home:h/s,draw:d/s,away:a/s,overround:s};}
   function oddsIntelligenceRecommend(m){
-    const engine="Odds Intelligence",version="1.0";
+    const engine="Odds Intelligence",version="2.0";
     const books=path(m,"oddsBooks")||path(m,"bookmakers")||[];
     if(!Array.isArray(books)||books.length<4)return noBet(m,engine,version,`Only ${Array.isArray(books)?books.length:0} independent bookmaker snapshots are available; four are required.`,{dq:0,specialist:true,scope:"ODDS_DATA",warnings:["Aggregated one-book odds are not sufficient for Odds Intelligence."]});
-    const rows=[];for(const b of books){const cur=b.current||b.odds,open=b.opening||b.open;if(!cur||!open||![cur.home,cur.draw,cur.away,open.home,open.draw,open.away].every(x=>num(x)!==null))continue;if(!b.timestamp&&!b.currentTimestamp)return noBet(m,engine,version,"Odds timestamps are missing.",{specialist:true,scope:"ODDS_DATA"});const C=normalized1X2(cur),O=normalized1X2(open);rows.push({C,O,b});}
-    if(rows.length<4)return noBet(m,engine,version,"Fewer than four valid timestamped 1X2 books remain.",{specialist:true,scope:"ODDS_DATA"});
-    const median=a=>a.sort((x,y)=>x-y)[Math.floor(a.length/2)]; const cand=m.statisticalCandidate || (proConsensusRecommend._statisticalCandidate?proConsensusRecommend._statisticalCandidate(m):null);
+    const rows=[];
+    for(const b of books){
+      const cur=b.current||b.odds,open=b.opening||b.open;
+      if(!cur||![cur.home,cur.draw,cur.away].every(x=>num(x)!==null))continue;
+      if(!b.timestamp&&!b.currentTimestamp)continue;
+      const C=normalized1X2(cur),O=open&&[open.home,open.draw,open.away].every(x=>num(x)!==null)?normalized1X2(open):null;
+      rows.push({C,O,b});
+    }
+    if(rows.length<4)return noBet(m,engine,version,"Fewer than four valid timestamped current 1X2 books remain.",{specialist:true,scope:"ODDS_DATA"});
+    const median=a=>{const s=[...a].sort((x,y)=>x-y);const i=Math.floor(s.length/2);return s.length%2?s[i]:(s[i-1]+s[i])/2;};
+    const cand=m.statisticalCandidate || (proConsensusRecommend._statisticalCandidate?proConsensusRecommend._statisticalCandidate(m):null);
     if(!cand)return noBet(m,engine,version,"Odds Intelligence requires an already-qualified statistical candidate.",{dq:75,specialist:true,veto:"NONE",scope:"NONE"});
-    const dir=marketDirection(cand.primary||cand),key=dir==="HOME"?"home":dir==="AWAY"?"away":null;if(!key)return noBet(m,engine,version,"Candidate is not a supported result direction for the available 1X2 books.",{dq:75,specialist:true,scope:"ODDS_DATA"});
-    const current=median(rows.map(r=>r.C[key])),opening=median(rows.map(r=>r.O[key])),move=(current-opening)*100,disp=(Math.max(...rows.map(r=>r.C[key]))-Math.min(...rows.map(r=>r.C[key])))*100,breadth=rows.filter(r=>r.C[key]-r.O[key]>=.015).length/rows.length;
-    if(disp>8)return noBet(m,engine,version,"Market consensus split exceeds eight probability points.",{dq:60,specialist:true,scope:"EXACT_PRICE"});
-    const consistency=first(path(m,"oddsCrossMarketPoints"),3);let score=.25*(100-disp*8)+.25*(consistency/5*100)+.20*(breadth*100)+.15*80+.15*90;
-    const adverse=move<=-5;if(adverse&&consistency<=1)return noBet(m,engine,version,"Five-point adverse move with cross-market contradiction.",{dq:80,specialist:true,scope:"DIRECTION"});
-    const market=cand.primary||cand;if(score<78)return noBet(m,engine,version,"Odds structure does not reach the support threshold.",{dq:80,specialist:true,veto:move<=-3?"SOFT":"NONE",scope:"AGGRESSIVE_MARKET",extra:{opening, current, movement:move, dispersion:disp}});
-    return makeOutput({m,engine,version,market,score,dq:90,reasons:[`Fair probability moved ${round(move,1)} points; ${Math.round(breadth*100)}% of books aligned; dispersion ${round(disp,1)} points.`],warnings:move<=-3?["Adverse price drift: straight win should be downgraded."]:[],veto:move<=-3?"SOFT":"NONE",vetoScope:move<=-3?"STRAIGHT_WIN":"NONE",safer:move<=-3?[dir==="HOME"?"Home DNB":"Away DNB",dir==="HOME"?"Double Chance 1X":"Double Chance X2"]:[],specialist:true,bankerFloor:84,extra:{opening_fair_probability:opening,current_fair_probability:current,movement:move,dispersion:disp,breadth}});
+    const dir=marketDirection(cand.primary||cand),key=dir==="HOME"?"home":dir==="AWAY"?"away":null;
+    if(!key)return noBet(m,engine,version,"Candidate is not a supported result direction for the available 1X2 books.",{dq:75,specialist:true,scope:"ODDS_DATA"});
+    const current=median(rows.map(r=>r.C[key]));
+    const dispersion=(Math.max(...rows.map(r=>r.C[key]))-Math.min(...rows.map(r=>r.C[key])))*100;
+    const openingRows=rows.filter(r=>r.O);
+    const opening=openingRows.length>=4?median(openingRows.map(r=>r.O[key])):null;
+    const move=opening===null?null:(current-opening)*100;
+    const breadth=opening===null
+      ? rows.filter(r=>r.C[key]>=Math.max(r.C.draw,r.C[key==="home"?"away":"home"])).length/rows.length
+      : openingRows.filter(r=>r.C[key]-r.O[key]>=.015).length/openingRows.length;
+    if(dispersion>8)return noBet(m,engine,version,"Market consensus split exceeds eight probability points.",{dq:60,specialist:true,scope:"EXACT_PRICE"});
+    const consistency=first(path(m,"oddsCrossMarketPoints"),3);
+    let score=.30*(100-dispersion*8)+.20*(consistency/5*100)+.20*(breadth*100)+.15*80+.15*90;
+    const warnings=[];
+    if(opening===null){score-=4;warnings.push("Opening prices are unavailable; current multi-book consensus mode was used.");}
+    const adverse=move!==null&&move<=-5;
+    if(adverse&&consistency<=1)return noBet(m,engine,version,"Five-point adverse move with cross-market contradiction.",{dq:80,specialist:true,scope:"DIRECTION"});
+    if(opening===null&&breadth<.60)return noBet(m,engine,version,"Current bookmaker breadth does not support the statistical direction.",{dq:82,specialist:true,scope:"DIRECTION",warnings});
+    const market=cand.primary||cand;
+    if(score<78)return noBet(m,engine,version,"Odds structure does not reach the support threshold.",{dq:80,specialist:true,veto:move!==null&&move<=-3?"SOFT":"NONE",scope:"AGGRESSIVE_MARKET",warnings,extra:{opening,current,movement:move,dispersion,breadth}});
+    const movementText=move===null?"Current consensus mode":`Fair probability moved ${round(move,1)} points`;
+    return makeOutput({m,engine,version,market,score,dq:90,reasons:[`${movementText}; ${Math.round(breadth*100)}% bookmaker breadth; dispersion ${round(dispersion,1)} points.`],warnings:[...warnings,...(move!==null&&move<=-3?["Adverse price drift: straight win should be downgraded."]:[])],veto:move!==null&&move<=-3?"SOFT":"NONE",vetoScope:move!==null&&move<=-3?"STRAIGHT_WIN":"NONE",safer:move!==null&&move<=-3?[dir==="HOME"?"Home DNB":"Away DNB",dir==="HOME"?"Double Chance 1X":"Double Chance X2"]:[],specialist:true,bankerFloor:88,extra:{opening_fair_probability:opening,current_fair_probability:current,movement:move,dispersion,breadth,mode:opening===null?"CURRENT_CONSENSUS":"OPENING_MOVEMENT"}});
   }
 
   const ODDS_KEYS={"Home Win":"home","Away Win":"away","Over 1.5 Goals":"over15","Over 2.5 Goals":"over25","Under 2.5 Goals":"under25","Under 3.5 Goals":"under35","BTTS Yes":"bttsYes","BTTS No":"bttsNo","Double Chance 1X":"dc1x","Double Chance X2":"dcx2"};
@@ -847,7 +873,7 @@
     {key:"halves",name:"Halves",fn:"halvesRecommend",family:"Specialist",version:"1.0",description:"First and second-half direct-data specialist."},
     {key:"league-bias",name:"League Bias",fn:"leagueBiasRecommend",family:"Specialist",version:"1.0",description:"League tendency discovery plus team fit."},
     {key:"momentum",name:"Momentum",fn:"momentumRecommend",family:"Specialist",version:"1.0",description:"Improvement, decline, acceleration and reversal."},
-    {key:"odds-iq",name:"Odds Intelligence",fn:"oddsIntelligenceRecommend",family:"Specialist",version:"1.0",description:"De-vigged movement and cross-market consistency."},
+    {key:"odds-iq",name:"Odds Intelligence",fn:"oddsIntelligenceRecommend",family:"Specialist",version:"2.0",description:"Multi-book fair probabilities, movement when available and current-consensus fallback."},
     {key:"value",name:"Value",fn:"valueRecommend",family:"Specialist",version:"1.0",description:"Calibrated probability versus fair market price."}
   ];
 

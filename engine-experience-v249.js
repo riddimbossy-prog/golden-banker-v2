@@ -18,8 +18,9 @@
   const ODDS={
     "Home Win":"home","Draw":"draw","Away Win":"away","Over 1.5":"over15","Over 2.5":"over25","Over 3.5":"over35",
     "Under 1.5":"under15","Under 2.5":"under25","Under 3.5":"under35","BTTS Yes":"bttsYes","BTTS No":"bttsNo",
-    "Double Chance 1X":"dc1x","Double Chance 12":"dc12","Double Chance X2":"dcx2","First Half Over 0.5":"fhOver05",
-    "First Half Under 1.5":"fhUnder15"
+    "Double Chance 1X":"dc1x","Double Chance 12":"dc12","Double Chance X2":"dcx2","Home DNB":"homeDnb","Away DNB":"awayDnb",
+    "First Half Over 0.5":"fhOver05","First Half Under 1.5":"fhUnder15","Second Half Over 0.5":"shOver05","Second Half Over 1.5":"shOver15",
+    "Home Team Over 0.5":"homeOver05","Away Team Over 0.5":"awayOver05","Home Team Over 1.5":"homeOver15","Away Team Over 1.5":"awayOver15"
   };
 
   function dateOf(match){

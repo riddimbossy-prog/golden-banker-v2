@@ -1,7 +1,7 @@
 {
   "name": "predict2u-site-quality",
   "private": true,
-  "version": "2.0.0",
+  "version": "2.5.1",
   "scripts": {
     "health": "node generate-site-health.js",
     "audit": "node audit-site.js",
@@ -29,7 +29,11 @@
     "scores": "node fetch-scores.js",
     "verify:week": "node verify-week-data.js",
     "fixtures:snapshot": "node fetch-fixtures-snapshot.js",
-    "verify:fixtures": "node verify-fixture-snapshot.js"
+    "verify:fixtures": "node verify-fixture-snapshot.js",
+    "odds:enrich": "node enrich-odds-api.js",
+    "test:odds": "node tests/odds-api-integration.test.js",
+    "quality:odds": "npm run test:odds",
+    "audit:odds-engines": "node audit-odds-engines-v251.js"
   },
   "devDependencies": {
     "@playwright/test": "^1.53.0",

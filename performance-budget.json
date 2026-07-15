@@ -1,24 +1,40 @@
 {
-  "generatedAt": "2026-07-13T13:57:18.444Z",
-  "version": "v227",
-  "errors": [],
+  "generatedAt": "2026-07-15T02:37:18.293Z",
+  "version": "v251",
+  "errors": [
+    "board.html is 82990 bytes; budget is 76000.",
+    "index.html: missing preconnect for cdn.tailwindcss.com",
+    "index.html: missing preconnect for cdnjs.cloudflare.com",
+    "index.html: missing preconnect for cdn.jsdelivr.net",
+    "index.html: performance/freshness layer is not loaded correctly.",
+    "index.html: CSS loading state is not armed in the head.",
+    "index.html: mobile date rail missing date-strip",
+    "index.html: mobile date rail missing date-chip",
+    "index.html: mobile date rail missing date-chip-day",
+    "index.html: mobile date rail missing date-chip-date",
+    "index.html: mobile date rail missing date-chip-count",
+    "In-place board refresh hook is missing.",
+    "index.html: personalization layer is not loaded.",
+    "index.html: Smart Alerts layer is not loaded correctly.",
+    "index.html: account cloud layer is not loaded."
+  ],
   "warnings": [],
-  "passedCount": 33,
+  "passedCount": 32,
   "budgets": {
     "index.html": {
-      "bytes": 72587,
+      "bytes": 7957,
       "limit": 76000
     },
     "board.html": {
-      "bytes": 71760,
+      "bytes": 82990,
       "limit": 76000
     },
     "engines.html": {
-      "bytes": 38291,
+      "bytes": 47099,
       "limit": 50000
     },
     "banker-engine.js": {
-      "bytes": 82114,
+      "bytes": 83479,
       "limit": 110000
     },
     "p2u-intelligence.js": {
@@ -54,7 +70,7 @@
       "limit": 22000
     },
     "admin.html": {
-      "bytes": 29148,
+      "bytes": 29199,
       "limit": 30000
     },
     "backend-admin.js": {
@@ -106,15 +122,15 @@
       "limit": 14000
     },
     "account.html": {
-      "bytes": 2586,
+      "bytes": 2637,
       "limit": 18000
     },
     "profile.html": {
-      "bytes": 1935,
+      "bytes": 1986,
       "limit": 12000
     },
     "news.html": {
-      "bytes": 9259,
+      "bytes": 9363,
       "limit": 18000
     },
     "news.js": {

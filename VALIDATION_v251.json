@@ -1,0 +1,24 @@
+{
+  "version": "v251",
+  "generatedAt": "2026-07-15T02:40:00Z",
+  "targetedValidation": {
+    "javascriptSyntax": "passed",
+    "workflowYaml": "passed",
+    "jsonParsing": "passed",
+    "unresolvedConflictMarkers": 0,
+    "oddsBridgeTests": "passed",
+    "multiEngineTests": "passed",
+    "engineAudit": {
+      "engines": 20,
+      "fixturesTested": 183,
+      "runtimeErrors": 0,
+      "passed": true
+    }
+  },
+  "liveProviderValidation": "Pending the first GitHub Actions run with the user's private ODDS_API_KEY.",
+  "legacyChecks": {
+    "repositoryPreflight": "passed",
+    "performanceBudget": "existing unrelated failures remain on index.html and board.html",
+    "pwaSelftest": "existing unrelated index.html app-controller check remains"
+  }
+}

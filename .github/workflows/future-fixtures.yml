@@ -196,6 +196,14 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Restore Odds API cache outside Git
+        uses: actions/cache/restore@v4
+        with:
+          path: odds-api-cache.json
+          key: p2u-odds-api-cache-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            p2u-odds-api-cache-${{ runner.os }}-
+
       - name: Repair generated files before merge
         run: node repair-generated-conflicts.js
 
@@ -214,6 +222,21 @@ jobs:
 
       - name: Merge every shard
         run: node merge-fixture-shards.js shards discovery/all-games-discovery.json discovery/all-games-fixtures.json
+
+      - name: Enrich missing and half-time markets with Odds API
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          ODDS_API_REGIONS: "uk"
+          ODDS_API_MAX_EVENTS: "120"
+        run: node enrich-odds-api.js
+        continue-on-error: true
+
+      - name: Save Odds API cache outside Git
+        if: ${{ hashFiles('odds-api-cache.json') != '' }}
+        uses: actions/cache/save@v4
+        with:
+          path: odds-api-cache.json
+          key: p2u-odds-api-cache-${{ runner.os }}-${{ github.run_id }}
 
       - name: Save merged API response cache outside Git
         uses: actions/cache/save@v4
@@ -289,6 +312,7 @@ jobs:
             engine-learning-report.json
             engine-consensus-report.json
             match-context-report.json
+            odds-api-coverage.json
             model-governance-report.json
             model-governance-audit.json
             site-health.json

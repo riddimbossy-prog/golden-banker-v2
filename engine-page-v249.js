@@ -65,10 +65,13 @@
   function pickCard(pick,index){
     const match=pick.match;
     const reasons=pick.reasons.length?pick.reasons:['This fixture passed the engine’s current qualification rules.'];
+    const bookCount=Number(match&&match.oddsMeta&&match.oddsMeta.bookCount)||0;
+    const oddsBadge=bookCount?`<span class="engine-badge">${bookCount} books</span>`:(match&&match.odds?'<span class="engine-badge">Odds loaded</span>':'');
+    const htftBadge=match&&match.htftOdds&&match.htftOdds.actual?'<span class="engine-badge">HT/FT priced</span>':(match&&match.htftSignal?'<span class="engine-badge">HT/FT signal</span>':'');
     return `<article class="engine-pick-card">
       <div class="engine-pick-top"><div class="engine-league">${esc(match.country?match.country+' · ':'')}${esc(match.league||'Competition')}</div><span class="engine-market">${esc(marketShort(pick.market))}</span></div>
       <div class="engine-teams">${esc(match.home)}<br><span style="color:var(--engine-muted);font-weight:600">vs</span> ${esc(match.away)}</div>
-      <div class="engine-badges"><span class="engine-badge${pick.banker?' is-banker':''}">${pick.banker?'Banker':'Qualified'}</span><span class="engine-badge">${pick.confidence.toFixed(1)}/10</span><span class="engine-badge">${esc(matchStatus(match))}</span>${pick.odd?`<span class="engine-badge">@ ${pick.odd.toFixed(2)}</span>`:''}</div>
+      <div class="engine-badges"><span class="engine-badge${pick.banker?' is-banker':''}">${pick.banker?'Banker':'Qualified'}</span><span class="engine-badge">${pick.confidence.toFixed(1)}/10</span><span class="engine-badge">${esc(matchStatus(match))}</span>${pick.odd?`<span class="engine-badge">@ ${pick.odd.toFixed(2)}</span>`:''}${oddsBadge}${htftBadge}</div>
       <ul class="engine-reasons">${reasons.map(reason=>`<li>• ${esc(reason)}</li>`).join('')}</ul>
       <div class="engine-card-foot"><small style="color:var(--engine-muted)">Pick ${index+1}</small><button type="button" data-add="${index}">+ My Slip</button></div>
     </article>`;

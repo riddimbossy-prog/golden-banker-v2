@@ -21,7 +21,9 @@
 })(typeof window!=="undefined"?window:globalThis,function(root){
   "use strict";
 
-  const VERSION="2026.07-v243";
+  const VERSION="2026.07-v251";
+  let OddsGuard=root&&root.P2UOddsGuard||null;
+  try{if(typeof module!=="undefined"&&module.exports)OddsGuard=require("./odds-engine-guard.js");}catch(_){OddsGuard=OddsGuard||null;}
   const now=()=>new Date().toISOString();
   const clamp=(n,a,b)=>Math.max(a,Math.min(b,Number(n)||0));
   const num=v=>(v===null||v===undefined||v===""||!Number.isFinite(Number(v)))?null:Number(v);
@@ -128,9 +130,11 @@
     const confidence=score>=88?"A1":score>=82?"A2":score>=76?"watchlist":"rejected";
     const primary=publish?market:"No Bet";
     const reason=shortReason||(!publish?(failedRules[0]&&failedRules[0].label)||warnings[0]||"Release gate not met.":`${name} qualified ${market}.`);
-    return {match:m,engine:id,engineId:id,engineName:name,version,fixtureId:fixtureId(m),status:publish?"qualified":"rejected",candidateMarket:publish?(MARKET_CODES[market]||market):null,candidateSide:side,
+    let result={match:m,engine:id,engineId:id,engineName:name,version,fixtureId:fixtureId(m),status:publish?"qualified":"rejected",candidateMarket:publish?(MARKET_CODES[market]||market):null,candidateSide:side,
       rawScore,finalScore:score,confidence,primary,market:primary,bet:publish,banker:publish&&score>=88,grade:confidence==="A1"?"A1 Banker":confidence==="A2"?"A2 Strong Pick":confidence==="watchlist"?"Watchlist":"No Bet",
       passedRules,failedRules,warnings,penalties,calculations,shortReason:reason,internalReason:internalReason||reason,reasons:[reason,...passedRules.slice(0,3).map(r=>r.label)],summary:publish?`${name}: ${market} (${score})`:`No Bet — ${reason}`,generatedAt:now()};
+    if(OddsGuard&&typeof OddsGuard.reviewDecision==="function")result=OddsGuard.reviewDecision(result,m);
+    return result;
   }
   function reject(m,id,name,version,reason,q,extra={}){return makeResult({m,id,name,version,score:0,quality:q&&q.score||0,warnings:q&&q.warnings||[],failedRules:[rule("DATA_QUALITY_FAILED",reason,q&&q.missingFields&&q.missingFields.join(", ")||null,"valid mandatory data",false,3)],shortReason:reason,...extra});}
 

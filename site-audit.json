@@ -1,9 +1,21 @@
 {
-  "generatedAt": "2026-07-15T00:53:13.835Z",
-  "engineCount": 20,
-  "expectedEngineCount": 20,
-  "multiEngineCount": 4,
-  "critical": [],
-  "warnings": [],
-  "passedCount": 36
+  "generatedAt": "2026-07-13T13:55:51.841Z",
+  "auditVersion": "v191",
+  "cacheVersion": "predict2u-v227",
+  "engineCount": 16,
+  "critical": [
+    "index.html: required local asset not found: data.js",
+    "board.html: required local asset not found: data.js",
+    "engines.html: required local asset not found: data.js",
+    "proof.html: required local asset not found: data.js",
+    "scorecards.html: required local asset not found: data.js",
+    "league-dna.html: required local asset not found: data.js",
+    "community.html: required local asset not found: data.js",
+    "community.html: required local asset not found: community.js",
+    "trust.html: required local asset not found: data.js"
+  ],
+  "warnings": [
+    "data.js is not present; live repository audit cannot validate fixtures."
+  ],
+  "passedCount": 261
 }

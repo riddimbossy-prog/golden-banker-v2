@@ -1,18 +1,25 @@
 {
-  "generatedAt": "2026-07-15T00:53:13.166Z",
-  "version": "v249",
+  "generatedAt": "2026-07-15T02:37:28.076Z",
+  "version": "v251",
   "label": "Operational",
   "status": "operational",
-  "dataUpdated": "2026-07-15T00:53:07.606Z",
-  "scoresUpdated": "2026-07-15T00:53:07.606Z",
+  "dataUpdated": "2026-07-14T01:46:19.084Z",
+  "scoresUpdated": "2026-07-14T07:22:17.023Z",
   "engineCount": 20,
   "expectedEngineCount": 20,
   "multiEngineCount": 4,
-  "matchCount": 4278,
-  "liveMatches": 55,
+  "matchCount": 2546,
+  "liveMatches": 37,
   "components": {
     "baseEngines": 16,
     "multiEngineSuite": 4,
-    "decisionCore": "orchestrator"
+    "decisionCore": "orchestrator",
+    "oddsApi": {
+      "configured": null,
+      "matchesUpdated": null,
+      "actualHtftMatches": null,
+      "derivedHtftMatches": null,
+      "quotaRemaining": null
+    }
   }
 }

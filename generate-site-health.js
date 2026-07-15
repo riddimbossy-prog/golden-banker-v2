@@ -19,12 +19,19 @@ try{
 const d=readData(),matches=Array.isArray(d.MATCHES)?d.MATCHES:[];
 const live=matches.filter(m=>{const s=String(m.status||"").toUpperCase();return /LIVE|1H|2H|HT|ET|BT|PEN/.test(s)||Number(m.minute)>0&&Number(m.minute)<130;}).length;
 const updated=d.DATA_UPDATED||d.SCORES_UPDATED||null;
-const build=(read("BUILD_VERSION.txt").trim()||"v243");
+const build=(read("BUILD_VERSION.txt").trim()||"v251");
+let oddsCoverage=null;try{oddsCoverage=JSON.parse(read("odds-api-coverage.json")||"null");}catch(_){}
 const health={
   generatedAt:new Date().toISOString(),version:build,label:engineCount===20?"Operational":"Engine registry check needed",
   status:engineCount===20?"operational":"degraded",dataUpdated:d.DATA_UPDATED||updated,scoresUpdated:d.SCORES_UPDATED||updated,
   engineCount,expectedEngineCount:20,multiEngineCount:4,matchCount:matches.length,liveMatches:live,
-  components:{baseEngines:Math.max(0,engineCount-4),multiEngineSuite:4,decisionCore:"orchestrator"}
+  components:{baseEngines:Math.max(0,engineCount-4),multiEngineSuite:4,decisionCore:"orchestrator",oddsApi:{
+    configured:oddsCoverage?oddsCoverage.keyPresent:null,
+    matchesUpdated:oddsCoverage?oddsCoverage.matchesUpdated:null,
+    actualHtftMatches:oddsCoverage?oddsCoverage.actualHtftMatches:null,
+    derivedHtftMatches:oddsCoverage?oddsCoverage.derivedHtftMatches:null,
+    quotaRemaining:oddsCoverage&&oddsCoverage.quota?oddsCoverage.quota.remaining:null
+  }}
 };
 fs.writeFileSync(path.join(HERE,"site-health.json"),JSON.stringify(health,null,2)+"\n");
 console.log(`Health generated: ${engineCount}/20 engines, ${matches.length} fixtures, ${live} live.`);
