@@ -1,23 +1,64 @@
 {
-  "generatedAt": "2026-07-16T06:10:04.932Z",
+  "generatedAt": "2026-07-16T11:15:00.020Z",
   "windowStart": "2026-07-16",
   "windowEnd": "2026-07-22",
-  "totalFixtures": 1627,
+  "totalFixtures": 1669,
   "daysRequested": 7,
+  "requestGapMs": 13000,
+  "staleFallbackDates": [],
+  "unresolvedDates": [],
   "dateCounts": {
-    "2026-07-16": 109,
-    "2026-07-17": 255,
-    "2026-07-18": 697,
-    "2026-07-19": 180,
-    "2026-07-20": 52,
-    "2026-07-21": 158,
-    "2026-07-22": 176
+    "2026-07-16": 110,
+    "2026-07-17": 257,
+    "2026-07-18": 713,
+    "2026-07-19": 189,
+    "2026-07-20": 51,
+    "2026-07-21": 168,
+    "2026-07-22": 181
   },
+  "apiFailedDates": [],
+  "dates": [
+    {
+      "date": "2026-07-16",
+      "games": 110,
+      "source": "api"
+    },
+    {
+      "date": "2026-07-17",
+      "games": 257,
+      "source": "api"
+    },
+    {
+      "date": "2026-07-18",
+      "games": 713,
+      "source": "api"
+    },
+    {
+      "date": "2026-07-19",
+      "games": 189,
+      "source": "api"
+    },
+    {
+      "date": "2026-07-20",
+      "games": 51,
+      "source": "api"
+    },
+    {
+      "date": "2026-07-21",
+      "games": 168,
+      "source": "api"
+    },
+    {
+      "date": "2026-07-22",
+      "games": 181,
+      "source": "api"
+    }
+  ],
   "leagues": [
     {
       "leagueId": 667,
       "league": "Friendlies Clubs",
-      "games": 649
+      "games": 677
     },
     {
       "leagueId": 185,
@@ -77,6 +118,11 @@
     {
       "leagueId": 369,
       "league": "Super League",
+      "games": 14
+    },
+    {
+      "leagueId": 2,
+      "league": "UEFA Champions League",
       "games": 14
     },
     {
@@ -147,11 +193,6 @@
     {
       "leagueId": 344,
       "league": "Primera División",
-      "games": 10
-    },
-    {
-      "leagueId": 2,
-      "league": "UEFA Champions League",
       "games": 10
     },
     {
@@ -495,6 +536,11 @@
       "games": 5
     },
     {
+      "leagueId": 969,
+      "league": "Primeira Divisão",
+      "games": 5
+    },
+    {
       "leagueId": 396,
       "league": "Primera Division",
       "games": 5
@@ -562,6 +608,11 @@
     {
       "leagueId": 1098,
       "league": "Paulista Série B",
+      "games": 4
+    },
+    {
+      "leagueId": 390,
+      "league": "Premier League",
       "games": 4
     },
     {
@@ -635,14 +686,14 @@
       "games": 2
     },
     {
-      "leagueId": 390,
-      "league": "Premier League",
-      "games": 2
-    },
-    {
       "leagueId": 1,
       "league": "World Cup",
       "games": 2
+    },
+    {
+      "leagueId": 1013,
+      "league": "All-Island Cup - Women",
+      "games": 1
     },
     {
       "leagueId": 74,
@@ -690,6 +741,11 @@
       "games": 1
     },
     {
+      "leagueId": 1167,
+      "league": "Recopa",
+      "games": 1
+    },
+    {
       "leagueId": 810,
       "league": "Super Copa",
       "games": 1
@@ -701,6 +757,11 @@
     },
     {
       "leagueId": 727,
+      "league": "Super Cup",
+      "games": 1
+    },
+    {
+      "leagueId": 663,
       "league": "Super Cup",
       "games": 1
     },
