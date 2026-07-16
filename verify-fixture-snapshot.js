@@ -36,8 +36,14 @@ const fixtures = parseAssignment(fs.readFileSync("fixtures.js", "utf8"), "FIXTUR
 const report = JSON.parse(fs.readFileSync("fixture-snapshot-report.json", "utf8"));
 if (!Array.isArray(fixtures) || !fixtures.length) throw new Error("fixtures.js contains no fixtures.");
 if (Number(report.totalFixtures) !== fixtures.length) throw new Error("Snapshot report count does not match fixtures.js.");
+if (Array.isArray(report.unresolvedDates) && report.unresolvedDates.length) {
+  throw new Error(`Snapshot has unresolved dates: ${report.unresolvedDates.join(", ")}`);
+}
 for (const fixture of fixtures) {
   if (!fixture.home || !fixture.away) throw new Error("A fixture is missing a team name.");
   if (!/^\d{4}-\d{2}-\d{2}$/.test(String(fixture.matchDate || ""))) throw new Error("A fixture has an invalid matchDate.");
 }
 console.log(`Fixture snapshot verified: ${fixtures.length} fixture(s), ${report.windowStart} through ${report.windowEnd}.`);
+if (Array.isArray(report.staleFallbackDates) && report.staleFallbackDates.length) {
+  console.warn(`Verified with previous-snapshot fallback for: ${report.staleFallbackDates.join(", ")}.`);
+}

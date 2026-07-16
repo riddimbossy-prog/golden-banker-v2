@@ -1,0 +1,3 @@
+fetch-fixtures-snapshot.js
+verify-fixture-snapshot.js
+.github/workflows/fixture-snapshot.yml

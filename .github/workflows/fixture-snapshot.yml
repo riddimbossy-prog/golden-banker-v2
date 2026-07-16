@@ -16,7 +16,7 @@ jobs:
   snapshot:
     name: Pull and publish seven-day fixtures
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repository
@@ -29,13 +29,16 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Pull every fixture by date
+      - name: Pull every fixture by date safely
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
           API_KEY: ${{ secrets.API_KEY }}
           DAYS_BACK: "0"
           DAYS_FWD: ${{ secrets.DAYS_FWD }}
-          FIXTURE_CONCURRENCY: "3"
+          FIXTURE_CONCURRENCY: "1"
+          FIXTURE_REQUEST_GAP_MS: "13000"
+          FIXTURE_RATE_LIMIT_WAIT_MS: "65000"
+          FIXTURE_MAX_RETRIES: "6"
         run: node fetch-fixtures-snapshot.js
 
       - name: Verify fixture snapshot
@@ -56,8 +59,6 @@ jobs:
 
           git commit -m "Refresh seven-day fixture snapshot"
 
-          # The analysis workflow may commit at the same time. Rebase and retry
-          # so this fast feed is not lost to a temporary push race.
           for attempt in 1 2 3; do
             git pull --rebase origin "${GITHUB_REF_NAME}"
             if git push origin "HEAD:${GITHUB_REF_NAME}"; then
