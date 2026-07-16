@@ -2,7 +2,7 @@ name: Predict2U Fast All Games
 
 on:
   schedule:
-    - cron: "15 2,14 * * *"
+    - cron: "30 2,14 * * *"
   workflow_dispatch:
 
 permissions:

@@ -1,0 +1,10 @@
+Replace these files:
+.github/workflows/future-fixtures.yml
+.github/workflows/fixture-snapshot.yml
+
+Do not replace generated files:
+data.js
+fixtures.js
+track-log.json
+api-cache.json
+odds-api-cache.json
