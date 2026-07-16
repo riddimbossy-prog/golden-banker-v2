@@ -16,7 +16,7 @@ jobs:
   discover:
     name: Discover every active league
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repository
@@ -37,7 +37,9 @@ jobs:
           DAYS_BACK: ${{ secrets.DAYS_BACK }}
           DAYS_FWD: ${{ secrets.DAYS_FWD }}
           SHARD_COUNT: "6"
-          DISCOVERY_CONCURRENCY: "3"
+          DISCOVERY_REQUEST_GAP_MS: "13000"
+          DISCOVERY_RATE_LIMIT_WAIT_MS: "70000"
+          DISCOVERY_MAX_RETRIES: "6"
         run: node discover-all-games.js
 
       - name: Upload discovery manifest
