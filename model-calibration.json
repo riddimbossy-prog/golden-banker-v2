@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-17T22:14:14.051Z",
+  "updated": "2026-07-17T23:17:53.405Z",
   "minSample": 300,
   "groups": {
     "LEM|USL League Two|Prime|Double Chance 1X|90-99": {
@@ -3094,14 +3094,14 @@
       "validated": false
     },
     "EM|*|trend|Under 3.5 Goals|80-89": {
-      "sample": 1,
-      "wins": 1,
+      "sample": 2,
+      "wins": 2,
       "losses": 0,
-      "lower": 0.2065,
+      "lower": 0.3424,
       "mid": 1,
       "upper": 1,
       "grade": "Learning",
-      "leagueReliability": 34.2,
+      "leagueReliability": 38.3,
       "validated": false
     },
     "LEM|Liga Pro|league-bias|Under 3.5 Goals|80-89": {
