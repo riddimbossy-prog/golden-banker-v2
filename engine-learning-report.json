@@ -1,13 +1,13 @@
 {
   "version": "v193",
-  "updated": "2026-07-17T06:24:28.356Z",
+  "updated": "2026-07-17T07:34:13.299Z",
   "summary": {
-    "settledFixtures": 111,
-    "settledDecisions": 250,
-    "reviewedLosses": 44,
-    "teamProfiles": 49,
-    "leagueProfiles": 10,
-    "matchupProfiles": 25,
+    "settledFixtures": 204,
+    "settledDecisions": 370,
+    "reviewedLosses": 59,
+    "teamProfiles": 145,
+    "leagueProfiles": 32,
+    "matchupProfiles": 73,
     "activePatternBreakers": 0,
     "upsetResistantTeams": 0
   },
@@ -16,7 +16,428 @@
   "dangerousUnderdogs": [],
   "volatileLeagues": [],
   "stableLeagues": [],
-  "commonMissCauses": [],
-  "recentLossReviews": [],
-  "methodology": {"forwardOnly":true,"decayHalfLifeDays":120,"positiveAdjustmentCap":2,"oneMarketOnly":true}
+  "commonMissCauses": [
+    {
+      "cause": "INPUT_COVERAGE_GAP",
+      "count": 59
+    },
+    {
+      "cause": "GOAL_SPIKE",
+      "count": 18
+    },
+    {
+      "cause": "RESULT_DIRECTION_MISS",
+      "count": 14
+    },
+    {
+      "cause": "DRAW_TRAP",
+      "count": 10
+    },
+    {
+      "cause": "BOTH_ATTACKS_BROKE_SUPPRESSION",
+      "count": 5
+    },
+    {
+      "cause": "TEMPO_COLLAPSE",
+      "count": 4
+    }
+  ],
+  "recentLossReviews": [
+    {
+      "matchDate": "2026-07-17",
+      "home": "Santo Domingo",
+      "away": "Deportivo Cuenca Juniors",
+      "league": "Liga Pro Serie B",
+      "engine": "Trend",
+      "market": "Double Chance 1X",
+      "score": "0-1",
+      "causes": [
+        "RESULT_DIRECTION_MISS",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-17",
+      "home": "Dothan United",
+      "away": "The Villages",
+      "league": "USL League Two",
+      "engine": "Halves",
+      "market": "Second Half Over 0.5",
+      "score": "0-1",
+      "causes": [
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-16",
+      "home": "Botafogo U20",
+      "away": "Santos U20",
+      "league": "Brasileiro U20 A",
+      "engine": "Halves",
+      "market": "Second Half Over 0.5",
+      "score": "1-0",
+      "causes": [
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-16",
+      "home": "Barcelona SC",
+      "away": "Guayaquil City FC",
+      "league": "Liga Pro",
+      "engine": "Normal",
+      "market": "Home Win",
+      "score": "1-1",
+      "causes": [
+        "DRAW_TRAP",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-16",
+      "home": "Barcelona SC",
+      "away": "Guayaquil City FC",
+      "league": "Liga Pro",
+      "engine": "Strict",
+      "market": "Home Win",
+      "score": "1-1",
+      "causes": [
+        "DRAW_TRAP",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-16",
+      "home": "Bunyodkor",
+      "away": "Nasaf",
+      "league": "Super League",
+      "engine": "League Bias",
+      "market": "Under 3.5 Goals",
+      "score": "1-3",
+      "causes": [
+        "GOAL_SPIKE",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-16",
+      "home": "Apollon Limassol",
+      "away": "AEK Larnaca",
+      "league": "Friendlies Clubs",
+      "engine": "League Bias",
+      "market": "Home Team Over 0.5 Goals",
+      "score": "0-0",
+      "causes": [
+        "DRAW_TRAP",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-16",
+      "home": "Bate Borisov",
+      "away": "AF Elbasani",
+      "league": "UEFA Europa Conference League",
+      "engine": "League Bias",
+      "market": "Home Team Over 0.5 Goals",
+      "score": "0-0",
+      "causes": [
+        "DRAW_TRAP",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-16",
+      "home": "Milsami Orhei",
+      "away": "Velež",
+      "league": "UEFA Europa Conference League",
+      "engine": "League Bias",
+      "market": "Home Team Over 0.5 Goals",
+      "score": "0-1",
+      "causes": [
+        "RESULT_DIRECTION_MISS",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-16",
+      "home": "Sileks",
+      "away": "Dinamo Minsk",
+      "league": "UEFA Europa Conference League",
+      "engine": "League Bias",
+      "market": "Home Team Over 0.5 Goals",
+      "score": "0-1",
+      "causes": [
+        "RESULT_DIRECTION_MISS",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-16",
+      "home": "Atletico FC",
+      "away": "San Antonio",
+      "league": "Liga Pro Serie B",
+      "engine": "League Bias",
+      "market": "Under 3.5 Goals",
+      "score": "4-1",
+      "causes": [
+        "GOAL_SPIKE",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-16",
+      "home": "CF Montreal",
+      "away": "Toronto FC",
+      "league": "Major League Soccer",
+      "engine": "Halves",
+      "market": "Second Half Over 0.5",
+      "score": "0-0",
+      "causes": [
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-15",
+      "home": "Solihull Moors",
+      "away": "Birmingham",
+      "league": "Friendlies Clubs",
+      "engine": "League Bias",
+      "market": "Home Team Over 0.5 Goals",
+      "score": "0-3",
+      "causes": [
+        "RESULT_DIRECTION_MISS",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-15",
+      "home": "Vitesse",
+      "away": "AEK Athens FC",
+      "league": "Friendlies Clubs",
+      "engine": "League Bias",
+      "market": "Home Team Over 0.5 Goals",
+      "score": "0-0",
+      "causes": [
+        "DRAW_TRAP",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-15",
+      "home": "Hercílio Luz",
+      "away": "Juventus SC",
+      "league": "Catarinense - 2",
+      "engine": "Halves",
+      "market": "Second Half Over 0.5",
+      "score": "1-0",
+      "causes": [
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-14",
+      "home": "Deportivo Merlo",
+      "away": "Real Pilar",
+      "league": "Primera B Metropolitana",
+      "engine": "League Bias",
+      "market": "Under 3.5 Goals",
+      "score": "3-2",
+      "causes": [
+        "GOAL_SPIKE",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-13",
+      "home": "Academica",
+      "away": "SF Glens",
+      "league": "USL League Two",
+      "engine": "Normal",
+      "market": "Double Chance X2",
+      "score": "2-1",
+      "causes": [
+        "RESULT_DIRECTION_MISS",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-12",
+      "home": "Unión Villa Krause",
+      "away": "Flatirons Rush",
+      "league": "USL League Two",
+      "engine": "Halves",
+      "market": "Second Half Over 0.5",
+      "score": "0-1",
+      "causes": [
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-12",
+      "home": "Dothan United",
+      "away": "Apotheos",
+      "league": "USL League Two",
+      "engine": "Halves",
+      "market": "Second Half Over 0.5",
+      "score": "3-0",
+      "causes": [
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-12",
+      "home": "Northern Indiana",
+      "away": "Dayton Dutch Lions",
+      "league": "USL League Two",
+      "engine": "Trend",
+      "market": "Home Team Over 0.5 Goals",
+      "score": "0-0",
+      "causes": [
+        "DRAW_TRAP",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-12",
+      "home": "Northern Indiana",
+      "away": "Dayton Dutch Lions",
+      "league": "USL League Two",
+      "engine": "Halves",
+      "market": "Second Half Over 0.5",
+      "score": "0-0",
+      "causes": [
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-11",
+      "home": "Sorrento",
+      "away": "Fremantle City",
+      "league": "Western Australia NPL",
+      "engine": "Halves",
+      "market": "Second Half Over 0.5",
+      "score": "0-2",
+      "causes": [
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-11",
+      "home": "Hickory",
+      "away": "Asheville City",
+      "league": "USL League Two",
+      "engine": "Trend",
+      "market": "Away Team Over 0.5 Goals",
+      "score": "0-0",
+      "causes": [
+        "DRAW_TRAP",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-11",
+      "home": "PA Classics",
+      "away": "West Chester United",
+      "league": "USL League Two",
+      "engine": "League Bias",
+      "market": "Away Team Over 0.5 Goals",
+      "score": "1-0",
+      "causes": [
+        "RESULT_DIRECTION_MISS",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-05",
+      "home": "GFI",
+      "away": "Houston Sur",
+      "league": "USL League Two",
+      "engine": "Prime",
+      "market": "Under 3.5",
+      "score": "4-0",
+      "causes": [
+        "GOAL_SPIKE",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-05",
+      "home": "Jackson Boom",
+      "away": "Mississippi Brilla",
+      "league": "USL League Two",
+      "engine": "Normal",
+      "market": "Under 2.5",
+      "score": "0-5",
+      "causes": [
+        "GOAL_SPIKE",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-05",
+      "home": "Jackson Boom",
+      "away": "Mississippi Brilla",
+      "league": "USL League Two",
+      "engine": "Prime",
+      "market": "Under 3.5",
+      "score": "0-5",
+      "causes": [
+        "GOAL_SPIKE",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-05",
+      "home": "Jackson Boom",
+      "away": "Mississippi Brilla",
+      "league": "USL League Two",
+      "engine": "Value",
+      "market": "Under 2.5",
+      "score": "0-5",
+      "causes": [
+        "GOAL_SPIKE",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-05",
+      "home": "Jackson Boom",
+      "away": "Mississippi Brilla",
+      "league": "USL League Two",
+      "engine": "Pro",
+      "market": "Under 2.5",
+      "score": "0-5",
+      "causes": [
+        "GOAL_SPIKE",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-05",
+      "home": "McKinney Chupacabras",
+      "away": "Texoma",
+      "league": "USL League Two",
+      "engine": "Prime",
+      "market": "Home Team Over 0.5 Goals",
+      "score": "0-2",
+      "causes": [
+        "RESULT_DIRECTION_MISS",
+        "INPUT_COVERAGE_GAP"
+      ]
+    }
+  ],
+  "methodology": {
+    "forwardOnly": true,
+    "minimumSamples": {
+      "teamFavorite": 5,
+      "teamUnderdog": 5,
+      "league": 12,
+      "matchup": 2,
+      "context": 6,
+      "hardVeto": 8
+    },
+    "decayHalfLifeDays": 120,
+    "positiveAdjustmentCap": 2,
+    "oneMarketOnly": true
+  }
 }

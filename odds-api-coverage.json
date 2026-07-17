@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-17T06:21:57.403Z",
+  "generatedAt": "2026-07-17T07:32:09.544Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -24,20 +24,12 @@
       "matches": 18
     },
     {
-      "league": "USL League Two",
-      "country": "USA",
-      "sportKey": "soccer_usa_mls",
-      "sportTitle": "MLS",
-      "score": 0.466,
-      "matches": 11
-    },
-    {
-      "league": "Liga MX",
-      "country": "Mexico",
-      "sportKey": "soccer_mexico_ligamx",
-      "sportTitle": "Liga MX",
-      "score": 1,
-      "matches": 10
+      "league": "Friendlies Clubs",
+      "country": "World",
+      "sportKey": "soccer_fifa_world_cup",
+      "sportTitle": "FIFA World Cup",
+      "score": 0.323,
+      "matches": 654
     },
     {
       "league": "Friendlies Clubs",
@@ -126,6 +118,14 @@
       "sportTitle": "Veikkausliiga - Finland",
       "score": 0.323,
       "matches": 6
+    },
+    {
+      "league": "USL League Two",
+      "country": "USA",
+      "sportKey": "soccer_usa_mls",
+      "sportTitle": "MLS",
+      "score": 0.466,
+      "matches": 10
     },
     {
       "league": "Ykkösliiga",
@@ -294,6 +294,14 @@
       "sportTitle": "Primera División - Argentina",
       "score": 0.653,
       "matches": 8
+    },
+    {
+      "league": "Liga MX",
+      "country": "Mexico",
+      "sportKey": "soccer_mexico_ligamx",
+      "sportTitle": "Liga MX",
+      "score": 1,
+      "matches": 9
     },
     {
       "league": "USL League One",
@@ -720,7 +728,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1653,
+  "matchesConsidered": 1650,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1409,12 +1417,6 @@
     },
     {
       "league": "USL League Two",
-      "home": "Laredo Heat",
-      "away": "Texoma",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "USL League Two",
       "home": "Charlotte Independence 2",
       "away": "Appalachian",
       "reason": "No event/team match"
@@ -1741,126 +1743,6 @@
       "league": "USL Championship",
       "home": "Colorado Springs",
       "away": "Miami FC",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Club Tijuana",
-      "away": "Tigres UANL",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Atletico San Luis",
-      "away": "Cruz Azul",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Leon",
-      "away": "Atlas",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "FC Juarez",
-      "away": "Puebla",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "U.N.A.M. - Pumas",
-      "away": "CF Pachuca",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Monterrey",
-      "away": "Santos Laguna",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Guadalajara Chivas",
-      "away": "Toluca",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Club Queretaro",
-      "away": "Club America",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Cruz Azul",
-      "away": "Puebla",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Toluca",
-      "away": "U.N.A.M. - Pumas",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Atl. San Luis U21",
-      "away": "Cruz Azul U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Club Leon U21",
-      "away": "Atlas U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Juarez U21",
-      "away": "Puebla U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Guadalajara Chivas U21",
-      "away": "Toluca U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Monterrey U21",
-      "away": "Santos Laguna U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Queretaro U21",
-      "away": "Club America U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "UNAM Pumas U21",
-      "away": "Pachuca U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Cruz Azul U21",
-      "away": "Puebla U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Toluca U21",
-      "away": "UNAM Pumas U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "FC Bacau",
-      "away": "Gloria Bistriţa",
       "reason": "No event/team match"
     },
     {
@@ -2228,6 +2110,132 @@
       "home": "Wolfsberger AC",
       "away": "SV Kapfenberg",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Bayreuth",
+      "away": "FC Carl Zeiss Jena",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "FC Astoria Walldorf",
+      "away": "SV Darmstadt 98",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Ústí nad Labem",
+      "away": "Dukla Praha",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Rodez",
+      "away": "Cannes",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Oudenaarde",
+      "away": "Club Brugge II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Falkenbergs FF",
+      "away": "Laholm",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "FC Viktoria Köln",
+      "away": "SV Elversberg",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "BFC Dynamo",
+      "away": "BAK '07",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Mladost DG",
+      "away": "FK Vozdovac",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Rapid Wien II",
+      "away": "Wiener SC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "FC 08 Homburg",
+      "away": "Pirmasens",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Olympiakos Piraeus",
+      "away": "Fortuna Sittard",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "PAU",
+      "away": "Bayonne",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "WSG Wattens",
+      "away": "Hertha BSC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Eldense",
+      "away": "Millwall",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Krems / Rehberg",
+      "away": "SKU Amstetten",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Luckenwalde",
+      "away": "Germania Halberstadt",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Dunajska Streda",
+      "away": "Bolton",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "FC Winterthur",
+      "away": "Union Berlin",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Club Brugge KV",
+      "away": "Heerenveen",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Gloggnitz",
+      "away": "Weiz",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -2256,15 +2264,15 @@
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_mexico_ligamx",
+      "sportKey": "soccer_fifa_world_cup",
       "market": "btts"
     },
     {
-      "sportKey": "soccer_mexico_ligamx",
+      "sportKey": "soccer_fifa_world_cup",
       "market": "draw_no_bet"
     },
     {
-      "sportKey": "soccer_mexico_ligamx",
+      "sportKey": "soccer_fifa_world_cup",
       "market": "double_chance"
     },
     {
@@ -2313,6 +2321,18 @@
     },
     {
       "sportKey": "soccer_brazil_campeonato",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_mexico_ligamx",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_mexico_ligamx",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_mexico_ligamx",
       "market": "double_chance"
     },
     {
@@ -2512,27 +2532,27 @@
       "statusCode": 422
     },
     {
-      "label": "soccer_mexico_ligamx:base-combined",
+      "label": "soccer_fifa_world_cup:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
     },
     {
-      "label": "soccer_mexico_ligamx:base-core",
+      "label": "soccer_fifa_world_cup:base-core",
       "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
       "statusCode": 422
     },
     {
-      "label": "soccer_mexico_ligamx:btts",
+      "label": "soccer_fifa_world_cup:btts",
       "error": "Markets not supported by this endpoint: btts",
       "statusCode": 422
     },
     {
-      "label": "soccer_mexico_ligamx:draw_no_bet",
+      "label": "soccer_fifa_world_cup:draw_no_bet",
       "error": "Markets not supported by this endpoint: draw_no_bet",
       "statusCode": 422
     },
     {
-      "label": "soccer_mexico_ligamx:double_chance",
+      "label": "soccer_fifa_world_cup:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -2633,6 +2653,31 @@
     },
     {
       "label": "soccer_brazil_campeonato:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_mexico_ligamx:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_mexico_ligamx:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_mexico_ligamx:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_mexico_ligamx:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_mexico_ligamx:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -2944,5 +2989,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-17T06:22:08.391Z"
+  "completedAt": "2026-07-17T07:32:16.331Z"
 }
