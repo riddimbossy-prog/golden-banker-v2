@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-17T19:55:38.058Z",
+  "generatedAt": "2026-07-17T20:03:23.500Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,7 +13,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 654
+      "matches": 651
     },
     {
       "league": "Youth Championship",
@@ -21,7 +21,7 @@
       "sportKey": "soccer_russia_premier_league",
       "sportTitle": "Premier League - Russia",
       "score": 0.323,
-      "matches": 8
+      "matches": 7
     },
     {
       "league": "Victoria Premier League 2",
@@ -728,7 +728,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1646,
+  "matchesConsidered": 1642,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1036,24 +1036,6 @@
       "country": "Colombia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.2
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Aragvi Dusheti",
-      "away": "FC Urartu",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "FC Ryukyu",
-      "away": "Urawa",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "ASA Targu Mures",
-      "away": "Metaloglobus",
-      "reason": "No event/team match"
     },
     {
       "league": "Friendlies Clubs",
@@ -2236,6 +2218,24 @@
       "home": "Ujpest",
       "away": "Radnik Bijeljina",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "SG Sonnenhof Grossaspach",
+      "away": "Hoffenheim II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Stal Rzeszów",
+      "away": "Ruh Lviv",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Akron",
+      "away": "Krylia Sovetov",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -3026,5 +3026,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-17T19:55:42.743Z"
+  "completedAt": "2026-07-17T20:03:37.550Z"
 }
