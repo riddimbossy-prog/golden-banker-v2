@@ -1,0 +1,18 @@
+{
+  "version": "v257",
+  "scope": "Mobile and foldable UI repair",
+  "checks": {
+    "javascriptSyntax": "passed",
+    "cssBraceBalance": "passed",
+    "mainPagesLinkedToRescueStylesheet": 14,
+    "serviceWorkerCoreFilesPresent": 51,
+    "unresolvedConflictMarkers": 0
+  },
+  "testedBreakpointsByRules": [
+    "up to 860px foldable/compact",
+    "up to 560px phone",
+    "up to 390px narrow phone",
+    "up to 300px cover screen",
+    "short landscape fold posture"
+  ]
+}

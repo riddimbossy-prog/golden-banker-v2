@@ -1,5 +1,13 @@
 (function(){
   'use strict';
+  // v257: load the foldable/mobile rescue layer before mounting navigation.
+  if(!document.querySelector('link[data-p2u-mobile-zfold-v257]')){
+    const rescue=document.createElement('link');
+    rescue.rel='stylesheet';
+    rescue.href='mobile-zfold-v257.css';
+    rescue.dataset.p2uMobileZfoldV257='true';
+    document.head.appendChild(rescue);
+  }
   if(document.querySelector('.p2u-v245-nav-wrap')) return;
 
   document.querySelectorAll('.p2u-v227-nav-wrap,.p2u-v227-dock,.p2u-v227-more-backdrop,.p2u-phase2-nav-wrap,.p2u-phase2-dock,.p2u-mobile-app-nav').forEach(node=>node.remove());

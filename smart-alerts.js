@@ -3,7 +3,15 @@
 (function(){
   "use strict";
 
-  const VERSION="v189";
+  const VERSION="v257";
+  // Self-heal the notification drawer even when an older page shell is cached.
+  if(!document.querySelector('link[data-p2u-mobile-zfold-v257]')){
+    const rescue=document.createElement('link');
+    rescue.rel='stylesheet';
+    rescue.href='mobile-zfold-v257.css';
+    rescue.dataset.p2uMobileZfoldV257='true';
+    document.head.appendChild(rescue);
+  }
   const STORE="p2u-smart-alerts-v168";
   const MATCH_STORE="p2u-smart-alerts-match-snapshot-v168";
   const COMMUNITY_STORE="p2u-smart-alerts-community-seen-v168";
