@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-17T21:14:16.391Z",
+  "generatedAt": "2026-07-17T21:24:36.186Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,7 +13,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 568
+      "matches": 567
     },
     {
       "league": "Brasileiro Women",
@@ -40,14 +40,6 @@
       "matches": 8
     },
     {
-      "league": "Primera C",
-      "country": "Argentina",
-      "sportKey": "soccer_argentina_primera_division",
-      "sportTitle": "Primera División - Argentina",
-      "score": 0.513,
-      "matches": 10
-    },
-    {
       "league": "Primera División",
       "country": "Peru",
       "sportKey": "soccer_argentina_primera_division",
@@ -61,7 +53,7 @@
       "sportKey": "soccer_argentina_primera_division",
       "sportTitle": "Primera División - Argentina",
       "score": 0.513,
-      "matches": 18
+      "matches": 17
     },
     {
       "league": "FAI Cup",
@@ -512,12 +504,20 @@
       "matches": 11
     },
     {
+      "league": "Primera C",
+      "country": "Argentina",
+      "sportKey": "soccer_argentina_primera_division",
+      "sportTitle": "Primera División - Argentina",
+      "score": 0.513,
+      "matches": 9
+    },
+    {
       "league": "Torneo Promocional Amateur",
       "country": "Argentina",
       "sportKey": "soccer_argentina_primera_division",
       "sportTitle": "Primera División - Argentina",
       "score": 0.305,
-      "matches": 7
+      "matches": 6
     },
     {
       "league": "All-Island Cup - Women",
@@ -592,14 +592,6 @@
       "matches": 2
     },
     {
-      "league": "Premier League",
-      "country": "Lebanon",
-      "sportKey": "soccer_epl",
-      "sportTitle": "EPL",
-      "score": 0.987,
-      "matches": 3
-    },
-    {
       "league": "Copa Rio",
       "country": "Brazil",
       "sportKey": "soccer_brazil_campeonato",
@@ -614,6 +606,14 @@
       "sportTitle": "Super League - China",
       "score": 0.305,
       "matches": 8
+    },
+    {
+      "league": "Premier League",
+      "country": "Lebanon",
+      "sportKey": "soccer_epl",
+      "sportTitle": "EPL",
+      "score": 0.987,
+      "matches": 1
     },
     {
       "league": "Nasjonal U19 Champions League",
@@ -693,15 +693,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.305,
-      "matches": 48
-    },
-    {
-      "league": "Brasileiro U20 A",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.43,
-      "matches": 2
+      "matches": 26
     },
     {
       "league": "UEFA Europa League",
@@ -709,7 +701,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.305,
-      "matches": 9
+      "matches": 4
     },
     {
       "league": "Regionalliga - Bayern",
@@ -728,7 +720,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1515,
+  "matchesConsidered": 1478,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1026,12 +1018,6 @@
       "bestScore": 0.2
     },
     {
-      "league": "Persian Gulf Pro League",
-      "country": "Iran",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.111
-    },
-    {
       "league": "1. Division",
       "country": "Kazakhstan",
       "reason": "No matching soccer sport key",
@@ -1045,18 +1031,6 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Třinec",
-      "away": "Sigma Olomouc II",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "FC Bacau",
-      "away": "Gloria Bistriţa",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Odra Opole",
       "away": "Ironi Kiryat Shmona",
       "reason": "No event/team match"
@@ -1065,6 +1039,12 @@
       "league": "Friendlies Clubs",
       "home": "Star Starachowice",
       "away": "Moravia Morawica",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Třinec",
+      "away": "Sigma Olomouc II",
       "reason": "No event/team match"
     },
     {
@@ -1231,12 +1211,6 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Lokomotiv",
-      "away": "Rubin",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Spišská Nová Ves",
       "away": "Rimavská Sobota",
       "reason": "No event/team match"
@@ -1381,18 +1355,6 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Kisvarda FC",
-      "away": "Zemplín Michalovce",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Busko-Zdroj",
-      "away": "Naprzód",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Odra Opole",
       "away": "Baník Ostrava II",
       "reason": "No event/team match"
@@ -1519,8 +1481,8 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Nieciecza",
-      "away": "Podbeskidzie",
+      "home": "Podbeskidzie",
+      "away": "Nieciecza",
       "reason": "No event/team match"
     },
     {
@@ -1585,6 +1547,12 @@
     },
     {
       "league": "Friendlies Clubs",
+      "home": "Kisvarda FC",
+      "away": "Zemplín Michalovce",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
       "home": "Optik Rathenow",
       "away": "Ludwigsfelde",
       "reason": "No event/team match"
@@ -1627,12 +1595,6 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Twente",
-      "away": "Gent",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Unia Skierniewice",
       "away": "Kalisz",
       "reason": "No event/team match"
@@ -1647,6 +1609,12 @@
       "league": "Friendlies Clubs",
       "home": "Crystal Palace",
       "away": "Swindon Town",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Busko-Zdroj",
+      "away": "Naprzód",
       "reason": "No event/team match"
     },
     {
@@ -2235,6 +2203,30 @@
       "league": "Friendlies Clubs",
       "home": "Westfalia Rhynern",
       "away": "Schonnebeck",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Hapoel Haifa",
+      "away": "Arkadag",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Slavičín",
+      "away": "Vsetín",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Hibernian",
+      "away": "Brondby",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Essingen",
+      "away": "VfR Aalen",
       "reason": "No event/team match"
     }
   ],
@@ -3026,5 +3018,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-17T21:14:23.700Z"
+  "completedAt": "2026-07-17T21:24:51.104Z"
 }
