@@ -1,7 +1,7 @@
 {
   "version": "v193",
   "schemaVersion": 1,
-  "updated": "2026-07-17T21:10:13.727Z",
+  "updated": "2026-07-17T22:14:18.480Z",
   "minimumSamples": {
     "teamFavorite": 5,
     "teamUnderdog": 5,
@@ -12,10 +12,10 @@
   },
   "decayHalfLifeDays": 120,
   "summary": {
-    "settledFixtures": 123,
-    "settledDecisions": 266,
+    "settledFixtures": 125,
+    "settledDecisions": 268,
     "reviewedLosses": 46,
-    "attachedUpcoming": 1674,
+    "attachedUpcoming": 1668,
     "highRiskUpcoming": 0,
     "stableUpcoming": 0
   },
@@ -4205,7 +4205,7 @@
           "mid": 0.5714,
           "upper": 0.8418
         },
-        "decayedWeight": 6.86
+        "decayedWeight": 6.85
       },
       "awayFavorites": {
         "sample": 2,
@@ -7203,15 +7203,15 @@
       "hardVeto": false
     },
     "*|Normal|Home Win|unknown|other": {
-      "sample": 4,
-      "wins": 2,
+      "sample": 5,
+      "wins": 3,
       "losses": 2,
-      "winRate": 0.5,
-      "lossRate": 0.5,
+      "winRate": 0.6,
+      "lossRate": 0.4,
       "wilson": {
-        "lower": 0.15,
-        "mid": 0.5,
-        "upper": 0.85
+        "lower": 0.2307,
+        "mid": 0.6,
+        "upper": 0.8824
       },
       "adjustment": 0,
       "hardVeto": false
@@ -8743,13 +8743,13 @@
       "hardVeto": false
     },
     "*|Trend|Under 3.5 Goals|2.26+|other": {
-      "sample": 1,
-      "wins": 1,
+      "sample": 2,
+      "wins": 2,
       "losses": 0,
       "winRate": 1,
       "lossRate": 0,
       "wilson": {
-        "lower": 0.2065,
+        "lower": 0.3424,
         "mid": 1,
         "upper": 1
       },
@@ -9079,6 +9079,34 @@
       "hardVeto": false
     },
     "usl championship|Halves|Second Half Over 0.5|1.61-1.85|other": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "winRate": 1,
+      "lossRate": 0,
+      "wilson": {
+        "lower": 0.2065,
+        "mid": 1,
+        "upper": 1
+      },
+      "adjustment": 0,
+      "hardVeto": false
+    },
+    "oberliga bayern s d|Normal|Home Win|unknown|other": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "winRate": 1,
+      "lossRate": 0,
+      "wilson": {
+        "lower": 0.2065,
+        "mid": 1,
+        "upper": 1
+      },
+      "adjustment": 0,
+      "hardVeto": false
+    },
+    "torneo promocional amateur|Trend|Under 3.5 Goals|2.26+|other": {
       "sample": 1,
       "wins": 1,
       "losses": 0,
