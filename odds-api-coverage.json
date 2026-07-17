@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-17T22:25:23.992Z",
+  "generatedAt": "2026-07-17T22:34:19.214Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,7 +13,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 563
+      "matches": 562
     },
     {
       "league": "Brasileiro Women",
@@ -728,7 +728,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1490,
+  "matchesConsidered": 1489,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1036,12 +1036,6 @@
       "country": "Kazakhstan",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Roda",
-      "away": "Beerschot VA",
-      "reason": "No event/team match"
     },
     {
       "league": "Friendlies Clubs",
@@ -2236,6 +2230,12 @@
       "home": "Lausanne",
       "away": "Yverdon Sport",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Northampton",
+      "away": "Coventry",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -3026,5 +3026,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-17T22:25:38.181Z"
+  "completedAt": "2026-07-17T22:34:27.880Z"
 }
