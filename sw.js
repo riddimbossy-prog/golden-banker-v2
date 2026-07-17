@@ -1,10 +1,10 @@
-/* Predict2U service worker v257 — fast core install, bounded caches,
+/* Predict2U service worker v258 — fast core install, bounded caches,
    native-install support, exact push deep links and recoverable offline navigation. */
-const VERSION='v257';
-const CACHE_VERSION='predict2u-v257';
+const VERSION='v258';
+const CACHE_VERSION='predict2u-v258';
 const APP_CACHE=CACHE_VERSION;
-const RUNTIME_CACHE='predict2u-runtime-v257';
-const IMAGE_CACHE='predict2u-images-v257';
+const RUNTIME_CACHE='predict2u-runtime-v258';
+const IMAGE_CACHE='predict2u-images-v258';
 const IMAGE_LIMIT=90;
 const RUNTIME_LIMIT=90;
 const NETWORK_TIMEOUT=2800;

@@ -129,3 +129,18 @@ body.p2u-alerts-open{ overflow:hidden; }
 @media(prefers-reduced-motion:reduce){
   .p2u-alert-backdrop,.p2u-alert-panel,.p2u-alert-switch::after{ transition:none!important; }
 }
+
+
+/* v258: resilient notification center on home, phones and foldables. */
+.p2u-alert-panel,.p2u-alert-panel *{box-sizing:border-box}
+.p2u-alert-item{max-width:100%;min-width:0}
+.p2u-alert-item-copy,.p2u-alert-item-copy h3,.p2u-alert-item-copy p{min-width:0;max-width:100%}
+.p2u-alert-item-copy h3,.p2u-alert-item-copy p{overflow-wrap:anywhere;word-break:break-word}
+.p2u-alert-backdrop{overscroll-behavior:contain}
+.p2u-alert-list{-webkit-overflow-scrolling:touch}
+.p2u-alert-tabs{scroll-snap-type:x proximity}
+.p2u-alert-tab{scroll-snap-align:start}
+@media(max-width:640px){
+  .p2u-alert-panel{height:100dvh;max-height:100dvh;border-radius:0}
+  .p2u-alert-foot{padding-bottom:calc(12px + env(safe-area-inset-bottom,0px))}
+}

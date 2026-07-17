@@ -3,19 +3,31 @@
 (function(){
   "use strict";
 
-  const VERSION="v257";
-  // Self-heal the notification drawer even when an older page shell is cached.
-  if(!document.querySelector('link[data-p2u-mobile-zfold-v257]')){
-    const rescue=document.createElement('link');
-    rescue.rel='stylesheet';
-    rescue.href='mobile-zfold-v257.css';
-    rescue.dataset.p2uMobileZfoldV257='true';
-    document.head.appendChild(rescue);
+  const VERSION="v258";
+  // Self-heal the notification drawer even when an older page shell is cached
+  // or a page forgot to include the alert stylesheet.
+  function ensureStylesheet(href,selector,attribute){
+    if(document.querySelector(selector))return;
+    const link=document.createElement("link");
+    link.rel="stylesheet";
+    link.href=href;
+    if(attribute)link.setAttribute(attribute,"true");
+    document.head.appendChild(link);
+  }
+  ensureStylesheet("smart-alerts.css","link[href*='smart-alerts.css']","data-p2u-smart-alerts-style");
+  ensureStylesheet("mobile-zfold-v257.css","link[href*='mobile-zfold-v257.css']","data-p2u-mobile-zfold-v257");
+
+  // Critical layout prevents a flash of unstyled notification links while CSS loads.
+  if(!document.getElementById("p2u-alert-critical-v258")){
+    const critical=document.createElement("style");
+    critical.id="p2u-alert-critical-v258";
+    critical.textContent=".p2u-alert-backdrop{position:fixed;inset:0;z-index:10050;display:flex;justify-content:flex-end;opacity:0;visibility:hidden;background:rgba(0,0,0,.68)}.p2u-alert-backdrop.is-open{opacity:1;visibility:visible}.p2u-alert-panel{width:min(440px,100vw);height:100dvh;max-height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#080b12;color:#f7f9fc}.p2u-alert-list{flex:1;overflow:auto}.p2u-alert-item{display:grid;grid-template-columns:40px minmax(0,1fr);text-decoration:none;color:inherit}.p2u-alert-item-copy{min-width:0}.p2u-alert-item-copy h3,.p2u-alert-item-copy p{overflow-wrap:anywhere}.p2u-alert-tabs{display:flex;overflow-x:auto}.p2u-alerts-open .p2u-v245-dock{visibility:hidden!important;pointer-events:none!important}";
+    document.head.appendChild(critical);
   }
   const STORE="p2u-smart-alerts-v168";
   const MATCH_STORE="p2u-smart-alerts-match-snapshot-v168";
   const COMMUNITY_STORE="p2u-smart-alerts-community-seen-v168";
-  const MAX_ALERTS=80;
+  const MAX_ALERTS=48;
   const MAX_COMMUNITY_SEEN=240;
   const DAY=86400000;
   const defaults={
@@ -53,7 +65,21 @@
   function load(){
     try{
       const saved=asRecord(safeParse(localStorage.getItem(STORE),{}));
-      const alerts=Array.isArray(saved.alerts)?saved.alerts.slice(0,MAX_ALERTS):[];
+      const source=Array.isArray(saved.alerts)?saved.alerts:[];
+      const cutoff=Date.now()-(14*DAY);
+      const seen=new Set();
+      let boardKept=false;
+      const alerts=source.filter(item=>{
+        if(!item||typeof item!=="object")return false;
+        const created=Number(item.createdAt)||Date.now();
+        if(created<cutoff)return false;
+        const category=String(item.category||item.kind||"system");
+        if(category==="board"){if(boardKept)return false;boardKept=true;}
+        const key=`${category}|${String(item.title||"")}|${String(item.body||"")}`;
+        if(seen.has(key))return false;
+        seen.add(key);
+        return true;
+      }).slice(0,MAX_ALERTS);
       return Object.assign({},defaults,saved,{alerts});
     }catch(_){ return Object.assign({},defaults); }
   }
@@ -128,6 +154,14 @@
     }
     const id=String(payload.id||`${category}-${hash(`${payload.title}|${payload.body}|${payload.createdAt||""}`)}`);
     if(state.alerts.some(item=>item.id===id))return null;
+    const signature=`${category}|${clean(payload.title,90)}|${clean(payload.body,220)}`;
+    // Keep one current board publication notice and collapse exact repeats.
+    state.alerts=state.alerts.filter(item=>{
+      const itemCategory=String(item.category||item.kind||"system");
+      if(category==="board"&&itemCategory==="board")return false;
+      const itemSignature=`${itemCategory}|${String(item.title||"")}|${String(item.body||"")}`;
+      return itemSignature!==signature;
+    });
     const favorite=relevantToFavorites(payload)&&Boolean(payload.league||payload.engine);
     const alert={
       id,

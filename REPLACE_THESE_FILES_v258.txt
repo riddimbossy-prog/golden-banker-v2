@@ -1,0 +1,16 @@
+Replace these files in the repository root:
+
+index.html
+all-engines.html
+smart-alerts.js
+smart-alerts.css
+mobile-zfold-v257.css
+sw.js
+BUILD_VERSION.txt
+
+Documentation:
+INSTALL_v258.md
+MOBILE_ALERTS_FIX_v258.md
+REPLACE_THESE_FILES_v258.txt
+
+Do not replace generated data files. This patch contains none.
