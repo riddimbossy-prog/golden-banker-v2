@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-18T23:33:40.220Z",
+  "generatedAt": "2026-07-18T23:45:46.504Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,7 +13,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 273
+      "matches": 272
     },
     {
       "league": "Kansallinen Liiga",
@@ -96,36 +96,12 @@
       "matches": 10
     },
     {
-      "league": "Serie B",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_serie_b",
-      "sportTitle": "Brazil Série B",
-      "score": 1,
-      "matches": 11
-    },
-    {
-      "league": "World Cup",
-      "country": "World",
-      "sportKey": "soccer_fifa_world_cup",
-      "sportTitle": "FIFA World Cup",
-      "score": 0.9,
-      "matches": 2
-    },
-    {
       "league": "MLS Next Pro",
       "country": "USA",
       "sportKey": "soccer_usa_mls",
       "sportTitle": "MLS",
       "score": 1,
       "matches": 15
-    },
-    {
-      "league": "Serie D",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.466,
-      "matches": 4
     },
     {
       "league": "Copa De La Liga",
@@ -149,6 +125,14 @@
       "sportKey": "soccer_spain_la_liga",
       "sportTitle": "La Liga - Spain",
       "score": 0.5,
+      "matches": 3
+    },
+    {
+      "league": "Serie D",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.466,
       "matches": 3
     },
     {
@@ -400,6 +384,14 @@
       "matches": 2
     },
     {
+      "league": "World Cup",
+      "country": "World",
+      "sportKey": "soccer_fifa_world_cup",
+      "sportTitle": "FIFA World Cup",
+      "score": 0.9,
+      "matches": 1
+    },
+    {
       "league": "Premier League",
       "country": "Lebanon",
       "sportKey": "soccer_epl",
@@ -574,6 +566,14 @@
       "sportTitle": "Brazil Série A",
       "score": 0.929,
       "matches": 7
+    },
+    {
+      "league": "Serie B",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_serie_b",
+      "sportTitle": "Brazil Série B",
+      "score": 1,
+      "matches": 10
     },
     {
       "league": "UEFA Champions League Women",
@@ -848,7 +848,7 @@
       "matches": 3
     }
   ],
-  "matchesConsidered": 1049,
+  "matchesConsidered": 1043,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -882,14 +882,14 @@
       "bestScore": 0.222
     },
     {
-      "league": "Liga Pro",
-      "country": "Ecuador",
+      "league": "Segunda División",
+      "country": "Uruguay",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
     },
     {
-      "league": "Segunda División",
-      "country": "Uruguay",
+      "league": "Liga Pro",
+      "country": "Ecuador",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
     },
@@ -1227,12 +1227,6 @@
       "league": "Friendlies Clubs",
       "home": "Lusitânia Lourosa",
       "away": "SC Braga B",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Estrela",
-      "away": "Casa Pia",
       "reason": "No event/team match"
     },
     {
@@ -2356,6 +2350,12 @@
       "home": "Hilden",
       "away": "Unterrath",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Sestao River",
+      "away": "Athletic Club",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -3294,5 +3294,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-18T23:33:46.600Z"
+  "completedAt": "2026-07-18T23:46:02.433Z"
 }
