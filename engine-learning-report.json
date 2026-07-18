@@ -1,13 +1,13 @@
 {
   "version": "v193",
-  "updated": "2026-07-18T19:09:29.172Z",
+  "updated": "2026-07-18T19:52:03.276Z",
   "summary": {
-    "settledFixtures": 161,
-    "settledDecisions": 332,
-    "reviewedLosses": 54,
-    "teamProfiles": 68,
-    "leagueProfiles": 13,
-    "matchupProfiles": 35,
+    "settledFixtures": 166,
+    "settledDecisions": 338,
+    "reviewedLosses": 55,
+    "teamProfiles": 70,
+    "leagueProfiles": 14,
+    "matchupProfiles": 36,
     "activePatternBreakers": 0,
     "upsetResistantTeams": 0
   },
@@ -19,7 +19,7 @@
   "commonMissCauses": [
     {
       "cause": "INPUT_COVERAGE_GAP",
-      "count": 54
+      "count": 55
     },
     {
       "cause": "GOAL_SPIKE",
@@ -27,7 +27,7 @@
     },
     {
       "cause": "RESULT_DIRECTION_MISS",
-      "count": 13
+      "count": 14
     },
     {
       "cause": "DRAW_TRAP",
@@ -144,6 +144,19 @@
       "engine": "League Bias",
       "market": "Home Team Over 0.5 Goals",
       "score": "0-4",
+      "causes": [
+        "RESULT_DIRECTION_MISS",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-18",
+      "home": "Gundelfingen",
+      "away": "Deisenhofen",
+      "league": "Oberliga - Bayern Süd",
+      "engine": "Normal",
+      "market": "Home Win",
+      "score": "0-2",
       "causes": [
         "RESULT_DIRECTION_MISS",
         "INPUT_COVERAGE_GAP"
@@ -414,19 +427,6 @@
       "score": "2-3",
       "causes": [
         "RESULT_DIRECTION_MISS",
-        "INPUT_COVERAGE_GAP"
-      ]
-    },
-    {
-      "matchDate": "2026-07-03",
-      "home": "Springvale",
-      "away": "Keilor Park",
-      "league": "Victoria Premier League 2",
-      "engine": "Prime",
-      "market": "BTTS No",
-      "score": "5-2",
-      "causes": [
-        "BOTH_ATTACKS_BROKE_SUPPRESSION",
         "INPUT_COVERAGE_GAP"
       ]
     }

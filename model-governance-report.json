@@ -1,8 +1,8 @@
 {
   "version": "v194",
-  "updated": "2026-07-18T19:09:29.692Z",
+  "updated": "2026-07-18T19:52:03.824Z",
   "summary": {
-    "settled": 332,
+    "settled": 338,
     "winRate": 0.8373,
     "engines": 12,
     "approved": 0,
@@ -19,10 +19,10 @@
       "state": "SHADOW",
       "reason": "Needs a larger forward validation sample.",
       "train": {
-        "sample": 11,
+        "sample": 12,
         "wins": 4,
-        "losses": 7,
-        "rate": 0.3636
+        "losses": 8,
+        "rate": 0.3333
       },
       "validation": {
         "sample": 6,
@@ -30,8 +30,8 @@
         "losses": 3,
         "rate": 0.5
       },
-      "validationDelta": 0.1364,
-      "calibrationError": 0.2956,
+      "validationDelta": 0.1667,
+      "calibrationError": 0.383,
       "shadow": {
         "eligible": 0,
         "avoidedLosses": 0,
@@ -39,13 +39,13 @@
         "net": 0
       },
       "drift": {
-        "recentSample": 17,
+        "recentSample": 18,
         "priorSample": 0,
         "confidenceShift": null,
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T19:09:29.690Z"
+      "updated": "2026-07-18T19:52:03.822Z"
     },
     "Prime": {
       "engine": "Prime",
@@ -78,7 +78,7 @@
         "distributionShift": 0.293,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T19:09:29.691Z"
+      "updated": "2026-07-18T19:52:03.822Z"
     },
     "Value": {
       "engine": "Value",
@@ -111,7 +111,7 @@
         "distributionShift": 0.8,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T19:09:29.691Z"
+      "updated": "2026-07-18T19:52:03.822Z"
     },
     "Pro": {
       "engine": "Pro",
@@ -144,7 +144,7 @@
         "distributionShift": 0.8,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T19:09:29.691Z"
+      "updated": "2026-07-18T19:52:03.822Z"
     },
     "Ultra": {
       "engine": "Ultra",
@@ -177,7 +177,7 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T19:09:29.691Z"
+      "updated": "2026-07-18T19:52:03.822Z"
     },
     "Elite": {
       "engine": "Elite",
@@ -210,7 +210,7 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T19:09:29.691Z"
+      "updated": "2026-07-18T19:52:03.822Z"
     },
     "Apex": {
       "engine": "Apex",
@@ -243,7 +243,7 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T19:09:29.691Z"
+      "updated": "2026-07-18T19:52:03.822Z"
     },
     "Halves": {
       "engine": "Halves",
@@ -276,7 +276,7 @@
         "distributionShift": 0,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T19:09:29.691Z"
+      "updated": "2026-07-18T19:52:03.822Z"
     },
     "Streaks": {
       "engine": "Streaks",
@@ -309,26 +309,26 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T19:09:29.691Z"
+      "updated": "2026-07-18T19:52:03.822Z"
     },
     "Trend": {
       "engine": "Trend",
       "state": "SHADOW",
       "reason": "Needs a larger forward validation sample.",
       "train": {
-        "sample": 27,
-        "wins": 25,
+        "sample": 28,
+        "wins": 26,
         "losses": 2,
-        "rate": 0.9259
+        "rate": 0.9286
       },
       "validation": {
-        "sample": 12,
-        "wins": 10,
+        "sample": 13,
+        "wins": 11,
         "losses": 2,
-        "rate": 0.8333
+        "rate": 0.8462
       },
-      "validationDelta": -0.0926,
-      "calibrationError": 0.0582,
+      "validationDelta": -0.0824,
+      "calibrationError": 0.0478,
       "shadow": {
         "eligible": 0,
         "avoidedLosses": 0,
@@ -337,31 +337,31 @@
       },
       "drift": {
         "recentSample": 30,
-        "priorSample": 9,
-        "confidenceShift": 8.84,
-        "distributionShift": 0.444,
+        "priorSample": 11,
+        "confidenceShift": 6.71,
+        "distributionShift": 0.303,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T19:09:29.691Z"
+      "updated": "2026-07-18T19:52:03.822Z"
     },
     "League Bias": {
       "engine": "League Bias",
       "state": "SHADOW",
       "reason": "Needs a larger forward validation sample.",
       "train": {
-        "sample": 40,
-        "wins": 37,
+        "sample": 42,
+        "wins": 39,
         "losses": 3,
-        "rate": 0.925
+        "rate": 0.9286
       },
       "validation": {
-        "sample": 18,
-        "wins": 15,
+        "sample": 19,
+        "wins": 16,
         "losses": 3,
-        "rate": 0.8333
+        "rate": 0.8421
       },
-      "validationDelta": -0.0917,
-      "calibrationError": 0.0298,
+      "validationDelta": -0.0865,
+      "calibrationError": 0.0183,
       "shadow": {
         "eligible": 0,
         "avoidedLosses": 0,
@@ -370,12 +370,12 @@
       },
       "drift": {
         "recentSample": 30,
-        "priorSample": 28,
-        "confidenceShift": -0.47,
-        "distributionShift": 0.193,
+        "priorSample": 30,
+        "confidenceShift": -0.75,
+        "distributionShift": 0.233,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T19:09:29.691Z"
+      "updated": "2026-07-18T19:52:03.822Z"
     },
     "Strict": {
       "engine": "Strict",
@@ -408,7 +408,7 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T19:09:29.691Z"
+      "updated": "2026-07-18T19:52:03.823Z"
     }
   },
   "marketScorecards": [
@@ -430,27 +430,19 @@
     },
     {
       "marketFamily": "HOME_TEAM",
-      "sample": 49,
-      "wins": 42,
+      "sample": 53,
+      "wins": 46,
       "losses": 7,
-      "rate": 0.8571,
-      "calibrationError": 0.0652
-    },
-    {
-      "marketFamily": "HOME_TEAM",
-      "sample": 48,
-      "wins": 41,
-      "losses": 7,
-      "rate": 0.8542,
-      "calibrationError": 0.0662
+      "rate": 0.8679,
+      "calibrationError": 0.0707
     },
     {
       "marketFamily": "MATCH_UNDER",
-      "sample": 46,
-      "wins": 30,
+      "sample": 47,
+      "wins": 31,
       "losses": 16,
-      "rate": 0.6522,
-      "calibrationError": 0.0689
+      "rate": 0.6596,
+      "calibrationError": 0.0708
     },
     {
       "marketFamily": "AWAY_RESULT",
@@ -462,11 +454,11 @@
     },
     {
       "marketFamily": "HOME_RESULT",
-      "sample": 38,
+      "sample": 39,
       "wins": 33,
-      "losses": 5,
-      "rate": 0.8684,
-      "calibrationError": 0.7013
+      "losses": 6,
+      "rate": 0.8462,
+      "calibrationError": 0.6901
     },
     {
       "marketFamily": "AWAY_TEAM",
@@ -495,10 +487,10 @@
     },
     {
       "league": "Friendlies Clubs",
-      "sample": 18,
-      "wins": 15,
+      "sample": 22,
+      "wins": 19,
       "losses": 3,
-      "rate": 0.8333
+      "rate": 0.8636
     },
     {
       "league": "Primera B Metropolitana",
@@ -613,6 +605,13 @@
       "rate": 1
     },
     {
+      "league": "NWSL Women",
+      "sample": 3,
+      "wins": 2,
+      "losses": 1,
+      "rate": 0.6667
+    },
+    {
       "league": "Western Australia NPL",
       "sample": 2,
       "wins": 1,
@@ -634,18 +633,18 @@
       "rate": 1
     },
     {
-      "league": "NWSL Women",
-      "sample": 2,
-      "wins": 1,
-      "losses": 1,
-      "rate": 0.5
-    },
-    {
       "league": "USL Championship",
       "sample": 2,
       "wins": 2,
       "losses": 0,
       "rate": 1
+    },
+    {
+      "league": "Oberliga - Bayern Süd",
+      "sample": 2,
+      "wins": 1,
+      "losses": 1,
+      "rate": 0.5
     },
     {
       "league": "1. Division",
@@ -656,13 +655,6 @@
     },
     {
       "league": "Kakkonen - Lohko B",
-      "sample": 1,
-      "wins": 1,
-      "losses": 0,
-      "rate": 1
-    },
-    {
-      "league": "Oberliga - Bayern Süd",
       "sample": 1,
       "wins": 1,
       "losses": 0,
