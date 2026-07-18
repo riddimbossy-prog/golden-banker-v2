@@ -1,7 +1,7 @@
 {
   "version": "v193",
   "schemaVersion": 1,
-  "updated": "2026-07-18T11:35:40.940Z",
+  "updated": "2026-07-18T12:40:26.588Z",
   "minimumSamples": {
     "teamFavorite": 5,
     "teamUnderdog": 5,
@@ -12,10 +12,10 @@
   },
   "decayHalfLifeDays": 120,
   "summary": {
-    "settledFixtures": 143,
-    "settledDecisions": 303,
+    "settledFixtures": 145,
+    "settledDecisions": 307,
     "reviewedLosses": 51,
-    "attachedUpcoming": 1770,
+    "attachedUpcoming": 1739,
     "highRiskUpcoming": 0,
     "stableUpcoming": 0
   },
@@ -317,7 +317,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.93
+        "decayedWeight": 0.92
       },
       "underdog": {
         "sample": 0,
@@ -360,7 +360,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 0.93
+          "decayedWeight": 0.92
         }
       },
       "underdogUpsets": 0,
@@ -443,7 +443,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.93
+        "decayedWeight": 0.92
       },
       "underdog": {
         "sample": 0,
@@ -486,7 +486,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 0.93
+          "decayedWeight": 0.92
         }
       },
       "underdogUpsets": 0,
@@ -538,7 +538,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 0.93
+        "decayedWeight": 0.92
       },
       "favoriteBands": {},
       "underdogUpsets": 0,
@@ -4199,6 +4199,132 @@
       "flags": [],
       "patternStability": 100,
       "favoriteReliability": 0
+    },
+    "1093|hobart city": {
+      "name": "Hobart City",
+      "league": "Tasmania Southern Championship",
+      "leagueId": 1093,
+      "favorite": {
+        "sample": 1,
+        "wins": 1,
+        "draws": 0,
+        "losses": 0,
+        "winRate": 1,
+        "drawRate": 0,
+        "nonLossRate": 1,
+        "upsetRate": 0,
+        "nonLossWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "winWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "decayedWeight": 1
+      },
+      "underdog": {
+        "sample": 0,
+        "wins": 0,
+        "draws": 0,
+        "losses": 0,
+        "winRate": null,
+        "drawRate": null,
+        "nonLossRate": 0,
+        "upsetRate": null,
+        "nonLossWilson": {
+          "lower": null,
+          "mid": null,
+          "upper": null
+        },
+        "winWilson": {
+          "lower": null,
+          "mid": null,
+          "upper": null
+        },
+        "decayedWeight": 0
+      },
+      "favoriteBands": {
+        "1.36-1.60": {
+          "sample": 1,
+          "wins": 1,
+          "draws": 0,
+          "losses": 0,
+          "winRate": 1,
+          "drawRate": 0,
+          "nonLossRate": 1,
+          "upsetRate": 0,
+          "nonLossWilson": {
+            "lower": 0.2065,
+            "mid": 1,
+            "upper": 1
+          },
+          "winWilson": {
+            "lower": 0.2065,
+            "mid": 1,
+            "upper": 1
+          },
+          "decayedWeight": 1
+        }
+      },
+      "underdogUpsets": 0,
+      "flags": [],
+      "patternStability": 100,
+      "favoriteReliability": 100
+    },
+    "1093|clarence zebras ii": {
+      "name": "Clarence Zebras II",
+      "league": "Tasmania Southern Championship",
+      "leagueId": 1093,
+      "favorite": {
+        "sample": 0,
+        "wins": 0,
+        "draws": 0,
+        "losses": 0,
+        "winRate": null,
+        "drawRate": null,
+        "nonLossRate": 0,
+        "upsetRate": null,
+        "nonLossWilson": {
+          "lower": null,
+          "mid": null,
+          "upper": null
+        },
+        "winWilson": {
+          "lower": null,
+          "mid": null,
+          "upper": null
+        },
+        "decayedWeight": 0
+      },
+      "underdog": {
+        "sample": 1,
+        "wins": 0,
+        "draws": 0,
+        "losses": 1,
+        "winRate": 0,
+        "drawRate": 0,
+        "nonLossRate": 0,
+        "upsetRate": 1,
+        "nonLossWilson": {
+          "lower": 0,
+          "mid": 0,
+          "upper": 0.7935
+        },
+        "winWilson": {
+          "lower": 0,
+          "mid": 0,
+          "upper": 0.7935
+        },
+        "decayedWeight": 1
+      },
+      "favoriteBands": {},
+      "underdogUpsets": 0,
+      "flags": [],
+      "patternStability": 100,
+      "favoriteReliability": 0
     }
   },
   "leagues": {
@@ -4676,7 +4802,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.93
+        "decayedWeight": 0.92
       },
       "bands": {
         "1.86-2.25": {
@@ -4698,7 +4824,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 0.93
+          "decayedWeight": 0.92
         }
       },
       "homeFavorites": {
@@ -4720,7 +4846,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.93
+        "decayedWeight": 0.92
       },
       "awayFavorites": {
         "sample": 0,
@@ -5478,25 +5604,25 @@
       "league": "Tasmania Southern Championship",
       "leagueId": 1093,
       "favorite": {
-        "sample": 1,
-        "wins": 0,
+        "sample": 2,
+        "wins": 1,
         "draws": 0,
         "losses": 1,
-        "winRate": 0,
+        "winRate": 0.5,
         "drawRate": 0,
-        "nonLossRate": 0,
-        "upsetRate": 1,
+        "nonLossRate": 0.5,
+        "upsetRate": 0.5,
         "nonLossWilson": {
-          "lower": 0,
-          "mid": 0,
-          "upper": 0.7935
+          "lower": 0.0945,
+          "mid": 0.5,
+          "upper": 0.9055
         },
         "winWilson": {
-          "lower": 0,
-          "mid": 0,
-          "upper": 0.7935
+          "lower": 0.0945,
+          "mid": 0.5,
+          "upper": 0.9055
         },
-        "decayedWeight": 1
+        "decayedWeight": 1.99
       },
       "bands": {
         "1.86-2.25": {
@@ -5519,28 +5645,49 @@
             "upper": 0.7935
           },
           "decayedWeight": 1
+        },
+        "1.36-1.60": {
+          "sample": 1,
+          "wins": 1,
+          "draws": 0,
+          "losses": 0,
+          "winRate": 1,
+          "drawRate": 0,
+          "nonLossRate": 1,
+          "upsetRate": 0,
+          "nonLossWilson": {
+            "lower": 0.2065,
+            "mid": 1,
+            "upper": 1
+          },
+          "winWilson": {
+            "lower": 0.2065,
+            "mid": 1,
+            "upper": 1
+          },
+          "decayedWeight": 1
         }
       },
       "homeFavorites": {
-        "sample": 0,
-        "wins": 0,
+        "sample": 1,
+        "wins": 1,
         "draws": 0,
         "losses": 0,
-        "winRate": null,
-        "drawRate": null,
-        "nonLossRate": 0,
-        "upsetRate": null,
+        "winRate": 1,
+        "drawRate": 0,
+        "nonLossRate": 1,
+        "upsetRate": 0,
         "nonLossWilson": {
-          "lower": null,
-          "mid": null,
-          "upper": null
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
         },
         "winWilson": {
-          "lower": null,
-          "mid": null,
-          "upper": null
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
         },
-        "decayedWeight": 0
+        "decayedWeight": 1
       },
       "awayFavorites": {
         "sample": 1,
@@ -5564,7 +5711,7 @@
         "decayedWeight": 1
       },
       "flags": [],
-      "stabilityScore": 25
+      "stabilityScore": 62.5
     }
   },
   "matchups": {
@@ -5648,7 +5795,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.93
+        "decayedWeight": 0.92
       },
       "flags": []
     },
@@ -5676,7 +5823,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.93
+        "decayedWeight": 0.92
       },
       "flags": []
     },
@@ -6519,6 +6666,34 @@
         "decayedWeight": 1
       },
       "flags": []
+    },
+    "1093|hobart city|clarence zebras ii": {
+      "home": "Hobart City",
+      "away": "Clarence Zebras II",
+      "league": "Tasmania Southern Championship",
+      "leagueId": 1093,
+      "favorite": {
+        "sample": 1,
+        "wins": 1,
+        "draws": 0,
+        "losses": 0,
+        "winRate": 1,
+        "drawRate": 0,
+        "nonLossRate": 1,
+        "upsetRate": 0,
+        "nonLossWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "winWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "decayedWeight": 1
+      },
+      "flags": []
     }
   },
   "oddsBands": {
@@ -6565,25 +6740,25 @@
       "decayedWeight": 5.72
     },
     "1.36-1.60": {
-      "sample": 5,
-      "wins": 3,
+      "sample": 6,
+      "wins": 4,
       "draws": 2,
       "losses": 0,
-      "winRate": 0.6007,
-      "drawRate": 0.3993,
+      "winRate": 0.6686,
+      "drawRate": 0.3314,
       "nonLossRate": 1,
       "upsetRate": 0,
       "nonLossWilson": {
-        "lower": 0.5655,
+        "lower": 0.6097,
         "mid": 1,
         "upper": 1
       },
       "winWilson": {
-        "lower": 0.2307,
-        "mid": 0.6,
-        "upper": 0.8824
+        "lower": 0.3,
+        "mid": 0.6667,
+        "upper": 0.9032
       },
-      "decayedWeight": 4.87
+      "decayedWeight": 5.86
     },
     "1.61-1.85": {
       "sample": 8,
@@ -8289,15 +8464,15 @@
       "hardVeto": false
     },
     "*|Halves|Second Half Over 0.5|unknown|other": {
-      "sample": 38,
-      "wins": 33,
+      "sample": 39,
+      "wins": 34,
       "losses": 5,
-      "winRate": 0.8684,
-      "lossRate": 0.1316,
+      "winRate": 0.8718,
+      "lossRate": 0.1282,
       "wilson": {
-        "lower": 0.7267,
-        "mid": 0.8684,
-        "upper": 0.9425
+        "lower": 0.7329,
+        "mid": 0.8718,
+        "upper": 0.944
       },
       "adjustment": 2,
       "hardVeto": false
@@ -8485,15 +8660,15 @@
       "hardVeto": false
     },
     "usl league two|Halves|Second Half Over 0.5|unknown|other": {
-      "sample": 22,
-      "wins": 20,
+      "sample": 23,
+      "wins": 21,
       "losses": 2,
-      "winRate": 0.9091,
-      "lossRate": 0.0909,
+      "winRate": 0.913,
+      "lossRate": 0.087,
       "wilson": {
-        "lower": 0.7218,
-        "mid": 0.9091,
-        "upper": 0.9747
+        "lower": 0.732,
+        "mid": 0.913,
+        "upper": 0.9758
       },
       "adjustment": 2,
       "hardVeto": false
@@ -8625,15 +8800,15 @@
       "hardVeto": false
     },
     "*|Trend|Home Team Over 0.5 Goals|1.36-1.60|fav-aligned": {
-      "sample": 1,
-      "wins": 0,
+      "sample": 2,
+      "wins": 1,
       "losses": 1,
-      "winRate": 0,
-      "lossRate": 1,
+      "winRate": 0.5,
+      "lossRate": 0.5,
       "wilson": {
-        "lower": 0,
-        "mid": 0,
-        "upper": 0.7935
+        "lower": 0.0945,
+        "mid": 0.5,
+        "upper": 0.9055
       },
       "adjustment": 0,
       "hardVeto": false
@@ -8653,15 +8828,15 @@
       "hardVeto": false
     },
     "*|Halves|Second Half Over 0.5|1.36-1.60|other": {
-      "sample": 3,
-      "wins": 2,
+      "sample": 4,
+      "wins": 3,
       "losses": 1,
-      "winRate": 0.6667,
-      "lossRate": 0.3333,
+      "winRate": 0.75,
+      "lossRate": 0.25,
       "wilson": {
-        "lower": 0.2077,
-        "mid": 0.6667,
-        "upper": 0.9385
+        "lower": 0.3006,
+        "mid": 0.75,
+        "upper": 0.9544
       },
       "adjustment": 0,
       "hardVeto": false
@@ -9380,6 +9555,34 @@
       "adjustment": 0,
       "hardVeto": false
     },
+    "usl league two|League Bias|Over 1.5 Goals|unknown|other": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "winRate": 1,
+      "lossRate": 0,
+      "wilson": {
+        "lower": 0.2065,
+        "mid": 1,
+        "upper": 1
+      },
+      "adjustment": 0,
+      "hardVeto": false
+    },
+    "*|League Bias|Over 1.5 Goals|unknown|other": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "winRate": 1,
+      "lossRate": 0,
+      "wilson": {
+        "lower": 0.2065,
+        "mid": 1,
+        "upper": 1
+      },
+      "adjustment": 0,
+      "hardVeto": false
+    },
     "liga women|Halves|Second Half Over 0.5|unknown|other": {
       "sample": 1,
       "wins": 1,
@@ -9619,6 +9822,34 @@
       "hardVeto": false
     },
     "tasmania northern championship|Trend|Home Team Over 0.5 Goals|unknown|other": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "winRate": 1,
+      "lossRate": 0,
+      "wilson": {
+        "lower": 0.2065,
+        "mid": 1,
+        "upper": 1
+      },
+      "adjustment": 0,
+      "hardVeto": false
+    },
+    "tasmania southern championship|Trend|Home Team Over 0.5 Goals|1.36-1.60|fav-aligned": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "winRate": 1,
+      "lossRate": 0,
+      "wilson": {
+        "lower": 0.2065,
+        "mid": 1,
+        "upper": 1
+      },
+      "adjustment": 0,
+      "hardVeto": false
+    },
+    "tasmania southern championship|Halves|Second Half Over 0.5|1.36-1.60|other": {
       "sample": 1,
       "wins": 1,
       "losses": 0,

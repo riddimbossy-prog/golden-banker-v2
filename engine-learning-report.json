@@ -1,13 +1,13 @@
 {
   "version": "v193",
-  "updated": "2026-07-18T11:35:40.940Z",
+  "updated": "2026-07-18T12:40:26.588Z",
   "summary": {
-    "settledFixtures": 143,
-    "settledDecisions": 303,
+    "settledFixtures": 145,
+    "settledDecisions": 307,
     "reviewedLosses": 51,
-    "teamProfiles": 66,
+    "teamProfiles": 68,
     "leagueProfiles": 13,
-    "matchupProfiles": 34,
+    "matchupProfiles": 35,
     "activePatternBreakers": 0,
     "upsetResistantTeams": 0
   },
