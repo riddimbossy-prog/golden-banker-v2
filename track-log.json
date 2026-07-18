@@ -73641,9 +73641,13 @@
         "dataFields": 0
       },
       "recordedAt": "2026-07-17T19:53:08.547Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "2-1",
+      "finalHomeGoals": 2,
+      "finalAwayGoals": 1,
+      "actualResult": "home",
+      "settledAt": "2026-07-18T14:43:13.929Z"
     },
     {
       "matchDate": "2026-07-18",
@@ -76526,8 +76530,8 @@
         "dataFields": 0
       },
       "recordedAt": "2026-07-17T19:53:08.661Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -77734,9 +77738,13 @@
         "dataFields": 0
       },
       "recordedAt": "2026-07-17T19:53:08.714Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "1-0",
+      "finalHomeGoals": 1,
+      "finalAwayGoals": 0,
+      "actualResult": "home",
+      "settledAt": "2026-07-18T14:43:13.930Z"
     },
     {
       "matchDate": "2026-07-18",
@@ -77820,9 +77828,13 @@
         "dataFields": 0
       },
       "recordedAt": "2026-07-17T19:53:08.722Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Lost",
+      "score": "0-4",
+      "finalHomeGoals": 0,
+      "finalAwayGoals": 4,
+      "actualResult": "away",
+      "settledAt": "2026-07-18T14:43:13.930Z"
     },
     {
       "matchDate": "2026-07-18",
@@ -77863,9 +77875,13 @@
         "dataFields": 0
       },
       "recordedAt": "2026-07-17T19:53:08.722Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Lost",
+      "score": "0-4",
+      "finalHomeGoals": 0,
+      "finalAwayGoals": 4,
+      "actualResult": "away",
+      "settledAt": "2026-07-18T14:43:13.930Z"
     },
     {
       "matchDate": "2026-07-18",
@@ -118122,6 +118138,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-18T14:33:42.171Z"
+    "updated": "2026-07-18T14:43:14.934Z"
   }
 }
