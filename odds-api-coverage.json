@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-17T23:54:42.304Z",
+  "generatedAt": "2026-07-18T00:04:35.020Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,7 +13,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 558
+      "matches": 554
     },
     {
       "league": "Brasileiro Women",
@@ -728,7 +728,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1476,
+  "matchesConsidered": 1472,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1036,30 +1036,6 @@
       "country": "Kazakhstan",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "FC Bacau",
-      "away": "Gloria Bistriţa",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Odra Opole",
-      "away": "Ironi Kiryat Shmona",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Star Starachowice",
-      "away": "Moravia Morawica",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Maritimo",
-      "away": "Leixoes",
-      "reason": "No event/team match"
     },
     {
       "league": "Friendlies Clubs",
@@ -2236,6 +2212,30 @@
       "home": "Queen's University",
       "away": "Ballymena United",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Slovácko",
+      "away": "Skalica",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Sochaux",
+      "away": "Grenoble",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Barockstadt Fulda-Lehn.",
+      "away": "Rot-Weiß Walldorf",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "H&W Welders",
+      "away": "Carrick Rangers",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -3026,5 +3026,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-17T23:54:56.653Z"
+  "completedAt": "2026-07-18T00:04:39.651Z"
 }
