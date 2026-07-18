@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-18T06:54:43.898Z",
+  "generatedAt": "2026-07-18T07:04:39.438Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -864,7 +864,7 @@
       "matches": 3
     }
   ],
-  "matchesConsidered": 1661,
+  "matchesConsidered": 1660,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -873,12 +873,6 @@
   "derivedHtftMatches": 0,
   "bookmakerRows": 0,
   "unmatched": [
-    {
-      "league": "Botola Pro",
-      "country": "Morocco",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
     {
       "league": "Liga Women",
       "country": "Peru",
@@ -1154,6 +1148,12 @@
       "country": "Australia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.167
+    },
+    {
+      "league": "Botola Pro",
+      "country": "Morocco",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
     },
     {
       "league": "Copa Colombia",
@@ -3273,5 +3273,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-18T06:54:48.685Z"
+  "completedAt": "2026-07-18T07:04:44.206Z"
 }
