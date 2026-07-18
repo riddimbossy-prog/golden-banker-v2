@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-18T03:46:35.045Z",
+  "updated": "2026-07-18T04:53:18.614Z",
   "summary": {
     "fixtures": 300,
     "qualified": 0,
@@ -3530,35 +3530,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1490330,
-      "date": "2026-07-18",
-      "home": "Los Angeles Galaxy",
-      "away": "Los Angeles FC",
-      "league": "Major League Soccer",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 75.8,
-      "support": 0.56,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Away Team Over 0.5 Goals",
-          "support": 0.52,
-          "engines": [
-            "Trend"
-          ]
-        }
-      ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1533125,
       "date": "2026-07-18",
       "home": "Northern Rangers",
@@ -3586,21 +3557,6 @@
         }
       ],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1550898,
-      "date": "2026-07-18",
-      "home": "FC Juarez",
-      "away": "Puebla",
-      "league": "Liga MX",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
     },
     {
       "id": 1532597,
@@ -6216,6 +6172,36 @@
       "exactSupport": 1,
       "conflictIndex": 0,
       "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1517819,
+      "date": "2026-07-18",
+      "home": "Bulls Academy",
+      "away": "Bankstown City Lions",
+      "league": "New South Wales NPL 2",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Home Team Over 0.5 Goals",
+      "score": 78.9,
+      "support": 0.92,
+      "supporters": [
+        "Trend",
+        "League Bias"
+      ],
+      "independence": 2,
+      "exactSupport": 2,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Second Half Over 0.5",
+          "support": 0.71,
+          "engines": [
+            "Halves"
+          ]
+        }
+      ],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     }
   ]
