@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-18T15:43:38.297Z",
+  "generatedAt": "2026-07-18T16:04:35.973Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,15 +13,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 475
-    },
-    {
-      "league": "Oberliga - Bayern Süd",
-      "country": "Germany",
-      "sportKey": "soccer_germany_bundesliga",
-      "sportTitle": "Bundesliga - Germany",
-      "score": 0.323,
-      "matches": 10
+      "matches": 428
     },
     {
       "league": "Kansallinen Liiga",
@@ -38,46 +30,6 @@
       "sportTitle": "Bundesliga - Germany",
       "score": 0.323,
       "matches": 10
-    },
-    {
-      "league": "Super League",
-      "country": "Malawi",
-      "sportKey": "soccer_china_superleague",
-      "sportTitle": "Super League - China",
-      "score": 0.606,
-      "matches": 5
-    },
-    {
-      "league": "Allsvenskan",
-      "country": "Sweden",
-      "sportKey": "soccer_sweden_allsvenskan",
-      "sportTitle": "Allsvenskan - Sweden",
-      "score": 1,
-      "matches": 7
-    },
-    {
-      "league": "Brasiliense U20",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.305,
-      "matches": 8
-    },
-    {
-      "league": "FAI Cup",
-      "country": "Ireland",
-      "sportKey": "soccer_league_of_ireland",
-      "sportTitle": "League of Ireland",
-      "score": 0.291,
-      "matches": 6
-    },
-    {
-      "league": "Kakkonen - Lohko A",
-      "country": "Finland",
-      "sportKey": "soccer_finland_veikkausliiga",
-      "sportTitle": "Veikkausliiga - Finland",
-      "score": 0.323,
-      "matches": 6
     },
     {
       "league": "Mineiro U20",
@@ -125,7 +77,7 @@
       "sportKey": "soccer_finland_veikkausliiga",
       "sportTitle": "Veikkausliiga - Finland",
       "score": 0.323,
-      "matches": 7
+      "matches": 6
     },
     {
       "league": "Kakkonen - Lohko C",
@@ -141,7 +93,7 @@
       "sportKey": "soccer_england_efl_cup",
       "sportTitle": "EFL Cup",
       "score": 0.653,
-      "matches": 32
+      "matches": 28
     },
     {
       "league": "Supreme Division Women",
@@ -536,6 +488,14 @@
       "matches": 2
     },
     {
+      "league": "Super League",
+      "country": "Malawi",
+      "sportKey": "soccer_china_superleague",
+      "sportTitle": "Super League - China",
+      "score": 0.606,
+      "matches": 4
+    },
+    {
       "league": "Premier Soccer League",
       "country": "Zimbabwe",
       "sportKey": "soccer_epl",
@@ -896,7 +856,7 @@
       "matches": 3
     }
   ],
-  "matchesConsidered": 1438,
+  "matchesConsidered": 1359,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -912,12 +872,6 @@
       "bestScore": 0.25
     },
     {
-      "league": "Northern NSW NPL",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
       "league": "Primeira Divisão",
       "country": "Macao",
       "reason": "No matching soccer sport key",
@@ -928,18 +882,6 @@
       "country": "Belarus",
       "reason": "No matching soccer sport key",
       "bestScore": 0
-    },
-    {
-      "league": "1. Deild",
-      "country": "Iceland",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.125
-    },
-    {
-      "league": "1. Liga",
-      "country": "Latvia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
     },
     {
       "league": "2. Deild",
@@ -980,6 +922,18 @@
     {
       "league": "Liga I",
       "country": "Romania",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
+      "league": "1. Deild",
+      "country": "Iceland",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.125
+    },
+    {
+      "league": "1. Liga",
+      "country": "Latvia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
     },
@@ -1072,6 +1026,12 @@
       "country": "Ecuador",
       "reason": "No matching soccer sport key",
       "bestScore": 0.222
+    },
+    {
+      "league": "Northern NSW NPL",
+      "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
     },
     {
       "league": "Npl Nsw U20",
@@ -1273,12 +1233,6 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Hodonín",
-      "away": "Malženice",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Essingen",
       "away": "VfR Aalen",
       "reason": "No event/team match"
@@ -1381,12 +1335,6 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Ringsted",
-      "away": "Hørsholm-Usserød",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Veres Rivne",
       "away": "Polissya II",
       "reason": "No event/team match"
@@ -1401,12 +1349,6 @@
       "league": "Friendlies Clubs",
       "home": "Tus Dassendorf",
       "away": "Weiche Flensburg",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Optik Rathenow",
-      "away": "Ludwigsfelde",
       "reason": "No event/team match"
     },
     {
@@ -1429,20 +1371,8 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "FC OSS",
-      "away": "SG Wattenscheid 09",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Diosgyori VTK",
       "away": "Cigand SE",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Bonner SC",
-      "away": "MSV Duisburg",
       "reason": "No event/team match"
     },
     {
@@ -1537,12 +1467,6 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Groningen",
-      "away": "AEK Athens FC",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Lusitânia Lourosa",
       "away": "SC Braga B",
       "reason": "No event/team match"
@@ -1591,12 +1515,6 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Northampton",
-      "away": "Coventry",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Cliftonville FC",
       "away": "Newington Youth",
       "reason": "No event/team match"
@@ -1639,12 +1557,6 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "PEC Zwolle",
-      "away": "Cercle Brugge",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Todesfelde",
       "away": "Lübeck II",
       "reason": "No event/team match"
@@ -1669,18 +1581,6 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Twente",
-      "away": "Gent",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "FC Basel 1893",
-      "away": "Juventus",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "SF Baumberg",
       "away": "Bayer Leverkusen",
       "reason": "No event/team match"
@@ -1699,12 +1599,6 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "FC Ingolstadt 04",
-      "away": "Palermo",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Paris FC",
       "away": "Reims",
       "reason": "No event/team match"
@@ -1717,26 +1611,8 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Lausanne",
-      "away": "Yverdon Sport",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Kingstonian",
-      "away": "Tooting & Mitcham United",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Bath City",
       "away": "Plymouth",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Aldershot Town",
-      "away": "Farnborough",
       "reason": "No event/team match"
     },
     {
@@ -1765,32 +1641,8 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Merthyr Town",
-      "away": "Forest Green",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "1. FC Nürnberg",
       "away": "Waldhof Mannheim",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "FC Aarau",
-      "away": "Union Berlin",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Avro",
-      "away": "FC Halifax Town",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Cleethorpes Town",
-      "away": "Harrogate Town",
       "reason": "No event/team match"
     },
     {
@@ -1815,30 +1667,6 @@
       "league": "Friendlies Clubs",
       "home": "Grazer AK",
       "away": "Dynamo Dresden",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Opava",
-      "away": "Petržalka",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Sutton Utd",
-      "away": "AFC Wimbledon",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Wealdstone",
-      "away": "Hemel Hempstead Town",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Pollok",
-      "away": "East Stirlingshire",
       "reason": "No event/team match"
     },
     {
@@ -1879,32 +1707,8 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "AS Trencin",
-      "away": "Baník Ostrava",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Vysočina Jihlava",
-      "away": "Pardubice",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Karviná",
-      "away": "Ruch Chorzów",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Příbram",
       "away": "FSV Frankfurt",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Aveley",
-      "away": "Braintree",
       "reason": "No event/team match"
     },
     {
@@ -1917,18 +1721,6 @@
       "league": "Friendlies Clubs",
       "home": "Bedford Town",
       "away": "Walton & Hersham",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Coleraine FC",
-      "away": "Portadown",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Crewe",
-      "away": "Stoke City",
       "reason": "No event/team match"
     },
     {
@@ -1957,26 +1749,8 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Linfield",
-      "away": "Doncaster",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Maidenhead",
       "away": "Southampton U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Matlock Town",
-      "away": "Rotherham",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Southend",
-      "away": "West Ham",
       "reason": "No event/team match"
     },
     {
@@ -1993,18 +1767,6 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Tranmere",
-      "away": "Blackpool",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Warrington Town",
-      "away": "Chester",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Weston-super-Mare",
       "away": "Torquay",
       "reason": "No event/team match"
@@ -2017,26 +1779,8 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "York",
-      "away": "Sunderland",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Bristol Rovers",
       "away": "Portsmouth",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Celtic",
-      "away": "Middlesbrough",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "United of Manchester",
-      "away": "Salford City",
       "reason": "No event/team match"
     },
     {
@@ -2059,12 +1803,6 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Bamber Bridge",
-      "away": "Morecambe",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Freiburg II",
       "away": "FC Schaffhausen",
       "reason": "No event/team match"
@@ -2079,12 +1817,6 @@
       "league": "Friendlies Clubs",
       "home": "Marlow",
       "away": "Ashford Town (Middlesex)",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Notts County",
-      "away": "Nottingham Forest",
       "reason": "No event/team match"
     },
     {
@@ -2347,14 +2079,290 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "FK Košice",
-      "away": "Diosgyori VTK",
+      "home": "Stade Brestois 29",
+      "away": "Concarneau",
       "reason": "No event/team match"
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Stade Brestois 29",
-      "away": "Concarneau",
+      "home": "MTK Budapest",
+      "away": "Komárno",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Real Sociedad",
+      "away": "Racing Santander",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Auxerre",
+      "away": "St Maur Lusitanos",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Servette FC",
+      "away": "Saint Etienne",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Thionville Lusitanos",
+      "away": "Nancy",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Dynamo",
+      "away": "CSKA Moscow",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Schwarz-Weiß Bregenz",
+      "away": "Imst",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Harelbeke",
+      "away": "Kortrijk",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "MVV",
+      "away": "Racing FC Union Luxembourg",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Kladno",
+      "away": "Hapoel Rishon LeZion",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Lechia Zielona Góra",
+      "away": "Miedź Legnica II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Nice",
+      "away": "Nimes",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Le Mans",
+      "away": "La Roche VF",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "SK Vorwarts Steyr",
+      "away": "Leoben",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Wiener Viktoria",
+      "away": "Stockerau",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Opatija",
+      "away": "Austria Salzburg",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "BSC Young Boys",
+      "away": "Étoile Carouge",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Petro de Luanda",
+      "away": "Valencia",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Guimaraes",
+      "away": "Academica",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Orlando Pirates",
+      "away": "Cadiz",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Alaves",
+      "away": "Eibar",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "NK Osijek",
+      "away": "Budapest Honved",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Rapid Vienna",
+      "away": "Hamburger SV",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Castellón",
+      "away": "Sabadell",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Slavia Praha",
+      "away": "Lyon",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Elche",
+      "away": "Kaizer Chiefs",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Sporting Gijon",
+      "away": "Marino de Luanco",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Leioa",
+      "away": "Athletic Club",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Olot",
+      "away": "Espanyol",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Zulte Waregem",
+      "away": "AZ Alkmaar",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Compostela",
+      "away": "Deportivo La Coruna",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Farense",
+      "away": "Benfica B",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "SC Braga",
+      "away": "Celta Vigo",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Eastleigh",
+      "away": "Southampton",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Millonarios",
+      "away": "Colo Colo",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Avispa Fukuoka",
+      "away": "Osaka",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Yokohama F. Marinos",
+      "away": "Roasso Kumamoto",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Kluczevia Stargard",
+      "away": "Warta Gorzów",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Rochdale",
+      "away": "Al-Rayyan SC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Tondela",
+      "away": "Nacional",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Naestved",
+      "away": "FC Helsingor",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Erzgebirge Aue",
+      "away": "FC Schalke 04",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Dornbirn",
+      "away": "SCR Altach",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Hessen Kassel",
+      "away": "Lippstadt 08",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "FC Krasnodar",
+      "away": "Baltika",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Borussia Hildesheim",
+      "away": "Hemelingen",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Sardarapat",
+      "away": "Ararat",
       "reason": "No event/team match"
     }
   ],
@@ -2396,18 +2404,6 @@
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_china_superleague",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_china_superleague",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_china_superleague",
-      "market": "double_chance"
-    },
-    {
       "sportKey": "soccer_brazil_campeonato",
       "market": "btts"
     },
@@ -2489,6 +2485,18 @@
     },
     {
       "sportKey": "soccer_mexico_ligamx",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_china_superleague",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_china_superleague",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_china_superleague",
       "market": "double_chance"
     },
     {
@@ -2725,31 +2733,6 @@
       "statusCode": 422
     },
     {
-      "label": "soccer_china_superleague:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_china_superleague:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_china_superleague:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_china_superleague:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_china_superleague:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
       "label": "soccer_brazil_campeonato:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -2921,6 +2904,31 @@
     },
     {
       "label": "soccer_mexico_ligamx:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_china_superleague:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_china_superleague:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_china_superleague:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_china_superleague:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_china_superleague:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3257,5 +3265,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-18T15:43:42.882Z"
+  "completedAt": "2026-07-18T16:04:45.759Z"
 }
