@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-18T03:43:40.499Z",
+  "generatedAt": "2026-07-18T03:54:36.265Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -1373,12 +1373,6 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Wisla Krakow",
-      "away": "Artis",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Antwerp",
       "away": "Patro Eisden",
       "reason": "No event/team match"
@@ -2454,18 +2448,6 @@
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_epl",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_epl",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_epl",
-      "market": "double_chance"
-    },
-    {
       "sportKey": "soccer_china_superleague",
       "market": "btts"
     },
@@ -2805,31 +2787,6 @@
     },
     {
       "label": "soccer_spain_la_liga:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3316,5 +3273,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-18T03:43:57.503Z"
+  "completedAt": "2026-07-18T03:54:41.110Z"
 }
