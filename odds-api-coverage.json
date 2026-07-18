@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-18T22:04:44.682Z",
+  "generatedAt": "2026-07-18T22:14:57.345Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,7 +13,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 278
+      "matches": 277
     },
     {
       "league": "Kansallinen Liiga",
@@ -94,14 +94,6 @@
       "sportTitle": "Brazil Série A",
       "score": 0.305,
       "matches": 4
-    },
-    {
-      "league": "Catarinense - 2",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.305,
-      "matches": 9
     },
     {
       "league": "NWSL Women",
@@ -350,6 +342,14 @@
       "sportTitle": "Brazil Série A",
       "score": 0.305,
       "matches": 1
+    },
+    {
+      "league": "Catarinense - 2",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.305,
+      "matches": 8
     },
     {
       "league": "Copa Gaúcha",
@@ -848,7 +848,7 @@
       "matches": 3
     }
   ],
-  "matchesConsidered": 1063,
+  "matchesConsidered": 1061,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1203,12 +1203,6 @@
       "league": "Friendlies Clubs",
       "home": "Diosgyori VTK",
       "away": "Cigand SE",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Werder Bremen II",
-      "away": "Sportfreunde Lotte",
       "reason": "No event/team match"
     },
     {
@@ -2356,6 +2350,12 @@
       "home": "Lüneburger SK Hansa",
       "away": "Hamburger SV II",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "FSV Mainz 05 II",
+      "away": "Kreuzlingen",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -3294,5 +3294,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-18T22:04:50.061Z"
+  "completedAt": "2026-07-18T22:15:05.815Z"
 }
