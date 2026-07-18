@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-18T13:42:26.659Z",
+  "generatedAt": "2026-07-18T13:53:40.357Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -3281,5 +3281,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-18T13:42:43.021Z"
+  "completedAt": "2026-07-18T13:53:56.715Z"
 }
