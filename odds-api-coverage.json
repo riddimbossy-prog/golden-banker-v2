@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-18T18:24:59.730Z",
+  "generatedAt": "2026-07-18T18:34:35.837Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,7 +13,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 356
+      "matches": 342
     },
     {
       "league": "Kansallinen Liiga",
@@ -78,14 +78,6 @@
       "sportTitle": "Eliteserien - Norway",
       "score": 1,
       "matches": 4
-    },
-    {
-      "league": "FAI Cup",
-      "country": "Ireland",
-      "sportKey": "soccer_league_of_ireland",
-      "sportTitle": "League of Ireland",
-      "score": 0.291,
-      "matches": 3
     },
     {
       "league": "League Cup",
@@ -856,7 +848,7 @@
       "matches": 3
     }
   ],
-  "matchesConsidered": 1234,
+  "matchesConsidered": 1211,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -865,12 +857,6 @@
   "derivedHtftMatches": 0,
   "bookmakerRows": 0,
   "unmatched": [
-    {
-      "league": "NNSW League 1",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.25
-    },
     {
       "league": "Primeira Divisão",
       "country": "Macao",
@@ -882,18 +868,6 @@
       "country": "Belarus",
       "reason": "No matching soccer sport key",
       "bestScore": 0
-    },
-    {
-      "league": "1. Deild",
-      "country": "Iceland",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.125
-    },
-    {
-      "league": "1. Liga",
-      "country": "Latvia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
     },
     {
       "league": "1. SNL",
@@ -998,6 +972,12 @@
       "bestScore": 0.222
     },
     {
+      "league": "NNSW League 1",
+      "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.25
+    },
+    {
       "league": "Northern NSW NPL",
       "country": "Australia",
       "reason": "No matching soccer sport key",
@@ -1056,6 +1036,12 @@
       "country": "India",
       "reason": "No matching soccer sport key",
       "bestScore": 0.222
+    },
+    {
+      "league": "1. Liga",
+      "country": "Latvia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
     },
     {
       "league": "1 Lyga",
@@ -1449,24 +1435,6 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Wimborne Town",
-      "away": "Salisbury",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Akron",
-      "away": "Krylia Sovetov",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Paris FC",
-      "away": "Reims",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Vitesse",
       "away": "Al-Jazira",
       "reason": "No event/team match"
@@ -1481,18 +1449,6 @@
       "league": "Friendlies Clubs",
       "home": "Dover",
       "away": "Eastbourne Borough",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Macclesfield",
-      "away": "Wolves U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Dergview",
-      "away": "Dungannon Swifts",
       "reason": "No event/team match"
     },
     {
@@ -1553,12 +1509,6 @@
       "league": "Friendlies Clubs",
       "home": "Świt Skolwin",
       "away": "Warta Gorzów",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Legia Warszawa",
-      "away": "Aris",
       "reason": "No event/team match"
     },
     {
@@ -2322,6 +2272,90 @@
       "home": "Briton Ferry",
       "away": "Merthyr Town",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Redcar Athletic",
+      "away": "Dunston UTS",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "AFC Telford United",
+      "away": "Crewe",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "AFC Hornchurch",
+      "away": "Leyton Orient",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Taunton Town",
+      "away": "Weston-super-Mare",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Chorley",
+      "away": "Altrincham",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Dover",
+      "away": "Deal Town",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Gainsborough Trinity",
+      "away": "FC Halifax Town",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Stotfold",
+      "away": "Enfield Town",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Cliftonville FC",
+      "away": "Warrenpoint Town",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Colchester",
+      "away": "Peterborough",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Crusaders FC",
+      "away": "Glenavon FC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Loughgall",
+      "away": "Dungannon Swifts",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Chester",
+      "away": "Stoke City",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Darlington 1883",
+      "away": "Carlisle",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -2354,11 +2388,11 @@
       "market": "btts"
     },
     {
-      "sportKey": "soccer_russia_premier_league",
+      "sportKey": "soccer_brazil_campeonato",
       "market": "draw_no_bet"
     },
     {
-      "sportKey": "soccer_russia_premier_league",
+      "sportKey": "soccer_brazil_campeonato",
       "market": "double_chance"
     },
     {
@@ -2366,11 +2400,11 @@
       "market": "btts"
     },
     {
-      "sportKey": "soccer_spain_la_liga",
+      "sportKey": "soccer_mexico_ligamx",
       "market": "draw_no_bet"
     },
     {
-      "sportKey": "soccer_spain_la_liga",
+      "sportKey": "soccer_mexico_ligamx",
       "market": "double_chance"
     },
     {
@@ -2390,11 +2424,11 @@
       "market": "btts"
     },
     {
-      "sportKey": "soccer_korea_kleague1",
+      "sportKey": "soccer_russia_premier_league",
       "market": "draw_no_bet"
     },
     {
-      "sportKey": "soccer_korea_kleague1",
+      "sportKey": "soccer_russia_premier_league",
       "market": "double_chance"
     },
     {
@@ -2407,18 +2441,6 @@
     },
     {
       "sportKey": "soccer_norway_eliteserien",
-      "market": "double_chance"
-    },
-    {
-      "sportKey": "soccer_league_of_ireland",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_league_of_ireland",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_league_of_ireland",
       "market": "double_chance"
     },
     {
@@ -2539,6 +2561,18 @@
     },
     {
       "sportKey": "soccer_sweden_superettan",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_league_of_ireland",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_league_of_ireland",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_league_of_ireland",
       "market": "double_chance"
     },
     {
@@ -2671,22 +2705,22 @@
       "statusCode": 422
     },
     {
-      "label": "soccer_russia_premier_league:base-core",
+      "label": "soccer_brazil_campeonato:base-core",
       "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
       "statusCode": 422
     },
     {
-      "label": "soccer_russia_premier_league:btts",
+      "label": "soccer_brazil_campeonato:btts",
       "error": "Markets not supported by this endpoint: btts",
       "statusCode": 422
     },
     {
-      "label": "soccer_russia_premier_league:draw_no_bet",
+      "label": "soccer_brazil_campeonato:draw_no_bet",
       "error": "Markets not supported by this endpoint: draw_no_bet",
       "statusCode": 422
     },
     {
-      "label": "soccer_russia_premier_league:double_chance",
+      "label": "soccer_brazil_campeonato:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -2696,22 +2730,22 @@
       "statusCode": 422
     },
     {
-      "label": "soccer_spain_la_liga:base-core",
+      "label": "soccer_mexico_ligamx:base-core",
       "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
       "statusCode": 422
     },
     {
-      "label": "soccer_spain_la_liga:btts",
+      "label": "soccer_mexico_ligamx:btts",
       "error": "Markets not supported by this endpoint: btts",
       "statusCode": 422
     },
     {
-      "label": "soccer_spain_la_liga:draw_no_bet",
+      "label": "soccer_mexico_ligamx:draw_no_bet",
       "error": "Markets not supported by this endpoint: draw_no_bet",
       "statusCode": 422
     },
     {
-      "label": "soccer_spain_la_liga:double_chance",
+      "label": "soccer_mexico_ligamx:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -2746,22 +2780,22 @@
       "statusCode": 422
     },
     {
-      "label": "soccer_korea_kleague1:base-core",
+      "label": "soccer_russia_premier_league:base-core",
       "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
       "statusCode": 422
     },
     {
-      "label": "soccer_korea_kleague1:btts",
+      "label": "soccer_russia_premier_league:btts",
       "error": "Markets not supported by this endpoint: btts",
       "statusCode": 422
     },
     {
-      "label": "soccer_korea_kleague1:draw_no_bet",
+      "label": "soccer_russia_premier_league:draw_no_bet",
       "error": "Markets not supported by this endpoint: draw_no_bet",
       "statusCode": 422
     },
     {
-      "label": "soccer_korea_kleague1:double_chance",
+      "label": "soccer_russia_premier_league:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -2787,31 +2821,6 @@
     },
     {
       "label": "soccer_norway_eliteserien:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_league_of_ireland:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_league_of_ireland:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_league_of_ireland:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_league_of_ireland:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_league_of_ireland:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3066,6 +3075,31 @@
       "statusCode": 422
     },
     {
+      "label": "soccer_league_of_ireland:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_league_of_ireland:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_league_of_ireland:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_league_of_ireland:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_league_of_ireland:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
       "label": "soccer_sweden_allsvenskan:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -3223,5 +3257,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-18T18:25:20.991Z"
+  "completedAt": "2026-07-18T18:34:51.997Z"
 }
