@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-18T00:54:19.974Z",
+  "generatedAt": "2026-07-18T01:04:26.366Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -728,7 +728,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1472,
+  "matchesConsidered": 1471,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -737,12 +737,6 @@
   "derivedHtftMatches": 0,
   "bookmakerRows": 0,
   "unmatched": [
-    {
-      "league": "Primeira Divisão",
-      "country": "Macao",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
     {
       "league": "Botola Pro",
       "country": "Morocco",
@@ -886,6 +880,12 @@
       "country": "South-Korea",
       "reason": "No matching soccer sport key",
       "bestScore": 0.222
+    },
+    {
+      "league": "Primeira Divisão",
+      "country": "Macao",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
     },
     {
       "league": "Coppa",
@@ -3026,5 +3026,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-18T00:54:24.774Z"
+  "completedAt": "2026-07-18T01:04:35.096Z"
 }
