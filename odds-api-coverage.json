@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-18T23:23:20.831Z",
+  "generatedAt": "2026-07-18T23:33:40.220Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -400,14 +400,6 @@
       "matches": 2
     },
     {
-      "league": "World Cup",
-      "country": "World",
-      "sportKey": "soccer_fifa_world_cup",
-      "sportTitle": "FIFA World Cup",
-      "score": 0.9,
-      "matches": 1
-    },
-    {
       "league": "Premier League",
       "country": "Lebanon",
       "sportKey": "soccer_epl",
@@ -582,14 +574,6 @@
       "sportTitle": "Brazil Série A",
       "score": 0.929,
       "matches": 7
-    },
-    {
-      "league": "Serie B",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_serie_b",
-      "sportTitle": "Brazil Série B",
-      "score": 1,
-      "matches": 10
     },
     {
       "league": "UEFA Champions League Women",
@@ -3310,5 +3294,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-18T23:23:25.709Z"
+  "completedAt": "2026-07-18T23:33:46.600Z"
 }
