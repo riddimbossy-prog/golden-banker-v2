@@ -1,7 +1,7 @@
 {
   "version": "v193",
   "schemaVersion": 1,
-  "updated": "2026-07-18T02:36:11.312Z",
+  "updated": "2026-07-18T03:46:32.726Z",
   "minimumSamples": {
     "teamFavorite": 5,
     "teamUnderdog": 5,
@@ -15,7 +15,7 @@
     "settledFixtures": 126,
     "settledDecisions": 269,
     "reviewedLosses": 46,
-    "attachedUpcoming": 1856,
+    "attachedUpcoming": 1855,
     "highRiskUpcoming": 0,
     "stableUpcoming": 0
   },

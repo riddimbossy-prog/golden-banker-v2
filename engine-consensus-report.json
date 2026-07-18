@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-18T02:36:13.547Z",
+  "updated": "2026-07-18T03:46:35.045Z",
   "summary": {
     "fixtures": 300,
     "qualified": 0,
@@ -2882,13 +2882,6 @@
       "conflictIndex": 0,
       "alternatives": [
         {
-          "market": "Away Team Over 0.5 Goals",
-          "support": 0.45,
-          "engines": [
-            "Trend"
-          ]
-        },
-        {
           "market": "Home Team Over 0.5 Goals",
           "support": 0.43,
           "engines": [
@@ -3445,51 +3438,6 @@
       "independence": 0
     },
     {
-      "id": 1493899,
-      "date": "2026-07-18",
-      "home": "Boise",
-      "away": "Portland Hearts of Pine",
-      "league": "USL League One",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Home Team Over 0.5 Goals",
-      "score": 79.8,
-      "support": 1.14,
-      "supporters": [
-        "Trend",
-        "League Bias"
-      ],
-      "independence": 2,
-      "exactSupport": 2,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Second Half Over 0.5",
-          "support": 0.74,
-          "engines": [
-            "Halves"
-          ]
-        }
-      ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1592166,
-      "date": "2026-07-18",
-      "home": "CS Herediano",
-      "away": "Deportivo Saprissa",
-      "league": "Recopa",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
       "id": 1589344,
       "date": "2026-07-18",
       "home": "Ballard",
@@ -3637,27 +3585,6 @@
           ]
         }
       ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1589345,
-      "date": "2026-07-18",
-      "home": "San Francisco City",
-      "away": "Tucson",
-      "league": "USL League Two",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 76,
-      "support": 0.59,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
@@ -6216,6 +6143,72 @@
       "candidate": "Over 1.5 Goals",
       "score": 75.5,
       "support": 0.47,
+      "supporters": [
+        "League Bias"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1583370,
+      "date": "2026-07-18",
+      "home": "Star Starachowice",
+      "away": "Mazovia Minsk Mazowiecki",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1589274,
+      "date": "2026-07-18",
+      "home": "Eltersdorf",
+      "away": "ASV Neumarkt",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1589275,
+      "date": "2026-07-18",
+      "home": "Viktoria Plzeň II",
+      "away": "Pardubice II",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1591879,
+      "date": "2026-07-18",
+      "home": "Middelfart",
+      "away": "VSK Århus",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Home Team Over 0.5 Goals",
+      "score": 75,
+      "support": 0.34,
       "supporters": [
         "League Bias"
       ],
