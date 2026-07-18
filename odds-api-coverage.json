@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-18T23:03:42.042Z",
+  "generatedAt": "2026-07-18T23:16:11.290Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,7 +13,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 274
+      "matches": 273
     },
     {
       "league": "Kansallinen Liiga",
@@ -88,30 +88,6 @@
       "matches": 6
     },
     {
-      "league": "Maranhense - 2",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.305,
-      "matches": 4
-    },
-    {
-      "league": "NWSL Women",
-      "country": "USA",
-      "sportKey": "soccer_usa_mls",
-      "sportTitle": "MLS",
-      "score": 0.323,
-      "matches": 5
-    },
-    {
-      "league": "Serie D",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.466,
-      "matches": 5
-    },
-    {
       "league": "USL League One",
       "country": "USA",
       "sportKey": "soccer_usa_mls",
@@ -120,36 +96,20 @@
       "matches": 10
     },
     {
-      "league": "Primera División",
-      "country": "Peru",
-      "sportKey": "soccer_argentina_primera_division",
-      "sportTitle": "Primera División - Argentina",
-      "score": 0.653,
-      "matches": 5
-    },
-    {
-      "league": "Serie B",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_serie_b",
-      "sportTitle": "Brazil Série B",
-      "score": 1,
-      "matches": 11
-    },
-    {
-      "league": "World Cup",
-      "country": "World",
-      "sportKey": "soccer_fifa_world_cup",
-      "sportTitle": "FIFA World Cup",
-      "score": 0.9,
-      "matches": 2
-    },
-    {
       "league": "MLS Next Pro",
       "country": "USA",
       "sportKey": "soccer_usa_mls",
       "sportTitle": "MLS",
       "score": 1,
       "matches": 15
+    },
+    {
+      "league": "Serie D",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.466,
+      "matches": 4
     },
     {
       "league": "Copa De La Liga",
@@ -176,6 +136,14 @@
       "matches": 3
     },
     {
+      "league": "NWSL Women",
+      "country": "USA",
+      "sportKey": "soccer_usa_mls",
+      "sportTitle": "MLS",
+      "score": 0.323,
+      "matches": 4
+    },
+    {
       "league": "Liga MX",
       "country": "Mexico",
       "sportKey": "soccer_mexico_ligamx",
@@ -190,6 +158,14 @@
       "sportTitle": "MLS",
       "score": 0.323,
       "matches": 10
+    },
+    {
+      "league": "Primera División",
+      "country": "Peru",
+      "sportKey": "soccer_argentina_primera_division",
+      "sportTitle": "Primera División - Argentina",
+      "score": 0.653,
+      "matches": 4
     },
     {
       "league": "USL League Two",
@@ -408,6 +384,14 @@
       "matches": 2
     },
     {
+      "league": "World Cup",
+      "country": "World",
+      "sportKey": "soccer_fifa_world_cup",
+      "sportTitle": "FIFA World Cup",
+      "score": 0.9,
+      "matches": 1
+    },
+    {
       "league": "Premier League",
       "country": "Lebanon",
       "sportKey": "soccer_epl",
@@ -584,6 +568,14 @@
       "matches": 7
     },
     {
+      "league": "Serie B",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_serie_b",
+      "sportTitle": "Brazil Série B",
+      "score": 1,
+      "matches": 10
+    },
+    {
       "league": "UEFA Champions League Women",
       "country": "World",
       "sportKey": "soccer_uefa_champs_league_qualification",
@@ -605,6 +597,14 @@
       "sportKey": "soccer_norway_eliteserien",
       "sportTitle": "Eliteserien - Norway",
       "score": 1,
+      "matches": 2
+    },
+    {
+      "league": "Maranhense - 2",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.305,
       "matches": 2
     },
     {
@@ -848,7 +848,7 @@
       "matches": 3
     }
   ],
-  "matchesConsidered": 1056,
+  "matchesConsidered": 1047,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -876,12 +876,6 @@
       "bestScore": 0.25
     },
     {
-      "league": "Segunda División",
-      "country": "Peru",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
       "league": "Liga Pro Serie B",
       "country": "Ecuador",
       "reason": "No matching soccer sport key",
@@ -896,6 +890,12 @@
     {
       "league": "Segunda División",
       "country": "Uruguay",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
+      "league": "Segunda División",
+      "country": "Peru",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
     },
@@ -1317,12 +1317,6 @@
       "league": "Friendlies Clubs",
       "home": "Compostela",
       "away": "Deportivo La Coruna",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Farense",
-      "away": "Benfica B",
       "reason": "No event/team match"
     },
     {
@@ -2356,6 +2350,12 @@
       "home": "Excelsior Virton",
       "away": "US Hostert",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Hilden",
+      "away": "Unterrath",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -3294,5 +3294,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-18T23:03:54.569Z"
+  "completedAt": "2026-07-18T23:16:16.869Z"
 }
