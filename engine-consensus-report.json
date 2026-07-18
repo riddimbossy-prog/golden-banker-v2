@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-18T04:53:18.614Z",
+  "updated": "2026-07-18T06:00:10.254Z",
   "summary": {
     "fixtures": 300,
     "qualified": 0,
@@ -3402,27 +3402,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1581836,
-      "date": "2026-07-18",
-      "home": "U. de Deportes W",
-      "away": "Sporting Cristal W",
-      "league": "Liga Women",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 75.9,
-      "support": 0.58,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1589273,
       "date": "2026-07-18",
       "home": "Vissel Kobe",
@@ -3638,27 +3617,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1521982,
-      "date": "2026-07-18",
-      "home": "Hume City",
-      "away": "Oakleigh Cannons",
-      "league": "Victoria NPL",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 76.6,
-      "support": 0.75,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1523788,
       "date": "2026-07-18",
       "home": "Lambton Jaffas",
@@ -3751,63 +3709,6 @@
           ]
         }
       ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1529274,
-      "date": "2026-07-18",
-      "home": "Devonport City",
-      "away": "South Hobart",
-      "league": "Tasmania NPL",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 76.8,
-      "support": 0.79,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Home Team Over 0.5 Goals",
-          "support": 0.78,
-          "engines": [
-            "Trend"
-          ]
-        },
-        {
-          "market": "Over 1.5 Goals",
-          "support": 0.38,
-          "engines": [
-            "League Bias"
-          ]
-        }
-      ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1529275,
-      "date": "2026-07-18",
-      "home": "Riverside",
-      "away": "Clarence Zebras",
-      "league": "Tasmania NPL",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 76.3,
-      "support": 0.68,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
@@ -5133,27 +5034,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1584874,
-      "date": "2026-07-18",
-      "home": "Machida Zelvia",
-      "away": "Fujieda MYFC",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Over 1.5 Goals",
-      "score": 76,
-      "support": 0.59,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1517599,
       "date": "2026-07-18",
       "home": "Sutherland Sharks",
@@ -5204,6 +5084,27 @@
       "support": 0.56,
       "supporters": [
         "Halves"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1584874,
+      "date": "2026-07-18",
+      "home": "Machida Zelvia",
+      "away": "Fujieda MYFC",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Over 1.5 Goals",
+      "score": 76,
+      "support": 0.59,
+      "supporters": [
+        "League Bias"
       ],
       "independence": 1,
       "exactSupport": 1,
@@ -5610,6 +5511,21 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
+      "id": 1583375,
+      "date": "2026-07-18",
+      "home": "Wisłoka Dębica",
+      "away": "Sokół Kolb.",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
       "id": 1524174,
       "date": "2026-07-18",
       "home": "Logan Lightning",
@@ -5843,6 +5759,21 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
+      "id": 1583359,
+      "date": "2026-07-18",
+      "home": "Goczałkowice Zdrój",
+      "away": "Rekord Bielsko-Biała",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
       "id": 1583343,
       "date": "2026-07-18",
       "home": "Spišská Nová Ves",
@@ -5856,27 +5787,6 @@
       "supporters": [],
       "conflictIndex": 0,
       "independence": 0
-    },
-    {
-      "id": 1548871,
-      "date": "2026-07-18",
-      "home": "Wisla Krakow",
-      "away": "Artis",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 75.5,
-      "support": 0.46,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
       "id": 1560640,
@@ -6202,6 +6112,84 @@
           ]
         }
       ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1527236,
+      "date": "2026-07-18",
+      "home": "Dianella White Eagle",
+      "away": "Olympic Kingsway",
+      "league": "Western Australia NPL",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Second Half Over 0.5",
+      "score": 76.1,
+      "support": 0.64,
+      "supporters": [
+        "Halves"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Double Chance X2",
+          "support": 0.59,
+          "engines": [
+            "PurePPG Ultra"
+          ]
+        },
+        {
+          "market": "Home Team Over 0.5 Goals",
+          "support": 0.3,
+          "engines": [
+            "League Bias"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1584889,
+      "date": "2026-07-18",
+      "home": "Busko-Zdroj",
+      "away": "Naprzód",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Away Team Over 0.5 Goals",
+      "score": 75,
+      "support": 0.34,
+      "supporters": [
+        "League Bias"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1560644,
+      "date": "2026-07-18",
+      "home": "Odra Opole",
+      "away": "Baník Ostrava II",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Away Win Either Half",
+      "score": 75.3,
+      "support": 0.42,
+      "supporters": [
+        "Halves"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     }
   ]

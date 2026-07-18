@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-18T04:50:33.856Z",
-  "expectedFromManifest": 2056,
-  "discoveredExactFixtures": 2056,
-  "savedActiveFixtures": 2056,
-  "enrichedFixtures": 2056,
+  "generatedAt": "2026-07-18T05:57:19.477Z",
+  "expectedFromManifest": 2058,
+  "discoveredExactFixtures": 2058,
+  "savedActiveFixtures": 2058,
+  "enrichedFixtures": 2058,
   "fixtureOnlyFallbacks": 0,
   "finalCoveragePercent": 100,
   "dates": {
