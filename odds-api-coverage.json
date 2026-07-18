@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-18T10:04:29.562Z",
+  "generatedAt": "2026-07-18T10:14:34.822Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -21,7 +21,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 592
+      "matches": 587
     },
     {
       "league": "Victoria Premier League 2",
@@ -29,15 +29,7 @@
       "sportKey": "soccer_epl",
       "sportTitle": "EPL",
       "score": 0.667,
-      "matches": 6
-    },
-    {
-      "league": "Queensland Premier League",
-      "country": "Australia",
-      "sportKey": "soccer_epl",
-      "sportTitle": "EPL",
-      "score": 0.667,
-      "matches": 6
+      "matches": 5
     },
     {
       "league": "League Two",
@@ -45,7 +37,15 @@
       "sportKey": "soccer_china_superleague",
       "sportTitle": "Super League - China",
       "score": 0.43,
-      "matches": 12
+      "matches": 11
+    },
+    {
+      "league": "Queensland Premier League",
+      "country": "Australia",
+      "sportKey": "soccer_epl",
+      "sportTitle": "EPL",
+      "score": 0.667,
+      "matches": 3
     },
     {
       "league": "Supreme Division Women",
@@ -848,7 +848,7 @@
       "matches": 3
     }
   ],
-  "matchesConsidered": 1601,
+  "matchesConsidered": 1578,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -876,22 +876,10 @@
       "bestScore": 0.167
     },
     {
-      "league": "New South Wales NPL 2",
+      "league": "Victoria NPL 2",
       "country": "Australia",
       "reason": "No matching soccer sport key",
-      "bestScore": 0.091
-    },
-    {
-      "league": "Npl Nsw U20",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
-      "league": "Western Australia State League 1",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.222
+      "bestScore": 0.111
     },
     {
       "league": "New South Wales NPL",
@@ -900,25 +888,19 @@
       "bestScore": 0
     },
     {
-      "league": "Queensland NPL",
+      "league": "New South Wales NPL 2",
       "country": "Australia",
       "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
-      "league": "Victoria NPL",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
-      "league": "Victoria NPL 2",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.111
+      "bestScore": 0.091
     },
     {
       "league": "Western Australia NPL",
+      "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
+    },
+    {
+      "league": "Npl Nsw U20",
       "country": "Australia",
       "reason": "No matching soccer sport key",
       "bestScore": 0
@@ -1098,6 +1080,12 @@
       "bestScore": 0
     },
     {
+      "league": "Queensland NPL",
+      "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
+    },
+    {
       "league": "South Australia NPL",
       "country": "Australia",
       "reason": "No matching soccer sport key",
@@ -1144,6 +1132,12 @@
       "country": "Colombia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
+    },
+    {
+      "league": "Victoria NPL",
+      "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
     },
     {
       "league": "South Australia State League 1",
@@ -1753,38 +1747,14 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Inter Bratislava",
-      "away": "Galanta",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Mławianka Mława",
       "away": "Sokół Ostróda",
       "reason": "No event/team match"
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Ajka",
-      "away": "Csakvar",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Yokohama FC",
       "away": "Kitakyushu",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Sokol Hostouň",
-      "away": "Sokol Zápy",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Wisłoka Dębica",
-      "away": "Sokół Kolb.",
       "reason": "No event/team match"
     },
     {
@@ -2355,6 +2325,36 @@
       "league": "Friendlies Clubs",
       "home": "Dijon",
       "away": "Progres Niederkorn",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Kickers Emden",
+      "away": "SV Rodinghausen",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Fortuna Köln",
+      "away": "Borussia M'gladbach II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "FC Zurich",
+      "away": "SpVgg Greuther Fürth",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Hapoel Afula",
+      "away": "Dobrudzha",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "FC Ingolstadt 04",
+      "away": "Palermo",
       "reason": "No event/team match"
     }
   ],
@@ -3257,5 +3257,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-18T10:04:42.123Z"
+  "completedAt": "2026-07-18T10:14:46.440Z"
 }
