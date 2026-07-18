@@ -73946,9 +73946,13 @@
         "dataFields": 0
       },
       "recordedAt": "2026-07-17T19:53:08.555Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Lost",
+      "score": "0-1",
+      "finalHomeGoals": 0,
+      "finalAwayGoals": 1,
+      "actualResult": "away",
+      "settledAt": "2026-07-18T14:53:52.174Z"
     },
     {
       "matchDate": "2026-07-18",
@@ -78051,9 +78055,13 @@
         "dataFields": 0
       },
       "recordedAt": "2026-07-17T19:53:08.742Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "2-2",
+      "finalHomeGoals": 2,
+      "finalAwayGoals": 2,
+      "actualResult": "draw",
+      "settledAt": "2026-07-18T14:53:52.174Z"
     },
     {
       "matchDate": "2026-07-18",
@@ -78094,9 +78102,13 @@
         "dataFields": 0
       },
       "recordedAt": "2026-07-17T19:53:08.743Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "1-3",
+      "finalHomeGoals": 1,
+      "finalAwayGoals": 3,
+      "actualResult": "away",
+      "settledAt": "2026-07-18T14:53:52.174Z"
     },
     {
       "matchDate": "2026-07-18",
@@ -118138,6 +118150,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-18T14:43:14.934Z"
+    "updated": "2026-07-18T14:53:53.389Z"
   }
 }
