@@ -1,9 +1,9 @@
 {
   "version": "v194",
-  "updated": "2026-07-18T15:46:27.406Z",
+  "updated": "2026-07-18T16:44:15.457Z",
   "summary": {
-    "settled": 313,
-    "winRate": 0.8371,
+    "settled": 320,
+    "winRate": 0.8313,
     "engines": 12,
     "approved": 0,
     "shadow": 12,
@@ -45,7 +45,7 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T15:46:27.404Z"
+      "updated": "2026-07-18T16:44:15.455Z"
     },
     "Prime": {
       "engine": "Prime",
@@ -78,7 +78,7 @@
         "distributionShift": 0.293,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T15:46:27.404Z"
+      "updated": "2026-07-18T16:44:15.455Z"
     },
     "Value": {
       "engine": "Value",
@@ -111,7 +111,7 @@
         "distributionShift": 0.8,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T15:46:27.405Z"
+      "updated": "2026-07-18T16:44:15.455Z"
     },
     "Pro": {
       "engine": "Pro",
@@ -144,7 +144,7 @@
         "distributionShift": 0.8,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T15:46:27.405Z"
+      "updated": "2026-07-18T16:44:15.455Z"
     },
     "Ultra": {
       "engine": "Ultra",
@@ -177,7 +177,7 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T15:46:27.405Z"
+      "updated": "2026-07-18T16:44:15.456Z"
     },
     "Elite": {
       "engine": "Elite",
@@ -210,7 +210,7 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T15:46:27.405Z"
+      "updated": "2026-07-18T16:44:15.456Z"
     },
     "Apex": {
       "engine": "Apex",
@@ -243,7 +243,7 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T15:46:27.405Z"
+      "updated": "2026-07-18T16:44:15.456Z"
     },
     "Halves": {
       "engine": "Halves",
@@ -276,7 +276,7 @@
         "distributionShift": 0.033,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T15:46:27.405Z"
+      "updated": "2026-07-18T16:44:15.456Z"
     },
     "Streaks": {
       "engine": "Streaks",
@@ -309,26 +309,26 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T15:46:27.405Z"
+      "updated": "2026-07-18T16:44:15.456Z"
     },
     "Trend": {
       "engine": "Trend",
       "state": "SHADOW",
       "reason": "Needs a larger forward validation sample.",
       "train": {
-        "sample": 24,
-        "wins": 22,
+        "sample": 25,
+        "wins": 23,
         "losses": 2,
-        "rate": 0.9167
+        "rate": 0.92
       },
       "validation": {
         "sample": 11,
-        "wins": 10,
-        "losses": 1,
-        "rate": 0.9091
+        "wins": 9,
+        "losses": 2,
+        "rate": 0.8182
       },
-      "validationDelta": -0.0076,
-      "calibrationError": 0.1154,
+      "validationDelta": -0.1018,
+      "calibrationError": 0.0744,
       "shadow": {
         "eligible": 0,
         "avoidedLosses": 0,
@@ -337,31 +337,31 @@
       },
       "drift": {
         "recentSample": 30,
-        "priorSample": 5,
-        "confidenceShift": 14.96,
-        "distributionShift": 0.533,
+        "priorSample": 6,
+        "confidenceShift": 11.71,
+        "distributionShift": 0.433,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T15:46:27.405Z"
+      "updated": "2026-07-18T16:44:15.456Z"
     },
     "League Bias": {
       "engine": "League Bias",
       "state": "SHADOW",
       "reason": "Needs a larger forward validation sample.",
       "train": {
-        "sample": 32,
-        "wins": 30,
-        "losses": 2,
-        "rate": 0.9375
+        "sample": 37,
+        "wins": 34,
+        "losses": 3,
+        "rate": 0.9189
       },
       "validation": {
-        "sample": 15,
+        "sample": 16,
         "wins": 13,
-        "losses": 2,
-        "rate": 0.8667
+        "losses": 3,
+        "rate": 0.8125
       },
-      "validationDelta": -0.0708,
-      "calibrationError": 0.0041,
+      "validationDelta": -0.1064,
+      "calibrationError": 0.0571,
       "shadow": {
         "eligible": 0,
         "avoidedLosses": 0,
@@ -370,12 +370,12 @@
       },
       "drift": {
         "recentSample": 30,
-        "priorSample": 17,
-        "confidenceShift": 0.64,
-        "distributionShift": 0.431,
+        "priorSample": 23,
+        "confidenceShift": 0.02,
+        "distributionShift": 0.178,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T15:46:27.405Z"
+      "updated": "2026-07-18T16:44:15.456Z"
     },
     "Strict": {
       "engine": "Strict",
@@ -408,17 +408,17 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T15:46:27.405Z"
+      "updated": "2026-07-18T16:44:15.456Z"
     }
   },
   "marketScorecards": [
     {
       "marketFamily": "MATCH_OVER",
-      "sample": 61,
-      "wins": 57,
+      "sample": 63,
+      "wins": 59,
       "losses": 4,
-      "rate": 0.9344,
-      "calibrationError": 0.825
+      "rate": 0.9365,
+      "calibrationError": 0.8027
     },
     {
       "marketFamily": "OTHER",
@@ -427,6 +427,14 @@
       "losses": 7,
       "rate": 0.8814,
       "calibrationError": 0.0103
+    },
+    {
+      "marketFamily": "HOME_TEAM",
+      "sample": 45,
+      "wins": 38,
+      "losses": 7,
+      "rate": 0.8444,
+      "calibrationError": 0.08
     },
     {
       "marketFamily": "AWAY_RESULT",
@@ -443,14 +451,6 @@
       "losses": 16,
       "rate": 0.6364,
       "calibrationError": 0.0665
-    },
-    {
-      "marketFamily": "HOME_TEAM",
-      "sample": 40,
-      "wins": 36,
-      "losses": 4,
-      "rate": 0.9,
-      "calibrationError": 0.1223
     },
     {
       "marketFamily": "HOME_RESULT",
@@ -512,6 +512,13 @@
       "wins": 9,
       "losses": 1,
       "rate": 0.9
+    },
+    {
+      "league": "Friendlies Clubs",
+      "sample": 10,
+      "wins": 7,
+      "losses": 3,
+      "rate": 0.7
     },
     {
       "league": "Victoria Premier League 2",
@@ -627,13 +634,6 @@
     },
     {
       "league": "USL Championship",
-      "sample": 2,
-      "wins": 2,
-      "losses": 0,
-      "rate": 1
-    },
-    {
-      "league": "Friendlies Clubs",
       "sample": 2,
       "wins": 2,
       "losses": 0,

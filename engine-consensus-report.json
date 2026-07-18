@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-18T15:46:29.060Z",
+  "updated": "2026-07-18T16:44:17.127Z",
   "summary": {
     "fixtures": 300,
     "qualified": 0,
@@ -3532,36 +3532,6 @@
       "independence": 0
     },
     {
-      "id": 1583361,
-      "date": "2026-07-18",
-      "home": "Hodonín",
-      "away": "Malženice",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
-      "id": 1567669,
-      "date": "2026-07-18",
-      "home": "Obolon'-Brovar",
-      "away": "Kolos Kovalivka II",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
       "id": 1560706,
       "date": "2026-07-18",
       "home": "Essingen",
@@ -3816,21 +3786,6 @@
       "independence": 0
     },
     {
-      "id": 1567238,
-      "date": "2026-07-18",
-      "home": "Kirchanschöring",
-      "away": "Landshut",
-      "league": "Oberliga - Bayern Süd",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
       "id": 1567653,
       "date": "2026-07-18",
       "home": "Magdeburg II",
@@ -3882,27 +3837,6 @@
       "independence": 0
     },
     {
-      "id": 1584880,
-      "date": "2026-07-18",
-      "home": "Ringsted",
-      "away": "Hørsholm-Usserød",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Home Team Over 0.5 Goals",
-      "score": 75.4,
-      "support": 0.45,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1560695,
       "date": "2026-07-18",
       "home": "Veres Rivne",
@@ -3952,21 +3886,6 @@
       "conflictIndex": 0,
       "alternatives": [],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1562934,
-      "date": "2026-07-18",
-      "home": "Optik Rathenow",
-      "away": "Ludwigsfelde",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
     },
     {
       "id": 1567657,
@@ -4068,27 +3987,6 @@
           ]
         }
       ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1567658,
-      "date": "2026-07-18",
-      "home": "FC OSS",
-      "away": "SG Wattenscheid 09",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Away Team Over 0.5 Goals",
-      "score": 75.4,
-      "support": 0.46,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
@@ -4529,21 +4427,6 @@
       "independence": 0
     },
     {
-      "id": 1584893,
-      "date": "2026-07-18",
-      "home": "Groningen",
-      "away": "AEK Athens FC",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
       "id": 1584895,
       "date": "2026-07-18",
       "home": "Lusitânia Lourosa",
@@ -4645,7 +4528,7 @@
       "alternatives": [
         {
           "market": "Double Chance X2",
-          "support": 0.55,
+          "support": 0.56,
           "engines": [
             "Momentum"
           ]
@@ -4830,7 +4713,7 @@
       "market": "No Bet",
       "candidate": "Away Team Over 0.5 Goals",
       "score": 75.4,
-      "support": 0.45,
+      "support": 0.46,
       "supporters": [
         "League Bias"
       ],
@@ -4964,27 +4847,6 @@
       "independence": 0
     },
     {
-      "id": 1583377,
-      "date": "2026-07-18",
-      "home": "PEC Zwolle",
-      "away": "Cercle Brugge",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Away Team Over 0.5 Goals",
-      "score": 75.4,
-      "support": 0.46,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1589282,
       "date": "2026-07-18",
       "home": "Todesfelde",
@@ -5025,21 +4887,6 @@
       "conflictIndex": 0,
       "alternatives": [],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1566695,
-      "date": "2026-07-18",
-      "home": "Würzburger FV",
-      "away": "Jahn Regensburg II",
-      "league": "Oberliga - Bayern Nord",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
     },
     {
       "id": 1592157,
@@ -5380,10 +5227,10 @@
       "independence": 0
     },
     {
-      "id": 1584893,
+      "id": 1548878,
       "date": "2026-07-18",
-      "home": "Groningen",
-      "away": "AEK Athens FC",
+      "home": "Macclesfield",
+      "away": "Wolves U21",
       "league": "Friendlies Clubs",
       "version": "v195",
       "bet": false,
@@ -5395,47 +5242,17 @@
       "independence": 0
     },
     {
-      "id": 1584895,
+      "id": 1550584,
       "date": "2026-07-18",
-      "home": "Lusitânia Lourosa",
-      "away": "SC Braga B",
+      "home": "Dergview",
+      "away": "Dungannon Swifts",
       "league": "Friendlies Clubs",
       "version": "v195",
       "bet": false,
       "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
-      "id": 1589277,
-      "date": "2026-07-18",
-      "home": "Estrela",
-      "away": "Casa Pia",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
-      "id": 1589278,
-      "date": "2026-07-18",
-      "home": "Mamer",
-      "away": "Etzella Ettelbruck",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Home Team Over 0.5 Goals",
+      "candidate": "Away Team Over 0.5 Goals",
       "score": 75.4,
-      "support": 0.45,
+      "support": 0.46,
       "supporters": [
         "League Bias"
       ],
@@ -5446,10 +5263,10 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1589279,
+      "id": 1550586,
       "date": "2026-07-18",
-      "home": "Feirense",
-      "away": "Arouca",
+      "home": "Spennymoor Town",
+      "away": "Hartlepool",
       "league": "Friendlies Clubs",
       "version": "v195",
       "bet": false,
@@ -5461,25 +5278,94 @@
       "independence": 0
     },
     {
-      "id": 1589281,
+      "id": 1560716,
       "date": "2026-07-18",
-      "home": "Westfalia Rhynern",
-      "away": "Schonnebeck",
+      "home": "Barrow",
+      "away": "Mansfield Town",
       "league": "Friendlies Clubs",
       "version": "v195",
       "bet": false,
       "market": "No Bet",
-      "candidate": "Home Team Over 0.5 Goals",
-      "score": 75.4,
-      "support": 0.45,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
       "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+      "independence": 0
+    },
+    {
+      "id": 1560720,
+      "date": "2026-07-18",
+      "home": "Flénu",
+      "away": "Francs Borains",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1560721,
+      "date": "2026-07-18",
+      "home": "Gala Fairydean Rovers",
+      "away": "Hibernian U21",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1560723,
+      "date": "2026-07-18",
+      "home": "Harlow Town",
+      "away": "Colchester",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1560724,
+      "date": "2026-07-18",
+      "home": "Limavady United",
+      "away": "Institute",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1560726,
+      "date": "2026-07-18",
+      "home": "Maidenhead",
+      "away": "Southampton U21",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
     }
   ]
 }

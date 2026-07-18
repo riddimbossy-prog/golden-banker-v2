@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-18T16:35:37.051Z",
+  "generatedAt": "2026-07-18T16:41:12.529Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,7 +13,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 416
+      "matches": 450
     },
     {
       "league": "Kansallinen Liiga",
@@ -30,6 +30,14 @@
       "sportTitle": "Bundesliga - Germany",
       "score": 0.323,
       "matches": 10
+    },
+    {
+      "league": "Super League",
+      "country": "Malawi",
+      "sportKey": "soccer_china_superleague",
+      "sportTitle": "Super League - China",
+      "score": 0.606,
+      "matches": 5
     },
     {
       "league": "Mineiro U20",
@@ -53,7 +61,39 @@
       "sportKey": "soccer_norway_eliteserien",
       "sportTitle": "Eliteserien - Norway",
       "score": 1,
+      "matches": 7
+    },
+    {
+      "league": "FAI Cup",
+      "country": "Ireland",
+      "sportKey": "soccer_league_of_ireland",
+      "sportTitle": "League of Ireland",
+      "score": 0.291,
       "matches": 5
+    },
+    {
+      "league": "Kakkonen - Lohko A",
+      "country": "Finland",
+      "sportKey": "soccer_finland_veikkausliiga",
+      "sportTitle": "Veikkausliiga - Finland",
+      "score": 0.323,
+      "matches": 5
+    },
+    {
+      "league": "Kakkonen - Lohko B",
+      "country": "Finland",
+      "sportKey": "soccer_finland_veikkausliiga",
+      "sportTitle": "Veikkausliiga - Finland",
+      "score": 0.323,
+      "matches": 7
+    },
+    {
+      "league": "Kakkonen - Lohko C",
+      "country": "Finland",
+      "sportKey": "soccer_finland_veikkausliiga",
+      "sportTitle": "Veikkausliiga - Finland",
+      "score": 0.323,
+      "matches": 4
     },
     {
       "league": "League Cup",
@@ -64,20 +104,44 @@
       "matches": 19
     },
     {
+      "league": "Supreme Division Women",
+      "country": "Russia",
+      "sportKey": "soccer_russia_premier_league",
+      "sportTitle": "Premier League - Russia",
+      "score": 0.305,
+      "matches": 3
+    },
+    {
+      "league": "Veikkausliiga",
+      "country": "Finland",
+      "sportKey": "soccer_finland_veikkausliiga",
+      "sportTitle": "Veikkausliiga - Finland",
+      "score": 0.323,
+      "matches": 4
+    },
+    {
+      "league": "Ykkönen",
+      "country": "Finland",
+      "sportKey": "soccer_finland_veikkausliiga",
+      "sportTitle": "Veikkausliiga - Finland",
+      "score": 0.38,
+      "matches": 7
+    },
+    {
+      "league": "Ykkösliiga",
+      "country": "Finland",
+      "sportKey": "soccer_finland_veikkausliiga",
+      "sportTitle": "Veikkausliiga - Finland",
+      "score": 0.38,
+      "matches": 2
+    },
+    {
       "league": "Premier League",
       "country": "Kazakhstan",
       "sportKey": "soccer_epl",
       "sportTitle": "EPL",
       "score": 0.987,
       "matches": 5
-    },
-    {
-      "league": "Kakkonen - Lohko B",
-      "country": "Finland",
-      "sportKey": "soccer_finland_veikkausliiga",
-      "sportTitle": "Veikkausliiga - Finland",
-      "score": 0.323,
-      "matches": 4
     },
     {
       "league": "Liga MX U21",
@@ -448,14 +512,6 @@
       "matches": 2
     },
     {
-      "league": "Super League",
-      "country": "Malawi",
-      "sportKey": "soccer_china_superleague",
-      "sportTitle": "Super League - China",
-      "score": 0.606,
-      "matches": 4
-    },
-    {
       "league": "Premier Soccer League",
       "country": "Zimbabwe",
       "sportKey": "soccer_epl",
@@ -478,22 +534,6 @@
       "sportTitle": "Allsvenskan - Sweden",
       "score": 1,
       "matches": 6
-    },
-    {
-      "league": "Veikkausliiga",
-      "country": "Finland",
-      "sportKey": "soccer_finland_veikkausliiga",
-      "sportTitle": "Veikkausliiga - Finland",
-      "score": 1,
-      "matches": 4
-    },
-    {
-      "league": "Kakkonen - Lohko C",
-      "country": "Finland",
-      "sportKey": "soccer_finland_veikkausliiga",
-      "sportTitle": "Veikkausliiga - Finland",
-      "score": 0.323,
-      "matches": 3
     },
     {
       "league": "Carioca C",
@@ -848,7 +888,7 @@
       "matches": 3
     }
   ],
-  "matchesConsidered": 1318,
+  "matchesConsidered": 1390,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1573,6 +1613,12 @@
     },
     {
       "league": "Friendlies Clubs",
+      "home": "SF Baumberg",
+      "away": "Bayer Leverkusen",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
       "home": "Wimborne Town",
       "away": "Salisbury",
       "reason": "No event/team match"
@@ -1633,6 +1679,18 @@
     },
     {
       "league": "Friendlies Clubs",
+      "home": "Avro",
+      "away": "FC Halifax Town",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Cleethorpes Town",
+      "away": "Harrogate Town",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
       "home": "Dover",
       "away": "Eastbourne Borough",
       "reason": "No event/team match"
@@ -1663,14 +1721,56 @@
     },
     {
       "league": "Friendlies Clubs",
+      "home": "Horsham",
+      "away": "Eastbourne Town",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
       "home": "Spennymoor Town",
       "away": "Hartlepool",
       "reason": "No event/team match"
     },
     {
       "league": "Friendlies Clubs",
+      "home": "Vysočina Jihlava",
+      "away": "Pardubice",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Karviná",
+      "away": "Ruch Chorzów",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Příbram",
+      "away": "FSV Frankfurt",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Aveley",
+      "away": "Braintree",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
       "home": "Barrow",
       "away": "Mansfield Town",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Bedford Town",
+      "away": "Walton & Hersham",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Crewe",
+      "away": "Stoke City",
       "reason": "No event/team match"
     },
     {
@@ -1779,6 +1879,12 @@
       "league": "Friendlies Clubs",
       "home": "Karpaty",
       "away": "Zeljeznicar Sarajevo",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Karlsruher SC",
+      "away": "Shimizu S-pulse",
       "reason": "No event/team match"
     },
     {
@@ -2152,210 +2258,6 @@
       "home": "Slavia Praha",
       "away": "Lyon",
       "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Elche",
-      "away": "Kaizer Chiefs",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Sporting Gijon",
-      "away": "Marino de Luanco",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Leioa",
-      "away": "Athletic Club",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Olot",
-      "away": "Espanyol",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Zulte Waregem",
-      "away": "AZ Alkmaar",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Compostela",
-      "away": "Deportivo La Coruna",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Farense",
-      "away": "Benfica B",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "SC Braga",
-      "away": "Celta Vigo",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Eastleigh",
-      "away": "Southampton",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Millonarios",
-      "away": "Colo Colo",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Avispa Fukuoka",
-      "away": "Osaka",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Yokohama F. Marinos",
-      "away": "Roasso Kumamoto",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Kluczevia Stargard",
-      "away": "Warta Gorzów",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Rochdale",
-      "away": "Al-Rayyan SC",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Tondela",
-      "away": "Nacional",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Naestved",
-      "away": "FC Helsingor",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Erzgebirge Aue",
-      "away": "FC Schalke 04",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Dornbirn",
-      "away": "SCR Altach",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Hessen Kassel",
-      "away": "Lippstadt 08",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "FC Krasnodar",
-      "away": "Baltika",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Borussia Hildesheim",
-      "away": "Hemelingen",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Sardarapat",
-      "away": "Ararat",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Werder Bremen II",
-      "away": "BFC Preussen",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Balingen",
-      "away": "VfB Stuttgart",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Bremer SV",
-      "away": "Heeslinger SC",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "SSV Ulm 1846",
-      "away": "Bayern München II",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Cracovia Krakow",
-      "away": "Sevilla",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Sporting Hasselt",
-      "away": "Antwerp",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Eintracht Norderstedt",
-      "away": "Havelse",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "HNK Gorica",
-      "away": "FC St. Pauli",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "AFC Eskilstuna",
-      "away": "Assyriska FF",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Ennepetal",
-      "away": "Westfalia Rhynern",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Genoa",
-      "away": "Trento",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Buchonia Flieden",
-      "away": "Barockstadt Fulda-Lehn.",
-      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -2396,6 +2298,18 @@
       "market": "double_chance"
     },
     {
+      "sportKey": "soccer_germany_bundesliga",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_germany_bundesliga",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_china_superleague",
+      "market": "double_chance"
+    },
+    {
       "sportKey": "soccer_brazil_campeonato",
       "market": "btts"
     },
@@ -2420,6 +2334,18 @@
       "market": "double_chance"
     },
     {
+      "sportKey": "soccer_league_of_ireland",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_league_of_ireland",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_league_of_ireland",
+      "market": "double_chance"
+    },
+    {
       "sportKey": "soccer_england_efl_cup",
       "market": "btts"
     },
@@ -2429,6 +2355,18 @@
     },
     {
       "sportKey": "soccer_england_efl_cup",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_russia_premier_league",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_russia_premier_league",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_russia_premier_league",
       "market": "double_chance"
     },
     {
@@ -2725,6 +2663,31 @@
       "statusCode": 422
     },
     {
+      "label": "soccer_china_superleague:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_germany_bundesliga:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_germany_bundesliga:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_germany_bundesliga:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_china_superleague:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
       "label": "soccer_brazil_campeonato:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -2775,6 +2738,31 @@
       "statusCode": 422
     },
     {
+      "label": "soccer_league_of_ireland:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_league_of_ireland:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_league_of_ireland:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_league_of_ireland:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_league_of_ireland:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
       "label": "soccer_england_efl_cup:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -2796,6 +2784,31 @@
     },
     {
       "label": "soccer_england_efl_cup:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_russia_premier_league:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_russia_premier_league:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_russia_premier_league:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_russia_premier_league:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_russia_premier_league:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3257,5 +3270,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-18T16:35:47.039Z"
+  "completedAt": "2026-07-18T16:41:25.879Z"
 }

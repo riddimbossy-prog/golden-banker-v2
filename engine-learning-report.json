@@ -1,10 +1,10 @@
 {
   "version": "v193",
-  "updated": "2026-07-18T15:46:26.839Z",
+  "updated": "2026-07-18T16:44:14.870Z",
   "summary": {
-    "settledFixtures": 148,
-    "settledDecisions": 313,
-    "reviewedLosses": 51,
+    "settledFixtures": 154,
+    "settledDecisions": 320,
+    "reviewedLosses": 54,
     "teamProfiles": 68,
     "leagueProfiles": 13,
     "matchupProfiles": 35,
@@ -19,7 +19,7 @@
   "commonMissCauses": [
     {
       "cause": "INPUT_COVERAGE_GAP",
-      "count": 51
+      "count": 54
     },
     {
       "cause": "GOAL_SPIKE",
@@ -27,7 +27,7 @@
     },
     {
       "cause": "RESULT_DIRECTION_MISS",
-      "count": 10
+      "count": 13
     },
     {
       "cause": "DRAW_TRAP",
@@ -107,6 +107,45 @@
       "score": "0-0",
       "causes": [
         "DRAW_TRAP",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-18",
+      "home": "Akron",
+      "away": "Dynamo",
+      "league": "Friendlies Clubs",
+      "engine": "League Bias",
+      "market": "Home Team Over 0.5 Goals",
+      "score": "0-1",
+      "causes": [
+        "RESULT_DIRECTION_MISS",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-18",
+      "home": "Schöningen",
+      "away": "1. FC Magdeburg",
+      "league": "Friendlies Clubs",
+      "engine": "Trend",
+      "market": "Home Team Over 0.5 Goals",
+      "score": "0-4",
+      "causes": [
+        "RESULT_DIRECTION_MISS",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-18",
+      "home": "Schöningen",
+      "away": "1. FC Magdeburg",
+      "league": "Friendlies Clubs",
+      "engine": "League Bias",
+      "market": "Home Team Over 0.5 Goals",
+      "score": "0-4",
+      "causes": [
+        "RESULT_DIRECTION_MISS",
         "INPUT_COVERAGE_GAP"
       ]
     },
@@ -386,45 +425,6 @@
       "engine": "Prime",
       "market": "BTTS No",
       "score": "5-2",
-      "causes": [
-        "BOTH_ATTACKS_BROKE_SUPPRESSION",
-        "INPUT_COVERAGE_GAP"
-      ]
-    },
-    {
-      "matchDate": "2026-07-03",
-      "home": "AFC Ann Arbor",
-      "away": "Oakland County",
-      "league": "USL League Two",
-      "engine": "Normal",
-      "market": "Away Win",
-      "score": "3-1",
-      "causes": [
-        "RESULT_DIRECTION_MISS",
-        "INPUT_COVERAGE_GAP"
-      ]
-    },
-    {
-      "matchDate": "2026-07-03",
-      "home": "AFC Ann Arbor",
-      "away": "Oakland County",
-      "league": "USL League Two",
-      "engine": "Prime",
-      "market": "Away DNB",
-      "score": "3-1",
-      "causes": [
-        "RESULT_DIRECTION_MISS",
-        "INPUT_COVERAGE_GAP"
-      ]
-    },
-    {
-      "matchDate": "2026-07-03",
-      "home": "AFC Ann Arbor",
-      "away": "Oakland County",
-      "league": "USL League Two",
-      "engine": "Prime",
-      "market": "BTTS No",
-      "score": "3-1",
       "causes": [
         "BOTH_ATTACKS_BROKE_SUPPRESSION",
         "INPUT_COVERAGE_GAP"

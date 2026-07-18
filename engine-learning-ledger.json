@@ -1,7 +1,7 @@
 {
   "version": "v193",
   "schemaVersion": 1,
-  "updated": "2026-07-18T15:46:26.839Z",
+  "updated": "2026-07-18T16:44:14.870Z",
   "minimumSamples": {
     "teamFavorite": 5,
     "teamUnderdog": 5,
@@ -12,10 +12,10 @@
   },
   "decayHalfLifeDays": 120,
   "summary": {
-    "settledFixtures": 148,
-    "settledDecisions": 313,
-    "reviewedLosses": 51,
-    "attachedUpcoming": 1538,
+    "settledFixtures": 154,
+    "settledDecisions": 320,
+    "reviewedLosses": 54,
+    "attachedUpcoming": 1488,
     "highRiskUpcoming": 0,
     "stableUpcoming": 0
   },
@@ -4457,7 +4457,7 @@
           "mid": 0.5714,
           "upper": 0.8418
         },
-        "decayedWeight": 6.83
+        "decayedWeight": 6.82
       },
       "awayFavorites": {
         "sample": 2,
@@ -5375,7 +5375,7 @@
           "mid": 0.6,
           "upper": 0.8824
         },
-        "decayedWeight": 4.69
+        "decayedWeight": 4.68
       },
       "bands": {
         "1.01-1.35": {
@@ -6737,7 +6737,7 @@
         "mid": 1,
         "upper": 1
       },
-      "decayedWeight": 5.72
+      "decayedWeight": 5.71
     },
     "1.36-1.60": {
       "sample": 6,
@@ -8646,15 +8646,15 @@
       "hardVeto": false
     },
     "*|Trend|Home Team Over 0.5 Goals|unknown|other": {
-      "sample": 14,
+      "sample": 15,
       "wins": 14,
-      "losses": 0,
-      "winRate": 1,
-      "lossRate": 0,
+      "losses": 1,
+      "winRate": 0.9333,
+      "lossRate": 0.0667,
       "wilson": {
-        "lower": 0.7847,
-        "mid": 1,
-        "upper": 1
+        "lower": 0.7018,
+        "mid": 0.9333,
+        "upper": 0.9881
       },
       "adjustment": 2,
       "hardVeto": false
@@ -8702,15 +8702,15 @@
       "hardVeto": false
     },
     "*|League Bias|Home Team Over 0.5 Goals|unknown|other": {
-      "sample": 7,
-      "wins": 7,
-      "losses": 0,
-      "winRate": 1,
-      "lossRate": 0,
+      "sample": 11,
+      "wins": 9,
+      "losses": 2,
+      "winRate": 0.8182,
+      "lossRate": 0.1818,
       "wilson": {
-        "lower": 0.6457,
-        "mid": 1,
-        "upper": 1
+        "lower": 0.523,
+        "mid": 0.8182,
+        "upper": 0.9486
       },
       "adjustment": 0,
       "hardVeto": false
@@ -9570,13 +9570,13 @@
       "hardVeto": false
     },
     "*|League Bias|Over 1.5 Goals|unknown|other": {
-      "sample": 2,
-      "wins": 2,
+      "sample": 4,
+      "wins": 4,
       "losses": 0,
       "winRate": 1,
       "lossRate": 0,
       "wilson": {
-        "lower": 0.3424,
+        "lower": 0.5101,
         "mid": 1,
         "upper": 1
       },
@@ -10116,6 +10116,34 @@
       "hardVeto": false
     },
     "friendlies clubs|League Bias|Over 1.5 Goals|unknown|other": {
+      "sample": 3,
+      "wins": 3,
+      "losses": 0,
+      "winRate": 1,
+      "lossRate": 0,
+      "wilson": {
+        "lower": 0.4385,
+        "mid": 1,
+        "upper": 1
+      },
+      "adjustment": 0,
+      "hardVeto": false
+    },
+    "friendlies clubs|League Bias|Home Team Over 0.5 Goals|unknown|other": {
+      "sample": 4,
+      "wins": 2,
+      "losses": 2,
+      "winRate": 0.5,
+      "lossRate": 0.5,
+      "wilson": {
+        "lower": 0.15,
+        "mid": 0.5,
+        "upper": 0.85
+      },
+      "adjustment": 0,
+      "hardVeto": false
+    },
+    "friendlies clubs|Halves|Second Half Over 0.5|unknown|other": {
       "sample": 1,
       "wins": 1,
       "losses": 0,
@@ -10144,15 +10172,15 @@
       "hardVeto": false
     },
     "friendlies clubs|Trend|Home Team Over 0.5 Goals|unknown|other": {
-      "sample": 1,
+      "sample": 2,
       "wins": 1,
-      "losses": 0,
-      "winRate": 1,
-      "lossRate": 0,
+      "losses": 1,
+      "winRate": 0.5,
+      "lossRate": 0.5,
       "wilson": {
-        "lower": 0.2065,
-        "mid": 1,
-        "upper": 1
+        "lower": 0.0945,
+        "mid": 0.5,
+        "upper": 0.9055
       },
       "adjustment": 0,
       "hardVeto": false
@@ -10219,6 +10247,45 @@
       "score": "0-0",
       "causes": [
         "DRAW_TRAP",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-18",
+      "home": "Akron",
+      "away": "Dynamo",
+      "league": "Friendlies Clubs",
+      "engine": "League Bias",
+      "market": "Home Team Over 0.5 Goals",
+      "score": "0-1",
+      "causes": [
+        "RESULT_DIRECTION_MISS",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-18",
+      "home": "Schöningen",
+      "away": "1. FC Magdeburg",
+      "league": "Friendlies Clubs",
+      "engine": "Trend",
+      "market": "Home Team Over 0.5 Goals",
+      "score": "0-4",
+      "causes": [
+        "RESULT_DIRECTION_MISS",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-18",
+      "home": "Schöningen",
+      "away": "1. FC Magdeburg",
+      "league": "Friendlies Clubs",
+      "engine": "League Bias",
+      "market": "Home Team Over 0.5 Goals",
+      "score": "0-4",
+      "causes": [
+        "RESULT_DIRECTION_MISS",
         "INPUT_COVERAGE_GAP"
       ]
     },
@@ -10818,8 +10885,8 @@
   ],
   "causeCounts": {
     "TEMPO_COLLAPSE": 4,
-    "INPUT_COVERAGE_GAP": 51,
-    "RESULT_DIRECTION_MISS": 10,
+    "INPUT_COVERAGE_GAP": 54,
+    "RESULT_DIRECTION_MISS": 13,
     "BOTH_ATTACKS_BROKE_SUPPRESSION": 5,
     "GOAL_SPIKE": 16,
     "DRAW_TRAP": 8,
