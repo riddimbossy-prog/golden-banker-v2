@@ -68196,9 +68196,13 @@
         "dataFields": 0
       },
       "recordedAt": "2026-07-17T19:53:08.458Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Lost",
+      "score": "0-1",
+      "finalHomeGoals": 0,
+      "finalAwayGoals": 1,
+      "actualResult": "away",
+      "settledAt": "2026-07-18T07:03:41.857Z"
     },
     {
       "matchDate": "2026-07-18",
@@ -69119,9 +69123,13 @@
         "dataFields": 0
       },
       "recordedAt": "2026-07-17T19:53:08.476Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "0-9",
+      "finalHomeGoals": 0,
+      "finalAwayGoals": 9,
+      "actualResult": "away",
+      "settledAt": "2026-07-18T07:03:41.857Z"
     },
     {
       "matchDate": "2026-07-18",
@@ -71703,8 +71711,8 @@
         "dataFields": 3
       },
       "recordedAt": "2026-07-17T19:53:08.517Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -117376,6 +117384,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-18T06:52:57.576Z"
+    "updated": "2026-07-18T07:03:43.669Z"
   }
 }
