@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-18T20:34:48.450Z",
+  "updated": "2026-07-18T21:17:49.203Z",
   "minSample": 300,
   "groups": {
     "LEM|USL League Two|Prime|Double Chance 1X|90-99": {
@@ -2368,14 +2368,14 @@
       "validated": false
     },
     "EM|*|halves|Second Half Over 0.5|80-89": {
-      "sample": 21,
-      "wins": 18,
+      "sample": 22,
+      "wins": 19,
       "losses": 3,
-      "lower": 0.6536,
-      "mid": 0.8571,
-      "upper": 0.9502,
+      "lower": 0.6666,
+      "mid": 0.8636,
+      "upper": 0.9525,
       "grade": "Learning",
-      "leagueReliability": 49.6,
+      "leagueReliability": 50,
       "validated": false
     },
     "LM|Western Australia NPL|*|Second Half Over 0.5|80-89": {
@@ -2390,14 +2390,14 @@
       "validated": false
     },
     "M|*|*|Second Half Over 0.5|80-89": {
-      "sample": 21,
-      "wins": 18,
+      "sample": 22,
+      "wins": 19,
       "losses": 3,
-      "lower": 0.6536,
-      "mid": 0.8571,
-      "upper": 0.9502,
+      "lower": 0.6666,
+      "mid": 0.8636,
+      "upper": 0.9525,
       "grade": "Learning",
-      "leagueReliability": 49.6,
+      "leagueReliability": 50,
       "validated": false
     },
     "LEM|Premier Soccer League|league-bias|Under 3.5 Goals|90-99": {
@@ -3028,14 +3028,14 @@
       "validated": false
     },
     "EM|*|league-bias|Under 3.5 Goals|80-89": {
-      "sample": 20,
-      "wins": 19,
+      "sample": 21,
+      "wins": 20,
       "losses": 1,
-      "lower": 0.7639,
-      "mid": 0.95,
-      "upper": 0.9911,
+      "lower": 0.7733,
+      "mid": 0.9524,
+      "upper": 0.9915,
       "grade": "Learning",
-      "leagueReliability": 51.7,
+      "leagueReliability": 52,
       "validated": false
     },
     "LM|Primera B Metropolitana|*|Under 3.5 Goals|80-89": {
@@ -3050,14 +3050,14 @@
       "validated": false
     },
     "M|*|*|Under 3.5 Goals|80-89": {
-      "sample": 22,
-      "wins": 21,
+      "sample": 23,
+      "wins": 22,
       "losses": 1,
-      "lower": 0.782,
-      "mid": 0.9545,
-      "upper": 0.9919,
+      "lower": 0.7901,
+      "mid": 0.9565,
+      "upper": 0.9923,
       "grade": "Learning",
-      "leagueReliability": 52.3,
+      "leagueReliability": 52.5,
       "validated": false
     },
     "LEM|1. Deild|trend|Home Team Over 0.5 Goals|80-89": {
@@ -3457,14 +3457,14 @@
       "validated": false
     },
     "LM|Torneo Promocional Amateur|*|Under 3.5 Goals|80-89": {
-      "sample": 1,
-      "wins": 1,
+      "sample": 2,
+      "wins": 2,
       "losses": 0,
-      "lower": 0.2065,
+      "lower": 0.3424,
       "mid": 1,
       "upper": 1,
       "grade": "Learning",
-      "leagueReliability": 42.2,
+      "leagueReliability": 46.3,
       "validated": false
     },
     "LEM|USL League Two|league-bias|Over 1.5 Goals|80-89": {
@@ -4358,6 +4358,28 @@
       "leagueReliability": 42.2,
       "validated": false
     },
+    "LEM|Baiano U20|halves|Second Half Over 0.5|80-89": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "lower": 0.2065,
+      "mid": 1,
+      "upper": 1,
+      "grade": "Learning",
+      "leagueReliability": 42.2,
+      "validated": false
+    },
+    "LM|Baiano U20|*|Second Half Over 0.5|80-89": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "lower": 0.2065,
+      "mid": 1,
+      "upper": 1,
+      "grade": "Learning",
+      "leagueReliability": 42.2,
+      "validated": false
+    },
     "LEM|Friendlies Clubs|trend|Over 1.5 Goals|80-89": {
       "sample": 1,
       "wins": 1,
@@ -4378,6 +4400,17 @@
       "upper": 1,
       "grade": "Learning",
       "leagueReliability": 34.2,
+      "validated": false
+    },
+    "LEM|Torneo Promocional Amateur|league-bias|Under 3.5 Goals|80-89": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "lower": 0.2065,
+      "mid": 1,
+      "upper": 1,
+      "grade": "Learning",
+      "leagueReliability": 42.2,
       "validated": false
     }
   }

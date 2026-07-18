@@ -1,7 +1,7 @@
 {
   "version": "v193",
   "schemaVersion": 1,
-  "updated": "2026-07-18T20:34:53.894Z",
+  "updated": "2026-07-18T21:17:53.333Z",
   "minimumSamples": {
     "teamFavorite": 5,
     "teamUnderdog": 5,
@@ -12,10 +12,10 @@
   },
   "decayHalfLifeDays": 120,
   "summary": {
-    "settledFixtures": 167,
-    "settledDecisions": 340,
+    "settledFixtures": 169,
+    "settledDecisions": 342,
     "reviewedLosses": 55,
-    "attachedUpcoming": 1298,
+    "attachedUpcoming": 1290,
     "highRiskUpcoming": 0,
     "stableUpcoming": 0
   },
@@ -4097,7 +4097,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 1
+        "decayedWeight": 0.99
       },
       "underdog": {
         "sample": 0,
@@ -4140,7 +4140,7 @@
             "mid": 0,
             "upper": 0.7935
           },
-          "decayedWeight": 1
+          "decayedWeight": 0.99
         }
       },
       "underdogUpsets": 0,
@@ -4192,7 +4192,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 1
+        "decayedWeight": 0.99
       },
       "favoriteBands": {},
       "underdogUpsets": 1,
@@ -4223,7 +4223,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 1
+        "decayedWeight": 0.99
       },
       "underdog": {
         "sample": 0,
@@ -4266,7 +4266,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 1
+          "decayedWeight": 0.99
         }
       },
       "underdogUpsets": 0,
@@ -4318,7 +4318,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 1
+        "decayedWeight": 0.99
       },
       "favoriteBands": {},
       "underdogUpsets": 0,
@@ -4349,7 +4349,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 1
+        "decayedWeight": 0.99
       },
       "underdog": {
         "sample": 0,
@@ -4392,7 +4392,7 @@
             "mid": 0,
             "upper": 0.7935
           },
-          "decayedWeight": 1
+          "decayedWeight": 0.99
         }
       },
       "underdogUpsets": 0,
@@ -4444,7 +4444,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 1
+        "decayedWeight": 0.99
       },
       "favoriteBands": {},
       "underdogUpsets": 1,
@@ -4475,7 +4475,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 1
+        "decayedWeight": 0.99
       },
       "underdog": {
         "sample": 0,
@@ -4518,7 +4518,7 @@
             "mid": 0,
             "upper": 0.7935
           },
-          "decayedWeight": 1
+          "decayedWeight": 0.99
         }
       },
       "underdogUpsets": 0,
@@ -4570,7 +4570,133 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 1
+        "decayedWeight": 0.99
+      },
+      "favoriteBands": {},
+      "underdogUpsets": 0,
+      "flags": [],
+      "patternStability": 100,
+      "favoriteReliability": 0
+    },
+    "1073|bahia u20": {
+      "name": "Bahia U20",
+      "league": "Baiano U20",
+      "leagueId": 1073,
+      "favorite": {
+        "sample": 1,
+        "wins": 1,
+        "draws": 0,
+        "losses": 0,
+        "winRate": 1,
+        "drawRate": 0,
+        "nonLossRate": 1,
+        "upsetRate": 0,
+        "nonLossWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "winWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "decayedWeight": 0.99
+      },
+      "underdog": {
+        "sample": 0,
+        "wins": 0,
+        "draws": 0,
+        "losses": 0,
+        "winRate": null,
+        "drawRate": null,
+        "nonLossRate": 0,
+        "upsetRate": null,
+        "nonLossWilson": {
+          "lower": null,
+          "mid": null,
+          "upper": null
+        },
+        "winWilson": {
+          "lower": null,
+          "mid": null,
+          "upper": null
+        },
+        "decayedWeight": 0
+      },
+      "favoriteBands": {
+        "1.01-1.35": {
+          "sample": 1,
+          "wins": 1,
+          "draws": 0,
+          "losses": 0,
+          "winRate": 1,
+          "drawRate": 0,
+          "nonLossRate": 1,
+          "upsetRate": 0,
+          "nonLossWilson": {
+            "lower": 0.2065,
+            "mid": 1,
+            "upper": 1
+          },
+          "winWilson": {
+            "lower": 0.2065,
+            "mid": 1,
+            "upper": 1
+          },
+          "decayedWeight": 0.99
+        }
+      },
+      "underdogUpsets": 0,
+      "flags": [],
+      "patternStability": 100,
+      "favoriteReliability": 100
+    },
+    "1073|cama ariense u20": {
+      "name": "Camaçariense U20",
+      "league": "Baiano U20",
+      "leagueId": 1073,
+      "favorite": {
+        "sample": 0,
+        "wins": 0,
+        "draws": 0,
+        "losses": 0,
+        "winRate": null,
+        "drawRate": null,
+        "nonLossRate": 0,
+        "upsetRate": null,
+        "nonLossWilson": {
+          "lower": null,
+          "mid": null,
+          "upper": null
+        },
+        "winWilson": {
+          "lower": null,
+          "mid": null,
+          "upper": null
+        },
+        "decayedWeight": 0
+      },
+      "underdog": {
+        "sample": 1,
+        "wins": 0,
+        "draws": 0,
+        "losses": 1,
+        "winRate": 0,
+        "drawRate": 0,
+        "nonLossRate": 0,
+        "upsetRate": 1,
+        "nonLossWilson": {
+          "lower": 0,
+          "mid": 0,
+          "upper": 0.7935
+        },
+        "winWilson": {
+          "lower": 0,
+          "mid": 0,
+          "upper": 0.7935
+        },
+        "decayedWeight": 0.99
       },
       "favoriteBands": {},
       "underdogUpsets": 0,
@@ -4962,7 +5088,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 1
+        "decayedWeight": 0.99
       },
       "bands": {
         "1.36-1.60": {
@@ -4984,7 +5110,7 @@
             "mid": 0,
             "upper": 0.7935
           },
-          "decayedWeight": 1
+          "decayedWeight": 0.99
         }
       },
       "homeFavorites": {
@@ -5027,7 +5153,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 1
+        "decayedWeight": 0.99
       },
       "flags": [],
       "stabilityScore": 25
@@ -5606,7 +5732,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 1
+        "decayedWeight": 0.99
       },
       "bands": {
         "1.36-1.60": {
@@ -5628,7 +5754,7 @@
             "mid": 0,
             "upper": 0.7935
           },
-          "decayedWeight": 1
+          "decayedWeight": 0.99
         }
       },
       "homeFavorites": {
@@ -5650,7 +5776,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 1
+        "decayedWeight": 0.99
       },
       "awayFavorites": {
         "sample": 0,
@@ -6036,6 +6162,98 @@
       "flags": [],
       "stabilityScore": 87.5
     },
+    "1073": {
+      "league": "Baiano U20",
+      "leagueId": 1073,
+      "favorite": {
+        "sample": 1,
+        "wins": 1,
+        "draws": 0,
+        "losses": 0,
+        "winRate": 1,
+        "drawRate": 0,
+        "nonLossRate": 1,
+        "upsetRate": 0,
+        "nonLossWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "winWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "decayedWeight": 0.99
+      },
+      "bands": {
+        "1.01-1.35": {
+          "sample": 1,
+          "wins": 1,
+          "draws": 0,
+          "losses": 0,
+          "winRate": 1,
+          "drawRate": 0,
+          "nonLossRate": 1,
+          "upsetRate": 0,
+          "nonLossWilson": {
+            "lower": 0.2065,
+            "mid": 1,
+            "upper": 1
+          },
+          "winWilson": {
+            "lower": 0.2065,
+            "mid": 1,
+            "upper": 1
+          },
+          "decayedWeight": 0.99
+        }
+      },
+      "homeFavorites": {
+        "sample": 1,
+        "wins": 1,
+        "draws": 0,
+        "losses": 0,
+        "winRate": 1,
+        "drawRate": 0,
+        "nonLossRate": 1,
+        "upsetRate": 0,
+        "nonLossWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "winWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "decayedWeight": 0.99
+      },
+      "awayFavorites": {
+        "sample": 0,
+        "wins": 0,
+        "draws": 0,
+        "losses": 0,
+        "winRate": null,
+        "drawRate": null,
+        "nonLossRate": 0,
+        "upsetRate": null,
+        "nonLossWilson": {
+          "lower": null,
+          "mid": null,
+          "upper": null
+        },
+        "winWilson": {
+          "lower": null,
+          "mid": null,
+          "upper": null
+        },
+        "decayedWeight": 0
+      },
+      "flags": [],
+      "stabilityScore": 100
+    },
     "1093": {
       "league": "Tasmania Southern Championship",
       "leagueId": 1093,
@@ -6080,7 +6298,7 @@
             "mid": 0,
             "upper": 0.7935
           },
-          "decayedWeight": 1
+          "decayedWeight": 0.99
         },
         "1.36-1.60": {
           "sample": 1,
@@ -6101,7 +6319,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 1
+          "decayedWeight": 0.99
         }
       },
       "homeFavorites": {
@@ -6123,7 +6341,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 1
+        "decayedWeight": 0.99
       },
       "awayFavorites": {
         "sample": 1,
@@ -6144,7 +6362,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 1
+        "decayedWeight": 0.99
       },
       "flags": [],
       "stabilityScore": 62.5
@@ -7099,7 +7317,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 1
+        "decayedWeight": 0.99
       },
       "flags": []
     },
@@ -7127,7 +7345,35 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 1
+        "decayedWeight": 0.99
+      },
+      "flags": []
+    },
+    "166|magni|fjolnir": {
+      "home": "Magni",
+      "away": "Fjolnir",
+      "league": "2. Deild",
+      "leagueId": 166,
+      "favorite": {
+        "sample": 1,
+        "wins": 0,
+        "draws": 0,
+        "losses": 1,
+        "winRate": 0,
+        "drawRate": 0,
+        "nonLossRate": 0,
+        "upsetRate": 1,
+        "nonLossWilson": {
+          "lower": 0,
+          "mid": 0,
+          "upper": 0.7935
+        },
+        "winWilson": {
+          "lower": 0,
+          "mid": 0,
+          "upper": 0.7935
+        },
+        "decayedWeight": 0.99
       },
       "flags": []
     },
@@ -7183,7 +7429,35 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 1
+        "decayedWeight": 0.99
+      },
+      "flags": []
+    },
+    "1073|bahia u20|cama ariense u20": {
+      "home": "Bahia U20",
+      "away": "Camaçariense U20",
+      "league": "Baiano U20",
+      "leagueId": 1073,
+      "favorite": {
+        "sample": 1,
+        "wins": 1,
+        "draws": 0,
+        "losses": 0,
+        "winRate": 1,
+        "drawRate": 0,
+        "nonLossRate": 1,
+        "upsetRate": 0,
+        "nonLossWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "winWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "decayedWeight": 0.99
       },
       "flags": []
     }
@@ -7211,8 +7485,8 @@
       "decayedWeight": 14.49
     },
     "1.01-1.35": {
-      "sample": 6,
-      "wins": 6,
+      "sample": 7,
+      "wins": 7,
       "draws": 0,
       "losses": 0,
       "winRate": 1,
@@ -7220,16 +7494,16 @@
       "nonLossRate": 1,
       "upsetRate": 0,
       "nonLossWilson": {
-        "lower": 0.6097,
+        "lower": 0.6457,
         "mid": 1,
         "upper": 1
       },
       "winWilson": {
-        "lower": 0.6097,
+        "lower": 0.6457,
         "mid": 1,
         "upper": 1
       },
-      "decayedWeight": 5.71
+      "decayedWeight": 6.7
     },
     "1.36-1.60": {
       "sample": 8,
@@ -7271,7 +7545,7 @@
         "mid": 0.5,
         "upper": 0.7848
       },
-      "decayedWeight": 7.8
+      "decayedWeight": 7.79
     }
   },
   "contexts": {
@@ -8984,13 +9258,13 @@
       "hardVeto": false
     },
     "*|League Bias|Under 3.5 Goals|unknown|other": {
-      "sample": 7,
-      "wins": 7,
+      "sample": 8,
+      "wins": 8,
       "losses": 0,
       "winRate": 1,
       "lossRate": 0,
       "wilson": {
-        "lower": 0.6457,
+        "lower": 0.6756,
         "mid": 1,
         "upper": 1
       },
@@ -10803,6 +11077,34 @@
       "adjustment": 0,
       "hardVeto": false
     },
+    "baiano u20|Halves|Second Half Over 0.5|1.01-1.35|other": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "winRate": 1,
+      "lossRate": 0,
+      "wilson": {
+        "lower": 0.2065,
+        "mid": 1,
+        "upper": 1
+      },
+      "adjustment": 0,
+      "hardVeto": false
+    },
+    "*|Halves|Second Half Over 0.5|1.01-1.35|other": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "winRate": 1,
+      "lossRate": 0,
+      "wilson": {
+        "lower": 0.2065,
+        "mid": 1,
+        "upper": 1
+      },
+      "adjustment": 0,
+      "hardVeto": false
+    },
     "friendlies clubs|Trend|Over 1.5 Goals|unknown|other": {
       "sample": 1,
       "wins": 1,
@@ -10818,6 +11120,20 @@
       "hardVeto": false
     },
     "*|Trend|Over 1.5 Goals|unknown|other": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "winRate": 1,
+      "lossRate": 0,
+      "wilson": {
+        "lower": 0.2065,
+        "mid": 1,
+        "upper": 1
+      },
+      "adjustment": 0,
+      "hardVeto": false
+    },
+    "torneo promocional amateur|League Bias|Under 3.5 Goals|unknown|other": {
       "sample": 1,
       "wins": 1,
       "losses": 0,

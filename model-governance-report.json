@@ -1,9 +1,9 @@
 {
   "version": "v194",
-  "updated": "2026-07-18T20:34:54.449Z",
+  "updated": "2026-07-18T21:17:53.941Z",
   "summary": {
-    "settled": 340,
-    "winRate": 0.8382,
+    "settled": 342,
+    "winRate": 0.8392,
     "engines": 12,
     "approved": 0,
     "shadow": 12,
@@ -45,7 +45,7 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T20:34:54.447Z"
+      "updated": "2026-07-18T21:17:53.939Z"
     },
     "Prime": {
       "engine": "Prime",
@@ -78,7 +78,7 @@
         "distributionShift": 0.293,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T20:34:54.447Z"
+      "updated": "2026-07-18T21:17:53.939Z"
     },
     "Value": {
       "engine": "Value",
@@ -111,7 +111,7 @@
         "distributionShift": 0.8,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T20:34:54.447Z"
+      "updated": "2026-07-18T21:17:53.939Z"
     },
     "Pro": {
       "engine": "Pro",
@@ -144,7 +144,7 @@
         "distributionShift": 0.8,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T20:34:54.447Z"
+      "updated": "2026-07-18T21:17:53.939Z"
     },
     "Ultra": {
       "engine": "Ultra",
@@ -177,7 +177,7 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T20:34:54.447Z"
+      "updated": "2026-07-18T21:17:53.939Z"
     },
     "Elite": {
       "engine": "Elite",
@@ -210,7 +210,7 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T20:34:54.447Z"
+      "updated": "2026-07-18T21:17:53.939Z"
     },
     "Apex": {
       "engine": "Apex",
@@ -243,17 +243,17 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T20:34:54.447Z"
+      "updated": "2026-07-18T21:17:53.939Z"
     },
     "Halves": {
       "engine": "Halves",
       "state": "SHADOW",
       "reason": "Needs a larger forward validation sample.",
       "train": {
-        "sample": 44,
-        "wins": 38,
+        "sample": 45,
+        "wins": 39,
         "losses": 6,
-        "rate": 0.8636
+        "rate": 0.8667
       },
       "validation": {
         "sample": 20,
@@ -261,8 +261,8 @@
         "losses": 1,
         "rate": 0.95
       },
-      "validationDelta": 0.0864,
-      "calibrationError": 0.055,
+      "validationDelta": 0.0833,
+      "calibrationError": 0.0577,
       "shadow": {
         "eligible": 0,
         "avoidedLosses": 0,
@@ -272,11 +272,11 @@
       "drift": {
         "recentSample": 30,
         "priorSample": 30,
-        "confidenceShift": 0.08,
+        "confidenceShift": -0.12,
         "distributionShift": 0,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T20:34:54.447Z"
+      "updated": "2026-07-18T21:17:53.939Z"
     },
     "Streaks": {
       "engine": "Streaks",
@@ -309,7 +309,7 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T20:34:54.447Z"
+      "updated": "2026-07-18T21:17:53.939Z"
     },
     "Trend": {
       "engine": "Trend",
@@ -342,26 +342,26 @@
         "distributionShift": 0.333,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T20:34:54.448Z"
+      "updated": "2026-07-18T21:17:53.940Z"
     },
     "League Bias": {
       "engine": "League Bias",
       "state": "SHADOW",
       "reason": "Needs a larger forward validation sample.",
       "train": {
-        "sample": 42,
+        "sample": 43,
         "wins": 39,
-        "losses": 3,
-        "rate": 0.9286
+        "losses": 4,
+        "rate": 0.907
       },
       "validation": {
         "sample": 19,
-        "wins": 16,
-        "losses": 3,
-        "rate": 0.8421
+        "wins": 17,
+        "losses": 2,
+        "rate": 0.8947
       },
-      "validationDelta": -0.0865,
-      "calibrationError": 0.0183,
+      "validationDelta": -0.0123,
+      "calibrationError": 0.0338,
       "shadow": {
         "eligible": 0,
         "avoidedLosses": 0,
@@ -371,11 +371,11 @@
       "drift": {
         "recentSample": 30,
         "priorSample": 30,
-        "confidenceShift": -0.75,
+        "confidenceShift": -0.83,
         "distributionShift": 0.233,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T20:34:54.448Z"
+      "updated": "2026-07-18T21:17:53.940Z"
     },
     "Strict": {
       "engine": "Strict",
@@ -408,7 +408,7 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-18T20:34:54.448Z"
+      "updated": "2026-07-18T21:17:53.940Z"
     }
   },
   "marketScorecards": [
@@ -422,11 +422,11 @@
     },
     {
       "marketFamily": "OTHER",
-      "sample": 63,
-      "wins": 56,
+      "sample": 64,
+      "wins": 57,
       "losses": 7,
-      "rate": 0.8889,
-      "calibrationError": 0.0014
+      "rate": 0.8906,
+      "calibrationError": 0.0019
     },
     {
       "marketFamily": "HOME_TEAM",
@@ -438,11 +438,11 @@
     },
     {
       "marketFamily": "MATCH_UNDER",
-      "sample": 47,
-      "wins": 31,
+      "sample": 48,
+      "wins": 32,
       "losses": 16,
-      "rate": 0.6596,
-      "calibrationError": 0.0708
+      "rate": 0.6667,
+      "calibrationError": 0.0724
     },
     {
       "marketFamily": "AWAY_RESULT",
@@ -647,18 +647,18 @@
       "rate": 0.5
     },
     {
-      "league": "2. Deild",
+      "league": "Torneo Promocional Amateur",
       "sample": 2,
       "wins": 2,
       "losses": 0,
       "rate": 1
     },
     {
-      "league": "Oberliga - Bayern Süd",
+      "league": "2. Deild",
       "sample": 2,
-      "wins": 1,
-      "losses": 1,
-      "rate": 0.5
+      "wins": 2,
+      "losses": 0,
+      "rate": 1
     },
     {
       "league": "1. Division",
@@ -682,13 +682,6 @@
       "rate": 1
     },
     {
-      "league": "Torneo Promocional Amateur",
-      "sample": 1,
-      "wins": 1,
-      "losses": 0,
-      "rate": 1
-    },
-    {
       "league": "Liga Women",
       "sample": 1,
       "wins": 1,
@@ -697,6 +690,13 @@
     },
     {
       "league": "Oberliga - Bayern Nord",
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "rate": 1
+    },
+    {
+      "league": "Baiano U20",
       "sample": 1,
       "wins": 1,
       "losses": 0,
