@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-18T06:00:03.288Z",
+  "updated": "2026-07-18T07:06:38.092Z",
   "minSample": 300,
   "groups": {
     "LEM|USL League Two|Prime|Double Chance 1X|90-99": {
@@ -36,14 +36,14 @@
       "validated": false
     },
     "M|*|*|Double Chance 1X|90-99": {
-      "sample": 9,
-      "wins": 9,
+      "sample": 10,
+      "wins": 10,
       "losses": 0,
-      "lower": 0.7008,
+      "lower": 0.7225,
       "mid": 1,
       "upper": 1,
       "grade": "Learning",
-      "leagueReliability": 49.3,
+      "leagueReliability": 49.9,
       "validated": false
     },
     "LEM|USL League Two|Value|Over 2.5|90-99": {
@@ -2368,14 +2368,14 @@
       "validated": false
     },
     "EM|*|halves|Second Half Over 0.5|80-89": {
-      "sample": 13,
-      "wins": 10,
+      "sample": 15,
+      "wins": 12,
       "losses": 3,
-      "lower": 0.4974,
-      "mid": 0.7692,
-      "upper": 0.9182,
+      "lower": 0.5481,
+      "mid": 0.8,
+      "upper": 0.9295,
       "grade": "Learning",
-      "leagueReliability": 45.7,
+      "leagueReliability": 46.9,
       "validated": false
     },
     "LM|Western Australia NPL|*|Second Half Over 0.5|80-89": {
@@ -2390,14 +2390,14 @@
       "validated": false
     },
     "M|*|*|Second Half Over 0.5|80-89": {
-      "sample": 13,
-      "wins": 10,
+      "sample": 15,
+      "wins": 12,
       "losses": 3,
-      "lower": 0.4974,
-      "mid": 0.7692,
-      "upper": 0.9182,
+      "lower": 0.5481,
+      "mid": 0.8,
+      "upper": 0.9295,
       "grade": "Learning",
-      "leagueReliability": 45.7,
+      "leagueReliability": 46.9,
       "validated": false
     },
     "LEM|Premier Soccer League|league-bias|Under 3.5 Goals|90-99": {
@@ -2632,14 +2632,14 @@
       "validated": false
     },
     "EM|*|halves|Second Half Over 0.5|90-99": {
-      "sample": 20,
-      "wins": 18,
+      "sample": 22,
+      "wins": 20,
       "losses": 2,
-      "lower": 0.699,
-      "mid": 0.9,
-      "upper": 0.9721,
+      "lower": 0.7218,
+      "mid": 0.9091,
+      "upper": 0.9747,
       "grade": "Learning",
-      "leagueReliability": 50.3,
+      "leagueReliability": 51,
       "validated": false
     },
     "LM|USL League Two|*|Second Half Over 0.5|90-99": {
@@ -2654,14 +2654,14 @@
       "validated": false
     },
     "M|*|*|Second Half Over 0.5|90-99": {
-      "sample": 20,
-      "wins": 18,
+      "sample": 22,
+      "wins": 20,
       "losses": 2,
-      "lower": 0.699,
-      "mid": 0.9,
-      "upper": 0.9721,
+      "lower": 0.7218,
+      "mid": 0.9091,
+      "upper": 0.9747,
       "grade": "Learning",
-      "leagueReliability": 50.3,
+      "leagueReliability": 51,
       "validated": false
     },
     "LEM|Liga Pro Serie B|league-bias|Under 3.5 Goals|90-99": {
@@ -2775,25 +2775,25 @@
       "validated": false
     },
     "LEM|USL League Two|halves|Second Half Over 0.5|80-89": {
-      "sample": 6,
-      "wins": 5,
+      "sample": 7,
+      "wins": 6,
       "losses": 1,
-      "lower": 0.4365,
-      "mid": 0.8333,
-      "upper": 0.9699,
+      "lower": 0.4869,
+      "mid": 0.8571,
+      "upper": 0.9743,
       "grade": "Learning",
-      "leagueReliability": 50.2,
+      "leagueReliability": 51.6,
       "validated": false
     },
     "LM|USL League Two|*|Second Half Over 0.5|80-89": {
-      "sample": 6,
-      "wins": 5,
+      "sample": 7,
+      "wins": 6,
       "losses": 1,
-      "lower": 0.4365,
-      "mid": 0.8333,
-      "upper": 0.9699,
+      "lower": 0.4869,
+      "mid": 0.8571,
+      "upper": 0.9743,
       "grade": "Learning",
-      "leagueReliability": 50.2,
+      "leagueReliability": 51.6,
       "validated": false
     },
     "LEM|USL League Two|league-bias|Away Team Over 0.5 Goals|80-89": {
@@ -3457,6 +3457,105 @@
       "validated": false
     },
     "LM|Torneo Promocional Amateur|*|Under 3.5 Goals|80-89": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "lower": 0.2065,
+      "mid": 1,
+      "upper": 1,
+      "grade": "Learning",
+      "leagueReliability": 42.2,
+      "validated": false
+    },
+    "LEM|Liga Women|halves|Second Half Over 0.5|80-89": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "lower": 0.2065,
+      "mid": 1,
+      "upper": 1,
+      "grade": "Learning",
+      "leagueReliability": 42.2,
+      "validated": false
+    },
+    "LM|Liga Women|*|Second Half Over 0.5|80-89": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "lower": 0.2065,
+      "mid": 1,
+      "upper": 1,
+      "grade": "Learning",
+      "leagueReliability": 42.2,
+      "validated": false
+    },
+    "LEM|Tasmania Southern Championship|halves|Second Half Over 0.5|90-99": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "lower": 0.2065,
+      "mid": 1,
+      "upper": 1,
+      "grade": "Learning",
+      "leagueReliability": 42.2,
+      "validated": false
+    },
+    "LM|Tasmania Southern Championship|*|Second Half Over 0.5|90-99": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "lower": 0.2065,
+      "mid": 1,
+      "upper": 1,
+      "grade": "Learning",
+      "leagueReliability": 42.2,
+      "validated": false
+    },
+    "LEM|Tasmania Northern Championship|trend|Double Chance 1X|90-99": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "lower": 0.2065,
+      "mid": 1,
+      "upper": 1,
+      "grade": "Learning",
+      "leagueReliability": 42.2,
+      "validated": false
+    },
+    "EM|*|trend|Double Chance 1X|90-99": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "lower": 0.2065,
+      "mid": 1,
+      "upper": 1,
+      "grade": "Learning",
+      "leagueReliability": 34.2,
+      "validated": false
+    },
+    "LM|Tasmania Northern Championship|*|Double Chance 1X|90-99": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "lower": 0.2065,
+      "mid": 1,
+      "upper": 1,
+      "grade": "Learning",
+      "leagueReliability": 42.2,
+      "validated": false
+    },
+    "LEM|Tasmania Northern Championship|halves|Second Half Over 0.5|90-99": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "lower": 0.2065,
+      "mid": 1,
+      "upper": 1,
+      "grade": "Learning",
+      "leagueReliability": 42.2,
+      "validated": false
+    },
+    "LM|Tasmania Northern Championship|*|Second Half Over 0.5|90-99": {
       "sample": 1,
       "wins": 1,
       "losses": 0,

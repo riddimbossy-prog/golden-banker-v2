@@ -1,12 +1,12 @@
 {
   "version": "v196",
-  "updated": "2026-07-18T06:00:10.754Z",
+  "updated": "2026-07-18T07:06:46.408Z",
   "summary": {
     "fixtures": 500,
     "extreme": 0,
     "high": 0,
-    "low": 316,
-    "averageRisk": 25
+    "low": 307,
+    "averageRisk": 26
   },
   "commonFlags": [
     {
@@ -15,7 +15,7 @@
     },
     {
       "flag": "REST_IMBALANCE",
-      "count": 180
+      "count": 189
     },
     {
       "flag": "KNOCKOUT_CONTEXT",
@@ -60,7 +60,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -87,7 +87,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -114,7 +114,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -141,7 +141,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -168,7 +168,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -195,7 +195,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -222,7 +222,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -249,7 +249,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -276,7 +276,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -303,7 +303,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -330,7 +330,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -357,7 +357,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -384,7 +384,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -411,7 +411,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -438,7 +438,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -465,7 +465,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -492,7 +492,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -519,7 +519,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -546,7 +546,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -573,7 +573,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -600,7 +600,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -627,7 +627,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -654,7 +654,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -681,7 +681,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -708,7 +708,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -735,7 +735,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -762,7 +762,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -789,7 +789,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -816,7 +816,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -843,7 +843,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -870,7 +870,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -897,7 +897,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -924,7 +924,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -951,7 +951,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -978,7 +978,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1005,7 +1005,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1032,7 +1032,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1059,7 +1059,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1086,7 +1086,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1113,7 +1113,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1140,7 +1140,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1167,7 +1167,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1194,7 +1194,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1221,7 +1221,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1248,7 +1248,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1275,7 +1275,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1302,7 +1302,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1329,7 +1329,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1356,7 +1356,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1383,7 +1383,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1410,7 +1410,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1441,7 +1441,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1468,7 +1468,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1495,7 +1495,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1522,7 +1522,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1549,7 +1549,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1576,7 +1576,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1603,7 +1603,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1630,7 +1630,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1657,7 +1657,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1684,7 +1684,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1711,7 +1711,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1738,7 +1738,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1765,7 +1765,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1792,7 +1792,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1819,7 +1819,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1846,7 +1846,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1873,7 +1873,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1900,7 +1900,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1927,7 +1927,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1954,7 +1954,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -1981,7 +1981,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2008,7 +2008,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2035,7 +2035,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2062,7 +2062,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2089,7 +2089,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2116,7 +2116,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2143,7 +2143,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2170,7 +2170,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2197,7 +2197,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2224,7 +2224,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2251,7 +2251,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2278,7 +2278,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2305,7 +2305,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2332,7 +2332,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2359,7 +2359,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2386,7 +2386,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2413,7 +2413,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2440,7 +2440,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2467,7 +2467,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2494,7 +2494,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2521,7 +2521,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2548,7 +2548,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2575,7 +2575,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2602,7 +2602,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2629,7 +2629,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2656,7 +2656,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2683,7 +2683,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2710,7 +2710,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2737,7 +2737,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2764,7 +2764,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2791,7 +2791,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2818,7 +2818,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2845,7 +2845,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2872,7 +2872,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.752Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2899,7 +2899,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2926,7 +2926,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2953,7 +2953,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -2980,7 +2980,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -3007,7 +3007,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -3034,7 +3034,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -3061,7 +3061,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -3088,7 +3088,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -3115,7 +3115,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -3142,7 +3142,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -3169,7 +3169,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -3196,7 +3196,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -3223,7 +3223,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -3250,7 +3250,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -3277,7 +3277,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -3304,7 +3304,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -3331,7 +3331,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -3358,7 +3358,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.406Z"
     },
     {
       "id": null,
@@ -3385,7 +3385,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": null,
@@ -3412,7 +3412,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": null,
@@ -3439,7 +3439,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": null,
@@ -3466,7 +3466,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": null,
@@ -3493,7 +3493,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": null,
@@ -3520,7 +3520,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": null,
@@ -3547,7 +3547,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1525119,
@@ -3574,7 +3574,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1523196,
@@ -3600,7 +3600,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1528647,
@@ -3626,7 +3626,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1523198,
@@ -3652,7 +3652,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1525925,
@@ -3680,7 +3680,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1525921,
@@ -3706,7 +3706,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1525926,
@@ -3734,7 +3734,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1546510,
@@ -3764,7 +3764,7 @@
         "hardVeto": false,
         "adjustment": -6
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1523201,
@@ -3790,7 +3790,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1528650,
@@ -3816,7 +3816,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1523202,
@@ -3842,7 +3842,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1528026,
@@ -3868,7 +3868,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1544674,
@@ -3898,7 +3898,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1547588,
@@ -3928,7 +3928,7 @@
         "hardVeto": false,
         "adjustment": -6
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1523779,
@@ -3954,7 +3954,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1554956,
@@ -3982,7 +3982,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1554960,
@@ -4008,7 +4008,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1554961,
@@ -4034,7 +4034,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560612,
@@ -4060,7 +4060,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583315,
@@ -4088,7 +4088,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1554958,
@@ -4114,7 +4114,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1589267,
@@ -4142,7 +4142,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1554800,
@@ -4170,7 +4170,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583314,
@@ -4198,7 +4198,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583663,
@@ -4228,7 +4228,7 @@
         "hardVeto": false,
         "adjustment": -6
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583325,
@@ -4256,7 +4256,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1584785,
@@ -4284,7 +4284,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1548852,
@@ -4312,7 +4312,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1567636,
@@ -4340,7 +4340,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1589177,
@@ -4368,7 +4368,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1547971,
@@ -4396,7 +4396,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1547972,
@@ -4424,7 +4424,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1548854,
@@ -4452,7 +4452,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1517309,
@@ -4478,7 +4478,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583330,
@@ -4506,7 +4506,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1534065,
@@ -4534,7 +4534,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1490326,
@@ -4560,7 +4560,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1554976,
@@ -4586,7 +4586,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1547974,
@@ -4612,7 +4612,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1527234,
@@ -4640,7 +4640,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583336,
@@ -4666,7 +4666,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1567640,
@@ -4694,7 +4694,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1547978,
@@ -4722,7 +4722,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1554979,
@@ -4750,7 +4750,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560625,
@@ -4776,7 +4776,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1567643,
@@ -4804,7 +4804,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583335,
@@ -4830,7 +4830,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1589271,
@@ -4858,7 +4858,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1592155,
@@ -4884,7 +4884,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1548857,
@@ -4912,7 +4912,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1554986,
@@ -4938,7 +4938,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1547589,
@@ -4966,7 +4966,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1548861,
@@ -4994,7 +4994,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1554995,
@@ -5022,7 +5022,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1554996,
@@ -5048,7 +5048,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560633,
@@ -5076,7 +5076,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1584870,
@@ -5104,7 +5104,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1567645,
@@ -5132,7 +5132,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1547987,
@@ -5158,7 +5158,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1562930,
@@ -5186,7 +5186,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1589961,
@@ -5218,7 +5218,7 @@
         "hardVeto": false,
         "adjustment": -6
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1589341,
@@ -5244,7 +5244,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1498657,
@@ -5270,7 +5270,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1589273,
@@ -5298,35 +5298,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1589344,
-      "date": "2026-07-18",
-      "home": "Ballard",
-      "away": "Utah United",
-      "league": "USL League Two",
-      "version": "v196",
-      "riskScore": 32,
-      "stabilityScore": 42,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Utah United has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1523786,
@@ -5352,7 +5324,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1533124,
@@ -5378,59 +5350,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1533049,
-      "date": "2026-07-18",
-      "home": "Taroona",
-      "away": "Olympia Warriors",
-      "league": "Tasmania Southern Championship",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1533125,
-      "date": "2026-07-18",
-      "home": "Northern Rangers",
-      "away": "Riverside Olympic U21",
-      "league": "Tasmania Northern Championship",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1532597,
@@ -5456,7 +5376,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1523787,
@@ -5482,7 +5402,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1533050,
@@ -5510,7 +5430,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1523788,
@@ -5536,7 +5456,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1533126,
@@ -5562,7 +5482,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1533127,
@@ -5588,7 +5508,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1533051,
@@ -5616,7 +5536,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1533052,
@@ -5642,7 +5562,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1533053,
@@ -5668,163 +5588,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1517598,
-      "date": "2026-07-18",
-      "home": "Western Sydney Wanderers U23",
-      "away": "APIA Leichhardt Tigers",
-      "league": "New South Wales NPL",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1524078,
-      "date": "2026-07-18",
-      "home": "Gold Coast United",
-      "away": "Lions",
-      "league": "Queensland NPL",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1527104,
-      "date": "2026-07-18",
-      "home": "Adelaide City",
-      "away": "Croydon Kings",
-      "league": "South Australia NPL",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1521983,
-      "date": "2026-07-18",
-      "home": "Avondale",
-      "away": "St. Albans Saints",
-      "league": "Victoria NPL",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1522212,
-      "date": "2026-07-18",
-      "home": "Langwarrin",
-      "away": "Brunswick Juventus FC",
-      "league": "Victoria NPL 2",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1522213,
-      "date": "2026-07-18",
-      "home": "North Sunshine Eagles",
-      "away": "Eltham Redbacks FC",
-      "league": "Victoria NPL 2",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1541449,
@@ -5850,247 +5614,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1521984,
-      "date": "2026-07-18",
-      "home": "Altona Magic",
-      "away": "Heidelberg United",
-      "league": "Victoria NPL",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1521985,
-      "date": "2026-07-18",
-      "home": "South Melbourne",
-      "away": "Preston Lions",
-      "league": "Victoria NPL",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1527105,
-      "date": "2026-07-18",
-      "home": "Playford City Patriots",
-      "away": "MetroStars",
-      "league": "South Australia NPL",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1527106,
-      "date": "2026-07-18",
-      "home": "West Adelaide",
-      "away": "Sturt Lions",
-      "league": "South Australia NPL",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1527333,
-      "date": "2026-07-18",
-      "home": "Salisbury United",
-      "away": "Modbury Jets",
-      "league": "South Australia State League 1",
-      "version": "v196",
-      "riskScore": 32,
-      "stabilityScore": 42,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Salisbury United has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1527334,
-      "date": "2026-07-18",
-      "home": "South Adelaide Panthers",
-      "away": "The Cove",
-      "league": "South Australia State League 1",
-      "version": "v196",
-      "riskScore": 28,
-      "stabilityScore": 43,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "South Adelaide Panthers has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1527335,
-      "date": "2026-07-18",
-      "home": "Adelaide Blue Eagles",
-      "away": "Adelaide Cobras",
-      "league": "South Australia State League 1",
-      "version": "v196",
-      "riskScore": 32,
-      "stabilityScore": 42,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Adelaide Cobras has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1527387,
-      "date": "2026-07-18",
-      "home": "Adelaide Raiders",
-      "away": "Eastern United",
-      "league": "South Australia State League 1",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1527388,
-      "date": "2026-07-18",
-      "home": "Adelaide Victory",
-      "away": "Adelaide Olympic",
-      "league": "South Australia State League 1",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1549333,
@@ -6116,7 +5640,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1524079,
@@ -6142,7 +5666,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1532598,
@@ -6170,7 +5694,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1523789,
@@ -6198,7 +5722,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1549334,
@@ -6224,7 +5748,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1524077,
@@ -6250,7 +5774,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1529276,
@@ -6276,7 +5800,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1517815,
@@ -6302,7 +5826,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1517816,
@@ -6328,7 +5852,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1517818,
@@ -6354,7 +5878,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1549335,
@@ -6380,7 +5904,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1524080,
@@ -6406,7 +5930,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1522145,
@@ -6432,7 +5956,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1541450,
@@ -6458,7 +5982,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1527237,
@@ -6484,7 +6008,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1527238,
@@ -6510,7 +6034,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1527239,
@@ -6536,7 +6060,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1535525,
@@ -6562,7 +6086,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1535526,
@@ -6588,7 +6112,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1535527,
@@ -6614,7 +6138,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1535528,
@@ -6640,7 +6164,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1535529,
@@ -6666,7 +6190,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1535530,
@@ -6692,7 +6216,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1517669,
@@ -6718,7 +6242,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1541323,
@@ -6744,7 +6268,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1517599,
@@ -6770,7 +6294,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1524226,
@@ -6796,7 +6320,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1584874,
@@ -6822,35 +6346,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1560639,
-      "date": "2026-07-18",
-      "home": "Warta Poznań",
-      "away": "Lechia Zielona Góra",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 28,
-      "stabilityScore": 43,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Warta Poznań has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560652,
@@ -6876,7 +6372,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560672,
@@ -6904,35 +6400,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1562931,
-      "date": "2026-07-18",
-      "home": "Legia Warszawa",
-      "away": "Pogoń Grod. Mazowiecki",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 28,
-      "stabilityScore": 43,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Legia Warszawa has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583342,
@@ -6960,7 +6428,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1584875,
@@ -6986,7 +6454,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1584876,
@@ -7014,7 +6482,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1591877,
@@ -7040,7 +6508,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1532819,
@@ -7066,7 +6534,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1532820,
@@ -7092,7 +6560,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1517603,
@@ -7118,7 +6586,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1517817,
@@ -7144,7 +6612,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1524081,
@@ -7170,7 +6638,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1524175,
@@ -7196,7 +6664,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1524176,
@@ -7222,7 +6690,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1522036,
@@ -7248,7 +6716,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583375,
@@ -7276,7 +6744,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1524174,
@@ -7302,7 +6770,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1522146,
@@ -7328,7 +6796,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560636,
@@ -7354,7 +6822,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560741,
@@ -7382,7 +6850,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1584877,
@@ -7408,7 +6876,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1584878,
@@ -7436,35 +6904,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
-    },
-    {
-      "id": 1591878,
-      "date": "2026-07-18",
-      "home": "Zlín II",
-      "away": "Trenčín II",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 32,
-      "stabilityScore": 42,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Trenčín II has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1517600,
@@ -7490,7 +6930,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1529973,
@@ -7516,7 +6956,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583359,
@@ -7542,7 +6982,63 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
+    },
+    {
+      "id": 1583361,
+      "date": "2026-07-18",
+      "home": "Hodonín",
+      "away": "Malženice",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Hodonín has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T07:06:46.407Z"
+    },
+    {
+      "id": 1560639,
+      "date": "2026-07-18",
+      "home": "Warta Poznań",
+      "away": "Lechia Zielona Góra",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 28,
+      "stabilityScore": 43,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Warta Poznań has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583343,
@@ -7570,7 +7066,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560640,
@@ -7598,7 +7094,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560642,
@@ -7624,7 +7120,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560643,
@@ -7650,7 +7146,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560655,
@@ -7678,7 +7174,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560664,
@@ -7706,7 +7202,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560670,
@@ -7732,7 +7228,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1567649,
@@ -7760,7 +7256,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1567650,
@@ -7788,7 +7284,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1567659,
@@ -7816,7 +7312,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1567661,
@@ -7844,7 +7340,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1567664,
@@ -7872,7 +7368,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583344,
@@ -7900,7 +7396,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583370,
@@ -7928,7 +7424,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1589274,
@@ -7956,7 +7452,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1589275,
@@ -7984,7 +7480,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1591879,
@@ -8012,7 +7508,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1517819,
@@ -8038,7 +7534,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1527236,
@@ -8066,7 +7562,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1584889,
@@ -8094,7 +7590,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560644,
@@ -8122,7 +7618,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1548871,
@@ -8148,7 +7644,61 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
+    },
+    {
+      "id": 1560656,
+      "date": "2026-07-18",
+      "home": "Arka Gdynia",
+      "away": "Luzino",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T07:06:46.407Z"
+    },
+    {
+      "id": 1560663,
+      "date": "2026-07-18",
+      "home": "Jiskra Domažlice",
+      "away": "Vlašim",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Vlašim has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1549336,
@@ -8174,7 +7724,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560645,
@@ -8202,7 +7752,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560704,
@@ -8228,7 +7778,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1567666,
@@ -8256,7 +7806,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1567673,
@@ -8284,7 +7834,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583346,
@@ -8310,7 +7860,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1584879,
@@ -8336,7 +7886,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1589276,
@@ -8364,7 +7914,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1567238,
@@ -8390,7 +7940,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560698,
@@ -8418,7 +7968,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1549337,
@@ -8444,7 +7994,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1547992,
@@ -8470,7 +8020,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560641,
@@ -8496,7 +8046,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1547994,
@@ -8524,7 +8074,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1529568,
@@ -8550,7 +8100,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560646,
@@ -8578,7 +8128,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1567652,
@@ -8606,7 +8156,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1567653,
@@ -8634,7 +8184,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1567654,
@@ -8662,7 +8212,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1567656,
@@ -8690,7 +8240,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583347,
@@ -8718,7 +8268,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583348,
@@ -8746,7 +8296,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583349,
@@ -8774,7 +8324,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583350,
@@ -8800,7 +8350,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1584880,
@@ -8828,7 +8378,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1584881,
@@ -8856,7 +8406,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1520546,
@@ -8882,7 +8432,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1541717,
@@ -8908,7 +8458,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1565050,
@@ -8934,7 +8484,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1533746,
@@ -8960,7 +8510,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1533747,
@@ -8986,7 +8536,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1533748,
@@ -9012,7 +8562,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1546685,
@@ -9040,7 +8590,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560681,
@@ -9068,7 +8618,35 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
+    },
+    {
+      "id": 1560695,
+      "date": "2026-07-18",
+      "home": "Veres Rivne",
+      "away": "Polissya II",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Veres Rivne has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1562933,
@@ -9094,7 +8672,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1584882,
@@ -9120,7 +8698,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1506998,
@@ -9146,7 +8724,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1506999,
@@ -9172,7 +8750,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1507000,
@@ -9198,7 +8776,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1507001,
@@ -9224,7 +8802,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1510379,
@@ -9250,7 +8828,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1510380,
@@ -9276,7 +8854,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1510381,
@@ -9302,7 +8880,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1510382,
@@ -9330,7 +8908,35 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
+    },
+    {
+      "id": 1562931,
+      "date": "2026-07-18",
+      "home": "Legia Warszawa",
+      "away": "Pogoń Grod. Mazowiecki",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 28,
+      "stabilityScore": 43,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Legia Warszawa has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1567651,
@@ -9358,7 +8964,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1546681,
@@ -9386,7 +8992,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1550576,
@@ -9414,7 +9020,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1550577,
@@ -9442,7 +9048,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560647,
@@ -9470,7 +9076,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560648,
@@ -9496,7 +9102,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560650,
@@ -9522,7 +9128,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560651,
@@ -9550,7 +9156,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560675,
@@ -9578,7 +9184,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1562934,
@@ -9604,7 +9210,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1567655,
@@ -9632,7 +9238,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1567657,
@@ -9660,7 +9266,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583351,
@@ -9688,7 +9294,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583352,
@@ -9716,7 +9322,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583353,
@@ -9744,7 +9350,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1584883,
@@ -9770,7 +9376,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1539066,
@@ -9796,7 +9402,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1532822,
@@ -9824,7 +9430,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1592156,
@@ -9852,7 +9458,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1565047,
@@ -9878,7 +9484,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1565048,
@@ -9904,7 +9510,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1523206,
@@ -9932,7 +9538,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1497629,
@@ -9958,7 +9564,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1562932,
@@ -9984,7 +9590,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1567658,
@@ -10010,7 +9616,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1583354,
@@ -10038,7 +9644,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1528655,
@@ -10066,7 +9672,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1528656,
@@ -10092,7 +9698,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1528657,
@@ -10118,7 +9724,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1532821,
@@ -10146,7 +9752,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1532823,
@@ -10172,7 +9778,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1532824,
@@ -10198,7 +9804,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1523208,
@@ -10226,7 +9832,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1523209,
@@ -10252,7 +9858,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1529569,
@@ -10278,7 +9884,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1494701,
@@ -10304,7 +9910,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1586132,
@@ -10334,7 +9940,7 @@
         "hardVeto": false,
         "adjustment": -6
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1546683,
@@ -10360,7 +9966,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1546684,
@@ -10388,7 +9994,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1546686,
@@ -10416,7 +10022,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1547988,
@@ -10444,7 +10050,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1547989,
@@ -10472,7 +10078,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1547993,
@@ -10500,7 +10106,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1548862,
@@ -10528,7 +10134,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1548864,
@@ -10556,7 +10162,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1548865,
@@ -10584,7 +10190,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1548867,
@@ -10612,7 +10218,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1548868,
@@ -10640,7 +10246,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1548869,
@@ -10666,7 +10272,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1550579,
@@ -10692,7 +10298,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1550582,
@@ -10720,7 +10326,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.753Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560649,
@@ -10746,7 +10352,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560653,
@@ -10772,7 +10378,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560654,
@@ -10800,59 +10406,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
-    },
-    {
-      "id": 1560656,
-      "date": "2026-07-18",
-      "home": "Arka Gdynia",
-      "away": "Luzino",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
-    },
-    {
-      "id": 1560658,
-      "date": "2026-07-18",
-      "home": "Dukla Banská Bystrica",
-      "away": "Pohronie",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560659,
@@ -10878,7 +10432,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560660,
@@ -10906,7 +10460,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560661,
@@ -10934,7 +10488,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560662,
@@ -10962,35 +10516,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
-    },
-    {
-      "id": 1560663,
-      "date": "2026-07-18",
-      "home": "Jiskra Domažlice",
-      "away": "Vlašim",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 32,
-      "stabilityScore": 42,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Vlašim has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560665,
@@ -11018,7 +10544,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560666,
@@ -11044,7 +10570,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560668,
@@ -11070,7 +10596,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560669,
@@ -11096,7 +10622,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560671,
@@ -11124,7 +10650,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560673,
@@ -11152,7 +10678,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.407Z"
     },
     {
       "id": 1560677,
@@ -11180,7 +10706,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1560678,
@@ -11206,7 +10732,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1560679,
@@ -11232,7 +10758,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1560680,
@@ -11260,7 +10786,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1560682,
@@ -11286,7 +10812,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1560683,
@@ -11314,7 +10840,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1560685,
@@ -11340,7 +10866,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1560687,
@@ -11366,7 +10892,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1560691,
@@ -11394,7 +10920,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1560694,
@@ -11422,35 +10948,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
-    },
-    {
-      "id": 1560695,
-      "date": "2026-07-18",
-      "home": "Veres Rivne",
-      "away": "Polissya II",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 32,
-      "stabilityScore": 42,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Veres Rivne has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1560696,
@@ -11476,7 +10974,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1560697,
@@ -11504,7 +11002,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1560699,
@@ -11532,7 +11030,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1560700,
@@ -11560,7 +11058,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1560701,
@@ -11588,7 +11086,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1560702,
@@ -11616,7 +11114,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1562936,
@@ -11644,7 +11142,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1562937,
@@ -11670,7 +11168,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1562938,
@@ -11698,7 +11196,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1567660,
@@ -11724,7 +11222,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1567662,
@@ -11752,7 +11250,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1567663,
@@ -11780,7 +11278,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1567665,
@@ -11808,7 +11306,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1567667,
@@ -11836,7 +11334,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1567668,
@@ -11864,7 +11362,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1567669,
@@ -11890,7 +11388,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1567671,
@@ -11916,7 +11414,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1567672,
@@ -11942,7 +11440,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1583356,
@@ -11970,7 +11468,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1583357,
@@ -11996,7 +11494,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1583358,
@@ -12022,7 +11520,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1583360,
@@ -12048,35 +11546,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
-    },
-    {
-      "id": 1583361,
-      "date": "2026-07-18",
-      "home": "Hodonín",
-      "away": "Malženice",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 32,
-      "stabilityScore": 42,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Hodonín has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1583362,
@@ -12102,7 +11572,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1583363,
@@ -12130,7 +11600,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1583364,
@@ -12158,7 +11628,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1583365,
@@ -12186,7 +11656,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1583366,
@@ -12214,7 +11684,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1583367,
@@ -12240,7 +11710,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1583368,
@@ -12268,7 +11738,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1583369,
@@ -12294,7 +11764,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1583371,
@@ -12322,7 +11792,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1583372,
@@ -12350,7 +11820,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1583373,
@@ -12378,7 +11848,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1583374,
@@ -12404,7 +11874,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1584885,
@@ -12432,7 +11902,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1584886,
@@ -12460,7 +11930,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1584887,
@@ -12486,7 +11956,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1584888,
@@ -12512,7 +11982,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1584890,
@@ -12538,7 +12008,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1584891,
@@ -12566,7 +12036,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1584892,
@@ -12594,7 +12064,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1584893,
@@ -12622,7 +12092,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1584895,
@@ -12650,7 +12120,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1584896,
@@ -12676,7 +12146,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1584898,
@@ -12704,7 +12174,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1584899,
@@ -12732,7 +12202,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1584900,
@@ -12760,7 +12230,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1589277,
@@ -12788,7 +12258,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1589278,
@@ -12816,7 +12286,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1589279,
@@ -12844,7 +12314,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1589280,
@@ -12872,7 +12342,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1589281,
@@ -12900,7 +12370,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1591880,
@@ -12928,7 +12398,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1591882,
@@ -12956,7 +12426,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1539067,
@@ -12982,7 +12452,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1528777,
@@ -13008,7 +12478,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1566693,
@@ -13034,7 +12504,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1566694,
@@ -13060,7 +12530,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1528033,
@@ -13086,7 +12556,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1523210,
@@ -13114,7 +12584,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1495733,
@@ -13140,7 +12610,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1550589,
@@ -13168,7 +12638,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1560711,
@@ -13196,7 +12666,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1550590,
@@ -13222,7 +12692,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1560703,
@@ -13250,7 +12720,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1560706,
@@ -13278,7 +12748,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1567674,
@@ -13306,7 +12776,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1567675,
@@ -13334,7 +12804,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1538646,
@@ -13360,7 +12830,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1538647,
@@ -13386,7 +12856,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1538649,
@@ -13412,7 +12882,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1538652,
@@ -13438,7 +12908,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1494209,
@@ -13464,7 +12934,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1546262,
@@ -13492,7 +12962,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1547807,
@@ -13520,7 +12990,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     },
     {
       "id": 1586070,
@@ -13548,7 +13018,555 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T06:00:10.754Z"
+      "generatedAt": "2026-07-18T07:06:46.408Z"
+    },
+    {
+      "id": 1548960,
+      "date": "2026-07-18",
+      "home": "Bangor Celtic",
+      "away": "College Corinthians",
+      "league": "FAI Cup",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Bangor Celtic has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T07:06:46.408Z"
+    },
+    {
+      "id": 1546687,
+      "date": "2026-07-18",
+      "home": "Lausanne",
+      "away": "Yverdon Sport",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T07:06:46.408Z"
+    },
+    {
+      "id": 1546688,
+      "date": "2026-07-18",
+      "home": "Northampton",
+      "away": "Coventry",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Northampton has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T07:06:46.408Z"
+    },
+    {
+      "id": 1546689,
+      "date": "2026-07-18",
+      "home": "Verden 04",
+      "away": "Werder Bremen",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Werder Bremen has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T07:06:46.408Z"
+    },
+    {
+      "id": 1546690,
+      "date": "2026-07-18",
+      "home": "Yeovil Town",
+      "away": "Bristol Rovers",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T07:06:46.408Z"
+    },
+    {
+      "id": 1548872,
+      "date": "2026-07-18",
+      "home": "Cliftonville FC",
+      "away": "Newington Youth",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 28,
+      "stabilityScore": 43,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Newington Youth has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T07:06:46.408Z"
+    },
+    {
+      "id": 1548873,
+      "date": "2026-07-18",
+      "home": "Dundela",
+      "away": "Ballymena United",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Dundela has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T07:06:46.408Z"
+    },
+    {
+      "id": 1548874,
+      "date": "2026-07-18",
+      "home": "Queen's University",
+      "away": "Ballymena United",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T07:06:46.408Z"
+    },
+    {
+      "id": 1560688,
+      "date": "2026-07-18",
+      "home": "Slovácko",
+      "away": "Skalica",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T07:06:46.408Z"
+    },
+    {
+      "id": 1560689,
+      "date": "2026-07-18",
+      "home": "Sochaux",
+      "away": "Grenoble",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Sochaux has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T07:06:46.408Z"
+    },
+    {
+      "id": 1560707,
+      "date": "2026-07-18",
+      "home": "Barockstadt Fulda-Lehn.",
+      "away": "Rot-Weiß Walldorf",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T07:06:46.408Z"
+    },
+    {
+      "id": 1560708,
+      "date": "2026-07-18",
+      "home": "H&W Welders",
+      "away": "Carrick Rangers",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "H&W Welders has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T07:06:46.408Z"
+    },
+    {
+      "id": 1560709,
+      "date": "2026-07-18",
+      "home": "Llandudno",
+      "away": "Bootle",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 28,
+      "stabilityScore": 43,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Llandudno has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T07:06:46.408Z"
+    },
+    {
+      "id": 1560710,
+      "date": "2026-07-18",
+      "home": "Lüneburger SK Hansa",
+      "away": "FC Lok Stendal",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "FC Lok Stendal has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T07:06:46.408Z"
+    },
+    {
+      "id": 1562939,
+      "date": "2026-07-18",
+      "home": "Dundee",
+      "away": "Everton",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Dundee has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T07:06:46.408Z"
+    },
+    {
+      "id": 1562940,
+      "date": "2026-07-18",
+      "home": "Jong PSV U21",
+      "away": "KRC Genk II",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 28,
+      "stabilityScore": 43,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "KRC Genk II has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T07:06:46.408Z"
+    },
+    {
+      "id": 1562941,
+      "date": "2026-07-18",
+      "home": "FC Liefering",
+      "away": "SV Wehen",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 28,
+      "stabilityScore": 43,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "FC Liefering has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T07:06:46.408Z"
+    },
+    {
+      "id": 1567676,
+      "date": "2026-07-18",
+      "home": "Falkirk",
+      "away": "Genk",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Falkirk has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T07:06:46.408Z"
+    },
+    {
+      "id": 1567677,
+      "date": "2026-07-18",
+      "home": "Kaiserslautern II",
+      "away": "Mechtersheim",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Mechtersheim has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T07:06:46.408Z"
+    },
+    {
+      "id": 1583377,
+      "date": "2026-07-18",
+      "home": "PEC Zwolle",
+      "away": "Cercle Brugge",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T07:06:46.408Z"
     }
   ]
 }
