@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-18T04:24:39.483Z",
+  "generatedAt": "2026-07-18T04:34:40.547Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,7 +13,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 601
+      "matches": 599
     },
     {
       "league": "USL League Two",
@@ -864,7 +864,7 @@
       "matches": 3
     }
   ],
-  "matchesConsidered": 1665,
+  "matchesConsidered": 1663,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1250,18 +1250,6 @@
       "country": "Colombia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "WSG Wattens",
-      "away": "Hertha BSC",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Luckenwalde",
-      "away": "Germania Halberstadt",
-      "reason": "No event/team match"
     },
     {
       "league": "Friendlies Clubs",
@@ -2372,6 +2360,18 @@
       "home": "Northampton",
       "away": "Coventry",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Verden 04",
+      "away": "Werder Bremen",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Cliftonville FC",
+      "away": "Newington Youth",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -3273,5 +3273,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-18T04:24:44.316Z"
+  "completedAt": "2026-07-18T04:34:50.161Z"
 }
