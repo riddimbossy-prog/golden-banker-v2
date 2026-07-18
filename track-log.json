@@ -76569,9 +76569,13 @@
         "dataFields": 0
       },
       "recordedAt": "2026-07-17T19:53:08.663Z",
-      "status": "pending",
-      "result": null,
-      "score": null
+      "status": "settled",
+      "result": "Won",
+      "score": "4-6",
+      "finalHomeGoals": 4,
+      "finalAwayGoals": 6,
+      "actualResult": "away",
+      "settledAt": "2026-07-18T13:33:42.412Z"
     },
     {
       "matchDate": "2026-07-18",
@@ -118118,6 +118122,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-18T13:23:19.513Z"
+    "updated": "2026-07-18T13:33:44.440Z"
   }
 }
