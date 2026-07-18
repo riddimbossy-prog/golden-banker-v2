@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-18T22:44:05.118Z",
+  "updated": "2026-07-18T23:26:16.520Z",
   "summary": {
     "fixtures": 300,
     "qualified": 0,
@@ -3661,21 +3661,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1567657,
-      "date": "2026-07-18",
-      "home": "Stenungsund",
-      "away": "Utsikten",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
       "id": 1583352,
       "date": "2026-07-18",
       "home": "Lichtenberg",
@@ -4650,21 +4635,6 @@
       "independence": 0
     },
     {
-      "id": 1584906,
-      "date": "2026-07-18",
-      "home": "Farense",
-      "away": "Benfica B",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
       "id": 1546264,
       "date": "2026-07-18",
       "home": "Taguatinga U20",
@@ -4773,21 +4743,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1595187,
-      "date": "2026-07-18",
-      "home": "Araioses",
-      "away": "Timon MA",
-      "league": "Maranhense - 2",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
       "id": 1595441,
       "date": "2026-07-18",
       "home": "Ceilândia U20",
@@ -4872,21 +4827,6 @@
         }
       ],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1595188,
-      "date": "2026-07-18",
-      "home": "Pinheiro",
-      "away": "Lago Verde",
-      "league": "Maranhense - 2",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
     },
     {
       "id": 1534066,
@@ -4974,109 +4914,6 @@
       "supporters": [],
       "conflictIndex": 0,
       "independence": 0
-    },
-    {
-      "id": 1513225,
-      "date": "2026-07-18",
-      "home": "Columbus Crew II",
-      "away": "Philadelphia Union II",
-      "league": "MLS Next Pro",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Home Team Over 0.5 Goals",
-      "score": 79.3,
-      "support": 1.03,
-      "supporters": [
-        "Trend",
-        "League Bias"
-      ],
-      "independence": 2,
-      "exactSupport": 2,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Second Half Over 0.5",
-          "support": 0.44,
-          "engines": [
-            "Halves"
-          ]
-        }
-      ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1586082,
-      "date": "2026-07-18",
-      "home": "Jalapa",
-      "away": "Walter Ferretti",
-      "league": "Primera Division",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
-      "id": 1508471,
-      "date": "2026-07-18",
-      "home": "Chicago Red Stars W",
-      "away": "Angel City W",
-      "league": "NWSL Women",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 76.1,
-      "support": 0.63,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Under 3.5 Goals",
-          "support": 0.57,
-          "engines": [
-            "League Bias"
-          ]
-        }
-      ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1584333,
-      "date": "2026-07-18",
-      "home": "Oriental",
-      "away": "Sportivo Huracan",
-      "league": "Segunda División",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Under 3.5 Goals",
-      "score": 76.4,
-      "support": 0.69,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Double Chance 1X",
-          "support": 0.47,
-          "engines": [
-            "Trend"
-          ]
-        }
-      ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
       "id": 1567687,
@@ -5589,6 +5426,210 @@
           "support": 0.52,
           "engines": [
             "PurePPG Normal"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1513231,
+      "date": "2026-07-19",
+      "home": "Huntsville City",
+      "away": "Atlanta United II",
+      "league": "MLS Next Pro",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Second Half Over 0.5",
+      "score": 76.6,
+      "support": 0.76,
+      "supporters": [
+        "Halves"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Home Team Over 0.5 Goals",
+          "support": 0.4,
+          "engines": [
+            "League Bias"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1508472,
+      "date": "2026-07-19",
+      "home": "Racing Louisville W",
+      "away": "Houston Dash W",
+      "league": "NWSL Women",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Under 3.5 Goals",
+      "score": 75.9,
+      "support": 0.58,
+      "supporters": [
+        "League Bias"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "First Half Over 0.5",
+          "support": 0.54,
+          "engines": [
+            "Halves"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1586083,
+      "date": "2026-07-19",
+      "home": "Managua",
+      "away": "Rancho Santana",
+      "league": "Primera Division",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1595444,
+      "date": "2026-07-19",
+      "home": "Fort Lauderdale United",
+      "away": "The Villages",
+      "league": "USL League Two",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1538396,
+      "date": "2026-07-19",
+      "home": "Aurora",
+      "away": "Oriente Petrolero",
+      "league": "Primera División",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Double Chance 1X",
+      "score": 76.3,
+      "support": 0.68,
+      "supporters": [
+        "Trend"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Second Half Over 0.5",
+          "support": 0.43,
+          "engines": [
+            "Halves"
+          ]
+        },
+        {
+          "market": "Home Team Over 0.5 Goals",
+          "support": 0.25,
+          "engines": [
+            "League Bias"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1493578,
+      "date": "2026-07-19",
+      "home": "FC Tulsa",
+      "away": "El Paso Locomotive",
+      "league": "USL Championship",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Second Half Over 0.5",
+      "score": 75.3,
+      "support": 0.43,
+      "supporters": [
+        "Halves"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1595445,
+      "date": "2026-07-19",
+      "home": "Peoria",
+      "away": "Minneapolis City",
+      "league": "USL League Two",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Over 1.5 Goals",
+      "score": 79.9,
+      "support": 1.18,
+      "supporters": [
+        "Trend",
+        "League Bias"
+      ],
+      "independence": 2,
+      "exactSupport": 2,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Second Half Over 0.5",
+          "support": 0.74,
+          "engines": [
+            "Halves"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1508473,
+      "date": "2026-07-19",
+      "home": "Utah Royals W",
+      "away": "Orlando Pride W",
+      "league": "NWSL Women",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Under 3.5 Goals",
+      "score": 75.6,
+      "support": 0.5,
+      "supporters": [
+        "League Bias"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "First Half Over 0.5",
+          "support": 0.26,
+          "engines": [
+            "Halves"
           ]
         }
       ],
