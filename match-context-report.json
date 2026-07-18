@@ -1,11 +1,11 @@
 {
   "version": "v196",
-  "updated": "2026-07-18T18:22:47.314Z",
+  "updated": "2026-07-18T19:09:31.759Z",
   "summary": {
     "fixtures": 500,
     "extreme": 0,
     "high": 0,
-    "low": 302,
+    "low": 315,
     "averageRisk": 26
   },
   "commonFlags": [
@@ -15,19 +15,19 @@
     },
     {
       "flag": "REST_IMBALANCE",
-      "count": 151
+      "count": 146
     },
     {
       "flag": "OPENING_PHASE",
-      "count": 49
+      "count": 39
     },
     {
       "flag": "KNOCKOUT_CONTEXT",
-      "count": 18
+      "count": 17
     },
     {
       "flag": "FINAL_PRESSURE",
-      "count": 18
+      "count": 17
     },
     {
       "flag": "FRIENDLY_VARIANCE",
@@ -60,7 +60,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -87,7 +87,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -114,7 +114,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -141,7 +141,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -168,7 +168,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -195,7 +195,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -222,7 +222,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -249,7 +249,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -276,7 +276,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -303,7 +303,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -330,7 +330,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -357,7 +357,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -384,7 +384,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -411,7 +411,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -438,7 +438,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -465,7 +465,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -492,7 +492,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -519,7 +519,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -546,7 +546,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -573,7 +573,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -600,7 +600,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -627,7 +627,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -654,7 +654,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -681,7 +681,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -708,7 +708,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -735,7 +735,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -762,7 +762,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -789,7 +789,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -816,7 +816,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -843,7 +843,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -870,7 +870,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -897,7 +897,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -924,7 +924,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -951,7 +951,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -978,7 +978,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1005,7 +1005,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1032,7 +1032,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1059,7 +1059,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1086,7 +1086,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1113,7 +1113,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1140,7 +1140,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1167,7 +1167,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1194,7 +1194,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1221,7 +1221,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1248,7 +1248,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1275,7 +1275,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1302,7 +1302,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1329,7 +1329,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1356,7 +1356,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1383,7 +1383,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1410,7 +1410,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1441,7 +1441,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1468,7 +1468,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1495,7 +1495,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1522,7 +1522,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1549,7 +1549,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1576,7 +1576,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1603,7 +1603,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1630,7 +1630,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1657,7 +1657,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1684,7 +1684,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1711,7 +1711,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1738,7 +1738,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1765,7 +1765,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.757Z"
     },
     {
       "id": null,
@@ -1792,7 +1792,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -1819,7 +1819,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -1846,7 +1846,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -1873,7 +1873,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -1900,7 +1900,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -1927,7 +1927,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -1954,7 +1954,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -1981,7 +1981,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2008,7 +2008,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2035,7 +2035,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2062,7 +2062,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2089,7 +2089,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2116,7 +2116,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2143,7 +2143,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2170,7 +2170,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2197,7 +2197,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2224,7 +2224,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2251,7 +2251,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2278,7 +2278,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2305,7 +2305,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2332,7 +2332,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2359,7 +2359,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2386,7 +2386,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2413,7 +2413,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2440,7 +2440,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2467,7 +2467,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2494,7 +2494,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2521,7 +2521,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2548,7 +2548,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2575,7 +2575,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2602,7 +2602,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2629,7 +2629,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2656,7 +2656,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2683,7 +2683,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2710,7 +2710,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2737,7 +2737,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2764,7 +2764,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2791,7 +2791,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2818,7 +2818,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2845,7 +2845,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2872,7 +2872,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2899,7 +2899,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2926,7 +2926,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2953,7 +2953,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -2980,7 +2980,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3007,7 +3007,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3034,7 +3034,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3061,7 +3061,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3088,7 +3088,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3115,7 +3115,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3142,7 +3142,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3169,7 +3169,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3196,7 +3196,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3223,7 +3223,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3250,7 +3250,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3277,7 +3277,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3304,7 +3304,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3331,7 +3331,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3358,7 +3358,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3385,7 +3385,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3412,7 +3412,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3439,7 +3439,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3466,7 +3466,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3493,7 +3493,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3520,7 +3520,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": null,
@@ -3547,7 +3547,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1525119,
@@ -3574,7 +3574,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1523196,
@@ -3600,7 +3600,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1528647,
@@ -3626,7 +3626,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1523198,
@@ -3652,7 +3652,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1525925,
@@ -3680,7 +3680,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1525921,
@@ -3706,7 +3706,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1525926,
@@ -3734,7 +3734,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1546510,
@@ -3764,7 +3764,7 @@
         "hardVeto": false,
         "adjustment": -6
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1523201,
@@ -3790,7 +3790,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1528650,
@@ -3816,7 +3816,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1523202,
@@ -3842,7 +3842,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1528026,
@@ -3868,7 +3868,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1544674,
@@ -3898,7 +3898,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1547588,
@@ -3928,7 +3928,7 @@
         "hardVeto": false,
         "adjustment": -6
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1523779,
@@ -3954,7 +3954,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1554956,
@@ -3982,7 +3982,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1554960,
@@ -4008,7 +4008,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1554961,
@@ -4034,7 +4034,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560612,
@@ -4060,7 +4060,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1583315,
@@ -4088,7 +4088,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1554958,
@@ -4114,7 +4114,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1589267,
@@ -4142,7 +4142,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1554800,
@@ -4170,7 +4170,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1583314,
@@ -4198,7 +4198,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1583663,
@@ -4228,7 +4228,7 @@
         "hardVeto": false,
         "adjustment": -6
       },
-      "generatedAt": "2026-07-18T18:22:47.312Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1583325,
@@ -4256,7 +4256,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1584785,
@@ -4284,7 +4284,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1548852,
@@ -4312,7 +4312,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1567636,
@@ -4340,7 +4340,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1589177,
@@ -4368,7 +4368,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1547971,
@@ -4396,7 +4396,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1547972,
@@ -4424,7 +4424,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1548854,
@@ -4452,7 +4452,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1517309,
@@ -4478,7 +4478,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1583330,
@@ -4506,7 +4506,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1534065,
@@ -4534,7 +4534,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1490326,
@@ -4560,7 +4560,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1554976,
@@ -4586,7 +4586,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1547974,
@@ -4612,7 +4612,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1527234,
@@ -4640,7 +4640,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1583336,
@@ -4666,7 +4666,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1567640,
@@ -4694,7 +4694,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1547978,
@@ -4722,7 +4722,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1554979,
@@ -4750,7 +4750,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560625,
@@ -4776,7 +4776,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1567643,
@@ -4804,7 +4804,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1583335,
@@ -4830,7 +4830,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1589271,
@@ -4858,7 +4858,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1592155,
@@ -4884,7 +4884,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1548857,
@@ -4912,7 +4912,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1554986,
@@ -4938,7 +4938,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1547589,
@@ -4966,7 +4966,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1548861,
@@ -4994,7 +4994,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1554995,
@@ -5022,7 +5022,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1554996,
@@ -5048,7 +5048,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560633,
@@ -5076,7 +5076,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1584870,
@@ -5104,7 +5104,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1567645,
@@ -5132,7 +5132,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1547987,
@@ -5158,7 +5158,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1562930,
@@ -5186,39 +5186,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1589961,
-      "date": "2026-07-17",
-      "home": "Amal Tiznit",
-      "away": "Olympique Dcheïra",
-      "league": "Botola Pro",
-      "version": "v196",
-      "riskScore": 48,
-      "stabilityScore": 36,
-      "riskLevel": "ELEVATED",
-      "flags": [
-        "KNOCKOUT_CONTEXT",
-        "FINAL_PRESSURE",
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Knockout incentives can override ordinary league patterns.",
-        "Final-round pressure can change normal tempo and risk.",
-        "Olympique Dcheïra has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -6
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1498657,
@@ -5244,7 +5212,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1589273,
@@ -5272,7 +5240,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1523786,
@@ -5298,7 +5266,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1532597,
@@ -5324,7 +5292,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1523787,
@@ -5350,7 +5318,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1533051,
@@ -5378,7 +5346,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1532598,
@@ -5406,7 +5374,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1584876,
@@ -5434,7 +5402,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560706,
@@ -5462,7 +5430,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560640,
@@ -5490,7 +5458,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560642,
@@ -5516,7 +5484,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560655,
@@ -5544,7 +5512,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1589274,
@@ -5572,7 +5540,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560645,
@@ -5600,7 +5568,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1567673,
@@ -5628,7 +5596,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1584879,
@@ -5654,7 +5622,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1567653,
@@ -5682,7 +5650,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1583347,
@@ -5710,7 +5678,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1562933,
@@ -5736,7 +5704,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1546681,
@@ -5764,7 +5732,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1567657,
@@ -5792,7 +5760,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1583352,
@@ -5820,7 +5788,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1584883,
@@ -5846,7 +5814,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1539066,
@@ -5872,7 +5840,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1592156,
@@ -5900,7 +5868,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560664,
@@ -5928,7 +5896,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1548865,
@@ -5956,7 +5924,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560649,
@@ -5982,7 +5950,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560666,
@@ -6008,7 +5976,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560671,
@@ -6036,7 +6004,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560678,
@@ -6062,7 +6030,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560682,
@@ -6088,7 +6056,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560697,
@@ -6116,7 +6084,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560700,
@@ -6144,7 +6112,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1562936,
@@ -6172,7 +6140,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1567660,
@@ -6198,7 +6166,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1567662,
@@ -6226,7 +6194,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1567665,
@@ -6254,7 +6222,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1567668,
@@ -6282,7 +6250,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1583362,
@@ -6308,7 +6276,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1583363,
@@ -6336,7 +6304,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1583365,
@@ -6364,7 +6332,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1583368,
@@ -6392,7 +6360,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1583369,
@@ -6418,7 +6386,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1584885,
@@ -6446,7 +6414,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1584888,
@@ -6472,7 +6440,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1584895,
@@ -6500,7 +6468,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1589277,
@@ -6528,7 +6496,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1589278,
@@ -6556,7 +6524,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1589279,
@@ -6584,7 +6552,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1591880,
@@ -6612,7 +6580,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1539067,
@@ -6638,7 +6606,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1546690,
@@ -6664,7 +6632,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1562940,
@@ -6692,7 +6660,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1567677,
@@ -6720,7 +6688,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1589282,
@@ -6746,7 +6714,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1576779,
@@ -6774,7 +6742,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1592157,
@@ -6800,309 +6768,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1595440,
-      "date": "2026-07-18",
-      "home": "Samambaia U20",
-      "away": "Planaltina U20",
-      "league": "Brasiliense U20",
-      "version": "v196",
-      "riskScore": 30,
-      "stabilityScore": 40,
-      "riskLevel": "WATCH",
-      "flags": [
-        "OPENING_PHASE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Early-season samples are less stable.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1546686,
-      "date": "2026-07-18",
-      "home": "Wimborne Town",
-      "away": "Salisbury",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 32,
-      "stabilityScore": 42,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Salisbury has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1560653,
-      "date": "2026-07-18",
-      "home": "Akron",
-      "away": "Krylia Sovetov",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1562937,
-      "date": "2026-07-18",
-      "home": "Paris FC",
-      "away": "Reims",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 28,
-      "stabilityScore": 43,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Reims has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1583373,
-      "date": "2026-07-18",
-      "home": "Vitesse",
-      "away": "Al-Jazira",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 28,
-      "stabilityScore": 43,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Al-Jazira has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1546682,
-      "date": "2026-07-18",
-      "home": "Bath City",
-      "away": "Plymouth",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 28,
-      "stabilityScore": 43,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Plymouth has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1546692,
-      "date": "2026-07-18",
-      "home": "FC Rot-Weiß Erfurt",
-      "away": "Hessen Kassel",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1546693,
-      "date": "2026-07-18",
-      "home": "Folkestone Invicta",
-      "away": "Charlton Athletic U21",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 28,
-      "stabilityScore": 43,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Folkestone Invicta has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1546694,
-      "date": "2026-07-18",
-      "home": "Hednesford Town",
-      "away": "Solihull Moors",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1546695,
-      "date": "2026-07-18",
-      "home": "AFC Hornchurch",
-      "away": "Norwich City U21",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 28,
-      "stabilityScore": 43,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "AFC Hornchurch has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1546698,
-      "date": "2026-07-18",
-      "home": "1. FC Nürnberg",
-      "away": "Waldhof Mannheim",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 28,
-      "stabilityScore": 43,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "1. FC Nürnberg has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1547999,
@@ -7130,117 +6796,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1548878,
-      "date": "2026-07-18",
-      "home": "Macclesfield",
-      "away": "Wolves U21",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 28,
-      "stabilityScore": 43,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Macclesfield has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1550584,
-      "date": "2026-07-18",
-      "home": "Dergview",
-      "away": "Dungannon Swifts",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1550586,
-      "date": "2026-07-18",
-      "home": "Spennymoor Town",
-      "away": "Hartlepool",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 28,
-      "stabilityScore": 43,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Hartlepool has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1560716,
-      "date": "2026-07-18",
-      "home": "Barrow",
-      "away": "Mansfield Town",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 32,
-      "stabilityScore": 42,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Barrow has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560720,
@@ -7268,7 +6824,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560728,
@@ -7296,35 +6852,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1560730,
-      "date": "2026-07-18",
-      "home": "Southport",
-      "away": "Fleetwood Town",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 32,
-      "stabilityScore": 42,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Fleetwood Town has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1567680,
@@ -7352,7 +6880,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1583381,
@@ -7378,7 +6906,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1583385,
@@ -7406,7 +6934,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1584901,
@@ -7434,59 +6962,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1584903,
-      "date": "2026-07-18",
-      "home": "Sholing",
-      "away": "Bognor Regis Town",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1548870,
-      "date": "2026-07-18",
-      "home": "Wacker Innsbruck",
-      "away": "BSG Chemie Leipzig",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1583337,
@@ -7514,199 +6990,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1547989,
-      "date": "2026-07-18",
-      "home": "Legia Warszawa",
-      "away": "Aris",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 28,
-      "stabilityScore": 43,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Legia Warszawa has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1583357,
-      "date": "2026-07-18",
-      "home": "Clermont Foot",
-      "away": "Andrézieux",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 28,
-      "stabilityScore": 43,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Clermont Foot has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1589280,
-      "date": "2026-07-18",
-      "home": "Kasımpaşa",
-      "away": "Batman Petrolspor",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 32,
-      "stabilityScore": 42,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Kasımpaşa has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1547990,
-      "date": "2026-07-18",
-      "home": "Miedz Legnica",
-      "away": "Chojniczanka Chojnice",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1560638,
-      "date": "2026-07-18",
-      "home": "Vasas",
-      "away": "Fehérvár FC",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1567683,
-      "date": "2026-07-18",
-      "home": "Lille",
-      "away": "RAAL La Louvière",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 28,
-      "stabilityScore": 43,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "RAAL La Louvière has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1567685,
-      "date": "2026-07-18",
-      "home": "Estac Troyes",
-      "away": "RED Star FC 93",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 32,
-      "stabilityScore": 42,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Estac Troyes has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1589284,
@@ -7732,111 +7016,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1592784,
-      "date": "2026-07-18",
-      "home": "Guadalajara Chivas U21",
-      "away": "Toluca U21",
-      "league": "Liga MX U21",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1592785,
-      "date": "2026-07-18",
-      "home": "Monterrey U21",
-      "away": "Santos Laguna U21",
-      "league": "Liga MX U21",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1566696,
-      "date": "2026-07-18",
-      "home": "Nordlingen",
-      "away": "Gebenbach",
-      "league": "Oberliga - Bayern Nord",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1567002,
-      "date": "2026-07-18",
-      "home": "Gundelfingen",
-      "away": "Deisenhofen",
-      "league": "Oberliga - Bayern Süd",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1565049,
@@ -7862,35 +7042,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1591882,
-      "date": "2026-07-18",
-      "home": "Slavičín",
-      "away": "Vsetín",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 32,
-      "stabilityScore": 42,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Vsetín has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1584896,
@@ -7916,7 +7068,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1543431,
@@ -7942,33 +7094,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1560692,
-      "date": "2026-07-18",
-      "home": "Thionville Lusitanos",
-      "away": "Nancy",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560744,
@@ -7994,7 +7120,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560746,
@@ -8022,7 +7148,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1583376,
@@ -8050,7 +7176,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1584904,
@@ -8078,7 +7204,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1591885,
@@ -8106,7 +7232,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1508468,
@@ -8134,7 +7260,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1562946,
@@ -8160,7 +7286,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1589285,
@@ -8188,7 +7314,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1511611,
@@ -8214,7 +7340,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1511615,
@@ -8240,7 +7366,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1584897,
@@ -8266,7 +7392,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1583355,
@@ -8292,7 +7418,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1589286,
@@ -8320,7 +7446,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1591887,
@@ -8346,37 +7472,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1582679,
-      "date": "2026-07-18",
-      "home": "SSA",
-      "away": "Barreiras FC",
-      "league": "Baiano - 2",
-      "version": "v196",
-      "riskScore": 38,
-      "stabilityScore": 37,
-      "riskLevel": "WATCH",
-      "flags": [
-        "KNOCKOUT_CONTEXT",
-        "FINAL_PRESSURE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Knockout incentives can override ordinary league patterns.",
-        "Final-round pressure can change normal tempo and risk.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1582675,
@@ -8406,7 +7502,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1582676,
@@ -8436,7 +7532,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1589965,
@@ -8468,7 +7564,7 @@
         "hardVeto": false,
         "adjustment": -6
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1589966,
@@ -8500,7 +7596,7 @@
         "hardVeto": false,
         "adjustment": -6
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1548247,
@@ -8530,7 +7626,7 @@
         "hardVeto": false,
         "adjustment": -6
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1548250,
@@ -8558,33 +7654,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1542032,
-      "date": "2026-07-18",
-      "home": "Metropolitano",
-      "away": "Jaraguá",
-      "league": "Catarinense - 2",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1539857,
@@ -8610,97 +7680,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1540199,
-      "date": "2026-07-18",
-      "home": "Fortaleza U20",
-      "away": "Tirol U20",
-      "league": "Cearense U20",
-      "version": "v196",
-      "riskScore": 40,
-      "stabilityScore": 39,
-      "riskLevel": "ELEVATED",
-      "flags": [
-        "REST_IMBALANCE",
-        "OPENING_PHASE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Tirol U20 has a material rest advantage.",
-        "Early-season samples are less stable.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -6
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1540200,
-      "date": "2026-07-18",
-      "home": "Ceará U20",
-      "away": "Quixadá U20",
-      "league": "Cearense U20",
-      "version": "v196",
-      "riskScore": 40,
-      "stabilityScore": 39,
-      "riskLevel": "ELEVATED",
-      "flags": [
-        "REST_IMBALANCE",
-        "OPENING_PHASE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Quixadá U20 has a material rest advantage.",
-        "Early-season samples are less stable.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -6
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1540201,
-      "date": "2026-07-18",
-      "home": "Horizonte U20",
-      "away": "Ferroviario U20",
-      "league": "Cearense U20",
-      "version": "v196",
-      "riskScore": 40,
-      "stabilityScore": 39,
-      "riskLevel": "ELEVATED",
-      "flags": [
-        "REST_IMBALANCE",
-        "OPENING_PHASE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Ferroviario U20 has a material rest advantage.",
-        "Early-season samples are less stable.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -6
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1540202,
@@ -8730,7 +7710,7 @@
         "hardVeto": false,
         "adjustment": -6
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1540203,
@@ -8760,7 +7740,7 @@
         "hardVeto": false,
         "adjustment": -6
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1540221,
@@ -8790,7 +7770,7 @@
         "hardVeto": false,
         "adjustment": -6
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1540222,
@@ -8820,137 +7800,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1546075,
-      "date": "2026-07-18",
-      "home": "Paulista",
-      "away": "Primavera SP",
-      "league": "Copa Paulista",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1586071,
-      "date": "2026-07-18",
-      "home": "Benjamín Aceval",
-      "away": "Resistencia",
-      "league": "Division Intermedia",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1586072,
-      "date": "2026-07-18",
-      "home": "Sportivo Carapeguá",
-      "away": "Guairena FC",
-      "league": "Division Intermedia",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1550592,
-      "date": "2026-07-18",
-      "home": "Olot",
-      "away": "Espanyol",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1560750,
-      "date": "2026-07-18",
-      "home": "Zulte Waregem",
-      "away": "AZ Alkmaar",
-      "league": "Friendlies Clubs",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1584905,
@@ -8976,7 +7826,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1584906,
@@ -9004,699 +7854,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1548142,
-      "date": "2026-07-18",
-      "home": "Dundee Utd",
-      "away": "Arbroath",
-      "league": "League Cup",
-      "version": "v196",
-      "riskScore": 28,
-      "stabilityScore": 43,
-      "riskLevel": "WATCH",
-      "flags": [
-        "REST_IMBALANCE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Arbroath has a material rest advantage.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1589407,
-      "date": "2026-07-18",
-      "home": "Aymorés",
-      "away": "BOA",
-      "league": "Mineiro - 2",
-      "version": "v196",
-      "riskScore": 38,
-      "stabilityScore": 37,
-      "riskLevel": "WATCH",
-      "flags": [
-        "KNOCKOUT_CONTEXT",
-        "FINAL_PRESSURE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Knockout incentives can override ordinary league patterns.",
-        "Final-round pressure can change normal tempo and risk.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1508469,
-      "date": "2026-07-18",
-      "home": "Denver Summit W",
-      "away": "Portland Thorns W",
-      "league": "NWSL Women",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1547343,
-      "date": "2026-07-18",
-      "home": "São Bento U20",
-      "away": "Mirassol U20",
-      "league": "Paulista - U20",
-      "version": "v196",
-      "riskScore": 30,
-      "stabilityScore": 40,
-      "riskLevel": "WATCH",
-      "flags": [
-        "OPENING_PHASE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Early-season samples are less stable.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1547348,
-      "date": "2026-07-18",
-      "home": "Ferroviária U20",
-      "away": "Santos U20",
-      "league": "Paulista - U20",
-      "version": "v196",
-      "riskScore": 30,
-      "stabilityScore": 40,
-      "riskLevel": "WATCH",
-      "flags": [
-        "OPENING_PHASE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Early-season samples are less stable.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1547350,
-      "date": "2026-07-18",
-      "home": "RB Bragantino U20",
-      "away": "Porto Football U20",
-      "league": "Paulista - U20",
-      "version": "v196",
-      "riskScore": 30,
-      "stabilityScore": 40,
-      "riskLevel": "WATCH",
-      "flags": [
-        "OPENING_PHASE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Early-season samples are less stable.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1547351,
-      "date": "2026-07-18",
-      "home": "Velo Clube U20",
-      "away": "São Paulo U20",
-      "league": "Paulista - U20",
-      "version": "v196",
-      "riskScore": 30,
-      "stabilityScore": 40,
-      "riskLevel": "WATCH",
-      "flags": [
-        "OPENING_PHASE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Early-season samples are less stable.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1581351,
-      "date": "2026-07-18",
-      "home": "Flamengo SP",
-      "away": "Matonense",
-      "league": "Paulista Série B",
-      "version": "v196",
-      "riskScore": 38,
-      "stabilityScore": 37,
-      "riskLevel": "WATCH",
-      "flags": [
-        "KNOCKOUT_CONTEXT",
-        "FINAL_PRESSURE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Knockout incentives can override ordinary league patterns.",
-        "Final-round pressure can change normal tempo and risk.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1581353,
-      "date": "2026-07-18",
-      "home": "Itaquá Athletico Clube",
-      "away": "Uniao Mogi",
-      "league": "Paulista Série B",
-      "version": "v196",
-      "riskScore": 38,
-      "stabilityScore": 37,
-      "riskLevel": "WATCH",
-      "flags": [
-        "KNOCKOUT_CONTEXT",
-        "FINAL_PRESSURE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Knockout incentives can override ordinary league patterns.",
-        "Final-round pressure can change normal tempo and risk.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1499529,
-      "date": "2026-07-18",
-      "home": "Argentino de Merlo",
-      "away": "Deportivo Armenio",
-      "league": "Primera B Metropolitana",
-      "version": "v196",
-      "riskScore": 30,
-      "stabilityScore": 40,
-      "riskLevel": "WATCH",
-      "flags": [
-        "OPENING_PHASE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Early-season samples are less stable.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1499530,
-      "date": "2026-07-18",
-      "home": "Arsenal Sarandi",
-      "away": "Flandria",
-      "league": "Primera B Metropolitana",
-      "version": "v196",
-      "riskScore": 30,
-      "stabilityScore": 40,
-      "riskLevel": "WATCH",
-      "flags": [
-        "OPENING_PHASE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Early-season samples are less stable.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1499531,
-      "date": "2026-07-18",
-      "home": "Excursionistas",
-      "away": "Argentino Quilmes",
-      "league": "Primera B Metropolitana",
-      "version": "v196",
-      "riskScore": 30,
-      "stabilityScore": 40,
-      "riskLevel": "WATCH",
-      "flags": [
-        "OPENING_PHASE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Early-season samples are less stable.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1499532,
-      "date": "2026-07-18",
-      "home": "Deportivo Laferrere",
-      "away": "Ituzaingó",
-      "league": "Primera B Metropolitana",
-      "version": "v196",
-      "riskScore": 30,
-      "stabilityScore": 40,
-      "riskLevel": "WATCH",
-      "flags": [
-        "OPENING_PHASE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Early-season samples are less stable.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1499533,
-      "date": "2026-07-18",
-      "home": "Liniers",
-      "away": "Deportivo Merlo",
-      "league": "Primera B Metropolitana",
-      "version": "v196",
-      "riskScore": 30,
-      "stabilityScore": 40,
-      "riskLevel": "WATCH",
-      "flags": [
-        "OPENING_PHASE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Early-season samples are less stable.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1499534,
-      "date": "2026-07-18",
-      "home": "Real Pilar",
-      "away": "Dock Sud",
-      "league": "Primera B Metropolitana",
-      "version": "v196",
-      "riskScore": 30,
-      "stabilityScore": 40,
-      "riskLevel": "WATCH",
-      "flags": [
-        "OPENING_PHASE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Early-season samples are less stable.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1499535,
-      "date": "2026-07-18",
-      "home": "San Martín Burzaco",
-      "away": "Sportivo Italiano",
-      "league": "Primera B Metropolitana",
-      "version": "v196",
-      "riskScore": 30,
-      "stabilityScore": 40,
-      "riskLevel": "WATCH",
-      "flags": [
-        "OPENING_PHASE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Early-season samples are less stable.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1499536,
-      "date": "2026-07-18",
-      "home": "Talleres Remedios",
-      "away": "Brown DE Adrogue",
-      "league": "Primera B Metropolitana",
-      "version": "v196",
-      "riskScore": 30,
-      "stabilityScore": 40,
-      "riskLevel": "WATCH",
-      "flags": [
-        "OPENING_PHASE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Early-season samples are less stable.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1499537,
-      "date": "2026-07-18",
-      "home": "UAI Urquiza",
-      "away": "Comunicaciones",
-      "league": "Primera B Metropolitana",
-      "version": "v196",
-      "riskScore": 30,
-      "stabilityScore": 40,
-      "riskLevel": "WATCH",
-      "flags": [
-        "OPENING_PHASE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Early-season samples are less stable.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1499538,
-      "date": "2026-07-18",
-      "home": "Villa Dalmine",
-      "away": "Defensores Unidos",
-      "league": "Primera B Metropolitana",
-      "version": "v196",
-      "riskScore": 30,
-      "stabilityScore": 40,
-      "riskLevel": "WATCH",
-      "flags": [
-        "OPENING_PHASE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Early-season samples are less stable.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1499995,
-      "date": "2026-07-18",
-      "home": "Canuelas",
-      "away": "Leandro N. Alem",
-      "league": "Primera C",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1500002,
-      "date": "2026-07-18",
-      "home": "JJ Urquiza",
-      "away": "Deportivo Muñiz",
-      "league": "Primera C",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1500004,
-      "date": "2026-07-18",
-      "home": "Mercedes",
-      "away": "El Porvenir",
-      "league": "Primera C",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1559518,
-      "date": "2026-07-18",
-      "home": "Alianza Universidad",
-      "away": "Ayacucho FC",
-      "league": "Segunda División",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1553810,
-      "date": "2026-07-18",
-      "home": "Novi Pazar",
-      "away": "Radnicki 1923",
-      "league": "Super Liga",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1553814,
-      "date": "2026-07-18",
-      "home": "Zemun",
-      "away": "FK Partizan",
-      "league": "Super Liga",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1549980,
@@ -9722,113 +7880,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1557972,
-      "date": "2026-07-18",
-      "home": "Olimpija Ljubljana",
-      "away": "Bravo",
-      "league": "1. SNL",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1551050,
-      "date": "2026-07-18",
-      "home": "Ludogorets",
-      "away": "Lokomotiv Plovdiv",
-      "league": "First League",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1565190,
-      "date": "2026-07-18",
-      "home": "Universitatea Craiova",
-      "away": "Uta Arad",
-      "league": "Liga I",
-      "version": "v196",
-      "riskScore": 22,
-      "stabilityScore": 42,
-      "riskLevel": "LOW",
-      "flags": [
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": 0
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
-    },
-    {
-      "id": 1549410,
-      "date": "2026-07-18",
-      "home": "ADT",
-      "away": "Universitario",
-      "league": "Primera División",
-      "version": "v196",
-      "riskScore": 30,
-      "stabilityScore": 40,
-      "riskLevel": "WATCH",
-      "flags": [
-        "OPENING_PHASE",
-        "LOW_CONTEXT_COVERAGE"
-      ],
-      "reasons": [
-        "Early-season samples are less stable.",
-        "Core match context is incomplete."
-      ],
-      "missingEvidence": [
-        "AVAILABILITY"
-      ],
-      "coverage": 2,
-      "decision": {
-        "hardVeto": false,
-        "adjustment": -3
-      },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1546263,
@@ -9856,7 +7908,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1546264,
@@ -9886,7 +7938,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1546265,
@@ -9914,7 +7966,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1560751,
@@ -9942,7 +7994,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1549968,
@@ -9970,7 +8022,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1549969,
@@ -10000,7 +8052,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1549970,
@@ -10028,7 +8080,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1549971,
@@ -10056,7 +8108,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1595187,
@@ -10088,7 +8140,7 @@
         "hardVeto": false,
         "adjustment": -6
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1595441,
@@ -10118,7 +8170,7 @@
         "hardVeto": false,
         "adjustment": -6
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1595442,
@@ -10146,7 +8198,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1592165,
@@ -10178,7 +8230,7 @@
         "hardVeto": false,
         "adjustment": -6
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1583388,
@@ -10206,7 +8258,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1517312,
@@ -10232,7 +8284,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1546071,
@@ -10258,7 +8310,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1519410,
@@ -10284,7 +8336,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1589408,
@@ -10314,7 +8366,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1511612,
@@ -10340,7 +8392,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1511614,
@@ -10366,7 +8418,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1538391,
@@ -10394,7 +8446,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.758Z"
     },
     {
       "id": 1576798,
@@ -10420,7 +8472,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1520773,
@@ -10446,7 +8498,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1520777,
@@ -10474,7 +8526,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1520779,
@@ -10500,7 +8552,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1589348,
@@ -10526,7 +8578,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1589349,
@@ -10552,7 +8604,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1589352,
@@ -10578,7 +8630,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1595188,
@@ -10610,7 +8662,7 @@
         "hardVeto": false,
         "adjustment": -6
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1589409,
@@ -10640,7 +8692,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1508809,
@@ -10666,7 +8718,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1542007,
@@ -10692,7 +8744,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1534066,
@@ -10720,7 +8772,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1508470,
@@ -10746,7 +8798,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1589354,
@@ -10772,7 +8824,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1493901,
@@ -10800,7 +8852,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1559519,
@@ -10828,7 +8880,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1526573,
@@ -10854,7 +8906,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1549415,
@@ -10882,7 +8934,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1520771,
@@ -10908,7 +8960,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1591865,
@@ -10940,7 +8992,7 @@
         "hardVeto": false,
         "adjustment": -6
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1519413,
@@ -10966,7 +9018,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1513224,
@@ -10992,7 +9044,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1589350,
@@ -11018,7 +9070,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1586139,
@@ -11050,7 +9102,7 @@
         "hardVeto": false,
         "adjustment": -6
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1546070,
@@ -11076,7 +9128,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1513225,
@@ -11104,7 +9156,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1586082,
@@ -11130,7 +9182,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1589351,
@@ -11156,7 +9208,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1508471,
@@ -11182,7 +9234,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1584333,
@@ -11208,7 +9260,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1567687,
@@ -11236,7 +9288,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1550899,
@@ -11262,7 +9314,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1513226,
@@ -11288,7 +9340,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1513228,
@@ -11314,7 +9366,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1513229,
@@ -11340,7 +9392,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1493577,
@@ -11368,7 +9420,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1493579,
@@ -11394,7 +9446,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1493584,
@@ -11422,7 +9474,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1493900,
@@ -11450,7 +9502,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1493903,
@@ -11478,7 +9530,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1493905,
@@ -11506,7 +9558,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1493906,
@@ -11534,7 +9586,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1549413,
@@ -11562,7 +9614,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1493576,
@@ -11590,7 +9642,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1493582,
@@ -11616,7 +9668,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1493902,
@@ -11644,7 +9696,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1493904,
@@ -11670,7 +9722,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1519408,
@@ -11696,7 +9748,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1513223,
@@ -11722,7 +9774,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1513231,
@@ -11748,7 +9800,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1508472,
@@ -11774,7 +9826,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1586083,
@@ -11800,7 +9852,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1595444,
@@ -11826,7 +9878,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1538396,
@@ -11854,7 +9906,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1493578,
@@ -11882,7 +9934,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1595445,
@@ -11908,7 +9960,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1508473,
@@ -11936,7 +9988,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1586084,
@@ -11962,7 +10014,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1559523,
@@ -11990,7 +10042,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1493583,
@@ -12016,7 +10068,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1595446,
@@ -12042,7 +10094,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1550901,
@@ -12068,7 +10120,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1550900,
@@ -12094,7 +10146,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1513230,
@@ -12122,7 +10174,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1493580,
@@ -12148,7 +10200,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1532599,
@@ -12174,7 +10226,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1523790,
@@ -12202,7 +10254,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1549338,
@@ -12228,7 +10280,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1549339,
@@ -12254,7 +10306,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1550902,
@@ -12280,7 +10332,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1522147,
@@ -12306,7 +10358,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1524227,
@@ -12332,7 +10384,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1529277,
@@ -12358,7 +10410,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1529278,
@@ -12384,7 +10436,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1517601,
@@ -12410,7 +10462,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1517602,
@@ -12436,7 +10488,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1517820,
@@ -12462,7 +10514,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1532600,
@@ -12490,7 +10542,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1532601,
@@ -12516,7 +10568,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1523791,
@@ -12544,7 +10596,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1524082,
@@ -12570,7 +10622,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1524177,
@@ -12596,7 +10648,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1591888,
@@ -12624,7 +10676,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1589287,
@@ -12652,7 +10704,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1565424,
@@ -12678,7 +10730,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1527107,
@@ -12704,7 +10756,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1583345,
@@ -12730,7 +10782,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1584907,
@@ -12758,7 +10810,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1521645,
@@ -12784,7 +10836,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1521646,
@@ -12810,7 +10862,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1595178,
@@ -12838,7 +10890,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1595179,
@@ -12866,7 +10918,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1595180,
@@ -12894,7 +10946,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1595181,
@@ -12922,7 +10974,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1529572,
@@ -12948,7 +11000,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1584909,
@@ -12976,7 +11028,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1592158,
@@ -13004,7 +11056,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1507002,
@@ -13030,7 +11082,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1507003,
@@ -13056,7 +11108,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1510383,
@@ -13082,7 +11134,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1510384,
@@ -13108,7 +11160,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1510385,
@@ -13134,7 +11186,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1510386,
@@ -13160,7 +11212,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1556382,
@@ -13186,7 +11238,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1560752,
@@ -13212,7 +11264,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1539068,
@@ -13238,7 +11290,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1532825,
@@ -13264,7 +11316,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1532826,
@@ -13292,7 +11344,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.313Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1565425,
@@ -13318,7 +11370,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.314Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1497628,
@@ -13344,7 +11396,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.314Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1532827,
@@ -13370,7 +11422,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.314Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1532828,
@@ -13398,7 +11450,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.314Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1532829,
@@ -13424,7 +11476,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.314Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1532830,
@@ -13450,7 +11502,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.314Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1547810,
@@ -13478,7 +11530,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.314Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1577445,
@@ -13506,7 +11558,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.314Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1546700,
@@ -13532,7 +11584,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.314Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1546701,
@@ -13560,7 +11612,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.314Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1548006,
@@ -13586,7 +11638,7 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.314Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1560754,
@@ -13614,7 +11666,7 @@
         "hardVeto": false,
         "adjustment": -3
       },
-      "generatedAt": "2026-07-18T18:22:47.314Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     },
     {
       "id": 1560755,
@@ -13640,7 +11692,1921 @@
         "hardVeto": false,
         "adjustment": 0
       },
-      "generatedAt": "2026-07-18T18:22:47.314Z"
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1567688,
+      "date": "2026-07-19",
+      "home": "Borussia Hildesheim",
+      "away": "Hemelingen",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Hemelingen has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1584908,
+      "date": "2026-07-19",
+      "home": "Sardarapat",
+      "away": "Ararat",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1589288,
+      "date": "2026-07-19",
+      "home": "Werder Bremen II",
+      "away": "BFC Preussen",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Werder Bremen II has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1528028,
+      "date": "2026-07-19",
+      "home": "Altay",
+      "away": "Aktobe",
+      "league": "Premier League",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1592159,
+      "date": "2026-07-19",
+      "home": "Chiba",
+      "away": "Gorilla of the Universe",
+      "league": "Primeira Divisão",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1595438,
+      "date": "2026-07-19",
+      "home": "Thimphu City",
+      "away": "Thimphu",
+      "league": "Premier League",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1546710,
+      "date": "2026-07-19",
+      "home": "Balingen",
+      "away": "VfB Stuttgart",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "VfB Stuttgart has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1583391,
+      "date": "2026-07-19",
+      "home": "Bremer SV",
+      "away": "Heeslinger SC",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 28,
+      "stabilityScore": 43,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Bremer SV has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1538648,
+      "date": "2026-07-19",
+      "home": "Kamuzu Barracks",
+      "away": "Blue Eagles",
+      "league": "Super League",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1538650,
+      "date": "2026-07-19",
+      "home": "Dedza Dynamos",
+      "away": "Chitipa United",
+      "league": "Super League",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1538651,
+      "date": "2026-07-19",
+      "home": "Ekhaya",
+      "away": "Nyasa Big Bullets",
+      "league": "Super League",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1538653,
+      "date": "2026-07-19",
+      "home": "Silver Strikers",
+      "away": "Karonga United",
+      "league": "Super League",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1539855,
+      "date": "2026-07-19",
+      "home": "Concórdia U20",
+      "away": "Barra SC U20",
+      "league": "Catarinense U20",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1546072,
+      "date": "2026-07-19",
+      "home": "EC São Bernardo",
+      "away": "Santo André",
+      "league": "Copa Paulista",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1547813,
+      "date": "2026-07-19",
+      "home": "Volna",
+      "away": "Slavia Mozyr",
+      "league": "Coppa",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Volna has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1586073,
+      "date": "2026-07-19",
+      "home": "Atlético Tembetary",
+      "away": "SOL DE America",
+      "league": "Division Intermedia",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1586074,
+      "date": "2026-07-19",
+      "home": "Encarnación",
+      "away": "3 de Noviembre",
+      "league": "Division Intermedia",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1548968,
+      "date": "2026-07-19",
+      "home": "Ringmahon Rangers",
+      "away": "Bohemians",
+      "league": "FAI Cup",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Ringmahon Rangers has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1577441,
+      "date": "2026-07-19",
+      "home": "KAMAZ",
+      "away": "Nizhny Novgorod",
+      "league": "First League",
+      "version": "v196",
+      "riskScore": 30,
+      "stabilityScore": 40,
+      "riskLevel": "WATCH",
+      "flags": [
+        "OPENING_PHASE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Early-season samples are less stable.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1583392,
+      "date": "2026-07-19",
+      "home": "SSV Ulm 1846",
+      "away": "Bayern München II",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1539069,
+      "date": "2026-07-19",
+      "home": "HJK W",
+      "away": "HPS W",
+      "league": "Kansallinen Liiga",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1576780,
+      "date": "2026-07-19",
+      "home": "Sao Joao del Rei U20",
+      "away": "Inter de Minas U20",
+      "league": "Mineiro U20",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1580411,
+      "date": "2026-07-19",
+      "home": "Atlético Mineiro U20",
+      "away": "Cruzeiro U20",
+      "league": "Mineiro U20",
+      "version": "v196",
+      "riskScore": 40,
+      "stabilityScore": 39,
+      "riskLevel": "ELEVATED",
+      "flags": [
+        "REST_IMBALANCE",
+        "OPENING_PHASE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Cruzeiro U20 has a material rest advantage.",
+        "Early-season samples are less stable.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -6
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1547347,
+      "date": "2026-07-19",
+      "home": "Corinthians U20",
+      "away": "Ponte Preta U20",
+      "league": "Paulista - U20",
+      "version": "v196",
+      "riskScore": 30,
+      "stabilityScore": 40,
+      "riskLevel": "WATCH",
+      "flags": [
+        "OPENING_PHASE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Early-season samples are less stable.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1547349,
+      "date": "2026-07-19",
+      "home": "Flamengo SP U20",
+      "away": "Palmeiras U20",
+      "league": "Paulista - U20",
+      "version": "v196",
+      "riskScore": 30,
+      "stabilityScore": 40,
+      "riskLevel": "WATCH",
+      "flags": [
+        "OPENING_PHASE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Early-season samples are less stable.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1581352,
+      "date": "2026-07-19",
+      "home": "Independente SP",
+      "away": "Sporting Paulinense",
+      "league": "Paulista Série B",
+      "version": "v196",
+      "riskScore": 38,
+      "stabilityScore": 37,
+      "riskLevel": "WATCH",
+      "flags": [
+        "KNOCKOUT_CONTEXT",
+        "FINAL_PRESSURE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Knockout incentives can override ordinary league patterns.",
+        "Final-round pressure can change normal tempo and risk.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1581354,
+      "date": "2026-07-19",
+      "home": "José Bonifácio",
+      "away": "America SP",
+      "league": "Paulista Série B",
+      "version": "v196",
+      "riskScore": 38,
+      "stabilityScore": 37,
+      "riskLevel": "WATCH",
+      "flags": [
+        "KNOCKOUT_CONTEXT",
+        "FINAL_PRESSURE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Knockout incentives can override ordinary league patterns.",
+        "Final-round pressure can change normal tempo and risk.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1589369,
+      "date": "2026-07-19",
+      "home": "Dynamos",
+      "away": "Simba Bhora",
+      "league": "Premier Soccer League",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1589370,
+      "date": "2026-07-19",
+      "home": "Hardrock",
+      "away": "Triangle United",
+      "league": "Premier Soccer League",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1589371,
+      "date": "2026-07-19",
+      "home": "Highlanders",
+      "away": "Scotland Mabvuku",
+      "league": "Premier Soccer League",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1576799,
+      "date": "2026-07-19",
+      "home": "Central Espanol",
+      "away": "Cerro Largo",
+      "league": "Primera División - Apertura",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1497626,
+      "date": "2026-07-19",
+      "home": "United Nordic",
+      "away": "Orebro SK",
+      "league": "Superettan",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1497632,
+      "date": "2026-07-19",
+      "home": "IFK Varnamo",
+      "away": "Ljungskile SK",
+      "league": "Superettan",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1595443,
+      "date": "2026-07-19",
+      "home": "ARUC U20",
+      "away": "Capital TO U20",
+      "league": "Brasiliense U20",
+      "version": "v196",
+      "riskScore": 30,
+      "stabilityScore": 40,
+      "riskLevel": "WATCH",
+      "flags": [
+        "OPENING_PHASE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Early-season samples are less stable.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1547806,
+      "date": "2026-07-19",
+      "home": "Orsha",
+      "away": "Naftan",
+      "league": "Coppa",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Orsha has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1589410,
+      "date": "2026-07-19",
+      "home": "CAP",
+      "away": "Democrata SL",
+      "league": "Mineiro - 2",
+      "version": "v196",
+      "riskScore": 38,
+      "stabilityScore": 37,
+      "riskLevel": "WATCH",
+      "flags": [
+        "KNOCKOUT_CONTEXT",
+        "FINAL_PRESSURE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Knockout incentives can override ordinary league patterns.",
+        "Final-round pressure can change normal tempo and risk.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1565426,
+      "date": "2026-07-19",
+      "home": "Mashuk-KMV",
+      "away": "Dinamo Bryansk",
+      "league": "Second League A - Division A Gold",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1584334,
+      "date": "2026-07-19",
+      "home": "Tacuarembo",
+      "away": "Plaza Colonia",
+      "league": "Segunda División",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1529573,
+      "date": "2026-07-19",
+      "home": "Smiltene",
+      "away": "Rēzekne FA",
+      "league": "1. Liga",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1542005,
+      "date": "2026-07-19",
+      "home": "Tubarao",
+      "away": "Hercílio Luz",
+      "league": "Catarinense - 2",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1539853,
+      "date": "2026-07-19",
+      "home": "Criciuma U20",
+      "away": "Chapecoense U20",
+      "league": "Catarinense U20",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1539854,
+      "date": "2026-07-19",
+      "home": "Joinville U20",
+      "away": "Avaí U20",
+      "league": "Catarinense U20",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Joinville U20 has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1581834,
+      "date": "2026-07-19",
+      "home": "Brasil DE Pelotas",
+      "away": "Gramadense",
+      "league": "Copa Gaúcha",
+      "version": "v196",
+      "riskScore": 38,
+      "stabilityScore": 37,
+      "riskLevel": "WATCH",
+      "flags": [
+        "KNOCKOUT_CONTEXT",
+        "FINAL_PRESSURE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Knockout incentives can override ordinary league patterns.",
+        "Final-round pressure can change normal tempo and risk.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1546074,
+      "date": "2026-07-19",
+      "home": "Oeste",
+      "away": "Juventus",
+      "league": "Copa Paulista",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1547812,
+      "date": "2026-07-19",
+      "home": "Viktoriya Maryina Horka",
+      "away": "Belshina",
+      "league": "Coppa",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Viktoriya Maryina Horka has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1577442,
+      "date": "2026-07-19",
+      "home": "Shinnik Yaroslavl",
+      "away": "Leningradets",
+      "league": "First League",
+      "version": "v196",
+      "riskScore": 30,
+      "stabilityScore": 40,
+      "riskLevel": "WATCH",
+      "flags": [
+        "OPENING_PHASE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Early-season samples are less stable.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1577444,
+      "date": "2026-07-19",
+      "home": "Tekstilshchik",
+      "away": "FC UFA",
+      "league": "First League",
+      "version": "v196",
+      "riskScore": 30,
+      "stabilityScore": 40,
+      "riskLevel": "WATCH",
+      "flags": [
+        "OPENING_PHASE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Early-season samples are less stable.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1577446,
+      "date": "2026-07-19",
+      "home": "Veles",
+      "away": "Chelyabinsk",
+      "league": "First League",
+      "version": "v196",
+      "riskScore": 30,
+      "stabilityScore": 40,
+      "riskLevel": "WATCH",
+      "flags": [
+        "OPENING_PHASE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Early-season samples are less stable.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1548007,
+      "date": "2026-07-19",
+      "home": "Cracovia Krakow",
+      "away": "Sevilla",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1548886,
+      "date": "2026-07-19",
+      "home": "Sporting Hasselt",
+      "away": "Antwerp",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1560756,
+      "date": "2026-07-19",
+      "home": "Eintracht Norderstedt",
+      "away": "Havelse",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 28,
+      "stabilityScore": 43,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Eintracht Norderstedt has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1583389,
+      "date": "2026-07-19",
+      "home": "HNK Gorica",
+      "away": "FC St. Pauli",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "FC St. Pauli has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1583393,
+      "date": "2026-07-19",
+      "home": "AFC Eskilstuna",
+      "away": "Assyriska FF",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1583394,
+      "date": "2026-07-19",
+      "home": "Ennepetal",
+      "away": "Westfalia Rhynern",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Westfalia Rhynern has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1565189,
+      "date": "2026-07-19",
+      "home": "Universitatea Cluj",
+      "away": "Farul Constanta",
+      "league": "Liga I",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1513591,
+      "date": "2026-07-19",
+      "home": "Kuressaare",
+      "away": "Kalju Nomme",
+      "league": "Meistriliiga",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Kalju Nomme has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1513592,
+      "date": "2026-07-19",
+      "home": "FC Levadia Tallinn",
+      "away": "Tammeka",
+      "league": "Meistriliiga",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "FC Levadia Tallinn has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1528030,
+      "date": "2026-07-19",
+      "home": "Irtysh",
+      "away": "FC Astana",
+      "league": "Premier League",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1583826,
+      "date": "2026-07-19",
+      "home": "Rodina Moskva II",
+      "away": "Alaniya Vladikavkaz",
+      "league": "Second League A - Division A Gold",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1589353,
+      "date": "2026-07-19",
+      "home": "São Luiz",
+      "away": "CSA",
+      "league": "Serie D",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1508811,
+      "date": "2026-07-19",
+      "home": "IBV Vestmannaeyjar",
+      "away": "KA Akureyri",
+      "league": "Úrvalsdeild",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1515886,
+      "date": "2026-07-19",
+      "home": "Ogre United",
+      "away": "BFC Daugavpils",
+      "league": "Virsliga",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1494210,
+      "date": "2026-07-19",
+      "home": "IF Elfsborg",
+      "away": "Sirius",
+      "league": "Allsvenskan",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1494212,
+      "date": "2026-07-19",
+      "home": "Halmstad",
+      "away": "BK Hacken",
+      "league": "Allsvenskan",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1494213,
+      "date": "2026-07-19",
+      "home": "Hammarby FF",
+      "away": "Degerfors IF",
+      "league": "Allsvenskan",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1565427,
+      "date": "2026-07-19",
+      "home": "FK Sokol Saratov",
+      "away": "Kaluga",
+      "league": "Second League A - Division A Gold",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1556383,
+      "date": "2026-07-19",
+      "home": "Kauno Žalgiris II",
+      "away": "Babrungas",
+      "league": "1 Lyga",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1547803,
+      "date": "2026-07-19",
+      "home": "NFK Minsk",
+      "away": "Dinamo Brest",
+      "league": "Coppa",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "NFK Minsk has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1548961,
+      "date": "2026-07-19",
+      "home": "Derry City",
+      "away": "Tolka Rovers",
+      "league": "FAI Cup",
+      "version": "v196",
+      "riskScore": 32,
+      "stabilityScore": 42,
+      "riskLevel": "WATCH",
+      "flags": [
+        "REST_IMBALANCE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Tolka Rovers has a material rest advantage.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1577443,
+      "date": "2026-07-19",
+      "home": "FC Sochi",
+      "away": "Spartak Kostroma",
+      "league": "First League",
+      "version": "v196",
+      "riskScore": 30,
+      "stabilityScore": 40,
+      "riskLevel": "WATCH",
+      "flags": [
+        "OPENING_PHASE",
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Early-season samples are less stable.",
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": -3
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
+    },
+    {
+      "id": 1560753,
+      "date": "2026-07-19",
+      "home": "Genoa",
+      "away": "Trento",
+      "league": "Friendlies Clubs",
+      "version": "v196",
+      "riskScore": 22,
+      "stabilityScore": 42,
+      "riskLevel": "LOW",
+      "flags": [
+        "LOW_CONTEXT_COVERAGE"
+      ],
+      "reasons": [
+        "Core match context is incomplete."
+      ],
+      "missingEvidence": [
+        "AVAILABILITY"
+      ],
+      "coverage": 2,
+      "decision": {
+        "hardVeto": false,
+        "adjustment": 0
+      },
+      "generatedAt": "2026-07-18T19:09:31.759Z"
     }
   ]
 }
