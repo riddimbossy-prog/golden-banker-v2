@@ -1,9 +1,9 @@
 {
   "version": "v193",
-  "updated": "2026-07-18T13:45:29.491Z",
+  "updated": "2026-07-18T14:49:07.216Z",
   "summary": {
-    "settledFixtures": 145,
-    "settledDecisions": 307,
+    "settledFixtures": 147,
+    "settledDecisions": 312,
     "reviewedLosses": 51,
     "teamProfiles": 68,
     "leagueProfiles": 13,

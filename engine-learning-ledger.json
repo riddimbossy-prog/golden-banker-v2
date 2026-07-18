@@ -1,7 +1,7 @@
 {
   "version": "v193",
   "schemaVersion": 1,
-  "updated": "2026-07-18T13:45:29.491Z",
+  "updated": "2026-07-18T14:49:07.216Z",
   "minimumSamples": {
     "teamFavorite": 5,
     "teamUnderdog": 5,
@@ -12,10 +12,10 @@
   },
   "decayHalfLifeDays": 120,
   "summary": {
-    "settledFixtures": 145,
-    "settledDecisions": 307,
+    "settledFixtures": 147,
+    "settledDecisions": 312,
     "reviewedLosses": 51,
-    "attachedUpcoming": 1706,
+    "attachedUpcoming": 1659,
     "highRiskUpcoming": 0,
     "stableUpcoming": 0
   },
@@ -8464,15 +8464,15 @@
       "hardVeto": false
     },
     "*|Halves|Second Half Over 0.5|unknown|other": {
-      "sample": 39,
-      "wins": 34,
+      "sample": 40,
+      "wins": 35,
       "losses": 5,
-      "winRate": 0.8718,
-      "lossRate": 0.1282,
+      "winRate": 0.875,
+      "lossRate": 0.125,
       "wilson": {
-        "lower": 0.7329,
-        "mid": 0.8718,
-        "upper": 0.944
+        "lower": 0.7389,
+        "mid": 0.875,
+        "upper": 0.9454
       },
       "adjustment": 2,
       "hardVeto": false
@@ -8856,13 +8856,13 @@
       "hardVeto": false
     },
     "*|Ultra|Double Chance X2|unknown|other": {
-      "sample": 2,
-      "wins": 2,
+      "sample": 3,
+      "wins": 3,
       "losses": 0,
       "winRate": 1,
       "lossRate": 0,
       "wilson": {
-        "lower": 0.3424,
+        "lower": 0.4385,
         "mid": 1,
         "upper": 1
       },
@@ -9570,13 +9570,13 @@
       "hardVeto": false
     },
     "*|League Bias|Over 1.5 Goals|unknown|other": {
-      "sample": 1,
-      "wins": 1,
+      "sample": 2,
+      "wins": 2,
       "losses": 0,
       "winRate": 1,
       "lossRate": 0,
       "wilson": {
-        "lower": 0.2065,
+        "lower": 0.3424,
         "mid": 1,
         "upper": 1
       },
@@ -9864,13 +9864,13 @@
       "hardVeto": false
     },
     "victoria premier league 2|Halves|Second Half Over 0.5|unknown|other": {
-      "sample": 2,
-      "wins": 2,
+      "sample": 3,
+      "wins": 3,
       "losses": 0,
       "winRate": 1,
       "lossRate": 0,
       "wilson": {
-        "lower": 0.3424,
+        "lower": 0.4385,
         "mid": 1,
         "upper": 1
       },
@@ -10032,13 +10032,13 @@
       "hardVeto": false
     },
     "*|Apex|Double Chance X2|unknown|other": {
-      "sample": 1,
-      "wins": 1,
+      "sample": 2,
+      "wins": 2,
       "losses": 0,
       "winRate": 1,
       "lossRate": 0,
       "wilson": {
-        "lower": 0.2065,
+        "lower": 0.3424,
         "mid": 1,
         "upper": 1
       },
@@ -10053,6 +10053,76 @@
       "lossRate": 0,
       "wilson": {
         "lower": 0.4385,
+        "mid": 1,
+        "upper": 1
+      },
+      "adjustment": 0,
+      "hardVeto": false
+    },
+    "victoria premier league 2|Ultra|Double Chance X2|unknown|other": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "winRate": 1,
+      "lossRate": 0,
+      "wilson": {
+        "lower": 0.2065,
+        "mid": 1,
+        "upper": 1
+      },
+      "adjustment": 0,
+      "hardVeto": false
+    },
+    "victoria premier league 2|Elite|Double Chance X2|unknown|other": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "winRate": 1,
+      "lossRate": 0,
+      "wilson": {
+        "lower": 0.2065,
+        "mid": 1,
+        "upper": 1
+      },
+      "adjustment": 0,
+      "hardVeto": false
+    },
+    "*|Elite|Double Chance X2|unknown|other": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "winRate": 1,
+      "lossRate": 0,
+      "wilson": {
+        "lower": 0.2065,
+        "mid": 1,
+        "upper": 1
+      },
+      "adjustment": 0,
+      "hardVeto": false
+    },
+    "victoria premier league 2|Apex|Double Chance X2|unknown|other": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "winRate": 1,
+      "lossRate": 0,
+      "wilson": {
+        "lower": 0.2065,
+        "mid": 1,
+        "upper": 1
+      },
+      "adjustment": 0,
+      "hardVeto": false
+    },
+    "friendlies clubs|League Bias|Over 1.5 Goals|unknown|other": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "winRate": 1,
+      "lossRate": 0,
+      "wilson": {
+        "lower": 0.2065,
         "mid": 1,
         "upper": 1
       },
