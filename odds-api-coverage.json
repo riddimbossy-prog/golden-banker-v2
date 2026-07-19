@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-19T16:55:24.804Z",
+  "generatedAt": "2026-07-19T17:05:07.139Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -976,7 +976,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1675,
+  "matchesConsidered": 1672,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -985,18 +985,6 @@
   "derivedHtftMatches": 0,
   "bookmakerRows": 0,
   "unmatched": [
-    {
-      "league": "NNSW League 1",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.25
-    },
-    {
-      "league": "Northern NSW NPL",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
     {
       "league": "Primeira Divisão",
       "country": "Macao",
@@ -1302,6 +1290,18 @@
       "country": "Panama",
       "reason": "No matching soccer sport key",
       "bestScore": 0.111
+    },
+    {
+      "league": "Northern NSW NPL",
+      "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
+    },
+    {
+      "league": "NNSW League 1",
+      "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.25
     },
     {
       "league": "Tasmania Northern Championship",
@@ -3459,5 +3459,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-19T16:55:44.606Z"
+  "completedAt": "2026-07-19T17:05:16.066Z"
 }
