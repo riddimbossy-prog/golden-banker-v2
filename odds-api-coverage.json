@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-19T17:43:26.884Z",
+  "generatedAt": "2026-07-19T17:55:28.270Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -182,14 +182,6 @@
       "sportTitle": "MLS",
       "score": 0.466,
       "matches": 5
-    },
-    {
-      "league": "Primera División",
-      "country": "Bolivia",
-      "sportKey": "soccer_argentina_primera_division",
-      "sportTitle": "Primera División - Argentina",
-      "score": 0.653,
-      "matches": 8
     },
     {
       "league": "Premier League",
@@ -1074,12 +1066,6 @@
     {
       "league": "Super Liga",
       "country": "Serbia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.111
-    },
-    {
-      "league": "Super Liga",
-      "country": "Moldova",
       "reason": "No matching soccer sport key",
       "bestScore": 0.111
     },
@@ -3473,5 +3459,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-19T17:43:32.031Z"
+  "completedAt": "2026-07-19T17:55:44.556Z"
 }
