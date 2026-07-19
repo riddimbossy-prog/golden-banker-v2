@@ -6,7 +6,7 @@ const critical=[],warnings=[],passed=[];
 const exists=f=>fs.existsSync(path.join(HERE,f));
 const read=f=>{try{return fs.readFileSync(path.join(HERE,f),"utf8");}catch(_){return"";}};
 const pages=["board.html","bankers.html","engines.html","proof.html","scorecards.html","league-dna.html","community.html","trust.html"];
-const required=[...pages,"banker-engine.js","multi-engine-suite.js","p2u-intelligence.js","site-health-widget.js","site-health.css","sw.js","predict2u-logo.png"];
+const required=[...pages,"banker-engine.js","multi-engine-suite.js","specialist-engines-v262.js","p2u-intelligence.js","site-health-widget.js","site-health.css","sw.js","predict2u-logo.png"];
 for(const f of required){if(!exists(f))critical.push(`Missing required file: ${f}`);else passed.push(`Found ${f}`);}
 let engineCount=null;
 try{
@@ -14,9 +14,11 @@ try{
   globalThis.P2U_ENGINE_REGISTRY=Array.isArray(base.P2U_ENGINE_REGISTRY)?[...base.P2U_ENGINE_REGISTRY]:[];
   delete require.cache[require.resolve("./multi-engine-suite.js")];
   require("./multi-engine-suite.js");
+  delete require.cache[require.resolve("./specialist-engines-v262.js")];
+  require("./specialist-engines-v262.js");
   engineCount=(globalThis.P2U_ENGINE_REGISTRY||[]).length;
-  if(engineCount!==20)critical.push(`Engine registry has ${engineCount}; expected 20.`);
-  else passed.push("Engine registry has 20 engines");
+  if(engineCount!==22)critical.push(`Engine registry has ${engineCount}; expected 22.`);
+  else passed.push("Engine registry has 22 engines");
   const additions=(globalThis.P2U_MULTI_ENGINE_REGISTRY||[]).length;
   if(additions!==4)critical.push(`Multi-engine extension has ${additions}; expected 4 engines.`);
   else passed.push("Multi-engine extension has 4 engines");
@@ -30,6 +32,7 @@ for(const page of pages){
   const dup=[...new Set(ids.filter((id,i)=>ids.indexOf(id)!==i))];
   if(dup.length)critical.push(`${page}: duplicate IDs: ${dup.join(", ")}`);else passed.push(`${page}: no duplicate IDs`);
   if(!/multi-engine-suite\.js/.test(html))critical.push(`${page}: multi-engine extension is not loaded.`);else passed.push(`${page}: multi-engine extension loaded`);
+  if(!/specialist-engines-v262\.js/.test(html))warnings.push(`${page}: v262 specialist extension is not loaded.`);
   if(/\b(?:13|16)\s+engines\b|\b(?:thirteen|sixteen)\s+(?:specialized\s+)?engines\b/i.test(html))warnings.push(`${page}: old engine-count wording remains.`);
   let m;while((m=localRef.exec(html))){
     let ref=m[1].split(/[?#]/)[0];
@@ -58,7 +61,7 @@ if(exists("data.js")){
   }catch(e){warnings.push(`data.js MATCHES JSON cannot be parsed: ${e.message}`);}
 }else if(!PACKAGE_MODE)warnings.push("data.js is not present; live repository audit cannot validate fixtures.");
 const uniqueWarnings=[...new Set(warnings)];
-const report={generatedAt:new Date().toISOString(),engineCount,expectedEngineCount:20,multiEngineCount:4,critical,warnings:uniqueWarnings,passedCount:passed.length};
+const report={generatedAt:new Date().toISOString(),engineCount,expectedEngineCount:22,multiEngineCount:4,critical,warnings:uniqueWarnings,passedCount:passed.length};
 fs.writeFileSync(path.join(HERE,"site-audit.json"),JSON.stringify(report,null,2)+"\n");
 console.log(`Audit: ${critical.length} critical, ${uniqueWarnings.length} warning(s), ${passed.length} checks passed.`);
 for(const x of critical)console.error("CRITICAL:",x);

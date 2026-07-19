@@ -27,6 +27,7 @@
       proof:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-5"/></svg>',
       score:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M22 19V3"/></svg>',
       dna:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3c6 4 4 14 10 18M17 3C11 7 13 17 7 21M8 7h8M7 12h10M8 17h8"/></svg>',
+      rankings:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20V7"/><path d="M3 20h20"/></svg>',
       trust:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/></svg>',
       account:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>',
       more:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="19" cy="12" r="1.4"/></svg>'
@@ -40,6 +41,7 @@
     {href:'bankers.html',label:'Bankers',icon:'bankers'},
     {href:'engines.html',label:'Full Board',icon:'fullboard'},
     {href:'all-engines.html',label:'Engines',icon:'engines'},
+    {href:'team-rankings.html',label:'Teams',icon:'rankings'},
     {href:'news.html',label:'News',icon:'news'},
     {href:'community.html',label:'Community',icon:'community'}
   ];
@@ -56,6 +58,7 @@
     {href:'proof.html',label:'Proof',icon:'proof'},
     {href:'scorecards.html',label:'Scorecards',icon:'score'},
     {href:'league-dna.html',label:'League DNA',icon:'dna'},
+    {href:'team-rankings.html',label:'Best/Worst Teams',icon:'rankings'},
     {href:'trust.html',label:'Trust Center',icon:'trust'},
     {href:'account.html',label:'Account',icon:'account'}
   ];

@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-07-19T05:34:21.726Z",
+  "version": "v262",
+  "checks": {
+    "engineCount": 22,
+    "hasGG": true,
+    "hasMismatch": true,
+    "teamPage": true,
+    "teamScript": true,
+    "teamCss": true
+  },
+  "testedFixtures": 300,
+  "runtimeErrors": 0,
+  "qualifiedGG": 0,
+  "qualifiedMismatch": 15,
+  "passed": true
+}

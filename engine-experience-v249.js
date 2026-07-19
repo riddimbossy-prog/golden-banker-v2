@@ -13,7 +13,7 @@
     streaks:["#ff9c63","#3c1c0d"],mismatch:["#f3d45c","#362e0d"],halves:["#8cf1ff","#0b3034"],
     "league-bias":["#7ca7ff","#14203d"],momentum:["#ff7d62","#3d190f"],"odds-iq":["#c9ff66","#26370d"],
     value:["#f6b84e","#3a2809"],controlEdge:["#52e0a4","#0d3125"],leagueSignalMatrix:["#8f9dff","#20254a"],
-    marketFlow:["#5dd7ff","#0b2d3b"],goalCompression:["#ff8f71","#3b1c14"]
+    marketFlow:["#5dd7ff","#0b2d3b"],goalCompression:["#ff8f71","#3b1c14"],ggMachine:["#72f59a","#0b3320"],mismatchEngine:["#ffd66b","#3a2a0b"]
   };
   const ODDS={
     "Home Win":"home","Draw":"draw","Away Win":"away","Over 1.5":"over15","Over 2.5":"over25","Over 3.5":"over35",
