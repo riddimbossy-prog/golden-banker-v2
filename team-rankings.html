@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="data-freshness-v264.css">
   <link rel="stylesheet" href="stability-v264.css">
   <link rel="stylesheet" href="mobile-responsive-v265.css" data-p2u-responsive-v265="true">
+  <link rel="stylesheet" href="controls-v267.css" data-p2u-controls-v267="true">
 </head>
 <body>
 <script src="unified-shell-v234.js"></script>
@@ -35,23 +36,34 @@
 
   <section id="team-panel-rankings" class="p2u-team-panel is-active" data-team-panel="rankings">
     <section class="p2u-team-rank-controls">
-      <div class="p2u-team-rank-view" role="group" aria-label="Ranking view">
-        <button class="is-active" data-rank-view="edge">Next Match Edge</button>
-        <button data-rank-view="season">Season Power</button>
-      </div>
-      <div class="p2u-team-rank-tabs" role="tablist" aria-label="Ranking category">
-        <button class="is-active" data-rank-category="best">Best</button>
-        <button data-rank-category="worst">Worst</button>
-        <button data-rank-category="attack">Attack</button>
-        <button data-rank-category="defence">Defence</button>
-      </div>
-      <div class="p2u-team-rank-polarity" hidden>
-        <button class="is-active" data-rank-polarity="Best">Best</button>
-        <button data-rank-polarity="Worst">Worst</button>
+      <div class="p2u-team-rank-toolbar">
+        <div class="p2u-control-cluster">
+          <span class="p2u-control-label">View</span>
+          <div class="p2u-team-rank-view" role="group" aria-label="Ranking view">
+            <button class="is-active" data-rank-view="edge">Next Match Edge</button>
+            <button data-rank-view="season">Season Power</button>
+          </div>
+        </div>
+        <div class="p2u-control-cluster p2u-control-cluster-grow">
+          <span class="p2u-control-label">Category</span>
+          <div class="p2u-team-rank-tabs" role="tablist" aria-label="Ranking category">
+            <button class="is-active" data-rank-category="best">Best</button>
+            <button data-rank-category="worst">Worst</button>
+            <button data-rank-category="attack">Attack</button>
+            <button data-rank-category="defence">Defence</button>
+          </div>
+        </div>
+        <div class="p2u-control-cluster p2u-team-polarity-cluster" hidden>
+          <span class="p2u-control-label">Order</span>
+          <div class="p2u-team-rank-polarity">
+            <button class="is-active" data-rank-polarity="Best">Best</button>
+            <button data-rank-polarity="Worst">Worst</button>
+          </div>
+        </div>
       </div>
       <div class="p2u-team-rank-fields">
-        <select id="team-rank-league" aria-label="League"><option value="all">All leagues</option></select>
-        <input id="team-rank-search" class="p2u-team-rank-search" type="search" placeholder="Search team, league or country…">
+        <label class="p2u-team-field"><span>League</span><select id="team-rank-league" aria-label="League"><option value="all">All leagues</option></select></label>
+        <label class="p2u-team-field p2u-team-field-grow"><span>Search</span><input id="team-rank-search" class="p2u-team-rank-search" type="search" placeholder="Search team, league or country…"></label>
       </div>
     </section>
     <div class="p2u-team-rank-section-head">

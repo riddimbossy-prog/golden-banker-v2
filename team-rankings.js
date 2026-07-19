@@ -131,7 +131,7 @@
     $('team-rank-grid').innerHTML=rows.length?rows.slice(0,100).map(r=>rankCard(r,cfg)).join(''):'<div class="p2u-team-rank-empty">No teams pass every threshold in the loaded fixture set. That is a valid no-qualification result.</div>';
     document.querySelectorAll('[data-rank-view]').forEach(b=>b.classList.toggle('is-active',b.dataset.rankView===view));
     document.querySelectorAll('[data-rank-category]').forEach(b=>b.classList.toggle('is-active',b.dataset.rankCategory===category));
-    document.querySelector('.p2u-team-rank-polarity').hidden=!['attack','defence'].includes(category);
+    (document.querySelector('.p2u-team-polarity-cluster')||document.querySelector('.p2u-team-rank-polarity')).hidden=!['attack','defence'].includes(category);
     document.querySelectorAll('[data-rank-polarity]').forEach(b=>b.classList.toggle('is-active',b.dataset.rankPolarity===polarity));
   }
   function renderTrends(){

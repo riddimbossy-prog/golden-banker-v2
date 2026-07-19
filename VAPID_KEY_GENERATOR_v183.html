@@ -9,6 +9,7 @@ body{margin:0;background:#08090d;color:#f8fafc;font:15px/1.5 system-ui,sans-seri
 <link rel="stylesheet" href="phase3-polish-v226.css"/>
 <link rel="stylesheet" href="simple-ui-v232.css"/>
 <link rel="stylesheet" href="ui-polish-v259.css" data-p2u-ui-v259="true"/>
+  <link rel="stylesheet" href="controls-v267.css" data-p2u-controls-v267="true">
 </head>
 <body><main class="wrap"><section class="card"><h1>VAPID key generator</h1><p>This runs entirely in your browser using Web Crypto. Keys are not uploaded or saved automatically.</p><button id="generate">Generate new keys</button><div id="fields" hidden><label>Public key</label><textarea id="public" rows="4" readonly></textarea><div class="row"><button data-copy="public">Copy public key</button></div><label>Private key</label><textarea id="private" rows="4" readonly></textarea><div class="row"><button data-copy="private">Copy private key</button></div><label>Dispatch secret</label><input id="dispatch" readonly><div class="row"><button data-copy="dispatch">Copy dispatch secret</button></div><div class="warn"><strong>Keep the private key and dispatch secret private.</strong> Add them only to Supabase Edge Function secrets. Never commit them to GitHub or paste them into public website code.</div><p id="status" class="ok"></p></div></section></main>
 <script>

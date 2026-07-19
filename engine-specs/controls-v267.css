@@ -1,0 +1,235 @@
+/* Predict2U v267 — unified control system for Teams, Today, Bankers, Full Board, Engines and News. */
+:root{
+  --p2u-control-accent:#b7ef31;
+  --p2u-control-bg:#07111d;
+  --p2u-control-bg-2:#0a1725;
+  --p2u-control-line:rgba(139,176,211,.20);
+  --p2u-control-line-strong:rgba(183,239,49,.42);
+  --p2u-control-text:#eef4fa;
+  --p2u-control-muted:#91a2b5;
+  --p2u-control-radius:16px;
+  --p2u-control-height:44px;
+}
+
+/* Shared field language. */
+.p2u-simple-filter,
+.p2u-fullboard-filter-field,
+.p2u-news-search,
+.p2u-team-field select,
+.p2u-team-field input,
+.p2u-engine-search{
+  min-height:var(--p2u-control-height)!important;
+  border:1px solid var(--p2u-control-line)!important;
+  border-radius:13px!important;
+  background:var(--p2u-control-bg)!important;
+  color:var(--p2u-control-text)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.018)!important;
+}
+.p2u-simple-filter:focus-within,
+.p2u-fullboard-filter-field:focus-within,
+.p2u-news-search:focus-within,
+.p2u-team-field:focus-within,
+.p2u-engine-search:focus{
+  border-color:var(--p2u-control-line-strong)!important;
+  box-shadow:0 0 0 3px rgba(183,239,49,.08)!important;
+}
+
+/* Team Intelligence — a clear two-row toolbar instead of stacked loose buttons. */
+.p2u-team-rank-controls,
+.p2u-team-trend-controls{
+  padding:14px!important;
+  border:1px solid var(--p2u-control-line)!important;
+  border-radius:18px!important;
+  background:linear-gradient(180deg,rgba(9,21,34,.98),rgba(5,13,22,.98))!important;
+  box-shadow:0 14px 34px rgba(0,0,0,.16)!important;
+}
+.p2u-team-rank-toolbar{
+  display:flex;
+  align-items:flex-end;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.p2u-control-cluster{
+  display:grid;
+  gap:6px;
+  min-width:0;
+}
+.p2u-control-cluster-grow{flex:1 1 380px}
+.p2u-control-label,
+.p2u-team-field>span{
+  display:block;
+  color:var(--p2u-control-muted);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+}
+.p2u-team-rank-view,
+.p2u-team-rank-tabs,
+.p2u-team-rank-polarity{
+  display:inline-flex!important;
+  align-items:center;
+  width:max-content;
+  max-width:100%;
+  gap:4px!important;
+  margin:0!important;
+  padding:4px!important;
+  border:1px solid var(--p2u-control-line)!important;
+  border-radius:14px!important;
+  background:#050d16!important;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.p2u-team-rank-view::-webkit-scrollbar,
+.p2u-team-rank-tabs::-webkit-scrollbar,
+.p2u-team-rank-polarity::-webkit-scrollbar{display:none}
+.p2u-team-rank-view button,
+.p2u-team-rank-tabs button,
+.p2u-team-rank-polarity button{
+  min-height:38px!important;
+  padding:0 14px!important;
+  border:0!important;
+  border-radius:10px!important;
+  background:transparent!important;
+  color:#9eacbc!important;
+  font-size:11px!important;
+  font-weight:850!important;
+  white-space:nowrap!important;
+  box-shadow:none!important;
+}
+.p2u-team-rank-view button:hover,
+.p2u-team-rank-tabs button:hover,
+.p2u-team-rank-polarity button:hover{color:#fff!important;background:rgba(255,255,255,.035)!important}
+.p2u-team-rank-view button.is-active,
+.p2u-team-rank-tabs button.is-active,
+.p2u-team-rank-polarity button.is-active{
+  background:var(--p2u-control-accent)!important;
+  color:#071005!important;
+  box-shadow:0 8px 18px rgba(183,239,49,.13)!important;
+}
+.p2u-team-polarity-cluster[hidden],
+.p2u-team-rank-polarity[hidden]{display:none!important}
+.p2u-team-rank-fields{
+  display:grid!important;
+  grid-template-columns:minmax(210px,280px) minmax(280px,1fr)!important;
+  gap:10px!important;
+  margin-top:14px!important;
+  padding-top:14px!important;
+  border-top:1px solid rgba(139,176,211,.12)!important;
+}
+.p2u-team-field{display:grid;gap:6px;min-width:0}
+.p2u-team-field select,
+.p2u-team-field input{
+  width:100%!important;
+  min-width:0!important;
+  height:var(--p2u-control-height)!important;
+  padding:0 14px!important;
+  outline:0!important;
+  font-size:12px!important;
+  font-weight:700!important;
+}
+.p2u-team-field select{padding-right:36px!important}
+
+/* Team section tabs: one restrained segmented bar. */
+.p2u-team-mode-tabs{
+  gap:4px!important;
+  padding:5px!important;
+  border-radius:16px!important;
+  background:rgba(5,12,20,.94)!important;
+}
+.p2u-team-mode-tabs button{
+  border:0!important;
+  background:transparent!important;
+  color:#91a2b5!important;
+  border-radius:11px!important;
+}
+.p2u-team-mode-tabs button.is-active{
+  background:rgba(183,239,49,.13)!important;
+  color:#d9ff82!important;
+  box-shadow:inset 0 0 0 1px rgba(183,239,49,.28)!important;
+}
+
+/* Today + Bankers desktop filter bar. */
+@media(min-width:701px){
+  .p2u-simple-filterbar{
+    grid-template-columns:minmax(150px,.8fr) minmax(150px,.8fr) minmax(130px,.65fr) minmax(240px,1.35fr) auto!important;
+    align-items:center!important;
+    gap:9px!important;
+    padding:12px!important;
+    margin:14px 0 16px!important;
+    border:1px solid var(--p2u-control-line)!important;
+    border-radius:18px!important;
+    background:linear-gradient(180deg,rgba(9,21,34,.96),rgba(5,13,22,.96))!important;
+  }
+  .p2u-simple-filter{min-width:0!important;padding:0 12px!important}
+  .p2u-simple-reset{
+    min-height:var(--p2u-control-height)!important;
+    padding:0 16px!important;
+    border:1px solid var(--p2u-control-line)!important;
+    border-radius:13px!important;
+    background:#0a1725!important;
+  }
+}
+
+/* Full Board filters use the same surface and spacing. */
+@media(min-width:701px){
+  .p2u-fullboard-simple-filters{
+    grid-template-columns:minmax(150px,.8fr) minmax(150px,.8fr) minmax(130px,.65fr) minmax(240px,1.35fr) auto!important;
+    align-items:center!important;
+    gap:9px!important;
+    padding:12px!important;
+    border-radius:18px!important;
+    border:1px solid var(--p2u-control-line)!important;
+    background:linear-gradient(180deg,rgba(9,21,34,.96),rgba(5,13,22,.96))!important;
+  }
+}
+
+/* Engine and News controls. */
+.p2u-engine-toolbar,
+.p2u-news-controls{
+  border:1px solid var(--p2u-control-line)!important;
+  border-radius:18px!important;
+  background:rgba(5,12,20,.92)!important;
+  box-shadow:0 12px 30px rgba(0,0,0,.14)!important;
+}
+.p2u-engine-filter,
+.p2u-news-tabs button{
+  min-height:40px!important;
+  border-radius:11px!important;
+  border:1px solid var(--p2u-control-line)!important;
+  background:#081421!important;
+  color:#9facbc!important;
+}
+.p2u-engine-filter.is-active,
+.p2u-news-tabs button.is-active{
+  background:var(--p2u-control-accent)!important;
+  border-color:var(--p2u-control-accent)!important;
+  color:#071005!important;
+}
+
+/* Tablet: prevent controls from becoming a long stair-step. */
+@media(max-width:980px) and (min-width:621px){
+  .p2u-team-rank-toolbar{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);align-items:end}
+  .p2u-team-polarity-cluster{grid-column:1/-1}
+  .p2u-team-rank-fields{grid-template-columns:minmax(180px,.8fr) minmax(0,1.4fr)!important}
+}
+
+/* Phone and Z Fold cover: groups remain clear, compact and scroll only where needed. */
+@media(max-width:620px){
+  .p2u-team-rank-controls,.p2u-team-trend-controls{padding:10px!important;border-radius:15px!important}
+  .p2u-team-rank-toolbar{display:grid;grid-template-columns:1fr;gap:10px}
+  .p2u-control-cluster,.p2u-control-cluster-grow{width:100%;min-width:0}
+  .p2u-team-rank-view{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));width:100%!important}
+  .p2u-team-rank-tabs{width:100%!important}
+  .p2u-team-rank-tabs button{flex:1 0 auto!important}
+  .p2u-team-rank-polarity{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));width:100%!important}
+  .p2u-team-rank-fields{grid-template-columns:1fr!important;gap:9px!important;margin-top:11px!important;padding-top:11px!important}
+  .p2u-team-mode-tabs{position:relative!important;top:auto!important;grid-template-columns:repeat(3,minmax(108px,1fr))!important;overflow-x:auto!important}
+  .p2u-simple-mobile-filter,
+  .p2u-fullboard-filter-button{border-radius:14px!important;background:linear-gradient(180deg,#0a1725,#07111d)!important;border-color:var(--p2u-control-line)!important}
+  .p2u-news-controls,.p2u-engine-toolbar{border-radius:15px!important}
+}
+
+@media(max-width:340px){
+  .p2u-team-rank-view button,.p2u-team-rank-tabs button,.p2u-team-rank-polarity button{font-size:10px!important;padding:0 10px!important}
+}
