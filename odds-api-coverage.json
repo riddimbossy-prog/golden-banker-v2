@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-19T01:55:08.436Z",
+  "generatedAt": "2026-07-19T02:05:06.679Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,7 +13,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 258
+      "matches": 256
     },
     {
       "league": "Second League A - Division A Silver",
@@ -848,7 +848,7 @@
       "matches": 3
     }
   ],
-  "matchesConsidered": 1011,
+  "matchesConsidered": 1009,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1180,18 +1180,6 @@
       "country": "Colombia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Longridge Town",
-      "away": "Blackburn",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Huddersfield",
-      "away": "AFC Fylde",
-      "reason": "No event/team match"
     },
     {
       "league": "Friendlies Clubs",
@@ -2356,6 +2344,18 @@
       "home": "Rangers",
       "away": "Saint Etienne",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Tenerife",
+      "away": "Getafe",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "FC Liefering",
+      "away": "Eintracht Braunschweig",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -3294,5 +3294,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-19T01:55:25.414Z"
+  "completedAt": "2026-07-19T02:05:22.472Z"
 }
