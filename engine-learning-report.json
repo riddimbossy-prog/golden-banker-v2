@@ -1,13 +1,13 @@
 {
   "version": "v193",
-  "updated": "2026-07-19T00:10:03.586Z",
+  "updated": "2026-07-19T01:12:51.044Z",
   "summary": {
-    "settledFixtures": 169,
-    "settledDecisions": 342,
-    "reviewedLosses": 55,
-    "teamProfiles": 74,
+    "settledFixtures": 170,
+    "settledDecisions": 344,
+    "reviewedLosses": 56,
+    "teamProfiles": 76,
     "leagueProfiles": 16,
-    "matchupProfiles": 38,
+    "matchupProfiles": 39,
     "activePatternBreakers": 0,
     "upsetResistantTeams": 0
   },
@@ -19,7 +19,7 @@
   "commonMissCauses": [
     {
       "cause": "INPUT_COVERAGE_GAP",
-      "count": 55
+      "count": 56
     },
     {
       "cause": "GOAL_SPIKE",
@@ -43,6 +43,10 @@
     },
     {
       "cause": "UNDERDOG_OVERREACH",
+      "count": 1
+    },
+    {
+      "cause": "FAVORITE_PATTERN_BREAK",
       "count": 1
     }
   ],
@@ -159,6 +163,19 @@
       "score": "0-2",
       "causes": [
         "RESULT_DIRECTION_MISS",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-18",
+      "home": "Gualaceo SC",
+      "away": "22 de Julio",
+      "league": "Liga Pro Serie B",
+      "engine": "Trend",
+      "market": "Double Chance 1X",
+      "score": "0-1",
+      "causes": [
+        "FAVORITE_PATTERN_BREAK",
         "INPUT_COVERAGE_GAP"
       ]
     },
@@ -414,19 +431,6 @@
       "score": "0-0",
       "causes": [
         "TEMPO_COLLAPSE",
-        "INPUT_COVERAGE_GAP"
-      ]
-    },
-    {
-      "matchDate": "2026-07-03",
-      "home": "Redlands",
-      "away": "Capo",
-      "league": "USL League Two",
-      "engine": "Normal",
-      "market": "Home DNB",
-      "score": "2-3",
-      "causes": [
-        "RESULT_DIRECTION_MISS",
         "INPUT_COVERAGE_GAP"
       ]
     }

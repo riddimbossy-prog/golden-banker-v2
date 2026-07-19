@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-19T00:09:58.159Z",
+  "updated": "2026-07-19T01:12:44.691Z",
   "minSample": 300,
   "groups": {
     "LEM|USL League Two|Prime|Double Chance 1X|90-99": {
@@ -36,14 +36,14 @@
       "validated": false
     },
     "M|*|*|Double Chance 1X|90-99": {
-      "sample": 11,
+      "sample": 12,
       "wins": 11,
-      "losses": 0,
-      "lower": 0.7412,
-      "mid": 1,
-      "upper": 1,
+      "losses": 1,
+      "lower": 0.6461,
+      "mid": 0.9167,
+      "upper": 0.9851,
       "grade": "Learning",
-      "leagueReliability": 50.5,
+      "leagueReliability": 48.1,
       "validated": false
     },
     "LEM|USL League Two|Value|Over 2.5|90-99": {
@@ -2412,14 +2412,14 @@
       "validated": false
     },
     "EM|*|league-bias|Under 3.5 Goals|90-99": {
-      "sample": 4,
-      "wins": 4,
+      "sample": 5,
+      "wins": 5,
       "losses": 0,
-      "lower": 0.5101,
+      "lower": 0.5655,
       "mid": 1,
       "upper": 1,
       "grade": "Learning",
-      "leagueReliability": 43.4,
+      "leagueReliability": 45.1,
       "validated": false
     },
     "LM|Premier Soccer League|*|Under 3.5 Goals|90-99": {
@@ -2434,14 +2434,14 @@
       "validated": false
     },
     "M|*|*|Under 3.5 Goals|90-99": {
-      "sample": 7,
-      "wins": 7,
+      "sample": 8,
+      "wins": 8,
       "losses": 0,
-      "lower": 0.6457,
+      "lower": 0.6756,
       "mid": 1,
       "upper": 1,
       "grade": "Learning",
-      "leagueReliability": 47.6,
+      "leagueReliability": 48.5,
       "validated": false
     },
     "LEM|Premier Soccer League|normal|Double Chance X2|80-89": {
@@ -2665,25 +2665,25 @@
       "validated": false
     },
     "LEM|Liga Pro Serie B|league-bias|Under 3.5 Goals|90-99": {
-      "sample": 1,
-      "wins": 1,
+      "sample": 2,
+      "wins": 2,
       "losses": 0,
-      "lower": 0.2065,
+      "lower": 0.3424,
       "mid": 1,
       "upper": 1,
       "grade": "Learning",
-      "leagueReliability": 42.2,
+      "leagueReliability": 46.3,
       "validated": false
     },
     "LM|Liga Pro Serie B|*|Under 3.5 Goals|90-99": {
-      "sample": 1,
-      "wins": 1,
+      "sample": 2,
+      "wins": 2,
       "losses": 0,
-      "lower": 0.2065,
+      "lower": 0.3424,
       "mid": 1,
       "upper": 1,
       "grade": "Learning",
-      "leagueReliability": 42.2,
+      "leagueReliability": 46.3,
       "validated": false
     },
     "LEM|USL League Two|trend|Home Team Over 0.5 Goals|90-99": {
@@ -3237,14 +3237,14 @@
       "validated": false
     },
     "LM|Liga Pro Serie B|*|Double Chance 1X|90-99": {
-      "sample": 1,
+      "sample": 2,
       "wins": 1,
-      "losses": 0,
-      "lower": 0.2065,
-      "mid": 1,
-      "upper": 1,
+      "losses": 1,
+      "lower": 0.0945,
+      "mid": 0.5,
+      "upper": 0.9055,
       "grade": "Learning",
-      "leagueReliability": 42.2,
+      "leagueReliability": 41.7,
       "validated": false
     },
     "LEM|Liga Pro Serie B|trend|Home Team Over 0.5 Goals|80-89": {
@@ -3567,14 +3567,14 @@
       "validated": false
     },
     "EM|*|trend|Double Chance 1X|90-99": {
-      "sample": 1,
+      "sample": 2,
       "wins": 1,
-      "losses": 0,
-      "lower": 0.2065,
-      "mid": 1,
-      "upper": 1,
+      "losses": 1,
+      "lower": 0.0945,
+      "mid": 0.5,
+      "upper": 0.9055,
       "grade": "Learning",
-      "leagueReliability": 34.2,
+      "leagueReliability": 33.7,
       "validated": false
     },
     "LM|Tasmania Northern Championship|*|Double Chance 1X|90-99": {
@@ -4376,6 +4376,17 @@
       "lower": 0.2065,
       "mid": 1,
       "upper": 1,
+      "grade": "Learning",
+      "leagueReliability": 42.2,
+      "validated": false
+    },
+    "LEM|Liga Pro Serie B|trend|Double Chance 1X|90-99": {
+      "sample": 1,
+      "wins": 0,
+      "losses": 1,
+      "lower": 0,
+      "mid": 0,
+      "upper": 0.7935,
       "grade": "Learning",
       "leagueReliability": 42.2,
       "validated": false

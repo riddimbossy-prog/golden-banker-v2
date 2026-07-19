@@ -1,7 +1,7 @@
 {
   "version": "v193",
   "schemaVersion": 1,
-  "updated": "2026-07-19T00:10:03.586Z",
+  "updated": "2026-07-19T01:12:51.044Z",
   "minimumSamples": {
     "teamFavorite": 5,
     "teamUnderdog": 5,
@@ -12,10 +12,10 @@
   },
   "decayHalfLifeDays": 120,
   "summary": {
-    "settledFixtures": 169,
-    "settledDecisions": 342,
-    "reviewedLosses": 55,
-    "attachedUpcoming": 1254,
+    "settledFixtures": 170,
+    "settledDecisions": 344,
+    "reviewedLosses": 56,
+    "attachedUpcoming": 2045,
     "highRiskUpcoming": 0,
     "stableUpcoming": 0
   },
@@ -4703,6 +4703,132 @@
       "flags": [],
       "patternStability": 100,
       "favoriteReliability": 0
+    },
+    "243|gualaceo sc": {
+      "name": "Gualaceo SC",
+      "league": "Liga Pro Serie B",
+      "leagueId": 243,
+      "favorite": {
+        "sample": 1,
+        "wins": 0,
+        "draws": 0,
+        "losses": 1,
+        "winRate": 0,
+        "drawRate": 0,
+        "nonLossRate": 0,
+        "upsetRate": 1,
+        "nonLossWilson": {
+          "lower": 0,
+          "mid": 0,
+          "upper": 0.7935
+        },
+        "winWilson": {
+          "lower": 0,
+          "mid": 0,
+          "upper": 0.7935
+        },
+        "decayedWeight": 0.99
+      },
+      "underdog": {
+        "sample": 0,
+        "wins": 0,
+        "draws": 0,
+        "losses": 0,
+        "winRate": null,
+        "drawRate": null,
+        "nonLossRate": 0,
+        "upsetRate": null,
+        "nonLossWilson": {
+          "lower": null,
+          "mid": null,
+          "upper": null
+        },
+        "winWilson": {
+          "lower": null,
+          "mid": null,
+          "upper": null
+        },
+        "decayedWeight": 0
+      },
+      "favoriteBands": {
+        "1.01-1.35": {
+          "sample": 1,
+          "wins": 0,
+          "draws": 0,
+          "losses": 1,
+          "winRate": 0,
+          "drawRate": 0,
+          "nonLossRate": 0,
+          "upsetRate": 1,
+          "nonLossWilson": {
+            "lower": 0,
+            "mid": 0,
+            "upper": 0.7935
+          },
+          "winWilson": {
+            "lower": 0,
+            "mid": 0,
+            "upper": 0.7935
+          },
+          "decayedWeight": 0.99
+        }
+      },
+      "underdogUpsets": 0,
+      "flags": [],
+      "patternStability": 30,
+      "favoriteReliability": 0
+    },
+    "243|22 de julio": {
+      "name": "22 de Julio",
+      "league": "Liga Pro Serie B",
+      "leagueId": 243,
+      "favorite": {
+        "sample": 0,
+        "wins": 0,
+        "draws": 0,
+        "losses": 0,
+        "winRate": null,
+        "drawRate": null,
+        "nonLossRate": 0,
+        "upsetRate": null,
+        "nonLossWilson": {
+          "lower": null,
+          "mid": null,
+          "upper": null
+        },
+        "winWilson": {
+          "lower": null,
+          "mid": null,
+          "upper": null
+        },
+        "decayedWeight": 0
+      },
+      "underdog": {
+        "sample": 1,
+        "wins": 1,
+        "draws": 0,
+        "losses": 0,
+        "winRate": 1,
+        "drawRate": 0,
+        "nonLossRate": 1,
+        "upsetRate": 0,
+        "nonLossWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "winWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "decayedWeight": 0.99
+      },
+      "favoriteBands": {},
+      "underdogUpsets": 1,
+      "flags": [],
+      "patternStability": 100,
+      "favoriteReliability": 0
     }
   },
   "leagues": {
@@ -4728,7 +4854,7 @@
           "mid": 0.6667,
           "upper": 0.8794
         },
-        "decayedWeight": 8.77
+        "decayedWeight": 8.76
       },
       "bands": {
         "1.61-1.85": {
@@ -5438,69 +5564,69 @@
       "league": "Liga Pro Serie B",
       "leagueId": 243,
       "favorite": {
-        "sample": 1,
+        "sample": 2,
         "wins": 1,
         "draws": 0,
-        "losses": 0,
-        "winRate": 1,
+        "losses": 1,
+        "winRate": 0.4957,
         "drawRate": 0,
-        "nonLossRate": 1,
-        "upsetRate": 0,
+        "nonLossRate": 0.4957,
+        "upsetRate": 0.5043,
         "nonLossWilson": {
-          "lower": 0.2065,
-          "mid": 1,
-          "upper": 1
+          "lower": 0.0945,
+          "mid": 0.5,
+          "upper": 0.9055
         },
         "winWilson": {
-          "lower": 0.2065,
-          "mid": 1,
-          "upper": 1
+          "lower": 0.0945,
+          "mid": 0.5,
+          "upper": 0.9055
         },
-        "decayedWeight": 0.98
+        "decayedWeight": 1.97
       },
       "bands": {
         "1.01-1.35": {
-          "sample": 1,
+          "sample": 2,
           "wins": 1,
           "draws": 0,
-          "losses": 0,
-          "winRate": 1,
+          "losses": 1,
+          "winRate": 0.4957,
           "drawRate": 0,
-          "nonLossRate": 1,
-          "upsetRate": 0,
+          "nonLossRate": 0.4957,
+          "upsetRate": 0.5043,
           "nonLossWilson": {
-            "lower": 0.2065,
-            "mid": 1,
-            "upper": 1
+            "lower": 0.0945,
+            "mid": 0.5,
+            "upper": 0.9055
           },
           "winWilson": {
-            "lower": 0.2065,
-            "mid": 1,
-            "upper": 1
+            "lower": 0.0945,
+            "mid": 0.5,
+            "upper": 0.9055
           },
-          "decayedWeight": 0.98
+          "decayedWeight": 1.97
         }
       },
       "homeFavorites": {
-        "sample": 1,
+        "sample": 2,
         "wins": 1,
         "draws": 0,
-        "losses": 0,
-        "winRate": 1,
+        "losses": 1,
+        "winRate": 0.4957,
         "drawRate": 0,
-        "nonLossRate": 1,
-        "upsetRate": 0,
+        "nonLossRate": 0.4957,
+        "upsetRate": 0.5043,
         "nonLossWilson": {
-          "lower": 0.2065,
-          "mid": 1,
-          "upper": 1
+          "lower": 0.0945,
+          "mid": 0.5,
+          "upper": 0.9055
         },
         "winWilson": {
-          "lower": 0.2065,
-          "mid": 1,
-          "upper": 1
+          "lower": 0.0945,
+          "mid": 0.5,
+          "upper": 0.9055
         },
-        "decayedWeight": 0.98
+        "decayedWeight": 1.97
       },
       "awayFavorites": {
         "sample": 0,
@@ -5524,7 +5650,7 @@
         "decayedWeight": 0
       },
       "flags": [],
-      "stabilityScore": 100
+      "stabilityScore": 62.2
     },
     "248": {
       "league": "Kakkonen - Lohko B",
@@ -7432,6 +7558,34 @@
         "decayedWeight": 0.99
       },
       "flags": []
+    },
+    "243|gualaceo sc|22 de julio": {
+      "home": "Gualaceo SC",
+      "away": "22 de Julio",
+      "league": "Liga Pro Serie B",
+      "leagueId": 243,
+      "favorite": {
+        "sample": 1,
+        "wins": 0,
+        "draws": 0,
+        "losses": 1,
+        "winRate": 0,
+        "drawRate": 0,
+        "nonLossRate": 0,
+        "upsetRate": 1,
+        "nonLossWilson": {
+          "lower": 0,
+          "mid": 0,
+          "upper": 0.7935
+        },
+        "winWilson": {
+          "lower": 0,
+          "mid": 0,
+          "upper": 0.7935
+        },
+        "decayedWeight": 0.99
+      },
+      "flags": []
     }
   },
   "oddsBands": {
@@ -7454,28 +7608,28 @@
         "mid": 0.4667,
         "upper": 0.6988
       },
-      "decayedWeight": 14.48
+      "decayedWeight": 14.47
     },
     "1.01-1.35": {
-      "sample": 7,
+      "sample": 8,
       "wins": 7,
       "draws": 0,
-      "losses": 0,
-      "winRate": 1,
+      "losses": 1,
+      "winRate": 0.8707,
       "drawRate": 0,
-      "nonLossRate": 1,
-      "upsetRate": 0,
+      "nonLossRate": 0.8707,
+      "upsetRate": 0.1293,
       "nonLossWilson": {
-        "lower": 0.6457,
-        "mid": 1,
-        "upper": 1
+        "lower": 0.5291,
+        "mid": 0.875,
+        "upper": 0.9776
       },
       "winWilson": {
-        "lower": 0.6457,
-        "mid": 1,
-        "upper": 1
+        "lower": 0.5291,
+        "mid": 0.875,
+        "upper": 0.9776
       },
-      "decayedWeight": 6.7
+      "decayedWeight": 7.69
     },
     "1.36-1.60": {
       "sample": 8,
@@ -10168,13 +10322,13 @@
       "hardVeto": false
     },
     "liga pro serie b|League Bias|Under 3.5 Goals|1.01-1.35|other": {
-      "sample": 1,
-      "wins": 1,
+      "sample": 2,
+      "wins": 2,
       "losses": 0,
       "winRate": 1,
       "lossRate": 0,
       "wilson": {
-        "lower": 0.2065,
+        "lower": 0.3424,
         "mid": 1,
         "upper": 1
       },
@@ -10182,13 +10336,13 @@
       "hardVeto": false
     },
     "*|League Bias|Under 3.5 Goals|1.01-1.35|other": {
-      "sample": 1,
-      "wins": 1,
+      "sample": 2,
+      "wins": 2,
       "losses": 0,
       "winRate": 1,
       "lossRate": 0,
       "wilson": {
-        "lower": 0.2065,
+        "lower": 0.3424,
         "mid": 1,
         "upper": 1
       },
@@ -11077,6 +11231,34 @@
       "adjustment": 0,
       "hardVeto": false
     },
+    "liga pro serie b|Trend|Double Chance 1X|1.01-1.35|fav-aligned": {
+      "sample": 1,
+      "wins": 0,
+      "losses": 1,
+      "winRate": 0,
+      "lossRate": 1,
+      "wilson": {
+        "lower": 0,
+        "mid": 0,
+        "upper": 0.7935
+      },
+      "adjustment": 0,
+      "hardVeto": false
+    },
+    "*|Trend|Double Chance 1X|1.01-1.35|fav-aligned": {
+      "sample": 1,
+      "wins": 0,
+      "losses": 1,
+      "winRate": 0,
+      "lossRate": 1,
+      "wilson": {
+        "lower": 0,
+        "mid": 0,
+        "upper": 0.7935
+      },
+      "adjustment": 0,
+      "hardVeto": false
+    },
     "friendlies clubs|Trend|Over 1.5 Goals|unknown|other": {
       "sample": 1,
       "wins": 1,
@@ -11233,6 +11415,19 @@
       "score": "0-2",
       "causes": [
         "RESULT_DIRECTION_MISS",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-18",
+      "home": "Gualaceo SC",
+      "away": "22 de Julio",
+      "league": "Liga Pro Serie B",
+      "engine": "Trend",
+      "market": "Double Chance 1X",
+      "score": "0-1",
+      "causes": [
+        "FAVORITE_PATTERN_BREAK",
         "INPUT_COVERAGE_GAP"
       ]
     },
@@ -11832,11 +12027,12 @@
   ],
   "causeCounts": {
     "TEMPO_COLLAPSE": 4,
-    "INPUT_COVERAGE_GAP": 55,
+    "INPUT_COVERAGE_GAP": 56,
     "RESULT_DIRECTION_MISS": 14,
     "BOTH_ATTACKS_BROKE_SUPPRESSION": 5,
     "GOAL_SPIKE": 16,
     "DRAW_TRAP": 8,
-    "UNDERDOG_OVERREACH": 1
+    "UNDERDOG_OVERREACH": 1,
+    "FAVORITE_PATTERN_BREAK": 1
   }
 }
