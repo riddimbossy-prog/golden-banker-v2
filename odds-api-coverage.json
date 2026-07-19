@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-19T04:33:44.624Z",
+  "generatedAt": "2026-07-19T04:45:05.139Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,7 +13,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 494
+      "matches": 493
     },
     {
       "league": "Baiano U20",
@@ -77,7 +77,7 @@
       "sportKey": "soccer_usa_mls",
       "sportTitle": "MLS",
       "score": 0.466,
-      "matches": 10
+      "matches": 9
     },
     {
       "league": "Copa De La Liga",
@@ -86,22 +86,6 @@
       "sportTitle": "La Liga - Spain",
       "score": 0.5,
       "matches": 1
-    },
-    {
-      "league": "USL League Two",
-      "country": "USA",
-      "sportKey": "soccer_usa_mls",
-      "sportTitle": "MLS",
-      "score": 0.466,
-      "matches": 3
-    },
-    {
-      "league": "MLS Next Pro",
-      "country": "USA",
-      "sportKey": "soccer_usa_mls",
-      "sportTitle": "MLS",
-      "score": 1,
-      "matches": 13
     },
     {
       "league": "USL Championship",
@@ -366,6 +350,14 @@
       "sportTitle": "FIFA World Cup",
       "score": 0.9,
       "matches": 1
+    },
+    {
+      "league": "MLS Next Pro",
+      "country": "USA",
+      "sportKey": "soccer_usa_mls",
+      "sportTitle": "MLS",
+      "score": 1,
+      "matches": 11
     },
     {
       "league": "NWSL Women",
@@ -1032,7 +1024,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1779,
+  "matchesConsidered": 1771,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1041,12 +1033,6 @@
   "derivedHtftMatches": 0,
   "bookmakerRows": 0,
   "unmatched": [
-    {
-      "league": "Botola 2",
-      "country": "Morocco",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.125
-    },
     {
       "league": "Northern Super League",
       "country": "Canada",
@@ -1250,6 +1236,12 @@
       "country": "Iran",
       "reason": "No matching soccer sport key",
       "bestScore": 0.111
+    },
+    {
+      "league": "Botola 2",
+      "country": "Morocco",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.125
     },
     {
       "league": "Liga Women",
@@ -1490,12 +1482,6 @@
       "country": "Kuwait",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Orlando Pirates",
-      "away": "Cadiz",
-      "reason": "No event/team match"
     },
     {
       "league": "Friendlies Clubs",
@@ -2540,6 +2526,12 @@
       "home": "Sestao River",
       "away": "Athletic Club",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Progres Niederkorn",
+      "away": "APM Metz",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -3515,5 +3507,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-19T04:33:53.142Z"
+  "completedAt": "2026-07-19T04:45:14.322Z"
 }
