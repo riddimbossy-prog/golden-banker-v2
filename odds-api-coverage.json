@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-19T16:42:51.880Z",
+  "generatedAt": "2026-07-19T16:55:24.804Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -104,11 +104,11 @@
       "matches": 4
     },
     {
-      "league": "First League",
-      "country": "Russia",
-      "sportKey": "soccer_russia_premier_league",
-      "sportTitle": "Premier League - Russia",
-      "score": 0.513,
+      "league": "Allsvenskan",
+      "country": "Sweden",
+      "sportKey": "soccer_sweden_allsvenskan",
+      "sportTitle": "Allsvenskan - Sweden",
+      "score": 1,
       "matches": 8
     },
     {
@@ -176,14 +176,6 @@
       "matches": 7
     },
     {
-      "league": "Catarinense - 2",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.305,
-      "matches": 7
-    },
-    {
       "league": "Friendlies Women",
       "country": "World",
       "sportKey": "soccer_fifa_world_cup",
@@ -206,14 +198,6 @@
       "sportTitle": "MLS",
       "score": 1,
       "matches": 11
-    },
-    {
-      "league": "Serie D",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.466,
-      "matches": 3
     },
     {
       "league": "NWSL Women",
@@ -248,14 +232,6 @@
       "matches": 6
     },
     {
-      "league": "Allsvenskan",
-      "country": "Sweden",
-      "sportKey": "soccer_sweden_allsvenskan",
-      "sportTitle": "Allsvenskan - Sweden",
-      "score": 1,
-      "matches": 5
-    },
-    {
       "league": "Superettan",
       "country": "Sweden",
       "sportKey": "soccer_sweden_superettan",
@@ -268,14 +244,6 @@
       "country": "Argentina",
       "sportKey": "soccer_argentina_primera_division",
       "sportTitle": "Primera División - Argentina",
-      "score": 0.305,
-      "matches": 6
-    },
-    {
-      "league": "Copa Paulista",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
       "score": 0.305,
       "matches": 6
     },
@@ -502,14 +470,6 @@
       "sportTitle": "Eliteserien - Norway",
       "score": 1,
       "matches": 3
-    },
-    {
-      "league": "Catarinense U20",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.305,
-      "matches": 9
     },
     {
       "league": "Maranhense - 2",
@@ -976,14 +936,6 @@
       "matches": 3
     },
     {
-      "league": "Second League A - Division A Gold",
-      "country": "Russia",
-      "sportKey": "soccer_russia_premier_league",
-      "sportTitle": "Premier League - Russia",
-      "score": 0.402,
-      "matches": 1
-    },
-    {
       "league": "Paranaense - 3",
       "country": "Brazil",
       "sportKey": "soccer_brazil_campeonato",
@@ -1052,8 +1004,26 @@
       "bestScore": 0
     },
     {
+      "league": "Coppa",
+      "country": "Belarus",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
+    },
+    {
       "league": "Segunda División",
       "country": "Uruguay",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
+      "league": "1. Liga",
+      "country": "Latvia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
+      "league": "Liga I",
+      "country": "Romania",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
     },
@@ -1064,16 +1034,22 @@
       "bestScore": 0
     },
     {
+      "league": "Úrvalsdeild",
+      "country": "Iceland",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
+    },
+    {
+      "league": "Virsliga",
+      "country": "Latvia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
+    },
+    {
       "league": "1 Lyga",
       "country": "Lithuania",
       "reason": "No matching soccer sport key",
       "bestScore": 0.125
-    },
-    {
-      "league": "Coppa",
-      "country": "Belarus",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
     },
     {
       "league": "Super Liga",
@@ -1100,26 +1076,8 @@
       "bestScore": 0.125
     },
     {
-      "league": "Úrvalsdeild",
-      "country": "Iceland",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
-      "league": "Virsliga",
-      "country": "Latvia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
       "league": "First League",
       "country": "Bulgaria",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
-      "league": "Liga I",
-      "country": "Romania",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
     },
@@ -1146,12 +1104,6 @@
       "country": "Estonia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.125
-    },
-    {
-      "league": "1. Liga",
-      "country": "Latvia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
     },
     {
       "league": "1. Deild",
@@ -2584,15 +2536,15 @@
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_epl",
+      "sportKey": "soccer_russia_premier_league",
       "market": "btts"
     },
     {
-      "sportKey": "soccer_epl",
+      "sportKey": "soccer_russia_premier_league",
       "market": "draw_no_bet"
     },
     {
-      "sportKey": "soccer_epl",
+      "sportKey": "soccer_russia_premier_league",
       "market": "double_chance"
     },
     {
@@ -2624,23 +2576,11 @@
       "market": "btts"
     },
     {
-      "sportKey": "soccer_fifa_world_cup",
+      "sportKey": "soccer_sweden_allsvenskan",
       "market": "draw_no_bet"
     },
     {
-      "sportKey": "soccer_fifa_world_cup",
-      "market": "double_chance"
-    },
-    {
-      "sportKey": "soccer_russia_premier_league",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_russia_premier_league",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_russia_premier_league",
+      "sportKey": "soccer_sweden_allsvenskan",
       "market": "double_chance"
     },
     {
@@ -2677,18 +2617,6 @@
     },
     {
       "sportKey": "soccer_usa_mls",
-      "market": "double_chance"
-    },
-    {
-      "sportKey": "soccer_sweden_allsvenskan",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_sweden_allsvenskan",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_sweden_allsvenskan",
       "market": "double_chance"
     },
     {
@@ -2974,56 +2902,6 @@
       "statusCode": 422
     },
     {
-      "label": "soccer_epl:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_fifa_world_cup:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_fifa_world_cup:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_fifa_world_cup:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_fifa_world_cup:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_fifa_world_cup:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
       "label": "soccer_russia_premier_league:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -3195,31 +3073,6 @@
     },
     {
       "label": "soccer_usa_mls:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_sweden_allsvenskan:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_sweden_allsvenskan:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_sweden_allsvenskan:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_sweden_allsvenskan:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_sweden_allsvenskan:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3606,5 +3459,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-19T16:43:14.193Z"
+  "completedAt": "2026-07-19T16:55:44.606Z"
 }
