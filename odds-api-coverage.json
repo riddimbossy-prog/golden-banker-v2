@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-19T06:35:06.146Z",
+  "generatedAt": "2026-07-19T06:45:06.332Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -1008,7 +1008,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1752,
+  "matchesConsidered": 1751,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1034,12 +1034,6 @@
       "country": "Australia",
       "reason": "No matching soccer sport key",
       "bestScore": 0
-    },
-    {
-      "league": "Victoria NPL 2",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.111
     },
     {
       "league": "Tasmania NPL",
@@ -1274,6 +1268,12 @@
       "country": "South-Korea",
       "reason": "No matching soccer sport key",
       "bestScore": 0.222
+    },
+    {
+      "league": "Victoria NPL 2",
+      "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.111
     },
     {
       "league": "Western Australia NPL",
@@ -3491,5 +3491,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-19T06:35:11.465Z"
+  "completedAt": "2026-07-19T06:45:11.565Z"
 }
