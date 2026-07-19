@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-19T19:46:13.704Z",
+  "updated": "2026-07-19T20:46:24.395Z",
   "summary": {
     "fixtures": 300,
     "qualified": 0,
@@ -5109,42 +5109,6 @@
       "independence": 0
     },
     {
-      "id": 1584910,
-      "date": "2026-07-19",
-      "home": "Venezia",
-      "away": "Dolomiti Bellunesi",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
-      "id": 1583390,
-      "date": "2026-07-19",
-      "home": "Rio Ave",
-      "away": "Al-Ahli Jeddah",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Home Team Over 0.5 Goals",
-      "score": 75.9,
-      "support": 0.57,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1511609,
       "date": "2026-07-19",
       "home": "Antofagasta",
@@ -5261,21 +5225,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1560759,
-      "date": "2026-07-19",
-      "home": "Fiorentina",
-      "away": "Fiorentina U20",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
       "id": 1584335,
       "date": "2026-07-19",
       "home": "Fenix",
@@ -5310,21 +5259,6 @@
       "home": "Doze",
       "away": "Linhares",
       "league": "Capixaba B",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
-      "id": 1591866,
-      "date": "2026-07-19",
-      "home": "Spain",
-      "away": "Argentina",
-      "league": "World Cup",
       "version": "v195",
       "bet": false,
       "market": "No Bet",
@@ -5655,6 +5589,78 @@
         {
           "market": "Second Half Over 0.5",
           "support": 0.74,
+          "engines": [
+            "Halves"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1595450,
+      "date": "2026-07-19",
+      "home": "San Francisco City",
+      "away": "Ventura County Fusion",
+      "league": "USL League Two",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Second Half Over 0.5",
+      "score": 76.6,
+      "support": 0.74,
+      "supporters": [
+        "Halves"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1513233,
+      "date": "2026-07-20",
+      "home": "Sporting KC II",
+      "away": "Minnesota United II",
+      "league": "MLS Next Pro",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Second Half Over 0.5",
+      "score": 75.4,
+      "support": 0.45,
+      "supporters": [
+        "Halves"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1549411,
+      "date": "2026-07-20",
+      "home": "Alianza Lima",
+      "away": "Sport Huancayo",
+      "league": "Primera División",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Home Team Over 0.5 Goals",
+      "score": 79.7,
+      "support": 1.12,
+      "supporters": [
+        "Trend",
+        "League Bias"
+      ],
+      "independence": 2,
+      "exactSupport": 2,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Second Half Over 0.5",
+          "support": 0.56,
           "engines": [
             "Halves"
           ]
