@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-19T03:15:24.170Z",
+  "generatedAt": "2026-07-19T03:26:12.174Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,7 +13,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 497
+      "matches": 254
     },
     {
       "league": "Primera B",
@@ -21,7 +21,7 @@
       "sportKey": "soccer_chile_campeonato",
       "sportTitle": "Primera División - Chile",
       "score": 0.466,
-      "matches": 12
+      "matches": 8
     },
     {
       "league": "Baiano U20",
@@ -37,7 +37,7 @@
       "sportKey": "soccer_brazil_serie_b",
       "sportTitle": "Brazil Série B",
       "score": 0.466,
-      "matches": 8
+      "matches": 6
     },
     {
       "league": "Catarinense U20",
@@ -45,7 +45,7 @@
       "sportKey": "soccer_brazil_campeonato",
       "sportTitle": "Brazil Série A",
       "score": 0.305,
-      "matches": 13
+      "matches": 8
     },
     {
       "league": "Cearense U20",
@@ -61,7 +61,7 @@
       "sportKey": "soccer_brazil_campeonato",
       "sportTitle": "Brazil Série A",
       "score": 0.305,
-      "matches": 9
+      "matches": 5
     },
     {
       "league": "Torneo Promocional Amateur",
@@ -69,7 +69,7 @@
       "sportKey": "soccer_argentina_primera_division",
       "sportTitle": "Primera División - Argentina",
       "score": 0.305,
-      "matches": 10
+      "matches": 6
     },
     {
       "league": "USL League One",
@@ -77,7 +77,7 @@
       "sportKey": "soccer_usa_mls",
       "sportTitle": "MLS",
       "score": 0.466,
-      "matches": 10
+      "matches": 4
     },
     {
       "league": "Copa De La Liga",
@@ -88,22 +88,6 @@
       "matches": 1
     },
     {
-      "league": "MLS Next Pro",
-      "country": "USA",
-      "sportKey": "soccer_usa_mls",
-      "sportTitle": "MLS",
-      "score": 1,
-      "matches": 15
-    },
-    {
-      "league": "NWSL Women",
-      "country": "USA",
-      "sportKey": "soccer_usa_mls",
-      "sportTitle": "MLS",
-      "score": 0.323,
-      "matches": 8
-    },
-    {
       "league": "USL League Two",
       "country": "USA",
       "sportKey": "soccer_usa_mls",
@@ -112,20 +96,20 @@
       "matches": 3
     },
     {
-      "league": "Primera División",
-      "country": "Bolivia",
-      "sportKey": "soccer_argentina_primera_division",
-      "sportTitle": "Primera División - Argentina",
-      "score": 0.653,
-      "matches": 10
-    },
-    {
       "league": "USL Championship",
       "country": "USA",
       "sportKey": "soccer_usa_mls",
       "sportTitle": "MLS",
       "score": 0.323,
-      "matches": 11
+      "matches": 5
+    },
+    {
+      "league": "NWSL Women",
+      "country": "USA",
+      "sportKey": "soccer_usa_mls",
+      "sportTitle": "MLS",
+      "score": 0.323,
+      "matches": 2
     },
     {
       "league": "Primera Division",
@@ -133,7 +117,7 @@
       "sportKey": "soccer_spain_la_liga",
       "sportTitle": "La Liga - Spain",
       "score": 0.5,
-      "matches": 3
+      "matches": 1
     },
     {
       "league": "Liga MX",
@@ -141,7 +125,7 @@
       "sportKey": "soccer_mexico_ligamx",
       "sportTitle": "Liga MX",
       "score": 1,
-      "matches": 8
+      "matches": 5
     },
     {
       "league": "MLS Next Pro",
@@ -165,7 +149,7 @@
       "sportKey": "soccer_russia_premier_league",
       "sportTitle": "Premier League - Russia",
       "score": 0.402,
-      "matches": 6
+      "matches": 5
     },
     {
       "league": "K League 1",
@@ -173,7 +157,7 @@
       "sportKey": "soccer_korea_kleague1",
       "sportTitle": "K League 1",
       "score": 0.695,
-      "matches": 10
+      "matches": 8
     },
     {
       "league": "K League 2",
@@ -181,7 +165,7 @@
       "sportKey": "soccer_korea_kleague1",
       "sportTitle": "K League 1",
       "score": 0.333,
-      "matches": 10
+      "matches": 6
     },
     {
       "league": "Kansallinen Liiga",
@@ -189,7 +173,7 @@
       "sportKey": "soccer_finland_veikkausliiga",
       "sportTitle": "Veikkausliiga - Finland",
       "score": 0.347,
-      "matches": 6
+      "matches": 2
     },
     {
       "league": "League Two",
@@ -197,7 +181,7 @@
       "sportKey": "soccer_china_superleague",
       "sportTitle": "Super League - China",
       "score": 0.43,
-      "matches": 12
+      "matches": 6
     },
     {
       "league": "Superettan",
@@ -205,7 +189,7 @@
       "sportKey": "soccer_sweden_superettan",
       "sportTitle": "Superettan - Sweden",
       "score": 1,
-      "matches": 6
+      "matches": 5
     },
     {
       "league": "First League",
@@ -213,7 +197,7 @@
       "sportKey": "soccer_russia_premier_league",
       "sportTitle": "Premier League - Russia",
       "score": 0.513,
-      "matches": 13
+      "matches": 9
     },
     {
       "league": "Premier League",
@@ -221,7 +205,7 @@
       "sportKey": "soccer_epl",
       "sportTitle": "EPL",
       "score": 0.987,
-      "matches": 6
+      "matches": 3
     },
     {
       "league": "Premier League",
@@ -245,7 +229,7 @@
       "sportKey": "soccer_brazil_campeonato",
       "sportTitle": "Brazil Série A",
       "score": 0.305,
-      "matches": 8
+      "matches": 4
     },
     {
       "league": "FAI Cup",
@@ -269,7 +253,7 @@
       "sportKey": "soccer_brazil_campeonato",
       "sportTitle": "Brazil Série A",
       "score": 0.305,
-      "matches": 17
+      "matches": 14
     },
     {
       "league": "Paulista Série B",
@@ -285,7 +269,7 @@
       "sportKey": "soccer_epl",
       "sportTitle": "EPL",
       "score": 0.5,
-      "matches": 13
+      "matches": 12
     },
     {
       "league": "Primera División - Apertura",
@@ -293,7 +277,7 @@
       "sportKey": "soccer_argentina_primera_division",
       "sportTitle": "Primera División - Argentina",
       "score": 0.286,
-      "matches": 8
+      "matches": 5
     },
     {
       "league": "Mineiro - 2",
@@ -301,7 +285,7 @@
       "sportKey": "soccer_brazil_campeonato",
       "sportTitle": "Brazil Série A",
       "score": 0.305,
-      "matches": 3
+      "matches": 1
     },
     {
       "league": "Catarinense - 2",
@@ -325,7 +309,7 @@
       "sportKey": "soccer_brazil_campeonato",
       "sportTitle": "Brazil Série A",
       "score": 0.466,
-      "matches": 4
+      "matches": 2
     },
     {
       "league": "Allsvenskan",
@@ -333,7 +317,7 @@
       "sportKey": "soccer_sweden_allsvenskan",
       "sportTitle": "Allsvenskan - Sweden",
       "score": 1,
-      "matches": 8
+      "matches": 6
     },
     {
       "league": "Primera División",
@@ -349,7 +333,7 @@
       "sportKey": "soccer_finland_veikkausliiga",
       "sportTitle": "Veikkausliiga - Finland",
       "score": 1,
-      "matches": 6
+      "matches": 4
     },
     {
       "league": "Kakkonen - Lohko C",
@@ -357,15 +341,7 @@
       "sportKey": "soccer_finland_veikkausliiga",
       "sportTitle": "Veikkausliiga - Finland",
       "score": 0.323,
-      "matches": 5
-    },
-    {
-      "league": "Primera División",
-      "country": "Peru",
-      "sportKey": "soccer_argentina_primera_division",
-      "sportTitle": "Primera División - Argentina",
-      "score": 0.653,
-      "matches": 7
+      "matches": 3
     },
     {
       "league": "Primera División",
@@ -421,7 +397,7 @@
       "sportKey": "soccer_finland_veikkausliiga",
       "sportTitle": "Veikkausliiga - Finland",
       "score": 0.38,
-      "matches": 6
+      "matches": 4
     },
     {
       "league": "Primera C",
@@ -429,7 +405,7 @@
       "sportKey": "soccer_argentina_primera_division",
       "sportTitle": "Primera División - Argentina",
       "score": 0.513,
-      "matches": 14
+      "matches": 6
     },
     {
       "league": "Primera Nacional",
@@ -437,7 +413,7 @@
       "sportKey": "soccer_argentina_primera_division",
       "sportTitle": "Primera División - Argentina",
       "score": 0.513,
-      "matches": 13
+      "matches": 10
     },
     {
       "league": "Copa Rio",
@@ -461,7 +437,7 @@
       "sportKey": "soccer_mexico_ligamx",
       "sportTitle": "Liga MX",
       "score": 0.68,
-      "matches": 7
+      "matches": 5
     },
     {
       "league": "Super League",
@@ -485,7 +461,7 @@
       "sportKey": "soccer_finland_veikkausliiga",
       "sportTitle": "Veikkausliiga - Finland",
       "score": 0.38,
-      "matches": 6
+      "matches": 1
     },
     {
       "league": "UEFA Champions League",
@@ -501,7 +477,7 @@
       "sportKey": "soccer_england_efl_cup",
       "sportTitle": "EFL Cup",
       "score": 0.487,
-      "matches": 23
+      "matches": 21
     },
     {
       "league": "Oberliga - Bayern Nord",
@@ -509,7 +485,7 @@
       "sportKey": "soccer_germany_bundesliga",
       "sportTitle": "Bundesliga - Germany",
       "score": 0.323,
-      "matches": 12
+      "matches": 7
     },
     {
       "league": "Oberliga - Bayern Süd",
@@ -517,7 +493,7 @@
       "sportKey": "soccer_germany_bundesliga",
       "sportTitle": "Bundesliga - Germany",
       "score": 0.323,
-      "matches": 12
+      "matches": 8
     },
     {
       "league": "UEFA Europa Conference League",
@@ -549,7 +525,7 @@
       "sportKey": "soccer_england_efl_cup",
       "sportTitle": "EFL Cup",
       "score": 0.653,
-      "matches": 31
+      "matches": 16
     },
     {
       "league": "Cup",
@@ -581,7 +557,7 @@
       "sportKey": "soccer_brazil_campeonato",
       "sportTitle": "Brazil Série A",
       "score": 0.929,
-      "matches": 10
+      "matches": 7
     },
     {
       "league": "Serie B",
@@ -613,7 +589,7 @@
       "sportKey": "soccer_norway_eliteserien",
       "sportTitle": "Eliteserien - Norway",
       "score": 1,
-      "matches": 3
+      "matches": 2
     },
     {
       "league": "Maranhense - 2",
@@ -637,7 +613,7 @@
       "sportKey": "soccer_usa_mls",
       "sportTitle": "MLS",
       "score": 1,
-      "matches": 23
+      "matches": 15
     },
     {
       "league": "UEFA Europa League",
@@ -653,7 +629,7 @@
       "sportKey": "soccer_germany_bundesliga",
       "sportTitle": "Bundesliga - Germany",
       "score": 0.347,
-      "matches": 9
+      "matches": 8
     },
     {
       "league": "Liga Profesional Argentina",
@@ -661,7 +637,7 @@
       "sportKey": "soccer_argentina_primera_division",
       "sportTitle": "Primera División - Argentina",
       "score": 0.78,
-      "matches": 11
+      "matches": 6
     },
     {
       "league": "Second League - Group 2",
@@ -669,7 +645,7 @@
       "sportKey": "soccer_russia_premier_league",
       "sportTitle": "Premier League - Russia",
       "score": 0.43,
-      "matches": 2
+      "matches": 1
     },
     {
       "league": "Victoria Premier League 2",
@@ -677,7 +653,7 @@
       "sportKey": "soccer_epl",
       "sportTitle": "EPL",
       "score": 0.667,
-      "matches": 7
+      "matches": 4
     },
     {
       "league": "Youth Championship",
@@ -693,7 +669,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 4
+      "matches": 2
     },
     {
       "league": "Second League - Group 1",
@@ -701,7 +677,7 @@
       "sportKey": "soccer_russia_premier_league",
       "sportTitle": "Premier League - Russia",
       "score": 0.43,
-      "matches": 7
+      "matches": 1
     },
     {
       "league": "Kakkonen - Lohko B",
@@ -709,7 +685,7 @@
       "sportKey": "soccer_finland_veikkausliiga",
       "sportTitle": "Veikkausliiga - Finland",
       "score": 0.323,
-      "matches": 5
+      "matches": 3
     },
     {
       "league": "Cup",
@@ -717,7 +693,7 @@
       "sportKey": "soccer_england_efl_cup",
       "sportTitle": "EFL Cup",
       "score": 0.463,
-      "matches": 12
+      "matches": 3
     },
     {
       "league": "Kakkonen - Lohko A",
@@ -725,7 +701,7 @@
       "sportKey": "soccer_finland_veikkausliiga",
       "sportTitle": "Veikkausliiga - Finland",
       "score": 0.323,
-      "matches": 5
+      "matches": 2
     },
     {
       "league": "1. Division",
@@ -733,7 +709,7 @@
       "sportKey": "soccer_denmark_superliga",
       "sportTitle": "Denmark Superliga",
       "score": 0.347,
-      "matches": 5
+      "matches": 2
     },
     {
       "league": "Ekstraklasa",
@@ -741,7 +717,7 @@
       "sportKey": "soccer_poland_ekstraklasa",
       "sportTitle": "Ekstraklasa - Poland",
       "score": 1,
-      "matches": 5
+      "matches": 2
     },
     {
       "league": "I Liga",
@@ -749,7 +725,7 @@
       "sportKey": "soccer_poland_ekstraklasa",
       "sportTitle": "Ekstraklasa - Poland",
       "score": 0.347,
-      "matches": 5
+      "matches": 2
     },
     {
       "league": "II Liga - East",
@@ -757,7 +733,7 @@
       "sportKey": "soccer_poland_ekstraklasa",
       "sportTitle": "Ekstraklasa - Poland",
       "score": 0.323,
-      "matches": 7
+      "matches": 1
     },
     {
       "league": "Cup",
@@ -765,7 +741,7 @@
       "sportKey": "soccer_england_efl_cup",
       "sportTitle": "EFL Cup",
       "score": 0.487,
-      "matches": 27
+      "matches": 13
     },
     {
       "league": "Superliga",
@@ -773,7 +749,7 @@
       "sportKey": "soccer_denmark_superliga",
       "sportTitle": "Denmark Superliga",
       "score": 1,
-      "matches": 2
+      "matches": 1
     },
     {
       "league": "Premier League",
@@ -781,7 +757,7 @@
       "sportKey": "soccer_epl",
       "sportTitle": "EPL",
       "score": 0.987,
-      "matches": 5
+      "matches": 1
     },
     {
       "league": "Regionalliga - Nordost",
@@ -789,7 +765,7 @@
       "sportKey": "soccer_germany_bundesliga",
       "sportTitle": "Bundesliga - Germany",
       "score": 0.347,
-      "matches": 6
+      "matches": 2
     },
     {
       "league": "Oberliga - Hamburg",
@@ -797,7 +773,7 @@
       "sportKey": "soccer_germany_bundesliga",
       "sportTitle": "Bundesliga - Germany",
       "score": 0.347,
-      "matches": 5
+      "matches": 1
     },
     {
       "league": "Challenge League",
@@ -813,7 +789,7 @@
       "sportKey": "soccer_belgium_first_div",
       "sportTitle": "Belgium First Div",
       "score": 0.57,
-      "matches": 5
+      "matches": 4
     },
     {
       "league": "Premier Division",
@@ -821,7 +797,7 @@
       "sportKey": "soccer_league_of_ireland",
       "sportTitle": "League of Ireland",
       "score": 0.929,
-      "matches": 3
+      "matches": 1
     },
     {
       "league": "CONCACAF U20 - Qualification",
@@ -837,7 +813,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 3
+      "matches": 2
     },
     {
       "league": "Primera División",
@@ -845,7 +821,7 @@
       "sportKey": "soccer_chile_campeonato",
       "sportTitle": "Primera División - Chile",
       "score": 1,
-      "matches": 4
+      "matches": 1
     },
     {
       "league": "Canadian Premier League",
@@ -853,7 +829,7 @@
       "sportKey": "soccer_epl",
       "sportTitle": "EPL",
       "score": 0.667,
-      "matches": 2
+      "matches": 1
     },
     {
       "league": "Brasileiro Women",
@@ -861,202 +837,10 @@
       "sportKey": "soccer_brazil_serie_b",
       "sportTitle": "Brazil Série B",
       "score": 0.466,
-      "matches": 6
-    },
-    {
-      "league": "Liga de Expansión MX",
-      "country": "Mexico",
-      "sportKey": "soccer_mexico_ligamx",
-      "sportTitle": "Liga MX",
-      "score": 0.555,
-      "matches": 4
-    },
-    {
-      "league": "Super League",
-      "country": "China",
-      "sportKey": "soccer_china_superleague",
-      "sportTitle": "Super League - China",
-      "score": 1,
-      "matches": 4
-    },
-    {
-      "league": "Second League - Group 3",
-      "country": "Russia",
-      "sportKey": "soccer_russia_premier_league",
-      "sportTitle": "Premier League - Russia",
-      "score": 0.43,
-      "matches": 7
-    },
-    {
-      "league": "2. Division - Group 1",
-      "country": "Norway",
-      "sportKey": "soccer_norway_eliteserien",
-      "sportTitle": "Eliteserien - Norway",
-      "score": 0.305,
-      "matches": 5
-    },
-    {
-      "league": "3. Division - Girone 1",
-      "country": "Norway",
-      "sportKey": "soccer_norway_eliteserien",
-      "sportTitle": "Eliteserien - Norway",
-      "score": 0.305,
-      "matches": 4
-    },
-    {
-      "league": "3. Division - Girone 3",
-      "country": "Norway",
-      "sportKey": "soccer_norway_eliteserien",
-      "sportTitle": "Eliteserien - Norway",
-      "score": 0.323,
       "matches": 3
-    },
-    {
-      "league": "Elitettan",
-      "country": "Sweden",
-      "sportKey": "soccer_sweden_allsvenskan",
-      "sportTitle": "Allsvenskan - Sweden",
-      "score": 0.38,
-      "matches": 7
-    },
-    {
-      "league": "League One",
-      "country": "China",
-      "sportKey": "soccer_china_superleague",
-      "sportTitle": "Super League - China",
-      "score": 0.43,
-      "matches": 5
-    },
-    {
-      "league": "Second League A - Division A Silver",
-      "country": "Russia",
-      "sportKey": "soccer_russia_premier_league",
-      "sportTitle": "Premier League - Russia",
-      "score": 0.402,
-      "matches": 4
-    },
-    {
-      "league": "Kvindeliga",
-      "country": "Denmark",
-      "sportKey": "soccer_denmark_superliga",
-      "sportTitle": "Denmark Superliga",
-      "score": 0.38,
-      "matches": 2
-    },
-    {
-      "league": "2. Division - Group 2",
-      "country": "Norway",
-      "sportKey": "soccer_norway_eliteserien",
-      "sportTitle": "Eliteserien - Norway",
-      "score": 0.323,
-      "matches": 5
-    },
-    {
-      "league": "3. Division - Girone 5",
-      "country": "Norway",
-      "sportKey": "soccer_norway_eliteserien",
-      "sportTitle": "Eliteserien - Norway",
-      "score": 0.305,
-      "matches": 5
-    },
-    {
-      "league": "3. Division - Girone 6",
-      "country": "Norway",
-      "sportKey": "soccer_norway_eliteserien",
-      "sportTitle": "Eliteserien - Norway",
-      "score": 0.305,
-      "matches": 5
-    },
-    {
-      "league": "3. Division - Girone 2",
-      "country": "Norway",
-      "sportKey": "soccer_norway_eliteserien",
-      "sportTitle": "Eliteserien - Norway",
-      "score": 0.305,
-      "matches": 4
-    },
-    {
-      "league": "3. Division - Girone 4",
-      "country": "Norway",
-      "sportKey": "soccer_norway_eliteserien",
-      "sportTitle": "Eliteserien - Norway",
-      "score": 0.305,
-      "matches": 4
-    },
-    {
-      "league": "Damallsvenskan",
-      "country": "Sweden",
-      "sportKey": "soccer_sweden_allsvenskan",
-      "sportTitle": "Allsvenskan - Sweden",
-      "score": 0.38,
-      "matches": 1
-    },
-    {
-      "league": "Football League - Highland League",
-      "country": "Scotland",
-      "sportKey": "soccer_spl",
-      "sportTitle": "Premiership - Scotland",
-      "score": 0.305,
-      "matches": 9
-    },
-    {
-      "league": "Football League - Lowland League",
-      "country": "Scotland",
-      "sportKey": "soccer_spl",
-      "sportTitle": "Premiership - Scotland",
-      "score": 0.305,
-      "matches": 15
-    },
-    {
-      "league": "1. Division",
-      "country": "Norway",
-      "sportKey": "soccer_norway_eliteserien",
-      "sportTitle": "Eliteserien - Norway",
-      "score": 0.347,
-      "matches": 2
-    },
-    {
-      "league": "Super League",
-      "country": "Switzerland",
-      "sportKey": "soccer_china_superleague",
-      "sportTitle": "Super League - China",
-      "score": 0.606,
-      "matches": 3
-    },
-    {
-      "league": "Paranaense - 3",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.305,
-      "matches": 1
-    },
-    {
-      "league": "Primera B Metropolitana",
-      "country": "Argentina",
-      "sportKey": "soccer_argentina_primera_division",
-      "sportTitle": "Primera División - Argentina",
-      "score": 0.466,
-      "matches": 11
-    },
-    {
-      "league": "Serie C",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.466,
-      "matches": 4
-    },
-    {
-      "league": "Premier League - Summer Series",
-      "country": "England",
-      "sportKey": "soccer_epl",
-      "sportTitle": "EPL",
-      "score": 0.667,
-      "matches": 2
     }
   ],
-  "matchesConsidered": 1795,
+  "matchesConsidered": 992,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1390,132 +1174,6 @@
       "bestScore": 0.143
     },
     {
-      "league": "Liga Nacional",
-      "country": "Guatemala",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
-      "league": "Liga Panameña de Fútbol",
-      "country": "Panama",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.111
-    },
-    {
-      "league": "Tasmania Northern Championship",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.167
-    },
-    {
-      "league": "Capital Territory NPL",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
-      "league": "Western Australia State League 1",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.222
-    },
-    {
-      "league": "Chatham Cup",
-      "country": "New-Zealand",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.125
-    },
-    {
-      "league": "K4 League",
-      "country": "South-Korea",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.222
-    },
-    {
-      "league": "K3 League",
-      "country": "South-Korea",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.222
-    },
-    {
-      "league": "NB III - Northeast",
-      "country": "Hungary",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
-      "league": "David Kipiani Cup",
-      "country": "Georgia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.125
-    },
-    {
-      "league": "NB III - Southwest",
-      "country": "Hungary",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
-      "league": "2. liga",
-      "country": "Slovakia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
-      "league": "NB III - Northwest",
-      "country": "Hungary",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
-      "league": "NB III - Southeast",
-      "country": "Hungary",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
-      "league": "First League",
-      "country": "Macedonia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
-      "league": "Czech Liga",
-      "country": "Czech-Republic",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
-      "league": "NB II",
-      "country": "Hungary",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
-      "league": "Esiliiga A",
-      "country": "Estonia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
-      "league": "Super Liga",
-      "country": "Slovakia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.111
-    },
-    {
-      "league": "Toto Cup Ligat Al",
-      "country": "Israel",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.111
-    },
-    {
-      "league": "Division 1",
-      "country": "Kuwait",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
       "league": "Friendlies Clubs",
       "home": "Schwarz-Weiß Bregenz",
       "away": "Imst",
@@ -1817,6 +1475,12 @@
     },
     {
       "league": "Friendlies Clubs",
+      "home": "Hanworth Villa",
+      "away": "Kingstonian",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
       "home": "Chelsea U21",
       "away": "Cardiff City U21",
       "reason": "No event/team match"
@@ -2047,12 +1711,6 @@
       "league": "Friendlies Clubs",
       "home": "Redcar Athletic",
       "away": "Dunston UTS",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Hanworth Villa",
-      "away": "Kingstonian",
       "reason": "No event/team match"
     },
     {
@@ -2333,12 +1991,6 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Amiens",
-      "away": "Reims",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Frosinone",
       "away": "Frosinone U20",
       "reason": "No event/team match"
@@ -2347,6 +1999,12 @@
       "league": "Friendlies Clubs",
       "home": "Tottenham",
       "away": "Milton Keynes Dons",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Amiens",
+      "away": "Reims",
       "reason": "No event/team match"
     },
     {
@@ -2563,6 +2221,132 @@
       "league": "Friendlies Clubs",
       "home": "Santa Clara",
       "away": "Felgueiras 1932",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Excelsior Virton",
+      "away": "US Hostert",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Hilden",
+      "away": "Unterrath",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Sestao River",
+      "away": "Athletic Club",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Progres Niederkorn",
+      "away": "APM Metz",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Atlas Delmenhorst",
+      "away": "Bersenbrück",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "AS Jeunesse Esch",
+      "away": "Koeppchen",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "AFC Wimbledon",
+      "away": "Norwich",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Eendracht Termien",
+      "away": "KRC Genk II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Olot",
+      "away": "Girona",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Recreativo Huelva",
+      "away": "Real Betis",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Maidenhead",
+      "away": "Wolves",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Southend",
+      "away": "Northampton",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Burton Albion",
+      "away": "Birmingham",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Peterborough Sports",
+      "away": "Peterborough",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Stevenage",
+      "away": "West Ham",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Eastleigh",
+      "away": "Valenciennes",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Rangers",
+      "away": "Saint Etienne",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Tenerife",
+      "away": "Getafe",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "FC Liefering",
+      "away": "Eintracht Braunschweig",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Al Diriyah",
+      "away": "FA 2000",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Sampdoria",
+      "away": "Cagliari",
       "reason": "No event/team match"
     }
   ],
@@ -2865,18 +2649,6 @@
     },
     {
       "sportKey": "soccer_belgium_first_div",
-      "market": "double_chance"
-    },
-    {
-      "sportKey": "soccer_spl",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_spl",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_spl",
       "market": "double_chance"
     }
   ],
@@ -3505,31 +3277,6 @@
       "label": "soccer_belgium_first_div:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
-    },
-    {
-      "label": "soccer_spl:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_spl:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_spl:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_spl:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_spl:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
     }
   ],
   "quota": {
@@ -3539,5 +3286,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-19T03:15:39.324Z"
+  "completedAt": "2026-07-19T03:26:19.121Z"
 }
