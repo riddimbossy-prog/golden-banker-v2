@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-19T08:35:44.806Z",
+  "updated": "2026-07-19T09:36:41.550Z",
   "summary": {
     "fixtures": 300,
     "qualified": 1,
@@ -4863,6 +4863,21 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
+      "id": 1584908,
+      "date": "2026-07-19",
+      "home": "Sardarapat",
+      "away": "Ararat",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
       "id": 1591888,
       "date": "2026-07-19",
       "home": "Avispa Fukuoka",
@@ -4896,65 +4911,6 @@
       "exactSupport": 1,
       "conflictIndex": 0,
       "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1565424,
-      "date": "2026-07-19",
-      "home": "Dinamo Vladivostok",
-      "away": "Novosibirsk",
-      "league": "Second League A - Division A Gold",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
-      "id": 1527107,
-      "date": "2026-07-19",
-      "home": "FK Beograd",
-      "away": "Adelaide United II",
-      "league": "South Australia NPL",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Home Team Over 0.5 Goals",
-      "score": 79.1,
-      "support": 0.98,
-      "supporters": [
-        "Trend",
-        "League Bias"
-      ],
-      "independence": 2,
-      "exactSupport": 2,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Double Chance 1X",
-          "support": 0.79,
-          "engines": [
-            "PurePPG Ultra"
-          ]
-        },
-        {
-          "market": "Home DNB",
-          "support": 0.59,
-          "engines": [
-            "PurePPG Strict"
-          ]
-        },
-        {
-          "market": "Second Half Over 0.5",
-          "support": 0.41,
-          "engines": [
-            "Halves"
-          ]
-        }
-      ],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
@@ -5701,6 +5657,21 @@
       "home": "Ural",
       "away": "Enisey",
       "league": "First League",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1546700,
+      "date": "2026-07-19",
+      "home": "Erzgebirge Aue",
+      "away": "FC Schalke 04",
+      "league": "Friendlies Clubs",
       "version": "v195",
       "bet": false,
       "market": "No Bet",

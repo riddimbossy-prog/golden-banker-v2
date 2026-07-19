@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-19T09:35:08.108Z",
+  "generatedAt": "2026-07-19T09:32:55.842Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -310,6 +310,14 @@
       "sportTitle": "MLS",
       "score": 0.323,
       "matches": 6
+    },
+    {
+      "league": "USL League Two",
+      "country": "USA",
+      "sportKey": "soccer_usa_mls",
+      "sportTitle": "MLS",
+      "score": 0.466,
+      "matches": 5
     },
     {
       "league": "Premier League",
@@ -1000,7 +1008,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1739,
+  "matchesConsidered": 1744,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1479,6 +1487,12 @@
     },
     {
       "league": "Friendlies Clubs",
+      "home": "Sardarapat",
+      "away": "Ararat",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
       "home": "Avispa Fukuoka",
       "away": "Osaka",
       "reason": "No event/team match"
@@ -1527,20 +1541,8 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "FC Krasnodar",
-      "away": "Baltika",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Borussia Hildesheim",
       "away": "Hemelingen",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Sardarapat",
-      "away": "Ararat",
       "reason": "No event/team match"
     },
     {
@@ -1605,6 +1607,18 @@
     },
     {
       "league": "Friendlies Clubs",
+      "home": "Sturm Graz II",
+      "away": "Al-Hilal Saudi FC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "FC Krasnodar",
+      "away": "Baltika",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
       "home": "Genoa",
       "away": "Trento",
       "reason": "No event/team match"
@@ -1649,12 +1663,6 @@
       "league": "Friendlies Clubs",
       "home": "Fiorentina",
       "away": "Fiorentina U20",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Sturm Graz II",
-      "away": "Al-Hilal Saudi FC",
       "reason": "No event/team match"
     },
     {
@@ -3483,5 +3491,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-19T09:35:13.358Z"
+  "completedAt": "2026-07-19T09:33:04.880Z"
 }
