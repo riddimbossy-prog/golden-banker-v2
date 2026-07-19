@@ -1,10 +1,10 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-19T19:42:26.280Z",
+  "generatedAt": "2026-07-19T19:55:34.673Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
-  "sportsAvailable": 66,
+  "sportsAvailable": 63,
   "soccerSportsAvailable": 38,
   "sportMappings": [
     {
@@ -3459,5 +3459,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-19T19:42:43.415Z"
+  "completedAt": "2026-07-19T19:55:44.177Z"
 }
