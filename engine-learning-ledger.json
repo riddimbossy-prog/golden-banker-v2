@@ -1,7 +1,7 @@
 {
   "version": "v193",
   "schemaVersion": 1,
-  "updated": "2026-07-19T18:45:48.094Z",
+  "updated": "2026-07-19T19:46:11.208Z",
   "minimumSamples": {
     "teamFavorite": 5,
     "teamUnderdog": 5,
@@ -12,10 +12,10 @@
   },
   "decayHalfLifeDays": 120,
   "summary": {
-    "settledFixtures": 123,
-    "settledDecisions": 266,
+    "settledFixtures": 124,
+    "settledDecisions": 267,
     "reviewedLosses": 46,
-    "attachedUpcoming": 1888,
+    "attachedUpcoming": 1879,
     "highRiskUpcoming": 0,
     "stableUpcoming": 0
   },
@@ -4073,6 +4073,132 @@
       "flags": [],
       "patternStability": 100,
       "favoriteReliability": 0
+    },
+    "667|widzew d": {
+      "name": "Widzew Łódź",
+      "league": "Friendlies Clubs",
+      "leagueId": 667,
+      "favorite": {
+        "sample": 1,
+        "wins": 1,
+        "draws": 0,
+        "losses": 0,
+        "winRate": 1,
+        "drawRate": 0,
+        "nonLossRate": 1,
+        "upsetRate": 0,
+        "nonLossWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "winWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "decayedWeight": 1
+      },
+      "underdog": {
+        "sample": 0,
+        "wins": 0,
+        "draws": 0,
+        "losses": 0,
+        "winRate": null,
+        "drawRate": null,
+        "nonLossRate": 0,
+        "upsetRate": null,
+        "nonLossWilson": {
+          "lower": null,
+          "mid": null,
+          "upper": null
+        },
+        "winWilson": {
+          "lower": null,
+          "mid": null,
+          "upper": null
+        },
+        "decayedWeight": 0
+      },
+      "favoriteBands": {
+        "1.36-1.60": {
+          "sample": 1,
+          "wins": 1,
+          "draws": 0,
+          "losses": 0,
+          "winRate": 1,
+          "drawRate": 0,
+          "nonLossRate": 1,
+          "upsetRate": 0,
+          "nonLossWilson": {
+            "lower": 0.2065,
+            "mid": 1,
+            "upper": 1
+          },
+          "winWilson": {
+            "lower": 0.2065,
+            "mid": 1,
+            "upper": 1
+          },
+          "decayedWeight": 1
+        }
+      },
+      "underdogUpsets": 0,
+      "flags": [],
+      "patternStability": 100,
+      "favoriteReliability": 100
+    },
+    "667|puszcza niepo omice": {
+      "name": "Puszcza Niepołomice",
+      "league": "Friendlies Clubs",
+      "leagueId": 667,
+      "favorite": {
+        "sample": 0,
+        "wins": 0,
+        "draws": 0,
+        "losses": 0,
+        "winRate": null,
+        "drawRate": null,
+        "nonLossRate": 0,
+        "upsetRate": null,
+        "nonLossWilson": {
+          "lower": null,
+          "mid": null,
+          "upper": null
+        },
+        "winWilson": {
+          "lower": null,
+          "mid": null,
+          "upper": null
+        },
+        "decayedWeight": 0
+      },
+      "underdog": {
+        "sample": 1,
+        "wins": 0,
+        "draws": 0,
+        "losses": 1,
+        "winRate": 0,
+        "drawRate": 0,
+        "nonLossRate": 0,
+        "upsetRate": 1,
+        "nonLossWilson": {
+          "lower": 0,
+          "mid": 0,
+          "upper": 0.7935
+        },
+        "winWilson": {
+          "lower": 0,
+          "mid": 0,
+          "upper": 0.7935
+        },
+        "decayedWeight": 1
+      },
+      "favoriteBands": {},
+      "underdogUpsets": 0,
+      "flags": [],
+      "patternStability": 100,
+      "favoriteReliability": 0
     }
   },
   "leagues": {
@@ -4098,7 +4224,7 @@
           "mid": 0.6667,
           "upper": 0.8794
         },
-        "decayedWeight": 8.73
+        "decayedWeight": 8.72
       },
       "bands": {
         "1.61-1.85": {
@@ -5123,7 +5249,7 @@
           "mid": 0.6,
           "upper": 0.8824
         },
-        "decayedWeight": 4.66
+        "decayedWeight": 4.65
       },
       "bands": {
         "1.01-1.35": {
@@ -5145,7 +5271,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 2.77
+          "decayedWeight": 2.76
         },
         "1.86-2.25": {
           "sample": 1,
@@ -5230,7 +5356,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 2.77
+        "decayedWeight": 2.76
       },
       "flags": [],
       "stabilityScore": 89.8
@@ -5347,6 +5473,98 @@
       },
       "flags": [],
       "stabilityScore": 87.5
+    },
+    "667": {
+      "league": "Friendlies Clubs",
+      "leagueId": 667,
+      "favorite": {
+        "sample": 1,
+        "wins": 1,
+        "draws": 0,
+        "losses": 0,
+        "winRate": 1,
+        "drawRate": 0,
+        "nonLossRate": 1,
+        "upsetRate": 0,
+        "nonLossWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "winWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "decayedWeight": 1
+      },
+      "bands": {
+        "1.36-1.60": {
+          "sample": 1,
+          "wins": 1,
+          "draws": 0,
+          "losses": 0,
+          "winRate": 1,
+          "drawRate": 0,
+          "nonLossRate": 1,
+          "upsetRate": 0,
+          "nonLossWilson": {
+            "lower": 0.2065,
+            "mid": 1,
+            "upper": 1
+          },
+          "winWilson": {
+            "lower": 0.2065,
+            "mid": 1,
+            "upper": 1
+          },
+          "decayedWeight": 1
+        }
+      },
+      "homeFavorites": {
+        "sample": 1,
+        "wins": 1,
+        "draws": 0,
+        "losses": 0,
+        "winRate": 1,
+        "drawRate": 0,
+        "nonLossRate": 1,
+        "upsetRate": 0,
+        "nonLossWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "winWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "decayedWeight": 1
+      },
+      "awayFavorites": {
+        "sample": 0,
+        "wins": 0,
+        "draws": 0,
+        "losses": 0,
+        "winRate": null,
+        "drawRate": null,
+        "nonLossRate": 0,
+        "upsetRate": null,
+        "nonLossWilson": {
+          "lower": null,
+          "mid": null,
+          "upper": null
+        },
+        "winWilson": {
+          "lower": null,
+          "mid": null,
+          "upper": null
+        },
+        "decayedWeight": 0
+      },
+      "flags": [],
+      "stabilityScore": 100
     }
   },
   "matchups": {
@@ -6273,6 +6491,34 @@
         "decayedWeight": 0.97
       },
       "flags": []
+    },
+    "667|widzew d|puszcza niepo omice": {
+      "home": "Widzew Łódź",
+      "away": "Puszcza Niepołomice",
+      "league": "Friendlies Clubs",
+      "leagueId": 667,
+      "favorite": {
+        "sample": 1,
+        "wins": 1,
+        "draws": 0,
+        "losses": 0,
+        "winRate": 1,
+        "drawRate": 0,
+        "nonLossRate": 1,
+        "upsetRate": 0,
+        "nonLossWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "winWilson": {
+          "lower": 0.2065,
+          "mid": 1,
+          "upper": 1
+        },
+        "decayedWeight": 1
+      },
+      "flags": []
     }
   },
   "oddsBands": {
@@ -6319,25 +6565,25 @@
       "decayedWeight": 5.68
     },
     "1.36-1.60": {
-      "sample": 5,
-      "wins": 3,
+      "sample": 6,
+      "wins": 4,
       "draws": 2,
       "losses": 0,
-      "winRate": 0.6007,
-      "drawRate": 0.3993,
+      "winRate": 0.6689,
+      "drawRate": 0.3311,
       "nonLossRate": 1,
       "upsetRate": 0,
       "nonLossWilson": {
-        "lower": 0.5655,
+        "lower": 0.6097,
         "mid": 1,
         "upper": 1
       },
       "winWilson": {
-        "lower": 0.2307,
-        "mid": 0.6,
-        "upper": 0.8824
+        "lower": 0.3,
+        "mid": 0.6667,
+        "upper": 0.9032
       },
-      "decayedWeight": 4.83
+      "decayedWeight": 5.82
     },
     "1.61-1.85": {
       "sample": 8,
@@ -8603,13 +8849,13 @@
       "hardVeto": false
     },
     "*|League Bias|Home Team Over 0.5 Goals|1.36-1.60|fav-aligned": {
-      "sample": 1,
-      "wins": 1,
+      "sample": 2,
+      "wins": 2,
       "losses": 0,
       "winRate": 1,
       "lossRate": 0,
       "wilson": {
-        "lower": 0.2065,
+        "lower": 0.3424,
         "mid": 1,
         "upper": 1
       },
@@ -9079,6 +9325,20 @@
       "hardVeto": false
     },
     "usl championship|Halves|Second Half Over 0.5|1.61-1.85|other": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "winRate": 1,
+      "lossRate": 0,
+      "wilson": {
+        "lower": 0.2065,
+        "mid": 1,
+        "upper": 1
+      },
+      "adjustment": 0,
+      "hardVeto": false
+    },
+    "friendlies clubs|League Bias|Home Team Over 0.5 Goals|1.36-1.60|fav-aligned": {
       "sample": 1,
       "wins": 1,
       "losses": 0,
