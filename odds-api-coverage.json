@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-19T16:45:27.955Z",
+  "generatedAt": "2026-07-19T16:42:51.880Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -32,12 +32,52 @@
       "matches": 8
     },
     {
+      "league": "Catarinense - 2",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.305,
+      "matches": 8
+    },
+    {
+      "league": "Catarinense U20",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.305,
+      "matches": 11
+    },
+    {
       "league": "Copa Gaúcha",
       "country": "Brazil",
       "sportKey": "soccer_brazil_campeonato",
       "sportTitle": "Brazil Série A",
       "score": 0.305,
       "matches": 1
+    },
+    {
+      "league": "Copa Paulista",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.305,
+      "matches": 7
+    },
+    {
+      "league": "First League",
+      "country": "Russia",
+      "sportKey": "soccer_russia_premier_league",
+      "sportTitle": "Premier League - Russia",
+      "score": 0.513,
+      "matches": 11
+    },
+    {
+      "league": "Friendlies Clubs",
+      "country": "World",
+      "sportKey": "soccer_fifa_world_cup",
+      "sportTitle": "FIFA World Cup",
+      "score": 0.323,
+      "matches": 477
     },
     {
       "league": "Premier League",
@@ -48,12 +88,20 @@
       "matches": 5
     },
     {
-      "league": "Friendlies Clubs",
-      "country": "World",
-      "sportKey": "soccer_fifa_world_cup",
-      "sportTitle": "FIFA World Cup",
-      "score": 0.323,
-      "matches": 470
+      "league": "Second League A - Division A Gold",
+      "country": "Russia",
+      "sportKey": "soccer_russia_premier_league",
+      "sportTitle": "Premier League - Russia",
+      "score": 0.402,
+      "matches": 3
+    },
+    {
+      "league": "Serie D",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.466,
+      "matches": 4
     },
     {
       "league": "First League",
@@ -976,7 +1024,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1648,
+  "matchesConsidered": 1675,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -2288,39 +2336,9 @@
       "reason": "No event/team match"
     },
     {
-      "league": "Copa Gaúcha",
-      "home": "Brasil DE Pelotas",
-      "away": "Gramadense",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Carioca C",
-      "home": "Búzios",
-      "away": "Barra Mansa",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Carioca C",
-      "home": "Cardoso Moreira",
-      "away": "Campos AA",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Carioca C",
-      "home": "Barra Mansa",
-      "away": "Búzios",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Carioca C",
-      "home": "Campos AA",
-      "away": "Cardoso Moreira",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Baiano - 2",
-      "home": "Fluminense De Feira",
-      "away": "Feira FC",
+      "league": "Catarinense - 2",
+      "home": "Tubarao",
+      "away": "Hercílio Luz",
       "reason": "No event/team match"
     },
     {
@@ -2366,21 +2384,81 @@
       "reason": "No event/team match"
     },
     {
-      "league": "Serie D",
-      "home": "America-RN",
-      "away": "Gama",
+      "league": "Catarinense U20",
+      "home": "Criciuma U20",
+      "away": "Chapecoense U20",
       "reason": "No event/team match"
     },
     {
-      "league": "Serie D",
-      "home": "Iguatu",
-      "away": "Nacional AM",
+      "league": "Catarinense U20",
+      "home": "Joinville U20",
+      "away": "Avaí U20",
       "reason": "No event/team match"
     },
     {
-      "league": "Serie D",
-      "home": "Portuguesa",
-      "away": "Uberlandia",
+      "league": "Catarinense U20",
+      "home": "Joinville U20",
+      "away": "Criciuma U20",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Catarinense U20",
+      "home": "Chapecoense U20",
+      "away": "Barra SC U20",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Catarinense U20",
+      "home": "Nação U20",
+      "away": "Avaí U20",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Catarinense U20",
+      "home": "Figueirense U20",
+      "away": "Carlos Renaux U20",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Catarinense U20",
+      "home": "Carlos Renaux U20",
+      "away": "Criciuma U20",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Catarinense U20",
+      "home": "Avaí U20",
+      "away": "Concórdia U20",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Catarinense U20",
+      "home": "Chapecoense U20",
+      "away": "Nação U20",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Catarinense U20",
+      "home": "Barra SC U20",
+      "away": "Joinville U20",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Catarinense U20",
+      "home": "Brusque U20",
+      "away": "Figueirense U20",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Copa Gaúcha",
+      "home": "Brasil DE Pelotas",
+      "away": "Gramadense",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Copa Paulista",
+      "home": "Oeste",
+      "away": "Juventus",
       "reason": "No event/team match"
     },
     {
@@ -2420,69 +2498,39 @@
       "reason": "No event/team match"
     },
     {
-      "league": "Copa Rio",
-      "home": "Volta Redonda",
-      "away": "São Gonçalo EC RJ",
+      "league": "Serie D",
+      "home": "São Luiz",
+      "away": "CSA",
       "reason": "No event/team match"
     },
     {
-      "league": "Copa Rio",
-      "home": "Nova Iguaçu",
-      "away": "América RJ",
+      "league": "Serie D",
+      "home": "America-RN",
+      "away": "Gama",
       "reason": "No event/team match"
     },
     {
-      "league": "Copa Rio",
-      "home": "CFRJ / Maricá",
-      "away": "Pérolas Negras",
+      "league": "Serie D",
+      "home": "Iguatu",
+      "away": "Nacional AM",
       "reason": "No event/team match"
     },
     {
-      "league": "Copa Rio",
-      "home": "Bangu",
-      "away": "Olaria",
+      "league": "Serie D",
+      "home": "Portuguesa",
+      "away": "Uberlandia",
       "reason": "No event/team match"
     },
     {
-      "league": "Copa Rio",
-      "home": "Portuguesa RJ",
-      "away": "Americano Campos",
+      "league": "Carioca C",
+      "home": "Búzios",
+      "away": "Barra Mansa",
       "reason": "No event/team match"
     },
     {
-      "league": "Copa Rio",
-      "home": "Madureira",
-      "away": "Bonsucesso",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Copa Rio",
-      "home": "Boavista SC",
-      "away": "CEAC / Araruama",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Copa Rio",
-      "home": "Sampaio Corrêa RJ",
-      "away": "Resende",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "Atletico-MG",
-      "away": "Bahia",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "Coritiba",
-      "away": "Palmeiras",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "Chapecoense-sc",
-      "away": "Flamengo",
+      "league": "Carioca C",
+      "home": "Cardoso Moreira",
+      "away": "Campos AA",
       "reason": "No event/team match"
     }
   ],
@@ -2549,6 +2597,30 @@
     },
     {
       "sportKey": "soccer_fifa_world_cup",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_fifa_world_cup",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_fifa_world_cup",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_epl",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_epl",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_epl",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_sweden_allsvenskan",
       "market": "btts"
     },
     {
@@ -2973,6 +3045,81 @@
     },
     {
       "label": "soccer_russia_premier_league:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_fifa_world_cup:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_fifa_world_cup:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_fifa_world_cup:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_fifa_world_cup:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_fifa_world_cup:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_epl:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_epl:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_epl:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_epl:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_epl:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_sweden_allsvenskan:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_sweden_allsvenskan:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_sweden_allsvenskan:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_sweden_allsvenskan:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_sweden_allsvenskan:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3459,5 +3606,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-19T16:45:41.611Z"
+  "completedAt": "2026-07-19T16:43:14.193Z"
 }
