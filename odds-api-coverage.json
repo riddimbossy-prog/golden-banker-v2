@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-19T02:35:08.386Z",
+  "generatedAt": "2026-07-19T02:45:03.344Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -96,22 +96,6 @@
       "matches": 1
     },
     {
-      "league": "MLS Next Pro",
-      "country": "USA",
-      "sportKey": "soccer_usa_mls",
-      "sportTitle": "MLS",
-      "score": 1,
-      "matches": 10
-    },
-    {
-      "league": "NWSL Women",
-      "country": "USA",
-      "sportKey": "soccer_usa_mls",
-      "sportTitle": "MLS",
-      "score": 0.323,
-      "matches": 3
-    },
-    {
       "league": "USL League Two",
       "country": "USA",
       "sportKey": "soccer_usa_mls",
@@ -120,20 +104,20 @@
       "matches": 3
     },
     {
-      "league": "Primera División",
-      "country": "Bolivia",
-      "sportKey": "soccer_argentina_primera_division",
-      "sportTitle": "Primera División - Argentina",
-      "score": 0.653,
-      "matches": 7
-    },
-    {
       "league": "USL Championship",
       "country": "USA",
       "sportKey": "soccer_usa_mls",
       "sportTitle": "MLS",
       "score": 0.323,
       "matches": 5
+    },
+    {
+      "league": "NWSL Women",
+      "country": "USA",
+      "sportKey": "soccer_usa_mls",
+      "sportTitle": "MLS",
+      "score": 0.323,
+      "matches": 2
     },
     {
       "league": "Primera Division",
@@ -150,6 +134,14 @@
       "sportTitle": "Liga MX",
       "score": 1,
       "matches": 5
+    },
+    {
+      "league": "MLS Next Pro",
+      "country": "USA",
+      "sportKey": "soccer_usa_mls",
+      "sportTitle": "MLS",
+      "score": 1,
+      "matches": 8
     },
     {
       "league": "Queensland Premier League",
@@ -333,6 +325,14 @@
       "sportKey": "soccer_sweden_allsvenskan",
       "sportTitle": "Allsvenskan - Sweden",
       "score": 1,
+      "matches": 6
+    },
+    {
+      "league": "Primera División",
+      "country": "Bolivia",
+      "sportKey": "soccer_argentina_primera_division",
+      "sportTitle": "Primera División - Argentina",
+      "score": 0.653,
       "matches": 6
     },
     {
@@ -848,7 +848,7 @@
       "matches": 3
     }
   ],
-  "matchesConsidered": 998,
+  "matchesConsidered": 994,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -3294,5 +3294,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-19T02:35:17.021Z"
+  "completedAt": "2026-07-19T02:45:08.307Z"
 }
