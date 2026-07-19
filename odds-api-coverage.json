@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-19T08:23:22.335Z",
+  "generatedAt": "2026-07-19T08:35:11.848Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -21,7 +21,7 @@
       "sportKey": "soccer_epl",
       "sportTitle": "EPL",
       "score": 0.667,
-      "matches": 2
+      "matches": 1
     },
     {
       "league": "Friendlies Clubs",
@@ -1008,7 +1008,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1745,
+  "matchesConsidered": 1741,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1028,18 +1028,6 @@
       "country": "Australia",
       "reason": "No matching soccer sport key",
       "bestScore": 0
-    },
-    {
-      "league": "New South Wales NPL",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
-      "league": "New South Wales NPL 2",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.091
     },
     {
       "league": "Queensland NPL",
@@ -1252,6 +1240,12 @@
       "bestScore": 0
     },
     {
+      "league": "New South Wales NPL",
+      "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
+    },
+    {
       "league": "Victoria NPL",
       "country": "Australia",
       "reason": "No matching soccer sport key",
@@ -1378,6 +1372,12 @@
       "bestScore": 0.125
     },
     {
+      "league": "New South Wales NPL 2",
+      "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.091
+    },
+    {
       "league": "K4 League",
       "country": "South-Korea",
       "reason": "No matching soccer sport key",
@@ -1483,12 +1483,6 @@
       "league": "Primera Division",
       "home": "Real Estelí",
       "away": "Matagalpa",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Queensland Premier League",
-      "home": "Robina City",
-      "away": "Redlands United",
       "reason": "No event/team match"
     },
     {
@@ -2516,6 +2510,12 @@
       "home": "Maritimo",
       "away": "Camacha",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Bologna",
+      "away": "1. FC Heidenheim",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -3491,5 +3491,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-19T08:23:32.142Z"
+  "completedAt": "2026-07-19T08:35:28.087Z"
 }
