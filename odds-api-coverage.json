@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-19T12:38:09.075Z",
+  "generatedAt": "2026-07-19T12:45:14.875Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,7 +13,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 489
+      "matches": 488
     },
     {
       "league": "K League 1",
@@ -21,15 +21,7 @@
       "sportKey": "soccer_korea_kleague1",
       "sportTitle": "K League 1",
       "score": 0.695,
-      "matches": 10
-    },
-    {
-      "league": "K League 2",
-      "country": "South-Korea",
-      "sportKey": "soccer_korea_kleague1",
-      "sportTitle": "K League 1",
-      "score": 0.333,
-      "matches": 10
+      "matches": 9
     },
     {
       "league": "Kansallinen Liiga",
@@ -632,6 +624,14 @@
       "matches": 8
     },
     {
+      "league": "K League 2",
+      "country": "South-Korea",
+      "sportKey": "soccer_korea_kleague1",
+      "sportTitle": "K League 1",
+      "score": 0.333,
+      "matches": 6
+    },
+    {
       "league": "ASEAN Championship",
       "country": "World",
       "sportKey": "soccer_fifa_world_cup",
@@ -1008,7 +1008,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1734,
+  "matchesConsidered": 1726,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1028,12 +1028,6 @@
       "country": "Australia",
       "reason": "No matching soccer sport key",
       "bestScore": 0
-    },
-    {
-      "league": "1. Liga",
-      "country": "Latvia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
     },
     {
       "league": "Primeira Divisão",
@@ -1062,6 +1056,12 @@
     {
       "league": "Segunda División",
       "country": "Uruguay",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
+      "league": "1. Liga",
+      "country": "Latvia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
     },
@@ -1466,12 +1466,6 @@
       "country": "Kuwait",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Avispa Fukuoka",
-      "away": "Osaka",
-      "reason": "No event/team match"
     },
     {
       "league": "Friendlies Clubs",
@@ -2516,6 +2510,12 @@
       "home": "Eendracht Termien",
       "away": "KRC Genk II",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Olot",
+      "away": "Girona",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -3491,5 +3491,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-19T12:38:26.771Z"
+  "completedAt": "2026-07-19T12:45:20.141Z"
 }
