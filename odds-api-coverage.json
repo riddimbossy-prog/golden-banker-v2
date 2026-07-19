@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-19T12:35:26.353Z",
+  "generatedAt": "2026-07-19T12:38:09.075Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -94,6 +94,14 @@
       "sportTitle": "Super League - China",
       "score": 0.606,
       "matches": 4
+    },
+    {
+      "league": "Asean Championship Women",
+      "country": "World",
+      "sportKey": "soccer_fifa_world_cup",
+      "sportTitle": "FIFA World Cup",
+      "score": 0.323,
+      "matches": 1
     },
     {
       "league": "Catarinense U20",
@@ -1000,7 +1008,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1739,
+  "matchesConsidered": 1734,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1020,18 +1028,6 @@
       "country": "Australia",
       "reason": "No matching soccer sport key",
       "bestScore": 0
-    },
-    {
-      "league": "Esiliiga B",
-      "country": "Estonia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.125
-    },
-    {
-      "league": "Calcutta Premier Division",
-      "country": "India",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.222
     },
     {
       "league": "1. Liga",
@@ -1134,6 +1130,18 @@
       "country": "Serbia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.111
+    },
+    {
+      "league": "Calcutta Premier Division",
+      "country": "India",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.222
+    },
+    {
+      "league": "Esiliiga B",
+      "country": "Estonia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.125
     },
     {
       "league": "1. Deild",
@@ -1551,8 +1559,8 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "HNK Gorica",
-      "away": "FC St. Pauli",
+      "home": "FC St. Pauli",
+      "away": "HNK Gorica",
       "reason": "No event/team match"
     },
     {
@@ -3483,5 +3491,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-19T12:35:31.698Z"
+  "completedAt": "2026-07-19T12:38:26.771Z"
 }
