@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-19T13:05:15.184Z",
+  "generatedAt": "2026-07-19T13:15:01.906Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,15 +13,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 488
-    },
-    {
-      "league": "K League 1",
-      "country": "South-Korea",
-      "sportKey": "soccer_korea_kleague1",
-      "sportTitle": "K League 1",
-      "score": 0.695,
-      "matches": 9
+      "matches": 487
     },
     {
       "league": "Kansallinen Liiga",
@@ -37,23 +29,7 @@
       "sportKey": "soccer_china_superleague",
       "sportTitle": "Super League - China",
       "score": 0.43,
-      "matches": 12
-    },
-    {
-      "league": "Second League A - Division A Gold",
-      "country": "Russia",
-      "sportKey": "soccer_russia_premier_league",
-      "sportTitle": "Premier League - Russia",
-      "score": 0.402,
-      "matches": 5
-    },
-    {
-      "league": "Superettan",
-      "country": "Sweden",
-      "sportKey": "soccer_sweden_superettan",
-      "sportTitle": "Superettan - Sweden",
-      "score": 1,
-      "matches": 6
+      "matches": 10
     },
     {
       "league": "First League",
@@ -152,6 +128,14 @@
       "matches": 8
     },
     {
+      "league": "Superettan",
+      "country": "Sweden",
+      "sportKey": "soccer_sweden_superettan",
+      "sportTitle": "Superettan - Sweden",
+      "score": 1,
+      "matches": 5
+    },
+    {
       "league": "Brasiliense U20",
       "country": "Brazil",
       "sportKey": "soccer_brazil_campeonato",
@@ -166,6 +150,14 @@
       "sportTitle": "Brazil Série A",
       "score": 0.305,
       "matches": 3
+    },
+    {
+      "league": "Second League A - Division A Gold",
+      "country": "Russia",
+      "sportKey": "soccer_russia_premier_league",
+      "sportTitle": "Premier League - Russia",
+      "score": 0.402,
+      "matches": 4
     },
     {
       "league": "Catarinense - 2",
@@ -357,6 +349,14 @@
       "sportKey": "soccer_china_superleague",
       "sportTitle": "Super League - China",
       "score": 0.305,
+      "matches": 8
+    },
+    {
+      "league": "K League 1",
+      "country": "South-Korea",
+      "sportKey": "soccer_korea_kleague1",
+      "sportTitle": "K League 1",
+      "score": 0.695,
       "matches": 8
     },
     {
@@ -1000,7 +1000,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1726,
+  "matchesConsidered": 1719,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1026,12 +1026,6 @@
       "country": "Macao",
       "reason": "No matching soccer sport key",
       "bestScore": 0
-    },
-    {
-      "league": "1 Lyga",
-      "country": "Lithuania",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.125
     },
     {
       "league": "Coppa",
@@ -1080,6 +1074,12 @@
       "country": "Latvia",
       "reason": "No matching soccer sport key",
       "bestScore": 0
+    },
+    {
+      "league": "1 Lyga",
+      "country": "Lithuania",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.125
     },
     {
       "league": "Super Liga",
@@ -1475,12 +1475,6 @@
       "league": "Friendlies Clubs",
       "home": "Hessen Kassel",
       "away": "Lippstadt 08",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Naestved",
-      "away": "FC Helsingor",
       "reason": "No event/team match"
     },
     {
@@ -2508,6 +2502,12 @@
       "home": "Olot",
       "away": "Girona",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Recreativo Huelva",
+      "away": "Real Betis",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -2524,18 +2524,6 @@
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_korea_kleague1",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_korea_kleague1",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_korea_kleague1",
-      "market": "double_chance"
-    },
-    {
       "sportKey": "soccer_finland_veikkausliiga",
       "market": "btts"
     },
@@ -2569,18 +2557,6 @@
     },
     {
       "sportKey": "soccer_russia_premier_league",
-      "market": "double_chance"
-    },
-    {
-      "sportKey": "soccer_sweden_superettan",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_sweden_superettan",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_sweden_superettan",
       "market": "double_chance"
     },
     {
@@ -2644,6 +2620,18 @@
       "market": "double_chance"
     },
     {
+      "sportKey": "soccer_sweden_superettan",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_sweden_superettan",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_sweden_superettan",
+      "market": "double_chance"
+    },
+    {
       "sportKey": "soccer_sweden_allsvenskan",
       "market": "btts"
     },
@@ -2677,6 +2665,18 @@
     },
     {
       "sportKey": "soccer_usa_mls",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_korea_kleague1",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_korea_kleague1",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_korea_kleague1",
       "market": "double_chance"
     },
     {
@@ -2851,31 +2851,6 @@
       "statusCode": 422
     },
     {
-      "label": "soccer_korea_kleague1:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_korea_kleague1:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_korea_kleague1:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_korea_kleague1:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_korea_kleague1:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
       "label": "soccer_finland_veikkausliiga:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -2947,31 +2922,6 @@
     },
     {
       "label": "soccer_russia_premier_league:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_sweden_superettan:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_sweden_superettan:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_sweden_superettan:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_sweden_superettan:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_sweden_superettan:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3101,6 +3051,31 @@
       "statusCode": 422
     },
     {
+      "label": "soccer_sweden_superettan:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_sweden_superettan:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_sweden_superettan:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_sweden_superettan:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_sweden_superettan:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
       "label": "soccer_sweden_allsvenskan:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -3172,6 +3147,31 @@
     },
     {
       "label": "soccer_usa_mls:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_korea_kleague1:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_korea_kleague1:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_korea_kleague1:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_korea_kleague1:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_korea_kleague1:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3483,5 +3483,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-19T13:05:20.678Z"
+  "completedAt": "2026-07-19T13:15:12.084Z"
 }
