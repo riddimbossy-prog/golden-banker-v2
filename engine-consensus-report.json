@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-19T21:47:24.462Z",
+  "updated": "2026-07-19T22:47:08.554Z",
   "summary": {
     "fixtures": 300,
     "qualified": 0,
@@ -3945,27 +3945,6 @@
       "independence": 0
     },
     {
-      "id": 1589278,
-      "date": "2026-07-18",
-      "home": "Mamer",
-      "away": "Etzella Ettelbruck",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Home Team Over 0.5 Goals",
-      "score": 75.4,
-      "support": 0.45,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1589279,
       "date": "2026-07-18",
       "home": "Feirense",
@@ -4369,21 +4348,6 @@
       "conflictIndex": 0,
       "alternatives": [],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1548247,
-      "date": "2026-07-18",
-      "home": "CTE Colatina",
-      "away": "GEL",
-      "league": "Capixaba B",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
     },
     {
       "id": 1539857,
@@ -5254,27 +5218,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1519411,
-      "date": "2026-07-19",
-      "home": "Guayaquil City FC",
-      "away": "Manta FC",
-      "league": "Liga Pro",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Under 3.5 Goals",
-      "score": 76.5,
-      "support": 0.74,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1513227,
       "date": "2026-07-19",
       "home": "Connecticut FC",
@@ -5720,6 +5663,66 @@
         }
       ],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1595451,
+      "date": "2026-07-20",
+      "home": "Ballard",
+      "away": "Colorado Storm",
+      "league": "USL League Two",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Over 1.5 Goals",
+      "score": 79.3,
+      "support": 1.02,
+      "supporters": [
+        "Trend",
+        "League Bias"
+      ],
+      "independence": 2,
+      "exactSupport": 2,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Second Half Over 0.5",
+          "support": 0.74,
+          "engines": [
+            "Halves"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1595182,
+      "date": "2026-07-20",
+      "home": "Kalighat Club",
+      "away": "United",
+      "league": "Calcutta Premier Division",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1595183,
+      "date": "2026-07-20",
+      "home": "Measurers",
+      "away": "Peerless",
+      "league": "Calcutta Premier Division",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
     }
   ]
 }
