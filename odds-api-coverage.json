@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-19T06:45:06.332Z",
+  "generatedAt": "2026-07-19T06:55:06.583Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -37,7 +37,7 @@
       "sportKey": "soccer_epl",
       "sportTitle": "EPL",
       "score": 0.667,
-      "matches": 2
+      "matches": 1
     },
     {
       "league": "Friendlies Clubs",
@@ -1008,7 +1008,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1751,
+  "matchesConsidered": 1748,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1031,12 +1031,6 @@
     },
     {
       "league": "Northern NSW NPL",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
-      "league": "Tasmania NPL",
       "country": "Australia",
       "reason": "No matching soccer sport key",
       "bestScore": 0
@@ -1202,6 +1196,12 @@
       "country": "Colombia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.2
+    },
+    {
+      "league": "Tasmania NPL",
+      "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
     },
     {
       "league": "Persian Gulf Pro League",
@@ -1913,12 +1913,6 @@
     },
     {
       "league": "Queensland Premier League",
-      "home": "Robina City",
-      "away": "Redlands United",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Queensland Premier League",
       "home": "Capalaba",
       "away": "Holland Park Hawks",
       "reason": "No event/team match"
@@ -2515,6 +2509,12 @@
       "league": "Friendlies Clubs",
       "home": "Espanyol",
       "away": "PAU",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Aldershot Town",
+      "away": "Oxford United",
       "reason": "No event/team match"
     }
   ],
@@ -3491,5 +3491,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-19T06:45:11.565Z"
+  "completedAt": "2026-07-19T06:55:11.866Z"
 }
