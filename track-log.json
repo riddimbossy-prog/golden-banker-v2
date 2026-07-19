@@ -68950,8 +68950,8 @@
         "dataFields": 3
       },
       "recordedAt": "2026-07-19T13:05:50.114Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -115999,6 +115999,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-19T15:24:16.974Z"
+    "updated": "2026-07-19T15:35:38.153Z"
   }
 }
