@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-19T01:09:09.943Z",
+  "generatedAt": "2026-07-19T01:15:05.060Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,7 +13,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 503
+      "matches": 258
     },
     {
       "league": "Second League A - Division A Silver",
@@ -85,7 +85,7 @@
       "sportKey": "soccer_usa_mls",
       "sportTitle": "MLS",
       "score": 0.466,
-      "matches": 15
+      "matches": 9
     },
     {
       "league": "Copa De La Liga",
@@ -101,23 +101,7 @@
       "sportKey": "soccer_usa_mls",
       "sportTitle": "MLS",
       "score": 1,
-      "matches": 18
-    },
-    {
-      "league": "NWSL Women",
-      "country": "USA",
-      "sportKey": "soccer_usa_mls",
-      "sportTitle": "MLS",
-      "score": 0.323,
-      "matches": 9
-    },
-    {
-      "league": "Liga MX",
-      "country": "Mexico",
-      "sportKey": "soccer_mexico_ligamx",
-      "sportTitle": "Liga MX",
-      "score": 1,
-      "matches": 10
+      "matches": 11
     },
     {
       "league": "USL Championship",
@@ -125,7 +109,7 @@
       "sportKey": "soccer_usa_mls",
       "sportTitle": "MLS",
       "score": 0.323,
-      "matches": 16
+      "matches": 8
     },
     {
       "league": "Primera División",
@@ -142,6 +126,14 @@
       "sportTitle": "La Liga - Spain",
       "score": 0.5,
       "matches": 4
+    },
+    {
+      "league": "NWSL Women",
+      "country": "USA",
+      "sportKey": "soccer_usa_mls",
+      "sportTitle": "MLS",
+      "score": 0.323,
+      "matches": 3
     },
     {
       "league": "Primera Division",
@@ -166,6 +158,14 @@
       "sportTitle": "Primera División - Argentina",
       "score": 0.653,
       "matches": 10
+    },
+    {
+      "league": "Liga MX",
+      "country": "Mexico",
+      "sportKey": "soccer_mexico_ligamx",
+      "sportTitle": "Liga MX",
+      "score": 1,
+      "matches": 5
     },
     {
       "league": "Queensland Premier League",
@@ -1048,7 +1048,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1823,
+  "matchesConsidered": 1013,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1068,12 +1068,6 @@
       "country": "Canada",
       "reason": "No matching soccer sport key",
       "bestScore": 0.25
-    },
-    {
-      "league": "Segunda División",
-      "country": "Uruguay",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
     },
     {
       "league": "Liga Pro",
@@ -1180,6 +1174,12 @@
     {
       "league": "Division Intermedia",
       "country": "Paraguay",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
+      "league": "Segunda División",
+      "country": "Uruguay",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
     },
@@ -1569,12 +1569,6 @@
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Millonarios",
-      "away": "Colo Colo",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
       "home": "Avispa Fukuoka",
       "away": "Osaka",
       "reason": "No event/team match"
@@ -1583,12 +1577,6 @@
       "league": "Friendlies Clubs",
       "home": "Yokohama F. Marinos",
       "away": "Roasso Kumamoto",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Kluczevia Stargard",
-      "away": "Warta Gorzów",
       "reason": "No event/team match"
     },
     {
@@ -2555,6 +2543,144 @@
       "league": "Friendlies Clubs",
       "home": "F91 Dudelange",
       "away": "Mamer",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "NK Osijek",
+      "away": "HNK Cibalia",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Cadiz",
+      "away": "Leicester",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Lüneburger SK Hansa",
+      "away": "Hamburger SV II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "FSV Mainz 05 II",
+      "away": "Kreuzlingen",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Orlando Pirates",
+      "away": "Las Palmas",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Santa Clara",
+      "away": "Felgueiras 1932",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Excelsior Virton",
+      "away": "US Hostert",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Hilden",
+      "away": "Unterrath",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Sestao River",
+      "away": "Athletic Club",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Progres Niederkorn",
+      "away": "APM Metz",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Atlas Delmenhorst",
+      "away": "Bersenbrück",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "AS Jeunesse Esch",
+      "away": "Koeppchen",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "AFC Wimbledon",
+      "away": "Norwich",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Eendracht Termien",
+      "away": "KRC Genk II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Olot",
+      "away": "Girona",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Recreativo Huelva",
+      "away": "Real Betis",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Maidenhead",
+      "away": "Wolves",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Southend",
+      "away": "Northampton",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Burton Albion",
+      "away": "Birmingham",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Peterborough Sports",
+      "away": "Peterborough",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Stevenage",
+      "away": "West Ham",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Eastleigh",
+      "away": "Valenciennes",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Rangers",
+      "away": "Saint Etienne",
       "reason": "No event/team match"
     }
   ],
@@ -3531,5 +3657,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-19T01:09:14.945Z"
+  "completedAt": "2026-07-19T01:15:10.322Z"
 }
