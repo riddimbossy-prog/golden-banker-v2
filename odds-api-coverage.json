@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-19T13:39:56.483Z",
+  "generatedAt": "2026-07-19T13:45:22.067Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -29,7 +29,7 @@
       "sportKey": "soccer_china_superleague",
       "sportTitle": "Super League - China",
       "score": 0.43,
-      "matches": 10
+      "matches": 7
     },
     {
       "league": "First League",
@@ -1008,7 +1008,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1726,
+  "matchesConsidered": 1716,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -3485,5 +3485,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-19T13:40:05.729Z"
+  "completedAt": "2026-07-19T13:45:27.388Z"
 }
