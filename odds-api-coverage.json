@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-19T00:07:08.439Z",
+  "generatedAt": "2026-07-19T00:15:03.587Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -88,14 +88,6 @@
       "matches": 10
     },
     {
-      "league": "MLS Next Pro",
-      "country": "USA",
-      "sportKey": "soccer_usa_mls",
-      "sportTitle": "MLS",
-      "score": 1,
-      "matches": 15
-    },
-    {
       "league": "Copa De La Liga",
       "country": "Chile",
       "sportKey": "soccer_spain_la_liga",
@@ -104,28 +96,12 @@
       "matches": 1
     },
     {
-      "league": "Copa Paulista",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.305,
-      "matches": 5
-    },
-    {
-      "league": "Primera Division",
-      "country": "Nicaragua",
-      "sportKey": "soccer_spain_la_liga",
-      "sportTitle": "La Liga - Spain",
-      "score": 0.5,
-      "matches": 3
-    },
-    {
-      "league": "Serie D",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.466,
-      "matches": 3
+      "league": "MLS Next Pro",
+      "country": "USA",
+      "sportKey": "soccer_usa_mls",
+      "sportTitle": "MLS",
+      "score": 1,
+      "matches": 14
     },
     {
       "league": "NWSL Women",
@@ -158,6 +134,14 @@
       "sportTitle": "Primera División - Argentina",
       "score": 0.653,
       "matches": 4
+    },
+    {
+      "league": "Primera Division",
+      "country": "Nicaragua",
+      "sportKey": "soccer_spain_la_liga",
+      "sportTitle": "La Liga - Spain",
+      "score": 0.5,
+      "matches": 2
     },
     {
       "league": "USL League Two",
@@ -264,6 +248,14 @@
       "matches": 4
     },
     {
+      "league": "Copa Paulista",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.305,
+      "matches": 4
+    },
+    {
       "league": "FAI Cup",
       "country": "Ireland",
       "sportKey": "soccer_league_of_ireland",
@@ -334,6 +326,14 @@
       "sportTitle": "Brazil Série A",
       "score": 0.305,
       "matches": 1
+    },
+    {
+      "league": "Serie D",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.466,
+      "matches": 2
     },
     {
       "league": "Allsvenskan",
@@ -848,7 +848,7 @@
       "matches": 3
     }
   ],
-  "matchesConsidered": 1033,
+  "matchesConsidered": 1027,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -874,12 +874,6 @@
       "country": "Canada",
       "reason": "No matching soccer sport key",
       "bestScore": 0.25
-    },
-    {
-      "league": "Liga Pro Serie B",
-      "country": "Ecuador",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.222
     },
     {
       "league": "Segunda División",
@@ -1084,6 +1078,12 @@
       "country": "Peru",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
+    },
+    {
+      "league": "Liga Pro Serie B",
+      "country": "Ecuador",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.222
     },
     {
       "league": "1. Division",
@@ -3300,5 +3300,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-19T00:07:17.890Z"
+  "completedAt": "2026-07-19T00:15:19.931Z"
 }
