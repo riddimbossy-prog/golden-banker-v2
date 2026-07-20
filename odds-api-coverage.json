@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-20T02:43:48.995Z",
+  "generatedAt": "2026-07-20T02:55:57.026Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -30,14 +30,6 @@
       "sportTitle": "MLS",
       "score": 0.466,
       "matches": 2
-    },
-    {
-      "league": "Primera División",
-      "country": "Bolivia",
-      "sportKey": "soccer_argentina_primera_division",
-      "sportTitle": "Primera División - Argentina",
-      "score": 0.653,
-      "matches": 8
     },
     {
       "league": "MLS Next Pro",
@@ -134,6 +126,14 @@
       "sportTitle": "Primera División - Argentina",
       "score": 0.513,
       "matches": 13
+    },
+    {
+      "league": "Primera División",
+      "country": "Bolivia",
+      "sportKey": "soccer_argentina_primera_division",
+      "sportTitle": "Primera División - Argentina",
+      "score": 0.653,
+      "matches": 7
     },
     {
       "league": "Copa Rio",
@@ -944,7 +944,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1579,
+  "matchesConsidered": 1578,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1506,54 +1506,6 @@
       "reason": "No event/team match"
     },
     {
-      "league": "Primera División",
-      "home": "Blooming",
-      "away": "Real Tomayapo",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "San Antonio Bulo Bulo",
-      "away": "ABB",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "Nacional Potosí",
-      "away": "Real Oruro",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "Independiente Petrolero",
-      "away": "Real Potosí",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "Aurora",
-      "away": "ABB",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "Always Ready",
-      "away": "San Antonio Bulo Bulo",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "Guabirá",
-      "away": "Real Oruro",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "Independiente Petrolero",
-      "away": "Oriente Petrolero",
-      "reason": "No event/team match"
-    },
-    {
       "league": "Torneo Promocional Amateur",
       "home": "Buenos Aires City",
       "away": "Everton La Plata",
@@ -1749,6 +1701,48 @@
       "league": "Primera Nacional",
       "home": "San Martin Tucuman",
       "away": "Temperley",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "San Antonio Bulo Bulo",
+      "away": "ABB",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "Nacional Potosí",
+      "away": "Real Oruro",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "Independiente Petrolero",
+      "away": "Real Potosí",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "Aurora",
+      "away": "ABB",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "Always Ready",
+      "away": "San Antonio Bulo Bulo",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "Guabirá",
+      "away": "Real Oruro",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "Independiente Petrolero",
+      "away": "Oriente Petrolero",
       "reason": "No event/team match"
     },
     {
@@ -2451,6 +2445,12 @@
       "league": "Friendlies Clubs",
       "home": "RED Star FC 93",
       "away": "Orleans",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Hertha BSC",
+      "away": "Mamelodi Sundowns",
       "reason": "No event/team match"
     }
   ],
@@ -3427,5 +3427,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-20T02:43:59.470Z"
+  "completedAt": "2026-07-20T02:56:51.537Z"
 }
