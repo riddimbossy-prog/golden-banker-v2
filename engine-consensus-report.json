@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-20T18:18:22.900Z",
+  "updated": "2026-07-20T19:24:24.964Z",
   "summary": {
     "fixtures": 300,
     "qualified": 5,
@@ -3617,8 +3617,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 79.4,
-      "support": 1.05,
+      "score": 79.6,
+      "support": 1.09,
       "supporters": [
         "Trend",
         "League Bias"
@@ -3820,17 +3820,11 @@
       "version": "v195",
       "bet": false,
       "market": "No Bet",
-      "candidate": "Away Team Over 0.5 Goals",
-      "score": 75.4,
-      "support": 0.46,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
       "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+      "independence": 0
     },
     {
       "id": 1592157,
@@ -4992,21 +4986,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1546069,
-      "date": "2026-07-20",
-      "home": "São Caetano",
-      "away": "São José EC",
-      "league": "Copa Paulista",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
       "id": 1499993,
       "date": "2026-07-20",
       "home": "Atletico Atlas",
@@ -5815,6 +5794,21 @@
       "date": "2026-07-21",
       "home": "Henan Jianye",
       "away": "Dalian Zhixing",
+      "league": "FA Cup",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1567358,
+      "date": "2026-07-21",
+      "home": "Shanghai Shenhua",
+      "away": "Qingdao Jonoon",
       "league": "FA Cup",
       "version": "v195",
       "bet": false,
