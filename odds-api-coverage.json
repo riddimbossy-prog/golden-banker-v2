@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-20T22:13:32.113Z",
+  "generatedAt": "2026-07-20T22:26:10.565Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -14,14 +14,6 @@
       "sportTitle": "Primera División - Argentina",
       "score": 0.305,
       "matches": 6
-    },
-    {
-      "league": "Copa Paulista",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.305,
-      "matches": 9
     },
     {
       "league": "Primera C",
@@ -40,22 +32,6 @@
       "matches": 28
     },
     {
-      "league": "Premier League",
-      "country": "Lebanon",
-      "sportKey": "soccer_epl",
-      "sportTitle": "EPL",
-      "score": 0.987,
-      "matches": 3
-    },
-    {
-      "league": "Primera División",
-      "country": "Bolivia",
-      "sportKey": "soccer_argentina_primera_division",
-      "sportTitle": "Primera División - Argentina",
-      "score": 0.653,
-      "matches": 10
-    },
-    {
       "league": "Primera División - Apertura",
       "country": "Uruguay",
       "sportKey": "soccer_argentina_primera_division",
@@ -70,6 +46,14 @@
       "sportTitle": "Brazil Série A",
       "score": 0.305,
       "matches": 8
+    },
+    {
+      "league": "Primera División",
+      "country": "Bolivia",
+      "sportKey": "soccer_argentina_primera_division",
+      "sportTitle": "Primera División - Argentina",
+      "score": 0.653,
+      "matches": 9
     },
     {
       "league": "FA Cup",
@@ -94,6 +78,14 @@
       "sportTitle": "K League 1",
       "score": 0.695,
       "matches": 12
+    },
+    {
+      "league": "Premier League",
+      "country": "Lebanon",
+      "sportKey": "soccer_epl",
+      "sportTitle": "EPL",
+      "score": 0.987,
+      "matches": 2
     },
     {
       "league": "Premier Soccer League",
@@ -318,6 +310,14 @@
       "sportTitle": "Brazil Série A",
       "score": 0.43,
       "matches": 2
+    },
+    {
+      "league": "Copa Paulista",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.305,
+      "matches": 8
     },
     {
       "league": "MLS Next Pro",
@@ -944,7 +944,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 2051,
+  "matchesConsidered": 2038,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -956,36 +956,6 @@
     {
       "league": "Friendlies Clubs",
       "country": "World",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
-      "league": "First League",
-      "country": "Bulgaria",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
-      "league": "Liga I",
-      "country": "Romania",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
-      "league": "Liga Pro",
-      "country": "Ecuador",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
-      "league": "1. Deild",
-      "country": "Iceland",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.125
-    },
-    {
-      "league": "Úrvalsdeild",
-      "country": "Iceland",
       "reason": "No matching soccer sport key",
       "bestScore": 0
     },
@@ -1024,6 +994,12 @@
       "country": "Colombia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.2
+    },
+    {
+      "league": "Liga Pro",
+      "country": "Ecuador",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
     },
     {
       "league": "Tasmania NPL",
@@ -1088,6 +1064,12 @@
     {
       "league": "UEFA Europa League",
       "country": "World",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.125
+    },
+    {
+      "league": "1. Deild",
+      "country": "Iceland",
       "reason": "No matching soccer sport key",
       "bestScore": 0.125
     },
@@ -1164,6 +1146,12 @@
       "bestScore": 0.143
     },
     {
+      "league": "Liga I",
+      "country": "Romania",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
       "league": "Second League",
       "country": "Bulgaria",
       "reason": "No matching soccer sport key",
@@ -1194,6 +1182,12 @@
       "bestScore": 0
     },
     {
+      "league": "First League",
+      "country": "Bulgaria",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
       "league": "Premiership Women",
       "country": "Northern-Ireland",
       "reason": "No matching soccer sport key",
@@ -1210,6 +1204,12 @@
       "country": "Iceland",
       "reason": "No matching soccer sport key",
       "bestScore": 0.125
+    },
+    {
+      "league": "Úrvalsdeild",
+      "country": "Iceland",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
     },
     {
       "league": "CONCACAF U20 - Qualification",
@@ -1740,9 +1740,57 @@
       "reason": "No event/team match"
     },
     {
-      "league": "Primera División",
-      "home": "San Antonio Bulo Bulo",
-      "away": "ABB",
+      "league": "Primera División - Apertura",
+      "home": "Atletico Torque",
+      "away": "Danubio",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División - Apertura",
+      "home": "Defensor Sporting",
+      "away": "Liverpool Montevideo",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División - Apertura",
+      "home": "Club Nacional",
+      "away": "Progreso",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División - Apertura",
+      "home": "Central Espanol",
+      "away": "Liverpool Montevideo",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División - Apertura",
+      "home": "Defensor Sporting",
+      "away": "Cerro",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División - Apertura",
+      "home": "Deportivo Maldonado",
+      "away": "Juventud",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División - Apertura",
+      "home": "Racing Montevideo",
+      "away": "Boston River",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División - Apertura",
+      "home": "Albion FC",
+      "away": "Danubio",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División - Apertura",
+      "home": "Penarol",
+      "away": "Cerro Largo",
       "reason": "No event/team match"
     },
     {
@@ -1797,60 +1845,6 @@
       "league": "Primera División",
       "home": "Blooming",
       "away": "The Strongest",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División - Apertura",
-      "home": "Atletico Torque",
-      "away": "Danubio",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División - Apertura",
-      "home": "Defensor Sporting",
-      "away": "Liverpool Montevideo",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División - Apertura",
-      "home": "Club Nacional",
-      "away": "Progreso",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División - Apertura",
-      "home": "Central Espanol",
-      "away": "Liverpool Montevideo",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División - Apertura",
-      "home": "Defensor Sporting",
-      "away": "Cerro",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División - Apertura",
-      "home": "Deportivo Maldonado",
-      "away": "Juventud",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División - Apertura",
-      "home": "Racing Montevideo",
-      "away": "Boston River",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División - Apertura",
-      "home": "Albion FC",
-      "away": "Danubio",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División - Apertura",
-      "home": "Penarol",
-      "away": "Cerro Largo",
       "reason": "No event/team match"
     },
     {
@@ -2304,60 +2298,6 @@
       "reason": "No event/team match"
     },
     {
-      "league": "Copa Paulista",
-      "home": "São Caetano",
-      "away": "São José EC",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Copa Paulista",
-      "home": "União São João",
-      "away": "XV de Piracicaba",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Copa Paulista",
-      "home": "Noroeste",
-      "away": "União São João",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Copa Paulista",
-      "home": "Primavera SP",
-      "away": "Oeste",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Copa Paulista",
-      "home": "XV de Piracicaba",
-      "away": "Comercial",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Copa Paulista",
-      "home": "São José EC",
-      "away": "EC São Bernardo",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Copa Paulista",
-      "home": "Juventus",
-      "away": "Paulista",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Copa Paulista",
-      "home": "Linense",
-      "away": "Marília",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Copa Paulista",
-      "home": "Santo André",
-      "away": "São Caetano",
-      "reason": "No event/team match"
-    },
-    {
       "league": "Copa Rio",
       "home": "Volta Redonda",
       "away": "São Gonçalo EC RJ",
@@ -2452,6 +2392,66 @@
       "home": "Atletico Paranaense",
       "away": "Internacional",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Santos",
+      "away": "Chapecoense-sc",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Vasco DA Gama",
+      "away": "Mirassol",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Bahia",
+      "away": "Corinthians",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Cruzeiro",
+      "away": "Botafogo",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "RB Bragantino",
+      "away": "Coritiba",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Flamengo",
+      "away": "Sao Paulo",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Gremio",
+      "away": "Fluminense",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Palmeiras",
+      "away": "Atletico-MG",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Remo",
+      "away": "Vitoria",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Catarinense - 2",
+      "home": "Blumenau",
+      "away": "Nação",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -2480,27 +2480,27 @@
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_epl",
+      "sportKey": "soccer_china_superleague",
       "market": "btts"
     },
     {
-      "sportKey": "soccer_epl",
+      "sportKey": "soccer_china_superleague",
       "market": "draw_no_bet"
     },
     {
-      "sportKey": "soccer_epl",
+      "sportKey": "soccer_china_superleague",
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_china_superleague",
+      "sportKey": "soccer_epl",
       "market": "btts"
     },
     {
-      "sportKey": "soccer_china_superleague",
+      "sportKey": "soccer_epl",
       "market": "draw_no_bet"
     },
     {
-      "sportKey": "soccer_china_superleague",
+      "sportKey": "soccer_epl",
       "market": "double_chance"
     },
     {
@@ -2808,31 +2808,6 @@
       "statusCode": 422
     },
     {
-      "label": "soccer_epl:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
       "label": "soccer_china_superleague:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -2854,6 +2829,31 @@
     },
     {
       "label": "soccer_china_superleague:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_epl:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_epl:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_epl:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_epl:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_epl:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3390,5 +3390,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-20T22:13:47.945Z"
+  "completedAt": "2026-07-20T22:26:20.471Z"
 }
