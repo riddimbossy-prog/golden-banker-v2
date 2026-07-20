@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-20T12:05:32.255Z",
+  "generatedAt": "2026-07-20T12:15:56.214Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -1008,7 +1008,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 2076,
+  "matchesConsidered": 2074,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -3491,5 +3491,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-20T12:05:38.312Z"
+  "completedAt": "2026-07-20T12:17:27.547Z"
 }
