@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-20T18:04:37.551Z",
+  "generatedAt": "2026-07-20T18:15:45.179Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,31 +13,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 554
-    },
-    {
-      "league": "Premier League",
-      "country": "Lebanon",
-      "sportKey": "soccer_epl",
-      "sportTitle": "EPL",
-      "score": 0.987,
-      "matches": 4
-    },
-    {
-      "league": "Veikkausliiga",
-      "country": "Finland",
-      "sportKey": "soccer_finland_veikkausliiga",
-      "sportTitle": "Veikkausliiga - Finland",
-      "score": 1,
-      "matches": 8
-    },
-    {
-      "league": "Ykkönen",
-      "country": "Finland",
-      "sportKey": "soccer_finland_veikkausliiga",
-      "sportTitle": "Veikkausliiga - Finland",
-      "score": 0.38,
-      "matches": 8
+      "matches": 553
     },
     {
       "league": "First League",
@@ -94,6 +70,14 @@
       "sportTitle": "Primera División - Argentina",
       "score": 0.513,
       "matches": 28
+    },
+    {
+      "league": "Premier League",
+      "country": "Lebanon",
+      "sportKey": "soccer_epl",
+      "sportTitle": "EPL",
+      "score": 0.987,
+      "matches": 3
     },
     {
       "league": "Primera División",
@@ -328,6 +312,14 @@
       "matches": 5
     },
     {
+      "league": "Ykkönen",
+      "country": "Finland",
+      "sportKey": "soccer_finland_veikkausliiga",
+      "sportTitle": "Veikkausliiga - Finland",
+      "score": 0.38,
+      "matches": 7
+    },
+    {
       "league": "Eliteserien",
       "country": "Norway",
       "sportKey": "soccer_norway_eliteserien",
@@ -510,6 +502,14 @@
       "sportTitle": "EFL Cup",
       "score": 0.463,
       "matches": 28
+    },
+    {
+      "league": "Veikkausliiga",
+      "country": "Finland",
+      "sportKey": "soccer_finland_veikkausliiga",
+      "sportTitle": "Veikkausliiga - Finland",
+      "score": 1,
+      "matches": 6
     },
     {
       "league": "Kakkonen - Lohko A",
@@ -1008,7 +1008,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 2071,
+  "matchesConsidered": 2060,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1024,36 +1024,6 @@
       "bestScore": 0.222
     },
     {
-      "league": "1 Lyga",
-      "country": "Lithuania",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.125
-    },
-    {
-      "league": "Virsliga",
-      "country": "Latvia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
-      "league": "Liga I",
-      "country": "Romania",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
-      "league": "A Lyga",
-      "country": "Lithuania",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
-      "league": "1. Liga",
-      "country": "Latvia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
       "league": "Segunda División",
       "country": "Peru",
       "reason": "No matching soccer sport key",
@@ -1062,6 +1032,12 @@
     {
       "league": "First League",
       "country": "Bulgaria",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
+      "league": "Liga I",
+      "country": "Romania",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
     },
@@ -1094,6 +1070,12 @@
       "country": "Australia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.167
+    },
+    {
+      "league": "1 Lyga",
+      "country": "Lithuania",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.125
     },
     {
       "league": "Botola Pro",
@@ -1224,6 +1206,12 @@
     {
       "league": "Second League",
       "country": "Bulgaria",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
+      "league": "A Lyga",
+      "country": "Lithuania",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
     },
@@ -1360,6 +1348,12 @@
       "bestScore": 0.125
     },
     {
+      "league": "1. Liga",
+      "country": "Latvia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
       "league": "David Kipiani Cup",
       "country": "Georgia",
       "reason": "No matching soccer sport key",
@@ -1456,15 +1450,15 @@
       "bestScore": 0.111
     },
     {
-      "league": "Friendlies Clubs",
-      "home": "Cambridge United",
-      "away": "Braintree",
-      "reason": "No event/team match"
+      "league": "Virsliga",
+      "country": "Latvia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
     },
     {
       "league": "Friendlies Clubs",
-      "home": "Velden",
-      "away": "Wolfsberger AC",
+      "home": "Cambridge United",
+      "away": "Braintree",
       "reason": "No event/team match"
     },
     {
@@ -2516,6 +2510,12 @@
       "home": "FC Liefering",
       "away": "Eintracht Braunschweig",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Al Diriyah",
+      "away": "FA 2000",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -2532,30 +2532,6 @@
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_epl",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_epl",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_epl",
-      "market": "double_chance"
-    },
-    {
-      "sportKey": "soccer_finland_veikkausliiga",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_finland_veikkausliiga",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_finland_veikkausliiga",
-      "market": "double_chance"
-    },
-    {
       "sportKey": "soccer_russia_premier_league",
       "market": "btts"
     },
@@ -2616,6 +2592,18 @@
       "market": "double_chance"
     },
     {
+      "sportKey": "soccer_epl",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_epl",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_epl",
+      "market": "double_chance"
+    },
+    {
       "sportKey": "soccer_china_superleague",
       "market": "btts"
     },
@@ -2661,6 +2649,18 @@
     },
     {
       "sportKey": "soccer_norway_eliteserien",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_finland_veikkausliiga",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_finland_veikkausliiga",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_finland_veikkausliiga",
       "market": "double_chance"
     },
     {
@@ -2859,56 +2859,6 @@
       "statusCode": 422
     },
     {
-      "label": "soccer_epl:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_finland_veikkausliiga:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_finland_veikkausliiga:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_finland_veikkausliiga:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_finland_veikkausliiga:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_finland_veikkausliiga:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
       "label": "soccer_russia_premier_league:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -3034,6 +2984,31 @@
       "statusCode": 422
     },
     {
+      "label": "soccer_epl:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_epl:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_epl:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_epl:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_epl:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
       "label": "soccer_china_superleague:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -3130,6 +3105,31 @@
     },
     {
       "label": "soccer_norway_eliteserien:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_finland_veikkausliiga:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_finland_veikkausliiga:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_finland_veikkausliiga:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_finland_veikkausliiga:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_finland_veikkausliiga:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3491,5 +3491,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-20T18:04:52.984Z"
+  "completedAt": "2026-07-20T18:15:50.957Z"
 }
