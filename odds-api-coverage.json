@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-20T21:36:17.416Z",
+  "generatedAt": "2026-07-20T21:47:06.556Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -14,6 +14,14 @@
       "sportTitle": "Primera División - Argentina",
       "score": 0.305,
       "matches": 6
+    },
+    {
+      "league": "Copa Paulista",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.305,
+      "matches": 9
     },
     {
       "league": "Primera C",
@@ -310,14 +318,6 @@
       "sportTitle": "Brazil Série A",
       "score": 0.43,
       "matches": 2
-    },
-    {
-      "league": "Copa Paulista",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.305,
-      "matches": 8
     },
     {
       "league": "MLS Next Pro",
@@ -2304,147 +2304,147 @@
       "reason": "No event/team match"
     },
     {
-      "league": "Premier League",
-      "home": "Al Ansar",
-      "away": "Al Nejmeh",
+      "league": "Copa Paulista",
+      "home": "São Caetano",
+      "away": "São José EC",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier League",
-      "home": "Tadamon Sour",
-      "away": "Racing",
+      "league": "Copa Paulista",
+      "home": "União São João",
+      "away": "XV de Piracicaba",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier League",
-      "home": "Racing",
-      "away": "Reyady Abaseya",
+      "league": "Copa Paulista",
+      "home": "Noroeste",
+      "away": "União São João",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier League",
-      "home": "Tsirang",
-      "away": "Drukpa",
+      "league": "Copa Paulista",
+      "home": "Primavera SP",
+      "away": "Oeste",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier League",
-      "home": "Tensung",
-      "away": "Paro",
+      "league": "Copa Paulista",
+      "home": "XV de Piracicaba",
+      "away": "Comercial",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier League",
-      "home": "RTC",
-      "away": "Bhutan U19",
+      "league": "Copa Paulista",
+      "home": "São José EC",
+      "away": "EC São Bernardo",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier Soccer League",
-      "home": "Herentals",
-      "away": "Manica Diamonds",
+      "league": "Copa Paulista",
+      "home": "Juventus",
+      "away": "Paulista",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier Soccer League",
-      "home": "Chicken Inn",
-      "away": "TelOne",
+      "league": "Copa Paulista",
+      "home": "Linense",
+      "away": "Marília",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier Soccer League",
-      "home": "Platinum",
-      "away": "Dynamos",
+      "league": "Copa Paulista",
+      "home": "Santo André",
+      "away": "São Caetano",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier Soccer League",
-      "home": "Scotland Mabvuku",
-      "away": "Bulawayo Chiefs",
+      "league": "Copa Rio",
+      "home": "Volta Redonda",
+      "away": "São Gonçalo EC RJ",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier Soccer League",
-      "home": "Simba Bhora",
-      "away": "MWOS",
+      "league": "Copa Rio",
+      "home": "Nova Iguaçu",
+      "away": "América RJ",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier Soccer League",
-      "home": "Kariba",
-      "away": "Highlanders",
+      "league": "Copa Rio",
+      "home": "CFRJ / Maricá",
+      "away": "Pérolas Negras",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier Soccer League",
-      "home": "Agama",
-      "away": "Hardrock",
+      "league": "Copa Rio",
+      "home": "Bangu",
+      "away": "Olaria",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier Soccer League",
-      "home": "CAPS United",
-      "away": "Hunters",
+      "league": "Copa Rio",
+      "home": "Portuguesa RJ",
+      "away": "Americano Campos",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier Soccer League",
-      "home": "Triangle United",
-      "away": "Ngezi Platinum",
+      "league": "Copa Rio",
+      "home": "Madureira",
+      "away": "Bonsucesso",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier Soccer League",
-      "home": "MWOS",
-      "away": "Platinum",
+      "league": "Copa Rio",
+      "home": "Boavista SC",
+      "away": "CEAC / Araruama",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier Soccer League",
-      "home": "Bulawayo Chiefs",
-      "away": "Kariba",
+      "league": "Copa Rio",
+      "home": "Sampaio Corrêa RJ",
+      "away": "Resende",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier Soccer League",
-      "home": "Highlanders",
-      "away": "Chicken Inn",
+      "league": "Serie A",
+      "home": "Atletico-MG",
+      "away": "Bahia",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier Soccer League",
-      "home": "Hunters",
-      "away": "Herentals",
+      "league": "Serie A",
+      "home": "Coritiba",
+      "away": "Palmeiras",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier Soccer League",
-      "home": "Manica Diamonds",
-      "away": "Triangle United",
+      "league": "Serie A",
+      "home": "Chapecoense-sc",
+      "away": "Flamengo",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier Soccer League",
-      "home": "Ngezi Platinum",
-      "away": "Hardrock",
+      "league": "Serie A",
+      "home": "Internacional",
+      "away": "Cruzeiro",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier Soccer League",
-      "home": "Simba Bhora",
-      "away": "Agama",
+      "league": "Serie A",
+      "home": "Sao Paulo",
+      "away": "Atletico Paranaense",
       "reason": "No event/team match"
     },
     {
-      "league": "Premier Soccer League",
-      "home": "TelOne",
-      "away": "CAPS United",
+      "league": "Serie A",
+      "home": "Botafogo",
+      "away": "Vitoria",
       "reason": "No event/team match"
     },
     {
-      "league": "Victoria Premier League 2",
-      "home": "Keilor Park",
-      "away": "Bayside Argonauts",
+      "league": "Serie A",
+      "home": "Corinthians",
+      "away": "Remo",
       "reason": "No event/team match"
     },
     {
@@ -2468,27 +2468,27 @@
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_epl",
+      "sportKey": "soccer_brazil_campeonato",
       "market": "btts"
     },
     {
-      "sportKey": "soccer_epl",
+      "sportKey": "soccer_brazil_campeonato",
       "market": "draw_no_bet"
     },
     {
-      "sportKey": "soccer_epl",
+      "sportKey": "soccer_brazil_campeonato",
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_brazil_campeonato",
+      "sportKey": "soccer_epl",
       "market": "btts"
     },
     {
-      "sportKey": "soccer_brazil_campeonato",
+      "sportKey": "soccer_epl",
       "market": "draw_no_bet"
     },
     {
-      "sportKey": "soccer_brazil_campeonato",
+      "sportKey": "soccer_epl",
       "market": "double_chance"
     },
     {
@@ -2783,31 +2783,6 @@
       "statusCode": 422
     },
     {
-      "label": "soccer_epl:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
       "label": "soccer_brazil_campeonato:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -2829,6 +2804,31 @@
     },
     {
       "label": "soccer_brazil_campeonato:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_epl:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_epl:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_epl:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_epl:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_epl:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3390,5 +3390,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-20T21:36:27.591Z"
+  "completedAt": "2026-07-20T21:47:19.954Z"
 }
