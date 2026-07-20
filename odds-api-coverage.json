@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-20T14:31:08.737Z",
+  "generatedAt": "2026-07-20T14:37:58.050Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,7 +13,7 @@
       "sportKey": "soccer_fifa_world_cup",
       "sportTitle": "FIFA World Cup",
       "score": 0.323,
-      "matches": 556
+      "matches": 555
     },
     {
       "league": "Premier League",
@@ -1008,7 +1008,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 2074,
+  "matchesConsidered": 2073,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1454,12 +1454,6 @@
       "country": "Serbia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.111
-    },
-    {
-      "league": "Friendlies Clubs",
-      "home": "Sagan Tosu",
-      "away": "Verspah Oita",
-      "reason": "No event/team match"
     },
     {
       "league": "Friendlies Clubs",
@@ -2516,6 +2510,12 @@
       "home": "Rangers",
       "away": "Saint Etienne",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Tenerife",
+      "away": "Getafe",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -3491,5 +3491,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-20T14:31:25.791Z"
+  "completedAt": "2026-07-20T14:38:14.601Z"
 }
