@@ -1,4 +1,4 @@
-/* Predict2U v268 — team trend explorer, strict matchup lab and global fixture-date filter. */
+/* Predict2U v269 — team trend explorer, matchup lab, date filter and daily automatic profile picks. */
 (function(){
   'use strict';
   const $=id=>document.getElementById(id);
@@ -102,12 +102,14 @@
   rankingRules.season.defenceWorst={...rankingRules.edge.defenceWorst,title:'Season Defence — Worst'};
 
   const params=new URLSearchParams(location.search);
-  let mode=['rankings','trends','lab'].includes(params.get('mode'))?params.get('mode'):'rankings';
+  let mode=['rankings','trends','lab','auto'].includes(params.get('mode'))?params.get('mode'):'rankings';
   let view=['edge','season'].includes(params.get('view'))?params.get('view'):'edge';
   let category=['best','worst','attack','defence'].includes(params.get('category'))?params.get('category'):'best';
   let polarity=['Best','Worst'].includes(params.get('polarity'))?params.get('polarity'):'Best';
   let trend=trends[params.get('trend')]?params.get('trend'):'unbeaten';
-  let rankQuery='',rankLeague='all',trendQuery='',trendLeague='all';
+  let rankQuery='',rankLeague='all',trendQuery='',trendLeague='all',autoQuery='',autoLeague='all',autoMarket='all';
+  let autoRegistry=new Map();
+  const autoCache=new Map();
   const rankKey=()=>category==='attack'?`attack${polarity}`:category==='defence'?`defence${polarity}`:category;
   const allProfiles=latestProfiles(fixturePool);
   const activeProfiles=()=>latestProfiles(selectedFixturePool());
@@ -140,11 +142,12 @@
     const leagues=[...new Set(activeProfiles().map(r=>r.league))].sort();
     setOptions($('team-rank-league'),leagues,rankLeague);rankLeague=$('team-rank-league')?$('team-rank-league').value:'all';
     setOptions($('team-trend-league'),leagues,trendLeague);trendLeague=$('team-trend-league')?$('team-trend-league').value:'all';
+    setOptions($('team-auto-league'),leagues,autoLeague);autoLeague=$('team-auto-league')?$('team-auto-league').value:'all';
   }
   function setSelectedDate(value){
     selectedDate=validDate(value)&&availableDates.includes(value)?value:'all';
     const url=new URL(location.href);if(selectedDate==='all')url.searchParams.delete('date');else url.searchParams.set('date',selectedDate);history.replaceState(null,'',url);
-    refreshLeagueFilters();updateDateSummary();renderRankings();renderTrends();populateLabMatches();
+    refreshLeagueFilters();updateDateSummary();renderRankings();renderTrends();populateLabMatches();renderAutoPicks();
   }
   function rankCard(r,cfg){
     const reason=cfg.reasons(r).map(x=>`<li>${esc(x)}</li>`).join('');
@@ -250,6 +253,125 @@
     $('lab-result').innerHTML=`<div class="p2u-lab-result-head"><div><span>${esc(m.league||'')}</span><h2>${esc(h.team)} <i>vs</i> ${esc(a.team)}</h2><p>${esc(m.matchDate||'')} · projected total ${fmt(result.projection)}</p></div></div><div class="p2u-lab-profiles">${profileBox(h,homeTrait)}${profileBox(a,awayTrait)}</div>${primaryHtml}${supportHtml}${warnHtml}<p class="p2u-lab-disclaimer">This is a statistical match classification, not a guarantee. It only uses the currently loaded split data and odds.</p>`;
   }
   function analyseSelected(){const rows=labMatches(),selected=rows.find(x=>String(x.m.id)===$('lab-home-team').value);if(selected)renderAnalysis(selected.m);}
+
+  function traitStrength(r,key){
+    if(!r)return 0;
+    const values={
+      wins:(r.win??0)*82+Math.min(18,Math.max(0,(r.ppg??0)-1.5)*18),
+      losses:(r.loss??0)*82+Math.min(18,Math.max(0,1.2-(r.ppg??1.2))*18),
+      winless:Math.max(Math.min(100,(r.noWin||0)*10),r.win===null?0:(1-r.win)*100),
+      unbeaten:Math.max(Math.min(100,(r.noLoss||0)*10),(r.unbeaten??0)*100),
+      draws:(r.draw??0)*100,nodraws:Math.max(Math.min(100,(r.noDraw||0)*10),r.draw===null?0:(1-r.draw)*100),
+      over15:(r.over15??0)*100,under15:(r.under15??0)*100,over25:(r.over25??0)*100,under25:(r.under25??0)*100,
+      over35:(r.over35??0)*100,under35:(r.under35??0)*100,gg:(r.btts??0)*100,ng:(r.noBtts??0)*100
+    };
+    return clamp(values[key]||0);
+  }
+  function qualifyingTraits(r){
+    return Object.keys(trends).filter(key=>traitPass(r,key)).sort((a,b)=>traitStrength(r,b)-traitStrength(r,a));
+  }
+  function marketFamily(market){
+    const x=String(market||'');
+    if(x==='No Draw — 12')return 'nodraw';
+    if(x.includes('Both Teams to Score'))return 'btts';
+    if(x.includes('Over ')||x.includes('Under '))return 'goals';
+    if(x.includes('or Draw'))return 'double';
+    if(x.includes('to win'))return 'result';
+    return 'other';
+  }
+  function profileMarketCompatibility(homeTrait,awayTrait,market,h,a){
+    const x=String(market||'');
+    const inSet=(key,list)=>list.includes(key);
+    if(x===`${h.team} to win`)return inSet(homeTrait,['wins','unbeaten'])&&inSet(awayTrait,['losses','winless'])?12:0;
+    if(x===`${a.team} to win`)return inSet(homeTrait,['losses','winless'])&&inSet(awayTrait,['wins','unbeaten'])?12:0;
+    if(x===`${h.team} or Draw`)return inSet(homeTrait,['unbeaten','wins'])&&inSet(awayTrait,['winless','losses'])?10:0;
+    if(x===`Draw or ${a.team}`)return inSet(homeTrait,['winless','losses'])&&inSet(awayTrait,['unbeaten','wins'])?10:0;
+    if(x==='No Draw — 12')return (homeTrait==='nodraws'&&awayTrait==='nodraws')||(['wins','losses'].includes(homeTrait)&&['wins','losses'].includes(awayTrait))?10:0;
+    const both=(list)=>inSet(homeTrait,list)&&inSet(awayTrait,list);
+    if(x==='Over 1.5 Goals')return both(['over15','over25','gg'])?9:0;
+    if(x==='Under 1.5 Goals')return both(['under15','under25','ng'])?9:0;
+    if(x==='Over 2.5 Goals')return both(['over25','over35','gg'])?9:0;
+    if(x==='Under 2.5 Goals')return both(['under25','under35','ng'])?9:0;
+    if(x==='Over 3.5 Goals')return both(['over35','over25','gg'])?9:0;
+    if(x==='Under 3.5 Goals')return both(['under35','under25','ng'])?9:0;
+    if(x==='Both Teams to Score — Yes')return both(['gg','over15','over25'])?11:0;
+    if(x==='Both Teams to Score — No')return both(['ng','under25','under35','winless'])?11:0;
+    return 0;
+  }
+  function autoSelectionFor(m){
+    const h=sideRow(m,'home'),a=sideRow(m,'away');
+    if((h.games||0)<MIN_SAMPLE||(a.games||0)<MIN_SAMPLE)return null;
+    const homeTraits=qualifyingTraits(h).slice(0,6),awayTraits=qualifyingTraits(a).slice(0,6);
+    if(!homeTraits.length||!awayTraits.length)return null;
+    let best=null;
+    for(const ht of homeTraits){
+      for(const at of awayTraits){
+        const result=analyseMatch(m,ht,at),primary=result.primary;
+        if(!primary||primary.score<80||primary.odds===null||primary.odds<1.15)continue;
+        const compatibility=profileMarketCompatibility(ht,at,primary.market,h,a);
+        if(!compatibility)continue;
+        const second=result.candidates.filter(c=>c.market!==primary.market)[0]||null;
+        const margin=second?primary.score-second.score:10;
+        if(margin<2.5)continue;
+        const pairStrength=(traitStrength(h,ht)+traitStrength(a,at))/2;
+        const rank=primary.score+pairStrength*.04+compatibility+Math.min(4,margin*.25);
+        const row={m,h,a,homeTrait:ht,awayTrait:at,primary,supporting:result.supporting,warnings:result.warnings,projection:result.projection,sample:result.sample,margin,pairStrength,compatibility,rank};
+        if(!best||row.rank>best.rank)best=row;
+      }
+    }
+    return best;
+  }
+  function automaticSelections(){
+    const cacheKey=selectedDate;
+    if(autoCache.has(cacheKey))return autoCache.get(cacheKey);
+    const rows=selectedFixturePool().map(autoSelectionFor).filter(Boolean);
+    const unique=new Map();
+    for(const row of rows){
+      const key=String(row.m.id??`${row.m.home}|${row.m.away}|${dateOf(row.m)}`);
+      const old=unique.get(key);if(!old||row.rank>old.rank)unique.set(key,row);
+    }
+    const result=[...unique.values()].sort((a,b)=>String(dateOf(a.m)).localeCompare(String(dateOf(b.m)))||b.primary.score-a.primary.score);
+    autoCache.set(cacheKey,result);
+    return result;
+  }
+  function autoPickCard(row,key){
+    const {m,h,a,homeTrait,awayTrait,primary,sample,margin}=row;
+    const reasons=primary.reasons.slice(0,3).map(x=>`<li>${esc(x)}</li>`).join('');
+    return `<article class="p2u-auto-pick-card">
+      <div class="p2u-auto-pick-top"><div><span>${esc(m.league||'Unknown league')}</span><small>${esc(dateOf(m))}${m.kickoff?` · ${esc(String(m.kickoff).slice(11,16))}`:''}</small></div><b>${Math.round(primary.score)}%</b></div>
+      <div class="p2u-auto-teams"><h3>${esc(h.team)} <i>vs</i> ${esc(a.team)}</h3><p>${esc(m.country||'')} · split sample ${sample}+</p></div>
+      <div class="p2u-auto-profiles"><span><small>HOME PROFILE</small><b>${esc(trends[homeTrait].label)}</b></span><span><small>AWAY PROFILE</small><b>${esc(trends[awayTrait].label)}</b></span></div>
+      <div class="p2u-auto-market"><span>AUTOMATIC PICK</span><h3>${esc(primary.market)}</h3><div><b>Odds ${fmt(primary.odds)}</b><b>${Math.round(primary.score)}% strength</b><b>${fmt(margin)} margin</b></div></div>
+      <ul class="p2u-auto-reasons">${reasons}</ul>
+      <button type="button" class="p2u-auto-open-lab" data-auto-open="${esc(key)}">Open in Matchup Lab</button>
+    </article>`;
+  }
+  function renderAutoPicks(){
+    const raw=automaticSelections();
+    autoRegistry=new Map();
+    raw.forEach((row,i)=>autoRegistry.set(String(i),row));
+    let rows=raw.filter(row=>{
+      if(autoLeague!=='all'&&row.m.league!==autoLeague)return false;
+      if(autoMarket!=='all'&&marketFamily(row.primary.market)!==autoMarket)return false;
+      if(autoQuery&&!`${row.h.team} ${row.a.team} ${row.m.league} ${row.primary.market}`.toLowerCase().includes(autoQuery))return false;
+      return true;
+    });
+    const checked=selectedFixturePool().length,noBet=Math.max(0,checked-raw.length);
+    $('team-auto-summary').innerHTML=`<span><b>${checked}</b><small>Fixtures checked</small></span><span><b>${raw.length}</b><small>Qualified picks</small></span><span><b>${noBet}</b><small>No Bet / insufficient profile</small></span>`;
+    $('team-auto-count').textContent=`${rows.length} selection${rows.length===1?'':'s'}`;
+    const groups=new Map();
+    for(const row of rows){const d=dateOf(row.m)||'Unknown date';if(!groups.has(d))groups.set(d,[]);groups.get(d).push(row);}
+    $('team-auto-grid').innerHTML=rows.length?[...groups.entries()].map(([d,list])=>`<section class="p2u-auto-date-group"><header><div><span>${esc(friendlyDate(d))}</span><small>${list.length} automatic selection${list.length===1?'':'s'}</small></div></header><div class="p2u-auto-pick-grid">${list.map(row=>{const key=[...autoRegistry.entries()].find(([,v])=>v===row)?.[0]||'';return autoPickCard(row,key);}).join('')}</div></section>`).join(''):'<div class="p2u-team-rank-empty">No fixture cleared the automatic profile, sample, odds, strength and market-separation checks for this date.</div>';
+    document.querySelectorAll('[data-auto-open]').forEach(button=>button.onclick=()=>openAutoInLab(button.dataset.autoOpen));
+  }
+  function openAutoInLab(key){
+    const row=autoRegistry.get(String(key));if(!row)return;
+    $('lab-home-trait').value=row.homeTrait;$('lab-away-trait').value=row.awayTrait;populateLabMatches();
+    const id=String(row.m.id);if([...$('lab-home-team').options].some(o=>o.value===id))$('lab-home-team').value=id;
+    $('lab-away-team').innerHTML=`<option>${esc(row.a.team)}</option>`;
+    setMode('lab');renderAnalysis(row.m);
+  }
+
   function setMode(next){
     mode=next;document.querySelectorAll('[data-team-mode]').forEach(b=>b.classList.toggle('is-active',b.dataset.teamMode===mode));
     document.querySelectorAll('[data-team-panel]').forEach(p=>{const active=p.dataset.teamPanel===mode;p.hidden=!active;p.classList.toggle('is-active',active);});
@@ -272,7 +394,10 @@
     $('lab-home-trait').onchange=populateLabMatches;$('lab-away-trait').onchange=populateLabMatches;
     $('lab-home-team').onchange=()=>{const rows=labMatches(),selected=rows.find(x=>String(x.m.id)===$('lab-home-team').value);$('lab-away-team').innerHTML=selected?`<option>${esc(selected.away.team)}</option>`:'<option>—</option>';if(selected)renderLabPlaceholder(selected);};
     $('lab-analyse').onclick=analyseSelected;
-    renderRankings();renderTrends();populateLabMatches();setMode(mode);
+    $('team-auto-league').onchange=e=>{autoLeague=e.target.value;renderAutoPicks();};
+    $('team-auto-market').onchange=e=>{autoMarket=e.target.value;renderAutoPicks();};
+    $('team-auto-search').oninput=e=>{autoQuery=String(e.target.value||'').trim().toLowerCase();renderAutoPicks();};
+    renderRankings();renderTrends();populateLabMatches();renderAutoPicks();setMode(mode);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();

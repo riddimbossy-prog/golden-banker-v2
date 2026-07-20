@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="mobile-responsive-v265.css" data-p2u-responsive-v265="true">
   <link rel="stylesheet" href="controls-v267.css" data-p2u-controls-v267="true">
   <link rel="stylesheet" href="team-date-filter-v268.css" data-p2u-team-date-v268="true">
+  <link rel="stylesheet" href="team-auto-picks-v269.css" data-p2u-team-auto-v269="true">
 </head>
 <body>
 <script src="unified-shell-v234.js"></script>
@@ -25,7 +26,7 @@
   <section class="p2u-team-rank-hero">
     <span class="p2u-team-rank-kicker">TEAM INTELLIGENCE LAB</span>
     <h1>Rank teams. Read trends. Test matchups.</h1>
-    <p>Explore reliable home and away split profiles, then combine two opposing team trends—such as a winless home team against a no-draw away team—to produce one strict data-led match suggestion.</p>
+    <p>Explore reliable home and away split profiles, combine two opposing team trends, or let Daily Auto Picks scan every loaded fixture and publish one strict data-led selection per match.</p>
     <small id="team-rank-window"></small>
   </section>
 
@@ -33,13 +34,14 @@
     <button class="is-active" data-team-mode="rankings">Power rankings</button>
     <button data-team-mode="trends">Trend lists</button>
     <button data-team-mode="lab">Matchup Lab</button>
+    <button data-team-mode="auto">Daily Auto Picks</button>
   </nav>
 
   <section class="p2u-team-date-filter" aria-label="Team Intelligence fixture date filter">
     <div class="p2u-team-date-copy">
       <span>Fixture date</span>
       <strong id="team-date-summary">All loaded dates</strong>
-      <small>Applies to Power Rankings, Trend Lists and Matchup Lab.</small>
+      <small>Applies to Power Rankings, Trend Lists, Matchup Lab and Daily Auto Picks.</small>
     </div>
     <label class="p2u-team-date-field" for="team-date-filter">
       <span>Select date</span>
@@ -121,6 +123,36 @@
     </section>
     <section id="lab-result" class="p2u-lab-result" aria-live="polite"><div class="p2u-team-rank-empty">Select two profiles and a loaded fixture to generate a strict matchup analysis.</div></section>
   </section>
+
+  <section id="team-panel-auto" class="p2u-team-panel" data-team-panel="auto" hidden>
+    <section class="p2u-auto-picks-hero">
+      <div>
+        <span class="p2u-team-rank-kicker">DAILY PROFILE PICKS</span>
+        <h2>Automatic matchup selections</h2>
+        <p>Predict2U scans every loaded fixture for qualifying home and away profiles, tests every compatible profile pairing through the Matchup Lab, removes borderline outcomes and publishes only the strongest market for each match.</p>
+      </div>
+      <div class="p2u-auto-picks-rules">
+        <span>8+ split matches</span>
+        <span>80%+ model strength</span>
+        <span>One pick per fixture</span>
+        <span>No forced picks</span>
+      </div>
+    </section>
+
+    <section class="p2u-auto-picks-controls" aria-label="Daily automatic selection filters">
+      <label class="p2u-team-field"><span>League</span><select id="team-auto-league" aria-label="Automatic picks league"><option value="all">All leagues</option></select></label>
+      <label class="p2u-team-field"><span>Market group</span><select id="team-auto-market" aria-label="Automatic picks market group"><option value="all">All markets</option><option value="result">Match result</option><option value="double">Double chance</option><option value="goals">Goal lines</option><option value="btts">GG / NG</option><option value="nodraw">No Draw</option></select></label>
+      <label class="p2u-team-field p2u-team-field-grow"><span>Search</span><input id="team-auto-search" type="search" placeholder="Search team, league or pick…"></label>
+    </section>
+
+    <div class="p2u-auto-summary" id="team-auto-summary" aria-live="polite"></div>
+    <div class="p2u-team-rank-section-head">
+      <div><h2>Daily automatic selections</h2><p>Each fixture is analysed once. Only the highest-ranked non-borderline market is shown.</p></div>
+      <span id="team-auto-count" class="p2u-team-rank-count">0 selections</span>
+    </div>
+    <section id="team-auto-grid" class="p2u-auto-date-list"><div class="p2u-team-rank-empty">Scanning loaded fixtures and compatible team profiles…</div></section>
+  </section>
+
 </main>
 <script src="current-data.js"></script>
 <script src="data-freshness-v264.js"></script>

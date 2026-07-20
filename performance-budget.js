@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* Predict2U v268 — production performance and architecture budget. */
+/* Predict2U v269 — production performance and architecture budget. */
 'use strict';
 const fs=require('fs'),path=require('path');const root=__dirname;const errors=[],warnings=[],passed=[];
 const exists=f=>fs.existsSync(path.join(root,f));const read=f=>fs.readFileSync(path.join(root,f),'utf8');const size=f=>fs.statSync(path.join(root,f)).size;
@@ -38,8 +38,8 @@ assert(/p2u-team-home-title/.test(index),'Homepage includes the dedicated Team I
 const teams=read('team-rankings.js');
 for(const token of ['MIN_SAMPLE=8','HORIZON_DAYS=10','today','Season Power','URLSearchParams'])assert(teams.includes(token),`Team Intelligence includes ${token}`);
 const sw=read('sw.js');
-for(const token of ["VERSION='v268'",'current-data.js','data-meta.json','data-freshness-v264.js','engine-governance-v264.js','app-launch-v264.js','app-launch-v264.css','first-run-v264.js','tailwind-lite-v264.css','mobile-responsive-v265.css','team-date-filter-v268.css'])assert(sw.includes(token),`Service worker includes ${token}`);
-assert(/predict2u-v268/.test(sw),'Service worker cache is v268');
+for(const token of ["VERSION='v269'",'current-data.js','data-meta.json','data-freshness-v264.js','engine-governance-v264.js','app-launch-v264.js','app-launch-v264.css','first-run-v264.js','tailwind-lite-v264.css','mobile-responsive-v265.css','team-date-filter-v268.css','team-auto-picks-v269.css'])assert(sw.includes(token),`Service worker includes ${token}`);
+assert(/predict2u-v269/.test(sw),'Service worker cache is v268');
 const manifest=JSON.parse(read('manifest.webmanifest'));
 assert(String(manifest.description||'').includes('independent model families'),'Manifest uses governed-model description');
 assert(Array.isArray(manifest.icons)&&manifest.icons.some(i=>String(i.sizes).includes('192'))&&manifest.icons.some(i=>String(i.sizes).includes('512')),'Manifest includes 192 and 512 app icons');
@@ -47,7 +47,7 @@ assert(Array.isArray(manifest.screenshots)&&manifest.screenshots.some(x=>x.src==
 const shell=read('unified-shell-v234.js');for(const label of ['Home','Today','Bankers','Engines','Proof'])assert(shell.includes(label),`Primary shell includes ${label}`);
 const mobileBlock=(shell.match(/const mobileLinks=\[[\s\S]*?\];/)||[''])[0];assert(/all-engines\.html/.test(mobileBlock)&&!/proof\.html/.test(mobileBlock),'Mobile dock removes Proof');
 assert(/const moreLinks=\[[\s\S]*?proof\.html/.test(shell),'More menu includes Proof');
-for(const token of ['Trend lists','Matchup Lab','winless','nodraws','Both Teams to Score'])assert(teams.includes(token)||read('team-rankings.html').includes(token),`Team Intelligence v268 includes ${token}`);
+for(const token of ['Trend lists','Matchup Lab','Daily Auto Picks','winless','nodraws','Both Teams to Score'])assert(teams.includes(token)||read('team-rankings.html').includes(token),`Team Intelligence v269 includes ${token}`);
 const report={generatedAt:new Date().toISOString(),version:exists('BUILD_VERSION.txt')?read('BUILD_VERSION.txt').trim():'unknown',errors,warnings,passedCount:passed.length,budgets:Object.fromEntries(Object.entries(budgets).map(([f,limit])=>[f,{bytes:exists(f)?size(f):null,limit}]))};
 fs.writeFileSync(path.join(root,'performance-budget.json'),JSON.stringify(report,null,2)+'\n');
 console.log(`Performance budget: ${errors.length} error(s), ${warnings.length} warning(s), ${passed.length} checks passed.`);for(const x of errors)console.error('ERROR:',x);for(const x of warnings)console.warn('WARNING:',x);if(errors.length)process.exit(1);
