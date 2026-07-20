@@ -1,20 +1,12 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-20T10:54:20.892Z",
+  "generatedAt": "2026-07-20T11:05:51.318Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
   "sportsAvailable": 63,
   "soccerSportsAvailable": 38,
   "sportMappings": [
-    {
-      "league": "Primera B",
-      "country": "Chile",
-      "sportKey": "soccer_chile_campeonato",
-      "sportTitle": "Primera División - Chile",
-      "score": 0.466,
-      "matches": 9
-    },
     {
       "league": "Friendlies Clubs",
       "country": "World",
@@ -688,6 +680,14 @@
       "matches": 5
     },
     {
+      "league": "Primera B",
+      "country": "Chile",
+      "sportKey": "soccer_chile_campeonato",
+      "sportTitle": "Primera División - Chile",
+      "score": 0.466,
+      "matches": 7
+    },
+    {
       "league": "Liga de Expansión MX",
       "country": "Mexico",
       "sportKey": "soccer_mexico_ligamx",
@@ -1008,7 +1008,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 2012,
+  "matchesConsidered": 2009,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1017,12 +1017,6 @@
   "derivedHtftMatches": 0,
   "bookmakerRows": 0,
   "unmatched": [
-    {
-      "league": "Segunda División",
-      "country": "Uruguay",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
     {
       "league": "Calcutta Premier Division",
       "country": "India",
@@ -1408,6 +1402,12 @@
       "bestScore": 0.143
     },
     {
+      "league": "Segunda División",
+      "country": "Uruguay",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
       "league": "NB II",
       "country": "Hungary",
       "reason": "No matching soccer sport key",
@@ -1454,108 +1454,6 @@
       "country": "Serbia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.111
-    },
-    {
-      "league": "Primera B",
-      "home": "Deportes Santa Cruz",
-      "away": "San Marcos de Arica",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera B",
-      "home": "San Luis",
-      "away": "Union Espanola",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera B",
-      "home": "Deportes Iquique",
-      "away": "Deportes Temuco",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera B",
-      "home": "Santiago Wanderers",
-      "away": "Union San Felipe",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera B",
-      "home": "Curico Unido",
-      "away": "San Luis",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera B",
-      "home": "Cobreloa",
-      "away": "Deportes Santa Cruz",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera B",
-      "home": "D. Puerto Montt",
-      "away": "Antofagasta",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera B",
-      "home": "Rangers de Talca",
-      "away": "Deportes Copiapo",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera B",
-      "home": "San Marcos de Arica",
-      "away": "Magallanes",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "Union La Calera",
-      "away": "Everton de Vina",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "Colo Colo",
-      "away": "Deportes Limache",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "Coquimbo Unido",
-      "away": "Universidad de Concepcion",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "Huachipato",
-      "away": "Cobresal",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "U. Catolica",
-      "away": "D. La Serena",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "Nublense",
-      "away": "Palestino",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "A. Italiano",
-      "away": "Universidad de Chile",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Segunda División",
-      "home": "General Velásquez",
-      "away": "Trasandino",
-      "reason": "No event/team match"
     },
     {
       "league": "Friendlies Clubs",
@@ -2516,22 +2414,112 @@
       "home": "Venezia",
       "away": "Vis Pesaro",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Bergisch Gladbach",
+      "away": "1. FC Köln",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "HNK Gorica",
+      "away": "Shakhtar Donetsk",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Ascoli",
+      "away": "Grosseto",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Estrela",
+      "away": "Nacional",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Bayern Alzenau",
+      "away": "Wormatia Worms",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Cordoba",
+      "away": "Sevilla",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Preston",
+      "away": "Cambridge United",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Cambuur",
+      "away": "Utrecht",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Penafiel",
+      "away": "Leganes",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Club Brugge II",
+      "away": "OH Leuven",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Union St. Gilloise",
+      "away": "Patro Eisden",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Auxerre",
+      "away": "Orleans",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Fleetwood Town",
+      "away": "Carlisle",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Lommel United",
+      "away": "ADO Den Haag",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Obolon'-Brovar",
+      "away": "Kudrivka",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Barcelona",
+      "away": "Europa Fc",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Friendlies Clubs",
+      "home": "Sardarapat",
+      "away": "Shirak",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
     {
-      "sportKey": "soccer_chile_campeonato",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_chile_campeonato",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_chile_campeonato",
-      "market": "double_chance"
-    },
-    {
       "sportKey": "soccer_fifa_world_cup",
       "market": "btts"
     },
@@ -2805,6 +2793,18 @@
     },
     {
       "sportKey": "soccer_league_of_ireland",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_chile_campeonato",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_chile_campeonato",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_chile_campeonato",
       "market": "double_chance"
     },
     {
@@ -2833,31 +2833,6 @@
     }
   ],
   "requestErrors": [
-    {
-      "label": "soccer_chile_campeonato:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_chile_campeonato:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_chile_campeonato:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_chile_campeonato:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_chile_campeonato:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
     {
       "label": "soccer_fifa_world_cup:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
@@ -3434,6 +3409,31 @@
       "statusCode": 422
     },
     {
+      "label": "soccer_chile_campeonato:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_chile_campeonato:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_chile_campeonato:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_chile_campeonato:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_chile_campeonato:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
       "label": "soccer_spain_la_liga:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -3491,5 +3491,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-20T10:54:27.863Z"
+  "completedAt": "2026-07-20T11:06:09.457Z"
 }
