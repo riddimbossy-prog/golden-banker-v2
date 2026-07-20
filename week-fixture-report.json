@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T21:34:00.376Z",
+  "generatedAt": "2026-07-20T22:42:32.303Z",
   "windowStart": "2026-07-20",
   "windowEnd": "2026-07-26",
   "totalSavedMatches": 6201,
@@ -16,8 +16,8 @@
       "enriched": 66,
       "fixtureOnly": 0,
       "upcoming": 25,
-      "live": 10,
-      "finished": 30
+      "live": 1,
+      "finished": 39
     },
     {
       "date": "2026-07-21",

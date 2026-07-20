@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-20T21:33:58.570Z",
+  "updated": "2026-07-20T22:42:30.530Z",
   "summary": {
     "fixtures": 300,
     "qualified": 6,
@@ -3438,7 +3438,7 @@
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
       "score": 75.4,
-      "support": 0.45,
+      "support": 0.44,
       "supporters": [
         "League Bias"
       ],
@@ -3474,7 +3474,7 @@
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
       "score": 75.4,
-      "support": 0.45,
+      "support": 0.44,
       "supporters": [
         "League Bias"
       ],
@@ -3551,8 +3551,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 78.1,
-      "support": 0.72,
+      "score": 78,
+      "support": 0.7,
       "supporters": [
         "Trend",
         "League Bias"
@@ -3617,8 +3617,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 79.6,
-      "support": 1.09,
+      "score": 79.5,
+      "support": 1.07,
       "supporters": [
         "Trend",
         "League Bias"
@@ -3626,15 +3626,7 @@
       "independence": 2,
       "exactSupport": 2,
       "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Double Chance 1X",
-          "support": 0.31,
-          "engines": [
-            "Momentum"
-          ]
-        }
-      ],
+      "alternatives": [],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
@@ -3678,7 +3670,7 @@
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
       "score": 75.4,
-      "support": 0.45,
+      "support": 0.44,
       "supporters": [
         "League Bias"
       ],
@@ -3729,7 +3721,7 @@
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
       "score": 75,
-      "support": 0.36,
+      "support": 0.34,
       "supporters": [
         "League Bias"
       ],
@@ -3750,7 +3742,7 @@
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
       "score": 75.4,
-      "support": 0.45,
+      "support": 0.44,
       "supporters": [
         "League Bias"
       ],
@@ -4009,11 +4001,17 @@
       "version": "v195",
       "bet": false,
       "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
+      "candidate": "Second Half Over 0.5",
+      "score": 76.2,
+      "support": 0.65,
+      "supporters": [
+        "Halves"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
       "conflictIndex": 0,
-      "independence": 0
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
       "id": 1549968,
@@ -4420,11 +4418,17 @@
       "version": "v195",
       "bet": false,
       "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
+      "candidate": "Second Half Over 0.5",
+      "score": 76,
+      "support": 0.6,
+      "supporters": [
+        "Halves"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
       "conflictIndex": 0,
-      "independence": 0
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
       "id": 1592159,
@@ -4698,7 +4702,7 @@
       "market": "No Bet",
       "candidate": "Second Half Over 0.5",
       "score": 75.6,
-      "support": 0.5,
+      "support": 0.49,
       "supporters": [
         "Halves"
       ],
@@ -4708,7 +4712,7 @@
       "alternatives": [
         {
           "market": "Home Team Over 0.5 Goals",
-          "support": 0.36,
+          "support": 0.35,
           "engines": [
             "League Bias"
           ]
