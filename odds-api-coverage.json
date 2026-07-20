@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-20T22:46:09.732Z",
+  "generatedAt": "2026-07-20T22:55:52.323Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -944,7 +944,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 2041,
+  "matchesConsidered": 2038,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -958,12 +958,6 @@
       "country": "World",
       "reason": "No matching soccer sport key",
       "bestScore": 0
-    },
-    {
-      "league": "First League",
-      "country": "Bulgaria",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
     },
     {
       "league": "Division Intermedia",
@@ -3396,5 +3390,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-20T22:46:15.195Z"
+  "completedAt": "2026-07-20T22:55:58.079Z"
 }
