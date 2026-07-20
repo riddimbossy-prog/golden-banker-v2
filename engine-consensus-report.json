@@ -1,10 +1,10 @@
 {
   "version": "v195",
-  "updated": "2026-07-20T20:28:03.446Z",
+  "updated": "2026-07-20T21:33:58.570Z",
   "summary": {
     "fixtures": 300,
-    "qualified": 5,
-    "rejected": 295,
+    "qualified": 6,
+    "rejected": 294,
     "highConflict": 0
   },
   "fixtures": [
@@ -3902,8 +3902,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Away Team Over 0.5 Goals",
-      "score": 75,
-      "support": 0.34,
+      "score": 75.4,
+      "support": 0.46,
       "supporters": [
         "League Bias"
       ],
@@ -5246,27 +5246,6 @@
       "independence": 0
     },
     {
-      "id": 1586075,
-      "date": "2026-07-20",
-      "home": "Tacuary",
-      "away": "Deportivo Capiata",
-      "league": "Division Intermedia",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 75.3,
-      "support": 0.43,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1576801,
       "date": "2026-07-20",
       "home": "Atletico Torque",
@@ -5753,6 +5732,46 @@
       "supporters": [],
       "conflictIndex": 0,
       "independence": 0
+    },
+    {
+      "id": 1507004,
+      "date": "2026-07-21",
+      "home": "Jeju United FC",
+      "away": "Gangwon FC",
+      "league": "K League 1",
+      "version": "v195",
+      "bet": true,
+      "market": "Under 3.5 Goals",
+      "candidate": "Under 3.5 Goals",
+      "score": 84.4,
+      "support": 1.9,
+      "supporters": [
+        "Trend",
+        "Streaks",
+        "League Bias"
+      ],
+      "independence": 3,
+      "exactSupport": 3,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Double Chance X2",
+          "support": 0.7,
+          "engines": [
+            "PurePPG Strict",
+            "PurePPG Ultra",
+            "PurePPG Elite"
+          ]
+        },
+        {
+          "market": "Away DNB",
+          "support": 0.57,
+          "engines": [
+            "PurePPG Normal"
+          ]
+        }
+      ],
+      "reason": "3 engines across 3 independent evidence groups support the exact market."
     }
   ]
 }
