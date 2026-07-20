@@ -1,10 +1,10 @@
 {
   "version": "v195",
-  "updated": "2026-07-20T02:20:51.122Z",
+  "updated": "2026-07-20T03:23:33.848Z",
   "summary": {
     "fixtures": 300,
-    "qualified": 0,
-    "rejected": 300,
+    "qualified": 3,
+    "rejected": 297,
     "highConflict": 0
   },
   "fixtures": [
@@ -3277,35 +3277,6 @@
       "independence": 0
     },
     {
-      "id": 1498657,
-      "date": "2026-07-17",
-      "home": "Colegiales",
-      "away": "Midland",
-      "league": "Primera Nacional",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Under 3.5 Goals",
-      "score": 76.8,
-      "support": 0.8,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "First Half Under 1.5",
-          "support": 0.5,
-          "engines": [
-            "Halves"
-          ]
-        }
-      ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1523786,
       "date": "2026-07-18",
       "home": "Cooks Hill United",
@@ -3457,72 +3428,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1560655,
-      "date": "2026-07-18",
-      "home": "FC Andorra",
-      "away": "Stevenage",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
-      "id": 1589274,
-      "date": "2026-07-18",
-      "home": "Eltersdorf",
-      "away": "ASV Neumarkt",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
-      "id": 1560645,
-      "date": "2026-07-18",
-      "home": "KVC Westerlo",
-      "away": "Beerschot VA",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
-      "id": 1567673,
-      "date": "2026-07-18",
-      "home": "Vizela",
-      "away": "Chaves",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Away Team Over 0.5 Goals",
-      "score": 75,
-      "support": 0.34,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1567653,
       "date": "2026-07-18",
       "home": "Magdeburg II",
@@ -3580,21 +3485,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1583352,
-      "date": "2026-07-18",
-      "home": "Lichtenberg",
-      "away": "Dresden II",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
       "id": 1539066,
       "date": "2026-07-18",
       "home": "Ilves W",
@@ -3650,21 +3540,6 @@
         }
       ],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1560664,
-      "date": "2026-07-18",
-      "home": "Diosgyori VTK",
-      "away": "Cigand SE",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
     },
     {
       "id": 1560649,
@@ -3894,72 +3769,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1584885,
-      "date": "2026-07-18",
-      "home": "Ballymacash Rangers",
-      "away": "Greystones United",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Home Team Over 0.5 Goals",
-      "score": 75.4,
-      "support": 0.45,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1584888,
-      "date": "2026-07-18",
-      "home": "Broń Radom",
-      "away": "Arka Pawlow",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
-      "id": 1584895,
-      "date": "2026-07-18",
-      "home": "Lusitânia Lourosa",
-      "away": "SC Braga B",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
-      "id": 1589279,
-      "date": "2026-07-18",
-      "home": "Feirense",
-      "away": "Arouca",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
       "id": 1591880,
       "date": "2026-07-18",
       "home": "Hapoel Haifa",
@@ -4022,27 +3831,6 @@
       "candidate": "Away Team Over 0.5 Goals",
       "score": 75.4,
       "support": 0.46,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1589282,
-      "date": "2026-07-18",
-      "home": "Todesfelde",
-      "away": "Lübeck II",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Home Team Over 0.5 Goals",
-      "score": 75.9,
-      "support": 0.57,
       "supporters": [
         "League Bias"
       ],
@@ -4119,21 +3907,6 @@
       "independence": 0
     },
     {
-      "id": 1583381,
-      "date": "2026-07-18",
-      "home": "Longridge Town",
-      "away": "Blackburn",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
       "id": 1583385,
       "date": "2026-07-18",
       "home": "KVC Westerlo",
@@ -4147,27 +3920,6 @@
       "supporters": [],
       "conflictIndex": 0,
       "independence": 0
-    },
-    {
-      "id": 1584901,
-      "date": "2026-07-18",
-      "home": "Huddersfield",
-      "away": "AFC Fylde",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Home Team Over 0.5 Goals",
-      "score": 75.4,
-      "support": 0.45,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
       "id": 1583337,
@@ -4185,27 +3937,6 @@
       "independence": 0
     },
     {
-      "id": 1589284,
-      "date": "2026-07-18",
-      "home": "Novaci",
-      "away": "Ohrid",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Home Team Over 0.5 Goals",
-      "score": 75.9,
-      "support": 0.57,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1565049,
       "date": "2026-07-18",
       "home": "Rodina Moskva II",
@@ -4219,42 +3950,6 @@
       "supporters": [],
       "conflictIndex": 0,
       "independence": 0
-    },
-    {
-      "id": 1560744,
-      "date": "2026-07-18",
-      "home": "Schwarz-Weiß Bregenz",
-      "away": "Imst",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
-      "id": 1591885,
-      "date": "2026-07-18",
-      "home": "Wiener Viktoria",
-      "away": "Stockerau",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Home Team Over 0.5 Goals",
-      "score": 75,
-      "support": 0.36,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
       "id": 1511611,
@@ -4293,63 +3988,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1584897,
-      "date": "2026-07-18",
-      "home": "Orlando Pirates",
-      "away": "Cadiz",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Away Team Over 0.5 Goals",
-      "score": 75.4,
-      "support": 0.46,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1591887,
-      "date": "2026-07-18",
-      "home": "Sporting Gijon",
-      "away": "Marino de Luanco",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
-      "id": 1582675,
-      "date": "2026-07-18",
-      "home": "Vitória U20",
-      "away": "Fluminense de Feira U20",
-      "league": "Baiano U20",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 75.9,
-      "support": 0.57,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1539857,
       "date": "2026-07-18",
       "home": "Carlos Renaux U20",
@@ -4369,57 +4007,6 @@
       "conflictIndex": 0,
       "alternatives": [],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1540203,
-      "date": "2026-07-18",
-      "home": "Atlético Cearense U20",
-      "away": "Anjos do Céu U20",
-      "league": "Cearense U20",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Double Chance 1X",
-      "score": 75.1,
-      "support": 0.37,
-      "supporters": [
-        "Trend"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1540221,
-      "date": "2026-07-18",
-      "home": "Juazeiro EC U20",
-      "away": "Tiangua CE U20",
-      "league": "Cearense U20",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
-      "id": 1584905,
-      "date": "2026-07-18",
-      "home": "Compostela",
-      "away": "Deportivo La Coruna",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
     },
     {
       "id": 1546264,
@@ -5239,44 +4826,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1508474,
-      "date": "2026-07-19",
-      "home": "Boston Legacy W",
-      "away": "Washington Spirit W",
-      "league": "NWSL Women",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Double Chance X2",
-      "score": 76.6,
-      "support": 0.76,
-      "supporters": [
-        "PurePPG Normal",
-        "PurePPG Strict",
-        "PurePPG Ultra"
-      ],
-      "independence": 1,
-      "exactSupport": 3,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Under 3.5 Goals",
-          "support": 0.55,
-          "engines": [
-            "League Bias"
-          ]
-        },
-        {
-          "market": "Second Half Over 0.5",
-          "support": 0.43,
-          "engines": [
-            "Halves"
-          ]
-        }
-      ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1511610,
       "date": "2026-07-19",
       "home": "Deportes Santa Cruz",
@@ -5371,78 +4920,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1595447,
-      "date": "2026-07-19",
-      "home": "Asheville City",
-      "away": "Appalachian",
-      "league": "USL League Two",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 76.4,
-      "support": 0.69,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1595448,
-      "date": "2026-07-19",
-      "home": "Flint City Bucks",
-      "away": "Steel City",
-      "league": "USL League Two",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 76.6,
-      "support": 0.74,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1595449,
-      "date": "2026-07-19",
-      "home": "Vermont Green",
-      "away": "Ocean City Nor'easters",
-      "league": "USL League Two",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Over 1.5 Goals",
-      "score": 80.5,
-      "support": 1.32,
-      "supporters": [
-        "Trend",
-        "League Bias"
-      ],
-      "independence": 2,
-      "exactSupport": 2,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Second Half Over 0.5",
-          "support": 0.74,
-          "engines": [
-            "Halves"
-          ]
-        }
-      ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1595450,
       "date": "2026-07-19",
       "home": "San Francisco City",
@@ -5461,148 +4938,6 @@
       "exactSupport": 1,
       "conflictIndex": 0,
       "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1513233,
-      "date": "2026-07-20",
-      "home": "Sporting KC II",
-      "away": "Minnesota United II",
-      "league": "MLS Next Pro",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 75.4,
-      "support": 0.45,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1549411,
-      "date": "2026-07-20",
-      "home": "Alianza Lima",
-      "away": "Sport Huancayo",
-      "league": "Primera División",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Home Team Over 0.5 Goals",
-      "score": 79.7,
-      "support": 1.12,
-      "supporters": [
-        "Trend",
-        "League Bias"
-      ],
-      "independence": 2,
-      "exactSupport": 2,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Second Half Over 0.5",
-          "support": 0.56,
-          "engines": [
-            "Halves"
-          ]
-        }
-      ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1519412,
-      "date": "2026-07-20",
-      "home": "Independiente del Valle",
-      "away": "Emelec",
-      "league": "Liga Pro",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Double Chance 1X",
-      "score": 80.1,
-      "support": 1.22,
-      "supporters": [
-        "PurePPG Ultra",
-        "PurePPG Elite",
-        "PurePPG Apex",
-        "Trend"
-      ],
-      "independence": 2,
-      "exactSupport": 4,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Under 3.5 Goals",
-          "support": 0.65,
-          "engines": [
-            "League Bias"
-          ]
-        }
-      ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1538393,
-      "date": "2026-07-20",
-      "home": "Blooming",
-      "away": "Real Tomayapo",
-      "league": "Primera División",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Double Chance 1X",
-      "score": 76.8,
-      "support": 0.8,
-      "supporters": [
-        "Trend"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Second Half Over 0.5",
-          "support": 0.74,
-          "engines": [
-            "Halves"
-          ]
-        }
-      ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1513232,
-      "date": "2026-07-20",
-      "home": "Real Monarchs",
-      "away": "Tacoma Defiance",
-      "league": "MLS Next Pro",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 76,
-      "support": 0.61,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Double Chance 1X",
-          "support": 0.58,
-          "engines": [
-            "PurePPG Normal",
-            "PurePPG Ultra"
-          ]
-        }
-      ],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
@@ -5656,6 +4991,847 @@
       "home": "Measurers",
       "away": "Peerless",
       "league": "Calcutta Premier Division",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1595184,
+      "date": "2026-07-20",
+      "home": "Mohammedan",
+      "away": "Police",
+      "league": "Calcutta Premier Division",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1595185,
+      "date": "2026-07-20",
+      "home": "NA Suruchi Sangha",
+      "away": "Calcutta Police",
+      "league": "Calcutta Premier Division",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1548887,
+      "date": "2026-07-20",
+      "home": "Cambridge United",
+      "away": "Braintree",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Home Team Over 0.5 Goals",
+      "score": 75.4,
+      "support": 0.45,
+      "supporters": [
+        "League Bias"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1521647,
+      "date": "2026-07-20",
+      "home": "Luunja",
+      "away": "Tallinna Kalev II",
+      "league": "Esiliiga B",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Home Team Over 0.5 Goals",
+      "score": 83.6,
+      "support": 1.69,
+      "supporters": [
+        "Trend",
+        "Streaks",
+        "League Bias"
+      ],
+      "independence": 3,
+      "exactSupport": 3,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Home Win",
+          "support": 0.85,
+          "engines": [
+            "PurePPG Normal",
+            "PurePPG Strict",
+            "PurePPG Elite"
+          ]
+        },
+        {
+          "market": "Double Chance 1X",
+          "support": 0.85,
+          "engines": [
+            "PurePPG Ultra"
+          ]
+        },
+        {
+          "market": "Home DNB",
+          "support": 0.84,
+          "engines": [
+            "PurePPG Apex"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1593669,
+      "date": "2026-07-20",
+      "home": "Jwaaya FC",
+      "away": "Al Ahed",
+      "league": "Premier League",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Under 3.5 Goals",
+      "score": 75.8,
+      "support": 0.55,
+      "supporters": [
+        "League Bias"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Second Half Over 0.5",
+          "support": 0.49,
+          "engines": [
+            "Halves"
+          ]
+        },
+        {
+          "market": "Double Chance X2",
+          "support": 0.26,
+          "engines": [
+            "PurePPG Normal"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1556385,
+      "date": "2026-07-20",
+      "home": "Transinvest 2",
+      "away": "Neptūną Klaipėda",
+      "league": "1 Lyga",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Second Half Over 0.5",
+      "score": 75.9,
+      "support": 0.57,
+      "supporters": [
+        "Halves"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1495737,
+      "date": "2026-07-20",
+      "home": "Turku PS",
+      "away": "Ilves",
+      "league": "Veikkausliiga",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Home DNB",
+      "score": 76.7,
+      "support": 0.77,
+      "supporters": [
+        "PurePPG Ultra"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Home Team Over 0.5 Goals",
+          "support": 0.44,
+          "engines": [
+            "League Bias"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1515885,
+      "date": "2026-07-20",
+      "home": "FS Jelgava",
+      "away": "Rīgas FS",
+      "league": "Virsliga",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Away Team Over 0.5 Goals",
+      "score": 79.5,
+      "support": 1.08,
+      "supporters": [
+        "Trend",
+        "League Bias"
+      ],
+      "independence": 2,
+      "exactSupport": 2,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Double Chance X2",
+          "support": 0.85,
+          "engines": [
+            "PurePPG Ultra",
+            "PurePPG Elite"
+          ]
+        },
+        {
+          "market": "Second Half Over 0.5",
+          "support": 0.76,
+          "engines": [
+            "Halves"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1565183,
+      "date": "2026-07-20",
+      "home": "Corvinul Hunedoara",
+      "away": "Csikszereda",
+      "league": "Liga I",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1517219,
+      "date": "2026-07-20",
+      "home": "KPV-j",
+      "away": "Rops",
+      "league": "Ykkönen",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Away Team Over 0.5 Goals",
+      "score": 80,
+      "support": 1.19,
+      "supporters": [
+        "Trend",
+        "League Bias"
+      ],
+      "independence": 2,
+      "exactSupport": 2,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Away Win",
+          "support": 0.85,
+          "engines": [
+            "PurePPG Normal"
+          ]
+        },
+        {
+          "market": "Second Half Over 0.5",
+          "support": 0.8,
+          "engines": [
+            "Halves"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1547593,
+      "date": "2026-07-20",
+      "home": "Suduva Marijampole",
+      "away": "Hegelmann Litauen",
+      "league": "A Lyga",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Double Chance 1X",
+      "score": 81.5,
+      "support": 1.57,
+      "supporters": [
+        "PurePPG Ultra",
+        "Trend"
+      ],
+      "independence": 2,
+      "exactSupport": 2,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Second Half Over 0.5",
+          "support": 0.44,
+          "engines": [
+            "Halves"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1529574,
+      "date": "2026-07-20",
+      "home": "Tukums II",
+      "away": "Rīgas FS II",
+      "league": "1. Liga",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Second Half Over 0.5",
+      "score": 76.7,
+      "support": 0.77,
+      "supporters": [
+        "Halves"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Home Team Over 0.5 Goals",
+          "support": 0.4,
+          "engines": [
+            "League Bias"
+          ]
+        },
+        {
+          "market": "Double Chance X2",
+          "support": 0.39,
+          "engines": [
+            "Momentum"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1567689,
+      "date": "2026-07-20",
+      "home": "Velden",
+      "away": "Wolfsberger AC",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Away Team Over 0.5 Goals",
+      "score": 77.6,
+      "support": 0.61,
+      "supporters": [
+        "Trend",
+        "League Bias"
+      ],
+      "independence": 2,
+      "exactSupport": 2,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1559524,
+      "date": "2026-07-20",
+      "home": "Molinos El Pirata",
+      "away": "U. San Martin",
+      "league": "Segunda División",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Under 3.5 Goals",
+      "score": 75.6,
+      "support": 0.49,
+      "supporters": [
+        "League Bias"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1495738,
+      "date": "2026-07-20",
+      "home": "Mariehamn",
+      "away": "Lahti",
+      "league": "Veikkausliiga",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1515888,
+      "date": "2026-07-20",
+      "home": "Super Nova",
+      "away": "Grobiņa",
+      "league": "Virsliga",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Home Team Over 0.5 Goals",
+      "score": 75,
+      "support": 0.36,
+      "supporters": [
+        "League Bias"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1551052,
+      "date": "2026-07-20",
+      "home": "Slavia Sofia",
+      "away": "CSKA Sofia",
+      "league": "First League",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1577449,
+      "date": "2026-07-20",
+      "home": "Rotor Volgograd",
+      "away": "Ska-khabarovsk",
+      "league": "First League",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1494214,
+      "date": "2026-07-20",
+      "home": "Kalmar FF",
+      "away": "Malmo FF",
+      "league": "Allsvenskan",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "First Half Over 0.5",
+      "score": 75.2,
+      "support": 0.41,
+      "supporters": [
+        "Halves"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1494216,
+      "date": "2026-07-20",
+      "home": "Orgryte IS",
+      "away": "Djurgardens IF",
+      "league": "Allsvenskan",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Away Team Over 0.5 Goals",
+      "score": 82.7,
+      "support": 1.46,
+      "supporters": [
+        "Trend",
+        "Streaks",
+        "League Bias"
+      ],
+      "independence": 3,
+      "exactSupport": 3,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Second Half Over 0.5",
+          "support": 0.68,
+          "engines": [
+            "Halves"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1497627,
+      "date": "2026-07-20",
+      "home": "Norrby IF",
+      "away": "GIF Sundsvall",
+      "league": "Superettan",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Second Half Over 0.5",
+      "score": 76.4,
+      "support": 0.69,
+      "supporters": [
+        "Halves"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1549983,
+      "date": "2026-07-20",
+      "home": "Buenos Aires City",
+      "away": "Everton La Plata",
+      "league": "Torneo Promocional Amateur",
+      "version": "v195",
+      "bet": true,
+      "market": "Under 3.5 Goals",
+      "candidate": "Under 3.5 Goals",
+      "score": 84,
+      "support": 1.8,
+      "supporters": [
+        "Trend",
+        "Streaks",
+        "League Bias"
+      ],
+      "independence": 3,
+      "exactSupport": 3,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "3 engines across 3 independent evidence groups support the exact market."
+    },
+    {
+      "id": 1549981,
+      "date": "2026-07-20",
+      "home": "Barrancas UMET",
+      "away": "Ezeiza",
+      "league": "Torneo Promocional Amateur",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Under 3.5 Goals",
+      "score": 75.4,
+      "support": 0.45,
+      "supporters": [
+        "League Bias"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1546069,
+      "date": "2026-07-20",
+      "home": "São Caetano",
+      "away": "São José EC",
+      "league": "Copa Paulista",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1499993,
+      "date": "2026-07-20",
+      "home": "Atletico Atlas",
+      "away": "Sacachispas",
+      "league": "Primera C",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Under 3.5 Goals",
+      "score": 81.3,
+      "support": 1.53,
+      "supporters": [
+        "Trend",
+        "League Bias"
+      ],
+      "independence": 2,
+      "exactSupport": 2,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "First Half Under 1.5",
+          "support": 0.54,
+          "engines": [
+            "Halves"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1499994,
+      "date": "2026-07-20",
+      "home": "Berazategui",
+      "away": "Central Cordoba",
+      "league": "Primera C",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Under 3.5 Goals",
+      "score": 81.6,
+      "support": 1.59,
+      "supporters": [
+        "Trend",
+        "League Bias"
+      ],
+      "independence": 2,
+      "exactSupport": 2,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "First Half Under 1.5",
+          "support": 0.54,
+          "engines": [
+            "Halves"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1499999,
+      "date": "2026-07-20",
+      "home": "Deportivo Paraguayo",
+      "away": "Central Ballester",
+      "league": "Primera C",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Under 3.5 Goals",
+      "score": 81.6,
+      "support": 1.59,
+      "supporters": [
+        "Trend",
+        "League Bias"
+      ],
+      "independence": 2,
+      "exactSupport": 2,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "First Half Under 1.5",
+          "support": 0.42,
+          "engines": [
+            "Halves"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1500000,
+      "date": "2026-07-20",
+      "home": "Estrella Del Sur",
+      "away": "Lujan",
+      "league": "Primera C",
+      "version": "v195",
+      "bet": true,
+      "market": "Under 3.5 Goals",
+      "candidate": "Under 3.5 Goals",
+      "score": 84.5,
+      "support": 1.92,
+      "supporters": [
+        "Trend",
+        "Streaks",
+        "League Bias"
+      ],
+      "independence": 3,
+      "exactSupport": 3,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "First Half Under 1.5",
+          "support": 0.42,
+          "engines": [
+            "Halves"
+          ]
+        }
+      ],
+      "reason": "3 engines across 3 independent evidence groups support the exact market."
+    },
+    {
+      "id": 1500181,
+      "date": "2026-07-20",
+      "home": "Centro Español",
+      "away": "Leones de Rosario",
+      "league": "Primera C",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Under 3.5 Goals",
+      "score": 81.3,
+      "support": 1.53,
+      "supporters": [
+        "Trend",
+        "League Bias"
+      ],
+      "independence": 2,
+      "exactSupport": 2,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1498649,
+      "date": "2026-07-20",
+      "home": "Acassuso",
+      "away": "San Telmo",
+      "league": "Primera Nacional",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Under 3.5 Goals",
+      "score": 76.8,
+      "support": 0.8,
+      "supporters": [
+        "League Bias"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1498654,
+      "date": "2026-07-20",
+      "home": "Chacarita Juniors",
+      "away": "Club Atlético Güemes",
+      "league": "Primera Nacional",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Under 3.5 Goals",
+      "score": 76.8,
+      "support": 0.8,
+      "supporters": [
+        "League Bias"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "First Half Under 1.5",
+          "support": 0.46,
+          "engines": [
+            "Halves"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1498658,
+      "date": "2026-07-20",
+      "home": "Defensores De Belgrano",
+      "away": "Los Andes",
+      "league": "Primera Nacional",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Under 3.5 Goals",
+      "score": 76.8,
+      "support": 0.8,
+      "supporters": [
+        "League Bias"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "First Half Under 1.5",
+          "support": 0.5,
+          "engines": [
+            "Halves"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1498665,
+      "date": "2026-07-20",
+      "home": "San Martin S.J.",
+      "away": "Tristan Suarez",
+      "league": "Primera Nacional",
+      "version": "v195",
+      "bet": true,
+      "market": "Under 3.5 Goals",
+      "candidate": "Under 3.5 Goals",
+      "score": 84.9,
+      "support": 2.04,
+      "supporters": [
+        "Trend",
+        "Streaks",
+        "League Bias"
+      ],
+      "independence": 3,
+      "exactSupport": 3,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "3 engines across 3 independent evidence groups support the exact market."
+    },
+    {
+      "id": 1551047,
+      "date": "2026-07-20",
+      "home": "Botev Plovdiv",
+      "away": "Lokomotiv Sofia",
+      "league": "First League",
       "version": "v195",
       "bet": false,
       "market": "No Bet",
