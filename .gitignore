@@ -15,3 +15,7 @@ discovery/
 # Predict2U v251 paid Odds API runtime cache — never publish or merge
 odds-api-cache.json
 odds-api-cache-*.json
+
+# Private learning reports are workflow artifacts only
+.private/
+private-auto-learning-report*.json

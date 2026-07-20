@@ -1,0 +1,57 @@
+name: Predict2U Auto Picks Learning
+
+on:
+  schedule:
+    - cron: "35 * * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Compute without writing to Supabase"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: predict2u-auto-picks-learning
+  cancel-in-progress: false
+
+jobs:
+  learn:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Run private learning supervisor
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          AUTO_LEARNING_POLICY_B64: ${{ secrets.AUTO_LEARNING_POLICY_B64 }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
+          PRIVATE_REPORT_PATH: ${{ runner.temp }}/auto-picks-learning-private-v270.json
+        run: node auto-picks-learning-worker-v270.js
+      - name: Upload private learning report
+        uses: actions/upload-artifact@v4
+        with:
+          name: auto-picks-learning-private-v270
+          path: ${{ runner.temp }}/auto-picks-learning-private-v270.json
+          retention-days: 14
+      - name: Publish compact learning status
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git config user.name "predict2u-learning-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add auto-picks-learning-public-v270.json auto-picks-learning-guard-v270.js
+          if git diff --staged --quiet; then echo "No public learning change."; exit 0; fi
+          git commit -m "Update Auto Picks learning status"
+          for i in 1 2 3 4 5; do
+            git pull --rebase -X theirs origin main || { git rebase --abort 2>/dev/null || true; sleep $((i*5)); continue; }
+            git push origin HEAD:main && exit 0
+            sleep $((i*5))
+          done
+          exit 1

@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="controls-v267.css" data-p2u-controls-v267="true">
   <link rel="stylesheet" href="team-date-filter-v268.css" data-p2u-team-date-v268="true">
   <link rel="stylesheet" href="team-auto-picks-v269.css" data-p2u-team-auto-v269="true">
+  <link rel="stylesheet" href="auto-picks-learning-v270.css" data-p2u-auto-learning-v270="true">
 </head>
 <body>
 <script src="unified-shell-v234.js"></script>
@@ -139,6 +140,9 @@
       </div>
     </section>
 
+    <section id="team-auto-learning" class="p2u-auto-learning" aria-live="polite"><div><span>LEARNING SUPERVISOR</span><b>Monitoring</b></div><p>Auto Profile v1.1</p><small>Settled results are reviewed privately.</small></section>
+    <section id="team-auto-learning-recent" aria-live="polite"></section>
+
     <section class="p2u-auto-picks-controls" aria-label="Daily automatic selection filters">
       <label class="p2u-team-field"><span>League</span><select id="team-auto-league" aria-label="Automatic picks league"><option value="all">All leagues</option></select></label>
       <label class="p2u-team-field"><span>Market group</span><select id="team-auto-market" aria-label="Automatic picks market group"><option value="all">All markets</option><option value="result">Match result</option><option value="double">Double chance</option><option value="goals">Goal lines</option><option value="btts">GG / NG</option><option value="nodraw">No Draw</option></select></label>
@@ -156,6 +160,8 @@
 </main>
 <script src="current-data.js"></script>
 <script src="data-freshness-v264.js"></script>
+<script src="auto-picks-learning-guard-v270.js"></script>
+<script src="auto-picks-learning-v270.js"></script>
 <script src="team-rankings.js"></script>
 <script src="football-assets.js" defer></script>
 <script src="pwa-launch.js" defer></script>

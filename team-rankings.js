@@ -1,4 +1,4 @@
-/* Predict2U v269 — team trend explorer, matchup lab, date filter and daily automatic profile picks. */
+/* Predict2U v270 — Team Intelligence, Daily Auto Picks and private learning guard. */
 (function(){
   'use strict';
   const $=id=>document.getElementById(id);
@@ -110,6 +110,12 @@
   let rankQuery='',rankLeague='all',trendQuery='',trendLeague='all',autoQuery='',autoLeague='all',autoMarket='all';
   let autoRegistry=new Map();
   const autoCache=new Map();
+  const AUTO_MODEL_VERSION='Auto Profile v1.1';
+  const learningGuard=window.P2U_AUTO_LEARNING_GUARD_V270||{entries:{}};
+  const fixtureKey=m=>m&&m.id!=null?`f${m.id}`:`${m&&m.home||''}|${m&&m.away||''}|${dateOf(m)}`;
+  function learningOddsBand(v){const n=Number(v);if(!Number.isFinite(n))return 'na';if(n<1.30)return 'a';if(n<1.45)return 'b';if(n<1.60)return 'c';if(n<1.81)return 'd';return 'e';}
+  function learningHash(value){let h=0x811c9dc5;for(const ch of String(value)){h^=ch.charCodeAt(0);h=Math.imul(h,0x01000193);}return (h>>>0).toString(16).padStart(8,'0');}
+  function learningDecision(m,homeTrait,awayTrait,market,odds){const hash=learningHash([homeTrait,awayTrait,market,m&&m.league||'',learningOddsBand(odds)].join('|').toLowerCase());const e=learningGuard.entries&&learningGuard.entries[hash]||null;if(!e)return{hash,state:'monitor',delta:0};const state=e.s==='b'?'block':e.s==='w'?'watch':e.s==='p'?'boost':'stable';return{hash,state,delta:Number(e.d)||0};}
   const rankKey=()=>category==='attack'?`attack${polarity}`:category==='defence'?`defence${polarity}`:category;
   const allProfiles=latestProfiles(fixturePool);
   const activeProfiles=()=>latestProfiles(selectedFixturePool());
@@ -306,8 +312,13 @@
     let best=null;
     for(const ht of homeTraits){
       for(const at of awayTraits){
-        const result=analyseMatch(m,ht,at),primary=result.primary;
-        if(!primary||primary.score<80||primary.odds===null||primary.odds<1.15)continue;
+        const result=analyseMatch(m,ht,at),basePrimary=result.primary;
+        if(!basePrimary||basePrimary.score<80||basePrimary.odds===null||basePrimary.odds<1.15)continue;
+        const primary={...basePrimary,reasons:[...(basePrimary.reasons||[])]};
+        const learning=learningDecision(m,ht,at,primary.market,primary.odds);
+        if(learning.state==='block')continue;
+        primary.score=clamp(primary.score+learning.delta);
+        if(primary.score<80)continue;
         const compatibility=profileMarketCompatibility(ht,at,primary.market,h,a);
         if(!compatibility)continue;
         const second=result.candidates.filter(c=>c.market!==primary.market)[0]||null;
@@ -315,7 +326,7 @@
         if(margin<2.5)continue;
         const pairStrength=(traitStrength(h,ht)+traitStrength(a,at))/2;
         const rank=primary.score+pairStrength*.04+compatibility+Math.min(4,margin*.25);
-        const row={m,h,a,homeTrait:ht,awayTrait:at,primary,supporting:result.supporting,warnings:result.warnings,projection:result.projection,sample:result.sample,margin,pairStrength,compatibility,rank};
+        const row={m,h,a,homeTrait:ht,awayTrait:at,primary,supporting:result.supporting,warnings:result.warnings,projection:result.projection,sample:result.sample,margin,pairStrength,compatibility,rank,learningState:learning.state,learningHash:learning.hash,modelVersion:AUTO_MODEL_VERSION};
         if(!best||row.rank>best.rank)best=row;
       }
     }
@@ -337,8 +348,8 @@
   function autoPickCard(row,key){
     const {m,h,a,homeTrait,awayTrait,primary,sample,margin}=row;
     const reasons=primary.reasons.slice(0,3).map(x=>`<li>${esc(x)}</li>`).join('');
-    return `<article class="p2u-auto-pick-card">
-      <div class="p2u-auto-pick-top"><div><span>${esc(m.league||'Unknown league')}</span><small>${esc(dateOf(m))}${m.kickoff?` · ${esc(String(m.kickoff).slice(11,16))}`:''}</small></div><b>${Math.round(primary.score)}%</b></div>
+    return `<article class="p2u-auto-pick-card" data-auto-fixture="${esc(fixtureKey(m))}" data-auto-market="${esc(primary.market)}">
+      <div class="p2u-auto-pick-top"><div><span>${esc(m.league||'Unknown league')}</span><small>${esc(dateOf(m))}${m.kickoff?` · ${esc(String(m.kickoff).slice(11,16))}`:''}</small></div><div><span class="p2u-auto-learning-pill" data-learning-state="${esc(row.learningState||'monitor')}">Learning tracked</span><b>${Math.round(primary.score)}%</b></div></div>
       <div class="p2u-auto-teams"><h3>${esc(h.team)} <i>vs</i> ${esc(a.team)}</h3><p>${esc(m.country||'')} · split sample ${sample}+</p></div>
       <div class="p2u-auto-profiles"><span><small>HOME PROFILE</small><b>${esc(trends[homeTrait].label)}</b></span><span><small>AWAY PROFILE</small><b>${esc(trends[awayTrait].label)}</b></span></div>
       <div class="p2u-auto-market"><span>AUTOMATIC PICK</span><h3>${esc(primary.market)}</h3><div><b>Odds ${fmt(primary.odds)}</b><b>${Math.round(primary.score)}% strength</b><b>${fmt(margin)} margin</b></div></div>
@@ -363,6 +374,7 @@
     for(const row of rows){const d=dateOf(row.m)||'Unknown date';if(!groups.has(d))groups.set(d,[]);groups.get(d).push(row);}
     $('team-auto-grid').innerHTML=rows.length?[...groups.entries()].map(([d,list])=>`<section class="p2u-auto-date-group"><header><div><span>${esc(friendlyDate(d))}</span><small>${list.length} automatic selection${list.length===1?'':'s'}</small></div></header><div class="p2u-auto-pick-grid">${list.map(row=>{const key=[...autoRegistry.entries()].find(([,v])=>v===row)?.[0]||'';return autoPickCard(row,key);}).join('')}</div></section>`).join(''):'<div class="p2u-team-rank-empty">No fixture cleared the automatic profile, sample, odds, strength and market-separation checks for this date.</div>';
     document.querySelectorAll('[data-auto-open]').forEach(button=>button.onclick=()=>openAutoInLab(button.dataset.autoOpen));
+    if(window.P2UAutoLearningV270&&typeof window.P2UAutoLearningV270.decorate==='function')window.P2UAutoLearningV270.decorate(raw);
   }
   function openAutoInLab(key){
     const row=autoRegistry.get(String(key));if(!row)return;
@@ -399,5 +411,6 @@
     $('team-auto-search').oninput=e=>{autoQuery=String(e.target.value||'').trim().toLowerCase();renderAutoPicks();};
     renderRankings();renderTrends();populateLabMatches();renderAutoPicks();setMode(mode);
   }
+  if(window.P2U_HEADLESS_AUTO_V270){window.P2UAutoHeadlessV270={modelVersion:AUTO_MODEL_VERSION,automaticSelections,selectedFixturePool,sideRow,dateOf,fixtureKey};return;}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
