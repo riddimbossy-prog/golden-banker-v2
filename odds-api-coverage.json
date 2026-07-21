@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-21T05:56:31.883Z",
+  "generatedAt": "2026-07-21T06:06:04.004Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -8,12 +8,12 @@
   "soccerSportsAvailable": 36,
   "sportMappings": [
     {
-      "league": "Primera C",
-      "country": "Argentina",
+      "league": "Primera División - Apertura",
+      "country": "Uruguay",
       "sportKey": "soccer_argentina_primera_division",
       "sportTitle": "Primera División - Argentina",
-      "score": 0.513,
-      "matches": 20
+      "score": 0.286,
+      "matches": 10
     },
     {
       "league": "Primera Nacional",
@@ -21,15 +21,7 @@
       "sportKey": "soccer_argentina_primera_division",
       "sportTitle": "Primera División - Argentina",
       "score": 0.513,
-      "matches": 29
-    },
-    {
-      "league": "Primera División - Apertura",
-      "country": "Uruguay",
-      "sportKey": "soccer_argentina_primera_division",
-      "sportTitle": "Primera División - Argentina",
-      "score": 0.286,
-      "matches": 10
+      "matches": 25
     },
     {
       "league": "FA Cup",
@@ -158,6 +150,14 @@
       "sportTitle": "Brazil Série B",
       "score": 0.466,
       "matches": 8
+    },
+    {
+      "league": "Primera C",
+      "country": "Argentina",
+      "sportKey": "soccer_argentina_primera_division",
+      "sportTitle": "Primera División - Argentina",
+      "score": 0.513,
+      "matches": 15
     },
     {
       "league": "Reserve League",
@@ -960,7 +960,7 @@
       "matches": 1
     }
   ],
-  "matchesConsidered": 2122,
+  "matchesConsidered": 2113,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1450,147 +1450,63 @@
       "bestScore": 0.143
     },
     {
-      "league": "Primera C",
-      "home": "Atletico Atlas",
-      "away": "Sacachispas",
+      "league": "Primera División - Apertura",
+      "home": "Atletico Torque",
+      "away": "Danubio",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera C",
-      "home": "Berazategui",
-      "away": "Central Cordoba",
+      "league": "Primera División - Apertura",
+      "home": "Defensor Sporting",
+      "away": "Liverpool Montevideo",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera C",
-      "home": "Deportivo Paraguayo",
-      "away": "Central Ballester",
+      "league": "Primera División - Apertura",
+      "home": "Club Nacional",
+      "away": "Progreso",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera C",
-      "home": "Estrella Del Sur",
-      "away": "Lujan",
+      "league": "Primera División - Apertura",
+      "home": "Central Espanol",
+      "away": "Liverpool Montevideo",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera C",
-      "home": "Centro Español",
-      "away": "Leones de Rosario",
+      "league": "Primera División - Apertura",
+      "home": "Defensor Sporting",
+      "away": "Cerro",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera C",
-      "home": "Claypole",
-      "away": "Juventud Unida",
+      "league": "Primera División - Apertura",
+      "home": "Deportivo Maldonado",
+      "away": "Juventud",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera C",
-      "home": "Berazategui",
-      "away": "Mercedes",
+      "league": "Primera División - Apertura",
+      "home": "Racing Montevideo",
+      "away": "Boston River",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera C",
-      "home": "Argentino Rosario",
-      "away": "Puerto Nuevo",
+      "league": "Primera División - Apertura",
+      "home": "Albion FC",
+      "away": "Danubio",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera C",
-      "home": "Atletico Atlas",
-      "away": "Deportivo Español",
+      "league": "Primera División - Apertura",
+      "home": "Penarol",
+      "away": "Cerro Largo",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera C",
-      "home": "Canuelas",
-      "away": "Deportivo Muñiz",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera C",
-      "home": "Estrella Del Sur",
-      "away": "Deportivo Paraguayo",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera C",
-      "home": "Lugano",
-      "away": "Centro Español",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera C",
-      "home": "Victoriano Arenas",
-      "away": "JJ Urquiza",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera C",
-      "home": "Leones de Rosario",
-      "away": "Central Cordoba",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera C",
-      "home": "Lujan",
-      "away": "Central Ballester",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera C",
-      "home": "General Lamadrid",
-      "away": "Claypole",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera C",
-      "home": "Juventud Unida",
-      "away": "Defensores de Cambaceres",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera C",
-      "home": "Fénix",
-      "away": "Yupanqui",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera C",
-      "home": "Sacachispas",
-      "away": "Leandro N. Alem",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera C",
-      "home": "Sportivo Barracas",
-      "away": "El Porvenir",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera Nacional",
-      "home": "Acassuso",
-      "away": "San Telmo",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera Nacional",
-      "home": "Chacarita Juniors",
-      "away": "Club Atlético Güemes",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera Nacional",
-      "home": "Defensores De Belgrano",
-      "away": "Los Andes",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera Nacional",
-      "home": "San Martin S.J.",
-      "away": "Tristan Suarez",
+      "league": "Primera División - Apertura",
+      "home": "Atletico Torque",
+      "away": "Wanderers",
       "reason": "No event/team match"
     },
     {
@@ -1744,63 +1660,93 @@
       "reason": "No event/team match"
     },
     {
-      "league": "Primera División - Apertura",
-      "home": "Atletico Torque",
-      "away": "Danubio",
+      "league": "Primera C",
+      "home": "Claypole",
+      "away": "Juventud Unida",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera División - Apertura",
-      "home": "Defensor Sporting",
-      "away": "Liverpool Montevideo",
+      "league": "Primera C",
+      "home": "Berazategui",
+      "away": "Mercedes",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera División - Apertura",
-      "home": "Club Nacional",
-      "away": "Progreso",
+      "league": "Primera C",
+      "home": "Argentino Rosario",
+      "away": "Puerto Nuevo",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera División - Apertura",
-      "home": "Central Espanol",
-      "away": "Liverpool Montevideo",
+      "league": "Primera C",
+      "home": "Atletico Atlas",
+      "away": "Deportivo Español",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera División - Apertura",
-      "home": "Defensor Sporting",
-      "away": "Cerro",
+      "league": "Primera C",
+      "home": "Canuelas",
+      "away": "Deportivo Muñiz",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera División - Apertura",
-      "home": "Deportivo Maldonado",
-      "away": "Juventud",
+      "league": "Primera C",
+      "home": "Estrella Del Sur",
+      "away": "Deportivo Paraguayo",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera División - Apertura",
-      "home": "Racing Montevideo",
-      "away": "Boston River",
+      "league": "Primera C",
+      "home": "Lugano",
+      "away": "Centro Español",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera División - Apertura",
-      "home": "Albion FC",
-      "away": "Danubio",
+      "league": "Primera C",
+      "home": "Victoriano Arenas",
+      "away": "JJ Urquiza",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera División - Apertura",
-      "home": "Penarol",
-      "away": "Cerro Largo",
+      "league": "Primera C",
+      "home": "Leones de Rosario",
+      "away": "Central Cordoba",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera División - Apertura",
-      "home": "Atletico Torque",
-      "away": "Wanderers",
+      "league": "Primera C",
+      "home": "Lujan",
+      "away": "Central Ballester",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera C",
+      "home": "General Lamadrid",
+      "away": "Claypole",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera C",
+      "home": "Juventud Unida",
+      "away": "Defensores de Cambaceres",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera C",
+      "home": "Fénix",
+      "away": "Yupanqui",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera C",
+      "home": "Sacachispas",
+      "away": "Leandro N. Alem",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera C",
+      "home": "Sportivo Barracas",
+      "away": "El Porvenir",
       "reason": "No event/team match"
     },
     {
@@ -2467,6 +2413,60 @@
       "league": "Super League",
       "home": "Surkhon",
       "away": "Dinamo Samarqand",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Bunyodkor",
+      "away": "Pakhtakor",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Andijan",
+      "away": "Buxoro",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Lokomotiv",
+      "away": "Sogdiana",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Olmaliq",
+      "away": "Mash'al",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Qingdao Jonoon",
+      "away": "Tianjin Teda",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Shenyang Urban",
+      "away": "Qingdao Youth Island",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "SHANGHAI SIPG",
+      "away": "Shanghai Shenhua",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Wuhan Three Towns",
+      "away": "Chongqing Tongliang Long",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Yunnan Yukun",
+      "away": "Sichuan Jiuniu",
       "reason": "No event/team match"
     }
   ],
@@ -3406,5 +3406,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-21T05:56:37.140Z"
+  "completedAt": "2026-07-21T06:06:09.592Z"
 }
