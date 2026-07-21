@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-21T09:23:33.438Z",
+  "updated": "2026-07-21T10:27:44.824Z",
   "summary": {
     "fixtures": 300,
     "qualified": 6,
@@ -5441,6 +5441,36 @@
       "supporters": [],
       "conflictIndex": 0,
       "independence": 0
+    },
+    {
+      "id": 1537443,
+      "date": "2026-07-21",
+      "home": "Canberra Juventus",
+      "away": "Canberra FC",
+      "league": "Capital Territory NPL",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Home Team Over 0.5 Goals",
+      "score": 80.3,
+      "support": 1.28,
+      "supporters": [
+        "Trend",
+        "League Bias"
+      ],
+      "independence": 2,
+      "exactSupport": 2,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Second Half Over 0.5",
+          "support": 0.8,
+          "engines": [
+            "Halves"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
       "id": 1560859,

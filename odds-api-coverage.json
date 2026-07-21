@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-21T10:26:35.194Z",
+  "generatedAt": "2026-07-21T10:23:13.301Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -552,6 +552,14 @@
       "matches": 3
     },
     {
+      "league": "USL League Two",
+      "country": "USA",
+      "sportKey": "soccer_usa_mls",
+      "sportTitle": "MLS",
+      "score": 0.466,
+      "matches": 4
+    },
+    {
       "league": "Primera División",
       "country": "Peru",
       "sportKey": "soccer_argentina_primera_division",
@@ -616,12 +624,12 @@
       "matches": 7
     },
     {
-      "league": "USL League Two",
-      "country": "USA",
-      "sportKey": "soccer_usa_mls",
-      "sportTitle": "MLS",
-      "score": 0.466,
-      "matches": 1
+      "league": "Primera División",
+      "country": "Costa-Rica",
+      "sportKey": "soccer_argentina_primera_division",
+      "sportTitle": "Primera División - Argentina",
+      "score": 0.606,
+      "matches": 6
     },
     {
       "league": "Kansallinen Liiga",
@@ -904,6 +912,14 @@
       "matches": 1
     },
     {
+      "league": "Baiano - 2",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.305,
+      "matches": 1
+    },
+    {
       "league": "Second League - Group 4",
       "country": "Russia",
       "sportKey": "soccer_russia_premier_league",
@@ -926,14 +942,6 @@
       "sportTitle": "Primera División - Argentina",
       "score": 0.305,
       "matches": 17
-    },
-    {
-      "league": "Primera División",
-      "country": "Costa-Rica",
-      "sportKey": "soccer_argentina_primera_division",
-      "sportTitle": "Primera División - Argentina",
-      "score": 0.606,
-      "matches": 5
     },
     {
       "league": "Copa De La Liga",
@@ -960,7 +968,7 @@
       "matches": 1
     }
   ],
-  "matchesConsidered": 2112,
+  "matchesConsidered": 2126,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -980,6 +988,12 @@
       "country": "Australia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.167
+    },
+    {
+      "league": "Capital Territory NPL",
+      "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
     },
     {
       "league": "1 Lyga",
@@ -1276,12 +1290,6 @@
       "bestScore": 0.167
     },
     {
-      "league": "Capital Territory NPL",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
       "league": "South Australia NPL",
       "country": "Australia",
       "reason": "No matching soccer sport key",
@@ -1340,6 +1348,12 @@
       "country": "Latvia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
+    },
+    {
+      "league": "Coppa",
+      "country": "Belarus",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
     },
     {
       "league": "David Kipiani Cup",
@@ -2068,6 +2082,42 @@
       "reason": "No event/team match"
     },
     {
+      "league": "Primera División",
+      "home": "Deportivo Saprissa",
+      "away": "Perez Zeledon",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "CS Cartagines",
+      "away": "Inter San Carlos",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "CS Herediano",
+      "away": "Puntarenas FC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "San Carlos",
+      "away": "Municipal Liberia",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "Sporting San Jose",
+      "away": "LD Alajuelense",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "San Carlos",
+      "away": "Escorpiones Belén",
+      "reason": "No event/team match"
+    },
+    {
       "league": "Torneo Promocional Amateur",
       "home": "Deportivo Metalurgico",
       "away": "Estrella de Berisso",
@@ -2284,36 +2334,6 @@
       "reason": "No event/team match"
     },
     {
-      "league": "Primera División",
-      "home": "CS Cartagines",
-      "away": "Inter San Carlos",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "CS Herediano",
-      "away": "Puntarenas FC",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "San Carlos",
-      "away": "Municipal Liberia",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "Deportivo Saprissa",
-      "away": "Perez Zeledon",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "Sporting San Jose",
-      "away": "LD Alajuelense",
-      "reason": "No event/team match"
-    },
-    {
       "league": "FA Cup",
       "home": "Rizhao Yuqi",
       "away": "Shaanxi Union",
@@ -2455,18 +2475,6 @@
       "league": "Super League",
       "home": "Wuhan Three Towns",
       "away": "Chongqing Tongliang Long",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Yunnan Yukun",
-      "away": "Sichuan Jiuniu",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Chengdu Better City",
-      "away": "Beijing Guoan",
       "reason": "No event/team match"
     }
   ],
@@ -3406,5 +3414,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-21T10:26:40.557Z"
+  "completedAt": "2026-07-21T10:23:21.929Z"
 }
