@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-21T19:01:45.538Z",
+  "generatedAt": "2026-07-21T19:17:08.319Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -2468,12 +2468,6 @@
       "home": "HEBC",
       "away": "Niendorfer TSV",
       "reason": "No event/team match"
-    },
-    {
-      "league": "Ykkönen",
-      "home": "Rops",
-      "away": "JJK",
-      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -3412,5 +3406,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-21T19:01:54.439Z"
+  "completedAt": "2026-07-21T19:17:25.071Z"
 }
