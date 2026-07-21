@@ -1,11 +1,11 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-21T19:46:59.608Z",
+  "generatedAt": "2026-07-21T19:56:46.190Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
-  "sportsAvailable": 62,
-  "soccerSportsAvailable": 36,
+  "sportsAvailable": 65,
+  "soccerSportsAvailable": 37,
   "sportMappings": [
     {
       "league": "Cup",
@@ -178,9 +178,9 @@
     {
       "league": "Super League",
       "country": "Uzbekistan",
-      "sportKey": "soccer_china_superleague",
-      "sportTitle": "Super League - China",
-      "score": 0.606,
+      "sportKey": "soccer_greece_super_league",
+      "sportTitle": "Super League - Greece",
+      "score": 0.653,
       "matches": 9
     },
     {
@@ -286,6 +286,14 @@
       "sportTitle": "MLS",
       "score": 1,
       "matches": 30
+    },
+    {
+      "league": "Northern Super League",
+      "country": "Canada",
+      "sportKey": "soccer_greece_super_league",
+      "sportTitle": "Super League - Greece",
+      "score": 0.286,
+      "matches": 3
     },
     {
       "league": "Premier League",
@@ -746,9 +754,9 @@
     {
       "league": "Super League",
       "country": "Malawi",
-      "sportKey": "soccer_china_superleague",
-      "sportTitle": "Super League - China",
-      "score": 0.606,
+      "sportKey": "soccer_greece_super_league",
+      "sportTitle": "Super League - Greece",
+      "score": 0.653,
       "matches": 8
     },
     {
@@ -818,9 +826,9 @@
     {
       "league": "Super League",
       "country": "Switzerland",
-      "sportKey": "soccer_china_superleague",
-      "sportTitle": "Super League - China",
-      "score": 0.606,
+      "sportKey": "soccer_greece_super_league",
+      "sportTitle": "Super League - Greece",
+      "score": 0.653,
       "matches": 6
     },
     {
@@ -1046,12 +1054,6 @@
       "country": "Ecuador",
       "reason": "No matching soccer sport key",
       "bestScore": 0.222
-    },
-    {
-      "league": "Northern Super League",
-      "country": "Canada",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.25
     },
     {
       "league": "1. Division",
@@ -1417,7 +1419,7 @@
       "league": "Super Liga",
       "country": "Slovakia",
       "reason": "No matching soccer sport key",
-      "bestScore": 0.111
+      "bestScore": 0.125
     },
     {
       "league": "1. SNL",
@@ -1435,7 +1437,7 @@
       "league": "Super Liga",
       "country": "Moldova",
       "reason": "No matching soccer sport key",
-      "bestScore": 0.111
+      "bestScore": 0.125
     },
     {
       "league": "Division 1",
@@ -1447,7 +1449,7 @@
       "league": "Super Liga",
       "country": "Serbia",
       "reason": "No matching soccer sport key",
-      "bestScore": 0.111
+      "bestScore": 0.125
     },
     {
       "league": "Segunda División",
@@ -2468,6 +2470,12 @@
       "home": "HEBC",
       "away": "Niendorfer TSV",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Hamburg",
+      "home": "Sasel",
+      "away": "Buchholz",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -2604,15 +2612,15 @@
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_china_superleague",
+      "sportKey": "soccer_greece_super_league",
       "market": "btts"
     },
     {
-      "sportKey": "soccer_china_superleague",
+      "sportKey": "soccer_greece_super_league",
       "market": "draw_no_bet"
     },
     {
-      "sportKey": "soccer_china_superleague",
+      "sportKey": "soccer_greece_super_league",
       "market": "double_chance"
     },
     {
@@ -2757,6 +2765,18 @@
     },
     {
       "sportKey": "soccer_spain_la_liga",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_china_superleague",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_china_superleague",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_china_superleague",
       "market": "double_chance"
     },
     {
@@ -3049,27 +3069,27 @@
       "statusCode": 422
     },
     {
-      "label": "soccer_china_superleague:base-combined",
+      "label": "soccer_greece_super_league:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
     },
     {
-      "label": "soccer_china_superleague:base-core",
+      "label": "soccer_greece_super_league:base-core",
       "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
       "statusCode": 422
     },
     {
-      "label": "soccer_china_superleague:btts",
+      "label": "soccer_greece_super_league:btts",
       "error": "Markets not supported by this endpoint: btts",
       "statusCode": 422
     },
     {
-      "label": "soccer_china_superleague:draw_no_bet",
+      "label": "soccer_greece_super_league:draw_no_bet",
       "error": "Markets not supported by this endpoint: draw_no_bet",
       "statusCode": 422
     },
     {
-      "label": "soccer_china_superleague:double_chance",
+      "label": "soccer_greece_super_league:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3374,6 +3394,31 @@
       "statusCode": 422
     },
     {
+      "label": "soccer_china_superleague:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_china_superleague:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_china_superleague:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_china_superleague:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_china_superleague:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
       "label": "soccer_spl:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -3406,5 +3451,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-21T19:47:21.994Z"
+  "completedAt": "2026-07-21T19:56:51.870Z"
 }
