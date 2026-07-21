@@ -1,7 +1,7 @@
 {
   "version": "v193",
   "schemaVersion": 1,
-  "updated": "2026-07-21T07:20:00.283Z",
+  "updated": "2026-07-21T08:19:38.221Z",
   "minimumSamples": {
     "teamFavorite": 5,
     "teamUnderdog": 5,
@@ -7025,7 +7025,7 @@
         "mid": 0.5,
         "upper": 0.7848
       },
-      "decayedWeight": 7.69
+      "decayedWeight": 7.68
     }
   },
   "contexts": {
