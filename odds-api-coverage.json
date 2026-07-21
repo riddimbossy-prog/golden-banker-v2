@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-21T13:53:39.038Z",
+  "generatedAt": "2026-07-21T14:05:10.729Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,23 +13,7 @@
       "sportKey": "soccer_china_superleague",
       "sportTitle": "Super League - China",
       "score": 0.305,
-      "matches": 7
-    },
-    {
-      "league": "Premier League",
-      "country": "Bhutan",
-      "sportKey": "soccer_epl",
-      "sportTitle": "EPL",
-      "score": 0.987,
-      "matches": 3
-    },
-    {
-      "league": "K League 1",
-      "country": "South-Korea",
-      "sportKey": "soccer_korea_kleague1",
-      "sportTitle": "K League 1",
-      "score": 0.695,
-      "matches": 12
+      "matches": 4
     },
     {
       "league": "Premier League",
@@ -232,6 +216,14 @@
       "matches": 9
     },
     {
+      "league": "K League 1",
+      "country": "South-Korea",
+      "sportKey": "soccer_korea_kleague1",
+      "sportTitle": "K League 1",
+      "score": 0.695,
+      "matches": 9
+    },
+    {
       "league": "Kakkonen - Lohko C",
       "country": "Finland",
       "sportKey": "soccer_finland_veikkausliiga",
@@ -334,6 +326,14 @@
       "sportTitle": "MLS",
       "score": 1,
       "matches": 30
+    },
+    {
+      "league": "Premier League",
+      "country": "Bhutan",
+      "sportKey": "soccer_epl",
+      "sportTitle": "EPL",
+      "score": 0.987,
+      "matches": 2
     },
     {
       "league": "Regionalliga - Bayern",
@@ -968,7 +968,7 @@
       "matches": 1
     }
   ],
-  "matchesConsidered": 2116,
+  "matchesConsidered": 2100,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -982,18 +982,6 @@
       "country": "World",
       "reason": "No matching soccer sport key",
       "bestScore": 0
-    },
-    {
-      "league": "Australia Cup",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.167
-    },
-    {
-      "league": "Calcutta Premier Division",
-      "country": "India",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.222
     },
     {
       "league": "1 Lyga",
@@ -1024,6 +1012,12 @@
       "country": "Ecuador",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
+    },
+    {
+      "league": "Australia Cup",
+      "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.167
     },
     {
       "league": "Tasmania NPL",
@@ -1477,26 +1471,8 @@
     },
     {
       "league": "FA Cup",
-      "home": "SHANGHAI SIPG",
-      "away": "Sichuan Jiuniu",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "FA Cup",
-      "home": "Shanghai Shenhua",
-      "away": "Qingdao Jonoon",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "FA Cup",
       "home": "Wuhan Three Towns",
       "away": "Shandong Luneng",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "FA Cup",
-      "home": "Chongqing Tongliang Long",
-      "away": "Qingdao Youth Island",
       "reason": "No event/team match"
     },
     {
@@ -1837,24 +1813,6 @@
     },
     {
       "league": "Premier League",
-      "home": "Tsirang",
-      "away": "Drukpa",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Tensung",
-      "away": "Paro",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "RTC",
-      "away": "Bhutan U19",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
       "home": "Tadamon Sour",
       "away": "Racing",
       "reason": "No event/team match"
@@ -1971,6 +1929,18 @@
       "league": "Premier Soccer League",
       "home": "TelOne",
       "away": "CAPS United",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
+      "home": "Tensung",
+      "away": "Paro",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
+      "home": "RTC",
+      "away": "Bhutan U19",
       "reason": "No event/team match"
     },
     {
@@ -2145,126 +2115,6 @@
       "league": "Premier League - Summer Series",
       "home": "Liverpool",
       "away": "Sunderland",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "K League 1",
-      "home": "Jeju United FC",
-      "away": "Gangwon FC",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "K League 1",
-      "home": "Jeonbuk Motors",
-      "away": "Daejeon Citizen",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "K League 1",
-      "home": "Ulsan Hyundai FC",
-      "away": "Incheon United",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "K League 1",
-      "home": "Bucheon FC 1995",
-      "away": "FC Anyang",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "K League 1",
-      "home": "Gwangju FC",
-      "away": "Gimcheon Sangmu FC",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "K League 1",
-      "home": "FC Seoul",
-      "away": "Pohang Steelers",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "K League 1",
-      "home": "Gimcheon Sangmu FC",
-      "away": "Daejeon Citizen",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "K League 1",
-      "home": "Pohang Steelers",
-      "away": "Jeonbuk Motors",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "K League 1",
-      "home": "FC Anyang",
-      "away": "Gangwon FC",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "K League 1",
-      "home": "Gwangju FC",
-      "away": "Jeju United FC",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "K League 1",
-      "home": "Incheon United",
-      "away": "Bucheon FC 1995",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "K League 1",
-      "home": "FC Seoul",
-      "away": "Ulsan Hyundai FC",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "K League 2",
-      "home": "Gimhae City",
-      "away": "Cheongju",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "K League 2",
-      "home": "Seoul E-Land FC",
-      "away": "Cheonan City",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "K League 2",
-      "home": "Busan I Park",
-      "away": "Suwon Bluewings",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "K League 2",
-      "home": "Daegu FC",
-      "away": "Suwon City FC",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "K League 2",
-      "home": "Hwaseong",
-      "away": "Asan Mugunghwa",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "K League 2",
-      "home": "Jeonnam Dragons",
-      "away": "Gyeongnam FC",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "K League 2",
-      "home": "Gimpo Citizen",
-      "away": "Yongin City",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "K League 2",
-      "home": "Paju Citizen",
-      "away": "Ansan Greeners",
       "reason": "No event/team match"
     },
     {
@@ -2476,6 +2326,156 @@
       "home": "Rosenborg",
       "away": "Fredrikstad",
       "reason": "No event/team match"
+    },
+    {
+      "league": "2. Division - Group 1",
+      "home": "Bjarg",
+      "away": "Pors Grenland",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "2. Division - Group 1",
+      "home": "Brattvåg",
+      "away": "Mjondalen",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "2. Division - Group 1",
+      "home": "Arendal",
+      "away": "Vidar",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "2. Division - Group 1",
+      "home": "Eik-Tønsberg",
+      "away": "Sandviken",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "2. Division - Group 1",
+      "home": "Notodden",
+      "away": "Sotra",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "2. Division - Group 1",
+      "home": "Kvik Halden",
+      "away": "Træff",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "2. Division - Group 1",
+      "home": "jerv",
+      "away": "Lysekloster",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "3. Division - Girone 1",
+      "home": "SF Grei",
+      "away": "Konnerud",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "3. Division - Girone 1",
+      "home": "Nordstrand",
+      "away": "Gamle Oslo",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "3. Division - Girone 1",
+      "home": "Ullern",
+      "away": "Heming",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "3. Division - Girone 1",
+      "home": "Bærum",
+      "away": "Vålerenga II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "3. Division - Girone 1",
+      "home": "Lokomotiv Oslo",
+      "away": "KFUM II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "3. Division - Girone 1",
+      "home": "IF Ready",
+      "away": "Frigg",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "3. Division - Girone 1",
+      "home": "Union Carl Berner",
+      "away": "Asker",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "3. Division - Girone 3",
+      "home": "Førde",
+      "away": "Austevoll",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "3. Division - Girone 3",
+      "home": "Fana",
+      "away": "Djerv",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "3. Division - Girone 3",
+      "home": "Stord",
+      "away": "Askøy",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "3. Division - Girone 3",
+      "home": "Os",
+      "away": "Varegg",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "3. Division - Girone 3",
+      "home": "Fyllingsdalen",
+      "away": "Åsane II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "3. Division - Girone 3",
+      "home": "Gneist",
+      "away": "Brann II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "3. Division - Girone 3",
+      "home": "Vard",
+      "away": "Sogndal II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "2. Division - Group 2",
+      "home": "Hønefoss",
+      "away": "Skeid",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "2. Division - Group 2",
+      "home": "Levanger",
+      "away": "Ull/Kisa",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "2. Division - Group 2",
+      "home": "Grorud",
+      "away": "Stjørdals-Blink",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "2. Division - Group 2",
+      "home": "Junkeren",
+      "away": "Lørenskog",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -2504,18 +2504,6 @@
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_korea_kleague1",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_korea_kleague1",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_korea_kleague1",
-      "market": "double_chance"
-    },
-    {
       "sportKey": "soccer_mexico_ligamx",
       "market": "btts"
     },
@@ -2645,6 +2633,18 @@
     },
     {
       "sportKey": "soccer_brazil_campeonato",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_korea_kleague1",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_korea_kleague1",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_korea_kleague1",
       "market": "double_chance"
     },
     {
@@ -2828,31 +2828,6 @@
     },
     {
       "label": "soccer_epl:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_korea_kleague1:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_korea_kleague1:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_korea_kleague1:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_korea_kleague1:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_korea_kleague1:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3128,6 +3103,31 @@
     },
     {
       "label": "soccer_brazil_campeonato:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_korea_kleague1:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_korea_kleague1:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_korea_kleague1:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_korea_kleague1:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_korea_kleague1:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3414,5 +3414,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-21T13:53:56.350Z"
+  "completedAt": "2026-07-21T14:05:26.437Z"
 }
