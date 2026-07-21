@@ -76625,8 +76625,8 @@
         "dataFields": 0
       },
       "recordedAt": "2026-07-19T13:05:50.323Z",
-      "status": "pending",
-      "result": null,
+      "status": "void",
+      "result": "Void",
       "score": null
     },
     {
@@ -146292,6 +146292,6 @@
   ],
   "meta": {
     "created": "2026-06-30T22:00:54.285Z",
-    "updated": "2026-07-21T18:35:10.729Z"
+    "updated": "2026-07-21T18:45:29.958Z"
   }
 }
