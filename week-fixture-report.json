@@ -1,14 +1,12 @@
 {
-  "generatedAt": "2026-07-21T00:53:58.553Z",
+  "generatedAt": "2026-07-21T01:57:41.469Z",
   "windowStart": "2026-07-21",
   "windowEnd": "2026-07-27",
-  "totalSavedMatches": 6201,
-  "totalGamesInWindow": 2023,
-  "daysWithGames": 6,
-  "daysWithoutGames": [
-    "2026-07-27"
-  ],
-  "discoveryFixtureCount": 3140,
+  "totalSavedMatches": 6290,
+  "totalGamesInWindow": 2117,
+  "daysWithGames": 7,
+  "daysWithoutGames": [],
+  "discoveryFixtureCount": 2413,
   "coveragePercent": 100,
   "dates": [
     {
@@ -43,31 +41,41 @@
     },
     {
       "date": "2026-07-24",
-      "games": 241,
+      "games": 242,
       "leagues": 68,
-      "enriched": 241,
+      "enriched": 242,
       "fixtureOnly": 0,
-      "upcoming": 241,
+      "upcoming": 242,
       "live": 0,
       "finished": 0
     },
     {
       "date": "2026-07-25",
-      "games": 836,
+      "games": 844,
       "leagues": 138,
-      "enriched": 836,
+      "enriched": 844,
       "fixtureOnly": 0,
-      "upcoming": 836,
+      "upcoming": 844,
       "live": 0,
       "finished": 0
     },
     {
       "date": "2026-07-26",
-      "games": 437,
+      "games": 441,
       "leagues": 108,
-      "enriched": 437,
+      "enriched": 441,
       "fixtureOnly": 0,
-      "upcoming": 437,
+      "upcoming": 441,
+      "live": 0,
+      "finished": 0
+    },
+    {
+      "date": "2026-07-27",
+      "games": 81,
+      "leagues": 53,
+      "enriched": 81,
+      "fixtureOnly": 0,
+      "upcoming": 81,
       "live": 0,
       "finished": 0
     },
