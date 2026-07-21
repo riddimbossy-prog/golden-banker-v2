@@ -1,7 +1,7 @@
 {
   "version": "v193",
   "schemaVersion": 1,
-  "updated": "2026-07-21T03:01:35.725Z",
+  "updated": "2026-07-21T04:06:16.616Z",
   "minimumSamples": {
     "teamFavorite": 5,
     "teamUnderdog": 5,
@@ -117,7 +117,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "underdog": {
         "sample": 1,
@@ -160,7 +160,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 0.97
+          "decayedWeight": 0.96
         }
       },
       "underdogUpsets": 1,
@@ -3037,7 +3037,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "underdog": {
         "sample": 0,
@@ -3080,7 +3080,7 @@
             "mid": 0,
             "upper": 0.7935
           },
-          "decayedWeight": 0.97
+          "decayedWeight": 0.96
         }
       },
       "underdogUpsets": 0,
@@ -3132,7 +3132,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "favoriteBands": {},
       "underdogUpsets": 0,
@@ -3184,7 +3184,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "favoriteBands": {},
       "underdogUpsets": 0,
@@ -3215,7 +3215,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "underdog": {
         "sample": 0,
@@ -3258,7 +3258,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 0.97
+          "decayedWeight": 0.96
         }
       },
       "underdogUpsets": 0,
@@ -3310,7 +3310,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "favoriteBands": {},
       "underdogUpsets": 0,
@@ -3341,7 +3341,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "underdog": {
         "sample": 0,
@@ -3384,7 +3384,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 0.97
+          "decayedWeight": 0.96
         }
       },
       "underdogUpsets": 0,
@@ -3436,7 +3436,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "favoriteBands": {},
       "underdogUpsets": 0,
@@ -3467,7 +3467,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "underdog": {
         "sample": 0,
@@ -3510,7 +3510,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 0.97
+          "decayedWeight": 0.96
         }
       },
       "underdogUpsets": 0,
@@ -3562,7 +3562,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "favoriteBands": {},
       "underdogUpsets": 0,
@@ -3593,7 +3593,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "underdog": {
         "sample": 0,
@@ -3636,7 +3636,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 0.97
+          "decayedWeight": 0.96
         }
       },
       "underdogUpsets": 0,
@@ -3688,7 +3688,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "favoriteBands": {},
       "underdogUpsets": 0,
@@ -3719,7 +3719,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "underdog": {
         "sample": 0,
@@ -3762,7 +3762,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 0.97
+          "decayedWeight": 0.96
         }
       },
       "underdogUpsets": 0,
@@ -3814,7 +3814,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "favoriteBands": {},
       "underdogUpsets": 0,
@@ -3845,7 +3845,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "underdog": {
         "sample": 0,
@@ -3888,7 +3888,7 @@
             "mid": 0,
             "upper": 0.7935
           },
-          "decayedWeight": 0.97
+          "decayedWeight": 0.96
         }
       },
       "underdogUpsets": 0,
@@ -3940,7 +3940,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "favoriteBands": {},
       "underdogUpsets": 1,
@@ -3971,7 +3971,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "underdog": {
         "sample": 0,
@@ -4014,7 +4014,7 @@
             "mid": 0,
             "upper": 0.7935
           },
-          "decayedWeight": 0.97
+          "decayedWeight": 0.96
         }
       },
       "underdogUpsets": 0,
@@ -4066,7 +4066,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "favoriteBands": {},
       "underdogUpsets": 1,
@@ -4561,7 +4561,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 0.97
+          "decayedWeight": 0.96
         }
       },
       "homeFavorites": {
@@ -5133,7 +5133,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "bands": {
         "1.01-1.35": {
@@ -5155,7 +5155,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 0.97
+          "decayedWeight": 0.96
         }
       },
       "homeFavorites": {
@@ -5177,7 +5177,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "awayFavorites": {
         "sample": 0,
@@ -5431,7 +5431,7 @@
             "mid": 0,
             "upper": 0.7935
           },
-          "decayedWeight": 0.97
+          "decayedWeight": 0.96
         },
         "1.61-1.85": {
           "sample": 1,
@@ -5452,7 +5452,7 @@
             "mid": 0,
             "upper": 0.7935
           },
-          "decayedWeight": 0.97
+          "decayedWeight": 0.96
         }
       },
       "homeFavorites": {
@@ -5791,7 +5791,7 @@
             "mid": 0,
             "upper": 0.7935
           },
-          "decayedWeight": 0.97
+          "decayedWeight": 0.96
         }
       },
       "homeFavorites": {
@@ -5813,7 +5813,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "awayFavorites": {
         "sample": 1,
@@ -6629,7 +6629,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "flags": []
     },
@@ -6657,7 +6657,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "flags": []
     },
@@ -6685,7 +6685,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "flags": []
     },
@@ -6713,7 +6713,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "flags": []
     },
@@ -6741,7 +6741,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "flags": []
     },
@@ -6769,7 +6769,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "flags": []
     },
@@ -6797,7 +6797,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "flags": []
     },
@@ -6825,7 +6825,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "flags": []
     },
@@ -6853,7 +6853,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 0.97
+        "decayedWeight": 0.96
       },
       "flags": []
     },
@@ -6962,7 +6962,7 @@
         "mid": 0.5,
         "upper": 0.732
       },
-      "decayedWeight": 13.32
+      "decayedWeight": 13.31
     },
     "1.01-1.35": {
       "sample": 7,
