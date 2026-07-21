@@ -2,13 +2,40 @@
   "schema": 1,
   "build": "v270",
   "modelVersion": "Auto Profile v1.1",
-  "generatedAt": "2026-07-21T13:13:41.856Z",
+  "generatedAt": "2026-07-21T18:09:33.470Z",
   "status": "monitoring",
-  "settled": 1,
-  "wins": 1,
+  "settled": 4,
+  "wins": 4,
   "losses": 0,
   "voids": 0,
   "recent": [
+    {
+      "fixtureKey": "f1507005",
+      "home": "Jeonbuk Motors",
+      "away": "Daejeon Citizen",
+      "market": "Under 3.5 Goals",
+      "result": "Won",
+      "score": "0-0",
+      "date": "2026-07-21"
+    },
+    {
+      "fixtureKey": "f1507006",
+      "home": "Ulsan Hyundai FC",
+      "away": "Incheon United",
+      "market": "Under 3.5 Goals",
+      "result": "Won",
+      "score": "1-2",
+      "date": "2026-07-21"
+    },
+    {
+      "fixtureKey": "f1507004",
+      "home": "Jeju United FC",
+      "away": "Gangwon FC",
+      "market": "Under 3.5 Goals",
+      "result": "Won",
+      "score": "1-1",
+      "date": "2026-07-21"
+    },
     {
       "fixtureKey": "f1519414",
       "home": "Mushuc Runa SC",
