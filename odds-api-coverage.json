@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-21T18:06:29.063Z",
+  "generatedAt": "2026-07-21T18:16:36.339Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -22,6 +22,14 @@
       "sportTitle": "Liga MX",
       "score": 0.68,
       "matches": 9
+    },
+    {
+      "league": "Super League",
+      "country": "Uzbekistan",
+      "sportKey": "soccer_china_superleague",
+      "sportTitle": "Super League - China",
+      "score": 0.606,
+      "matches": 12
     },
     {
       "league": "Nasjonal U19 Champions League",
@@ -206,14 +214,6 @@
       "sportTitle": "EPL",
       "score": 0.5,
       "matches": 16
-    },
-    {
-      "league": "Super League",
-      "country": "Uzbekistan",
-      "sportKey": "soccer_china_superleague",
-      "sportTitle": "Super League - China",
-      "score": 0.606,
-      "matches": 9
     },
     {
       "league": "Kakkonen - Lohko C",
@@ -976,7 +976,7 @@
       "matches": 1
     }
   ],
-  "matchesConsidered": 2109,
+  "matchesConsidered": 2112,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1487,6 +1487,24 @@
       "league": "FA Cup",
       "home": "Rizhao Yuqi",
       "away": "Shaanxi Union",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Buxoro",
+      "away": "Bunyodkor",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Pakhtakor",
+      "away": "Xorazm",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Sogdiana",
+      "away": "Neftchi",
       "reason": "No event/team match"
     },
     {
@@ -2466,24 +2484,6 @@
       "home": "Tampere United",
       "away": "Inter Turku II",
       "reason": "No event/team match"
-    },
-    {
-      "league": "Ykkönen",
-      "home": "Rops",
-      "away": "JJK",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Ykkönen",
-      "home": "SalPa",
-      "away": "PKKU",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Ykkönen",
-      "home": "KuPS Akatemia",
-      "away": "VJS",
-      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -3422,5 +3422,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-21T18:06:34.551Z"
+  "completedAt": "2026-07-21T18:16:42.076Z"
 }
