@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-21T02:06:22.332Z",
+  "generatedAt": "2026-07-21T02:26:20.858Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -960,7 +960,7 @@
       "matches": 1
     }
   ],
-  "matchesConsidered": 2126,
+  "matchesConsidered": 2125,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -974,12 +974,6 @@
       "country": "World",
       "reason": "No matching soccer sport key",
       "bestScore": 0
-    },
-    {
-      "league": "Division Intermedia",
-      "country": "Paraguay",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
     },
     {
       "league": "Australia Cup",
@@ -2468,6 +2462,12 @@
       "home": "Lokomotiv",
       "away": "Andijan",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Mash'al",
+      "away": "Nasaf",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -3406,5 +3406,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-21T02:06:44.163Z"
+  "completedAt": "2026-07-21T02:26:29.888Z"
 }
