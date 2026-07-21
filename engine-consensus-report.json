@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-21T10:27:44.824Z",
+  "updated": "2026-07-21T11:33:19.208Z",
   "summary": {
     "fixtures": 300,
     "qualified": 6,
@@ -5384,110 +5384,6 @@
       "independence": 0
     },
     {
-      "id": 1595439,
-      "date": "2026-07-21",
-      "home": "Tsirang",
-      "away": "Drukpa",
-      "league": "Premier League",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 76.2,
-      "support": 0.64,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Away Team Over 0.5 Goals",
-          "support": 0.29,
-          "engines": [
-            "Trend"
-          ]
-        }
-      ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1560864,
-      "date": "2026-07-21",
-      "home": "Preston Lions",
-      "away": "Newcastle Jets",
-      "league": "Australia Cup",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
-      "id": 1560865,
-      "date": "2026-07-21",
-      "home": "Lions",
-      "away": "Perth Glory",
-      "league": "Australia Cup",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
-      "id": 1537443,
-      "date": "2026-07-21",
-      "home": "Canberra Juventus",
-      "away": "Canberra FC",
-      "league": "Capital Territory NPL",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Home Team Over 0.5 Goals",
-      "score": 80.3,
-      "support": 1.28,
-      "supporters": [
-        "Trend",
-        "League Bias"
-      ],
-      "independence": 2,
-      "exactSupport": 2,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Second Half Over 0.5",
-          "support": 0.8,
-          "engines": [
-            "Halves"
-          ]
-        }
-      ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1560859,
-      "date": "2026-07-21",
-      "home": "Cumberland United",
-      "away": "Heidelberg United",
-      "league": "Australia Cup",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
       "id": 1560858,
       "date": "2026-07-21",
       "home": "Bayswater City",
@@ -5804,6 +5700,78 @@
       "supporters": [],
       "conflictIndex": 0,
       "independence": 0
+    },
+    {
+      "id": 1589289,
+      "date": "2026-07-21",
+      "home": "Mamer",
+      "away": "Green Boys",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1567690,
+      "date": "2026-07-21",
+      "home": "Livyi Bereh",
+      "away": "Obolon'-Brovar",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Home Team Over 0.5 Goals",
+      "score": 75.8,
+      "support": 0.56,
+      "supporters": [
+        "League Bias"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1548008,
+      "date": "2026-07-21",
+      "home": "Chelsea U21",
+      "away": "Cardiff City U21",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1592148,
+      "date": "2026-07-21",
+      "home": "Tadamon Sour",
+      "away": "Racing",
+      "league": "Premier League",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Under 3.5 Goals",
+      "score": 75.2,
+      "support": 0.41,
+      "supporters": [
+        "League Bias"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
     }
   ]
 }

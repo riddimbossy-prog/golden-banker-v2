@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-21T11:26:35.931Z",
+  "generatedAt": "2026-07-21T11:28:53.901Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -21,7 +21,7 @@
       "sportKey": "soccer_china_superleague",
       "sportTitle": "Super League - China",
       "score": 0.305,
-      "matches": 8
+      "matches": 7
     },
     {
       "league": "Premier League",
@@ -968,7 +968,7 @@
       "matches": 1
     }
   ],
-  "matchesConsidered": 2122,
+  "matchesConsidered": 2121,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -994,6 +994,12 @@
       "country": "Australia",
       "reason": "No matching soccer sport key",
       "bestScore": 0
+    },
+    {
+      "league": "Calcutta Premier Division",
+      "country": "India",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.222
     },
     {
       "league": "1 Lyga",
@@ -1168,6 +1174,12 @@
       "country": "Belarus",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
+    },
+    {
+      "league": "David Kipiani Cup",
+      "country": "Georgia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.125
     },
     {
       "league": "Liga I",
@@ -1354,12 +1366,6 @@
       "country": "Belarus",
       "reason": "No matching soccer sport key",
       "bestScore": 0
-    },
-    {
-      "league": "David Kipiani Cup",
-      "country": "Georgia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.125
     },
     {
       "league": "NB III - Southwest",
@@ -2313,12 +2319,6 @@
       "league": "FA Cup",
       "home": "Rizhao Yuqi",
       "away": "Shaanxi Union",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "FA Cup",
-      "home": "Dalian Kewei",
-      "away": "Beijing Guoan",
       "reason": "No event/team match"
     },
     {
@@ -3414,5 +3414,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-21T11:26:41.231Z"
+  "completedAt": "2026-07-21T11:29:10.771Z"
 }
