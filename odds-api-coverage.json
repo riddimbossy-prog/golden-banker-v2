@@ -1,20 +1,12 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-21T18:56:36.523Z",
+  "generatedAt": "2026-07-21T19:06:32.325Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
   "sportsAvailable": 62,
   "soccerSportsAvailable": 36,
   "sportMappings": [
-    {
-      "league": "FA Cup",
-      "country": "China",
-      "sportKey": "soccer_china_superleague",
-      "sportTitle": "Super League - China",
-      "score": 0.305,
-      "matches": 1
-    },
     {
       "league": "Liga MX U21",
       "country": "Mexico",
@@ -976,7 +968,7 @@
       "matches": 1
     }
   ],
-  "matchesConsidered": 2112,
+  "matchesConsidered": 2111,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1484,9 +1476,153 @@
       "bestScore": 0.143
     },
     {
-      "league": "FA Cup",
-      "home": "Rizhao Yuqi",
-      "away": "Shaanxi Union",
+      "league": "Liga MX U21",
+      "home": "Cruz Azul U21",
+      "away": "Puebla U21",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga MX U21",
+      "home": "Toluca U21",
+      "away": "UNAM Pumas U21",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga MX U21",
+      "home": "Tigres UANL U21",
+      "away": "Atl. San Luis U21",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga MX U21",
+      "home": "Atlante U21",
+      "away": "Club America U21",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga MX U21",
+      "home": "Club Tijuana U21",
+      "away": "Club Leon U21",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga MX U21",
+      "home": "Guadalajara Chivas U21",
+      "away": "Juarez U21",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga MX U21",
+      "home": "Santos Laguna U21",
+      "away": "Atlas U21",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga MX U21",
+      "home": "Necaxa U21",
+      "away": "Monterrey U21",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga MX U21",
+      "home": "Pachuca U21",
+      "away": "Queretaro U21",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga MX",
+      "home": "Cruz Azul",
+      "away": "Puebla",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga MX",
+      "home": "Toluca",
+      "away": "U.N.A.M. - Pumas",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga MX",
+      "home": "Club Tijuana",
+      "away": "Leon",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga MX",
+      "home": "Atlante FC",
+      "away": "Club America",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga MX",
+      "home": "Guadalajara Chivas",
+      "away": "FC Juarez",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga MX",
+      "home": "Tigres UANL",
+      "away": "Atletico San Luis",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga MX",
+      "home": "Santos Laguna",
+      "away": "Atlas",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga MX",
+      "home": "Necaxa",
+      "away": "Monterrey",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga MX",
+      "home": "CF Pachuca",
+      "away": "Club Queretaro",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga de Expansión MX",
+      "home": "Tepatitlán",
+      "away": "Durango",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga de Expansión MX",
+      "home": "Mineros de Zacatecas",
+      "away": "Correcaminos Uat",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga de Expansión MX",
+      "home": "Tlaxcala",
+      "away": "Leones Negros UDG",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga de Expansión MX",
+      "home": "Venados FC",
+      "away": "Alebrijes de Oaxaca",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga de Expansión MX",
+      "home": "Monarcas",
+      "away": "CA La Paz",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga de Expansión MX",
+      "home": "CDS Tampico Madero",
+      "away": "Piratas",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga de Expansión MX",
+      "home": "Tapatío",
+      "away": "Cruz Azul Hidalgo",
       "reason": "No event/team match"
     },
     {
@@ -1811,156 +1947,6 @@
       "league": "Super League",
       "home": "FC ST. Gallen",
       "away": "FC Zurich",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Cruz Azul U21",
-      "away": "Puebla U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Toluca U21",
-      "away": "UNAM Pumas U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Tigres UANL U21",
-      "away": "Atl. San Luis U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Atlante U21",
-      "away": "Club America U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Club Tijuana U21",
-      "away": "Club Leon U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Guadalajara Chivas U21",
-      "away": "Juarez U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Santos Laguna U21",
-      "away": "Atlas U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Necaxa U21",
-      "away": "Monterrey U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Pachuca U21",
-      "away": "Queretaro U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Cruz Azul",
-      "away": "Puebla",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Toluca",
-      "away": "U.N.A.M. - Pumas",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Club Tijuana",
-      "away": "Leon",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Atlante FC",
-      "away": "Club America",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Guadalajara Chivas",
-      "away": "FC Juarez",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Tigres UANL",
-      "away": "Atletico San Luis",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Santos Laguna",
-      "away": "Atlas",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Necaxa",
-      "away": "Monterrey",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "CF Pachuca",
-      "away": "Club Queretaro",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga de Expansión MX",
-      "home": "Tepatitlán",
-      "away": "Durango",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga de Expansión MX",
-      "home": "Mineros de Zacatecas",
-      "away": "Correcaminos Uat",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga de Expansión MX",
-      "home": "Tlaxcala",
-      "away": "Leones Negros UDG",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga de Expansión MX",
-      "home": "Venados FC",
-      "away": "Alebrijes de Oaxaca",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga de Expansión MX",
-      "home": "Monarcas",
-      "away": "CA La Paz",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga de Expansión MX",
-      "home": "CDS Tampico Madero",
-      "away": "Piratas",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga de Expansión MX",
-      "home": "Tapatío",
-      "away": "Cruz Azul Hidalgo",
       "reason": "No event/team match"
     },
     {
@@ -2484,31 +2470,37 @@
       "home": "Tampere United",
       "away": "Inter Turku II",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Ykkönen",
+      "home": "Rops",
+      "away": "JJK",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
     {
-      "sportKey": "soccer_china_superleague",
+      "sportKey": "soccer_mexico_ligamx",
       "market": "btts"
     },
     {
-      "sportKey": "soccer_china_superleague",
+      "sportKey": "soccer_mexico_ligamx",
       "market": "draw_no_bet"
     },
     {
-      "sportKey": "soccer_china_superleague",
+      "sportKey": "soccer_mexico_ligamx",
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_mexico_ligamx",
+      "sportKey": "soccer_china_superleague",
       "market": "btts"
     },
     {
-      "sportKey": "soccer_mexico_ligamx",
+      "sportKey": "soccer_china_superleague",
       "market": "draw_no_bet"
     },
     {
-      "sportKey": "soccer_mexico_ligamx",
+      "sportKey": "soccer_china_superleague",
       "market": "double_chance"
     },
     {
@@ -2790,31 +2782,6 @@
   ],
   "requestErrors": [
     {
-      "label": "soccer_china_superleague:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_china_superleague:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_china_superleague:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_china_superleague:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_china_superleague:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
       "label": "soccer_mexico_ligamx:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -2836,6 +2803,31 @@
     },
     {
       "label": "soccer_mexico_ligamx:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_china_superleague:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_china_superleague:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_china_superleague:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_china_superleague:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_china_superleague:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3422,5 +3414,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-21T18:56:44.981Z"
+  "completedAt": "2026-07-21T19:06:38.408Z"
 }
