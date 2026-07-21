@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-21T15:56:51.149Z",
+  "generatedAt": "2026-07-21T16:06:28.352Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,7 +13,7 @@
       "sportKey": "soccer_china_superleague",
       "sportTitle": "Super League - China",
       "score": 0.305,
-      "matches": 2
+      "matches": 5
     },
     {
       "league": "Premier League",
@@ -968,7 +968,7 @@
       "matches": 1
     }
   ],
-  "matchesConsidered": 2103,
+  "matchesConsidered": 2107,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1477,8 +1477,26 @@
     },
     {
       "league": "FA Cup",
+      "home": "SHANGHAI SIPG",
+      "away": "Sichuan Jiuniu",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "FA Cup",
+      "home": "Wuhan Three Towns",
+      "away": "Shandong Luneng",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "FA Cup",
       "home": "Henan Jianye",
       "away": "Dalian Zhixing",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "FA Cup",
+      "home": "Yunnan Yukun",
+      "away": "Chengdu Better City",
       "reason": "No event/team match"
     },
     {
@@ -2458,24 +2476,6 @@
       "home": "Levanger",
       "away": "Ull/Kisa",
       "reason": "No event/team match"
-    },
-    {
-      "league": "2. Division - Group 2",
-      "home": "Grorud",
-      "away": "Stjørdals-Blink",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "2. Division - Group 2",
-      "home": "Junkeren",
-      "away": "Lørenskog",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "2. Division - Group 2",
-      "home": "Tromsdalen Uil",
-      "away": "Follo",
-      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -3414,5 +3414,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-21T15:56:56.961Z"
+  "completedAt": "2026-07-21T16:06:37.833Z"
 }
