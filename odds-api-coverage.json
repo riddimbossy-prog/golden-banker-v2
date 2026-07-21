@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-21T21:16:59.735Z",
+  "generatedAt": "2026-07-21T21:27:01.620Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,7 +13,7 @@
       "sportKey": "soccer_england_efl_cup",
       "sportTitle": "EFL Cup",
       "score": 0.487,
-      "matches": 23
+      "matches": 25
     },
     {
       "league": "Oberliga - Bayern Nord",
@@ -21,7 +21,7 @@
       "sportKey": "soccer_germany_bundesliga",
       "sportTitle": "Bundesliga - Germany",
       "score": 0.323,
-      "matches": 10
+      "matches": 12
     },
     {
       "league": "Oberliga - Bayern Süd",
@@ -32,12 +32,20 @@
       "matches": 13
     },
     {
+      "league": "Superettan",
+      "country": "Sweden",
+      "sportKey": "soccer_sweden_superettan",
+      "sportTitle": "Superettan - Sweden",
+      "score": 1,
+      "matches": 7
+    },
+    {
       "league": "UEFA Champions League",
       "country": "World",
       "sportKey": "soccer_uefa_champs_league_qualification",
       "sportTitle": "UEFA Champions League Qualification",
       "score": 0.695,
-      "matches": 7
+      "matches": 10
     },
     {
       "league": "Brasileiro U17",
@@ -768,14 +776,6 @@
       "matches": 7
     },
     {
-      "league": "Superettan",
-      "country": "Sweden",
-      "sportKey": "soccer_sweden_superettan",
-      "sportTitle": "Superettan - Sweden",
-      "score": 1,
-      "matches": 6
-    },
-    {
       "league": "Brasiliense U20",
       "country": "Brazil",
       "sportKey": "soccer_brazil_campeonato",
@@ -968,7 +968,7 @@
       "matches": 1
     }
   ],
-  "matchesConsidered": 2067,
+  "matchesConsidered": 2095,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -980,6 +980,18 @@
     {
       "league": "Friendlies Clubs",
       "country": "World",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
+    },
+    {
+      "league": "UEFA Europa Conference League",
+      "country": "World",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.222
+    },
+    {
+      "league": "Botola Pro",
+      "country": "Morocco",
       "reason": "No matching soccer sport key",
       "bestScore": 0
     },
@@ -1018,12 +1030,6 @@
       "country": "Iran",
       "reason": "No matching soccer sport key",
       "bestScore": 0.111
-    },
-    {
-      "league": "UEFA Europa Conference League",
-      "country": "World",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.222
     },
     {
       "league": "Friendlies Women",
@@ -1467,6 +1473,18 @@
       "league": "Cup",
       "home": "Kompanii Marjamaa",
       "away": "Generation Tallinn",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Cup",
+      "home": "Tabasalu Ulasabat",
+      "away": "Vaprus",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Cup",
+      "home": "Kristiine JK",
+      "away": "Jõgeva Wolves",
       "reason": "No event/team match"
     },
     {
@@ -2167,6 +2185,18 @@
     },
     {
       "league": "Oberliga - Bayern Nord",
+      "home": "DJK Bamberg",
+      "away": "Kornburg",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Bayern Nord",
+      "home": "Neudrossenfeld",
+      "away": "Fortuna Regensburg",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Bayern Nord",
       "home": "Großbardorf",
       "away": "Würzburger FV",
       "reason": "No event/team match"
@@ -2446,36 +2476,6 @@
       "home": "Sasel",
       "away": "Buchholz",
       "reason": "No event/team match"
-    },
-    {
-      "league": "Oberliga - Hamburg",
-      "home": "Pinneberg",
-      "away": "Harksheide",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Oberliga - Hamburg",
-      "home": "Vorwärts-Wacker 04",
-      "away": "Nikola Tesla",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "UEFA Champions League",
-      "home": "Egnatia Rrogozhinë",
-      "away": "Celje",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "UEFA Champions League",
-      "home": "Levski Sofia",
-      "away": "Universitatea Craiova",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "UEFA Champions League",
-      "home": "Omonia Nicosia",
-      "away": "Kairat Almaty",
-      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -2504,6 +2504,18 @@
       "market": "double_chance"
     },
     {
+      "sportKey": "soccer_sweden_superettan",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_sweden_superettan",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_sweden_superettan",
+      "market": "double_chance"
+    },
+    {
       "sportKey": "soccer_uefa_champs_league_qualification",
       "market": "btts"
     },
@@ -2765,18 +2777,6 @@
     },
     {
       "sportKey": "soccer_china_superleague",
-      "market": "double_chance"
-    },
-    {
-      "sportKey": "soccer_sweden_superettan",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_sweden_superettan",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_sweden_superettan",
       "market": "double_chance"
     },
     {
@@ -2840,6 +2840,31 @@
     },
     {
       "label": "soccer_germany_bundesliga:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_sweden_superettan:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_sweden_superettan:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_sweden_superettan:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_sweden_superettan:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_sweden_superettan:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3394,31 +3419,6 @@
       "statusCode": 422
     },
     {
-      "label": "soccer_sweden_superettan:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_sweden_superettan:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_sweden_superettan:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_sweden_superettan:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_sweden_superettan:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
       "label": "soccer_spl:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -3451,5 +3451,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-21T21:17:05.457Z"
+  "completedAt": "2026-07-21T21:27:27.335Z"
 }
