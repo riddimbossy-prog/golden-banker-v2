@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-21T08:19:40.425Z",
+  "updated": "2026-07-21T09:23:33.438Z",
   "summary": {
     "fixtures": 300,
     "qualified": 6,
@@ -5384,21 +5384,6 @@
       "independence": 0
     },
     {
-      "id": 1567360,
-      "date": "2026-07-21",
-      "home": "Dalian Kewei",
-      "away": "Beijing Guoan",
-      "league": "FA Cup",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
       "id": 1595439,
       "date": "2026-07-21",
       "home": "Tsirang",
@@ -5774,6 +5759,21 @@
       "conflictIndex": 0,
       "alternatives": [],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1583396,
+      "date": "2026-07-21",
+      "home": "Czarni Połaniec",
+      "away": "Maccabi Bnei Raina",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
     }
   ]
 }
