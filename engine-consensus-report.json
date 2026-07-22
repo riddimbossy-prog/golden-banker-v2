@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-22T05:38:30.185Z",
+  "updated": "2026-07-22T06:44:15.432Z",
   "summary": {
     "fixtures": 300,
     "qualified": 6,
@@ -4719,21 +4719,6 @@
       "independence": 0
     },
     {
-      "id": 1595186,
-      "date": "2026-07-20",
-      "home": "Coal India",
-      "away": "Aryan",
-      "league": "Calcutta Premier Division",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
       "id": 1548887,
       "date": "2026-07-20",
       "home": "Cambridge United",
@@ -5788,6 +5773,45 @@
       "supporters": [],
       "conflictIndex": 0,
       "independence": 0
+    },
+    {
+      "id": 1523790,
+      "date": "2026-07-22",
+      "home": "Hamilton Olympic",
+      "away": "Belmont Swansea",
+      "league": "Northern NSW NPL",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Away Team Over 0.5 Goals",
+      "score": 79.5,
+      "support": 1.06,
+      "supporters": [
+        "Trend",
+        "League Bias"
+      ],
+      "independence": 2,
+      "exactSupport": 2,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Double Chance X2",
+          "support": 0.77,
+          "engines": [
+            "PurePPG Ultra",
+            "PurePPG Elite",
+            "PurePPG Apex"
+          ]
+        },
+        {
+          "market": "First Half Over 0.5",
+          "support": 0.58,
+          "engines": [
+            "Halves"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
     }
   ]
 }

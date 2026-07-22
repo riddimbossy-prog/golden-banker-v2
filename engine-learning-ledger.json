@@ -1,7 +1,7 @@
 {
   "version": "v193",
   "schemaVersion": 1,
-  "updated": "2026-07-22T05:38:27.380Z",
+  "updated": "2026-07-22T06:44:12.358Z",
   "minimumSamples": {
     "teamFavorite": 5,
     "teamUnderdog": 5,
@@ -15,7 +15,7 @@
     "settledFixtures": 135,
     "settledDecisions": 286,
     "reviewedLosses": 48,
-    "attachedUpcoming": 2388,
+    "attachedUpcoming": 2387,
     "highRiskUpcoming": 0,
     "stableUpcoming": 0
   },
@@ -4583,7 +4583,7 @@
           "mid": 0.5714,
           "upper": 0.8418
         },
-        "decayedWeight": 6.69
+        "decayedWeight": 6.68
       },
       "awayFavorites": {
         "sample": 2,
@@ -6983,7 +6983,7 @@
         "mid": 1,
         "upper": 1
       },
-      "decayedWeight": 6.59
+      "decayedWeight": 6.58
     },
     "1.36-1.60": {
       "sample": 7,
