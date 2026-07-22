@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-21T23:15:25.980Z",
+  "updated": "2026-07-22T00:17:20.676Z",
   "summary": {
     "fixtures": 300,
     "qualified": 6,
@@ -5465,28 +5465,6 @@
       "independence": 0
     },
     {
-      "id": 1550594,
-      "date": "2026-07-21",
-      "home": "VfR Aalen",
-      "away": "SG Sonnenhof Grossaspach",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Over 1.5 Goals",
-      "score": 79.2,
-      "support": 1.01,
-      "supporters": [
-        "Trend",
-        "League Bias"
-      ],
-      "independence": 2,
-      "exactSupport": 2,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1591933,
       "date": "2026-07-21",
       "home": "Egnatia Rrogozhinë",
@@ -5558,21 +5536,6 @@
       "home": "Mamer",
       "away": "Green Boys",
       "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
-      "id": 1548254,
-      "date": "2026-07-21",
-      "home": "Sport Brasil ES",
-      "away": "Tupy",
-      "league": "Capixaba B",
       "version": "v195",
       "bet": false,
       "market": "No Bet",
@@ -5793,10 +5756,46 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1584917,
+      "id": 1546708,
       "date": "2026-07-21",
-      "home": "Redcar Athletic",
-      "away": "Dunston UTS",
+      "home": "Salisbury",
+      "away": "Sutton Utd",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Away Team Over 0.5 Goals",
+      "score": 75.4,
+      "support": 0.46,
+      "supporters": [
+        "League Bias"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1562952,
+      "date": "2026-07-21",
+      "home": "Oxford Sunnyside",
+      "away": "Bangor",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1583399,
+      "date": "2026-07-21",
+      "home": "Ashford Town (Middlesex)",
+      "away": "Tadley Calleva",
       "league": "Friendlies Clubs",
       "version": "v195",
       "bet": false,

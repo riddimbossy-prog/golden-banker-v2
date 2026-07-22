@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-21T23:15:16.985Z",
+  "updated": "2026-07-22T00:17:10.609Z",
   "minSample": 300,
   "groups": {
     "LEM|USL League Two|Prime|Double Chance 1X|90-99": {
@@ -2302,14 +2302,14 @@
       "validated": false
     },
     "M|*|*|Over 1.5 Goals|80-89": {
-      "sample": 3,
-      "wins": 3,
+      "sample": 5,
+      "wins": 5,
       "losses": 0,
-      "lower": 0.4385,
+      "lower": 0.5655,
       "mid": 1,
       "upper": 1,
       "grade": "Learning",
-      "leagueReliability": 41.2,
+      "leagueReliability": 45.1,
       "validated": false
     },
     "LEM|Western Australia NPL|trend|Away Team Over 0.5 Goals|90-99": {
@@ -3512,17 +3512,50 @@
       "validated": false
     },
     "EM|*|league-bias|Over 1.5 Goals|80-89": {
-      "sample": 1,
-      "wins": 1,
+      "sample": 2,
+      "wins": 2,
       "losses": 0,
-      "lower": 0.2065,
+      "lower": 0.3424,
       "mid": 1,
       "upper": 1,
       "grade": "Learning",
-      "leagueReliability": 34.2,
+      "leagueReliability": 38.3,
       "validated": false
     },
     "LEM|Friendlies Clubs|trend|Over 1.5 Goals|80-89": {
+      "sample": 2,
+      "wins": 2,
+      "losses": 0,
+      "lower": 0.3424,
+      "mid": 1,
+      "upper": 1,
+      "grade": "Learning",
+      "leagueReliability": 46.3,
+      "validated": false
+    },
+    "EM|*|trend|Over 1.5 Goals|80-89": {
+      "sample": 2,
+      "wins": 2,
+      "losses": 0,
+      "lower": 0.3424,
+      "mid": 1,
+      "upper": 1,
+      "grade": "Learning",
+      "leagueReliability": 38.3,
+      "validated": false
+    },
+    "LM|Friendlies Clubs|*|Over 1.5 Goals|80-89": {
+      "sample": 3,
+      "wins": 3,
+      "losses": 0,
+      "lower": 0.4385,
+      "mid": 1,
+      "upper": 1,
+      "grade": "Learning",
+      "leagueReliability": 49.2,
+      "validated": false
+    },
+    "LEM|Friendlies Clubs|league-bias|Over 1.5 Goals|80-89": {
       "sample": 1,
       "wins": 1,
       "losses": 0,
@@ -3533,7 +3566,7 @@
       "leagueReliability": 42.2,
       "validated": false
     },
-    "EM|*|trend|Over 1.5 Goals|80-89": {
+    "LEM|Brasileiro U17|trend|Home Team Over 0.5 Goals|80-89": {
       "sample": 1,
       "wins": 1,
       "losses": 0,
@@ -3541,10 +3574,21 @@
       "mid": 1,
       "upper": 1,
       "grade": "Learning",
-      "leagueReliability": 34.2,
+      "leagueReliability": 42.2,
       "validated": false
     },
-    "LM|Friendlies Clubs|*|Over 1.5 Goals|80-89": {
+    "LM|Brasileiro U17|*|Home Team Over 0.5 Goals|80-89": {
+      "sample": 2,
+      "wins": 2,
+      "losses": 0,
+      "lower": 0.3424,
+      "mid": 1,
+      "upper": 1,
+      "grade": "Learning",
+      "leagueReliability": 46.3,
+      "validated": false
+    },
+    "LEM|Brasileiro U17|league-bias|Home Team Over 0.5 Goals|80-89": {
       "sample": 1,
       "wins": 1,
       "losses": 0,
