@@ -1,7 +1,7 @@
 {
   "version": "v193",
   "schemaVersion": 1,
-  "updated": "2026-07-22T18:37:43.164Z",
+  "updated": "2026-07-22T19:41:55.469Z",
   "minimumSamples": {
     "teamFavorite": 5,
     "teamUnderdog": 5,
@@ -12,10 +12,10 @@
   },
   "decayHalfLifeDays": 120,
   "summary": {
-    "settledFixtures": 138,
-    "settledDecisions": 289,
-    "reviewedLosses": 49,
-    "attachedUpcoming": 2325,
+    "settledFixtures": 139,
+    "settledDecisions": 290,
+    "reviewedLosses": 50,
+    "attachedUpcoming": 2299,
     "highRiskUpcoming": 0,
     "stableUpcoming": 0
   },
@@ -4476,7 +4476,7 @@
           "mid": 0.6667,
           "upper": 0.8794
         },
-        "decayedWeight": 8.58
+        "decayedWeight": 8.57
       },
       "bands": {
         "1.61-1.85": {
@@ -4583,7 +4583,7 @@
           "mid": 0.5714,
           "upper": 0.8418
         },
-        "decayedWeight": 6.67
+        "decayedWeight": 6.66
       },
       "awayFavorites": {
         "sample": 2,
@@ -5522,7 +5522,7 @@
           "mid": 0.6,
           "upper": 0.8824
         },
-        "decayedWeight": 4.58
+        "decayedWeight": 4.57
       },
       "bands": {
         "1.01-1.35": {
@@ -8948,15 +8948,15 @@
       "hardVeto": false
     },
     "*|League Bias|Home Team Over 0.5 Goals|unknown|other": {
-      "sample": 15,
+      "sample": 16,
       "wins": 13,
-      "losses": 2,
-      "winRate": 0.8667,
-      "lossRate": 0.1333,
+      "losses": 3,
+      "winRate": 0.8125,
+      "lossRate": 0.1875,
       "wilson": {
-        "lower": 0.6212,
-        "mid": 0.8667,
-        "upper": 0.9626
+        "lower": 0.5699,
+        "mid": 0.8125,
+        "upper": 0.9341
       },
       "adjustment": 0,
       "hardVeto": false
@@ -9284,15 +9284,15 @@
       "hardVeto": false
     },
     "uefa champions league|League Bias|Home Team Over 0.5 Goals|unknown|other": {
-      "sample": 1,
+      "sample": 2,
       "wins": 1,
-      "losses": 0,
-      "winRate": 1,
-      "lossRate": 0,
+      "losses": 1,
+      "winRate": 0.5,
+      "lossRate": 0.5,
       "wilson": {
-        "lower": 0.2065,
-        "mid": 1,
-        "upper": 1
+        "lower": 0.0945,
+        "mid": 0.5,
+        "upper": 0.9055
       },
       "adjustment": 0,
       "hardVeto": false
@@ -10012,6 +10012,19 @@
       ]
     },
     {
+      "matchDate": "2026-07-21",
+      "home": "Levski Sofia",
+      "away": "Universitatea Craiova",
+      "league": "UEFA Champions League",
+      "engine": "League Bias",
+      "market": "Home Team Over 0.5 Goals",
+      "score": "0-0",
+      "causes": [
+        "DRAW_TRAP",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
       "matchDate": "2026-07-20",
       "home": "Independiente del Valle",
       "away": "Emelec",
@@ -10620,11 +10633,11 @@
   ],
   "causeCounts": {
     "TEMPO_COLLAPSE": 4,
-    "INPUT_COVERAGE_GAP": 49,
+    "INPUT_COVERAGE_GAP": 50,
     "RESULT_DIRECTION_MISS": 11,
     "BOTH_ATTACKS_BROKE_SUPPRESSION": 5,
     "GOAL_SPIKE": 17,
-    "DRAW_TRAP": 6,
+    "DRAW_TRAP": 7,
     "UNDERDOG_OVERREACH": 1
   }
 }
