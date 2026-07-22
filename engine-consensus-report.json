@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-22T16:29:58.696Z",
+  "updated": "2026-07-22T17:34:26.395Z",
   "summary": {
     "fixtures": 300,
     "qualified": 6,
@@ -5256,21 +5256,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1567361,
-      "date": "2026-07-21",
-      "home": "Rizhao Yuqi",
-      "away": "Shaanxi Union",
-      "league": "FA Cup",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
       "id": 1550593,
       "date": "2026-07-21",
       "home": "FV Ravensburg",
@@ -5779,6 +5764,21 @@
       "date": "2026-07-22",
       "home": "AVS",
       "away": "Paredes",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1584919,
+      "date": "2026-07-22",
+      "home": "Chaves",
+      "away": "Amarante",
       "league": "Friendlies Clubs",
       "version": "v195",
       "bet": false,

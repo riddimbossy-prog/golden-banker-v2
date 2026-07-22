@@ -1,10 +1,10 @@
 {
   "version": "v193",
-  "updated": "2026-07-22T16:29:55.729Z",
+  "updated": "2026-07-22T17:34:23.373Z",
   "summary": {
-    "settledFixtures": 136,
-    "settledDecisions": 287,
-    "reviewedLosses": 48,
+    "settledFixtures": 137,
+    "settledDecisions": 288,
+    "reviewedLosses": 49,
     "teamProfiles": 70,
     "leagueProfiles": 14,
     "matchupProfiles": 36,
@@ -19,7 +19,7 @@
   "commonMissCauses": [
     {
       "cause": "INPUT_COVERAGE_GAP",
-      "count": 48
+      "count": 49
     },
     {
       "cause": "GOAL_SPIKE",
@@ -30,11 +30,11 @@
       "count": 11
     },
     {
-      "cause": "BOTH_ATTACKS_BROKE_SUPPRESSION",
-      "count": 5
+      "cause": "DRAW_TRAP",
+      "count": 6
     },
     {
-      "cause": "DRAW_TRAP",
+      "cause": "BOTH_ATTACKS_BROKE_SUPPRESSION",
       "count": 5
     },
     {
@@ -47,6 +47,19 @@
     }
   ],
   "recentLossReviews": [
+    {
+      "matchDate": "2026-07-22",
+      "home": "Nacional",
+      "away": "Leganes",
+      "league": "Friendlies Clubs",
+      "engine": "League Bias",
+      "market": "Home Team Over 0.5 Goals",
+      "score": "0-0",
+      "causes": [
+        "DRAW_TRAP",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
     {
       "matchDate": "2026-07-21",
       "home": "Swansea",
@@ -412,19 +425,6 @@
       "away": "Almaden",
       "league": "USL League Two",
       "engine": "Elite",
-      "market": "Over 1.5",
-      "score": "0-1",
-      "causes": [
-        "TEMPO_COLLAPSE",
-        "INPUT_COVERAGE_GAP"
-      ]
-    },
-    {
-      "matchDate": "2026-07-02",
-      "home": "Marin",
-      "away": "Almaden",
-      "league": "USL League Two",
-      "engine": "Apex",
       "market": "Over 1.5",
       "score": "0-1",
       "causes": [
