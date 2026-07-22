@@ -1,12 +1,20 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-22T17:35:43.704Z",
+  "generatedAt": "2026-07-22T17:47:18.468Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
   "sportsAvailable": 65,
   "soccerSportsAvailable": 37,
   "sportMappings": [
+    {
+      "league": "UEFA Champions League Women",
+      "country": "World",
+      "sportKey": "soccer_uefa_champs_league_qualification",
+      "sportTitle": "UEFA Champions League Qualification",
+      "score": 0.375,
+      "matches": 6
+    },
     {
       "league": "Cup",
       "country": "Estonia",
@@ -30,14 +38,6 @@
       "sportTitle": "Veikkausliiga - Finland",
       "score": 0.323,
       "matches": 5
-    },
-    {
-      "league": "UEFA Champions League Women",
-      "country": "World",
-      "sportKey": "soccer_uefa_champs_league_qualification",
-      "sportTitle": "UEFA Champions League Qualification",
-      "score": 0.375,
-      "matches": 4
     },
     {
       "league": "Ykkönen",
@@ -976,7 +976,7 @@
       "matches": 6
     }
   ],
-  "matchesConsidered": 2076,
+  "matchesConsidered": 2083,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1494,6 +1494,78 @@
       "country": "Faroe-Islands",
       "reason": "No matching soccer sport key",
       "bestScore": 0
+    },
+    {
+      "league": "UEFA Champions League Women",
+      "home": "KÍ",
+      "away": "Ludogorets W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "UEFA Champions League Women",
+      "home": "Mitrovica W",
+      "away": "Zimbru Chisinau W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "UEFA Champions League Women",
+      "home": "PAOK W",
+      "away": "Hapoel Jerusalem W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "UEFA Champions League Women",
+      "home": "Czarni Sosnowiec W",
+      "away": "Lusso W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "UEFA Champions League Women",
+      "home": "Flora W",
+      "away": "Mgarr W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "UEFA Champions League Women",
+      "home": "Pyunik W",
+      "away": "Wrexham W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "UEFA Champions League",
+      "home": "KuPS",
+      "away": "Sabah FA",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "UEFA Champions League",
+      "home": "Lincoln Red Imps FC",
+      "away": "Mjallby AIF",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "UEFA Champions League",
+      "home": "Dinamo Zagreb",
+      "away": "FC Thun",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "UEFA Champions League",
+      "home": "Celje",
+      "away": "Egnatia Rrogozhinë",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "UEFA Champions League",
+      "home": "Heart Of Midlothian",
+      "away": "Sturm Graz",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "UEFA Champions League",
+      "home": "Shamrock Rovers",
+      "away": "Ararat-Armenia",
+      "reason": "No event/team match"
     },
     {
       "league": "Cup",
@@ -2412,82 +2484,22 @@
       "home": "Mariehamn",
       "away": "AC Oulu",
       "reason": "No event/team match"
-    },
-    {
-      "league": "Veikkausliiga",
-      "home": "KuPS",
-      "away": "VPS",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Veikkausliiga",
-      "home": "Ilves",
-      "away": "Lahti",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Veikkausliiga",
-      "home": "Inter Turku",
-      "away": "Gnistan",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Veikkausliiga",
-      "home": "HJK Helsinki",
-      "away": "Turku PS",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Kakkonen - Lohko A",
-      "home": "PEPO",
-      "away": "PuiU Helsinki",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Kakkonen - Lohko A",
-      "home": "PPJ",
-      "away": "Union Plaani",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Kakkonen - Lohko A",
-      "home": "Atlantis",
-      "away": "HPS",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Kakkonen - Lohko A",
-      "home": "Reipas",
-      "away": "MyPa",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Kakkonen - Lohko A",
-      "home": "Kiffen",
-      "away": "HIFK Helsinki",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Kansallinen Liiga",
-      "home": "Åland United W",
-      "away": "VIFK W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Kansallinen Liiga",
-      "home": "PK-35 Vantaa W",
-      "away": "HJK W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Kansallinen Liiga",
-      "home": "IF Gnistan",
-      "away": "KuPS W",
-      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
     {
+      "sportKey": "soccer_uefa_champs_league_qualification",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_uefa_champs_league_qualification",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_uefa_champs_league_qualification",
+      "market": "double_chance"
+    },
+    {
       "sportKey": "soccer_england_efl_cup",
       "market": "btts"
     },
@@ -2521,18 +2533,6 @@
     },
     {
       "sportKey": "soccer_finland_veikkausliiga",
-      "market": "double_chance"
-    },
-    {
-      "sportKey": "soccer_uefa_champs_league_qualification",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_uefa_champs_league_qualification",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_uefa_champs_league_qualification",
       "market": "double_chance"
     },
     {
@@ -2802,6 +2802,31 @@
   ],
   "requestErrors": [
     {
+      "label": "soccer_uefa_champs_league_qualification:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_uefa_champs_league_qualification:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_uefa_champs_league_qualification:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_uefa_champs_league_qualification:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_uefa_champs_league_qualification:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
       "label": "soccer_england_efl_cup:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -2873,31 +2898,6 @@
     },
     {
       "label": "soccer_finland_veikkausliiga:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_uefa_champs_league_qualification:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_uefa_champs_league_qualification:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_uefa_champs_league_qualification:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_uefa_champs_league_qualification:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_uefa_champs_league_qualification:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3459,5 +3459,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-22T17:35:57.210Z"
+  "completedAt": "2026-07-22T17:47:28.807Z"
 }
