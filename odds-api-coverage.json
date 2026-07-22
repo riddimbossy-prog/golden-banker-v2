@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-22T03:27:13.652Z",
+  "generatedAt": "2026-07-22T03:27:02.288Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -54,14 +54,6 @@
       "sportTitle": "Primera División - Argentina",
       "score": 0.323,
       "matches": 1
-    },
-    {
-      "league": "CONMEBOL Sudamericana",
-      "country": "World",
-      "sportKey": "soccer_conmebol_copa_sudamericana",
-      "sportTitle": "Copa Sudamericana",
-      "score": 0.4,
-      "matches": 8
     },
     {
       "league": "Serie B",
@@ -198,6 +190,14 @@
       "sportTitle": "Brazil Série A",
       "score": 0.43,
       "matches": 2
+    },
+    {
+      "league": "CONMEBOL Sudamericana",
+      "country": "World",
+      "sportKey": "soccer_conmebol_copa_sudamericana",
+      "sportTitle": "Copa Sudamericana",
+      "score": 0.4,
+      "matches": 7
     },
     {
       "league": "Copa Paulista",
@@ -976,7 +976,7 @@
       "matches": 4
     }
   ],
-  "matchesConsidered": 2107,
+  "matchesConsidered": 2102,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -998,10 +998,10 @@
       "bestScore": 0.2
     },
     {
-      "league": "Liga Pro",
-      "country": "Ecuador",
+      "league": "Northern NSW NPL",
+      "country": "Australia",
       "reason": "No matching soccer sport key",
-      "bestScore": 0.143
+      "bestScore": 0
     },
     {
       "league": "Northern NSW NPL",
@@ -1050,6 +1050,12 @@
       "country": "Morocco",
       "reason": "No matching soccer sport key",
       "bestScore": 0.125
+    },
+    {
+      "league": "Liga Pro",
+      "country": "Ecuador",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
     },
     {
       "league": "Liga Women",
@@ -2524,18 +2530,6 @@
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_conmebol_copa_sudamericana",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_conmebol_copa_sudamericana",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_conmebol_copa_sudamericana",
-      "market": "double_chance"
-    },
-    {
       "sportKey": "soccer_brazil_serie_b",
       "market": "btts"
     },
@@ -2629,6 +2623,18 @@
     },
     {
       "sportKey": "soccer_brazil_campeonato",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_conmebol_copa_sudamericana",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_conmebol_copa_sudamericana",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_conmebol_copa_sudamericana",
       "market": "double_chance"
     },
     {
@@ -2877,31 +2883,6 @@
       "statusCode": 422
     },
     {
-      "label": "soccer_conmebol_copa_sudamericana:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_conmebol_copa_sudamericana:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_conmebol_copa_sudamericana:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_conmebol_copa_sudamericana:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_conmebol_copa_sudamericana:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
       "label": "soccer_brazil_serie_b:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -3098,6 +3079,31 @@
     },
     {
       "label": "soccer_brazil_campeonato:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_conmebol_copa_sudamericana:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_conmebol_copa_sudamericana:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_conmebol_copa_sudamericana:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_conmebol_copa_sudamericana:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_conmebol_copa_sudamericana:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3459,5 +3465,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-22T03:27:19.372Z"
+  "completedAt": "2026-07-22T03:27:07.725Z"
 }
