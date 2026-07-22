@@ -1,7 +1,7 @@
 {
   "version": "v193",
   "schemaVersion": 1,
-  "updated": "2026-07-22T06:44:12.358Z",
+  "updated": "2026-07-22T07:48:47.811Z",
   "minimumSamples": {
     "teamFavorite": 5,
     "teamUnderdog": 5,
@@ -317,7 +317,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.91
+        "decayedWeight": 0.9
       },
       "underdog": {
         "sample": 0,
@@ -360,7 +360,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 0.91
+          "decayedWeight": 0.9
         }
       },
       "underdogUpsets": 0,
@@ -443,7 +443,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.91
+        "decayedWeight": 0.9
       },
       "underdog": {
         "sample": 0,
@@ -486,7 +486,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 0.91
+          "decayedWeight": 0.9
         }
       },
       "underdogUpsets": 0,
@@ -538,7 +538,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 0.91
+        "decayedWeight": 0.9
       },
       "favoriteBands": {},
       "underdogUpsets": 0,
@@ -4928,7 +4928,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.91
+        "decayedWeight": 0.9
       },
       "bands": {
         "1.86-2.25": {
@@ -4950,7 +4950,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 0.91
+          "decayedWeight": 0.9
         }
       },
       "homeFavorites": {
@@ -4972,7 +4972,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.91
+        "decayedWeight": 0.9
       },
       "awayFavorites": {
         "sample": 0,
@@ -6013,7 +6013,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.91
+        "decayedWeight": 0.9
       },
       "flags": []
     },
@@ -6041,7 +6041,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.91
+        "decayedWeight": 0.9
       },
       "flags": []
     },
@@ -6962,7 +6962,7 @@
         "mid": 0.5,
         "upper": 0.732
       },
-      "decayedWeight": 13.23
+      "decayedWeight": 13.22
     },
     "1.01-1.35": {
       "sample": 7,

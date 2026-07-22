@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-22T07:45:29.624Z",
+  "generatedAt": "2026-07-22T07:44:15.882Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -30,14 +30,6 @@
       "sportTitle": "Primera División - Argentina",
       "score": 0.323,
       "matches": 16
-    },
-    {
-      "league": "Liga MX",
-      "country": "Mexico",
-      "sportKey": "soccer_mexico_ligamx",
-      "sportTitle": "Liga MX",
-      "score": 1,
-      "matches": 8
     },
     {
       "league": "UEFA Champions League Women",
@@ -600,6 +592,14 @@
       "matches": 6
     },
     {
+      "league": "Liga MX",
+      "country": "Mexico",
+      "sportKey": "soccer_mexico_ligamx",
+      "sportTitle": "Liga MX",
+      "score": 1,
+      "matches": 7
+    },
+    {
       "league": "Kansallinen Liiga",
       "country": "Finland",
       "sportKey": "soccer_finland_veikkausliiga",
@@ -976,7 +976,7 @@
       "matches": 6
     }
   ],
-  "matchesConsidered": 2086,
+  "matchesConsidered": 2085,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -2282,138 +2282,6 @@
       "reason": "No event/team match"
     },
     {
-      "league": "Liga MX",
-      "home": "Toluca",
-      "away": "U.N.A.M. - Pumas",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Club Tijuana",
-      "away": "Leon",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Atlante FC",
-      "away": "Club America",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Guadalajara Chivas",
-      "away": "FC Juarez",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Tigres UANL",
-      "away": "Atletico San Luis",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Santos Laguna",
-      "away": "Atlas",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "Necaxa",
-      "away": "Monterrey",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX",
-      "home": "CF Pachuca",
-      "away": "Club Queretaro",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Tigres UANL U21",
-      "away": "Atl. San Luis U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Atlante U21",
-      "away": "Club America U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Club Tijuana U21",
-      "away": "Club Leon U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Guadalajara Chivas U21",
-      "away": "Juarez U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Santos Laguna U21",
-      "away": "Atlas U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Necaxa U21",
-      "away": "Monterrey U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga MX U21",
-      "home": "Pachuca U21",
-      "away": "Queretaro U21",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga de Expansión MX",
-      "home": "Tepatitlán",
-      "away": "Durango",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga de Expansión MX",
-      "home": "Mineros de Zacatecas",
-      "away": "Correcaminos Uat",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga de Expansión MX",
-      "home": "Tlaxcala",
-      "away": "Leones Negros UDG",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga de Expansión MX",
-      "home": "Venados FC",
-      "away": "Alebrijes de Oaxaca",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga de Expansión MX",
-      "home": "Monarcas",
-      "away": "CA La Paz",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga de Expansión MX",
-      "home": "CDS Tampico Madero",
-      "away": "Piratas",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Liga de Expansión MX",
-      "home": "Tapatío",
-      "away": "Cruz Azul Hidalgo",
-      "reason": "No event/team match"
-    },
-    {
       "league": "UEFA Champions League Women",
       "home": "Neftçi Bakı",
       "away": "Budućnost W",
@@ -2484,6 +2352,138 @@
       "home": "Dinamo Zagreb",
       "away": "FC Thun",
       "reason": "No event/team match"
+    },
+    {
+      "league": "UEFA Champions League",
+      "home": "Celje",
+      "away": "Egnatia Rrogozhinë",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "UEFA Champions League",
+      "home": "Heart Of Midlothian",
+      "away": "Sturm Graz",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "UEFA Champions League",
+      "home": "Shamrock Rovers",
+      "away": "Ararat-Armenia",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 1",
+      "home": "Bucheon FC 1995",
+      "away": "FC Anyang",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 1",
+      "home": "Gwangju FC",
+      "away": "Gimcheon Sangmu FC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 1",
+      "home": "FC Seoul",
+      "away": "Pohang Steelers",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 1",
+      "home": "Gimcheon Sangmu FC",
+      "away": "Daejeon Citizen",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 1",
+      "home": "Pohang Steelers",
+      "away": "Jeonbuk Motors",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 1",
+      "home": "FC Anyang",
+      "away": "Gangwon FC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 1",
+      "home": "Gwangju FC",
+      "away": "Jeju United FC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 1",
+      "home": "Incheon United",
+      "away": "Bucheon FC 1995",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 1",
+      "home": "FC Seoul",
+      "away": "Ulsan Hyundai FC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 2",
+      "home": "Gimhae City",
+      "away": "Cheongju",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 2",
+      "home": "Seoul E-Land FC",
+      "away": "Cheonan City",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 2",
+      "home": "Busan I Park",
+      "away": "Suwon Bluewings",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 2",
+      "home": "Daegu FC",
+      "away": "Suwon City FC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 2",
+      "home": "Hwaseong",
+      "away": "Asan Mugunghwa",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 2",
+      "home": "Jeonnam Dragons",
+      "away": "Gyeongnam FC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 2",
+      "home": "Gimpo Citizen",
+      "away": "Yongin City",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 2",
+      "home": "Paju Citizen",
+      "away": "Ansan Greeners",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier Soccer League",
+      "home": "Chicken Inn",
+      "away": "TelOne",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier Soccer League",
+      "home": "Platinum",
+      "away": "Dynamos",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -2500,18 +2500,6 @@
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_mexico_ligamx",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_mexico_ligamx",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_mexico_ligamx",
-      "market": "double_chance"
-    },
-    {
       "sportKey": "soccer_uefa_champs_league_qualification",
       "market": "btts"
     },
@@ -2665,6 +2653,18 @@
     },
     {
       "sportKey": "soccer_russia_premier_league",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_mexico_ligamx",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_mexico_ligamx",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_mexico_ligamx",
       "market": "double_chance"
     },
     {
@@ -2823,31 +2823,6 @@
     },
     {
       "label": "soccer_argentina_primera_division:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_mexico_ligamx:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_mexico_ligamx:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_mexico_ligamx:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_mexico_ligamx:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_mexico_ligamx:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3177,6 +3152,31 @@
       "statusCode": 422
     },
     {
+      "label": "soccer_mexico_ligamx:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_mexico_ligamx:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_mexico_ligamx:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_mexico_ligamx:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_mexico_ligamx:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
       "label": "soccer_denmark_superliga:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -3459,5 +3459,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-22T07:45:46.775Z"
+  "completedAt": "2026-07-22T07:44:21.223Z"
 }
