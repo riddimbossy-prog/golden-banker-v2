@@ -1,7 +1,7 @@
 {
   "version": "v193",
   "schemaVersion": 1,
-  "updated": "2026-07-22T04:36:44.181Z",
+  "updated": "2026-07-22T05:38:27.380Z",
   "minimumSamples": {
     "teamFavorite": 5,
     "teamUnderdog": 5,
@@ -191,7 +191,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.9
+        "decayedWeight": 0.89
       },
       "underdog": {
         "sample": 0,
@@ -234,7 +234,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 0.9
+          "decayedWeight": 0.89
         }
       },
       "underdogUpsets": 0,
@@ -286,7 +286,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 0.9
+        "decayedWeight": 0.89
       },
       "favoriteBands": {},
       "underdogUpsets": 0,
@@ -4476,7 +4476,7 @@
           "mid": 0.6667,
           "upper": 0.8794
         },
-        "decayedWeight": 8.61
+        "decayedWeight": 8.6
       },
       "bands": {
         "1.61-1.85": {
@@ -5985,7 +5985,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.9
+        "decayedWeight": 0.89
       },
       "flags": []
     },
@@ -6962,7 +6962,7 @@
         "mid": 0.5,
         "upper": 0.732
       },
-      "decayedWeight": 13.24
+      "decayedWeight": 13.23
     },
     "1.01-1.35": {
       "sample": 7,
@@ -7025,7 +7025,7 @@
         "mid": 0.5,
         "upper": 0.7848
       },
-      "decayedWeight": 7.65
+      "decayedWeight": 7.64
     }
   },
   "contexts": {
