@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-22T09:55:02.285Z",
+  "updated": "2026-07-22T11:00:00.707Z",
   "summary": {
     "fixtures": 300,
     "qualified": 6,
@@ -5775,11 +5775,11 @@
       "independence": 0
     },
     {
-      "id": 1523790,
+      "id": 1589292,
       "date": "2026-07-22",
-      "home": "Hamilton Olympic",
-      "away": "Belmont Swansea",
-      "league": "Northern NSW NPL",
+      "home": "Maritimo",
+      "away": "Camacha",
+      "league": "Friendlies Clubs",
       "version": "v195",
       "bet": false,
       "market": "No Bet",
