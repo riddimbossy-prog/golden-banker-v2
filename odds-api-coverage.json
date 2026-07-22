@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-22T08:56:47.729Z",
+  "generatedAt": "2026-07-22T09:07:24.243Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -576,14 +576,6 @@
       "matches": 7
     },
     {
-      "league": "Primera Division",
-      "country": "El-Salvador",
-      "sportKey": "soccer_spain_la_liga",
-      "sportTitle": "La Liga - Spain",
-      "score": 0.429,
-      "matches": 3
-    },
-    {
       "league": "Primera División",
       "country": "Costa-Rica",
       "sportKey": "soccer_argentina_primera_division",
@@ -976,7 +968,7 @@
       "matches": 6
     }
   ],
-  "matchesConsidered": 2085,
+  "matchesConsidered": 2083,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -3459,5 +3451,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-22T08:57:03.255Z"
+  "completedAt": "2026-07-22T09:07:29.802Z"
 }
