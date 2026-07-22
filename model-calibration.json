@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T00:17:10.609Z",
+  "updated": "2026-07-22T01:22:09.333Z",
   "minSample": 300,
   "groups": {
     "LEM|USL League Two|Prime|Double Chance 1X|90-99": {
@@ -3556,39 +3556,6 @@
       "validated": false
     },
     "LEM|Friendlies Clubs|league-bias|Over 1.5 Goals|80-89": {
-      "sample": 1,
-      "wins": 1,
-      "losses": 0,
-      "lower": 0.2065,
-      "mid": 1,
-      "upper": 1,
-      "grade": "Learning",
-      "leagueReliability": 42.2,
-      "validated": false
-    },
-    "LEM|Brasileiro U17|trend|Home Team Over 0.5 Goals|80-89": {
-      "sample": 1,
-      "wins": 1,
-      "losses": 0,
-      "lower": 0.2065,
-      "mid": 1,
-      "upper": 1,
-      "grade": "Learning",
-      "leagueReliability": 42.2,
-      "validated": false
-    },
-    "LM|Brasileiro U17|*|Home Team Over 0.5 Goals|80-89": {
-      "sample": 2,
-      "wins": 2,
-      "losses": 0,
-      "lower": 0.3424,
-      "mid": 1,
-      "upper": 1,
-      "grade": "Learning",
-      "leagueReliability": 46.3,
-      "validated": false
-    },
-    "LEM|Brasileiro U17|league-bias|Home Team Over 0.5 Goals|80-89": {
       "sample": 1,
       "wins": 1,
       "losses": 0,

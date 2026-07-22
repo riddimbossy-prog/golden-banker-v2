@@ -1,7 +1,7 @@
 {
   "version": "v193",
   "schemaVersion": 1,
-  "updated": "2026-07-22T00:17:17.712Z",
+  "updated": "2026-07-22T01:22:15.422Z",
   "minimumSamples": {
     "teamFavorite": 5,
     "teamUnderdog": 5,
@@ -15,7 +15,7 @@
     "settledFixtures": 135,
     "settledDecisions": 286,
     "reviewedLosses": 48,
-    "attachedUpcoming": 2275,
+    "attachedUpcoming": 2396,
     "highRiskUpcoming": 0,
     "stableUpcoming": 0
   },
@@ -4476,7 +4476,7 @@
           "mid": 0.6667,
           "upper": 0.8794
         },
-        "decayedWeight": 8.62
+        "decayedWeight": 8.61
       },
       "bands": {
         "1.61-1.85": {
@@ -4540,7 +4540,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 1.92
+          "decayedWeight": 1.91
         },
         "1.86-2.25": {
           "sample": 1,
@@ -5522,7 +5522,7 @@
           "mid": 0.6,
           "upper": 0.8824
         },
-        "decayedWeight": 4.6
+        "decayedWeight": 4.59
       },
       "bands": {
         "1.01-1.35": {
@@ -5748,7 +5748,7 @@
           "mid": 0.5,
           "upper": 0.9055
         },
-        "decayedWeight": 1.92
+        "decayedWeight": 1.91
       },
       "bands": {
         "1.61-1.85": {
@@ -9942,34 +9942,6 @@
       "hardVeto": false
     },
     "friendlies clubs|League Bias|Over 1.5 Goals|unknown|other": {
-      "sample": 1,
-      "wins": 1,
-      "losses": 0,
-      "winRate": 1,
-      "lossRate": 0,
-      "wilson": {
-        "lower": 0.2065,
-        "mid": 1,
-        "upper": 1
-      },
-      "adjustment": 0,
-      "hardVeto": false
-    },
-    "brasileiro u17|Trend|Home Team Over 0.5 Goals|unknown|other": {
-      "sample": 1,
-      "wins": 1,
-      "losses": 0,
-      "winRate": 1,
-      "lossRate": 0,
-      "wilson": {
-        "lower": 0.2065,
-        "mid": 1,
-        "upper": 1
-      },
-      "adjustment": 0,
-      "hardVeto": false
-    },
-    "brasileiro u17|League Bias|Home Team Over 0.5 Goals|unknown|other": {
       "sample": 1,
       "wins": 1,
       "losses": 0,

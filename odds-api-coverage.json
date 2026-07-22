@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-22T01:16:46.268Z",
+  "generatedAt": "2026-07-22T01:17:24.839Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -13,7 +13,7 @@
       "sportKey": "soccer_england_efl_cup",
       "sportTitle": "EFL Cup",
       "score": 0.487,
-      "matches": 23
+      "matches": 24
     },
     {
       "league": "UEFA Champions League",
@@ -21,7 +21,7 @@
       "sportKey": "soccer_uefa_champs_league_qualification",
       "sportTitle": "UEFA Champions League Qualification",
       "score": 0.695,
-      "matches": 3
+      "matches": 9
     },
     {
       "league": "Primera C",
@@ -45,7 +45,7 @@
       "sportKey": "soccer_argentina_primera_division",
       "sportTitle": "Primera División - Argentina",
       "score": 0.323,
-      "matches": 20
+      "matches": 21
     },
     {
       "league": "Super Copa",
@@ -54,14 +54,6 @@
       "sportTitle": "Primera División - Argentina",
       "score": 0.323,
       "matches": 1
-    },
-    {
-      "league": "CONMEBOL Sudamericana",
-      "country": "World",
-      "sportKey": "soccer_conmebol_copa_sudamericana",
-      "sportTitle": "Copa Sudamericana",
-      "score": 0.4,
-      "matches": 8
     },
     {
       "league": "Serie A",
@@ -77,7 +69,7 @@
       "sportKey": "soccer_brazil_serie_b",
       "sportTitle": "Brazil Série B",
       "score": 1,
-      "matches": 17
+      "matches": 19
     },
     {
       "league": "Primera División",
@@ -86,6 +78,14 @@
       "sportTitle": "Primera División - Argentina",
       "score": 0.653,
       "matches": 9
+    },
+    {
+      "league": "CONMEBOL Sudamericana",
+      "country": "World",
+      "sportKey": "soccer_conmebol_copa_sudamericana",
+      "sportTitle": "Copa Sudamericana",
+      "score": 0.4,
+      "matches": 8
     },
     {
       "league": "Liga MX",
@@ -125,7 +125,7 @@
       "sportKey": "soccer_greece_super_league",
       "sportTitle": "Super League - Greece",
       "score": 0.653,
-      "matches": 9
+      "matches": 12
     },
     {
       "league": "Kakkonen - Lohko C",
@@ -232,6 +232,14 @@
       "matches": 17
     },
     {
+      "league": "Copa Gaúcha",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.305,
+      "matches": 1
+    },
+    {
       "league": "USL Championship",
       "country": "USA",
       "sportKey": "soccer_usa_mls",
@@ -261,7 +269,7 @@
       "sportKey": "soccer_greece_super_league",
       "sportTitle": "Super League - Greece",
       "score": 0.286,
-      "matches": 3
+      "matches": 4
     },
     {
       "league": "Premier League",
@@ -301,7 +309,7 @@
       "sportKey": "soccer_argentina_primera_division",
       "sportTitle": "Primera División - Argentina",
       "score": 0.78,
-      "matches": 15
+      "matches": 17
     },
     {
       "league": "Second League - Group 2",
@@ -445,7 +453,7 @@
       "sportKey": "soccer_germany_bundesliga",
       "sportTitle": "Bundesliga - Germany",
       "score": 0.323,
-      "matches": 9
+      "matches": 10
     },
     {
       "league": "Allsvenskan",
@@ -693,7 +701,7 @@
       "sportKey": "soccer_denmark_superliga",
       "sportTitle": "Denmark Superliga",
       "score": 0.38,
-      "matches": 3
+      "matches": 5
     },
     {
       "league": "2. Division - Group 2",
@@ -765,7 +773,7 @@
       "sportKey": "soccer_sweden_superettan",
       "sportTitle": "Superettan - Sweden",
       "score": 1,
-      "matches": 6
+      "matches": 8
     },
     {
       "league": "Brasiliense U20",
@@ -805,7 +813,7 @@
       "sportKey": "soccer_spl",
       "sportTitle": "Premiership - Scotland",
       "score": 0.305,
-      "matches": 15
+      "matches": 21
     },
     {
       "league": "1. Division",
@@ -958,9 +966,17 @@
       "sportTitle": "Allsvenskan - Sweden",
       "score": 0.347,
       "matches": 1
+    },
+    {
+      "league": "Cup",
+      "country": "Russia",
+      "sportKey": "soccer_england_efl_cup",
+      "sportTitle": "EFL Cup",
+      "score": 0.487,
+      "matches": 4
     }
   ],
-  "matchesConsidered": 1992,
+  "matchesConsidered": 2115,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -988,6 +1004,12 @@
       "bestScore": 0.143
     },
     {
+      "league": "Northern NSW NPL",
+      "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
+    },
+    {
       "league": "Australia Cup",
       "country": "Australia",
       "reason": "No matching soccer sport key",
@@ -1000,16 +1022,22 @@
       "bestScore": 0
     },
     {
+      "league": "Persian Gulf Pro League",
+      "country": "Iran",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.111
+    },
+    {
       "league": "Friendlies",
       "country": "World",
       "reason": "No matching soccer sport key",
       "bestScore": 0
     },
     {
-      "league": "Persian Gulf Pro League",
-      "country": "Iran",
+      "league": "UEFA Europa Conference League",
+      "country": "World",
       "reason": "No matching soccer sport key",
-      "bestScore": 0.111
+      "bestScore": 0.222
     },
     {
       "league": "UEFA Europa Conference League",
@@ -1258,12 +1286,6 @@
       "bestScore": 0.111
     },
     {
-      "league": "Northern NSW NPL",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
       "league": "NNSW League 1",
       "country": "Australia",
       "reason": "No matching soccer sport key",
@@ -1456,6 +1478,12 @@
       "bestScore": 0.143
     },
     {
+      "league": "Meistaradeildin",
+      "country": "Faroe-Islands",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
+    },
+    {
       "league": "Cup",
       "home": "Kompanii Marjamaa",
       "away": "Generation Tallinn",
@@ -1591,6 +1619,12 @@
       "league": "Cup",
       "home": "TransferWise",
       "away": "Olympic",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Cup",
+      "home": "FC Tallinn",
+      "away": "Tallinna FC Zapoos",
       "reason": "No event/team match"
     },
     {
@@ -2056,6 +2090,30 @@
       "reason": "No event/team match"
     },
     {
+      "league": "Cup",
+      "home": "Bomik",
+      "away": "Fankom",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Cup",
+      "home": "Anzhi",
+      "away": "Izberbash",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Cup",
+      "home": "Kristall MEZ",
+      "away": "Salyut-Belgorod",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Cup",
+      "home": "2Drots",
+      "away": "Orel",
+      "reason": "No event/team match"
+    },
+    {
       "league": "UEFA Champions League",
       "home": "Egnatia Rrogozhinë",
       "away": "Celje",
@@ -2071,6 +2129,42 @@
       "league": "UEFA Champions League",
       "home": "Omonia Nicosia",
       "away": "Kairat Almaty",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "UEFA Champions League",
+      "home": "KuPS",
+      "away": "Sabah FA",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "UEFA Champions League",
+      "home": "Lincoln Red Imps FC",
+      "away": "Mjallby AIF",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "UEFA Champions League",
+      "home": "Dinamo Zagreb",
+      "away": "FC Thun",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "UEFA Champions League",
+      "home": "Celje",
+      "away": "Egnatia Rrogozhinë",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "UEFA Champions League",
+      "home": "Heart Of Midlothian",
+      "away": "Sturm Graz",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "UEFA Champions League",
+      "home": "Shamrock Rovers",
+      "away": "Ararat-Armenia",
       "reason": "No event/team match"
     },
     {
@@ -2396,78 +2490,6 @@
       "home": "Tigre Res.",
       "away": "Rosario Central Res.",
       "reason": "No event/team match"
-    },
-    {
-      "league": "Reserve League",
-      "home": "Vélez Sársfield Res.",
-      "away": "Talleres Córdoba Res.",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Reserve League",
-      "home": "River Plate Res.",
-      "away": "Barracas Central Res.",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Reserve League",
-      "home": "Estudiantes La Plata Res",
-      "away": "Quilmes 2",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Reserve League",
-      "home": "Independiente Riva. Res.",
-      "away": "Independiente Res.",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Reserve League",
-      "home": "Lanús Res.",
-      "away": "Huracán Res.",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Reserve League",
-      "home": "Newell's Old Boys Res.",
-      "away": "Estudiantes Rio Cuarto 2",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Reserve League",
-      "home": "Racing Club Res.",
-      "away": "Gimnasia Mendoza 2",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Reserve League",
-      "home": "San Martín San Juan Res.",
-      "away": "Atl. Rafaela 2",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Reserve League",
-      "home": "Banfield Res.",
-      "away": "Vélez Sársfield Res.",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Reserve League",
-      "home": "Talleres Córdoba Res.",
-      "away": "River Plate Res.",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super Copa",
-      "home": "Independ. Rivadavia",
-      "away": "Estudiantes L.P.",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "Independiente Petrolero",
-      "away": "Real Potosí",
-      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -2508,27 +2530,39 @@
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_conmebol_copa_sudamericana",
+      "sportKey": "soccer_brazil_campeonato",
       "market": "btts"
     },
     {
-      "sportKey": "soccer_conmebol_copa_sudamericana",
+      "sportKey": "soccer_brazil_campeonato",
       "market": "draw_no_bet"
     },
     {
-      "sportKey": "soccer_conmebol_copa_sudamericana",
+      "sportKey": "soccer_brazil_campeonato",
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_brazil_campeonato",
+      "sportKey": "soccer_brazil_serie_b",
       "market": "btts"
     },
     {
-      "sportKey": "soccer_brazil_campeonato",
+      "sportKey": "soccer_brazil_serie_b",
       "market": "draw_no_bet"
     },
     {
-      "sportKey": "soccer_brazil_campeonato",
+      "sportKey": "soccer_brazil_serie_b",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_conmebol_copa_sudamericana",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_conmebol_copa_sudamericana",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_conmebol_copa_sudamericana",
       "market": "double_chance"
     },
     {
@@ -2861,31 +2895,6 @@
       "statusCode": 422
     },
     {
-      "label": "soccer_conmebol_copa_sudamericana:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_conmebol_copa_sudamericana:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_conmebol_copa_sudamericana:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_conmebol_copa_sudamericana:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_conmebol_copa_sudamericana:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
       "label": "soccer_brazil_campeonato:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -2932,6 +2941,31 @@
     },
     {
       "label": "soccer_brazil_serie_b:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_conmebol_copa_sudamericana:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_conmebol_copa_sudamericana:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_conmebol_copa_sudamericana:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_conmebol_copa_sudamericana:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_conmebol_copa_sudamericana:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3443,5 +3477,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-22T01:16:51.700Z"
+  "completedAt": "2026-07-22T01:17:33.839Z"
 }

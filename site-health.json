@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-07-22T00:17:25.192Z",
+  "generatedAt": "2026-07-22T01:22:23.181Z",
   "version": "v270",
   "label": "Operational",
   "status": "operational",
-  "dataUpdated": "2026-07-22T00:17:16.682Z",
-  "scoresUpdated": "2026-07-22T00:17:16.682Z",
+  "dataUpdated": "2026-07-22T01:22:14.338Z",
+  "scoresUpdated": "2026-07-22T01:22:14.338Z",
   "engineCount": 22,
   "expectedEngineCount": 22,
   "multiEngineCount": 4,
-  "matchCount": 6327,
+  "matchCount": 6452,
   "liveMatches": 89,
   "components": {
     "baseEngines": 18,

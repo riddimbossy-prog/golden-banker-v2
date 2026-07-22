@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-22T00:17:20.676Z",
+  "updated": "2026-07-22T01:22:18.374Z",
   "summary": {
     "fixtures": 300,
     "qualified": 6,
@@ -4120,75 +4120,7 @@
       "alternatives": [
         {
           "market": "Double Chance X2",
-          "support": 0.59,
-          "engines": [
-            "Trend"
-          ]
-        }
-      ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1523790,
-      "date": "2026-07-19",
-      "home": "Hamilton Olympic",
-      "away": "Belmont Swansea",
-      "league": "Northern NSW NPL",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Away Team Over 0.5 Goals",
-      "score": 79.5,
-      "support": 1.06,
-      "supporters": [
-        "Trend",
-        "League Bias"
-      ],
-      "independence": 2,
-      "exactSupport": 2,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Double Chance X2",
-          "support": 0.77,
-          "engines": [
-            "PurePPG Ultra",
-            "PurePPG Elite",
-            "PurePPG Apex"
-          ]
-        },
-        {
-          "market": "First Half Over 0.5",
-          "support": 0.58,
-          "engines": [
-            "Halves"
-          ]
-        }
-      ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1532600,
-      "date": "2026-07-19",
-      "home": "New Lambton",
-      "away": "Toronto Awaba Stags",
-      "league": "NNSW League 1",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 76.1,
-      "support": 0.63,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Home Team Over 0.5 Goals",
-          "support": 0.47,
+          "support": 0.6,
           "engines": [
             "Trend"
           ]
@@ -4444,21 +4376,6 @@
       "conflictIndex": 0,
       "alternatives": [],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1581834,
-      "date": "2026-07-19",
-      "home": "Brasil DE Pelotas",
-      "away": "Gramadense",
-      "league": "Copa Gaúcha",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
     },
     {
       "id": 1513592,
@@ -5805,6 +5722,66 @@
       "supporters": [],
       "conflictIndex": 0,
       "independence": 0
+    },
+    {
+      "id": 1545511,
+      "date": "2026-07-21",
+      "home": "Santa Fe",
+      "away": "Union Magdalena",
+      "league": "Copa Colombia",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1589960,
+      "date": "2026-07-21",
+      "home": "Independ. Rivadavia",
+      "away": "Estudiantes L.P.",
+      "league": "Super Copa",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1498659,
+      "date": "2026-07-21",
+      "home": "Deportivo Madryn",
+      "away": "Godoy Cruz",
+      "league": "Primera Nacional",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Double Chance 1X",
+      "score": 78.8,
+      "support": 0.91,
+      "supporters": [
+        "PurePPG Normal",
+        "Trend"
+      ],
+      "independence": 2,
+      "exactSupport": 2,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Under 3.5 Goals",
+          "support": 0.8,
+          "engines": [
+            "League Bias"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
     }
   ]
 }
