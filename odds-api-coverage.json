@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-22T09:47:36.413Z",
+  "generatedAt": "2026-07-22T09:50:16.631Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -272,6 +272,14 @@
       "matches": 17
     },
     {
+      "league": "Primera División",
+      "country": "Costa-Rica",
+      "sportKey": "soccer_argentina_primera_division",
+      "sportTitle": "Primera División - Argentina",
+      "score": 0.606,
+      "matches": 6
+    },
+    {
       "league": "Second League - Group 2",
       "country": "Russia",
       "sportKey": "soccer_russia_premier_league",
@@ -528,6 +536,14 @@
       "matches": 9
     },
     {
+      "league": "Primera B Metropolitana",
+      "country": "Argentina",
+      "sportKey": "soccer_argentina_primera_division",
+      "sportTitle": "Primera División - Argentina",
+      "score": 0.466,
+      "matches": 11
+    },
+    {
       "league": "Primera División - Apertura",
       "country": "Uruguay",
       "sportKey": "soccer_argentina_primera_division",
@@ -576,11 +592,11 @@
       "matches": 7
     },
     {
-      "league": "Primera División",
-      "country": "Costa-Rica",
-      "sportKey": "soccer_argentina_primera_division",
-      "sportTitle": "Primera División - Argentina",
-      "score": 0.606,
+      "league": "Primera Division",
+      "country": "El-Salvador",
+      "sportKey": "soccer_spain_la_liga",
+      "sportTitle": "La Liga - Spain",
+      "score": 0.429,
       "matches": 6
     },
     {
@@ -824,20 +840,20 @@
       "matches": 5
     },
     {
-      "league": "Primera B Metropolitana",
-      "country": "Argentina",
-      "sportKey": "soccer_argentina_primera_division",
-      "sportTitle": "Primera División - Argentina",
-      "score": 0.466,
-      "matches": 11
-    },
-    {
       "league": "Cearense U20",
       "country": "Brazil",
       "sportKey": "soccer_brazil_campeonato",
       "sportTitle": "Brazil Série A",
       "score": 0.305,
       "matches": 4
+    },
+    {
+      "league": "Paulista Série B",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_serie_b",
+      "sportTitle": "Brazil Série B",
+      "score": 0.609,
+      "matches": 2
     },
     {
       "league": "Torneo Promocional Amateur",
@@ -880,14 +896,6 @@
       "matches": 10
     },
     {
-      "league": "Premier League - Summer Series",
-      "country": "England",
-      "sportKey": "soccer_epl",
-      "sportTitle": "EPL",
-      "score": 0.667,
-      "matches": 2
-    },
-    {
       "league": "Baiano U20",
       "country": "Brazil",
       "sportKey": "soccer_brazil_campeonato",
@@ -904,20 +912,20 @@
       "matches": 1
     },
     {
+      "league": "Premier League - Summer Series",
+      "country": "England",
+      "sportKey": "soccer_epl",
+      "sportTitle": "EPL",
+      "score": 0.667,
+      "matches": 2
+    },
+    {
       "league": "Second League - Group 4",
       "country": "Russia",
       "sportKey": "soccer_russia_premier_league",
       "sportTitle": "Premier League - Russia",
       "score": 0.43,
       "matches": 6
-    },
-    {
-      "league": "Paulista Série B",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_serie_b",
-      "sportTitle": "Brazil Série B",
-      "score": 0.609,
-      "matches": 2
     },
     {
       "league": "Segunda División",
@@ -968,7 +976,7 @@
       "matches": 6
     }
   ],
-  "matchesConsidered": 2083,
+  "matchesConsidered": 2099,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -994,6 +1002,18 @@
       "country": "Australia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.167
+    },
+    {
+      "league": "Capital Territory NPL",
+      "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
+    },
+    {
+      "league": "Calcutta Premier Division",
+      "country": "India",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.222
     },
     {
       "league": "Tasmania NPL",
@@ -1164,6 +1184,12 @@
       "bestScore": 0.125
     },
     {
+      "league": "First League",
+      "country": "Macedonia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
       "league": "Liga I",
       "country": "Romania",
       "reason": "No matching soccer sport key",
@@ -1284,12 +1310,6 @@
       "bestScore": 0.167
     },
     {
-      "league": "Capital Territory NPL",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
       "league": "South Australia NPL",
       "country": "Australia",
       "reason": "No matching soccer sport key",
@@ -1380,12 +1400,6 @@
       "bestScore": 0
     },
     {
-      "league": "First League",
-      "country": "Macedonia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
       "league": "Czech Liga",
       "country": "Czech-Republic",
       "reason": "No matching soccer sport key",
@@ -1454,6 +1468,12 @@
     {
       "league": "Virsliga",
       "country": "Latvia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
+    },
+    {
+      "league": "COTIF Tournament",
+      "country": "World",
       "reason": "No matching soccer sport key",
       "bestScore": 0
     },
@@ -1783,6 +1803,42 @@
     },
     {
       "league": "Primera División",
+      "home": "CS Herediano",
+      "away": "Puntarenas FC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "Deportivo Saprissa",
+      "away": "Perez Zeledon",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "CS Cartagines",
+      "away": "Inter San Carlos",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "Sporting San Jose",
+      "away": "LD Alajuelense",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "San Carlos",
+      "away": "Municipal Liberia",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "San Carlos",
+      "away": "Escorpiones Belén",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
       "home": "Alianza Atletico",
       "away": "Club Deportivo Los Chankas",
       "reason": "No event/team match"
@@ -1833,6 +1889,72 @@
       "league": "Primera División",
       "home": "Deportivo Garcilaso",
       "away": "FC Cajamarca",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera B Metropolitana",
+      "home": "Ituzaingó",
+      "away": "Sportivo Italiano",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera B Metropolitana",
+      "home": "Dock Sud",
+      "away": "Liniers",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera B Metropolitana",
+      "home": "Argentino Quilmes",
+      "away": "Villa Dalmine",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera B Metropolitana",
+      "home": "Brown DE Adrogue",
+      "away": "Argentino de Merlo",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera B Metropolitana",
+      "home": "Comunicaciones",
+      "away": "Real Pilar",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera B Metropolitana",
+      "home": "Defensores Unidos",
+      "away": "UAI Urquiza",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera B Metropolitana",
+      "home": "Deportivo Camioneros",
+      "away": "San Martín Burzaco",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera B Metropolitana",
+      "home": "Flandria",
+      "away": "Excursionistas",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera B Metropolitana",
+      "home": "Deportivo Armenio",
+      "away": "Arsenal Sarandi",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera B Metropolitana",
+      "home": "Deportivo Laferrere",
+      "away": "Talleres Remedios",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera B Metropolitana",
+      "home": "Deportivo Merlo",
+      "away": "Villa San Carlos",
       "reason": "No event/team match"
     },
     {
@@ -1932,42 +2054,6 @@
       "reason": "No event/team match"
     },
     {
-      "league": "Primera División",
-      "home": "Deportivo Saprissa",
-      "away": "Perez Zeledon",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "Sporting San Jose",
-      "away": "LD Alajuelense",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "CS Cartagines",
-      "away": "Inter San Carlos",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "CS Herediano",
-      "away": "Puntarenas FC",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "San Carlos",
-      "away": "Municipal Liberia",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera División",
-      "home": "San Carlos",
-      "away": "Escorpiones Belén",
-      "reason": "No event/team match"
-    },
-    {
       "league": "Primera C",
       "home": "Berazategui",
       "away": "Mercedes",
@@ -2049,72 +2135,6 @@
       "league": "Primera C",
       "home": "Sportivo Barracas",
       "away": "El Porvenir",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera B Metropolitana",
-      "home": "Dock Sud",
-      "away": "Liniers",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera B Metropolitana",
-      "home": "Argentino Quilmes",
-      "away": "Villa Dalmine",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera B Metropolitana",
-      "home": "Brown DE Adrogue",
-      "away": "Argentino de Merlo",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera B Metropolitana",
-      "home": "Comunicaciones",
-      "away": "Real Pilar",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera B Metropolitana",
-      "home": "Defensores Unidos",
-      "away": "UAI Urquiza",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera B Metropolitana",
-      "home": "Deportivo Camioneros",
-      "away": "San Martín Burzaco",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera B Metropolitana",
-      "home": "Flandria",
-      "away": "Excursionistas",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera B Metropolitana",
-      "home": "Deportivo Armenio",
-      "away": "Arsenal Sarandi",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera B Metropolitana",
-      "home": "Ituzaingó",
-      "away": "Sportivo Italiano",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera B Metropolitana",
-      "home": "Deportivo Laferrere",
-      "away": "Talleres Remedios",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Primera B Metropolitana",
-      "home": "Deportivo Merlo",
-      "away": "Villa San Carlos",
       "reason": "No event/team match"
     },
     {
@@ -2463,18 +2483,6 @@
       "league": "Premier Soccer League",
       "home": "Chicken Inn",
       "away": "TelOne",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier Soccer League",
-      "home": "Platinum",
-      "away": "Dynamos",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier Soccer League",
-      "home": "Scotland Mabvuku",
-      "away": "Bulawayo Chiefs",
       "reason": "No event/team match"
     }
   ],
@@ -3451,5 +3459,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-22T09:47:55.673Z"
+  "completedAt": "2026-07-22T09:50:22.522Z"
 }
