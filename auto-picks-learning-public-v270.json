@@ -2,13 +2,49 @@
   "schema": 1,
   "build": "v270",
   "modelVersion": "Auto Profile v1.1",
-  "generatedAt": "2026-07-22T07:51:26.385Z",
+  "generatedAt": "2026-07-22T15:29:01.937Z",
   "status": "monitoring",
-  "settled": 8,
-  "wins": 8,
-  "losses": 0,
+  "settled": 12,
+  "wins": 9,
+  "losses": 3,
   "voids": 0,
   "recent": [
+    {
+      "fixtureKey": "f1523790",
+      "home": "Hamilton Olympic",
+      "away": "Belmont Swansea",
+      "market": "Belmont Swansea to win",
+      "result": "Lost",
+      "score": "5-2",
+      "date": "2026-07-22"
+    },
+    {
+      "fixtureKey": "f1507009",
+      "home": "FC Seoul",
+      "away": "Pohang Steelers",
+      "market": "Under 3.5 Goals",
+      "result": "Lost",
+      "score": "3-1",
+      "date": "2026-07-22"
+    },
+    {
+      "fixtureKey": "f1507008",
+      "home": "Gwangju FC",
+      "away": "Gimcheon Sangmu FC",
+      "market": "Under 3.5 Goals",
+      "result": "Won",
+      "score": "1-1",
+      "date": "2026-07-22"
+    },
+    {
+      "fixtureKey": "f1507007",
+      "home": "Bucheon FC 1995",
+      "away": "FC Anyang",
+      "market": "Under 3.5 Goals",
+      "result": "Lost",
+      "score": "2-3",
+      "date": "2026-07-22"
+    },
     {
       "fixtureKey": "f1492290",
       "home": "Atletico-MG",
@@ -44,42 +80,6 @@
       "result": "Won",
       "score": "1-0",
       "date": "2026-07-21"
-    },
-    {
-      "fixtureKey": "f1507005",
-      "home": "Jeonbuk Motors",
-      "away": "Daejeon Citizen",
-      "market": "Under 3.5 Goals",
-      "result": "Won",
-      "score": "0-0",
-      "date": "2026-07-21"
-    },
-    {
-      "fixtureKey": "f1507006",
-      "home": "Ulsan Hyundai FC",
-      "away": "Incheon United",
-      "market": "Under 3.5 Goals",
-      "result": "Won",
-      "score": "1-2",
-      "date": "2026-07-21"
-    },
-    {
-      "fixtureKey": "f1507004",
-      "home": "Jeju United FC",
-      "away": "Gangwon FC",
-      "market": "Under 3.5 Goals",
-      "result": "Won",
-      "score": "1-1",
-      "date": "2026-07-21"
-    },
-    {
-      "fixtureKey": "f1519414",
-      "home": "Mushuc Runa SC",
-      "away": "Orense SC",
-      "market": "Under 3.5 Goals",
-      "result": "Won",
-      "score": "2-1",
-      "date": "2026-07-20"
     }
   ]
 }
