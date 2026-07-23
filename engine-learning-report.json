@@ -1,10 +1,10 @@
 {
   "version": "v193",
-  "updated": "2026-07-23T19:41:20.078Z",
+  "updated": "2026-07-23T20:44:04.188Z",
   "summary": {
-    "settledFixtures": 152,
-    "settledDecisions": 306,
-    "reviewedLosses": 54,
+    "settledFixtures": 153,
+    "settledDecisions": 308,
+    "reviewedLosses": 56,
     "teamProfiles": 70,
     "leagueProfiles": 14,
     "matchupProfiles": 36,
@@ -19,7 +19,7 @@
   "commonMissCauses": [
     {
       "cause": "INPUT_COVERAGE_GAP",
-      "count": 54
+      "count": 56
     },
     {
       "cause": "GOAL_SPIKE",
@@ -31,7 +31,7 @@
     },
     {
       "cause": "DRAW_TRAP",
-      "count": 9
+      "count": 10
     },
     {
       "cause": "BOTH_ATTACKS_BROKE_SUPPRESSION",
@@ -108,6 +108,31 @@
       "score": "0-0",
       "causes": [
         "DRAW_TRAP",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-22",
+      "home": "RB Bragantino U20",
+      "away": "Palmeiras U20",
+      "league": "Brasileiro U20 A",
+      "engine": "Trend",
+      "market": "Away Team Over 0.5 Goals",
+      "score": "0-0",
+      "causes": [
+        "DRAW_TRAP",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
+    {
+      "matchDate": "2026-07-22",
+      "home": "RB Bragantino U20",
+      "away": "Palmeiras U20",
+      "league": "Brasileiro U20 A",
+      "engine": "Halves",
+      "market": "Second Half Over 0.5",
+      "score": "0-0",
+      "causes": [
         "INPUT_COVERAGE_GAP"
       ]
     },
@@ -402,32 +427,6 @@
       "score": "0-0",
       "causes": [
         "TEMPO_COLLAPSE",
-        "INPUT_COVERAGE_GAP"
-      ]
-    },
-    {
-      "matchDate": "2026-07-03",
-      "home": "Redlands",
-      "away": "Capo",
-      "league": "USL League Two",
-      "engine": "Normal",
-      "market": "Home DNB",
-      "score": "2-3",
-      "causes": [
-        "RESULT_DIRECTION_MISS",
-        "INPUT_COVERAGE_GAP"
-      ]
-    },
-    {
-      "matchDate": "2026-07-03",
-      "home": "Springvale",
-      "away": "Keilor Park",
-      "league": "Victoria Premier League 2",
-      "engine": "Prime",
-      "market": "BTTS No",
-      "score": "5-2",
-      "causes": [
-        "BOTH_ATTACKS_BROKE_SUPPRESSION",
         "INPUT_COVERAGE_GAP"
       ]
     }
