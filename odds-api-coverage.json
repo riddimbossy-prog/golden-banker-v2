@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-23T14:27:58.108Z",
+  "generatedAt": "2026-07-23T14:38:00.662Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -14,14 +14,6 @@
       "sportTitle": "EPL",
       "score": 0.5,
       "matches": 11
-    },
-    {
-      "league": "Premier League",
-      "country": "Lebanon",
-      "sportKey": "soccer_epl",
-      "sportTitle": "EPL",
-      "score": 0.987,
-      "matches": 4
     },
     {
       "league": "Premier League",
@@ -96,14 +88,6 @@
       "matches": 9
     },
     {
-      "league": "Primera C",
-      "country": "Argentina",
-      "sportKey": "soccer_argentina_primera_division",
-      "sportTitle": "Primera División - Argentina",
-      "score": 0.513,
-      "matches": 14
-    },
-    {
       "league": "CONMEBOL Sudamericana",
       "country": "World",
       "sportKey": "soccer_conmebol_copa_sudamericana",
@@ -165,7 +149,7 @@
       "sportKey": "soccer_epl",
       "sportTitle": "EPL",
       "score": 0.987,
-      "matches": 2
+      "matches": 1
     },
     {
       "league": "Victoria Premier League 2",
@@ -198,6 +182,14 @@
       "sportTitle": "Brazil Série A",
       "score": 0.305,
       "matches": 21
+    },
+    {
+      "league": "Premier League",
+      "country": "Lebanon",
+      "sportKey": "soccer_epl",
+      "sportTitle": "EPL",
+      "score": 0.987,
+      "matches": 2
     },
     {
       "league": "Second League - Group 1",
@@ -704,14 +696,6 @@
       "matches": 12
     },
     {
-      "league": "Catarinense U20",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.305,
-      "matches": 5
-    },
-    {
       "league": "Eliteserien",
       "country": "Norway",
       "sportKey": "soccer_norway_eliteserien",
@@ -760,6 +744,14 @@
       "matches": 8
     },
     {
+      "league": "Primera C",
+      "country": "Argentina",
+      "sportKey": "soccer_argentina_primera_division",
+      "sportTitle": "Primera División - Argentina",
+      "score": 0.513,
+      "matches": 14
+    },
+    {
       "league": "Super League",
       "country": "Switzerland",
       "sportKey": "soccer_greece_super_league",
@@ -782,6 +774,14 @@
       "sportTitle": "Primera División - Argentina",
       "score": 0.513,
       "matches": 18
+    },
+    {
+      "league": "Catarinense U20",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.305,
+      "matches": 5
     },
     {
       "league": "Copa Paulista",
@@ -952,7 +952,7 @@
       "matches": 4
     }
   ],
-  "matchesConsidered": 2056,
+  "matchesConsidered": 2033,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -969,12 +969,6 @@
     },
     {
       "league": "Friendlies Clubs",
-      "country": "World",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
-      "league": "CONCACAF Caribbean Club Shield",
       "country": "World",
       "reason": "No matching soccer sport key",
       "bestScore": 0
@@ -1092,12 +1086,6 @@
       "country": "World",
       "reason": "No matching soccer sport key",
       "bestScore": 0.167
-    },
-    {
-      "league": "CECAFA Club Cup",
-      "country": "World",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.125
     },
     {
       "league": "1 Lyga",
@@ -1551,30 +1539,6 @@
     },
     {
       "league": "Premier League",
-      "home": "Al Nejmeh",
-      "away": "Jwaaya FC",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Al Ahed",
-      "away": "Al Ansar",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Racing",
-      "away": "Reyady Abaseya",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Reyady Abaseya",
-      "away": "Tadamon Sour",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
       "home": "Toktogul",
       "away": "Alay",
       "reason": "No event/team match"
@@ -1628,12 +1592,6 @@
       "reason": "No event/team match"
     },
     {
-      "league": "Premier League",
-      "home": "Tsirang",
-      "away": "Transport United",
-      "reason": "No event/team match"
-    },
-    {
       "league": "Victoria Premier League 2",
       "home": "Keilor Park",
       "away": "Bayside Argonauts",
@@ -1673,6 +1631,18 @@
       "league": "Victoria Premier League 2",
       "home": "Altona City",
       "away": "Whittlesea United",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
+      "home": "Racing",
+      "away": "Reyady Abaseya",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
+      "home": "Reyady Abaseya",
+      "away": "Tadamon Sour",
       "reason": "No event/team match"
     },
     {
@@ -2459,6 +2429,36 @@
       "league": "Cup",
       "home": "TransferWise",
       "away": "Olympic",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Cup",
+      "home": "FC Tallinn",
+      "away": "Tallinna FC Zapoos",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Cup",
+      "home": "Flora III",
+      "away": "Põhja-Tallinna JK Volta",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Cup",
+      "home": "Kravare",
+      "away": "Bospor Bohumín",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Cup",
+      "home": "Strání",
+      "away": "Vsetín",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Cup",
+      "home": "Tatran Všechovice",
+      "away": "Unie Hlubina",
       "reason": "No event/team match"
     }
   ],
@@ -3435,5 +3435,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-23T14:28:03.688Z"
+  "completedAt": "2026-07-23T14:38:11.691Z"
 }
