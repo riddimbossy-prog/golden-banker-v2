@@ -1,20 +1,12 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-23T05:52:34.116Z",
+  "generatedAt": "2026-07-23T06:08:04.284Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
   "sportsAvailable": 66,
   "soccerSportsAvailable": 37,
   "sportMappings": [
-    {
-      "league": "Catarinense U20",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.305,
-      "matches": 7
-    },
     {
       "league": "Brasileiro U20 A",
       "country": "Brazil",
@@ -38,14 +30,6 @@
       "sportTitle": "Super League - Greece",
       "score": 0.286,
       "matches": 4
-    },
-    {
-      "league": "Major League Soccer",
-      "country": "USA",
-      "sportKey": "soccer_usa_mls",
-      "sportTitle": "MLS",
-      "score": 1,
-      "matches": 19
     },
     {
       "league": "Premier League",
@@ -800,6 +784,14 @@
       "matches": 18
     },
     {
+      "league": "Catarinense U20",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.305,
+      "matches": 5
+    },
+    {
       "league": "Copa Paulista",
       "country": "Brazil",
       "sportKey": "soccer_brazil_campeonato",
@@ -968,7 +960,7 @@
       "matches": 4
     }
   ],
-  "matchesConsidered": 2035,
+  "matchesConsidered": 2033,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1488,48 +1480,6 @@
       "bestScore": 0.2
     },
     {
-      "league": "Catarinense U20",
-      "home": "Chapecoense U20",
-      "away": "Barra SC U20",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Catarinense U20",
-      "home": "Figueirense U20",
-      "away": "Carlos Renaux U20",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Catarinense U20",
-      "home": "Carlos Renaux U20",
-      "away": "Criciuma U20",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Catarinense U20",
-      "home": "Avaí U20",
-      "away": "Concórdia U20",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Catarinense U20",
-      "home": "Chapecoense U20",
-      "away": "Nação U20",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Catarinense U20",
-      "home": "Barra SC U20",
-      "away": "Joinville U20",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Catarinense U20",
-      "home": "Brusque U20",
-      "away": "Figueirense U20",
-      "reason": "No event/team match"
-    },
-    {
       "league": "Brasileiro U20 A",
       "home": "RB Bragantino U20",
       "away": "Palmeiras U20",
@@ -1845,6 +1795,36 @@
       "league": "Brasiliense U20",
       "home": "CFZ Brasilia U20",
       "away": "ARUC U20",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Catarinense U20",
+      "home": "Carlos Renaux U20",
+      "away": "Criciuma U20",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Catarinense U20",
+      "home": "Avaí U20",
+      "away": "Concórdia U20",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Catarinense U20",
+      "home": "Chapecoense U20",
+      "away": "Nação U20",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Catarinense U20",
+      "home": "Barra SC U20",
+      "away": "Joinville U20",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Catarinense U20",
+      "home": "Brusque U20",
+      "away": "Figueirense U20",
       "reason": "No event/team match"
     },
     {
@@ -2478,51 +2458,15 @@
       "reason": "No event/team match"
     },
     {
-      "league": "MLS Next Pro",
-      "home": "Ventura County",
-      "away": "The Town",
+      "league": "Premier League",
+      "home": "Dynamo",
+      "away": "Krylia Sovetov",
       "reason": "No event/team match"
     },
     {
-      "league": "MLS Next Pro",
-      "home": "Carolina Core",
-      "away": "Chicago Fire II",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "MLS Next Pro",
-      "home": "North Texas",
-      "away": "Los Angeles FC II",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "MLS Next Pro",
-      "home": "Atlanta United II",
-      "away": "New York City II",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "MLS Next Pro",
-      "home": "Portland Timbers II",
-      "away": "Real Monarchs",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "MLS Next Pro",
-      "home": "Connecticut FC",
-      "away": "Columbus Crew II",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "MLS Next Pro",
-      "home": "FC Cincinnati II",
-      "away": "New England II",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "MLS Next Pro",
-      "home": "Houston Dynamo FC II",
-      "away": "Austin II",
+      "league": "Premier League",
+      "home": "Akron",
+      "away": "Zenit",
       "reason": "No event/team match"
     }
   ],
@@ -2549,18 +2493,6 @@
     },
     {
       "sportKey": "soccer_greece_super_league",
-      "market": "double_chance"
-    },
-    {
-      "sportKey": "soccer_usa_mls",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_usa_mls",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_usa_mls",
       "market": "double_chance"
     },
     {
@@ -2900,31 +2832,6 @@
     },
     {
       "label": "soccer_greece_super_league:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_usa_mls:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_usa_mls:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_usa_mls:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_usa_mls:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_usa_mls:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3536,5 +3443,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-23T05:52:39.914Z"
+  "completedAt": "2026-07-23T06:08:10.326Z"
 }
