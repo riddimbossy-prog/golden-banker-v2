@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-23T04:57:17.083Z",
+  "generatedAt": "2026-07-23T05:08:07.792Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -32,14 +32,6 @@
       "matches": 1
     },
     {
-      "league": "USL Championship",
-      "country": "USA",
-      "sportKey": "soccer_usa_mls",
-      "sportTitle": "MLS",
-      "score": 0.323,
-      "matches": 15
-    },
-    {
       "league": "Northern Super League",
       "country": "Canada",
       "sportKey": "soccer_greece_super_league",
@@ -53,7 +45,7 @@
       "sportKey": "soccer_usa_mls",
       "sportTitle": "MLS",
       "score": 1,
-      "matches": 20
+      "matches": 19
     },
     {
       "league": "Premier League",
@@ -968,7 +960,7 @@
       "matches": 4
     }
   ],
-  "matchesConsidered": 2042,
+  "matchesConsidered": 2039,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1380,12 +1372,6 @@
       "bestScore": 0
     },
     {
-      "league": "Super Liga",
-      "country": "Serbia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.125
-    },
-    {
       "league": "Esiliiga A",
       "country": "Estonia",
       "reason": "No matching soccer sport key",
@@ -1420,6 +1406,12 @@
       "country": "Kuwait",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
+    },
+    {
+      "league": "Super Liga",
+      "country": "Serbia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.125
     },
     {
       "league": "Segunda División",
@@ -2124,93 +2116,33 @@
       "reason": "No event/team match"
     },
     {
-      "league": "USL Championship",
-      "home": "Colorado Springs",
-      "away": "Miami FC",
+      "league": "Northern Super League",
+      "home": "Calgary Wild W",
+      "away": "Ottawa Rapid W",
       "reason": "No event/team match"
     },
     {
-      "league": "USL Championship",
-      "home": "Birmingham Legion",
-      "away": "New Mexico United",
+      "league": "Northern Super League",
+      "home": "Montreal Roses W",
+      "away": "AFC Toronto W",
       "reason": "No event/team match"
     },
     {
-      "league": "USL Championship",
-      "home": "Brooklyn",
-      "away": "San Antonio",
+      "league": "Northern Super League",
+      "home": "Vancouver Rise W",
+      "away": "Halifax Tides W",
       "reason": "No event/team match"
     },
     {
-      "league": "USL Championship",
-      "home": "Detroit City",
-      "away": "Las Vegas Lights",
+      "league": "Northern Super League",
+      "home": "AFC Toronto W",
+      "away": "Calgary Wild W",
       "reason": "No event/team match"
     },
     {
-      "league": "USL Championship",
-      "home": "Indy Eleven",
-      "away": "Loudoun United",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "USL Championship",
-      "home": "Miami FC",
-      "away": "Tampa Bay Rowdies",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "USL Championship",
-      "home": "Pittsburgh Riverhounds",
-      "away": "Rhode Island",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "USL Championship",
-      "home": "FC Tulsa",
-      "away": "Lexington",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "USL Championship",
-      "home": "Colorado Springs",
-      "away": "Charleston Battery",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "USL Championship",
-      "home": "El Paso Locomotive",
-      "away": "Sporting JAX",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "USL Championship",
-      "home": "Monterey Bay",
-      "away": "Orange County SC",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "USL Championship",
-      "home": "Oakland Roots",
-      "away": "Sacramento Republic",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "USL Championship",
-      "home": "Phoenix Rising",
-      "away": "Hartford Athletic",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "USL Championship",
-      "home": "Pittsburgh Riverhounds",
-      "away": "FC Tulsa",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "USL Championship",
-      "home": "Louisville City",
-      "away": "Birmingham Legion",
+      "league": "Super League",
+      "home": "Navbahor",
+      "away": "Qizilqum",
       "reason": "No event/team match"
     },
     {
@@ -2536,72 +2468,6 @@
       "home": "Houston Dynamo FC II",
       "away": "Austin II",
       "reason": "No event/team match"
-    },
-    {
-      "league": "MLS Next Pro",
-      "home": "Orlando City II",
-      "away": "Huntsville City",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "MLS Next Pro",
-      "home": "St. Louis City II",
-      "away": "Vancouver Whitecaps II",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "MLS Next Pro",
-      "home": "Tacoma Defiance",
-      "away": "Colorado Rapids II",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "USL League Two",
-      "home": "Ballard",
-      "away": "Ventura County Fusion",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "USL League Two",
-      "home": "Vermont Green",
-      "away": "Asheville City",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "USL League Two",
-      "home": "Flint City Bucks",
-      "away": "Peoria",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "USL League Two",
-      "home": "Laredo Heat",
-      "away": "Fort Lauderdale United",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "NWSL Women",
-      "home": "Houston Dash W",
-      "away": "Bay FC W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "NWSL Women",
-      "home": "Orlando Pride W",
-      "away": "Chicago Red Stars W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "NWSL Women",
-      "home": "Portland Thorns W",
-      "away": "NJ/NY Gotham FC W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "NWSL Women",
-      "home": "Boston Legacy W",
-      "away": "Kansas City W",
-      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -2615,18 +2481,6 @@
     },
     {
       "sportKey": "soccer_brazil_campeonato",
-      "market": "double_chance"
-    },
-    {
-      "sportKey": "soccer_usa_mls",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_usa_mls",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_usa_mls",
       "market": "double_chance"
     },
     {
@@ -2953,31 +2807,6 @@
     },
     {
       "label": "soccer_brazil_campeonato:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_usa_mls:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_usa_mls:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_usa_mls:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_usa_mls:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_usa_mls:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3614,5 +3443,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-23T04:57:33.690Z"
+  "completedAt": "2026-07-23T05:08:35.453Z"
 }
