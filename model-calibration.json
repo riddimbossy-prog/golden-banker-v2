@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-23T21:43:10.297Z",
+  "updated": "2026-07-23T22:47:35.716Z",
   "minSample": 300,
   "groups": {
     "LEM|USL League Two|Prime|Double Chance 1X|90-99": {
@@ -2588,14 +2588,14 @@
       "validated": false
     },
     "EM|*|trend|Home Team Over 0.5 Goals|80-89": {
-      "sample": 12,
-      "wins": 11,
+      "sample": 13,
+      "wins": 12,
       "losses": 1,
-      "lower": 0.6461,
-      "mid": 0.9167,
-      "upper": 0.9851,
+      "lower": 0.6669,
+      "mid": 0.9231,
+      "upper": 0.9863,
       "grade": "Learning",
-      "leagueReliability": 48.1,
+      "leagueReliability": 48.7,
       "validated": false
     },
     "LM|USL League Two|*|Home Team Over 0.5 Goals|80-89": {
@@ -2610,14 +2610,14 @@
       "validated": false
     },
     "M|*|*|Home Team Over 0.5 Goals|80-89": {
-      "sample": 47,
-      "wins": 39,
+      "sample": 48,
+      "wins": 40,
       "losses": 8,
-      "lower": 0.6986,
-      "mid": 0.8298,
-      "upper": 0.9111,
+      "lower": 0.7042,
+      "mid": 0.8333,
+      "upper": 0.913,
       "grade": "Learning",
-      "leagueReliability": 52.8,
+      "leagueReliability": 52.9,
       "validated": false
     },
     "LEM|USL League Two|halves|Second Half Over 0.5|90-99": {
@@ -3710,6 +3710,28 @@
       "validated": false
     },
     "LM|Catarinense U20|*|Second Half Over 0.5|80-89": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "lower": 0.2065,
+      "mid": 1,
+      "upper": 1,
+      "grade": "Learning",
+      "leagueReliability": 42.2,
+      "validated": false
+    },
+    "LEM|Catarinense U20|trend|Home Team Over 0.5 Goals|80-89": {
+      "sample": 1,
+      "wins": 1,
+      "losses": 0,
+      "lower": 0.2065,
+      "mid": 1,
+      "upper": 1,
+      "grade": "Learning",
+      "leagueReliability": 42.2,
+      "validated": false
+    },
+    "LM|Catarinense U20|*|Home Team Over 0.5 Goals|80-89": {
       "sample": 1,
       "wins": 1,
       "losses": 0,

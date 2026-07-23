@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-23T21:43:18.488Z",
+  "updated": "2026-07-23T22:47:45.975Z",
   "summary": {
     "fixtures": 300,
     "qualified": 0,
@@ -5417,27 +5417,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1576838,
-      "date": "2026-07-21",
-      "home": "Instituto Res.",
-      "away": "Gimnasia La Plata Res.",
-      "league": "Reserve League",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Under 3.5 Goals",
-      "score": 74.8,
-      "support": 0.3,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1576839,
       "date": "2026-07-21",
       "home": "Sarmiento Res.",
@@ -5689,27 +5668,6 @@
       "independence": 0
     },
     {
-      "id": 1598505,
-      "date": "2026-07-22",
-      "home": "Puszcza Niepołomice",
-      "away": "Jarosław",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Home Team Over 0.5 Goals",
-      "score": 74.6,
-      "support": 0.25,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1562956,
       "date": "2026-07-22",
       "home": "Atlas Delmenhorst",
@@ -5723,27 +5681,6 @@
       "support": 0.32,
       "supporters": [
         "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1539859,
-      "date": "2026-07-22",
-      "home": "Chapecoense U20",
-      "away": "Barra SC U20",
-      "league": "Catarinense U20",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 76.6,
-      "support": 0.74,
-      "supporters": [
-        "Halves"
       ],
       "independence": 1,
       "exactSupport": 1,
@@ -5794,6 +5731,71 @@
       "supporters": [],
       "conflictIndex": 0,
       "independence": 0
+    },
+    {
+      "id": 1557278,
+      "date": "2026-07-22",
+      "home": "U. de Deportes W",
+      "away": "Carlos Mannucci W",
+      "league": "Liga Women",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Second Half Over 0.5",
+      "score": 76,
+      "support": 0.6,
+      "supporters": [
+        "Halves"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1581834,
+      "date": "2026-07-22",
+      "home": "Brasil DE Pelotas",
+      "away": "Gramadense",
+      "league": "Copa Gaúcha",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1534067,
+      "date": "2026-07-23",
+      "home": "Calgary Wild W",
+      "away": "Ottawa Rapid W",
+      "league": "Northern Super League",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Away Team Over 0.5 Goals",
+      "score": 75.8,
+      "support": 0.56,
+      "supporters": [
+        "Trend"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Second Half Over 0.5",
+          "support": 0.53,
+          "engines": [
+            "Halves"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
     }
   ]
 }
