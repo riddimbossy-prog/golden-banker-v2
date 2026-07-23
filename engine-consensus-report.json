@@ -1,10 +1,10 @@
 {
   "version": "v195",
-  "updated": "2026-07-23T10:10:36.266Z",
+  "updated": "2026-07-23T11:14:00.280Z",
   "summary": {
     "fixtures": 300,
-    "qualified": 5,
-    "rejected": 295,
+    "qualified": 0,
+    "rejected": 300,
     "highConflict": 0
   },
   "fixtures": [
@@ -1939,7 +1939,7 @@
       "alternatives": [
         {
           "market": "Away Team Over 0.5 Goals",
-          "support": 0.42,
+          "support": 0.29,
           "engines": [
             "League Bias"
           ]
@@ -1968,7 +1968,7 @@
       "alternatives": [
         {
           "market": "Away Team Over 0.5 Goals",
-          "support": 0.3,
+          "support": 0.21,
           "engines": [
             "League Bias"
           ]
@@ -1986,8 +1986,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 79.4,
-      "support": 1.06,
+      "score": 79,
+      "support": 0.94,
       "supporters": [
         "Trend",
         "League Bias"
@@ -2087,8 +2087,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 78.6,
-      "support": 0.86,
+      "score": 78.2,
+      "support": 0.76,
       "supporters": [
         "Trend",
         "League Bias"
@@ -2130,8 +2130,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 75.4,
-      "support": 0.44,
+      "score": 74.8,
+      "support": 0.3,
       "supporters": [
         "League Bias"
       ],
@@ -2169,7 +2169,7 @@
         },
         {
           "market": "Under 3.5 Goals",
-          "support": 0.57,
+          "support": 0.39,
           "engines": [
             "League Bias"
           ]
@@ -2198,7 +2198,7 @@
       "alternatives": [
         {
           "market": "Under 3.5 Goals",
-          "support": 0.35,
+          "support": 0.24,
           "engines": [
             "League Bias"
           ]
@@ -2242,7 +2242,7 @@
       "alternatives": [
         {
           "market": "Home Team Over 0.5 Goals",
-          "support": 0.41,
+          "support": 0.29,
           "engines": [
             "League Bias"
           ]
@@ -2260,8 +2260,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 75.3,
-      "support": 0.43,
+      "score": 74.8,
+      "support": 0.3,
       "supporters": [
         "League Bias"
       ],
@@ -2281,8 +2281,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 80.2,
-      "support": 1.25,
+      "score": 79.6,
+      "support": 1.11,
       "supporters": [
         "Trend",
         "League Bias"
@@ -2310,22 +2310,22 @@
       "version": "v195",
       "bet": false,
       "market": "No Bet",
-      "candidate": "Under 3.5 Goals",
-      "score": 75.7,
-      "support": 0.53,
+      "candidate": "Double Chance X2",
+      "score": 75.4,
+      "support": 0.45,
       "supporters": [
-        "League Bias"
+        "PurePPG Normal",
+        "PurePPG Strict"
       ],
       "independence": 1,
-      "exactSupport": 1,
+      "exactSupport": 2,
       "conflictIndex": 0,
       "alternatives": [
         {
-          "market": "Double Chance X2",
-          "support": 0.45,
+          "market": "Under 3.5 Goals",
+          "support": 0.36,
           "engines": [
-            "PurePPG Normal",
-            "PurePPG Strict"
+            "League Bias"
           ]
         }
       ],
@@ -2385,8 +2385,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Away Team Over 0.5 Goals",
-      "score": 82.8,
-      "support": 1.51,
+      "score": 82.3,
+      "support": 1.38,
       "supporters": [
         "Trend",
         "Streaks",
@@ -2431,8 +2431,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 74.9,
-      "support": 0.32,
+      "score": 74.5,
+      "support": 0.22,
       "supporters": [
         "League Bias"
       ],
@@ -2452,8 +2452,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 75.1,
-      "support": 0.37,
+      "score": 74.6,
+      "support": 0.26,
       "supporters": [
         "League Bias"
       ],
@@ -2506,7 +2506,7 @@
         },
         {
           "market": "Home Team Over 0.5 Goals",
-          "support": 0.4,
+          "support": 0.28,
           "engines": [
             "League Bias"
           ]
@@ -2524,8 +2524,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 74.6,
-      "support": 0.25,
+      "score": 74.3,
+      "support": 0.17,
       "supporters": [
         "League Bias"
       ],
@@ -2596,8 +2596,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 75.1,
-      "support": 0.37,
+      "score": 74.6,
+      "support": 0.25,
       "supporters": [
         "League Bias"
       ],
@@ -2632,8 +2632,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 75.1,
-      "support": 0.37,
+      "score": 74.6,
+      "support": 0.25,
       "supporters": [
         "League Bias"
       ],
@@ -2668,8 +2668,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 75.1,
-      "support": 0.37,
+      "score": 74.6,
+      "support": 0.25,
       "supporters": [
         "League Bias"
       ],
@@ -2719,8 +2719,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Away Team Over 0.5 Goals",
-      "score": 74.7,
-      "support": 0.28,
+      "score": 74.4,
+      "support": 0.19,
       "supporters": [
         "League Bias"
       ],
@@ -2755,8 +2755,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Away Team Over 0.5 Goals",
-      "score": 74.4,
-      "support": 0.2,
+      "score": 74.2,
+      "support": 0.14,
       "supporters": [
         "League Bias"
       ],
@@ -2841,8 +2841,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 82.9,
-      "support": 1.53,
+      "score": 82.3,
+      "support": 1.39,
       "supporters": [
         "Trend",
         "Streaks",
@@ -2883,7 +2883,7 @@
       "alternatives": [
         {
           "market": "Home Team Over 0.5 Goals",
-          "support": 0.35,
+          "support": 0.24,
           "engines": [
             "League Bias"
           ]
@@ -2912,7 +2912,7 @@
       "alternatives": [
         {
           "market": "Home Team Over 0.5 Goals",
-          "support": 0.33,
+          "support": 0.23,
           "engines": [
             "League Bias"
           ]
@@ -2966,8 +2966,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 78.2,
-      "support": 0.76,
+      "score": 77.8,
+      "support": 0.65,
       "supporters": [
         "Trend",
         "League Bias"
@@ -3039,8 +3039,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 75.5,
-      "support": 0.46,
+      "score": 74.9,
+      "support": 0.32,
       "supporters": [
         "League Bias"
       ],
@@ -3075,8 +3075,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 75.1,
-      "support": 0.37,
+      "score": 74.6,
+      "support": 0.26,
       "supporters": [
         "League Bias"
       ],
@@ -3096,8 +3096,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Over 1.5 Goals",
-      "score": 79.1,
-      "support": 0.97,
+      "score": 78.6,
+      "support": 0.86,
       "supporters": [
         "Trend",
         "League Bias"
@@ -3141,8 +3141,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 79.1,
-      "support": 0.98,
+      "score": 78.5,
+      "support": 0.83,
       "supporters": [
         "Trend",
         "League Bias"
@@ -3184,8 +3184,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Away Team Over 0.5 Goals",
-      "score": 74.5,
-      "support": 0.23,
+      "score": 74.2,
+      "support": 0.16,
       "supporters": [
         "League Bias"
       ],
@@ -3235,8 +3235,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 75.1,
-      "support": 0.37,
+      "score": 74.6,
+      "support": 0.25,
       "supporters": [
         "League Bias"
       ],
@@ -3297,7 +3297,7 @@
       "alternatives": [
         {
           "market": "Home Team Over 0.5 Goals",
-          "support": 0.45,
+          "support": 0.31,
           "engines": [
             "League Bias"
           ]
@@ -3380,8 +3380,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Over 1.5 Goals",
-      "score": 74.8,
-      "support": 0.3,
+      "score": 74.4,
+      "support": 0.2,
       "supporters": [
         "League Bias"
       ],
@@ -3422,8 +3422,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 75,
-      "support": 0.36,
+      "score": 74.6,
+      "support": 0.25,
       "supporters": [
         "League Bias"
       ],
@@ -3458,8 +3458,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 75,
-      "support": 0.36,
+      "score": 74.6,
+      "support": 0.25,
       "supporters": [
         "League Bias"
       ],
@@ -3536,8 +3536,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 77.8,
-      "support": 0.65,
+      "score": 77.5,
+      "support": 0.57,
       "supporters": [
         "Trend",
         "League Bias"
@@ -3602,8 +3602,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 79.1,
-      "support": 0.98,
+      "score": 78.7,
+      "support": 0.87,
       "supporters": [
         "Trend",
         "League Bias"
@@ -3654,8 +3654,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 75,
-      "support": 0.36,
+      "score": 74.6,
+      "support": 0.25,
       "supporters": [
         "League Bias"
       ],
@@ -3705,8 +3705,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 74.7,
-      "support": 0.28,
+      "score": 74.4,
+      "support": 0.19,
       "supporters": [
         "League Bias"
       ],
@@ -3726,8 +3726,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 75,
-      "support": 0.36,
+      "score": 74.6,
+      "support": 0.25,
       "supporters": [
         "League Bias"
       ],
@@ -3879,8 +3879,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Away Team Over 0.5 Goals",
-      "score": 75.1,
-      "support": 0.37,
+      "score": 74.6,
+      "support": 0.26,
       "supporters": [
         "League Bias"
       ],
@@ -3945,8 +3945,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Double Chance 1X",
-      "score": 75.1,
-      "support": 0.36,
+      "score": 74.6,
+      "support": 0.25,
       "supporters": [
         "League Bias"
       ],
@@ -4177,7 +4177,7 @@
         },
         {
           "market": "Home Team Over 0.5 Goals",
-          "support": 0.31,
+          "support": 0.21,
           "engines": [
             "League Bias"
           ]
@@ -4237,8 +4237,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Away Team Over 0.5 Goals",
-      "score": 74.7,
-      "support": 0.28,
+      "score": 74.4,
+      "support": 0.19,
       "supporters": [
         "League Bias"
       ],
@@ -4344,8 +4344,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 80.7,
-      "support": 1.37,
+      "score": 80,
+      "support": 1.2,
       "supporters": [
         "Trend",
         "League Bias"
@@ -4366,8 +4366,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 75.8,
-      "support": 0.56,
+      "score": 75.1,
+      "support": 0.39,
       "supporters": [
         "League Bias"
       ],
@@ -4387,8 +4387,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 78.2,
-      "support": 0.75,
+      "score": 77.9,
+      "support": 0.67,
       "supporters": [
         "Trend",
         "League Bias"
@@ -4417,8 +4417,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 75.7,
-      "support": 0.52,
+      "score": 75,
+      "support": 0.36,
       "supporters": [
         "League Bias"
       ],
@@ -4456,7 +4456,7 @@
         },
         {
           "market": "Home Team Over 0.5 Goals",
-          "support": 0.4,
+          "support": 0.28,
           "engines": [
             "League Bias"
           ]
@@ -4485,7 +4485,7 @@
       "alternatives": [
         {
           "market": "Home Team Over 0.5 Goals",
-          "support": 0.3,
+          "support": 0.21,
           "engines": [
             "League Bias"
           ]
@@ -4503,8 +4503,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 80.5,
-      "support": 1.32,
+      "score": 79.8,
+      "support": 1.15,
       "supporters": [
         "Trend",
         "League Bias"
@@ -4536,7 +4536,7 @@
       "alternatives": [
         {
           "market": "Home Team Over 0.5 Goals",
-          "support": 0.28,
+          "support": 0.2,
           "engines": [
             "League Bias"
           ]
@@ -4565,7 +4565,7 @@
       "alternatives": [
         {
           "market": "Under 3.5 Goals",
-          "support": 0.48,
+          "support": 0.34,
           "engines": [
             "League Bias"
           ]
@@ -4583,8 +4583,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 75.8,
-      "support": 0.56,
+      "score": 75.1,
+      "support": 0.39,
       "supporters": [
         "League Bias"
       ],
@@ -4651,7 +4651,7 @@
         },
         {
           "market": "Home Team Over 0.5 Goals",
-          "support": 0.31,
+          "support": 0.21,
           "engines": [
             "League Bias"
           ]
@@ -4680,7 +4680,7 @@
       "alternatives": [
         {
           "market": "Under 3.5 Goals",
-          "support": 0.53,
+          "support": 0.37,
           "engines": [
             "League Bias"
           ]
@@ -4728,8 +4728,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Over 1.5 Goals",
-      "score": 75.1,
-      "support": 0.38,
+      "score": 74.7,
+      "support": 0.27,
       "supporters": [
         "League Bias"
       ],
@@ -4764,8 +4764,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 83.6,
-      "support": 1.7,
+      "score": 83,
+      "support": 1.55,
       "supporters": [
         "Trend",
         "Streaks",
@@ -4787,8 +4787,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 75.1,
-      "support": 0.37,
+      "score": 74.6,
+      "support": 0.25,
       "supporters": [
         "League Bias"
       ],
@@ -4808,8 +4808,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 80.7,
-      "support": 1.39,
+      "score": 80,
+      "support": 1.2,
       "supporters": [
         "Trend",
         "League Bias"
@@ -4838,8 +4838,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 81,
-      "support": 1.44,
+      "score": 80.2,
+      "support": 1.24,
       "supporters": [
         "Trend",
         "League Bias"
@@ -4868,8 +4868,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 81,
-      "support": 1.44,
+      "score": 80.2,
+      "support": 1.24,
       "supporters": [
         "Trend",
         "League Bias"
@@ -4895,11 +4895,11 @@
       "away": "Lujan",
       "league": "Primera C",
       "version": "v195",
-      "bet": true,
-      "market": "Under 3.5 Goals",
+      "bet": false,
+      "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 83.9,
-      "support": 1.77,
+      "score": 83.1,
+      "support": 1.57,
       "supporters": [
         "Trend",
         "Streaks",
@@ -4917,7 +4917,7 @@
           ]
         }
       ],
-      "reason": "3 engines across 3 independent evidence groups support the exact market."
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
       "id": 1500181,
@@ -4929,8 +4929,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 80.7,
-      "support": 1.39,
+      "score": 80,
+      "support": 1.2,
       "supporters": [
         "Trend",
         "League Bias"
@@ -4951,8 +4951,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 76.2,
-      "support": 0.65,
+      "score": 75.4,
+      "support": 0.45,
       "supporters": [
         "League Bias"
       ],
@@ -4971,21 +4971,21 @@
       "version": "v195",
       "bet": false,
       "market": "No Bet",
-      "candidate": "Under 3.5 Goals",
-      "score": 76.2,
-      "support": 0.65,
+      "candidate": "First Half Under 1.5",
+      "score": 75.5,
+      "support": 0.46,
       "supporters": [
-        "League Bias"
+        "Halves"
       ],
       "independence": 1,
       "exactSupport": 1,
       "conflictIndex": 0,
       "alternatives": [
         {
-          "market": "First Half Under 1.5",
-          "support": 0.46,
+          "market": "Under 3.5 Goals",
+          "support": 0.45,
           "engines": [
-            "Halves"
+            "League Bias"
           ]
         }
       ],
@@ -5000,21 +5000,21 @@
       "version": "v195",
       "bet": false,
       "market": "No Bet",
-      "candidate": "Under 3.5 Goals",
-      "score": 76.2,
-      "support": 0.65,
+      "candidate": "First Half Under 1.5",
+      "score": 75.6,
+      "support": 0.5,
       "supporters": [
-        "League Bias"
+        "Halves"
       ],
       "independence": 1,
       "exactSupport": 1,
       "conflictIndex": 0,
       "alternatives": [
         {
-          "market": "First Half Under 1.5",
-          "support": 0.5,
+          "market": "Under 3.5 Goals",
+          "support": 0.45,
           "engines": [
-            "Halves"
+            "League Bias"
           ]
         }
       ],
@@ -5027,11 +5027,11 @@
       "away": "Tristan Suarez",
       "league": "Primera Nacional",
       "version": "v195",
-      "bet": true,
-      "market": "Under 3.5 Goals",
+      "bet": false,
+      "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 84.3,
-      "support": 1.89,
+      "score": 83.5,
+      "support": 1.69,
       "supporters": [
         "Trend",
         "Streaks",
@@ -5041,7 +5041,7 @@
       "exactSupport": 3,
       "conflictIndex": 0,
       "alternatives": [],
-      "reason": "3 engines across 3 independent evidence groups support the exact market."
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
       "id": 1576801,
@@ -5071,7 +5071,7 @@
         },
         {
           "market": "Under 3.5 Goals",
-          "support": 0.52,
+          "support": 0.36,
           "engines": [
             "League Bias"
           ]
@@ -5088,21 +5088,21 @@
       "version": "v195",
       "bet": false,
       "market": "No Bet",
-      "candidate": "Under 3.5 Goals",
-      "score": 76.2,
-      "support": 0.65,
+      "candidate": "First Half Under 1.5",
+      "score": 75.6,
+      "support": 0.5,
       "supporters": [
-        "League Bias"
+        "Halves"
       ],
       "independence": 1,
       "exactSupport": 1,
       "conflictIndex": 0,
       "alternatives": [
         {
-          "market": "First Half Under 1.5",
-          "support": 0.5,
+          "market": "Under 3.5 Goals",
+          "support": 0.45,
           "engines": [
-            "Halves"
+            "League Bias"
           ]
         }
       ],
@@ -5115,11 +5115,11 @@
       "away": "Liverpool Montevideo",
       "league": "Primera División - Apertura",
       "version": "v195",
-      "bet": true,
-      "market": "Under 3.5 Goals",
+      "bet": false,
+      "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 83.9,
-      "support": 1.77,
+      "score": 83.2,
+      "support": 1.6,
       "supporters": [
         "Trend",
         "Streaks",
@@ -5129,7 +5129,7 @@
       "exactSupport": 3,
       "conflictIndex": 0,
       "alternatives": [],
-      "reason": "3 engines across 3 independent evidence groups support the exact market."
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
       "id": 1498663,
@@ -5138,11 +5138,11 @@
       "away": "Atlanta",
       "league": "Primera Nacional",
       "version": "v195",
-      "bet": true,
-      "market": "Under 3.5 Goals",
+      "bet": false,
+      "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 84.3,
-      "support": 1.89,
+      "score": 83.5,
+      "support": 1.69,
       "supporters": [
         "Trend",
         "Streaks",
@@ -5167,7 +5167,7 @@
           ]
         }
       ],
-      "reason": "3 engines across 3 independent evidence groups support the exact market."
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
       "id": 1498664,
@@ -5179,8 +5179,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 76.2,
-      "support": 0.65,
+      "score": 75.4,
+      "support": 0.45,
       "supporters": [
         "League Bias"
       ],
@@ -5200,8 +5200,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 76.2,
-      "support": 0.65,
+      "score": 75.4,
+      "support": 0.45,
       "supporters": [
         "League Bias"
       ],
@@ -5236,8 +5236,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 76.2,
-      "support": 0.65,
+      "score": 75.4,
+      "support": 0.45,
       "supporters": [
         "League Bias"
       ],
@@ -5301,21 +5301,6 @@
       "independence": 0
     },
     {
-      "id": 1567693,
-      "date": "2026-07-21",
-      "home": "Metalist 1925 Kharkiv",
-      "away": "Fagiano Okayama",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
       "id": 1557747,
       "date": "2026-07-21",
       "home": "Kompanii Marjamaa",
@@ -5340,8 +5325,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 75,
-      "support": 0.36,
+      "score": 74.6,
+      "support": 0.25,
       "supporters": [
         "League Bias"
       ],
@@ -5361,8 +5346,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 81,
-      "support": 1.45,
+      "score": 80.2,
+      "support": 1.25,
       "supporters": [
         "Trend",
         "League Bias"
@@ -5388,11 +5373,11 @@
       "away": "Gimnasia Y Tiro",
       "league": "Primera Nacional",
       "version": "v195",
-      "bet": true,
-      "market": "Under 3.5 Goals",
+      "bet": false,
+      "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 84.3,
-      "support": 1.89,
+      "score": 83.5,
+      "support": 1.69,
       "supporters": [
         "Trend",
         "Streaks",
@@ -5417,7 +5402,7 @@
           ]
         }
       ],
-      "reason": "3 engines across 3 independent evidence groups support the exact market."
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
       "id": 1576835,
@@ -5429,8 +5414,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 75.3,
-      "support": 0.44,
+      "score": 74.8,
+      "support": 0.3,
       "supporters": [
         "League Bias"
       ],
@@ -5450,8 +5435,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 75.3,
-      "support": 0.44,
+      "score": 74.8,
+      "support": 0.3,
       "supporters": [
         "League Bias"
       ],
@@ -5471,8 +5456,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Under 3.5 Goals",
-      "score": 75.3,
-      "support": 0.44,
+      "score": 74.8,
+      "support": 0.3,
       "supporters": [
         "League Bias"
       ],
@@ -5503,7 +5488,7 @@
       "alternatives": [
         {
           "market": "Under 3.5 Goals",
-          "support": 0.44,
+          "support": 0.3,
           "engines": [
             "League Bias"
           ]
@@ -5521,8 +5506,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Away Team Over 0.5 Goals",
-      "score": 75.1,
-      "support": 0.37,
+      "score": 74.6,
+      "support": 0.26,
       "supporters": [
         "League Bias"
       ],
@@ -5599,7 +5584,7 @@
       "alternatives": [
         {
           "market": "Under 3.5 Goals",
-          "support": 0.65,
+          "support": 0.45,
           "engines": [
             "League Bias"
           ]
@@ -5662,8 +5647,8 @@
       "bet": false,
       "market": "No Bet",
       "candidate": "Home Team Over 0.5 Goals",
-      "score": 75,
-      "support": 0.36,
+      "score": 74.6,
+      "support": 0.25,
       "supporters": [
         "League Bias"
       ],
@@ -5678,21 +5663,6 @@
       "date": "2026-07-22",
       "home": "Guimaraes",
       "away": "União de Leiria",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
-      "id": 1567695,
-      "date": "2026-07-22",
-      "home": "Metalist 1925 Kharkiv",
-      "away": "FC Schalke 04",
       "league": "Friendlies Clubs",
       "version": "v195",
       "bet": false,
@@ -5734,28 +5704,6 @@
       "independence": 0
     },
     {
-      "id": 1583405,
-      "date": "2026-07-22",
-      "home": "Wisla Plock",
-      "away": "Pelikan Łowicz",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Home Team Over 0.5 Goals",
-      "score": 78.3,
-      "support": 0.78,
-      "supporters": [
-        "Trend",
-        "League Bias"
-      ],
-      "independence": 2,
-      "exactSupport": 2,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1583652,
       "date": "2026-07-22",
       "home": "Podlasie Biała Podlaska",
@@ -5769,6 +5717,69 @@
       "supporters": [],
       "conflictIndex": 0,
       "independence": 0
+    },
+    {
+      "id": 1598505,
+      "date": "2026-07-22",
+      "home": "Puszcza Niepołomice",
+      "away": "Jarosław",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Home Team Over 0.5 Goals",
+      "score": 74.6,
+      "support": 0.25,
+      "supporters": [
+        "League Bias"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1562956,
+      "date": "2026-07-22",
+      "home": "Atlas Delmenhorst",
+      "away": "Wilhelmshaven",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Home Team Over 0.5 Goals",
+      "score": 74.9,
+      "support": 0.32,
+      "supporters": [
+        "League Bias"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1539859,
+      "date": "2026-07-22",
+      "home": "Chapecoense U20",
+      "away": "Barra SC U20",
+      "league": "Catarinense U20",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Second Half Over 0.5",
+      "score": 76.6,
+      "support": 0.74,
+      "supporters": [
+        "Halves"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
     }
   ]
 }
