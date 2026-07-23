@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-23T07:09:20.482Z",
+  "generatedAt": "2026-07-23T07:18:19.649Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -960,7 +960,7 @@
       "matches": 4
     }
   ],
-  "matchesConsidered": 2031,
+  "matchesConsidered": 2032,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -976,6 +976,12 @@
       "bestScore": 0.143
     },
     {
+      "league": "Friendlies Clubs",
+      "country": "World",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
+    },
+    {
       "league": "Calcutta Premier Division",
       "country": "India",
       "reason": "No matching soccer sport key",
@@ -986,12 +992,6 @@
       "country": "Kazakhstan",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
-    },
-    {
-      "league": "Friendlies Clubs",
-      "country": "World",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
     },
     {
       "league": "Pro League A",
@@ -3443,5 +3443,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-23T07:09:32.725Z"
+  "completedAt": "2026-07-23T07:18:43.428Z"
 }
