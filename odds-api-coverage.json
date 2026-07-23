@@ -1,20 +1,12 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-23T12:57:24.684Z",
+  "generatedAt": "2026-07-23T13:08:29.692Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
   "sportsAvailable": 66,
   "soccerSportsAvailable": 37,
   "sportMappings": [
-    {
-      "league": "Northern Super League",
-      "country": "Canada",
-      "sportKey": "soccer_greece_super_league",
-      "sportTitle": "Super League - Greece",
-      "score": 0.286,
-      "matches": 4
-    },
     {
       "league": "Premier League",
       "country": "Bhutan",
@@ -134,6 +126,14 @@
       "sportTitle": "Brazil Série B",
       "score": 1,
       "matches": 13
+    },
+    {
+      "league": "Northern Super League",
+      "country": "Canada",
+      "sportKey": "soccer_greece_super_league",
+      "sportTitle": "Super League - Greece",
+      "score": 0.286,
+      "matches": 3
     },
     {
       "league": "Primera División",
@@ -952,7 +952,7 @@
       "matches": 4
     }
   ],
-  "matchesConsidered": 2039,
+  "matchesConsidered": 2038,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1470,174 +1470,6 @@
       "country": "Ecuador",
       "reason": "No matching soccer sport key",
       "bestScore": 0.2
-    },
-    {
-      "league": "Northern Super League",
-      "home": "Calgary Wild W",
-      "away": "Ottawa Rapid W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Northern Super League",
-      "home": "Montreal Roses W",
-      "away": "AFC Toronto W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Northern Super League",
-      "home": "Vancouver Rise W",
-      "away": "Halifax Tides W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Northern Super League",
-      "home": "AFC Toronto W",
-      "away": "Calgary Wild W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Navbahor",
-      "away": "Qizilqum",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Surkhon",
-      "away": "Dinamo Samarqand",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Bunyodkor",
-      "away": "Pakhtakor",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Andijan",
-      "away": "Buxoro",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Lokomotiv",
-      "away": "Sogdiana",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Olmaliq",
-      "away": "Mash'al",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Nasaf",
-      "away": "Qizilqum",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Neftchi",
-      "away": "Navbahor",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Xorazm",
-      "away": "Surkhon",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Dinamo Samarqand",
-      "away": "Kokand-1912",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Blue Eagles",
-      "away": "Red Lions",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Chitipa United",
-      "away": "Ekhaya",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "CIVO United",
-      "away": "Moyale Barracks",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Dedza Dynamos",
-      "away": "Nyasa Big Bullets",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Karonga United",
-      "away": "Creck",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Mitundu Baptist",
-      "away": "Silver Strikers",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Kamuzu Barracks",
-      "away": "MAFCO",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Be Forward Wanderers",
-      "away": "Masters FC",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Lausanne",
-      "away": "Grasshoppers",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Servette FC",
-      "away": "FC Basel 1893",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "FC Luzern",
-      "away": "FC Thun",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "BSC Young Boys",
-      "away": "FC Sion",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "FC Lugano",
-      "away": "FC Vaduz",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "FC ST. Gallen",
-      "away": "FC Zurich",
-      "reason": "No event/team match"
     },
     {
       "league": "Premier League",
@@ -2354,6 +2186,168 @@
       "reason": "No event/team match"
     },
     {
+      "league": "Super League",
+      "home": "Navbahor",
+      "away": "Qizilqum",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Surkhon",
+      "away": "Dinamo Samarqand",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Bunyodkor",
+      "away": "Pakhtakor",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Andijan",
+      "away": "Buxoro",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Lokomotiv",
+      "away": "Sogdiana",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Olmaliq",
+      "away": "Mash'al",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Nasaf",
+      "away": "Qizilqum",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Neftchi",
+      "away": "Navbahor",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Xorazm",
+      "away": "Surkhon",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Dinamo Samarqand",
+      "away": "Kokand-1912",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Northern Super League",
+      "home": "Montreal Roses W",
+      "away": "AFC Toronto W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Northern Super League",
+      "home": "Vancouver Rise W",
+      "away": "Halifax Tides W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Northern Super League",
+      "home": "AFC Toronto W",
+      "away": "Calgary Wild W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Blue Eagles",
+      "away": "Red Lions",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Chitipa United",
+      "away": "Ekhaya",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "CIVO United",
+      "away": "Moyale Barracks",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Dedza Dynamos",
+      "away": "Nyasa Big Bullets",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Karonga United",
+      "away": "Creck",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Mitundu Baptist",
+      "away": "Silver Strikers",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Kamuzu Barracks",
+      "away": "MAFCO",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Be Forward Wanderers",
+      "away": "Masters FC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Lausanne",
+      "away": "Grasshoppers",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "Servette FC",
+      "away": "FC Basel 1893",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "FC Luzern",
+      "away": "FC Thun",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "BSC Young Boys",
+      "away": "FC Sion",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "FC Lugano",
+      "away": "FC Vaduz",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Super League",
+      "home": "FC ST. Gallen",
+      "away": "FC Zurich",
+      "reason": "No event/team match"
+    },
+    {
       "league": "Cup",
       "home": "Viimsi",
       "away": "Nomme Utd U19",
@@ -2460,22 +2454,16 @@
       "home": "Kravare",
       "away": "Bospor Bohumín",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Cup",
+      "home": "Strání",
+      "away": "Vsetín",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
     {
-      "sportKey": "soccer_greece_super_league",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_greece_super_league",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_greece_super_league",
-      "market": "double_chance"
-    },
-    {
       "sportKey": "soccer_epl",
       "market": "btts"
     },
@@ -2497,6 +2485,18 @@
     },
     {
       "sportKey": "soccer_usa_mls",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_greece_super_league",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_greece_super_league",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_greece_super_league",
       "market": "double_chance"
     },
     {
@@ -2778,31 +2778,6 @@
   ],
   "requestErrors": [
     {
-      "label": "soccer_greece_super_league:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_greece_super_league:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_greece_super_league:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_greece_super_league:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_greece_super_league:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
       "label": "soccer_epl:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -2849,6 +2824,31 @@
     },
     {
       "label": "soccer_usa_mls:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_greece_super_league:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_greece_super_league:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_greece_super_league:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_greece_super_league:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_greece_super_league:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3435,5 +3435,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-23T12:57:35.526Z"
+  "completedAt": "2026-07-23T13:08:35.227Z"
 }
