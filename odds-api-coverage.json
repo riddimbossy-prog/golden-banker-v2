@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-23T17:28:35.134Z",
+  "generatedAt": "2026-07-23T17:32:03.315Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -8,20 +8,12 @@
   "soccerSportsAvailable": 37,
   "sportMappings": [
     {
-      "league": "Premier Soccer League",
-      "country": "Zimbabwe",
-      "sportKey": "soccer_epl",
-      "sportTitle": "EPL",
-      "score": 0.5,
-      "matches": 11
-    },
-    {
       "league": "Premier League",
-      "country": "Kyrgyzstan",
+      "country": "Lebanon",
       "sportKey": "soccer_epl",
       "sportTitle": "EPL",
       "score": 0.987,
-      "matches": 8
+      "matches": 4
     },
     {
       "league": "MLS Next Pro",
@@ -88,6 +80,14 @@
       "matches": 9
     },
     {
+      "league": "Primera C",
+      "country": "Argentina",
+      "sportKey": "soccer_argentina_primera_division",
+      "sportTitle": "Primera División - Argentina",
+      "score": 0.513,
+      "matches": 14
+    },
+    {
       "league": "CONMEBOL Sudamericana",
       "country": "World",
       "sportKey": "soccer_conmebol_copa_sudamericana",
@@ -149,7 +149,7 @@
       "sportKey": "soccer_epl",
       "sportTitle": "EPL",
       "score": 0.987,
-      "matches": 1
+      "matches": 2
     },
     {
       "league": "Victoria Premier League 2",
@@ -185,11 +185,11 @@
     },
     {
       "league": "Premier League",
-      "country": "Lebanon",
+      "country": "Kyrgyzstan",
       "sportKey": "soccer_epl",
       "sportTitle": "EPL",
       "score": 0.987,
-      "matches": 2
+      "matches": 7
     },
     {
       "league": "Second League - Group 1",
@@ -688,12 +688,28 @@
       "matches": 9
     },
     {
+      "league": "Premier Soccer League",
+      "country": "Zimbabwe",
+      "sportKey": "soccer_epl",
+      "sportTitle": "EPL",
+      "score": 0.5,
+      "matches": 8
+    },
+    {
       "league": "Torneo Promocional Amateur",
       "country": "Argentina",
       "sportKey": "soccer_argentina_primera_division",
       "sportTitle": "Primera División - Argentina",
       "score": 0.305,
       "matches": 12
+    },
+    {
+      "league": "Catarinense U20",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.305,
+      "matches": 5
     },
     {
       "league": "Eliteserien",
@@ -744,14 +760,6 @@
       "matches": 8
     },
     {
-      "league": "Primera C",
-      "country": "Argentina",
-      "sportKey": "soccer_argentina_primera_division",
-      "sportTitle": "Primera División - Argentina",
-      "score": 0.513,
-      "matches": 14
-    },
-    {
       "league": "Super League",
       "country": "Switzerland",
       "sportKey": "soccer_greece_super_league",
@@ -774,14 +782,6 @@
       "sportTitle": "Primera División - Argentina",
       "score": 0.513,
       "matches": 18
-    },
-    {
-      "league": "Catarinense U20",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.305,
-      "matches": 5
     },
     {
       "league": "Copa Paulista",
@@ -952,7 +952,7 @@
       "matches": 4
     }
   ],
-  "matchesConsidered": 2032,
+  "matchesConsidered": 2045,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -962,22 +962,10 @@
   "bookmakerRows": 0,
   "unmatched": [
     {
-      "league": "1. Division",
-      "country": "Kazakhstan",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
       "league": "Friendlies Clubs",
       "country": "World",
       "reason": "No matching soccer sport key",
       "bestScore": 0
-    },
-    {
-      "league": "Pro League A",
-      "country": "Uzbekistan",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.125
     },
     {
       "league": "UEFA Europa Conference League",
@@ -990,6 +978,12 @@
       "country": "World",
       "reason": "No matching soccer sport key",
       "bestScore": 0.125
+    },
+    {
+      "league": "CONCACAF Caribbean Club Shield",
+      "country": "World",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
     },
     {
       "league": "COTIF Tournament",
@@ -1082,10 +1076,28 @@
       "bestScore": 0
     },
     {
+      "league": "1. Division",
+      "country": "Kazakhstan",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
       "league": "ASEAN Championship",
       "country": "World",
       "reason": "No matching soccer sport key",
       "bestScore": 0.167
+    },
+    {
+      "league": "CECAFA Club Cup",
+      "country": "World",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.125
+    },
+    {
+      "league": "Pro League A",
+      "country": "Uzbekistan",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.125
     },
     {
       "league": "1 Lyga",
@@ -1472,123 +1484,39 @@
       "bestScore": 0.2
     },
     {
-      "league": "Premier Soccer League",
-      "home": "Agama",
-      "away": "Hardrock",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier Soccer League",
-      "home": "CAPS United",
-      "away": "Hunters",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier Soccer League",
-      "home": "Triangle United",
-      "away": "Ngezi Platinum",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier Soccer League",
-      "home": "MWOS",
-      "away": "Platinum",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier Soccer League",
-      "home": "Bulawayo Chiefs",
-      "away": "Kariba",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier Soccer League",
-      "home": "Highlanders",
-      "away": "Chicken Inn",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier Soccer League",
-      "home": "Hunters",
-      "away": "Herentals",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier Soccer League",
-      "home": "Manica Diamonds",
-      "away": "Triangle United",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier Soccer League",
-      "home": "Ngezi Platinum",
-      "away": "Hardrock",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier Soccer League",
-      "home": "Simba Bhora",
-      "away": "Agama",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier Soccer League",
-      "home": "TelOne",
-      "away": "CAPS United",
+      "league": "Premier League",
+      "home": "Al Nejmeh",
+      "away": "Jwaaya FC",
       "reason": "No event/team match"
     },
     {
       "league": "Premier League",
-      "home": "Toktogul",
-      "away": "Alay",
+      "home": "Al Ahed",
+      "away": "Al Ansar",
       "reason": "No event/team match"
     },
     {
       "league": "Premier League",
-      "home": "Bars",
-      "away": "Asiagoal",
+      "home": "Racing",
+      "away": "Reyady Abaseya",
       "reason": "No event/team match"
     },
     {
       "league": "Premier League",
-      "home": "OshMU Aldier",
-      "away": "Neftchi",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Muras United",
-      "away": "Bishkek City",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Ozgon",
-      "away": "Ilbirs",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Talant",
-      "away": "Kara-Balta",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Abdish-Ata",
-      "away": "Asia Talas",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Dordoi Bishkek",
-      "away": "Alga",
+      "home": "Reyady Abaseya",
+      "away": "Tadamon Sour",
       "reason": "No event/team match"
     },
     {
       "league": "Premier League",
       "home": "RTC",
       "away": "Bhutan U19",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
+      "home": "Tsirang",
+      "away": "Transport United",
       "reason": "No event/team match"
     },
     {
@@ -1635,14 +1563,44 @@
     },
     {
       "league": "Premier League",
-      "home": "Racing",
-      "away": "Reyady Abaseya",
+      "home": "Bars",
+      "away": "Asiagoal",
       "reason": "No event/team match"
     },
     {
       "league": "Premier League",
-      "home": "Reyady Abaseya",
-      "away": "Tadamon Sour",
+      "home": "OshMU Aldier",
+      "away": "Neftchi",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
+      "home": "Muras United",
+      "away": "Bishkek City",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
+      "home": "Ozgon",
+      "away": "Ilbirs",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
+      "home": "Talant",
+      "away": "Kara-Balta",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
+      "home": "Abdish-Ata",
+      "away": "Asia Talas",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
+      "home": "Dordoi Bishkek",
+      "away": "Alga",
       "reason": "No event/team match"
     },
     {
@@ -1769,6 +1727,54 @@
       "league": "Premier League",
       "home": "Kaspiy",
       "away": "Zhenys",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier Soccer League",
+      "home": "MWOS",
+      "away": "Platinum",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier Soccer League",
+      "home": "Bulawayo Chiefs",
+      "away": "Kariba",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier Soccer League",
+      "home": "Highlanders",
+      "away": "Chicken Inn",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier Soccer League",
+      "home": "Hunters",
+      "away": "Herentals",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier Soccer League",
+      "home": "Manica Diamonds",
+      "away": "Triangle United",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier Soccer League",
+      "home": "Ngezi Platinum",
+      "away": "Hardrock",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier Soccer League",
+      "home": "Simba Bhora",
+      "away": "Agama",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier Soccer League",
+      "home": "TelOne",
+      "away": "CAPS United",
       "reason": "No event/team match"
     },
     {
@@ -2453,12 +2459,6 @@
       "league": "Cup",
       "home": "Strání",
       "away": "Vsetín",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Tatran Všechovice",
-      "away": "Unie Hlubina",
       "reason": "No event/team match"
     }
   ],
@@ -3435,5 +3435,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-23T17:28:40.906Z"
+  "completedAt": "2026-07-23T17:32:23.497Z"
 }
