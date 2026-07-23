@@ -1,7 +1,7 @@
 {
   "version": "v193",
   "schemaVersion": 1,
-  "updated": "2026-07-23T09:07:04.069Z",
+  "updated": "2026-07-23T10:10:33.175Z",
   "minimumSamples": {
     "teamFavorite": 5,
     "teamUnderdog": 5,
@@ -4097,7 +4097,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.98
+        "decayedWeight": 0.97
       },
       "underdog": {
         "sample": 0,
@@ -4140,7 +4140,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 0.98
+          "decayedWeight": 0.97
         }
       },
       "underdogUpsets": 0,
@@ -4192,7 +4192,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 0.98
+        "decayedWeight": 0.97
       },
       "favoriteBands": {},
       "underdogUpsets": 0,
@@ -5861,7 +5861,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.98
+        "decayedWeight": 0.97
       },
       "bands": {
         "1.36-1.60": {
@@ -5883,7 +5883,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 0.98
+          "decayedWeight": 0.97
         }
       },
       "homeFavorites": {
@@ -5905,7 +5905,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.98
+        "decayedWeight": 0.97
       },
       "awayFavorites": {
         "sample": 0,
@@ -6881,7 +6881,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.98
+        "decayedWeight": 0.97
       },
       "flags": []
     },
@@ -7004,7 +7004,7 @@
         "mid": 0.7143,
         "upper": 0.9178
       },
-      "decayedWeight": 6.69
+      "decayedWeight": 6.68
     },
     "1.61-1.85": {
       "sample": 8,
