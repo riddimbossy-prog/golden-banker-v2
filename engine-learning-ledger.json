@@ -1,7 +1,7 @@
 {
   "version": "v193",
   "schemaVersion": 1,
-  "updated": "2026-07-23T20:44:04.188Z",
+  "updated": "2026-07-23T21:43:15.477Z",
   "minimumSamples": {
     "teamFavorite": 5,
     "teamUnderdog": 5,
@@ -12,10 +12,10 @@
   },
   "decayHalfLifeDays": 120,
   "summary": {
-    "settledFixtures": 153,
-    "settledDecisions": 308,
+    "settledFixtures": 154,
+    "settledDecisions": 309,
     "reviewedLosses": 56,
-    "attachedUpcoming": 2280,
+    "attachedUpcoming": 2276,
     "highRiskUpcoming": 0,
     "stableUpcoming": 0
   },
@@ -6962,7 +6962,7 @@
         "mid": 0.5,
         "upper": 0.732
       },
-      "decayedWeight": 13.11
+      "decayedWeight": 13.1
     },
     "1.01-1.35": {
       "sample": 7,
@@ -8948,15 +8948,15 @@
       "hardVeto": false
     },
     "*|League Bias|Home Team Over 0.5 Goals|unknown|other": {
-      "sample": 24,
-      "wins": 18,
+      "sample": 25,
+      "wins": 19,
       "losses": 6,
-      "winRate": 0.75,
-      "lossRate": 0.25,
+      "winRate": 0.76,
+      "lossRate": 0.24,
       "wilson": {
-        "lower": 0.551,
-        "mid": 0.75,
-        "upper": 0.88
+        "lower": 0.5657,
+        "mid": 0.76,
+        "upper": 0.885
       },
       "adjustment": 0,
       "hardVeto": false
@@ -9760,15 +9760,15 @@
       "hardVeto": false
     },
     "friendlies clubs|League Bias|Home Team Over 0.5 Goals|unknown|other": {
-      "sample": 13,
-      "wins": 9,
+      "sample": 14,
+      "wins": 10,
       "losses": 4,
-      "winRate": 0.6923,
-      "lossRate": 0.3077,
+      "winRate": 0.7143,
+      "lossRate": 0.2857,
       "wilson": {
-        "lower": 0.4237,
-        "mid": 0.6923,
-        "upper": 0.8732
+        "lower": 0.4535,
+        "mid": 0.7143,
+        "upper": 0.8828
       },
       "adjustment": 0,
       "hardVeto": false
