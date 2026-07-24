@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-23T23:51:27.422Z",
+  "updated": "2026-07-24T00:53:27.158Z",
   "summary": {
     "fixtures": 300,
     "qualified": 0,
@@ -5754,21 +5754,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1581834,
-      "date": "2026-07-22",
-      "home": "Brasil DE Pelotas",
-      "away": "Gramadense",
-      "league": "Copa Gaúcha",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
-    },
-    {
       "id": 1534067,
       "date": "2026-07-23",
       "home": "Calgary Wild W",
@@ -5796,6 +5781,21 @@
         }
       ],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1562960,
+      "date": "2026-07-23",
+      "home": "FC Liefering",
+      "away": "Eintracht Braunschweig",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
     }
   ]
 }
