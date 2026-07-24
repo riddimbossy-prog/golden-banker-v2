@@ -2,13 +2,31 @@
   "schema": 1,
   "build": "v270",
   "modelVersion": "Auto Profile v1.1",
-  "generatedAt": "2026-07-24T13:14:08.863Z",
+  "generatedAt": "2026-07-24T19:12:05.722Z",
   "status": "active",
-  "settled": 36,
-  "wins": 28,
+  "settled": 38,
+  "wins": 30,
   "losses": 8,
   "voids": 0,
   "recent": [
+    {
+      "fixtureKey": "f1495739",
+      "home": "FF Jaro",
+      "away": "SJK",
+      "market": "Under 3.5 Goals",
+      "result": "Won",
+      "score": "2-1",
+      "date": "2026-07-24"
+    },
+    {
+      "fixtureKey": "f1556389",
+      "home": "Tauras",
+      "away": "Kauno Žalgiris II",
+      "market": "Tauras to win",
+      "result": "Won",
+      "score": "4-2",
+      "date": "2026-07-24"
+    },
     {
       "fixtureKey": "f1533751",
       "home": "Seoul W",
@@ -61,24 +79,6 @@
       "market": "Adelaide Olympic to win",
       "result": "Won",
       "score": "5-1",
-      "date": "2026-07-24"
-    },
-    {
-      "fixtureKey": "f1520782",
-      "home": "Botafogo SP",
-      "away": "Juventude",
-      "market": "Under 3.5 Goals",
-      "result": "Lost",
-      "score": "4-2",
-      "date": "2026-07-24"
-    },
-    {
-      "fixtureKey": "f1519416",
-      "home": "Emelec",
-      "away": "Mushuc Runa SC",
-      "market": "Emelec to win",
-      "result": "Lost",
-      "score": "1-1",
       "date": "2026-07-24"
     }
   ]
