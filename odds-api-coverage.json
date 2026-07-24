@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-24T12:48:45.809Z",
+  "generatedAt": "2026-07-24T12:58:51.486Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -37,7 +37,7 @@
       "sportKey": "soccer_epl",
       "sportTitle": "EPL",
       "score": 0.987,
-      "matches": 2
+      "matches": 4
     },
     {
       "league": "Premier League",
@@ -752,6 +752,14 @@
       "matches": 1
     },
     {
+      "league": "Catarinense - 2",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.305,
+      "matches": 5
+    },
+    {
       "league": "Paranaense - 3",
       "country": "Brazil",
       "sportKey": "soccer_brazil_campeonato",
@@ -846,14 +854,6 @@
       "sportTitle": "Super League - Greece",
       "score": 0.653,
       "matches": 8
-    },
-    {
-      "league": "Catarinense - 2",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.305,
-      "matches": 5
     },
     {
       "league": "Serie B",
@@ -2049,18 +2049,6 @@
     },
     {
       "league": "Brasiliense U20",
-      "home": "Ceilandense U20",
-      "away": "Real Brasília U20",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Brasiliense U20",
-      "home": "Paranoa U20",
-      "away": "Cruzeiro U20",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Brasiliense U20",
       "home": "Brazlândia FC SAF U20",
       "away": "Sobradinho U20",
       "reason": "No event/team match"
@@ -2069,6 +2057,18 @@
       "league": "Brasiliense U20",
       "home": "CFZ Brasilia U20",
       "away": "ARUC U20",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Brasiliense U20",
+      "home": "Ceilandense U20",
+      "away": "Real Brasília U20",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Brasiliense U20",
+      "home": "Paranoa U20",
+      "away": "Cruzeiro U20",
       "reason": "No event/team match"
     },
     {
@@ -3398,5 +3398,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-24T12:48:56.343Z"
+  "completedAt": "2026-07-24T12:58:56.910Z"
 }
