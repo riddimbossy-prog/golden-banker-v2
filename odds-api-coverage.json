@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-24T12:19:26.075Z",
+  "generatedAt": "2026-07-24T12:29:28.978Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -30,14 +30,6 @@
       "sportTitle": "Premier League - Russia",
       "score": 0.323,
       "matches": 7
-    },
-    {
-      "league": "Victoria Premier League 2",
-      "country": "Australia",
-      "sportKey": "soccer_epl",
-      "sportTitle": "EPL",
-      "score": 0.667,
-      "matches": 4
     },
     {
       "league": "Paulista - U20",
@@ -848,14 +840,6 @@
       "matches": 6
     },
     {
-      "league": "Premier League",
-      "country": "Bhutan",
-      "sportKey": "soccer_epl",
-      "sportTitle": "EPL",
-      "score": 0.987,
-      "matches": 1
-    },
-    {
       "league": "Super League",
       "country": "Uzbekistan",
       "sportKey": "soccer_greece_super_league",
@@ -960,7 +944,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 2043,
+  "matchesConsidered": 2066,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -994,14 +978,14 @@
       "bestScore": 0
     },
     {
-      "league": "Victoria NPL",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
       "league": "South Australia State League 1",
       "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.222
+    },
+    {
+      "league": "WK-League",
+      "country": "South-Korea",
       "reason": "No matching soccer sport key",
       "bestScore": 0.222
     },
@@ -1280,12 +1264,6 @@
       "country": "Australia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.091
-    },
-    {
-      "league": "New South Wales NPL",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
     },
     {
       "league": "K4 League",
@@ -2194,6 +2172,90 @@
       "reason": "No event/team match"
     },
     {
+      "league": "K League 2",
+      "home": "Gimhae City",
+      "away": "Cheongju",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 2",
+      "home": "Seoul E-Land FC",
+      "away": "Cheonan City",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 2",
+      "home": "Busan I Park",
+      "away": "Suwon Bluewings",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 2",
+      "home": "Daegu FC",
+      "away": "Suwon City FC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 2",
+      "home": "Hwaseong",
+      "away": "Asan Mugunghwa",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 2",
+      "home": "Jeonnam Dragons",
+      "away": "Gyeongnam FC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 2",
+      "home": "Gimpo Citizen",
+      "away": "Yongin City",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 2",
+      "home": "Paju Citizen",
+      "away": "Ansan Greeners",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 1",
+      "home": "Gimcheon Sangmu FC",
+      "away": "Daejeon Citizen",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 1",
+      "home": "Pohang Steelers",
+      "away": "Jeonbuk Motors",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 1",
+      "home": "FC Anyang",
+      "away": "Gangwon FC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 1",
+      "home": "Gwangju FC",
+      "away": "Jeju United FC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 1",
+      "home": "Incheon United",
+      "away": "Bucheon FC 1995",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "K League 1",
+      "home": "FC Seoul",
+      "away": "Ulsan Hyundai FC",
+      "reason": "No event/team match"
+    },
+    {
       "league": "Paulista - U20",
       "home": "São Bento U20",
       "away": "Jabaquara U20",
@@ -2508,30 +2570,6 @@
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_epl",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_epl",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_epl",
-      "market": "double_chance"
-    },
-    {
-      "sportKey": "soccer_russia_premier_league",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_russia_premier_league",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_russia_premier_league",
-      "market": "double_chance"
-    },
-    {
       "sportKey": "soccer_brazil_campeonato",
       "market": "btts"
     },
@@ -2819,56 +2857,6 @@
     },
     {
       "label": "soccer_korea_kleague1:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_russia_premier_league:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_russia_premier_league:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_russia_premier_league:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_russia_premier_league:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_russia_premier_league:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3430,5 +3418,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-24T12:19:42.609Z"
+  "completedAt": "2026-07-24T12:29:47.054Z"
 }
