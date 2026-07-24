@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-24T12:29:28.978Z",
+  "generatedAt": "2026-07-24T12:39:29.357Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -45,7 +45,7 @@
       "sportKey": "soccer_epl",
       "sportTitle": "EPL",
       "score": 0.987,
-      "matches": 4
+      "matches": 2
     },
     {
       "league": "Premier League",
@@ -752,14 +752,6 @@
       "matches": 1
     },
     {
-      "league": "Catarinense - 2",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.305,
-      "matches": 5
-    },
-    {
       "league": "Paranaense - 3",
       "country": "Brazil",
       "sportKey": "soccer_brazil_campeonato",
@@ -846,6 +838,14 @@
       "sportTitle": "Super League - Greece",
       "score": 0.653,
       "matches": 8
+    },
+    {
+      "league": "Catarinense - 2",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.305,
+      "matches": 5
     },
     {
       "league": "Serie B",
@@ -944,7 +944,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 2066,
+  "matchesConsidered": 2040,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -954,8 +954,8 @@
   "bookmakerRows": 0,
   "unmatched": [
     {
-      "league": "New South Wales NPL",
-      "country": "Australia",
+      "league": "Friendlies Clubs",
+      "country": "World",
       "reason": "No matching soccer sport key",
       "bestScore": 0
     },
@@ -964,30 +964,6 @@
       "country": "Australia",
       "reason": "No matching soccer sport key",
       "bestScore": 0
-    },
-    {
-      "league": "Calcutta Premier Division",
-      "country": "India",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.222
-    },
-    {
-      "league": "Friendlies Clubs",
-      "country": "World",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
-      "league": "South Australia State League 1",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.222
-    },
-    {
-      "league": "WK-League",
-      "country": "South-Korea",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.222
     },
     {
       "league": "Victoria NPL 2",
@@ -1243,6 +1219,12 @@
     },
     {
       "league": "Western Australia State League 1",
+      "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.222
+    },
+    {
+      "league": "South Australia State League 1",
       "country": "Australia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.222
@@ -1609,18 +1591,6 @@
     },
     {
       "league": "Premier League",
-      "home": "Al Nejmeh",
-      "away": "Al Ahed",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Jwaaya FC",
-      "away": "Al Ansar",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
       "home": "Bars",
       "away": "Asiagoal",
       "reason": "No event/team match"
@@ -1857,6 +1827,12 @@
       "league": "Premier League - Summer Series",
       "home": "Sunderland",
       "away": "Leeds",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
+      "home": "Tsirang",
+      "away": "Transport United",
       "reason": "No event/team match"
     },
     {
@@ -2431,18 +2407,6 @@
     },
     {
       "league": "Brasiliense U20",
-      "home": "Brazlândia FC SAF U20",
-      "away": "Sobradinho U20",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Brasiliense U20",
-      "home": "CFZ Brasilia U20",
-      "away": "ARUC U20",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Brasiliense U20",
       "home": "Ceilandense U20",
       "away": "Real Brasília U20",
       "reason": "No event/team match"
@@ -2451,6 +2415,18 @@
       "league": "Brasiliense U20",
       "home": "Paranoa U20",
       "away": "Cruzeiro U20",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Brasiliense U20",
+      "home": "Brazlândia FC SAF U20",
+      "away": "Sobradinho U20",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Brasiliense U20",
+      "home": "CFZ Brasilia U20",
+      "away": "ARUC U20",
       "reason": "No event/team match"
     },
     {
@@ -3418,5 +3394,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-24T12:29:47.054Z"
+  "completedAt": "2026-07-24T12:39:34.691Z"
 }
