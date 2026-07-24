@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-24T17:03:23.081Z",
+  "generatedAt": "2026-07-24T17:15:30.175Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -14,14 +14,6 @@
       "sportTitle": "EPL",
       "score": 0.987,
       "matches": 4
-    },
-    {
-      "league": "Premier League",
-      "country": "Kyrgyzstan",
-      "sportKey": "soccer_epl",
-      "sportTitle": "EPL",
-      "score": 0.987,
-      "matches": 5
     },
     {
       "league": "Liga MX U21",
@@ -672,6 +664,14 @@
       "matches": 27
     },
     {
+      "league": "Premier League",
+      "country": "Kyrgyzstan",
+      "sportKey": "soccer_epl",
+      "sportTitle": "EPL",
+      "score": 0.987,
+      "matches": 4
+    },
+    {
       "league": "1. Division",
       "country": "Norway",
       "sportKey": "soccer_norway_eliteserien",
@@ -968,7 +968,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 2008,
+  "matchesConsidered": 2002,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1008,14 +1008,8 @@
       "bestScore": 0.143
     },
     {
-      "league": "David Kipiani Cup",
-      "country": "Georgia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.125
-    },
-    {
-      "league": "First League",
-      "country": "Macedonia",
+      "league": "1. Division",
+      "country": "Belarus",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
     },
@@ -1326,6 +1320,12 @@
       "bestScore": 0.125
     },
     {
+      "league": "David Kipiani Cup",
+      "country": "Georgia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.125
+    },
+    {
       "league": "Segunda División",
       "country": "Uruguay",
       "reason": "No matching soccer sport key",
@@ -1354,6 +1354,12 @@
       "country": "Hungary",
       "reason": "No matching soccer sport key",
       "bestScore": 0
+    },
+    {
+      "league": "First League",
+      "country": "Macedonia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
     },
     {
       "league": "Czech Liga",
@@ -1521,36 +1527,6 @@
       "league": "Premier League",
       "home": "Jwaaya FC",
       "away": "Al Ansar",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "OshMU Aldier",
-      "away": "Neftchi",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Ozgon",
-      "away": "Ilbirs",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Talant",
-      "away": "Kara-Balta",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Abdish-Ata",
-      "away": "Asia Talas",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Dordoi Bishkek",
-      "away": "Alga",
       "reason": "No event/team match"
     },
     {
@@ -1743,6 +1719,30 @@
       "league": "Premier Soccer League",
       "home": "TelOne",
       "away": "CAPS United",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
+      "home": "Ozgon",
+      "away": "Ilbirs",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
+      "home": "Talant",
+      "away": "Kara-Balta",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
+      "home": "Abdish-Ata",
+      "away": "Asia Talas",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
+      "home": "Dordoi Bishkek",
+      "away": "Alga",
       "reason": "No event/team match"
     },
     {
@@ -2475,6 +2475,12 @@
       "league": "Cup",
       "home": "Imst",
       "away": "TSV Hartberg",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Cup",
+      "home": "Leithaprodersdorf",
+      "away": "Admira Wacker",
       "reason": "No event/team match"
     }
   ],
@@ -3414,5 +3420,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-24T17:03:46.849Z"
+  "completedAt": "2026-07-24T17:15:44.045Z"
 }
