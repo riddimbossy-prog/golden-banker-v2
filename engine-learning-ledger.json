@@ -1,7 +1,7 @@
 {
   "version": "v193",
   "schemaVersion": 1,
-  "updated": "2026-07-24T04:59:09.926Z",
+  "updated": "2026-07-24T06:01:49.394Z",
   "minimumSamples": {
     "teamFavorite": 5,
     "teamUnderdog": 5,
@@ -4476,7 +4476,7 @@
           "mid": 0.6667,
           "upper": 0.8794
         },
-        "decayedWeight": 8.51
+        "decayedWeight": 8.5
       },
       "bands": {
         "1.61-1.85": {
@@ -5544,7 +5544,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 2.7
+          "decayedWeight": 2.69
         },
         "1.86-2.25": {
           "sample": 1,
@@ -5629,7 +5629,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 2.7
+        "decayedWeight": 2.69
       },
       "flags": [],
       "stabilityScore": 89.8
