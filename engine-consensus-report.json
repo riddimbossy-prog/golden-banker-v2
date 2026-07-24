@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-24T08:07:59.864Z",
+  "updated": "2026-07-24T09:11:23.392Z",
   "summary": {
     "fixtures": 300,
     "qualified": 0,
@@ -5661,64 +5661,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1549340,
-      "date": "2026-07-24",
-      "home": "Manly Utd U20",
-      "away": "Sydney Olympic U20",
-      "league": "Npl Nsw U20",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Home Team Over 0.5 Goals",
-      "score": 79.7,
-      "support": 1.12,
-      "supporters": [
-        "Trend",
-        "League Bias"
-      ],
-      "independence": 2,
-      "exactSupport": 2,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Home Win",
-          "support": 0.85,
-          "engines": [
-            "PurePPG Normal"
-          ]
-        },
-        {
-          "market": "Second Half Over 0.5",
-          "support": 0.75,
-          "engines": [
-            "Halves"
-          ]
-        }
-      ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1567711,
-      "date": "2026-07-24",
-      "home": "Obolon'-Brovar",
-      "away": "Kudrivka",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "First Half Over 0.5",
-      "score": 74.8,
-      "support": 0.3,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1546711,
       "date": "2026-07-24",
       "home": "Preston",
@@ -5774,6 +5716,64 @@
       "supporters": [],
       "conflictIndex": 0,
       "independence": 0
+    },
+    {
+      "id": 1517604,
+      "date": "2026-07-24",
+      "home": "Manly United",
+      "away": "Sydney Olympic",
+      "league": "New South Wales NPL",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Home DNB",
+      "score": 76.5,
+      "support": 0.72,
+      "supporters": [
+        "PurePPG Strict"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Double Chance 1X",
+          "support": 0.61,
+          "engines": [
+            "PurePPG Ultra"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1521986,
+      "date": "2026-07-24",
+      "home": "Heidelberg United",
+      "away": "Sunshine Georgies",
+      "league": "Victoria NPL",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Second Half Over 0.5",
+      "score": 75.7,
+      "support": 0.52,
+      "supporters": [
+        "Halves"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Away Team Over 0.5 Goals",
+          "support": 0.21,
+          "engines": [
+            "League Bias"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
     }
   ]
 }
