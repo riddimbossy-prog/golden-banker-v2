@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-24T17:25:36.892Z",
+  "generatedAt": "2026-07-24T17:36:23.586Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -994,6 +994,18 @@
       "country": "World",
       "reason": "No matching soccer sport key",
       "bestScore": 0
+    },
+    {
+      "league": "Pro League A",
+      "country": "Uzbekistan",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.125
+    },
+    {
+      "league": "1. Division",
+      "country": "Kazakhstan",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
     },
     {
       "league": "1. Division",
@@ -3414,5 +3426,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-24T17:26:02.491Z"
+  "completedAt": "2026-07-24T17:36:47.353Z"
 }
