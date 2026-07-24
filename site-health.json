@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-24T03:54:54.272Z",
+  "generatedAt": "2026-07-24T04:59:18.176Z",
   "version": "v270",
   "label": "Operational",
   "status": "operational",
-  "dataUpdated": "2026-07-24T03:54:45.117Z",
-  "scoresUpdated": "2026-07-24T03:54:45.117Z",
+  "dataUpdated": "2026-07-24T04:59:08.413Z",
+  "scoresUpdated": "2026-07-24T04:59:08.413Z",
   "engineCount": 22,
   "expectedEngineCount": 22,
   "multiEngineCount": 4,
