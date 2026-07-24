@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-24T11:18:45.880Z",
+  "generatedAt": "2026-07-24T11:26:50.181Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -53,7 +53,7 @@
       "sportKey": "soccer_epl",
       "sportTitle": "EPL",
       "score": 0.987,
-      "matches": 4
+      "matches": 2
     },
     {
       "league": "Premier League",
@@ -760,14 +760,6 @@
       "matches": 1
     },
     {
-      "league": "Catarinense - 2",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.305,
-      "matches": 5
-    },
-    {
       "league": "Paranaense - 3",
       "country": "Brazil",
       "sportKey": "soccer_brazil_campeonato",
@@ -854,6 +846,14 @@
       "sportTitle": "Super League - Greece",
       "score": 0.653,
       "matches": 8
+    },
+    {
+      "league": "Catarinense - 2",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.305,
+      "matches": 5
     },
     {
       "league": "Serie B",
@@ -952,7 +952,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 2068,
+  "matchesConsidered": 2065,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -961,6 +961,12 @@
   "derivedHtftMatches": 0,
   "bookmakerRows": 0,
   "unmatched": [
+    {
+      "league": "Npl Nsw U20",
+      "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
+    },
     {
       "league": "Friendlies Clubs",
       "country": "World",
@@ -1254,12 +1260,6 @@
       "country": "Australia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.222
-    },
-    {
-      "league": "Npl Nsw U20",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
     },
     {
       "league": "Chatham Cup",
@@ -1559,18 +1559,6 @@
       "league": "Premier League",
       "home": "Reyady Abaseya",
       "away": "Tadamon Sour",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Al Nejmeh",
-      "away": "Al Ahed",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Jwaaya FC",
-      "away": "Al Ansar",
       "reason": "No event/team match"
     },
     {
@@ -2391,18 +2379,6 @@
     },
     {
       "league": "Brasiliense U20",
-      "home": "Brazlândia FC SAF U20",
-      "away": "Sobradinho U20",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Brasiliense U20",
-      "home": "CFZ Brasilia U20",
-      "away": "ARUC U20",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Brasiliense U20",
       "home": "Ceilandense U20",
       "away": "Real Brasília U20",
       "reason": "No event/team match"
@@ -2411,6 +2387,18 @@
       "league": "Brasiliense U20",
       "home": "Paranoa U20",
       "away": "Cruzeiro U20",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Brasiliense U20",
+      "home": "Brazlândia FC SAF U20",
+      "away": "Sobradinho U20",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Brasiliense U20",
+      "home": "CFZ Brasilia U20",
+      "away": "ARUC U20",
       "reason": "No event/team match"
     },
     {
@@ -2459,6 +2447,18 @@
       "league": "Copa Paulista",
       "home": "Primavera SP",
       "away": "Oeste",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Copa Paulista",
+      "home": "São José EC",
+      "away": "EC São Bernardo",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Copa Paulista",
+      "home": "Juventus",
+      "away": "Paulista",
       "reason": "No event/team match"
     }
   ],
@@ -3398,5 +3398,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-24T11:18:59.418Z"
+  "completedAt": "2026-07-24T11:27:07.160Z"
 }
