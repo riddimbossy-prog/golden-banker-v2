@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-24T14:30:03.682Z",
+  "generatedAt": "2026-07-24T14:39:26.343Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -968,7 +968,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 2031,
+  "matchesConsidered": 2029,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -990,12 +990,6 @@
       "bestScore": 0
     },
     {
-      "league": "ASEAN Championship",
-      "country": "World",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.167
-    },
-    {
       "league": "Friendlies Clubs",
       "country": "World",
       "reason": "No matching soccer sport key",
@@ -1004,12 +998,6 @@
     {
       "league": "1. Division",
       "country": "Kazakhstan",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
-      "league": "Persha Liga",
-      "country": "Ukraine",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
     },
@@ -1030,6 +1018,12 @@
       "country": "Uzbekistan",
       "reason": "No matching soccer sport key",
       "bestScore": 0.125
+    },
+    {
+      "league": "ASEAN Championship",
+      "country": "World",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.167
     },
     {
       "league": "1 Lyga",
@@ -2124,6 +2118,12 @@
       "reason": "No event/team match"
     },
     {
+      "league": "Carioca C",
+      "home": "Cardoso Moreira",
+      "away": "Búzios",
+      "reason": "No event/team match"
+    },
+    {
       "league": "Brasileiro U20 A",
       "home": "Palmeiras U20",
       "away": "RB Bragantino U20",
@@ -2475,12 +2475,6 @@
       "league": "Second League - Group 1",
       "home": "Pobeda",
       "away": "Shahter Taganrog",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Second League - Group 1",
-      "home": "Spartak Nalchik",
-      "away": "Rubin Yalta",
       "reason": "No event/team match"
     }
   ],
@@ -3420,5 +3414,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-24T14:30:09.316Z"
+  "completedAt": "2026-07-24T14:39:36.721Z"
 }
