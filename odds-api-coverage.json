@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-24T13:19:23.204Z",
+  "generatedAt": "2026-07-24T13:27:05.954Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -414,14 +414,6 @@
       "sportTitle": "Liga MX",
       "score": 1,
       "matches": 7
-    },
-    {
-      "league": "Victoria Premier League 2",
-      "country": "Australia",
-      "sportKey": "soccer_epl",
-      "sportTitle": "EPL",
-      "score": 0.667,
-      "matches": 3
     },
     {
       "league": "Kansallinen Liiga",
@@ -856,14 +848,6 @@
       "matches": 6
     },
     {
-      "league": "Premier League",
-      "country": "Bhutan",
-      "sportKey": "soccer_epl",
-      "sportTitle": "EPL",
-      "score": 0.987,
-      "matches": 1
-    },
-    {
       "league": "Super League",
       "country": "Uzbekistan",
       "sportKey": "soccer_greece_super_league",
@@ -1206,12 +1190,6 @@
       "bestScore": 0.111
     },
     {
-      "league": "Victoria NPL 2",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.111
-    },
-    {
       "league": "Northern NSW NPL",
       "country": "Australia",
       "reason": "No matching soccer sport key",
@@ -1237,12 +1215,6 @@
     },
     {
       "league": "Capital Territory NPL",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
-      "league": "Victoria NPL",
       "country": "Australia",
       "reason": "No matching soccer sport key",
       "bestScore": 0
@@ -1512,15 +1484,15 @@
       "bestScore": 0.125
     },
     {
-      "league": "K League 2",
-      "home": "Seoul E-Land FC",
-      "away": "Cheonan City",
+      "league": "Premier League",
+      "home": "RTC",
+      "away": "Bhutan U19",
       "reason": "No event/team match"
     },
     {
-      "league": "K League 2",
-      "home": "Busan I Park",
-      "away": "Suwon Bluewings",
+      "league": "Premier League",
+      "home": "Tsirang",
+      "away": "Transport United",
       "reason": "No event/team match"
     },
     {
@@ -1530,33 +1502,33 @@
       "reason": "No event/team match"
     },
     {
-      "league": "K League 2",
-      "home": "Paju Citizen",
-      "away": "Ansan Greeners",
+      "league": "Victoria Premier League 2",
+      "home": "Moreland City",
+      "away": "Werribee City",
       "reason": "No event/team match"
     },
     {
-      "league": "K League 1",
-      "home": "Gimcheon Sangmu FC",
-      "away": "Daejeon Citizen",
+      "league": "Victoria Premier League 2",
+      "home": "Goulburn Valley Suns",
+      "away": "Springvale",
       "reason": "No event/team match"
     },
     {
-      "league": "K League 1",
-      "home": "Pohang Steelers",
-      "away": "Jeonbuk Motors",
+      "league": "Victoria Premier League 2",
+      "home": "Altona City",
+      "away": "Whittlesea United",
       "reason": "No event/team match"
     },
     {
-      "league": "K League 1",
-      "home": "FC Anyang",
-      "away": "Gangwon FC",
+      "league": "Premier League",
+      "home": "Racing",
+      "away": "Reyady Abaseya",
       "reason": "No event/team match"
     },
     {
-      "league": "K League 1",
-      "home": "Gwangju FC",
-      "away": "Jeju United FC",
+      "league": "Premier League",
+      "home": "Reyady Abaseya",
+      "away": "Tadamon Sour",
       "reason": "No event/team match"
     },
     {
@@ -2492,15 +2464,15 @@
   ],
   "unsupportedMarkets": [
     {
-      "sportKey": "soccer_korea_kleague1",
+      "sportKey": "soccer_epl",
       "market": "btts"
     },
     {
-      "sportKey": "soccer_korea_kleague1",
+      "sportKey": "soccer_epl",
       "market": "draw_no_bet"
     },
     {
-      "sportKey": "soccer_korea_kleague1",
+      "sportKey": "soccer_epl",
       "market": "double_chance"
     },
     {
@@ -2528,15 +2500,15 @@
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_epl",
+      "sportKey": "soccer_brazil_campeonato",
       "market": "btts"
     },
     {
-      "sportKey": "soccer_epl",
+      "sportKey": "soccer_brazil_campeonato",
       "market": "draw_no_bet"
     },
     {
-      "sportKey": "soccer_epl",
+      "sportKey": "soccer_brazil_campeonato",
       "market": "double_chance"
     },
     {
@@ -2794,27 +2766,27 @@
   ],
   "requestErrors": [
     {
-      "label": "soccer_korea_kleague1:base-combined",
+      "label": "soccer_epl:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
     },
     {
-      "label": "soccer_korea_kleague1:base-core",
+      "label": "soccer_epl:base-core",
       "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
       "statusCode": 422
     },
     {
-      "label": "soccer_korea_kleague1:btts",
+      "label": "soccer_epl:btts",
       "error": "Markets not supported by this endpoint: btts",
       "statusCode": 422
     },
     {
-      "label": "soccer_korea_kleague1:draw_no_bet",
+      "label": "soccer_epl:draw_no_bet",
       "error": "Markets not supported by this endpoint: draw_no_bet",
       "statusCode": 422
     },
     {
-      "label": "soccer_korea_kleague1:double_chance",
+      "label": "soccer_epl:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -2890,31 +2862,6 @@
     },
     {
       "label": "soccer_brazil_campeonato:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_epl:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3451,5 +3398,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-24T13:19:42.410Z"
+  "completedAt": "2026-07-24T13:27:22.130Z"
 }
