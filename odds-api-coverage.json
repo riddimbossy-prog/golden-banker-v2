@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-24T18:43:24.779Z",
+  "generatedAt": "2026-07-24T18:53:44.151Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -24,28 +24,12 @@
       "matches": 7
     },
     {
-      "league": "Cup",
-      "country": "Austria",
-      "sportKey": "soccer_england_efl_cup",
-      "sportTitle": "EFL Cup",
-      "score": 0.487,
-      "matches": 31
-    },
-    {
       "league": "Oberliga - Bayern Süd",
       "country": "Germany",
       "sportKey": "soccer_germany_bundesliga",
       "sportTitle": "Bundesliga - Germany",
       "score": 0.323,
-      "matches": 10
-    },
-    {
-      "league": "Regionalliga - Bayern",
-      "country": "Germany",
-      "sportKey": "soccer_germany_bundesliga",
-      "sportTitle": "Bundesliga - Germany",
-      "score": 0.347,
-      "matches": 6
+      "matches": 9
     },
     {
       "league": "Allsvenskan",
@@ -80,6 +64,14 @@
       "matches": 5
     },
     {
+      "league": "Cup",
+      "country": "Austria",
+      "sportKey": "soccer_england_efl_cup",
+      "sportTitle": "EFL Cup",
+      "score": 0.487,
+      "matches": 30
+    },
+    {
       "league": "Premier League",
       "country": "Russia",
       "sportKey": "soccer_epl",
@@ -94,6 +86,14 @@
       "sportTitle": "Bundesliga - Germany",
       "score": 0.323,
       "matches": 8
+    },
+    {
+      "league": "Regionalliga - Bayern",
+      "country": "Germany",
+      "sportKey": "soccer_germany_bundesliga",
+      "sportTitle": "Bundesliga - Germany",
+      "score": 0.347,
+      "matches": 4
     },
     {
       "league": "Regionalliga - Nordost",
@@ -960,7 +960,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1971,
+  "matchesConsidered": 1967,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1918,9 +1918,489 @@
       "reason": "No event/team match"
     },
     {
+      "league": "Oberliga - Bayern Süd",
+      "home": "Landshut",
+      "away": "Erlbach",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Bayern Süd",
+      "home": "Heimstetten",
+      "away": "Sportfreunde Schwaig",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Bayern Süd",
+      "home": "1880 Wasserburg",
+      "away": "Gundelfingen",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Bayern Süd",
+      "home": "Deisenhofen",
+      "away": "Kirchanschöring",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Bayern Süd",
+      "home": "Pfaffenhofen",
+      "away": "1860 Rosenheim",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Bayern Süd",
+      "home": "TuS Geretsried",
+      "away": "Pipinsried",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Bayern Süd",
+      "home": "Schalding-Heining",
+      "away": "Kottern",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Bayern Süd",
+      "home": "Schwabmünchen",
+      "away": "1860 München II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Bayern Süd",
+      "home": "Sportfreunde Schwaig",
+      "away": "1880 Wasserburg",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Bayern Nord",
+      "home": "Gebenbach",
+      "away": "Ingolstadt II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Bayern Nord",
+      "home": "Kornburg",
+      "away": "Ammerthal",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Bayern Nord",
+      "home": "Weiden",
+      "away": "Cham",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Bayern Nord",
+      "home": "Stadeln",
+      "away": "Neudrossenfeld",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Bayern Nord",
+      "home": "ASV Neumarkt",
+      "away": "Großbardorf",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Bayern Nord",
+      "home": "Bayern Hof",
+      "away": "DJK Bamberg",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Bayern Nord",
+      "home": "Jahn Regensburg II",
+      "away": "Nordlingen",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Bayern Nord",
+      "home": "Fortuna Regensburg",
+      "away": "Eintracht Bamberg",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Regionalliga - Bayern",
+      "home": "Ansbach",
+      "away": "Wacker Burghausen",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Regionalliga - Bayern",
+      "home": "Bayern München II",
+      "away": "Eltersdorf",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Regionalliga - Bayern",
+      "home": "Bayreuth",
+      "away": "Augsburg II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Regionalliga - Bayern",
+      "home": "SpVgg Unterhaching",
+      "away": "Greuther Fürth II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Regionalliga - Nordost",
+      "home": "FC Rot-Weiß Erfurt",
+      "away": "BFC Dynamo",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Regionalliga - Nordost",
+      "home": "Luckenwalde",
+      "away": "Lokomotive Leipzig",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Regionalliga - Nordost",
+      "home": "Hertha BSC II",
+      "away": "Chemnitzer FC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Regionalliga - Nordost",
+      "home": "Magdeburg II",
+      "away": "Tasmania Berlin",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Regionalliga - Nordost",
+      "home": "BFC Preussen",
+      "away": "RSV Eintracht",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Regionalliga - Nordost",
+      "home": "Erzgebirge Aue",
+      "away": "Altglienicke",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Regionalliga - Nordost",
+      "home": "BSG Chemie Leipzig",
+      "away": "SV Babelsberg 03",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Regionalliga - Nordost",
+      "home": "Greifswalder FC",
+      "away": "Hallescher FC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Regionalliga - Nordost",
+      "home": "FC Carl Zeiss Jena",
+      "away": "FSV Zwickau",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Hamburg",
+      "home": "HT16",
+      "away": "Paloma",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Hamburg",
+      "home": "Tus Dassendorf",
+      "away": "ETSV Hamburg",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Hamburg",
+      "home": "Teutonia Ottensen",
+      "away": "Concordia",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Hamburg",
+      "home": "Victoria Hamburg",
+      "away": "Norderstedt II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Hamburg",
+      "home": "Süderelbe",
+      "away": "Altona 93",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Hamburg",
+      "home": "HEBC",
+      "away": "Niendorfer TSV",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Hamburg",
+      "home": "Sasel",
+      "away": "Buchholz",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Hamburg",
+      "home": "Pinneberg",
+      "away": "Harksheide",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Oberliga - Hamburg",
+      "home": "Vorwärts-Wacker 04",
+      "away": "Nikola Tesla",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Allsvenskan",
+      "home": "Vasteras SK FK",
+      "away": "Orgryte IS",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Allsvenskan",
+      "home": "Degerfors IF",
+      "away": "Djurgardens IF",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Allsvenskan",
+      "home": "Kalmar FF",
+      "away": "Mjallby AIF",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Allsvenskan",
+      "home": "IF Brommapojkarna",
+      "away": "Hammarby FF",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Allsvenskan",
+      "home": "Sirius",
+      "away": "IFK Goteborg",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Allsvenskan",
+      "home": "Gais",
+      "away": "Halmstad",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Allsvenskan",
+      "home": "Malmo FF",
+      "away": "IF Elfsborg",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Allsvenskan",
+      "home": "BK Hacken",
+      "away": "AIK Stockholm",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Elitettan",
+      "home": "Elfsborg W",
+      "away": "Umeå W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Elitettan",
+      "home": "Husqvarna W",
+      "away": "Göteborg W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Elitettan",
+      "home": "Sandviken W",
+      "away": "Alingsås W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Elitettan",
+      "home": "Jitex W",
+      "away": "Örebro SK W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Elitettan",
+      "home": "Trelleborg W",
+      "away": "Linköping W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Elitettan",
+      "home": "Enskede W",
+      "away": "Häcken II W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Elitettan",
+      "home": "Gamla Upsala W",
+      "away": "KIF Örebro W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Damallsvenskan",
+      "home": "Norrköping W",
+      "away": "Hammarby W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Damallsvenskan",
+      "home": "Vittsjö W",
+      "away": "Malmö FF W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Svenska Cupen",
+      "home": "IFK Skövde",
+      "away": "Jonkopings Sodra",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Division 2 - Södra Götaland",
+      "home": "Karlskrona",
+      "away": "Nosaby",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Superliga",
+      "home": "Viborg",
+      "away": "Odense",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Superliga",
+      "home": "Aarhus",
+      "away": "Brondby",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Superliga",
+      "home": "Sonderjyske",
+      "away": "FC Midtjylland",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Superliga",
+      "home": "FC Copenhagen",
+      "away": "Lyngby",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Superliga",
+      "home": "AC Horsens",
+      "away": "FC Nordsjaelland",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Superliga",
+      "home": "Randers FC",
+      "away": "Silkeborg",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "1. Division",
+      "home": "Aalborg",
+      "away": "Hillerød",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "1. Division",
+      "home": "Hvidovre",
+      "away": "Vendsyssel FF",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "1. Division",
+      "home": "Esbjerg",
+      "away": "Kolding IF",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "1. Division",
+      "home": "FC Fredericia",
+      "away": "HB Koge",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "1. Division",
+      "home": "Hobro",
+      "away": "Aarhus Fremad",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Kvindeliga",
+      "home": "ASA Aarhus W",
+      "away": "AGF W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Kvindeliga",
+      "home": "Midtjylland W",
+      "away": "Brøndby W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Kvindeliga",
+      "home": "Nordsjælland W",
+      "away": "Odense Q W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Kvindeliga",
+      "home": "FC Copenhagen W",
+      "away": "Køge W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Kvindeliga",
+      "home": "KoldingQ W",
+      "away": "Fortuna Hjørring W",
+      "reason": "No event/team match"
+    },
+    {
       "league": "Cup",
-      "home": "Dornbirn",
-      "away": "Ried",
+      "home": "Tammeka",
+      "away": "Zealot Sporting",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Cup",
+      "home": "EstHam United",
+      "away": "Kose",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Cup",
+      "home": "FC Kohvile",
+      "away": "Rumori Calcio",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Cup",
+      "home": "Saku Sporting",
+      "away": "Legion",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Cup",
+      "home": "TransferWise",
+      "away": "Olympic",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Cup",
+      "home": "FC Tallinn",
+      "away": "Tallinna FC Zapoos",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Cup",
+      "home": "Flora III",
+      "away": "Põhja-Tallinna JK Volta",
       "reason": "No event/team match"
     },
     {
@@ -2006,486 +2486,6 @@
       "home": "Lustenau",
       "away": "Kitzbühel",
       "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Wohnbau Dietach",
-      "away": "Bischofshofen",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Hohenems",
-      "away": "WSPG Wels",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Kalsdorf",
-      "away": "Lask Linz",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Leonfelden",
-      "away": "Schwarz-Weiß Bregenz",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Wacker Innsbruck",
-      "away": "SVG Reichenau",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Oberwart",
-      "away": "Red Bull Salzburg",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Wiener Viktoria",
-      "away": "Parndorf",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Krems / Rehberg",
-      "away": "Austria Lustenau",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Mattersburg SV 2020",
-      "away": "First Vienna",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Treibach",
-      "away": "SV Kapfenberg",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "SK Vorwarts Steyr",
-      "away": "Kuchl",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Schwaz",
-      "away": "Wallern / Marienkirchen",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Imst",
-      "away": "TSV Hartberg",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Leithaprodersdorf",
-      "away": "Admira Wacker",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Wiener SC",
-      "away": "Austria Vienna",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Wienerberg",
-      "away": "Rapid Vienna",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Tammeka",
-      "away": "Zealot Sporting",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "EstHam United",
-      "away": "Kose",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "FC Kohvile",
-      "away": "Rumori Calcio",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Saku Sporting",
-      "away": "Legion",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "TransferWise",
-      "away": "Olympic",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "FC Tallinn",
-      "away": "Tallinna FC Zapoos",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Flora III",
-      "away": "Põhja-Tallinna JK Volta",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Tatran Bohunice",
-      "away": "Uherský Brod",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Vratimov",
-      "away": "Havířov",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Sparta Brno",
-      "away": "Vrchovina",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Blansko",
-      "away": "Velká Bíteš",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Břidličná",
-      "away": "Hlučín",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Holešov",
-      "away": "Slavičín",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Horni Becva",
-      "away": "Valašské Meziříčí",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Sokol Lanžhot",
-      "away": "Bystrc Kníničky",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Šternberk",
-      "away": "Jiskra Rýmařov",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Stonava",
-      "away": "Polanka nad Odrou",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Hluk",
-      "away": "Brumov",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Bzenec",
-      "away": "Břeclav",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Ždírec nad Doubravou",
-      "away": "Kuřim",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "FS Třebíč",
-      "away": "Sokol Tasovice",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Bedrichov",
-      "away": "Humpolec",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Belotin",
-      "away": "Nový Jičín",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Bílovec",
-      "away": "Vítkovice",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Chotebor",
-      "away": "Velké Meziříčí",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Kozlovice",
-      "away": "Frýdek-Místek",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Nové Sady",
-      "away": "Šumperk",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Ráječko",
-      "away": "Žďár nad Sázavou",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "SK Krumvir",
-      "away": "Znojmo",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Stará Říše",
-      "away": "Havlíčkův Brod",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "TJ Bystrice",
-      "away": "Frýdlant",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Zabreh",
-      "away": "Hranice",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Hluboka nad Vltavou",
-      "away": "Spartak Soběslav",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "League Cup",
-      "home": "Aberdeen",
-      "away": "Kelty Hearts",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "League Cup",
-      "home": "Airdrie United",
-      "away": "Ross County",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "League Cup",
-      "home": "Arbroath",
-      "away": "Stirling Albion",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "League Cup",
-      "home": "Ayr Utd",
-      "away": "Alloa Athletic",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "League Cup",
-      "home": "Dumbarton",
-      "away": "Cove Rangers",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "League Cup",
-      "home": "Dundee",
-      "away": "Clyde",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "League Cup",
-      "home": "Falkirk",
-      "away": "Stranraer",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "League Cup",
-      "home": "Forfar Athletic",
-      "away": "Brechin",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "League Cup",
-      "home": "Hamilton Academical",
-      "away": "Elgin City",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "League Cup",
-      "home": "Montrose",
-      "away": "Spartans",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "League Cup",
-      "home": "Morton",
-      "away": "Inverness CT",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "League Cup",
-      "home": "Peterhead",
-      "away": "Kilmarnock",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "League Cup",
-      "home": "Queen's Park",
-      "away": "Queen of the South",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "League Cup",
-      "home": "Stenhousemuir",
-      "away": "Livingston",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "League Cup",
-      "home": "ST Johnstone",
-      "away": "East Fife",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "League Cup",
-      "home": "ST Mirren",
-      "away": "Dunfermline",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Bomik",
-      "away": "Broke Boys",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Anzhi",
-      "away": "Izberbash",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Kristall MEZ",
-      "away": "Salyut-Belgorod",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "2Drots",
-      "away": "Orel",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Ilpar",
-      "away": "Metallurg Asha",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Kristall",
-      "away": "Znamya Noginsk",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Kirovets Voskhozhdenie",
-      "away": "FC Tosno",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "SKA Rostov",
-      "away": "Zenit Penza",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Anri Vladivostok",
-      "away": "Dinamo Barnaul",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Chita",
-      "away": "Irkutsk",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Temp Barnaul",
-      "away": "KDV",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "FC 10",
-      "away": "Kosmos Dolgoprudny",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Cup",
-      "home": "Kaisar",
-      "away": "Zhenys",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Oberliga - Bayern Süd",
-      "home": "Hankofen-Hailing",
-      "away": "Ismaning",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Oberliga - Bayern Süd",
-      "home": "Landshut",
-      "away": "Erlbach",
-      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -2514,18 +2514,6 @@
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_england_efl_cup",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_england_efl_cup",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_england_efl_cup",
-      "market": "double_chance"
-    },
-    {
       "sportKey": "soccer_germany_bundesliga",
       "market": "btts"
     },
@@ -2559,6 +2547,18 @@
     },
     {
       "sportKey": "soccer_denmark_superliga",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_england_efl_cup",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_england_efl_cup",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_england_efl_cup",
       "market": "double_chance"
     },
     {
@@ -2842,31 +2842,6 @@
       "statusCode": 422
     },
     {
-      "label": "soccer_england_efl_cup:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_england_efl_cup:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_england_efl_cup:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_england_efl_cup:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_england_efl_cup:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
       "label": "soccer_germany_bundesliga:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -2938,6 +2913,31 @@
     },
     {
       "label": "soccer_denmark_superliga:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_england_efl_cup:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_england_efl_cup:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_england_efl_cup:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_england_efl_cup:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_england_efl_cup:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3424,5 +3424,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-24T18:43:42.757Z"
+  "completedAt": "2026-07-24T18:53:49.639Z"
 }
