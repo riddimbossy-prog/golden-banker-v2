@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-24T10:08:42.941Z",
+  "generatedAt": "2026-07-24T10:08:35.401Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -61,7 +61,7 @@
       "sportKey": "soccer_epl",
       "sportTitle": "EPL",
       "score": 0.987,
-      "matches": 2
+      "matches": 4
     },
     {
       "league": "Premier League",
@@ -376,14 +376,6 @@
       "matches": 11
     },
     {
-      "league": "Primera Division",
-      "country": "Nicaragua",
-      "sportKey": "soccer_spain_la_liga",
-      "sportTitle": "La Liga - Spain",
-      "score": 0.5,
-      "matches": 6
-    },
-    {
       "league": "Primera B",
       "country": "Chile",
       "sportKey": "soccer_chile_campeonato",
@@ -398,6 +390,14 @@
       "sportTitle": "Liga MX",
       "score": 0.555,
       "matches": 7
+    },
+    {
+      "league": "Primera Division",
+      "country": "Nicaragua",
+      "sportKey": "soccer_spain_la_liga",
+      "sportTitle": "La Liga - Spain",
+      "score": 0.5,
+      "matches": 5
     },
     {
       "league": "Primera Division",
@@ -768,6 +768,14 @@
       "matches": 1
     },
     {
+      "league": "Catarinense - 2",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.305,
+      "matches": 5
+    },
+    {
       "league": "Paranaense - 3",
       "country": "Brazil",
       "sportKey": "soccer_brazil_campeonato",
@@ -854,14 +862,6 @@
       "sportTitle": "Super League - Greece",
       "score": 0.653,
       "matches": 8
-    },
-    {
-      "league": "Catarinense - 2",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.305,
-      "matches": 5
     },
     {
       "league": "Serie B",
@@ -952,7 +952,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 2066,
+  "matchesConsidered": 2071,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1719,6 +1719,18 @@
     },
     {
       "league": "Premier League",
+      "home": "Al Nejmeh",
+      "away": "Al Ahed",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
+      "home": "Jwaaya FC",
+      "away": "Al Ansar",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
       "home": "Bars",
       "away": "Asiagoal",
       "reason": "No event/team match"
@@ -2447,18 +2459,6 @@
       "league": "Paulista - U20",
       "home": "Corinthians U20",
       "away": "Itapirense U20",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Paulista - U20",
-      "home": "Porto Football U20",
-      "away": "Referencia U20",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Paulista - U20",
-      "home": "Botafogo SP U20",
-      "away": "Desportivo Brasil U20",
       "reason": "No event/team match"
     }
   ],
@@ -3398,5 +3398,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-24T10:08:48.719Z"
+  "completedAt": "2026-07-24T10:08:40.194Z"
 }

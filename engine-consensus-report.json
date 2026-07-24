@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-24T09:11:23.392Z",
+  "updated": "2026-07-24T10:13:53.814Z",
   "summary": {
     "fixtures": 300,
     "qualified": 0,
@@ -5661,27 +5661,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1546711,
-      "date": "2026-07-24",
-      "home": "Preston",
-      "away": "Cambridge United",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Over 1.5 Goals",
-      "score": 74.7,
-      "support": 0.27,
-      "supporters": [
-        "League Bias"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1598632,
       "date": "2026-07-24",
       "home": "RTC",
@@ -5701,21 +5680,6 @@
       "conflictIndex": 0,
       "alternatives": [],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1562967,
-      "date": "2026-07-24",
-      "home": "Amiens",
-      "away": "Boulogne",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
     },
     {
       "id": 1517604,
@@ -5768,6 +5732,80 @@
         {
           "market": "Away Team Over 0.5 Goals",
           "support": 0.21,
+          "engines": [
+            "League Bias"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1521987,
+      "date": "2026-07-24",
+      "home": "Green Gully",
+      "away": "Dandenong City",
+      "league": "Victoria NPL",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Second Half Over 0.5",
+      "score": 76.2,
+      "support": 0.65,
+      "supporters": [
+        "Halves"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Home DNB",
+          "support": 0.64,
+          "engines": [
+            "Momentum"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1521988,
+      "date": "2026-07-24",
+      "home": "St. Albans Saints",
+      "away": "Hume City",
+      "league": "Victoria NPL",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Double Chance X2",
+      "score": 77,
+      "support": 0.85,
+      "supporters": [
+        "PurePPG Ultra",
+        "PurePPG Elite"
+      ],
+      "independence": 1,
+      "exactSupport": 2,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Away DNB",
+          "support": 0.77,
+          "engines": [
+            "PurePPG Normal",
+            "PurePPG Strict"
+          ]
+        },
+        {
+          "market": "Second Half Over 0.5",
+          "support": 0.58,
+          "engines": [
+            "Halves"
+          ]
+        },
+        {
+          "market": "Away Team Over 0.5 Goals",
+          "support": 0.23,
           "engines": [
             "League Bias"
           ]

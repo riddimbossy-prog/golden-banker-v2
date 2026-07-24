@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-24T09:06:01.200Z",
+  "generatedAt": "2026-07-24T10:08:35.301Z",
   "expectedFromManifest": 2448,
   "discoveredExactFixtures": 2448,
   "savedActiveFixtures": 2448,
@@ -26,15 +26,15 @@
       "fixtureOnly": 0
     },
     "2026-07-25": {
-      "discovered": 882,
-      "saved": 882,
-      "enriched": 882,
+      "discovered": 888,
+      "saved": 888,
+      "enriched": 888,
       "fixtureOnly": 0
     },
     "2026-07-26": {
-      "discovered": 458,
-      "saved": 458,
-      "enriched": 458,
+      "discovered": 452,
+      "saved": 452,
+      "enriched": 452,
       "fixtureOnly": 0
     },
     "2026-07-27": {
