@@ -1,7 +1,7 @@
 {
   "version": "v264",
-  "generatedAt": "2026-07-24T14:09:56.921Z",
-  "sourceUpdatedAt": "2026-07-24T14:09:53.412Z",
+  "generatedAt": "2026-07-24T14:18:44.715Z",
+  "sourceUpdatedAt": "2026-07-24T14:18:17.076Z",
   "today": "2026-07-24",
   "window": {
     "from": "2026-07-17",
@@ -9,6 +9,6 @@
   },
   "fallback": false,
   "maxFixtureDate": "2026-07-30",
-  "totalSourceMatches": 6784,
-  "publicMatches": 3988
+  "totalSourceMatches": 6786,
+  "publicMatches": 3990
 }

@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-24T14:09:34.261Z",
+  "generatedAt": "2026-07-24T14:14:06.240Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -832,6 +832,14 @@
       "matches": 15
     },
     {
+      "league": "Campeón de Campeones",
+      "country": "Mexico",
+      "sportKey": "soccer_mexico_ligamx",
+      "sportTitle": "Liga MX",
+      "score": 0.291,
+      "matches": 1
+    },
+    {
       "league": "Second League - Group 4",
       "country": "Russia",
       "sportKey": "soccer_russia_premier_league",
@@ -854,6 +862,14 @@
       "sportTitle": "Super League - Greece",
       "score": 0.653,
       "matches": 8
+    },
+    {
+      "league": "Carioca C",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.305,
+      "matches": 1
     },
     {
       "league": "Serie B",
@@ -952,7 +968,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 2034,
+  "matchesConsidered": 2038,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -974,6 +990,12 @@
       "bestScore": 0
     },
     {
+      "league": "Friendlies Clubs",
+      "country": "World",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
+    },
+    {
       "league": "1. Division",
       "country": "Kazakhstan",
       "reason": "No matching soccer sport key",
@@ -984,12 +1006,6 @@
       "country": "World",
       "reason": "No matching soccer sport key",
       "bestScore": 0.167
-    },
-    {
-      "league": "Friendlies Clubs",
-      "country": "World",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
     },
     {
       "league": "Persha Liga",
@@ -2414,6 +2430,12 @@
       "reason": "No event/team match"
     },
     {
+      "league": "Carioca C",
+      "home": "Cardoso Moreira",
+      "away": "Búzios",
+      "reason": "No event/team match"
+    },
+    {
       "league": "Brasileiro U20 A",
       "home": "Palmeiras U20",
       "away": "RB Bragantino U20",
@@ -2453,12 +2475,6 @@
       "league": "Premier League",
       "home": "Bars",
       "away": "Asiagoal",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "OshMU Aldier",
-      "away": "Neftchi",
       "reason": "No event/team match"
     }
   ],
@@ -3398,5 +3414,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-24T14:09:53.412Z"
+  "completedAt": "2026-07-24T14:14:15.350Z"
 }

@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-24T13:19:03.345Z",
+  "updated": "2026-07-24T14:18:21.279Z",
   "summary": {
     "fixtures": 300,
     "qualified": 0,
@@ -5604,27 +5604,6 @@
       "independence": 0
     },
     {
-      "id": 1589392,
-      "date": "2026-07-23",
-      "home": "Campos AA",
-      "away": "Cardoso Moreira",
-      "league": "Carioca C",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 75.3,
-      "support": 0.42,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1600191,
       "date": "2026-07-23",
       "home": "Morocco U20",
@@ -5653,48 +5632,6 @@
       "support": 0.45,
       "supporters": [
         "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1598632,
-      "date": "2026-07-24",
-      "home": "RTC",
-      "away": "Bhutan U19",
-      "league": "Premier League",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 76.1,
-      "support": 0.63,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1598511,
-      "date": "2026-07-24",
-      "home": "Al-Ahli Jeddah",
-      "away": "Guimaraes",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Away Team Over 0.5 Goals",
-      "score": 74.6,
-      "support": 0.26,
-      "supporters": [
-        "League Bias"
       ],
       "independence": 1,
       "exactSupport": 1,
@@ -5775,6 +5712,63 @@
       "supporters": [],
       "conflictIndex": 0,
       "independence": 0
+    },
+    {
+      "id": 1562966,
+      "date": "2026-07-24",
+      "home": "Union St. Gilloise",
+      "away": "Patro Eisden",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
+    },
+    {
+      "id": 1562963,
+      "date": "2026-07-24",
+      "home": "Auxerre",
+      "away": "Orleans",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Home Team Over 0.5 Goals",
+      "score": 74.9,
+      "support": 0.32,
+      "supporters": [
+        "League Bias"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1562964,
+      "date": "2026-07-24",
+      "home": "Fleetwood Town",
+      "away": "Carlisle",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Home Team Over 0.5 Goals",
+      "score": 74.9,
+      "support": 0.32,
+      "supporters": [
+        "League Bias"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
     }
   ]
 }
