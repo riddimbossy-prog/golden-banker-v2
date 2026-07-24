@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-24T06:01:52.571Z",
+  "updated": "2026-07-24T07:04:56.011Z",
   "summary": {
     "fixtures": 300,
     "qualified": 0,
@@ -5661,35 +5661,6 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
-      "id": 1536413,
-      "date": "2026-07-24",
-      "home": "Yenisey II",
-      "away": "Torpedo Vladimir",
-      "league": "Second League - Group 2",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Away Team Over 0.5 Goals",
-      "score": 76.1,
-      "support": 0.62,
-      "supporters": [
-        "Trend"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Under 3.5 Goals",
-          "support": 0.38,
-          "engines": [
-            "League Bias"
-          ]
-        }
-      ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
       "id": 1549340,
       "date": "2026-07-24",
       "home": "Manly Utd U20",
@@ -5788,6 +5759,21 @@
       "conflictIndex": 0,
       "alternatives": [],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1562967,
+      "date": "2026-07-24",
+      "home": "Amiens",
+      "away": "Boulogne",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
     }
   ]
 }
