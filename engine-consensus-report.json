@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-24T11:12:57.940Z",
+  "updated": "2026-07-24T12:15:55.725Z",
   "summary": {
     "fixtures": 300,
     "qualified": 0,
@@ -5551,7 +5551,7 @@
       "alternatives": [
         {
           "market": "Second Half Over 0.5",
-          "support": 0.55,
+          "support": 0.59,
           "engines": [
             "Halves"
           ]
@@ -5697,149 +5697,78 @@
       "independence": 0
     },
     {
-      "id": 1521989,
+      "id": 1527240,
       "date": "2026-07-24",
-      "home": "Oakleigh Cannons",
-      "away": "South Melbourne",
-      "league": "Victoria NPL",
+      "home": "Perth",
+      "away": "Bayswater City",
+      "league": "Western Australia NPL",
       "version": "v195",
       "bet": false,
       "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 76.4,
-      "support": 0.7,
+      "candidate": "Home Team Over 0.5 Goals",
+      "score": 78.7,
+      "support": 0.87,
       "supporters": [
-        "Halves"
+        "Trend",
+        "League Bias"
       ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1527389,
-      "date": "2026-07-24",
-      "home": "Eastern United",
-      "away": "Salisbury United",
-      "league": "South Australia State League 1",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 76.4,
-      "support": 0.71,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1510387,
-      "date": "2026-07-24",
-      "home": "Gimhae City",
-      "away": "Cheongju",
-      "league": "K League 2",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 76,
-      "support": 0.59,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Away Team Over 0.5 Goals",
-          "support": 0.42,
-          "engines": [
-            "Trend"
-          ]
-        }
-      ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1521987,
-      "date": "2026-07-24",
-      "home": "Green Gully",
-      "away": "Dandenong City",
-      "league": "Victoria NPL",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Second Half Over 0.5",
-      "score": 76.2,
-      "support": 0.65,
-      "supporters": [
-        "Halves"
-      ],
-      "independence": 1,
-      "exactSupport": 1,
-      "conflictIndex": 0,
-      "alternatives": [
-        {
-          "market": "Home DNB",
-          "support": 0.64,
-          "engines": [
-            "Momentum"
-          ]
-        }
-      ],
-      "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1521988,
-      "date": "2026-07-24",
-      "home": "St. Albans Saints",
-      "away": "Hume City",
-      "league": "Victoria NPL",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "candidate": "Double Chance X2",
-      "score": 77,
-      "support": 0.85,
-      "supporters": [
-        "PurePPG Ultra",
-        "PurePPG Elite"
-      ],
-      "independence": 1,
+      "independence": 2,
       "exactSupport": 2,
       "conflictIndex": 0,
       "alternatives": [
         {
-          "market": "Away DNB",
-          "support": 0.77,
-          "engines": [
-            "PurePPG Normal",
-            "PurePPG Strict"
-          ]
-        },
-        {
           "market": "Second Half Over 0.5",
-          "support": 0.58,
+          "support": 0.64,
           "engines": [
             "Halves"
-          ]
-        },
-        {
-          "market": "Away Team Over 0.5 Goals",
-          "support": 0.23,
-          "engines": [
-            "League Bias"
           ]
         }
       ],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1592160,
+      "date": "2026-07-24",
+      "home": "Cheng Fung",
+      "away": "Universidade de Macau",
+      "league": "Primeira Divisão",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Home Team Over 0.5 Goals",
+      "score": 76.8,
+      "support": 0.8,
+      "supporters": [
+        "Trend"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [
+        {
+          "market": "Second Half Over 0.5",
+          "support": 0.78,
+          "engines": [
+            "Halves"
+          ]
+        }
+      ],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
+      "id": 1560640,
+      "date": "2026-07-24",
+      "home": "Antwerp",
+      "away": "Patro Eisden",
+      "league": "Friendlies Clubs",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "score": 0,
+      "reason": "No engine produced a qualified candidate.",
+      "supporters": [],
+      "conflictIndex": 0,
+      "independence": 0
     }
   ]
 }
