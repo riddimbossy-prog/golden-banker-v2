@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-24T05:09:54.545Z",
+  "generatedAt": "2026-07-24T05:19:42.697Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -22,14 +22,6 @@
       "sportTitle": "Super League - Greece",
       "score": 0.286,
       "matches": 4
-    },
-    {
-      "league": "Primera División",
-      "country": "Costa-Rica",
-      "sportKey": "soccer_argentina_primera_division",
-      "sportTitle": "Primera División - Argentina",
-      "score": 0.606,
-      "matches": 6
     },
     {
       "league": "Second League - Group 2",
@@ -430,6 +422,14 @@
       "sportTitle": "La Liga - Spain",
       "score": 0.429,
       "matches": 9
+    },
+    {
+      "league": "Primera División",
+      "country": "Costa-Rica",
+      "sportKey": "soccer_argentina_primera_division",
+      "sportTitle": "Primera División - Argentina",
+      "score": 0.606,
+      "matches": 5
     },
     {
       "league": "Liga MX",
@@ -960,7 +960,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 2070,
+  "matchesConsidered": 2069,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -2296,177 +2296,177 @@
       "reason": "No event/team match"
     },
     {
-      "league": "Primera División",
-      "home": "CS Herediano",
-      "away": "Puntarenas FC",
+      "league": "Second League - Group 2",
+      "home": "Yenisey II",
+      "away": "Torpedo Vladimir",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera División",
-      "home": "Deportivo Saprissa",
-      "away": "Perez Zeledon",
+      "league": "Second League - Group 2",
+      "home": "Dinamo St. Petersburg",
+      "away": "Murom",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera División",
-      "home": "CS Cartagines",
-      "away": "Inter San Carlos",
+      "league": "Second League - Group 2",
+      "home": "Kosmos Dolgoprudny",
+      "away": "Luki-Energiya",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera División",
-      "home": "Sporting San Jose",
-      "away": "LD Alajuelense",
+      "league": "Second League - Group 2",
+      "home": "Baltika II",
+      "away": "Irkutsk",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera División",
-      "home": "San Carlos",
-      "away": "Municipal Liberia",
+      "league": "Second League - Group 2",
+      "home": "Cherepovets",
+      "away": "Iskra Smolensk",
       "reason": "No event/team match"
     },
     {
-      "league": "Primera División",
-      "home": "San Carlos",
-      "away": "Escorpiones Belén",
+      "league": "Second League - Group 2",
+      "home": "Chertanovo Moscow",
+      "away": "Zvezda St. Petersburg",
       "reason": "No event/team match"
     },
     {
-      "league": "Reserve League",
-      "home": "Argentinos Juniors Res.",
-      "away": "Atlético Tucumán Res.",
+      "league": "Youth Championship",
+      "home": "Almaz Antey U19",
+      "away": "Lokomotiv Moskva U19",
       "reason": "No event/team match"
     },
     {
-      "league": "Reserve League",
-      "home": "Sarmiento Res.",
-      "away": "Godoy Cruz Res.",
+      "league": "Youth Championship",
+      "home": "Akademiya Konoplev U20",
+      "away": "Rostov U19",
       "reason": "No event/team match"
     },
     {
-      "league": "Reserve League",
-      "home": "Banfield Res.",
-      "away": "Vélez Sársfield Res.",
+      "league": "Youth Championship",
+      "home": "Nizhny Novgorod U19",
+      "away": "Spartak Moskva U19",
       "reason": "No event/team match"
     },
     {
-      "league": "Reserve League",
-      "home": "Talleres Córdoba Res.",
-      "away": "River Plate Res.",
+      "league": "Youth Championship",
+      "home": "Fakel U19",
+      "away": "Rubin Kazan U20",
       "reason": "No event/team match"
     },
     {
-      "league": "Reserve League",
-      "home": "Boca Juniors Res.",
-      "away": "Belgrano Córdoba Res.",
+      "league": "Youth Championship",
+      "home": "Chertanovo U20",
+      "away": "Zenit U19",
       "reason": "No event/team match"
     },
     {
-      "league": "Reserve League",
-      "home": "Barracas Central Res.",
-      "away": "Racing Club Res.",
+      "league": "Youth Championship",
+      "home": "CSKA Moskva U19",
+      "away": "Ural U20",
       "reason": "No event/team match"
     },
     {
-      "league": "Torneo Federal A",
-      "home": "Kimberley Mar del Plata",
-      "away": "Circulo Deportivo",
+      "league": "Youth Championship",
+      "home": "Dinamo Moskva U19",
+      "away": "Dynamo Makhachkala U19",
       "reason": "No event/team match"
     },
     {
-      "league": "Torneo Federal A",
-      "home": "Sportivo Belgrano",
-      "away": "Atletico Escobar",
+      "league": "Youth Championship",
+      "home": "Rodina Moscow U19",
+      "away": "Krasnodar U19",
       "reason": "No event/team match"
     },
     {
-      "league": "Torneo Federal A",
-      "home": "Defensores de Belgrano VR",
-      "away": "Gimnasia Chivilcoy",
+      "league": "Second League - Group 1",
+      "home": "Izberbash",
+      "away": "Lugansk",
       "reason": "No event/team match"
     },
     {
-      "league": "Torneo Federal A",
-      "home": "Costa Brava",
-      "away": "Deportivo Rincon",
+      "league": "Second League - Group 1",
+      "home": "Nart Cherkessk",
+      "away": "PSK Dinskaya",
       "reason": "No event/team match"
     },
     {
-      "league": "Torneo Federal A",
-      "home": "Atenas",
-      "away": "Juventud Unida Univ.",
+      "league": "Second League - Group 1",
+      "home": "Angust Nazran",
+      "away": "Kyzyltash",
       "reason": "No event/team match"
     },
     {
-      "league": "Torneo Federal A",
-      "home": "Boca Unidos",
-      "away": "Juventud Antoniana",
+      "league": "Second League - Group 1",
+      "home": "Pobeda",
+      "away": "Shahter Taganrog",
       "reason": "No event/team match"
     },
     {
-      "league": "Torneo Federal A",
-      "home": "Douglas Haig",
-      "away": "9 de Julio Rafaela",
+      "league": "Second League - Group 1",
+      "home": "Spartak Nalchik",
+      "away": "Rubin Yalta",
       "reason": "No event/team match"
     },
     {
-      "league": "Torneo Federal A",
-      "home": "Gimnasia Concepción",
-      "away": "El Linqueño",
+      "league": "Second League - Group 1",
+      "home": "Astrakhan",
+      "away": "FK Chayka 2",
       "reason": "No event/team match"
     },
     {
-      "league": "Torneo Federal A",
-      "home": "Guillermo Brown",
-      "away": "Germinal de Rawson",
+      "league": "Second League - Group 1",
+      "home": "Druzhba",
+      "away": "Sevastopol",
       "reason": "No event/team match"
     },
     {
-      "league": "Torneo Federal A",
-      "home": "Huracan Las Heras",
-      "away": "Fundacion Amigos",
+      "league": "Second League - Group 1",
+      "home": "Dynamo Makhachkala II",
+      "away": "Rostov II",
       "reason": "No event/team match"
     },
     {
-      "league": "Torneo Federal A",
-      "home": "Independiente De Chivilcoy",
-      "away": "Sportivo Las Parejas",
+      "league": "Second League - Group 3",
+      "home": "Avangard Kursk",
+      "away": "SKA Khabarovsk II",
       "reason": "No event/team match"
     },
     {
-      "league": "Torneo Federal A",
-      "home": "Olimpo Bahia Blanca",
-      "away": "Santamarina",
+      "league": "Second League - Group 3",
+      "home": "Rodina Moskva III",
+      "away": "Salyut-Belgorod",
       "reason": "No event/team match"
     },
     {
-      "league": "Torneo Federal A",
-      "home": "San Martín Mendoza",
-      "away": "Argentino Monte Maíz",
+      "league": "Second League - Group 3",
+      "home": "Kvant",
+      "away": "Metallurg Lipetsk",
       "reason": "No event/team match"
     },
     {
-      "league": "Torneo Federal A",
-      "home": "Sol de Mayo",
-      "away": "Villa Mitre",
+      "league": "Second League - Group 3",
+      "home": "Shumbrat",
+      "away": "FK Spartak Tambov",
       "reason": "No event/team match"
     },
     {
-      "league": "Torneo Federal A",
-      "home": "San Martin Formosa",
-      "away": "Bartolomé Mitre",
+      "league": "Second League - Group 3",
+      "home": "Strogino",
+      "away": "Volna Nizhegorodskaya",
       "reason": "No event/team match"
     },
     {
-      "league": "Torneo Federal A",
-      "home": "Sarmiento Resistencia",
-      "away": "Sol de América",
+      "league": "Second League - Group 3",
+      "home": "Orel",
+      "away": "Saturn Ramenskoye",
       "reason": "No event/team match"
     },
     {
-      "league": "Torneo Federal A",
-      "home": "Tucuman Central",
-      "away": "Sarmiento de La Banda",
+      "league": "Second League - Group 3",
+      "home": "Rotor-2",
+      "away": "Zenit Penza",
       "reason": "No event/team match"
     }
   ],
@@ -2496,18 +2496,6 @@
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_argentina_primera_division",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_argentina_primera_division",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_argentina_primera_division",
-      "market": "double_chance"
-    },
-    {
       "sportKey": "soccer_russia_premier_league",
       "market": "btts"
     },
@@ -2637,6 +2625,18 @@
     },
     {
       "sportKey": "soccer_switzerland_superleague",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_argentina_primera_division",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_argentina_primera_division",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_argentina_primera_division",
       "market": "double_chance"
     },
     {
@@ -2820,31 +2820,6 @@
     },
     {
       "label": "soccer_greece_super_league:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_argentina_primera_division:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_argentina_primera_division:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_argentina_primera_division:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_argentina_primera_division:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_argentina_primera_division:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3120,6 +3095,31 @@
     },
     {
       "label": "soccer_switzerland_superleague:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_argentina_primera_division:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_argentina_primera_division:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_argentina_primera_division:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_argentina_primera_division:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_argentina_primera_division:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3406,5 +3406,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-24T05:10:15.242Z"
+  "completedAt": "2026-07-24T05:19:47.924Z"
 }
