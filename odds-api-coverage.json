@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-24T01:58:22.643Z",
+  "generatedAt": "2026-07-24T02:08:22.516Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -16,28 +16,20 @@
       "matches": 1
     },
     {
-      "league": "Northern Super League",
-      "country": "Canada",
-      "sportKey": "soccer_greece_super_league",
-      "sportTitle": "Super League - Greece",
-      "score": 0.286,
-      "matches": 4
-    },
-    {
-      "league": "Serie B",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_serie_b",
-      "sportTitle": "Brazil Série B",
-      "score": 1,
-      "matches": 12
-    },
-    {
       "league": "CONMEBOL Sudamericana",
       "country": "World",
       "sportKey": "soccer_conmebol_copa_sudamericana",
       "sportTitle": "Copa Sudamericana",
       "score": 0.4,
-      "matches": 8
+      "matches": 6
+    },
+    {
+      "league": "Serie A",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_campeonato",
+      "sportTitle": "Brazil Série A",
+      "score": 0.929,
+      "matches": 18
     },
     {
       "league": "Liga Profesional Argentina",
@@ -45,7 +37,23 @@
       "sportKey": "soccer_argentina_primera_division",
       "sportTitle": "Primera División - Argentina",
       "score": 0.78,
-      "matches": 23
+      "matches": 22
+    },
+    {
+      "league": "Serie B",
+      "country": "Brazil",
+      "sportKey": "soccer_brazil_serie_b",
+      "sportTitle": "Brazil Série B",
+      "score": 1,
+      "matches": 13
+    },
+    {
+      "league": "Northern Super League",
+      "country": "Canada",
+      "sportKey": "soccer_greece_super_league",
+      "sportTitle": "Super League - Greece",
+      "score": 0.286,
+      "matches": 3
     },
     {
       "league": "Primera División",
@@ -101,15 +109,7 @@
       "sportKey": "soccer_brazil_campeonato",
       "sportTitle": "Brazil Série A",
       "score": 0.305,
-      "matches": 23
-    },
-    {
-      "league": "Premier League",
-      "country": "Lebanon",
-      "sportKey": "soccer_epl",
-      "sportTitle": "EPL",
-      "score": 0.987,
-      "matches": 2
+      "matches": 21
     },
     {
       "league": "Premier League",
@@ -157,7 +157,7 @@
       "sportKey": "soccer_england_efl_cup",
       "sportTitle": "EFL Cup",
       "score": 0.463,
-      "matches": 29
+      "matches": 28
     },
     {
       "league": "Veikkausliiga",
@@ -173,7 +173,7 @@
       "sportKey": "soccer_finland_veikkausliiga",
       "sportTitle": "Veikkausliiga - Finland",
       "score": 0.38,
-      "matches": 7
+      "matches": 6
     },
     {
       "league": "Kakkonen - Lohko A",
@@ -304,14 +304,6 @@
       "matches": 5
     },
     {
-      "league": "Reserve League",
-      "country": "Argentina",
-      "sportKey": "soccer_argentina_primera_division",
-      "sportTitle": "Primera División - Argentina",
-      "score": 0.323,
-      "matches": 6
-    },
-    {
       "league": "Torneo Federal A",
       "country": "Argentina",
       "sportKey": "soccer_argentina_primera_division",
@@ -389,7 +381,7 @@
       "sportKey": "soccer_argentina_primera_division",
       "sportTitle": "Primera División - Argentina",
       "score": 0.286,
-      "matches": 11
+      "matches": 8
     },
     {
       "league": "MLS Next Pro",
@@ -421,7 +413,7 @@
       "sportKey": "soccer_usa_mls",
       "sportTitle": "MLS",
       "score": 0.323,
-      "matches": 11
+      "matches": 8
     },
     {
       "league": "Primera Division",
@@ -429,7 +421,7 @@
       "sportKey": "soccer_spain_la_liga",
       "sportTitle": "La Liga - Spain",
       "score": 0.5,
-      "matches": 6
+      "matches": 5
     },
     {
       "league": "Primera B",
@@ -453,7 +445,7 @@
       "sportKey": "soccer_spain_la_liga",
       "sportTitle": "La Liga - Spain",
       "score": 0.429,
-      "matches": 9
+      "matches": 8
     },
     {
       "league": "Liga MX",
@@ -573,7 +565,7 @@
       "sportKey": "soccer_norway_eliteserien",
       "sportTitle": "Eliteserien - Norway",
       "score": 0.305,
-      "matches": 8
+      "matches": 7
     },
     {
       "league": "3. Division - Girone 6",
@@ -589,15 +581,7 @@
       "sportKey": "soccer_finland_veikkausliiga",
       "sportTitle": "Veikkausliiga - Finland",
       "score": 0.38,
-      "matches": 7
-    },
-    {
-      "league": "Super League",
-      "country": "Malawi",
-      "sportKey": "soccer_greece_super_league",
-      "sportTitle": "Super League - Greece",
-      "score": 0.653,
-      "matches": 8
+      "matches": 6
     },
     {
       "league": "Premier League",
@@ -605,6 +589,14 @@
       "sportKey": "soccer_epl",
       "sportTitle": "EPL",
       "score": 0.987,
+      "matches": 8
+    },
+    {
+      "league": "Super League",
+      "country": "Malawi",
+      "sportKey": "soccer_greece_super_league",
+      "sportTitle": "Super League - Greece",
+      "score": 0.653,
       "matches": 8
     },
     {
@@ -829,7 +821,7 @@
       "sportKey": "soccer_usa_mls",
       "sportTitle": "MLS",
       "score": 0.466,
-      "matches": 10
+      "matches": 9
     },
     {
       "league": "Serie C",
@@ -848,20 +840,12 @@
       "matches": 1
     },
     {
-      "league": "Serie A",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.929,
-      "matches": 19
-    },
-    {
       "league": "Premier League - Summer Series",
       "country": "England",
       "sportKey": "soccer_epl",
       "sportTitle": "EPL",
       "score": 0.667,
-      "matches": 4
+      "matches": 3
     },
     {
       "league": "Major League Soccer",
@@ -920,12 +904,20 @@
       "matches": 1
     },
     {
+      "league": "Reserve League",
+      "country": "Argentina",
+      "sportKey": "soccer_argentina_primera_division",
+      "sportTitle": "Primera División - Argentina",
+      "score": 0.323,
+      "matches": 3
+    },
+    {
       "league": "Cup",
       "country": "Russia",
       "sportKey": "soccer_england_efl_cup",
       "sportTitle": "EFL Cup",
       "score": 0.487,
-      "matches": 12
+      "matches": 8
     },
     {
       "league": "Cup",
@@ -941,34 +933,10 @@
       "sportKey": "soccer_norway_eliteserien",
       "sportTitle": "Eliteserien - Norway",
       "score": 0.305,
-      "matches": 7
-    },
-    {
-      "league": "MLS All-Star",
-      "country": "USA",
-      "sportKey": "soccer_usa_mls",
-      "sportTitle": "MLS",
-      "score": 1,
-      "matches": 1
-    },
-    {
-      "league": "Division 2 - Södra Götaland",
-      "country": "Sweden",
-      "sportKey": "soccer_sweden_allsvenskan",
-      "sportTitle": "Allsvenskan - Sweden",
-      "score": 0.305,
-      "matches": 1
-    },
-    {
-      "league": "Brasileiro U20 A",
-      "country": "Brazil",
-      "sportKey": "soccer_brazil_campeonato",
-      "sportTitle": "Brazil Série A",
-      "score": 0.43,
-      "matches": 2
+      "matches": 4
     }
   ],
-  "matchesConsidered": 2076,
+  "matchesConsidered": 1957,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -1344,12 +1312,6 @@
       "bestScore": 0
     },
     {
-      "league": "Segunda División",
-      "country": "Uruguay",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
       "league": "NB III - Southwest",
       "country": "Hungary",
       "reason": "No matching soccer sport key",
@@ -1376,6 +1338,12 @@
     {
       "league": "Czech Liga",
       "country": "Czech-Republic",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
+      "league": "Segunda División",
+      "country": "Uruguay",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
     },
@@ -1506,15 +1474,117 @@
       "bestScore": 0.2
     },
     {
-      "league": "UEFA Europa League",
-      "country": "World",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.125
-    },
-    {
       "league": "Carioca C",
       "home": "Campos AA",
       "away": "Cardoso Moreira",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Botafogo",
+      "away": "Vitoria",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Corinthians",
+      "away": "Remo",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Atletico Paranaense",
+      "away": "Internacional",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Santos",
+      "away": "Chapecoense-sc",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Vasco DA Gama",
+      "away": "Mirassol",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Bahia",
+      "away": "Corinthians",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Cruzeiro",
+      "away": "Botafogo",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "RB Bragantino",
+      "away": "Coritiba",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Flamengo",
+      "away": "Sao Paulo",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Gremio",
+      "away": "Fluminense",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Palmeiras",
+      "away": "Atletico-MG",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Remo",
+      "away": "Vitoria",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Atletico-MG",
+      "away": "RB Bragantino",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Botafogo",
+      "away": "Gremio",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Chapecoense-sc",
+      "away": "Vasco DA Gama",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Sao Paulo",
+      "away": "Santos",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Internacional",
+      "away": "Flamengo",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Serie A",
+      "home": "Mirassol",
+      "away": "Remo",
       "reason": "No event/team match"
     },
     {
@@ -1641,18 +1711,6 @@
       "league": "Paulista - U20",
       "home": "São Paulo U20",
       "away": "Oeste U20",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Paulista - U20",
-      "home": "América-SP U20",
-      "away": "Mirassol U20",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Paulista - U20",
-      "home": "Oeste U20",
-      "away": "XV de Piracicaba U20",
       "reason": "No event/team match"
     },
     {
@@ -1992,120 +2050,6 @@
       "reason": "No event/team match"
     },
     {
-      "league": "Serie A",
-      "home": "Atletico Paranaense",
-      "away": "Internacional",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "Santos",
-      "away": "Chapecoense-sc",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "Vasco DA Gama",
-      "away": "Mirassol",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "Bahia",
-      "away": "Corinthians",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "Cruzeiro",
-      "away": "Botafogo",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "RB Bragantino",
-      "away": "Coritiba",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "Flamengo",
-      "away": "Sao Paulo",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "Gremio",
-      "away": "Fluminense",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "Palmeiras",
-      "away": "Atletico-MG",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "Remo",
-      "away": "Vitoria",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "Atletico-MG",
-      "away": "RB Bragantino",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "Botafogo",
-      "away": "Gremio",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "Chapecoense-sc",
-      "away": "Vasco DA Gama",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "Sao Paulo",
-      "away": "Santos",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "Internacional",
-      "away": "Flamengo",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "Mirassol",
-      "away": "Remo",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "Fluminense",
-      "away": "Bahia",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "Vitoria",
-      "away": "Palmeiras",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie A",
-      "home": "Corinthians",
-      "away": "Atletico Paranaense",
-      "reason": "No event/team match"
-    },
-    {
       "league": "Catarinense - 2",
       "home": "Nação",
       "away": "Hercílio Luz",
@@ -2136,333 +2080,9 @@
       "reason": "No event/team match"
     },
     {
-      "league": "Brasileiro U20 A",
-      "home": "Palmeiras U20",
-      "away": "RB Bragantino U20",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Brasileiro U20 A",
-      "home": "Vasco da Gama U20",
-      "away": "Santos U20",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Northern Super League",
-      "home": "Montreal Roses W",
-      "away": "AFC Toronto W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Northern Super League",
-      "home": "Vancouver Rise W",
-      "away": "Halifax Tides W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Northern Super League",
-      "home": "AFC Toronto W",
-      "away": "Calgary Wild W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Northern Super League",
-      "home": "Vancouver Rise W",
-      "away": "Montreal Roses W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Blue Eagles",
-      "away": "Red Lions",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Chitipa United",
-      "away": "Ekhaya",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "CIVO United",
-      "away": "Moyale Barracks",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Dedza Dynamos",
-      "away": "Nyasa Big Bullets",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Karonga United",
-      "away": "Creck",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Mitundu Baptist",
-      "away": "Silver Strikers",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Kamuzu Barracks",
-      "away": "MAFCO",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Be Forward Wanderers",
-      "away": "Masters FC",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Lausanne",
-      "away": "Grasshoppers",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Servette FC",
-      "away": "FC Basel 1893",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "FC Luzern",
-      "away": "FC Thun",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "BSC Young Boys",
-      "away": "FC Sion",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "FC Lugano",
-      "away": "FC Vaduz",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "FC ST. Gallen",
-      "away": "FC Zurich",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Bunyodkor",
-      "away": "Pakhtakor",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Andijan",
-      "away": "Buxoro",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Lokomotiv",
-      "away": "Sogdiana",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Olmaliq",
-      "away": "Mash'al",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Nasaf",
-      "away": "Qizilqum",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Neftchi",
-      "away": "Navbahor",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Xorazm",
-      "away": "Surkhon",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Super League",
-      "home": "Dinamo Samarqand",
-      "away": "Kokand-1912",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie B",
-      "home": "Cuiaba",
-      "away": "Atletico Goianiense",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie B",
-      "home": "Botafogo SP",
-      "away": "Juventude",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie B",
-      "home": "Criciuma",
-      "away": "Nautico Recife",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie B",
-      "home": "São Bernardo",
-      "away": "Ceara",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie B",
-      "home": "America Mineiro",
-      "away": "Goias",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie B",
-      "home": "Londrina",
-      "away": "Novorizontino",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie B",
-      "home": "Atletico Goianiense",
-      "away": "Operario-PR",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie B",
-      "home": "CRB",
-      "away": "Vila Nova",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie B",
-      "home": "Sport Recife",
-      "away": "Cuiaba",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie B",
-      "home": "Juventude",
-      "away": "Avai",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie B",
-      "home": "Ponte Preta",
-      "away": "Athletic Club",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Serie B",
-      "home": "Fortaleza EC",
-      "away": "Botafogo SP",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Brasileiro Women",
-      "home": "Flamengo W",
-      "away": "Gremio W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Brasileiro Women",
-      "home": "America Mineiro W",
-      "away": "Santos W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Brasileiro Women",
-      "home": "Internacional RS W",
-      "away": "Fluminense W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Brasileiro Women",
-      "home": "Cruzeiro W",
-      "away": "São Paulo W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Brasileiro Women",
-      "home": "Mixto W",
-      "away": "Palmeiras W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Brasileiro Women",
-      "home": "RB Bragantino W",
-      "away": "Atlético Mineiro W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Brasileiro Women",
-      "home": "Corinthians W",
-      "away": "Vitória BA W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Brasileiro Women",
-      "home": "Juventude W",
-      "away": "Ferroviaria W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Brasileiro Women",
-      "home": "Bahia W",
-      "away": "Botafogo W",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Capixaba B",
-      "home": "GEL",
-      "away": "Linhares",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Capixaba B",
-      "home": "Tupy",
-      "away": "Estrela do Norte",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Capixaba B",
-      "home": "Doze",
-      "away": "Audax São Mateus",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Capixaba B",
-      "home": "Sport Brasil ES",
-      "away": "Rive",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Paulista Série B",
-      "home": "Flamengo SP",
-      "away": "Independente SP",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Paulista Série B",
-      "home": "America SP",
-      "away": "Itaquá Athletico Clube",
+      "league": "CONMEBOL Sudamericana",
+      "home": "Bolívar",
+      "away": "Gremio",
       "reason": "No event/team match"
     },
     {
@@ -2475,6 +2095,354 @@
       "league": "CONMEBOL Sudamericana",
       "home": "Santa Fe",
       "away": "Caracas FC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "CONMEBOL Sudamericana",
+      "home": "Tigre",
+      "away": "Club Nacional",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "CONMEBOL Sudamericana",
+      "home": "Santos",
+      "away": "UCV",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "CONMEBOL Sudamericana",
+      "home": "Vasco DA Gama",
+      "away": "Independiente Medellin",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "Belgrano Cordoba",
+      "away": "Rosario Central",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "Sarmiento Junin",
+      "away": "Argentinos JRS",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "Defensa Y Justicia",
+      "away": "Aldosivi",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "Gimnasia M.",
+      "away": "Central Cordoba de Santiago",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "Racing Club",
+      "away": "Gimnasia L.P.",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "Velez Sarsfield",
+      "away": "Instituto Cordoba",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "Huracan",
+      "away": "Banfield",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "Platense",
+      "away": "Union Santa Fe",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "Estudiantes de Rio Cuarto",
+      "away": "Tigre",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "Newells Old Boys",
+      "away": "Talleres Cordoba",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "River Plate",
+      "away": "Barracas Central",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "Lanus",
+      "away": "San Lorenzo",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "Atletico Tucuman",
+      "away": "Independ. Rivadavia",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "Estudiantes L.P.",
+      "away": "Independiente",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "Deportivo Riestra",
+      "away": "Boca Juniors",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "Banfield",
+      "away": "Sarmiento Junin",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "San Lorenzo",
+      "away": "Gimnasia M.",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "Argentinos JRS",
+      "away": "Estudiantes de Rio Cuarto",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "Rosario Central",
+      "away": "Racing Club",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "Barracas Central",
+      "away": "Aldosivi",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "Defensa Y Justicia",
+      "away": "Deportivo Riestra",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Liga Profesional Argentina",
+      "home": "Gimnasia L.P.",
+      "away": "River Plate",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "CS Herediano",
+      "away": "Puntarenas FC",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "Deportivo Saprissa",
+      "away": "Perez Zeledon",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "CS Cartagines",
+      "away": "Inter San Carlos",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "Sporting San Jose",
+      "away": "LD Alajuelense",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "San Carlos",
+      "away": "Municipal Liberia",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "San Carlos",
+      "away": "Escorpiones Belén",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Torneo Federal A",
+      "home": "Kimberley Mar del Plata",
+      "away": "Circulo Deportivo",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Torneo Federal A",
+      "home": "Sportivo Belgrano",
+      "away": "Atletico Escobar",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Torneo Federal A",
+      "home": "Defensores de Belgrano VR",
+      "away": "Gimnasia Chivilcoy",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Torneo Federal A",
+      "home": "Costa Brava",
+      "away": "Deportivo Rincon",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Torneo Federal A",
+      "home": "Atenas",
+      "away": "Juventud Unida Univ.",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Torneo Federal A",
+      "home": "Boca Unidos",
+      "away": "Juventud Antoniana",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Torneo Federal A",
+      "home": "Douglas Haig",
+      "away": "9 de Julio Rafaela",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Torneo Federal A",
+      "home": "Gimnasia Concepción",
+      "away": "El Linqueño",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Torneo Federal A",
+      "home": "Guillermo Brown",
+      "away": "Germinal de Rawson",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Torneo Federal A",
+      "home": "Huracan Las Heras",
+      "away": "Fundacion Amigos",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Torneo Federal A",
+      "home": "Independiente De Chivilcoy",
+      "away": "Sportivo Las Parejas",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Torneo Federal A",
+      "home": "Olimpo Bahia Blanca",
+      "away": "Santamarina",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Torneo Federal A",
+      "home": "San Martín Mendoza",
+      "away": "Argentino Monte Maíz",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Torneo Federal A",
+      "home": "Sol de Mayo",
+      "away": "Villa Mitre",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Torneo Federal A",
+      "home": "San Martin Formosa",
+      "away": "Bartolomé Mitre",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Torneo Federal A",
+      "home": "Sarmiento Resistencia",
+      "away": "Sol de América",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Torneo Federal A",
+      "home": "Tucuman Central",
+      "away": "Sarmiento de La Banda",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "Alianza Atletico",
+      "away": "Club Deportivo Los Chankas",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "Universitario",
+      "away": "Cusco",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "Sport Huancayo",
+      "away": "Atletico Grau",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "Juan Pablo II College",
+      "away": "Cienciano",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "Sport Boys",
+      "away": "ADT",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "FBC Melgar",
+      "away": "Sporting Cristal",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "UTC Cajamarca",
+      "away": "UCV Moquegua",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "Comerciantes Unidos",
+      "away": "Alianza Lima",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera División",
+      "home": "Deportivo Garcilaso",
+      "away": "FC Cajamarca",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Primera B Metropolitana",
+      "home": "Ituzaingó",
+      "away": "Sportivo Italiano",
       "reason": "No event/team match"
     }
   ],
@@ -2492,30 +2460,6 @@
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_greece_super_league",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_greece_super_league",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_greece_super_league",
-      "market": "double_chance"
-    },
-    {
-      "sportKey": "soccer_brazil_serie_b",
-      "market": "btts"
-    },
-    {
-      "sportKey": "soccer_brazil_serie_b",
-      "market": "draw_no_bet"
-    },
-    {
-      "sportKey": "soccer_brazil_serie_b",
-      "market": "double_chance"
-    },
-    {
       "sportKey": "soccer_conmebol_copa_sudamericana",
       "market": "btts"
     },
@@ -2540,27 +2484,39 @@
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_russia_premier_league",
+      "sportKey": "soccer_brazil_serie_b",
       "market": "btts"
     },
     {
-      "sportKey": "soccer_russia_premier_league",
+      "sportKey": "soccer_brazil_serie_b",
       "market": "draw_no_bet"
     },
     {
-      "sportKey": "soccer_russia_premier_league",
+      "sportKey": "soccer_brazil_serie_b",
       "market": "double_chance"
     },
     {
-      "sportKey": "soccer_epl",
+      "sportKey": "soccer_greece_super_league",
       "market": "btts"
     },
     {
-      "sportKey": "soccer_epl",
+      "sportKey": "soccer_greece_super_league",
       "market": "draw_no_bet"
     },
     {
-      "sportKey": "soccer_epl",
+      "sportKey": "soccer_greece_super_league",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_russia_premier_league",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_russia_premier_league",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_russia_premier_league",
       "market": "double_chance"
     },
     {
@@ -2819,56 +2775,6 @@
       "statusCode": 422
     },
     {
-      "label": "soccer_greece_super_league:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_greece_super_league:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_greece_super_league:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_greece_super_league:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_greece_super_league:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_brazil_serie_b:base-combined",
-      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_brazil_serie_b:base-core",
-      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_brazil_serie_b:btts",
-      "error": "Markets not supported by this endpoint: btts",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_brazil_serie_b:draw_no_bet",
-      "error": "Markets not supported by this endpoint: draw_no_bet",
-      "statusCode": 422
-    },
-    {
-      "label": "soccer_brazil_serie_b:double_chance",
-      "error": "Markets not supported by this endpoint: double_chance",
-      "statusCode": 422
-    },
-    {
       "label": "soccer_conmebol_copa_sudamericana:base-combined",
       "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
       "statusCode": 422
@@ -2915,6 +2821,56 @@
     },
     {
       "label": "soccer_argentina_primera_division:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_brazil_serie_b:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_brazil_serie_b:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_brazil_serie_b:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_brazil_serie_b:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_brazil_serie_b:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_greece_super_league:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_greece_super_league:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_greece_super_league:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_greece_super_league:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_greece_super_league:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3426,5 +3382,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-24T01:58:32.004Z"
+  "completedAt": "2026-07-24T02:08:27.831Z"
 }
