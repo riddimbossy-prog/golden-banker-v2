@@ -1,6 +1,6 @@
 {
   "version": "v195",
-  "updated": "2026-07-24T12:15:55.725Z",
+  "updated": "2026-07-24T13:19:03.345Z",
   "summary": {
     "fixtures": 300,
     "qualified": 0,
@@ -5661,6 +5661,27 @@
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
     },
     {
+      "id": 1598632,
+      "date": "2026-07-24",
+      "home": "RTC",
+      "away": "Bhutan U19",
+      "league": "Premier League",
+      "version": "v195",
+      "bet": false,
+      "market": "No Bet",
+      "candidate": "Second Half Over 0.5",
+      "score": 76.1,
+      "support": 0.63,
+      "supporters": [
+        "Halves"
+      ],
+      "independence": 1,
+      "exactSupport": 1,
+      "conflictIndex": 0,
+      "alternatives": [],
+      "reason": "Consensus rejected: support, independence or conflict threshold failed."
+    },
+    {
       "id": 1598511,
       "date": "2026-07-24",
       "home": "Al-Ahli Jeddah",
@@ -5680,21 +5701,6 @@
       "conflictIndex": 0,
       "alternatives": [],
       "reason": "Consensus rejected: support, independence or conflict threshold failed."
-    },
-    {
-      "id": 1583416,
-      "date": "2026-07-24",
-      "home": "Penafiel",
-      "away": "Leganes",
-      "league": "Friendlies Clubs",
-      "version": "v195",
-      "bet": false,
-      "market": "No Bet",
-      "score": 0,
-      "reason": "No engine produced a qualified candidate.",
-      "supporters": [],
-      "conflictIndex": 0,
-      "independence": 0
     },
     {
       "id": 1527240,
