@@ -1,9 +1,9 @@
 {
   "version": "v194",
-  "updated": "2026-07-24T02:52:33.240Z",
+  "updated": "2026-07-24T03:54:47.095Z",
   "summary": {
-    "settled": 310,
-    "winRate": 0.8194,
+    "settled": 311,
+    "winRate": 0.8199,
     "engines": 12,
     "approved": 0,
     "shadow": 11,
@@ -45,7 +45,7 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-24T02:52:33.239Z"
+      "updated": "2026-07-24T03:54:47.094Z"
     },
     "Prime": {
       "engine": "Prime",
@@ -78,7 +78,7 @@
         "distributionShift": 0.293,
         "status": "STABLE"
       },
-      "updated": "2026-07-24T02:52:33.239Z"
+      "updated": "2026-07-24T03:54:47.094Z"
     },
     "Value": {
       "engine": "Value",
@@ -111,7 +111,7 @@
         "distributionShift": 0.8,
         "status": "STABLE"
       },
-      "updated": "2026-07-24T02:52:33.239Z"
+      "updated": "2026-07-24T03:54:47.094Z"
     },
     "Pro": {
       "engine": "Pro",
@@ -144,7 +144,7 @@
         "distributionShift": 0.8,
         "status": "STABLE"
       },
-      "updated": "2026-07-24T02:52:33.239Z"
+      "updated": "2026-07-24T03:54:47.094Z"
     },
     "Ultra": {
       "engine": "Ultra",
@@ -177,7 +177,7 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-24T02:52:33.239Z"
+      "updated": "2026-07-24T03:54:47.094Z"
     },
     "Elite": {
       "engine": "Elite",
@@ -210,7 +210,7 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-24T02:52:33.239Z"
+      "updated": "2026-07-24T03:54:47.094Z"
     },
     "Apex": {
       "engine": "Apex",
@@ -243,7 +243,7 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-24T02:52:33.239Z"
+      "updated": "2026-07-24T03:54:47.094Z"
     },
     "Halves": {
       "engine": "Halves",
@@ -276,7 +276,7 @@
         "distributionShift": 0.063,
         "status": "STABLE"
       },
-      "updated": "2026-07-24T02:52:33.239Z"
+      "updated": "2026-07-24T03:54:47.094Z"
     },
     "Streaks": {
       "engine": "Streaks",
@@ -309,7 +309,7 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-24T02:52:33.239Z"
+      "updated": "2026-07-24T03:54:47.095Z"
     },
     "Trend": {
       "engine": "Trend",
@@ -342,7 +342,7 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-24T02:52:33.239Z"
+      "updated": "2026-07-24T03:54:47.095Z"
     },
     "League Bias": {
       "engine": "League Bias",
@@ -355,13 +355,13 @@
         "rate": 0.913
       },
       "validation": {
-        "sample": 20,
-        "wins": 14,
+        "sample": 21,
+        "wins": 15,
         "losses": 6,
-        "rate": 0.7
+        "rate": 0.7143
       },
-      "validationDelta": -0.213,
-      "calibrationError": 0.161,
+      "validationDelta": -0.1987,
+      "calibrationError": 0.1467,
       "shadow": {
         "eligible": 0,
         "avoidedLosses": 0,
@@ -371,11 +371,11 @@
       "drift": {
         "recentSample": 30,
         "priorSample": 30,
-        "confidenceShift": -0.57,
-        "distributionShift": 0.333,
+        "confidenceShift": -0.59,
+        "distributionShift": 0.267,
         "status": "STABLE"
       },
-      "updated": "2026-07-24T02:52:33.239Z"
+      "updated": "2026-07-24T03:54:47.095Z"
     },
     "Strict": {
       "engine": "Strict",
@@ -408,7 +408,7 @@
         "distributionShift": 0.5,
         "status": "STABLE"
       },
-      "updated": "2026-07-24T02:52:33.239Z"
+      "updated": "2026-07-24T03:54:47.095Z"
     }
   },
   "marketScorecards": [
@@ -430,11 +430,11 @@
     },
     {
       "marketFamily": "MATCH_UNDER",
-      "sample": 46,
-      "wins": 29,
+      "sample": 47,
+      "wins": 30,
       "losses": 17,
-      "rate": 0.6304,
-      "calibrationError": 0.0459
+      "rate": 0.6383,
+      "calibrationError": 0.0481
     },
     {
       "marketFamily": "OTHER",
@@ -584,6 +584,13 @@
       "rate": 1
     },
     {
+      "league": "Reserve League",
+      "sample": 3,
+      "wins": 3,
+      "losses": 0,
+      "rate": 1
+    },
+    {
       "league": "Catarinense U20",
       "sample": 3,
       "wins": 3,
@@ -613,13 +620,6 @@
     },
     {
       "league": "USL Championship",
-      "sample": 2,
-      "wins": 2,
-      "losses": 0,
-      "rate": 1
-    },
-    {
-      "league": "Reserve League",
       "sample": 2,
       "wins": 2,
       "losses": 0,

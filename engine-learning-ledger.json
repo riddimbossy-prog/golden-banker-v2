@@ -1,7 +1,7 @@
 {
   "version": "v193",
   "schemaVersion": 1,
-  "updated": "2026-07-24T02:52:32.541Z",
+  "updated": "2026-07-24T03:54:46.251Z",
   "minimumSamples": {
     "teamFavorite": 5,
     "teamUnderdog": 5,
@@ -12,10 +12,10 @@
   },
   "decayHalfLifeDays": 120,
   "summary": {
-    "settledFixtures": 155,
-    "settledDecisions": 310,
+    "settledFixtures": 156,
+    "settledDecisions": 311,
     "reviewedLosses": 56,
-    "attachedUpcoming": 2374,
+    "attachedUpcoming": 2373,
     "highRiskUpcoming": 0,
     "stableUpcoming": 0
   },
@@ -191,7 +191,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.89
+        "decayedWeight": 0.88
       },
       "underdog": {
         "sample": 0,
@@ -234,7 +234,7 @@
             "mid": 1,
             "upper": 1
           },
-          "decayedWeight": 0.89
+          "decayedWeight": 0.88
         }
       },
       "underdogUpsets": 0,
@@ -286,7 +286,7 @@
           "mid": 0,
           "upper": 0.7935
         },
-        "decayedWeight": 0.89
+        "decayedWeight": 0.88
       },
       "favoriteBands": {},
       "underdogUpsets": 0,
@@ -5985,7 +5985,7 @@
           "mid": 1,
           "upper": 1
         },
-        "decayedWeight": 0.89
+        "decayedWeight": 0.88
       },
       "flags": []
     },
@@ -8738,13 +8738,13 @@
       "hardVeto": false
     },
     "*|League Bias|Under 3.5 Goals|unknown|other": {
-      "sample": 8,
-      "wins": 8,
+      "sample": 9,
+      "wins": 9,
       "losses": 0,
       "winRate": 1,
       "lossRate": 0,
       "wilson": {
-        "lower": 0.6756,
+        "lower": 0.7008,
         "mid": 1,
         "upper": 1
       },
@@ -9984,13 +9984,13 @@
       "hardVeto": false
     },
     "reserve league|League Bias|Under 3.5 Goals|unknown|other": {
-      "sample": 2,
-      "wins": 2,
+      "sample": 3,
+      "wins": 3,
       "losses": 0,
       "winRate": 1,
       "lossRate": 0,
       "wilson": {
-        "lower": 0.3424,
+        "lower": 0.4385,
         "mid": 1,
         "upper": 1
       },

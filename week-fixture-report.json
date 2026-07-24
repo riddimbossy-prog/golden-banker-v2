@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-24T02:52:35.868Z",
+  "generatedAt": "2026-07-24T03:54:51.412Z",
   "windowStart": "2026-07-24",
   "windowEnd": "2026-07-30",
   "totalSavedMatches": 6779,
@@ -15,9 +15,9 @@
       "leagues": 78,
       "enriched": 270,
       "fixtureOnly": 0,
-      "upcoming": 264,
-      "live": 5,
-      "finished": 1
+      "upcoming": 263,
+      "live": 1,
+      "finished": 6
     },
     {
       "date": "2026-07-25",

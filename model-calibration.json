@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24T02:52:28.838Z",
+  "updated": "2026-07-24T03:54:38.682Z",
   "minSample": 300,
   "groups": {
     "LEM|USL League Two|Prime|Double Chance 1X|90-99": {
@@ -3028,14 +3028,14 @@
       "validated": false
     },
     "EM|*|league-bias|Under 3.5 Goals|80-89": {
-      "sample": 21,
-      "wins": 19,
+      "sample": 22,
+      "wins": 20,
       "losses": 2,
-      "lower": 0.7109,
-      "mid": 0.9048,
-      "upper": 0.9735,
+      "lower": 0.7218,
+      "mid": 0.9091,
+      "upper": 0.9747,
       "grade": "Learning",
-      "leagueReliability": 50.7,
+      "leagueReliability": 51,
       "validated": false
     },
     "LM|Primera B Metropolitana|*|Under 3.5 Goals|80-89": {
@@ -3050,14 +3050,14 @@
       "validated": false
     },
     "M|*|*|Under 3.5 Goals|80-89": {
-      "sample": 22,
-      "wins": 20,
+      "sample": 23,
+      "wins": 21,
       "losses": 2,
-      "lower": 0.7218,
-      "mid": 0.9091,
-      "upper": 0.9747,
+      "lower": 0.732,
+      "mid": 0.913,
+      "upper": 0.9758,
       "grade": "Learning",
-      "leagueReliability": 51,
+      "leagueReliability": 51.3,
       "validated": false
     },
     "LEM|1. Deild|trend|Home Team Over 0.5 Goals|80-89": {
@@ -3600,25 +3600,25 @@
       "validated": false
     },
     "LEM|Reserve League|league-bias|Under 3.5 Goals|80-89": {
-      "sample": 2,
-      "wins": 2,
+      "sample": 3,
+      "wins": 3,
       "losses": 0,
-      "lower": 0.3424,
+      "lower": 0.4385,
       "mid": 1,
       "upper": 1,
       "grade": "Learning",
-      "leagueReliability": 46.3,
+      "leagueReliability": 49.2,
       "validated": false
     },
     "LM|Reserve League|*|Under 3.5 Goals|80-89": {
-      "sample": 2,
-      "wins": 2,
+      "sample": 3,
+      "wins": 3,
       "losses": 0,
-      "lower": 0.3424,
+      "lower": 0.4385,
       "mid": 1,
       "upper": 1,
       "grade": "Learning",
-      "leagueReliability": 46.3,
+      "leagueReliability": 49.2,
       "validated": false
     },
     "LEM|Brasileiro U17|halves|Second Half Over 0.5|90-99": {
