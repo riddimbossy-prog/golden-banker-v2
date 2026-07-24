@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-07-24T17:38:23.724Z",
+  "generatedAt": "2026-07-24T18:40:03.241Z",
   "version": "v270",
   "label": "Operational",
   "status": "operational",
-  "dataUpdated": "2026-07-24T17:38:14.590Z",
-  "scoresUpdated": "2026-07-24T17:38:14.590Z",
+  "dataUpdated": "2026-07-24T18:39:54.013Z",
+  "scoresUpdated": "2026-07-24T18:39:54.013Z",
   "engineCount": 22,
   "expectedEngineCount": 22,
   "multiEngineCount": 4,
   "matchCount": 6794,
-  "liveMatches": 136,
+  "liveMatches": 155,
   "components": {
     "baseEngines": 18,
     "multiEngineSuite": 4,
@@ -19,7 +19,7 @@
       "matchesUpdated": 0,
       "actualHtftMatches": 0,
       "derivedHtftMatches": 0,
-      "quotaRemaining": 100000
+      "quotaRemaining": 99848
     }
   }
 }

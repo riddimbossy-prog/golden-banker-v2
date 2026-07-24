@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-24T18:33:19.187Z",
+  "generatedAt": "2026-07-24T18:34:41.527Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -22,6 +22,94 @@
       "sportTitle": "Liga MX",
       "score": 0.68,
       "matches": 7
+    },
+    {
+      "league": "Veikkausliiga",
+      "country": "Finland",
+      "sportKey": "soccer_finland_veikkausliiga",
+      "sportTitle": "Veikkausliiga - Finland",
+      "score": 1,
+      "matches": 6
+    },
+    {
+      "league": "Ykkönen",
+      "country": "Finland",
+      "sportKey": "soccer_finland_veikkausliiga",
+      "sportTitle": "Veikkausliiga - Finland",
+      "score": 0.38,
+      "matches": 7
+    },
+    {
+      "league": "Youth Championship",
+      "country": "Russia",
+      "sportKey": "soccer_russia_premier_league",
+      "sportTitle": "Premier League - Russia",
+      "score": 0.323,
+      "matches": 2
+    },
+    {
+      "league": "Kakkonen - Lohko B",
+      "country": "Finland",
+      "sportKey": "soccer_finland_veikkausliiga",
+      "sportTitle": "Veikkausliiga - Finland",
+      "score": 0.323,
+      "matches": 4
+    },
+    {
+      "league": "Kakkonen - Lohko A",
+      "country": "Finland",
+      "sportKey": "soccer_finland_veikkausliiga",
+      "sportTitle": "Veikkausliiga - Finland",
+      "score": 0.323,
+      "matches": 5
+    },
+    {
+      "league": "1. Division",
+      "country": "Denmark",
+      "sportKey": "soccer_denmark_superliga",
+      "sportTitle": "Denmark Superliga",
+      "score": 0.347,
+      "matches": 6
+    },
+    {
+      "league": "Ekstraklasa",
+      "country": "Poland",
+      "sportKey": "soccer_poland_ekstraklasa",
+      "sportTitle": "Ekstraklasa - Poland",
+      "score": 1,
+      "matches": 9
+    },
+    {
+      "league": "I Liga",
+      "country": "Poland",
+      "sportKey": "soccer_poland_ekstraklasa",
+      "sportTitle": "Ekstraklasa - Poland",
+      "score": 0.347,
+      "matches": 9
+    },
+    {
+      "league": "II Liga - East",
+      "country": "Poland",
+      "sportKey": "soccer_poland_ekstraklasa",
+      "sportTitle": "Ekstraklasa - Poland",
+      "score": 0.323,
+      "matches": 9
+    },
+    {
+      "league": "Cup",
+      "country": "Czech-Republic",
+      "sportKey": "soccer_england_efl_cup",
+      "sportTitle": "EFL Cup",
+      "score": 0.463,
+      "matches": 28
+    },
+    {
+      "league": "Regionalliga - Bayern",
+      "country": "Germany",
+      "sportKey": "soccer_germany_bundesliga",
+      "sportTitle": "Bundesliga - Germany",
+      "score": 0.347,
+      "matches": 8
     },
     {
       "league": "Cup",
@@ -960,7 +1048,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1974,
+  "matchesConsidered": 2001,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -984,6 +1072,24 @@
     {
       "league": "Friendlies Clubs",
       "country": "World",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
+    },
+    {
+      "league": "Second League",
+      "country": "Bulgaria",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
+      "league": "A Lyga",
+      "country": "Lithuania",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
+      "league": "FNL",
+      "country": "Czech-Republic",
       "reason": "No matching soccer sport key",
       "bestScore": 0
     },
@@ -1900,183 +2006,573 @@
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Dornbirn",
-      "away": "Ried",
+      "league": "Veikkausliiga",
+      "home": "FF Jaro",
+      "away": "SJK",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Wieselburg",
-      "away": "WSG Wattens",
+      "league": "Veikkausliiga",
+      "home": "Mariehamn",
+      "away": "AC Oulu",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Velden",
-      "away": "Austria Klagenfurt",
+      "league": "Veikkausliiga",
+      "home": "KuPS",
+      "away": "VPS",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Deutschlandsberger SC",
-      "away": "SKU Amstetten",
+      "league": "Veikkausliiga",
+      "home": "Ilves",
+      "away": "Lahti",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "SV Lafnitz",
-      "away": "Scheiblingkirchen",
+      "league": "Veikkausliiga",
+      "home": "Inter Turku",
+      "away": "Gnistan",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Lauterach",
-      "away": "Wolfsberger AC",
+      "league": "Veikkausliiga",
+      "home": "HJK Helsinki",
+      "away": "Turku PS",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Leobendorf",
-      "away": "SCR Altach",
+      "league": "Ykkönen",
+      "home": "FC jazz",
+      "away": "TPV",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "SV Horn",
-      "away": "Floridsdorfer AC",
+      "league": "Ykkönen",
+      "home": "Tampere United",
+      "away": "Inter Turku II",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Leoben",
-      "away": "Voitsberg",
+      "league": "Ykkönen",
+      "home": "Rops",
+      "away": "JJK",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Tillmitsch",
-      "away": "SKN ST. Polten",
+      "league": "Ykkönen",
+      "home": "SalPa",
+      "away": "PKKU",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Traiskirchen",
-      "away": "Bleiburg",
+      "league": "Ykkönen",
+      "home": "KuPS Akatemia",
+      "away": "VJS",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Gurten",
-      "away": "FC BW Linz",
+      "league": "Ykkönen",
+      "home": "OLS",
+      "away": "KPV-j",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Seekirchen",
-      "away": "Sturm Graz",
+      "league": "Ykkönen",
+      "home": "FC jazz",
+      "away": "KuPS Akatemia",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Wals-Grünau",
-      "away": "Austria Salzburg",
+      "league": "Kakkonen - Lohko B",
+      "home": "NJS",
+      "away": "ÅIFK",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Fach-Donaufeld",
-      "away": "Grazer AK",
+      "league": "Kakkonen - Lohko B",
+      "home": "P-Iirot",
+      "away": "Ilves II",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Lustenau",
-      "away": "Kitzbühel",
+      "league": "Kakkonen - Lohko B",
+      "home": "Honka",
+      "away": "GrIFK",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Wohnbau Dietach",
-      "away": "Bischofshofen",
+      "league": "Kakkonen - Lohko B",
+      "home": "Musa",
+      "away": "EPS",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Hohenems",
-      "away": "WSPG Wels",
+      "league": "Kakkonen - Lohko A",
+      "home": "PEPO",
+      "away": "PuiU Helsinki",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Kalsdorf",
-      "away": "Lask Linz",
+      "league": "Kakkonen - Lohko A",
+      "home": "PPJ",
+      "away": "Union Plaani",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Leonfelden",
-      "away": "Schwarz-Weiß Bregenz",
+      "league": "Kakkonen - Lohko A",
+      "home": "Atlantis",
+      "away": "HPS",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Wacker Innsbruck",
-      "away": "SVG Reichenau",
+      "league": "Kakkonen - Lohko A",
+      "home": "Reipas",
+      "away": "MyPa",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Oberwart",
-      "away": "Red Bull Salzburg",
+      "league": "Kakkonen - Lohko A",
+      "home": "Kiffen",
+      "away": "HIFK Helsinki",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Wiener Viktoria",
-      "away": "Parndorf",
+      "league": "Kansallinen Liiga",
+      "home": "Åland United W",
+      "away": "VIFK W",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Krems / Rehberg",
-      "away": "Austria Lustenau",
+      "league": "Kansallinen Liiga",
+      "home": "PK-35 Vantaa W",
+      "away": "HJK W",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Mattersburg SV 2020",
-      "away": "First Vienna",
+      "league": "Kansallinen Liiga",
+      "home": "IF Gnistan",
+      "away": "KuPS W",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Treibach",
-      "away": "SV Kapfenberg",
+      "league": "Kansallinen Liiga",
+      "home": "HPS W",
+      "away": "Ilves W",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "SK Vorwarts Steyr",
-      "away": "Kuchl",
+      "league": "Ykkösliiga",
+      "home": "Haka",
+      "away": "KäPa",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Schwaz",
-      "away": "Wallern / Marienkirchen",
+      "league": "Ykkösliiga",
+      "home": "JäPS",
+      "away": "Klubi-04",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Imst",
-      "away": "TSV Hartberg",
+      "league": "Ykkösliiga",
+      "home": "MP",
+      "away": "Kooteepee",
       "reason": "No event/team match"
     },
     {
-      "league": "Cup",
-      "home": "Leithaprodersdorf",
-      "away": "Admira Wacker",
+      "league": "Ykkösliiga",
+      "home": "SJK Akatemia",
+      "away": "EIF",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Ykkösliiga",
+      "home": "PK-35",
+      "away": "JIPPO",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Ykkösliiga",
+      "home": "MP",
+      "away": "KäPa",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Ykkösliiga",
+      "home": "JIPPO",
+      "away": "JäPS",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Kakkonen - Lohko C",
+      "home": "Huima / Urho",
+      "away": "SJK-juniorit",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Kakkonen - Lohko C",
+      "home": "JBK",
+      "away": "VPS II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Kakkonen - Lohko C",
+      "home": "Kraft",
+      "away": "Vaajakoski",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Youth Championship",
+      "home": "Dinamo Moskva U19",
+      "away": "Dynamo Makhachkala U19",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Youth Championship",
+      "home": "Rodina Moscow U19",
+      "away": "Krasnodar U19",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 3",
+      "home": "Avangard Kursk",
+      "away": "SKA Khabarovsk II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 3",
+      "home": "Rodina Moskva III",
+      "away": "Salyut-Belgorod",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 3",
+      "home": "Kvant",
+      "away": "Metallurg Lipetsk",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 3",
+      "home": "Shumbrat",
+      "away": "FK Spartak Tambov",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 3",
+      "home": "Strogino",
+      "away": "Volna Nizhegorodskaya",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 3",
+      "home": "Orel",
+      "away": "Saturn Ramenskoye",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 3",
+      "home": "Rotor-2",
+      "away": "Zenit Penza",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 3",
+      "home": "Arsenal Tula II",
+      "away": "Ryazan",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 2",
+      "home": "Dinamo St. Petersburg",
+      "away": "Murom",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 2",
+      "home": "Kosmos Dolgoprudny",
+      "away": "Luki-Energiya",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 2",
+      "home": "Baltika II",
+      "away": "Irkutsk",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 2",
+      "home": "Cherepovets",
+      "away": "Iskra Smolensk",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 2",
+      "home": "Chertanovo Moscow",
+      "away": "Zvezda St. Petersburg",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League A - Division A Silver",
+      "home": "Torpedo Miass",
+      "away": "Zenit 2",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League A - Division A Silver",
+      "home": "Dinamo Stavropol",
+      "away": "Irtysh Omsk",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League A - Division A Silver",
+      "home": "Amkar",
+      "away": "Rodina Moskva II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League A - Division A Silver",
+      "home": "Dinamo Moskva II",
+      "away": "Tyumen",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 1",
+      "home": "Nart Cherkessk",
+      "away": "PSK Dinskaya",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 1",
+      "home": "Angust Nazran",
+      "away": "Kyzyltash",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 1",
+      "home": "Pobeda",
+      "away": "Shahter Taganrog",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 1",
+      "home": "Spartak Nalchik",
+      "away": "Rubin Yalta",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 1",
+      "home": "Astrakhan",
+      "away": "FK Chayka 2",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 1",
+      "home": "Druzhba",
+      "away": "Sevastopol",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 1",
+      "home": "Dynamo Makhachkala II",
+      "away": "Rostov II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "First League",
+      "home": "Volga Ulyanovsk",
+      "away": "FK Neftekhimik",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "First League",
+      "home": "Chelyabinsk",
+      "away": "Nizhny Novgorod",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "First League",
+      "home": "FC UFA",
+      "away": "Ska-khabarovsk",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "First League",
+      "home": "Tekstilshchik",
+      "away": "Spartak Kostroma",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "First League",
+      "home": "Enisey",
+      "away": "Veles",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "First League",
+      "home": "Leningradets",
+      "away": "Ural",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "First League",
+      "home": "Torpedo Moskva",
+      "away": "Shinnik Yaroslavl",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "First League",
+      "home": "FC Sochi",
+      "away": "Arsenal Tula",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "First League",
+      "home": "KAMAZ",
+      "away": "Rotor Volgograd",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League A - Division A Gold",
+      "home": "Rodina Moskva II",
+      "away": "Dinamo Vladivostok",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League A - Division A Gold",
+      "home": "Kaluga",
+      "away": "Novosibirsk",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League A - Division A Gold",
+      "home": "Dinamo Bryansk",
+      "away": "Alaniya Vladikavkaz",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League A - Division A Gold",
+      "home": "FK Sokol Saratov",
+      "away": "Dinamo Kirov",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League A - Division A Gold",
+      "home": "Volgar Astrakhan",
+      "away": "Mashuk-KMV",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 4",
+      "home": "Pobeda Nizhniy Novgorod",
+      "away": "Ural II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 4",
+      "home": "Akron II",
+      "away": "Chelyabinsk II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 4",
+      "home": "Dinamo Barnaul",
+      "away": "Khimik Dzerzhinsk",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 4",
+      "home": "Nosta",
+      "away": "Izhevsk",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 4",
+      "home": "Rubin Kazan 2",
+      "away": "KDV",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Second League - Group 4",
+      "home": "Orenburg II",
+      "away": "Krylya Sovetov II",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "1. Division",
+      "home": "Vejle",
+      "away": "AB Copenhagen",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "1. Division",
+      "home": "Aalborg",
+      "away": "Hillerød",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "1. Division",
+      "home": "Hvidovre",
+      "away": "Vendsyssel FF",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "1. Division",
+      "home": "Esbjerg",
+      "away": "Kolding IF",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "1. Division",
+      "home": "FC Fredericia",
+      "away": "HB Koge",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "1. Division",
+      "home": "Hobro",
+      "away": "Aarhus Fremad",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Superliga",
+      "home": "Viborg",
+      "away": "Odense",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Superliga",
+      "home": "Aarhus",
+      "away": "Brondby",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Superliga",
+      "home": "Sonderjyske",
+      "away": "FC Midtjylland",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Superliga",
+      "home": "FC Copenhagen",
+      "away": "Lyngby",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Superliga",
+      "home": "AC Horsens",
+      "away": "FC Nordsjaelland",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Superliga",
+      "home": "Randers FC",
+      "away": "Silkeborg",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Kvindeliga",
+      "home": "ASA Aarhus W",
+      "away": "AGF W",
       "reason": "No event/team match"
     },
     {
@@ -2496,6 +2992,54 @@
       "market": "double_chance"
     },
     {
+      "sportKey": "soccer_finland_veikkausliiga",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_finland_veikkausliiga",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_finland_veikkausliiga",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_russia_premier_league",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_russia_premier_league",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_russia_premier_league",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_denmark_superliga",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_denmark_superliga",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_denmark_superliga",
+      "market": "double_chance"
+    },
+    {
+      "sportKey": "soccer_poland_ekstraklasa",
+      "market": "btts"
+    },
+    {
+      "sportKey": "soccer_poland_ekstraklasa",
+      "market": "draw_no_bet"
+    },
+    {
+      "sportKey": "soccer_poland_ekstraklasa",
+      "market": "double_chance"
+    },
+    {
       "sportKey": "soccer_england_efl_cup",
       "market": "btts"
     },
@@ -2820,6 +3364,106 @@
     },
     {
       "label": "soccer_mexico_ligamx:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_finland_veikkausliiga:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_finland_veikkausliiga:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_finland_veikkausliiga:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_finland_veikkausliiga:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_finland_veikkausliiga:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_russia_premier_league:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_russia_premier_league:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_russia_premier_league:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_russia_premier_league:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_russia_premier_league:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_denmark_superliga:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_denmark_superliga:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_denmark_superliga:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_denmark_superliga:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_denmark_superliga:double_chance",
+      "error": "Markets not supported by this endpoint: double_chance",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_poland_ekstraklasa:base-combined",
+      "error": "Markets not supported by this endpoint: btts, double_chance, draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_poland_ekstraklasa:base-core",
+      "error": "Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_poland_ekstraklasa:btts",
+      "error": "Markets not supported by this endpoint: btts",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_poland_ekstraklasa:draw_no_bet",
+      "error": "Markets not supported by this endpoint: draw_no_bet",
+      "statusCode": 422
+    },
+    {
+      "label": "soccer_poland_ekstraklasa:double_chance",
       "error": "Markets not supported by this endpoint: double_chance",
       "statusCode": 422
     },
@@ -3406,5 +4050,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-24T18:33:28.472Z"
+  "completedAt": "2026-07-24T18:34:46.676Z"
 }

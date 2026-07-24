@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24T17:38:08.392Z",
+  "updated": "2026-07-24T18:39:47.777Z",
   "minSample": 300,
   "groups": {
     "LEM|USL League Two|Prime|Double Chance 1X|90-99": {
@@ -2610,12 +2610,12 @@
       "validated": false
     },
     "M|*|*|Home Team Over 0.5 Goals|80-89": {
-      "sample": 49,
-      "wins": 40,
+      "sample": 50,
+      "wins": 41,
       "losses": 9,
-      "lower": 0.6864,
-      "mid": 0.8163,
-      "upper": 0.9002,
+      "lower": 0.692,
+      "mid": 0.82,
+      "upper": 0.9023,
       "grade": "Learning",
       "leagueReliability": 52.8,
       "validated": false
@@ -2742,14 +2742,14 @@
       "validated": false
     },
     "EM|*|league-bias|Home Team Over 0.5 Goals|80-89": {
-      "sample": 36,
-      "wins": 28,
+      "sample": 37,
+      "wins": 29,
       "losses": 8,
-      "lower": 0.6191,
-      "mid": 0.7778,
-      "upper": 0.8828,
+      "lower": 0.628,
+      "mid": 0.7838,
+      "upper": 0.8861,
       "grade": "Learning",
-      "leagueReliability": 51,
+      "leagueReliability": 51.2,
       "validated": false
     },
     "LEM|USL League Two|trend|Away Team Over 0.5 Goals|80-89": {
@@ -3380,17 +3380,6 @@
       "validated": false
     },
     "LEM|Friendlies Clubs|league-bias|Home Team Over 0.5 Goals|80-89": {
-      "sample": 16,
-      "wins": 11,
-      "losses": 5,
-      "lower": 0.444,
-      "mid": 0.6875,
-      "upper": 0.8584,
-      "grade": "Learning",
-      "leagueReliability": 54,
-      "validated": false
-    },
-    "LM|Friendlies Clubs|*|Home Team Over 0.5 Goals|80-89": {
       "sample": 17,
       "wins": 12,
       "losses": 5,
@@ -3399,6 +3388,17 @@
       "upper": 0.8672,
       "grade": "Learning",
       "leagueReliability": 54.5,
+      "validated": false
+    },
+    "LM|Friendlies Clubs|*|Home Team Over 0.5 Goals|80-89": {
+      "sample": 18,
+      "wins": 13,
+      "losses": 5,
+      "lower": 0.4913,
+      "mid": 0.7222,
+      "upper": 0.875,
+      "grade": "Learning",
+      "leagueReliability": 54.9,
       "validated": false
     },
     "LEM|Primera División|trend|Home Team Over 0.5 Goals|80-89": {
