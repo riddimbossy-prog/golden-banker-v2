@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-24T18:04:51.726Z",
+  "generatedAt": "2026-07-24T18:12:46.000Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -37,7 +37,7 @@
       "sportKey": "soccer_finland_veikkausliiga",
       "sportTitle": "Veikkausliiga - Finland",
       "score": 0.38,
-      "matches": 7
+      "matches": 6
     },
     {
       "league": "Youth Championship",
@@ -45,7 +45,15 @@
       "sportKey": "soccer_russia_premier_league",
       "sportTitle": "Premier League - Russia",
       "score": 0.323,
-      "matches": 2
+      "matches": 1
+    },
+    {
+      "league": "Kakkonen - Lohko B",
+      "country": "Finland",
+      "sportKey": "soccer_finland_veikkausliiga",
+      "sportTitle": "Veikkausliiga - Finland",
+      "score": 0.323,
+      "matches": 4
     },
     {
       "league": "Kakkonen - Lohko B",
@@ -664,6 +672,14 @@
       "matches": 27
     },
     {
+      "league": "Premier League",
+      "country": "Kyrgyzstan",
+      "sportKey": "soccer_epl",
+      "sportTitle": "EPL",
+      "score": 0.987,
+      "matches": 4
+    },
+    {
       "league": "1. Division",
       "country": "Norway",
       "sportKey": "soccer_norway_eliteserien",
@@ -960,7 +976,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 2001,
+  "matchesConsidered": 1995,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -986,18 +1002,6 @@
       "country": "World",
       "reason": "No matching soccer sport key",
       "bestScore": 0
-    },
-    {
-      "league": "Second League",
-      "country": "Bulgaria",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
-      "league": "A Lyga",
-      "country": "Lithuania",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
     },
     {
       "league": "FNL",
@@ -1342,8 +1346,20 @@
       "bestScore": 0
     },
     {
+      "league": "First League",
+      "country": "Macedonia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
       "league": "Czech Liga",
       "country": "Czech-Republic",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
+      "league": "Second League",
+      "country": "Bulgaria",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
     },
@@ -1362,6 +1378,12 @@
     {
       "league": "Esiliiga A",
       "country": "Estonia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
+      "league": "A Lyga",
+      "country": "Lithuania",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
     },
@@ -1478,6 +1500,12 @@
       "country": "Ecuador",
       "reason": "No matching soccer sport key",
       "bestScore": 0.2
+    },
+    {
+      "league": "1. Division",
+      "country": "Kazakhstan",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
     },
     {
       "league": "UEFA Europa League",
@@ -1702,6 +1730,30 @@
       "reason": "No event/team match"
     },
     {
+      "league": "Premier League",
+      "home": "Ozgon",
+      "away": "Ilbirs",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
+      "home": "Talant",
+      "away": "Kara-Balta",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
+      "home": "Abdish-Ata",
+      "away": "Asia Talas",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
+      "home": "Dordoi Bishkek",
+      "away": "Alga",
+      "reason": "No event/team match"
+    },
+    {
       "league": "Premier League - Summer Series",
       "home": "Liverpool",
       "away": "Sunderland",
@@ -1907,12 +1959,6 @@
     },
     {
       "league": "Ykkönen",
-      "home": "Tampere United",
-      "away": "Inter Turku II",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Ykkönen",
       "home": "Rops",
       "away": "JJK",
       "reason": "No event/team match"
@@ -2083,12 +2129,6 @@
       "league": "Youth Championship",
       "home": "Dinamo Moskva U19",
       "away": "Dynamo Makhachkala U19",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Youth Championship",
-      "home": "Rodina Moscow U19",
-      "away": "Krasnodar U19",
       "reason": "No event/team match"
     },
     {
@@ -2431,6 +2471,18 @@
       "league": "Kvindeliga",
       "home": "ASA Aarhus W",
       "away": "AGF W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Kvindeliga",
+      "home": "Midtjylland W",
+      "away": "Brøndby W",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Kvindeliga",
+      "home": "Nordsjælland W",
+      "away": "Odense Q W",
       "reason": "No event/team match"
     }
   ],
@@ -3364,11 +3416,11 @@
     }
   ],
   "quota": {
-    "remaining": 99924,
-    "used": 76,
+    "remaining": 99848,
+    "used": 152,
     "last": 0
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-24T18:05:02.076Z"
+  "completedAt": "2026-07-24T18:12:59.185Z"
 }
