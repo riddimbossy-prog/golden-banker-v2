@@ -1,10 +1,10 @@
 {
   "version": "v193",
-  "updated": "2026-07-24T15:21:27.423Z",
+  "updated": "2026-07-24T17:38:15.708Z",
   "summary": {
-    "settledFixtures": 156,
-    "settledDecisions": 311,
-    "reviewedLosses": 56,
+    "settledFixtures": 157,
+    "settledDecisions": 312,
+    "reviewedLosses": 57,
     "teamProfiles": 70,
     "leagueProfiles": 14,
     "matchupProfiles": 36,
@@ -19,7 +19,7 @@
   "commonMissCauses": [
     {
       "cause": "INPUT_COVERAGE_GAP",
-      "count": 56
+      "count": 57
     },
     {
       "cause": "GOAL_SPIKE",
@@ -27,7 +27,7 @@
     },
     {
       "cause": "RESULT_DIRECTION_MISS",
-      "count": 12
+      "count": 13
     },
     {
       "cause": "DRAW_TRAP",
@@ -47,6 +47,19 @@
     }
   ],
   "recentLossReviews": [
+    {
+      "matchDate": "2026-07-24",
+      "home": "VfL Wolfsburg",
+      "away": "Lyon",
+      "league": "Friendlies Clubs",
+      "engine": "League Bias",
+      "market": "Home Team Over 0.5 Goals",
+      "score": "0-2",
+      "causes": [
+        "RESULT_DIRECTION_MISS",
+        "INPUT_COVERAGE_GAP"
+      ]
+    },
     {
       "matchDate": "2026-07-22",
       "home": "Nacional",
@@ -410,19 +423,6 @@
       "away": "Santafé Wanderers",
       "league": "USL League Two",
       "engine": "Value",
-      "market": "Over 2.5",
-      "score": "0-0",
-      "causes": [
-        "TEMPO_COLLAPSE",
-        "INPUT_COVERAGE_GAP"
-      ]
-    },
-    {
-      "matchDate": "2026-07-04",
-      "home": "Des Moines Menace",
-      "away": "Santafé Wanderers",
-      "league": "USL League Two",
-      "engine": "Pro",
       "market": "Over 2.5",
       "score": "0-0",
       "causes": [
