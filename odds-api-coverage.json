@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-24T11:49:28.973Z",
+  "generatedAt": "2026-07-24T11:59:41.269Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -8,20 +8,12 @@
   "soccerSportsAvailable": 37,
   "sportMappings": [
     {
-      "league": "Premier League",
-      "country": "Bhutan",
-      "sportKey": "soccer_epl",
-      "sportTitle": "EPL",
-      "score": 0.987,
-      "matches": 2
-    },
-    {
       "league": "Victoria Premier League 2",
       "country": "Australia",
       "sportKey": "soccer_epl",
       "sportTitle": "EPL",
       "score": 0.667,
-      "matches": 7
+      "matches": 5
     },
     {
       "league": "Youth Championship",
@@ -840,6 +832,14 @@
       "matches": 6
     },
     {
+      "league": "Premier League",
+      "country": "Bhutan",
+      "sportKey": "soccer_epl",
+      "sportTitle": "EPL",
+      "score": 0.987,
+      "matches": 1
+    },
+    {
       "league": "Super League",
       "country": "Uzbekistan",
       "sportKey": "soccer_greece_super_league",
@@ -952,7 +952,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 2065,
+  "matchesConsidered": 2052,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -962,34 +962,10 @@
   "bookmakerRows": 0,
   "unmatched": [
     {
-      "league": "Npl Nsw U20",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
       "league": "Friendlies Clubs",
       "country": "World",
       "reason": "No matching soccer sport key",
       "bestScore": 0
-    },
-    {
-      "league": "New South Wales NPL",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
-      "league": "Victoria NPL",
-      "country": "Australia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
-      "league": "Calcutta Premier Division",
-      "country": "India",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.222
     },
     {
       "league": "South Australia State League 1",
@@ -1002,6 +978,12 @@
       "country": "South-Korea",
       "reason": "No matching soccer sport key",
       "bestScore": 0.222
+    },
+    {
+      "league": "Victoria NPL",
+      "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
     },
     {
       "league": "Victoria NPL 2",
@@ -1262,6 +1244,12 @@
       "bestScore": 0.222
     },
     {
+      "league": "Npl Nsw U20",
+      "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
+    },
+    {
       "league": "Chatham Cup",
       "country": "New-Zealand",
       "reason": "No matching soccer sport key",
@@ -1272,6 +1260,12 @@
       "country": "Australia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.091
+    },
+    {
+      "league": "New South Wales NPL",
+      "country": "Australia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0
     },
     {
       "league": "K4 League",
@@ -1494,30 +1488,6 @@
       "country": "World",
       "reason": "No matching soccer sport key",
       "bestScore": 0.125
-    },
-    {
-      "league": "Premier League",
-      "home": "RTC",
-      "away": "Bhutan U19",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Tsirang",
-      "away": "Transport United",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Victoria Premier League 2",
-      "home": "Keilor Park",
-      "away": "Bayside Argonauts",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Victoria Premier League 2",
-      "home": "Nunawading",
-      "away": "Malvern",
-      "reason": "No event/team match"
     },
     {
       "league": "Victoria Premier League 2",
@@ -1799,6 +1769,12 @@
       "league": "Premier League - Summer Series",
       "home": "Sunderland",
       "away": "Leeds",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Premier League",
+      "home": "Tsirang",
+      "away": "Transport United",
       "reason": "No event/team match"
     },
     {
@@ -2459,6 +2435,30 @@
       "league": "Copa Paulista",
       "home": "Juventus",
       "away": "Paulista",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Copa Paulista",
+      "home": "Linense",
+      "away": "Marília",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Copa Paulista",
+      "home": "Santo André",
+      "away": "São Caetano",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Copa Paulista",
+      "home": "Grêmio Prudente",
+      "away": "Bandeirante SP",
+      "reason": "No event/team match"
+    },
+    {
+      "league": "Cearense U20",
+      "home": "Anjos do Céu U20",
+      "away": "Tirol U20",
       "reason": "No event/team match"
     }
   ],
@@ -3398,5 +3398,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-24T11:49:58.819Z"
+  "completedAt": "2026-07-24T12:00:01.706Z"
 }
