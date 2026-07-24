@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-24T15:49:35.842Z",
+  "generatedAt": "2026-07-24T16:09:50.306Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -14,14 +14,6 @@
       "sportTitle": "EPL",
       "score": 0.987,
       "matches": 4
-    },
-    {
-      "league": "Premier League",
-      "country": "Kyrgyzstan",
-      "sportKey": "soccer_epl",
-      "sportTitle": "EPL",
-      "score": 0.987,
-      "matches": 7
     },
     {
       "league": "Youth Championship",
@@ -38,6 +30,14 @@
       "sportTitle": "Premier League - Russia",
       "score": 0.43,
       "matches": 8
+    },
+    {
+      "league": "Premier League",
+      "country": "Kyrgyzstan",
+      "sportKey": "soccer_epl",
+      "sportTitle": "EPL",
+      "score": 0.987,
+      "matches": 6
     },
     {
       "league": "Liga MX U21",
@@ -968,7 +968,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 2025,
+  "matchesConsidered": 2019,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -996,26 +996,8 @@
       "bestScore": 0
     },
     {
-      "league": "Persha Liga",
-      "country": "Ukraine",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
       "league": "Pro League A",
       "country": "Uzbekistan",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.125
-    },
-    {
-      "league": "ASEAN Championship",
-      "country": "World",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.167
-    },
-    {
-      "league": "1 Lyga",
-      "country": "Lithuania",
       "reason": "No matching soccer sport key",
       "bestScore": 0.125
     },
@@ -1302,10 +1284,22 @@
       "bestScore": 0
     },
     {
+      "league": "Persha Liga",
+      "country": "Ukraine",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.143
+    },
+    {
       "league": "NB III - Northeast",
       "country": "Hungary",
       "reason": "No matching soccer sport key",
       "bestScore": 0
+    },
+    {
+      "league": "ASEAN Championship",
+      "country": "World",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.167
     },
     {
       "league": "Esiliiga B",
@@ -1324,6 +1318,12 @@
       "country": "Belarus",
       "reason": "No matching soccer sport key",
       "bestScore": 0
+    },
+    {
+      "league": "1 Lyga",
+      "country": "Lithuania",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.125
     },
     {
       "league": "Segunda División",
@@ -1521,12 +1521,6 @@
       "league": "Premier League",
       "home": "Jwaaya FC",
       "away": "Al Ansar",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Bars",
-      "away": "Asiagoal",
       "reason": "No event/team match"
     },
     {
@@ -2476,6 +2470,12 @@
       "home": "Sparta Brno",
       "away": "Vrchovina",
       "reason": "No event/team match"
+    },
+    {
+      "league": "Cup",
+      "home": "Blansko",
+      "away": "Velká Bíteš",
+      "reason": "No event/team match"
     }
   ],
   "unsupportedMarkets": [
@@ -3414,5 +3414,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-24T15:49:54.916Z"
+  "completedAt": "2026-07-24T16:10:08.807Z"
 }
