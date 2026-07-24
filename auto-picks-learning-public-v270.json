@@ -2,13 +2,67 @@
   "schema": 1,
   "build": "v270",
   "modelVersion": "Auto Profile v1.1",
-  "generatedAt": "2026-07-24T06:51:23.200Z",
+  "generatedAt": "2026-07-24T13:14:08.863Z",
   "status": "active",
-  "settled": 30,
-  "wins": 23,
-  "losses": 7,
+  "settled": 36,
+  "wins": 28,
+  "losses": 8,
   "voids": 0,
   "recent": [
+    {
+      "fixtureKey": "f1533751",
+      "home": "Seoul W",
+      "away": "Gumi Sportstoto W",
+      "market": "Under 2.5 Goals",
+      "result": "Lost",
+      "score": "0-3",
+      "date": "2026-07-24"
+    },
+    {
+      "fixtureKey": "f1521986",
+      "home": "Heidelberg United",
+      "away": "Sunshine Georgies",
+      "market": "Under 3.5 Goals",
+      "result": "Won",
+      "score": "0-0",
+      "date": "2026-07-24"
+    },
+    {
+      "fixtureKey": "f1521987",
+      "home": "Green Gully",
+      "away": "Dandenong City",
+      "market": "Under 3.5 Goals",
+      "result": "Won",
+      "score": "0-0",
+      "date": "2026-07-24"
+    },
+    {
+      "fixtureKey": "f1517604",
+      "home": "Manly United",
+      "away": "Sydney Olympic",
+      "market": "Manly United to win",
+      "result": "Won",
+      "score": "4-0",
+      "date": "2026-07-24"
+    },
+    {
+      "fixtureKey": "f1521990",
+      "home": "Preston Lions",
+      "away": "Bentleigh Greens",
+      "market": "Preston Lions to win",
+      "result": "Won",
+      "score": "1-0",
+      "date": "2026-07-24"
+    },
+    {
+      "fixtureKey": "f1527338",
+      "home": "Adelaide Olympic",
+      "away": "South Adelaide Panthers",
+      "market": "Adelaide Olympic to win",
+      "result": "Won",
+      "score": "5-1",
+      "date": "2026-07-24"
+    },
     {
       "fixtureKey": "f1520782",
       "home": "Botafogo SP",
@@ -26,60 +80,6 @@
       "result": "Lost",
       "score": "1-1",
       "date": "2026-07-24"
-    },
-    {
-      "fixtureKey": "f1492293",
-      "home": "Corinthians",
-      "away": "Remo",
-      "market": "Under 3.5 Goals",
-      "result": "Won",
-      "score": "3-0",
-      "date": "2026-07-23"
-    },
-    {
-      "fixtureKey": "f1520780",
-      "home": "Athletic Club",
-      "away": "São Bernardo",
-      "market": "Under 3.5 Goals",
-      "result": "Won",
-      "score": "2-1",
-      "date": "2026-07-23"
-    },
-    {
-      "fixtureKey": "f1520784",
-      "home": "Cuiaba",
-      "away": "Atletico Goianiense",
-      "market": "Under 3.5 Goals",
-      "result": "Won",
-      "score": "0-1",
-      "date": "2026-07-23"
-    },
-    {
-      "fixtureKey": "f1519422",
-      "home": "Orense SC",
-      "away": "Aucas",
-      "market": "Under 3.5 Goals",
-      "result": "Won",
-      "score": "2-1",
-      "date": "2026-07-23"
-    },
-    {
-      "fixtureKey": "f1519418",
-      "home": "Leones del Norte",
-      "away": "Guayaquil City FC",
-      "market": "Under 3.5 Goals",
-      "result": "Won",
-      "score": "1-1",
-      "date": "2026-07-23"
-    },
-    {
-      "fixtureKey": "f1490343",
-      "home": "Los Angeles Galaxy",
-      "away": "St. Louis City",
-      "market": "Under 3.5 Goals",
-      "result": "Lost",
-      "score": "1-3",
-      "date": "2026-07-23"
     }
   ]
 }
