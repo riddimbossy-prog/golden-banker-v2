@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-24T18:53:44.151Z",
+  "generatedAt": "2026-07-24T19:03:43.160Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -960,7 +960,7 @@
       "matches": 2
     }
   ],
-  "matchesConsidered": 1967,
+  "matchesConsidered": 1965,
   "matchesMatched": 0,
   "matchesUpdated": 0,
   "fieldsFilled": 0,
@@ -984,24 +984,6 @@
     {
       "league": "Friendlies Clubs",
       "country": "World",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0
-    },
-    {
-      "league": "Second League",
-      "country": "Bulgaria",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
-      "league": "A Lyga",
-      "country": "Lithuania",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
-      "league": "FNL",
-      "country": "Czech-Republic",
       "reason": "No matching soccer sport key",
       "bestScore": 0
     },
@@ -2411,68 +2393,68 @@
     },
     {
       "league": "Cup",
-      "home": "Kristall MEZ",
-      "away": "Salyut-Belgorod",
+      "home": "Deutschlandsberger SC",
+      "away": "SKU Amstetten",
       "reason": "No event/team match"
     },
     {
       "league": "Cup",
-      "home": "2Drots",
-      "away": "Orel",
+      "home": "SV Lafnitz",
+      "away": "Scheiblingkirchen",
       "reason": "No event/team match"
     },
     {
       "league": "Cup",
-      "home": "Ilpar",
-      "away": "Metallurg Asha",
+      "home": "Lauterach",
+      "away": "Wolfsberger AC",
       "reason": "No event/team match"
     },
     {
       "league": "Cup",
-      "home": "Kristall",
-      "away": "Znamya Noginsk",
+      "home": "Leobendorf",
+      "away": "SCR Altach",
       "reason": "No event/team match"
     },
     {
       "league": "Cup",
-      "home": "Kirovets Voskhozhdenie",
-      "away": "FC Tosno",
+      "home": "SV Horn",
+      "away": "Floridsdorfer AC",
       "reason": "No event/team match"
     },
     {
       "league": "Cup",
-      "home": "SKA Rostov",
-      "away": "Zenit Penza",
+      "home": "Leoben",
+      "away": "Voitsberg",
       "reason": "No event/team match"
     },
     {
       "league": "Cup",
-      "home": "Anri Vladivostok",
-      "away": "Dinamo Barnaul",
+      "home": "Tillmitsch",
+      "away": "SKN ST. Polten",
       "reason": "No event/team match"
     },
     {
       "league": "Cup",
-      "home": "Chita",
-      "away": "Irkutsk",
+      "home": "Traiskirchen",
+      "away": "Bleiburg",
       "reason": "No event/team match"
     },
     {
       "league": "Cup",
-      "home": "Temp Barnaul",
-      "away": "KDV",
+      "home": "Gurten",
+      "away": "FC BW Linz",
       "reason": "No event/team match"
     },
     {
       "league": "Cup",
-      "home": "FC 10",
-      "away": "Kosmos Dolgoprudny",
+      "home": "Seekirchen",
+      "away": "Sturm Graz",
       "reason": "No event/team match"
     },
     {
       "league": "Cup",
-      "home": "Kaisar",
-      "away": "Zhenys",
+      "home": "Wals-Grünau",
+      "away": "Austria Salzburg",
       "reason": "No event/team match"
     },
     {
@@ -3424,5 +3406,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-24T18:53:49.639Z"
+  "completedAt": "2026-07-24T19:04:01.179Z"
 }
