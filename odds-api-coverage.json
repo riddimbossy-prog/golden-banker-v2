@@ -1,6 +1,6 @@
 {
   "version": "v251",
-  "generatedAt": "2026-07-24T17:43:44.554Z",
+  "generatedAt": "2026-07-24T17:53:27.393Z",
   "provider": "The Odds API v4",
   "keyPresent": true,
   "regions": "uk",
@@ -672,14 +672,6 @@
       "matches": 27
     },
     {
-      "league": "Premier League",
-      "country": "Kyrgyzstan",
-      "sportKey": "soccer_epl",
-      "sportTitle": "EPL",
-      "score": 0.987,
-      "matches": 4
-    },
-    {
       "league": "1. Division",
       "country": "Norway",
       "sportKey": "soccer_norway_eliteserien",
@@ -1016,8 +1008,14 @@
       "bestScore": 0.143
     },
     {
-      "league": "1. Division",
-      "country": "Belarus",
+      "league": "David Kipiani Cup",
+      "country": "Georgia",
+      "reason": "No matching soccer sport key",
+      "bestScore": 0.125
+    },
+    {
+      "league": "First League",
+      "country": "Macedonia",
       "reason": "No matching soccer sport key",
       "bestScore": 0.143
     },
@@ -1364,12 +1362,6 @@
       "bestScore": 0
     },
     {
-      "league": "First League",
-      "country": "Macedonia",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
-    },
-    {
       "league": "Czech Liga",
       "country": "Czech-Republic",
       "reason": "No matching soccer sport key",
@@ -1506,12 +1498,6 @@
       "country": "Ecuador",
       "reason": "No matching soccer sport key",
       "bestScore": 0.2
-    },
-    {
-      "league": "1. Division",
-      "country": "Kazakhstan",
-      "reason": "No matching soccer sport key",
-      "bestScore": 0.143
     },
     {
       "league": "UEFA Europa League",
@@ -1763,30 +1749,6 @@
       "league": "Premier Soccer League",
       "home": "TelOne",
       "away": "CAPS United",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Ozgon",
-      "away": "Ilbirs",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Talant",
-      "away": "Kara-Balta",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Abdish-Ata",
-      "away": "Asia Talas",
-      "reason": "No event/team match"
-    },
-    {
-      "league": "Premier League",
-      "home": "Dordoi Bishkek",
-      "away": "Alga",
       "reason": "No event/team match"
     },
     {
@@ -3452,5 +3414,5 @@
   },
   "skipped": false,
   "skipReason": null,
-  "completedAt": "2026-07-24T17:43:55.749Z"
+  "completedAt": "2026-07-24T17:53:32.843Z"
 }
